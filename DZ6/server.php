@@ -2,7 +2,7 @@
 
 require_once ('db.config.php');
 
-$dest_upload='/Applications/XAMPP/xamppfiles/htdocs/DZ6/uploads/';
+$dest_upload='uploads/';
 
 $uploaded_file= $dest_upload . basename($_FILES["fileToUpload"]["name"]);
 
@@ -40,46 +40,68 @@ if ($uploadok == 0) {
 
 
 
-$folder_path = '/Applications/XAMPP/xamppfiles/htdocs/DZ6/uploads/';//images upload folder path
+$folder_path = 'uploads/';//images upload folder path
 
 $folder = opendir($folder_path); 
 
+?>
 
-   while(false != ($file = readdir($folder))) { 
-
-           if ($file == ".." || $file == "." || $file == ".DS_Store") {
-              continue;
-          }
-           $file_path = $folder_path.$file;
-          
-            
-         ?>
-          
-          <!DOCTYPE html>
+<!DOCTYPE html>
           <html>
           <head>
             <title>Gallery</title>
-          </head>
-          <body>
-          <form action="delete.php?id=<?php echo $file; ?>" method="post">
-          
-          <a href="<?php echo $file_path;?>"><img src="<?php echo $file_path;?>"  height="200" width="200"></a>
+            <link rel="stylesheet" type="text/css" href="style.css">
+            <link rel="stylesheet"  href="bootstrap.min.css">
+</head>
+<body>
+
+  <center><h1>IMAGE GALLAERY</h1></center>
+
+
+  
+
+        <?php
+           while(false != ($file = readdir($folder))) { 
+
+            if ($file == ".." || $file == "." || $file == ".DS_Store") {
+              continue;
+             }
+ 
+           $file_path = $folder_path.$file;
+           ?>
+           <div id = "gallery_product">
+           <div class="col-sm-3">
+
+           <form action="delete.php?id=<?php echo $file; ?>" method="post">
+                 <a href="<?php echo $file_path;?>"><img src="<?php echo $file_path;?>"  height="250" width="300"></a>
           <input type="submit" name="" value="Delete">
           </form> 
-          </body>
-          </html>
-          
-          <?php 
+          </div>
+          </div>
+        <?php 
 
-  }
- 
+        }
+  
 closedir($folder);
 
-//new script
- echo '<form action="" method = "post" enctype="multipart/form-data">';
- echo '<input type = "file" name="fileToUpload" value="Upload file"></br>';
- echo '<input type = "submit" name="choose" value="Submit"></br>';
- echo '</form>';
+?>
+
+<div id="upload_form">
+   <form action="" method = "post" enctype="multipart/form-data">
+   <input type = "file" name="fileToUpload" value="Upload file"></br>
+   <input type = "submit" name="choose" value="Submit"></br>
+   </form>
+</div>
+  <script src="js/bootstrap.min.js"></script>
+  <div class="footer">
+<hr>
+&copy; 2016 Все права защищены 
+</div>
+ </body>
+</html>
+          
+<?php
+
  
 
 //databas connection--> in db.config.php
@@ -100,6 +122,7 @@ else
       echo"<br>File '$fileName' uploaded to server!<br>";
      }
 
+/*
 mysql_query($query) or die('Error,query failed'); 
 
 $result=mysql_query('SELECT * FROM images_table');
@@ -114,7 +137,17 @@ while ($row = mysql_fetch_assoc($result)) {
     echo'</ul>';
 
 }
+
+*/
 mysql_close($link);
 
 ?>
+
+
+
+
+
+
+
+
 
