@@ -1,0 +1,1 @@
+CREATE TABLE `messages` (  `id_msg` int(11) NOT NULL auto_increment,  `dt` datetime NOT NULL,  `name` varchar(32) NOT NULL,  `text` varchar(256) NOT NULL,  PRIMARY KEY  (`id_msg`)) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=1 ;
