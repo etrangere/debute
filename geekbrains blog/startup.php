@@ -12,9 +12,9 @@ function startup()
 	setlocale(LC_ALL, 'ru_RU.CP1251');	
 	
 	// Подключение к БД.
-	mysqli_connect($hostname, $username, $password) or die('No connect with data base');
-	mysqli_query('SET NAMES cp1251');
-	mysqli_select_db($dbName) or die('No data base');
+	mysql_connect($hostname, $username, $password) or die('No connect with data base');
+	mysql_query('SET NAMES cp1251');
+	mysql_select_db($dbName) or die('No data base');
 
 	// Открытие сессии.
 	session_start();

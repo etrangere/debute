@@ -2,108 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="459fe6e7-4895-4776-a355-d76b9b2166dd" name="Default" comment="phpstorm git console + x-debuger config initial">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/CSS/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/bootstrap/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/db.config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/delete.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/images (2).sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/login.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/main.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/photo/(R)11d.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/photo/(R)Image.538.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/photo/013.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/photo/3D+Fractals+Stranger+than+Fiction+3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/photo/3D-Street-Painting-06.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/photo/3D_Street_Art_Painting_45-575x322.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/photo/550x-awesome-3d-floorart.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/photo/76de638f43dut_01.jpg-550x366.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/photo/A-LE1NcCcAE3u_t.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/photo/Wallpaper-puppy-cute-white-hd-desktop-wallpapers.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/photo/index.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/photo/index3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/photo/index4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/photo/index7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/server.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/uploads/(R)Image.538.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/uploads/3D+Fractals+Stranger+than+Fiction+3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/uploads/3D_Street_Art_Painting_45-575x322.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/uploads/550x-awesome-3d-floorart.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/uploads/index.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/uploads/index3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DZ6/visits.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/ajsing.saxar.kruzh.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/aromatizator.caramel.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/catalog.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/contact.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/fonts/FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/forma.kulich.serebro.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/forma.silikon.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/gel.klubnika.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/images/ajsing.saxar.kruzh.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/images/aromatizator.caramel.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/images/forma.kulich.serebro.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/images/forma.silikon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/images/fraise.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/images/gel.klubnika.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/images/images.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/images/kapsula.bumazhnaya.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/images/logos.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/images/mactik.ledi.top.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/images/topping.caramel.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/images/zhelatin.listovoy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/js/jquery-3.1.1.slim.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/kapsula.bumazhnaya.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/less/animated.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/less/bordered-pulled.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/less/core.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/less/fixed-width.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/less/font-awesome.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/less/icons.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/less/larger.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/less/list.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/less/mixins.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/less/path.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/less/rotated-flipped.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/less/screen-reader.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/less/stacked.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/less/variables.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/mactik.ledi.top.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/scss/_animated.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/scss/_bordered-pulled.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/scss/_core.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/scss/_fixed-width.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/scss/_icons.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/scss/_larger.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/scss/_list.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/scss/_mixins.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/scss/_path.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/scss/_rotated-flipped.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/scss/_screen-reader.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/scss/_stacked.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/scss/_variables.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/scss/font-awesome.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/styleprod.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/topping.caramel.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/zakazi.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/domashnee zadanie 7/zhelatin.listovoy.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geekbrains blog/edit.php" afterPath="$PROJECT_DIR$/geekbrains blog/edit.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geekbrains blog/model.php" afterPath="$PROJECT_DIR$/geekbrains blog/model.php" />
@@ -119,11 +17,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="editor.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="editor.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geekbrains blog/theme/editor.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+            <state relative-caret-position="45">
+              <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
               <folding>
                 <marker date="1054082312000" expanded="true" signature="855:884" ph="..." />
               </folding>
@@ -131,13 +29,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="new.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/geekbrains blog/theme/new.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+              <folding>
+                <marker date="1054082281000" expanded="true" signature="842:871" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="startup.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geekbrains blog/startup.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geekbrains blog/new.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geekbrains blog/model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="855">
+              <caret line="57" column="17" lean-forward="false" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
               <folding>
-                <marker date="1054082281000" expanded="true" signature="842:871" ph="..." />
+                <marker date="1507849934000" expanded="true" signature="83:130" ph="SELECT * FRO... articles" />
+                <marker date="1507849934000" expanded="true" signature="690:747" ph="INSERT INTO articles... " />
+                <marker date="1507849934000" expanded="true" signature="1162:1215" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -153,14 +85,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geekbrains blog/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="edit.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geekbrains blog/edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="375">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
-                <marker date="1507806581000" expanded="true" signature="109:149" ph="SELECT FROM articles... " />
-                <marker date="1507806581000" expanded="true" signature="109:152" ph="SELECT FROM artiles... " />
+                <marker date="1507849934000" expanded="true" signature="109:149" ph="SELECT FROM articles... " />
+                <marker date="1507849934000" expanded="true" signature="109:152" ph="SELECT FROM artiles... " />
               </folding>
             </state>
           </provider>
@@ -171,40 +113,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
               <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/geekbrains blog/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="model.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/geekbrains blog/model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="66" column="1" lean-forward="false" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
-              <folding>
-                <marker date="1507806522000" expanded="true" signature="83:130" ph="SELECT * FRO... articles" />
-                <marker date="1507806522000" expanded="true" signature="690:747" ph="INSERT INTO articles... " />
-                <marker date="1507806522000" expanded="true" signature="1165:1218" ph="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="startup.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/geekbrains blog/startup.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -221,14 +129,14 @@
         <option value="$PROJECT_DIR$/Blog/info.php" />
         <option value="$PROJECT_DIR$/info.php" />
         <option value="$PROJECT_DIR$/geekbrains blog/theme/editor.php" />
-        <option value="$PROJECT_DIR$/geekbrains blog/theme/new.php" />
         <option value="$PROJECT_DIR$/geekbrains blog/index.php" />
         <option value="$PROJECT_DIR$/geekbrains blog/editor.php" />
         <option value="$PROJECT_DIR$/geekbrains blog/article.php" />
         <option value="$PROJECT_DIR$/geekbrains blog/new.php" />
-        <option value="$PROJECT_DIR$/geekbrains blog/model.php" />
-        <option value="$PROJECT_DIR$/geekbrains blog/startup.php" />
         <option value="$PROJECT_DIR$/geekbrains blog/edit.php" />
+        <option value="$PROJECT_DIR$/geekbrains blog/startup.php" />
+        <option value="$PROJECT_DIR$/geekbrains blog/model.php" />
+        <option value="$PROJECT_DIR$/geekbrains blog/theme/new.php" />
       </list>
     </option>
   </component>
@@ -250,8 +158,22 @@
     <option name="width" value="1280" />
     <option name="height" value="735" />
   </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Internationalization issues</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -264,60 +186,11 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htdocs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htdocs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htdocs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htdocs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geekbrains blog" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htdocs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htdocs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geekbrains blog" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.phpunit" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -425,7 +298,8 @@
       <workItem from="1506798286128" duration="625000" />
       <workItem from="1506799876982" duration="5344000" />
       <workItem from="1507287428941" duration="2789000" />
-      <workItem from="1507708228473" duration="5058000" />
+      <workItem from="1507708228473" duration="5512000" />
+      <workItem from="1507880480602" duration="1220000" />
     </task>
     <task id="LOCAL-00001" summary="phpstorm git console + x-debuger config initial">
       <created>1506803229371</created>
@@ -438,13 +312,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16191000" />
+    <option name="totallyTimeSpent" value="17865000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="735" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14453125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -463,6 +337,26 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14453125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997006" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -530,9 +424,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1506292387000" expanded="true" signature="240:288" ph="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -773,9 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1506292387000" expanded="true" signature="240:288" ph="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -786,26 +674,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geekbrains blog/theme/style.css">
+    <entry file="file://$PROJECT_DIR$/DZ6/delete.php" />
+    <entry file="file://$PROJECT_DIR$/DZ6/server.php" />
+    <entry file="file://$PROJECT_DIR$/geekbrains blog/theme/editor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="45">
+          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding>
+            <marker date="1054082312000" expanded="true" signature="855:884" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DZ6/delete.php">
+    <entry file="file://$PROJECT_DIR$/geekbrains blog/startup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="31" lean-forward="true" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DZ6/server.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -818,49 +702,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geekbrains blog/startup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/geekbrains blog/model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="66" column="1" lean-forward="false" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
+        <state relative-caret-position="855">
+          <caret line="57" column="17" lean-forward="false" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
           <folding>
-            <marker date="1507806522000" expanded="true" signature="83:130" ph="SELECT * FRO... articles" />
-            <marker date="1507806522000" expanded="true" signature="690:747" ph="INSERT INTO articles... " />
-            <marker date="1507806522000" expanded="true" signature="1165:1218" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geekbrains blog/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geekbrains blog/editor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geekbrains blog/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <marker date="1507806581000" expanded="true" signature="109:149" ph="SELECT FROM articles... " />
-            <marker date="1507806581000" expanded="true" signature="109:152" ph="SELECT FROM artiles... " />
+            <marker date="1507849934000" expanded="true" signature="83:130" ph="SELECT * FRO... articles" />
+            <marker date="1507849934000" expanded="true" signature="690:747" ph="INSERT INTO articles... " />
+            <marker date="1507849934000" expanded="true" signature="1162:1215" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -873,22 +722,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geekbrains blog/theme/new.php">
+    <entry file="file://$PROJECT_DIR$/geekbrains blog/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geekbrains blog/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <marker date="1054082281000" expanded="true" signature="842:871" ph="..." />
+            <marker date="1507849934000" expanded="true" signature="109:149" ph="SELECT FROM articles... " />
+            <marker date="1507849934000" expanded="true" signature="109:152" ph="SELECT FROM artiles... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geekbrains blog/theme/editor.php">
+    <entry file="file://$PROJECT_DIR$/geekbrains blog/editor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geekbrains blog/theme/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geekbrains blog/theme/new.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding>
-            <marker date="1054082312000" expanded="true" signature="855:884" ph="..." />
+            <marker date="1054082281000" expanded="true" signature="842:871" ph="..." />
           </folding>
         </state>
       </provider>
