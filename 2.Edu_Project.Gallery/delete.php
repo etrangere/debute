@@ -2,7 +2,7 @@
 
 include_once ('db.config.php');
 
-$folder_path = '/Applications/XAMPP/xamppfiles/htdocs/DZ6/uploads/';
+$folder_path = 'uploads/';
 
 
 if ($_GET['id']!= '' ) {

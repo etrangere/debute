@@ -1,4 +1,11 @@
-.gallery_product
-{
-    margin-bottom: 30px;
+.footer{
+
+
+    display: block;
+}
+
+
+
+body,html {
+  height: 100%;
 }
