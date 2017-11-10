@@ -1,0 +1,5 @@
+*ERROR* 	2017/11/09 - 16:28:08: Shop not found at line 404 in file classes/shop/Shop.php
+*ERROR* 	2017/11/09 - 16:28:18: Shop not found at line 404 in file classes/shop/Shop.php
+*ERROR* 	2017/11/09 - 17:02:48: Link to database cannot be established:SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) at line 102 in file classes/db/DbPDO.php
+*ERROR* 	2017/11/09 - 17:02:53: Link to database cannot be established:SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) at line 102 in file classes/db/DbPDO.php
+*ERROR* 	2017/11/09 - 17:03:21: Link to database cannot be established:SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) at line 102 in file classes/db/DbPDO.php

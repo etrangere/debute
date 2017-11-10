@@ -64,7 +64,7 @@ else
     echo"<br>File '$fileName' uploaded to server!<br>";
 }
 
-/*
+
 mysql_query($query) or die('Error,query failed');
 
 $result=mysql_query('SELECT * FROM images_table');
@@ -80,7 +80,7 @@ while ($row = mysql_fetch_assoc($result)) {
 
 }
 
-*/
+
 mysql_close($link);
 
 ?>
