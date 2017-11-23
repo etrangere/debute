@@ -1,0 +1,1 @@
+Сделать Sdelat!<?phpinclude_once('model.php');var_dump($_GET['id']);$id = $_GET['id'];$sql = "SELECT FROM articles WHERE id_article = $id";$result=mysql_query($sql);var_dump($result);if ($_GET['id']!= '' ) {}//header("Location:server.php");?>

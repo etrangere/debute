@@ -1,0 +1,1 @@
+*ERROR* 	2017/11/10 - 12:04:53: Link to database cannot be established:SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) at line 102 in file classes/db/DbPDO.php
