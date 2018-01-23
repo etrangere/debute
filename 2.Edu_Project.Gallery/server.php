@@ -4,11 +4,19 @@ require_once ('db.config.php');
 
 $dest_upload='uploads/';
 
+$folder_path = 'uploads/';//images upload folder path
+
+$folder = opendir($folder_path);
+
+
+if(isset($_FILES["fileToUpload"]["name"])){
+
 $uploaded_file= $dest_upload . basename($_FILES["fileToUpload"]["name"]);
 
 $uploadok= 1;
 
 $imageFileType = pathinfo($uploaded_file, PATHINFO_EXTENSION);
+
 
 
 if ($_FILES["fileToUpload"]["name"] > 2500000) {
@@ -40,9 +48,6 @@ if ($uploadok == 0) {
 
 
 
-$folder_path = 'uploads/';//images upload folder path
-
-$folder = opendir($folder_path); 
 
 
 
@@ -56,6 +61,7 @@ $fileType = $_FILES["fileToUpload"]['type'];
 $query = "INSERT INTO images_table(id_file,file_name,file_type,file_size)".
     "VALUES('','$fileName','$fileType','$fileSize')";
 
+
 if ($fileName == ''){
     echo"<br>Choose file to uploaded to server!<br>";
 }
@@ -64,6 +70,7 @@ else
     echo"<br>File '$fileName' uploaded to server!<br>";
 }
 
+}
 /*
 mysql_query($query) or die('Error,query failed');
 
@@ -141,13 +148,6 @@ mysql_close($link);
                   <a href="<?php echo $file_path;?>"><img src="<?php echo $file_path;?>" height="250" width="250"></a>
                    <input  class="btn btn-primary" type="submit" name="" value="Delete">
                     </form>
-                   <form action="vote.php?id=<?php echo $file; ?>" method="post" >
-                   <button class="btn btn-primary" class="text-aligne-center">Like!</button>
-                       </form>
-                   <form action="vote.php?id=<?php echo $file; ?>" method="post" >
-                   <button class="btn btn-primary" class="text-aligne-center">Dislike</button>
-                       </form>
-
              </div>
            </div>
        </div>
@@ -170,7 +170,7 @@ mysql_close($link);
 
 <div class="footer">
  <hr>
- &copy; 2016 Все права защищены 
+ &copy; 2016 Allrights reserved
 </div>
 
 
