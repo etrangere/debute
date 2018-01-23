@@ -11,7 +11,7 @@
 <center><h1>BLOG WEB GURU</h1></center>
 <hr>
 <?php
-include_once ('login.php');
+
 ?>
 <hr>
 

@@ -1,18 +1,23 @@
 <?php 
 
-include ('dbconnect.php');
+include ('dbconfig.php');
 
+$id_article = $_POST['id'];
+$article_name = $_POST['title'];
+$article_text = $_POST['content'];
+$author_email = $_POST['email'];
 
-$article_name = $_GET['title'];
-$article_text = $_GET['content'];
-$author_email = $_GET['email'];
+var_dump($id_article);
+var_dump($article_name);
+var_dump($article_text);
+var_dump($author_email);
 
 
 $query = "INSERT INTO messages (id_article,article_name,article_text,author_email)
 VALUES('','$article_name','$article_text','$author_email')"   or die ('Error,query failed');
 
-var_dump($_GET['title']);
 
+mysql_query($query);
 
 
 
@@ -34,11 +39,15 @@ var_dump($_GET['title']);
 <hr>
 
 <h1>New article</h1>
-<form method = "post">
+
+
+
+<form action="new.php" method="POST">
+
+<input type="hidden" name="id" ><br>
 
 Title:<br>
 <input type="text" name="title"  style="width: 300px;"><br>
-
 
 Content: <br>
 <input type="text" name="content" style="width: 1000px; height: 300px;"><br>
@@ -59,3 +68,4 @@ Content: <br>
 
 </body>
 </html>
+

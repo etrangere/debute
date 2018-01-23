@@ -60,7 +60,7 @@ $fileType = $_FILES["fileToUpload"]['type'];
 
 $query = "INSERT INTO images_table(id_file,file_name,file_type,file_size)".
     "VALUES('','$fileName','$fileType','$fileSize')";
-
+mysql_query($query);
 
 if ($fileName == ''){
     echo"<br>Choose file to uploaded to server!<br>";
@@ -71,8 +71,8 @@ else
 }
 
 }
+
 /*
-mysql_query($query) or die('Error,query failed');
 
 $result=mysql_query('SELECT * FROM images_table');
 
@@ -88,8 +88,9 @@ while ($row = mysql_fetch_assoc($result)) {
 }
 
 
-mysql_close($link);
 */
+mysql_close($link);
+
 ?>
 
 
