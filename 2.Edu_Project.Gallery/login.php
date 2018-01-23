@@ -62,37 +62,10 @@ if($enter_site){
     <input type = "text" name="username"></br>
     <input type = "text" name="password"></br>
     <input type = "submit" name="login"></br>
-    <input type = "checkbox" name="remember"> Zapomnit
+    <input type = "checkbox" name="remember"> Remember
 </form>
 </body>
 </html>
-
-<?php
-
-
-
-
-
-
-
-
-
-
-
-/*$f=fopen('visits.txt','a+');
-fwrite($f,date('Y-m-d H:i:s')."\n");
-fwrite($f,$_SERVER['REMOTE_ADDR'] ."\n");
-fwrite($f,$_SERVER['HTTP_REFERER'] ."\n");
-fclose($f);
-
-$lists = file('visits.txt');
-
-
-*/
-
-
-
-?>
 
 
 
