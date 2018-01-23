@@ -64,7 +64,7 @@ Content: <br>
 
 <hr>
 
-&copy; 2016 Все права защищены Щкола програмирования
+&copy; 2016 All rights reserved
 
 </body>
 </html>

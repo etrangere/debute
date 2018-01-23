@@ -2,7 +2,7 @@
 
 include_once ('db.config.php');
 
-$folder_path = '/Applications/XAMPP/xamppfiles/htdocs/DZ6/uploads/';
+
 
 
 if ($_GET['id']!= '' ) {
@@ -13,13 +13,13 @@ if ($_GET['id']!= '' ) {
 }
 $id = $_GET['id'];
 
-$sql = "DELETE FROM images_table WHERE file_name = '$id'";
+//$sql = "DELETE FROM messages WHERE article_name = 'Hello blog'";
 
 $result=mysql_query($sql);
 
 
 
-header("Location:server.php");
+
 
 
 
