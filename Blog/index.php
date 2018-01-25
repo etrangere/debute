@@ -27,7 +27,7 @@
 
 include ('dbconfig.php');
 
-$result = mysql_query('SELECT * FROM messages');
+$result = mysql_query('SELECT * FROM messages ORDER BY id_article DESC LIMIT 5');
 if(!$result) die ('connection error' . mysql_error());
 
 
