@@ -1,5 +1,7 @@
 <?php
 
+
+
 $server='localhost';
 $username='root';
 $password='Smdilia2012@';
@@ -9,7 +11,7 @@ $link=mysql_connect($server,$username,$password) or die('Error,server connection
 mysql_select_db($dbname) or die('Error,db connection failed');
 
 
-
+session_start();
 
 
 ?>
