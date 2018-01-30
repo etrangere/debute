@@ -21,7 +21,7 @@ $id_article = articles_get($id_article);
 foreach($id_article as $one_article){
 
    echo $one_article['title'];
-    echo "<br/><hr>";
+   echo "<br/><hr>";
    echo $one_article['content'];
 
 }
