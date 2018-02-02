@@ -6,18 +6,18 @@
     <link rel="stylesheet" type="text/css" media="screen" href="theme/style.css">
 </head>
 <body>
-<h1>PHP</h1>
 <br/>
-<a href="index.php">Home</a>|
-<a href="editor.php">Editor console</a>
+
+<center><a href="index.php">Home</a>|
+<a href="editor.php">Editor console</a></center>
+<br/>
 <hr/>
 <h1>Article</h1>
-
-
 
 <h2><?=$x?></h2>
 
 <p><?=$y?></p>
+
 <hr/>
 <small><a href="http://google.com">All rights reserved</a> &copy;</small>
 </body>
