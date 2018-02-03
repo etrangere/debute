@@ -1,0 +1,30 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" media="screen" href="theme/style.css">
+</head>
+<body>
+
+<h1>HOME!</h1>
+<center><a href="index.php">Home</a>|
+<a href="editor.php">Editor console</a></center>
+
+
+<ul>
+    <li>
+        <b><a href="new.php">New article</a></b><hr>
+    </li>
+    <? foreach ($articles as $article): ?>
+        <li>
+            <a href="article.php?id=<?=$article['id_article']?>">
+                <b><?=$article['title']?></b><br/>
+            </a><?=articles_intro($article);?><hr>
+
+        </li>
+    <? endforeach ?>
+</ul>
+</body>
+</html>
