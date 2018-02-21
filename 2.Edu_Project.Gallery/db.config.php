@@ -2,7 +2,7 @@
 
 $server='localhost';
 $username='root';
-$password='Smdilia2012@';
+$password='';
 $dbname='images';
 
 $link=mysql_connect($server,$username,$password) or die('Error,connection failed');
