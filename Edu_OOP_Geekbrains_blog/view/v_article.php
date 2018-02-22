@@ -3,7 +3,7 @@
 <head>
     <title>PHP</title>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
-    <link rel="stylesheet" type="text/css" media="screen" href="theme/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="view/style.css">
 </head>
 <body>
 <br/>

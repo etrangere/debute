@@ -1,1 +1,1 @@
-<?phpinclude_once('./controller/index.php');?>
+<?phpinclude_once('startup.php');include_once('model/model.php');// Setting parameters, connection to db, session start.startup();// Extracting articles.$articles = articles_all();include('view/v_index.php');?>

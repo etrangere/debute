@@ -1,7 +1,7 @@
 <?php
 
 include_once('startup.php');
-include_once('model.php');
+include_once('model/model.php');
 
 startup();
 
@@ -15,7 +15,7 @@ foreach($id_article as $one_article){
     $y =  $one_article['content'];
 
 }
-include('theme/v_article.php');
+include('view/v_article.php');
 ?>
 
 
