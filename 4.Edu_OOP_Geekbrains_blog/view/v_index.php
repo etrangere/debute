@@ -20,8 +20,7 @@
         <li>
             <a href="article.php?id=<?=$article['id_article']?>">
                 <b><?=$article['title']?></b><br/>
-            </a><?=ARTIC_intro::articles_intro($article);?><hr>
-
+            </a><?=substr($article['content'],0,350)?><hr>
         </li>
     <?php endforeach ?>
 </ul>

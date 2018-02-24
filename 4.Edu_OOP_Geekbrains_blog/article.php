@@ -8,7 +8,7 @@ startup();
 $id_article = $_GET['id'];
 
 
-$id_article = ARTIC_get::articles_get($id_article);
+$id_article = ARTIC_all::articles_get($id_article);
 
 
 foreach($id_article as $one_article){
