@@ -1,0 +1,1 @@
+<?php/** * Editor template * ================ * $content - article text * $error - error text (null, if no error) */?><form method="post">	<? if ($error != null): ?>		Error: <b><?=$error?></b>	<? endif ?>	<textarea name="content"><?=$articles?></textarea>	<br/>	<input type="submit" name="id"  value="Save" /></form>

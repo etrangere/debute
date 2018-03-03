@@ -1,0 +1,1 @@
+<?php/** * Home page template * ======================= * $content - article text */?><?php foreach ($articles as $article): ?>    <a href="index.php?id=<?=$article['id_article']?>">    <b><?=$article['content']?></b><br/>        <?php endforeach ?>
