@@ -1,1 +1,1 @@
-<?phpinclude_once('Controller/Controller.php');include_once('Controller/C_Base.php');include_once('Controller/C_View.php');include_once('Controller/C_Edit.php');$controller = new C_View();$controller->Request();$controller = new C_Edit();$controller->Request();
+<?phpinclude_once('Controller/Controller.php');include_once('Controller/C_Base.php');include_once('Controller/C_Main.php');include_once('Controller/C_Edit.php');$controller = new C_View();$controller->Request();//$controller = new C_Edit();//$controller->Request();

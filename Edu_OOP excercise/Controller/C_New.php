@@ -1,6 +1,6 @@
 <?php
-include_once('Controller/model.php');
-include_once('Model/model.php');
+include_once('C_Base.php');
+include_once('model.php');
 
 
 
@@ -14,24 +14,36 @@ class C_New extends C_Base
     {
         parent::Startup();
 
-
-
-    if (isset($_POST['title'], $_POST['content'])){
-    if (Model::articles_new($_POST['title'], $_POST['content'])){
-    header('Location: v_editor.php');
-    die();
     }
 
-    $this->title = $_POST['title'];
-    $this->content = $_POST['content'];
-    }
-    else
+
+
+    public function OnInput()
     {
-        $this->title = '';
-        $this->content = '';
-    }
+        parent::OnInput();
+
+        if (isset($_POST['title'], $_POST['content'])){
+            if (Model::articles_new($_POST['title'], $_POST['content'])){
+                header('Location: v_editor.php');
+                die();
+            }
+
+            $this->title = $_POST['title'];
+            $this->content = $_POST['content'];
+        }
+        else
+        {
+            $this->title = '';
+            $this->content = '';
+        }
+
+
 
     }
+
+
+
+
 
 
 

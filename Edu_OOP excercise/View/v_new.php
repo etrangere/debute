@@ -17,7 +17,7 @@
 		<br/>
 		Content:
 		<br/>
-		<textarea name="content"><?=$content?></textarea>
+		<textarea name="content"><?=$text?></textarea>
 <br/>
 <input type="submit" value="Add" />
 </form>
