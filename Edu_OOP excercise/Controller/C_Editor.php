@@ -8,13 +8,13 @@ include_once('model.php');
 class C_Editor extends C_Base
 
 {
-     public $text;
 
-     public $content;
+     public $article_title;
+
 
     public function __construct()
     {
-        parent::Startup();
+
 
     }
 
@@ -22,8 +22,12 @@ class C_Editor extends C_Base
      public function OnInput()
      {
          parent::OnInput();
-         $this->text = Model::articles_all();
-         var_dump($this->text);
+
+
+         $this->page_title = $this->page_title . ' :: ALL articles-editing';
+         $this->page_content = Model::articles_all();
+
+
      }
 
 
@@ -31,15 +35,13 @@ class C_Editor extends C_Base
      {
 
 
-         $vars = array('text' =>$this->text,'title' => $this->title);
-
-         $page = Controller::Template('v_editor.php',$vars);
+         $vars = array('title' => $this->page_title,'content' =>$this->page_content);
+         $page = Controller::Template('view/v_editor.php',$vars);
          echo $page;
-         var_dump($this->text);
+
      }
 
 
 
 
 }
-echo '454';

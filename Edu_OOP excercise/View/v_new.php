@@ -7,17 +7,17 @@
  */
 
 ?>
-
+<a href="index.php?c=Main">Home</a>
 <h1>New article</h1>
 	<form method="post">
     Title:
 		<br/>
-		<input type="text" name="title" value="<?=$title?>" />
+		<input type="text" name="title" value="<?=$this->new_article_title?>" />
 		<br/>
 		<br/>
 		Content:
 		<br/>
-		<textarea name="content"><?=$text?></textarea>
+		<textarea name="content"><?=$this->new_article_content?></textarea>
 <br/>
-<input type="submit" value="Add" />
+<input type="submit"  value="Add" />
 </form>
