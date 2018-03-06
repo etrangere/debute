@@ -2,8 +2,6 @@
 include_once('C_Base.php');
 include_once('model.php');
 
-
-
 // Setting parameters, connection to db, session start.
 // Online form processing.
 
@@ -12,33 +10,28 @@ class C_New extends C_Base
      protected $new_article_title;
      protected $new_article_content;
 
-
-
     function __construct()
     {
     }
-
-
 
     public function OnInput()
     {
         parent::OnInput();
         $this->page_title = 'New article';
 
-        if (isset($_POST['title'], $_POST['content'], $_POST['content'])){
-            if (Model::articles_new($_POST['title'], $_POST['content'], $_POST['content'])){
-                header('Location: index.php?c=Editor');
-                die();
-            }
-
-            $this->new_article_title = $_POST['title'];
-            $this->new_article_content = $_POST['content'];
-
+        if (isset($_POST['title'], $_POST['content'], $_POST['content']))
+        {
+        if (Model::articles_new($_POST['title'], $_POST['content'], $_POST['content'])){
+        header('Location: index.php?c=Editor');
+        die();
+        }
+        $this->new_article_title = $_POST['title'];
+        $this->new_article_content = $_POST['content'];
         }
         else
         {
-            $this->new_article_title = '';
-            $this->new_article_content= '';
+        $this->new_article_title = '';
+        $this->new_article_content= '';
         }
 
 
@@ -51,7 +44,5 @@ class C_New extends C_Base
          $page = Controller::Template('view/v_new.php',$vars);
          echo $page;
      }
-
-
 }
 
