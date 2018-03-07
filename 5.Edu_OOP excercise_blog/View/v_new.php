@@ -1,6 +1,5 @@
-<h1>New article</h1><br>
+<h1><?=$this->page_title?></h1><br>
 <a href="index.php?c=Main">Home</a><br><hr>
-
 	<form method="post">
     Title:
 		<br/>

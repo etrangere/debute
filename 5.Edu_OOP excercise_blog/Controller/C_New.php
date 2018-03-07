@@ -17,7 +17,8 @@ class C_New extends C_Base
     public function OnInput()
     {
         parent::OnInput();
-        $this->page_title = 'New article';
+        $this->page_title =$this->page_title .' :: New article';
+
 
         if (isset($_POST['title'], $_POST['content'], $_POST['content']))
         {

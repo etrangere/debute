@@ -14,7 +14,7 @@ class C_Editor extends C_Base
      public function OnInput()
      {
      parent::OnInput();
-     $this->page_title = $this->page_title . ' :: ALL articles-editing';
+     $this->page_title = $this->page_title . ' :: Edit articles';
      $this->page_content = Model::articles_all();
      }
 
