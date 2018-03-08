@@ -1,9 +1,4 @@
 <?php
-include_once('C_Base.php');
-include_once('model.php');
-
-// Setting parameters, connection to db, session start.
-// Online form processing.
 
 class C_New extends C_Base
 {

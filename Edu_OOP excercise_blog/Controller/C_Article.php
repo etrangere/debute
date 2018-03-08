@@ -1,6 +1,5 @@
 <?php
-include_once('C_Base.php');
-include_once('model.php');
+
 
 class C_Article extends C_Base
 {

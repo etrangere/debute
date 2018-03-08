@@ -1,6 +1,5 @@
 <?php
-include_once('C_Base.php');
-include_once('model.php');
+
 
 class C_Editor extends C_Base
 
