@@ -23,7 +23,7 @@
 		<br/>
 		Content:
 		<br/>
-		<textarea name="content" rows="40" cols="120"><?=$this->new_article_content?></textarea>
+		<textarea name="content" rows="140" cols="220"><?=$this->new_article_content?></textarea>
 <br/>
 
 <input type="submit"  value="Add" />

@@ -1,6 +1,5 @@
 <?php
 
-
 class C_New extends C_Base
 {
      protected $new_article_title;

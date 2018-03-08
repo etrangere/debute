@@ -1,6 +1,5 @@
 <?php
 
-
 class C_Article extends C_Base
 {
 

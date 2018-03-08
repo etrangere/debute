@@ -1,6 +1,5 @@
 <?php
 
-
 class C_Editor extends C_Base
 
 {
