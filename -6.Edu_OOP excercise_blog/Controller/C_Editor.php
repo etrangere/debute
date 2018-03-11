@@ -13,7 +13,7 @@ class C_Editor extends C_Base
      {
      parent::OnInput();
      $this->page_title = $this->page_title . ' :: Edit articles';
-     $this->page_content = Model::articles_all();
+     $this->page_content = M_Model::articles_all();
      }
 
      public function OnOutput()

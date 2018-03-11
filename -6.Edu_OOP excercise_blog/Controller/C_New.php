@@ -17,7 +17,7 @@ class C_New extends C_Base
 
         if (isset($_POST['title'], $_POST['content'], $_POST['content']))
         {
-        if (Model::articles_new($_POST['title'], $_POST['content'], $_POST['content'])){
+        if (M_Model::articles_new($_POST['title'], $_POST['content'], $_POST['content'])){
         header('Location: index.php?c=Editor');
         die();
         }

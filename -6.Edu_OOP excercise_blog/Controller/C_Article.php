@@ -12,8 +12,12 @@ class C_Article extends C_Base
 
     public function OnInput()
     {
+
+        $this->page_title = $this->page_title . ' :: This article';
+
+
         $id_article = $_GET['id'];
-        $id_article = Model::articles_get($id_article);
+        $id_article = M_Model::articles_get($id_article);
 
         foreach ($id_article as $one_article)
         {
