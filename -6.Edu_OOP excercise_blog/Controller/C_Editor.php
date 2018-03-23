@@ -4,9 +4,11 @@ class C_Editor extends C_Base
 
 {
      public $article_title;
+     //private  $mM_Model;
 
      public function __construct()
     {
+       // $mM_Model = M_Model::Instance();
     }
 
      public function OnInput()

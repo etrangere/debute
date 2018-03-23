@@ -17,10 +17,10 @@ class C_New extends C_Base
 
         if (isset($_POST['title'], $_POST['content'], $_POST['content']))
         {
-        if (Model::articles_new($_POST['title'], $_POST['content'], $_POST['content'])){
-        header('Location: index.php?c=Editor');
-        die();
-        }
+                if (Model::articles_new($_POST['title'], $_POST['content'], $_POST['content'])){
+                header('Location: index.php?c=Editor');
+                die();
+                }
         $this->new_article_title = $_POST['title'];
         $this->new_article_content = $_POST['content'];
         }

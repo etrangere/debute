@@ -6,6 +6,9 @@
     <meta content="text/html; charset=Windows-1251" http-equiv="content-type">
     <link rel="stylesheet" type="text/css" media="screen" href="View/style.css" />
 </head>
+<div id="header">
+    <h1><?=$this->page_title?></h1>
+</div>
 <div id="menu">
 <a href="index.php?c=Main">Home</a><hr><br>
 </div>
