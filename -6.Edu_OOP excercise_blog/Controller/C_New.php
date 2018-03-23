@@ -17,9 +17,9 @@ class C_New extends C_Base
         $this->page_title =$this->page_title .' :: New article';
 
 
-        if (isset($_POST['title'], $_POST['content'], $_POST['content']))
+        if (isset($_POST['title'], $_POST['content']))
         {
-                if (M_Model::articles_new($_POST['title'], $_POST['content'], $_POST['content'])) {
+                if (M_Model::articles_new($_POST['title'], $_POST['content'])) {
                     header('Location: index.php?c=Editor');
                     die();
                 }
@@ -30,7 +30,7 @@ class C_New extends C_Base
         else
         {
         $this->new_article_title = '';
-        $this->new_article_content= '';
+        $this->new_article_content = '';
         }
     }
 

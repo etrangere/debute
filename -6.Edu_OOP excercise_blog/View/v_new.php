@@ -18,12 +18,12 @@
 	<form method="post">
     Title:
 		<br/>
-		<input type="text" name="title" value="<?=$this->new_article_title?>" size="50"/>
+		<input type="text" name="title" value="<?=$this->new_article_title?>" size="100"/>
 		<br/>
 		<br/>
 		Content:
 		<br/>
-		<textarea name="content" rows="140" cols="220"><?=$this->new_article_content?></textarea>
+		<textarea name="content"><?=$this->new_article_content?></textarea>
 <br/>
 
 <input type="submit"  value="Add" />
