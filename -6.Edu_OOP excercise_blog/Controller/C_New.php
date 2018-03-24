@@ -4,11 +4,11 @@ class C_New extends C_Base
 {
      protected $new_article_title;
      protected $new_article_content;
-
+     protected $mModel;
 
     function __construct()
     {
-
+      $this->mModel = M_Model::Instance();
     }
 
     public function OnInput()
@@ -19,7 +19,7 @@ class C_New extends C_Base
 
         if (isset($_POST['title'], $_POST['content']))
         {
-                if (M_Model::articles_new($_POST['title'], $_POST['content'])) {
+                if ($this->mModel->articles_new($_POST['title'], $_POST['content'])) {
                     header('Location: index.php?c=Editor');
                     die();
                 }

@@ -4,18 +4,19 @@ class C_Editor extends C_Base
 
 {
      public $article_title;
-     //private  $mM_Model;
+     protected $mModel;
+
 
      public function __construct()
     {
-       // $mM_Model = M_Model::Instance();
+        $this->mModel= M_Model::Instance();
     }
 
      public function OnInput()
      {
      parent::OnInput();
      $this->page_title = $this->page_title . ' :: Edit articles';
-     $this->page_content = M_Model::articles_all();
+     $this->page_content = $this->mModel->articles_all();
      }
 
      public function OnOutput()

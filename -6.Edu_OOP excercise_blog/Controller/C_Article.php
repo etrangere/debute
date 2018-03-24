@@ -5,11 +5,11 @@ class C_Article extends C_Base
 
     protected $article_title;
     protected $article_content;
-
+    protected $mModel;
 
     function __construct()
     {
-
+      $this->mModel= M_Model::Instance();
     }
 
     public function OnInput()
@@ -19,7 +19,7 @@ class C_Article extends C_Base
 
 
         $id_article = $_GET['id'];
-        $article_id = M_Model::articles_get($id_article);
+        $article_id = $this->mModel->articles_get($id_article);
         foreach ($article_id as $one_article)
         {
         $this->article_title = $one_article['title'];
