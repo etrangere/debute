@@ -52,7 +52,9 @@ class M_Users
 	//
 	public function Login($login, $password, $remember = true)
 	{
-		// вытаскиваем пользователя из БД 
+
+
+				// вытаскиваем пользователя из БД
 		$user = $this->GetByLogin($login);
 
 		if ($user == null)
@@ -71,7 +73,8 @@ class M_Users
 			setcookie('login', $login, $expire);
 			setcookie('password', md5($password), $expire);
 		}		
-				
+
+
 		// открываем сессию и запоминаем SID
 		$this->sid = $this->OpenSession($id_user);
 		
@@ -117,8 +120,9 @@ class M_Users
 	// Получает пользователя по логину
 	//
 	public function GetByLogin($login)
-	{	
-		$t = "SELECT * FROM users WHERE login = '%s'";
+	{
+	    $value = 'login = ' . $login;
+		$t = "SELECT * FROM users WHERE $value";
 		$query = sprintf($t, mysql_real_escape_string($login));
 		$result = $this->m_msql->Select($query);
 		return $result[0];

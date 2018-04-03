@@ -20,6 +20,10 @@
     Title:
 		<br/>
 		<input type="text" name="title" value="<?=$this->new_article_title?>" size="100"/>
+        <br/>
+    E-mail:
+        <br/>
+        <input type="text" name="mail" value="<?=$this->new_article_mail?>" size="100"/>
 		<br/>
 		<br/>
 		Content:
