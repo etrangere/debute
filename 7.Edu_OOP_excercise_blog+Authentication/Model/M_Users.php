@@ -52,21 +52,25 @@ class M_Users
 	//
 	public function Login($login, $password, $remember = true)
 	{
-
-
 				// вытаскиваем пользовател€ из Ѕƒ
 		$user = $this->GetByLogin($login);
 
-		if ($user == null)
-			return false;
-		
+        if ($user == null)
+		{
+            return false;
+
+        }
+
+        //var_dump($password);
+
 		$id_user = $user['id_user'];
-				
+
 		// провер€ем пароль
-		if ($user['password'] != md5($password))
-			return false;
-				
-		// запоминаем им€ и md5(пароль)
+		if ($user['password'] != $password)
+		{
+            return false;
+        }
+        // запоминаем им€ и md5(пароль)
 		if ($remember)
 		{
 			$expire = time() + 3600 * 24 * 100;
@@ -121,10 +125,12 @@ class M_Users
 	//
 	public function GetByLogin($login)
 	{
-	    $value = 'login = ' . $login;
-		$t = "SELECT * FROM users WHERE $value";
+
+		$t = "SELECT * FROM users WHERE login='%s'";
 		$query = sprintf($t, mysql_real_escape_string($login));
 		$result = $this->m_msql->Select($query);
+
+		//var_dump($result);
 		return $result[0];
 	}
 			
@@ -135,9 +141,23 @@ class M_Users
 	// результат	- true или false
 	//
 	public function Can($priv, $id_user = null)
-	{		
-		// —ƒ≈Ћј“№ —јћќ—“ќя“≈Ћ№Ќќ
-		return false;
+	{
+        if ($id_user == null)
+            $id_user = $this->GetUid();
+
+        if ($id_user == null)
+            return false;
+
+        $t = "SELECT count(*) as cnt FROM privs2roles p2r
+			  LEFT JOIN users u ON u.id_role = p2r.id_role
+			  LEFT JOIN privs p ON p.id_priv = p2r.id_priv 
+			  WHERE u.id_user = '%d' AND p.name = '%s'";
+
+        $query  = sprintf($t, $id_user, $priv);
+        $result = $this->m_msql->Select($query);
+        var_dump($result);
+        return ($result[0]['cnt'] > 0);
+
 	}
 
 	//
@@ -146,9 +166,18 @@ class M_Users
 	// результат	- true если online
 	//
 	public function IsOnline($id_user)
-	{		
-		// —ƒ≈Ћј“№ —јћќ—“ќя“≈Ћ№Ќќ
-		return false;
+	{
+        if ($this->onlineMap == null)
+        {
+            $t = "SELECT DISTINCT id_user FROM sessions";
+            $query  = sprintf($t, $id_user);
+            $result = $this->m_msql->Select($query);
+
+            foreach ($result as $item)
+                $this->onlineMap[$item['id_user']] = true;
+        }
+
+        return ($this->onlineMap[$id_user] != null);
 	}
 	
 	//
@@ -207,7 +236,7 @@ class M_Users
 			{
 				$t = "SELECT count(*) FROM sessions WHERE sid = '%s'";		
 				$query = sprintf($t, mysql_real_escape_string($sid));
-				$result = $this->msql->Select($query);
+				$result = $this->m_msql->Select($query);
 				
 				if ($result[0]['count(*)'] == 0)
 					$sid = null;			
@@ -254,7 +283,8 @@ class M_Users
 		$_SESSION['sid'] = $sid;				
 				
 		// возвращаем SID
-		return $sid;	
+		return $sid;
+
 	}
 
 	//
