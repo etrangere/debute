@@ -1,13 +1,11 @@
 <?php
-include_once('model/MSQL.php');
-
 //
-// Менеджер пользователей
+// Users manager
 //
 class M_Users
 {	
 	private static $instance;	// экземпляр класса
-	private $msql;				// драйвер БД
+	private $m_msql;				// драйвер БД
 	private $sid;				// идентификатор текущей сессии
 	private $uid;				// идентификатор текущего пользователя
 	
@@ -15,6 +13,7 @@ class M_Users
 	// Получение экземпляра класса
 	// результат	- экземпляр класса MSQL
 	//
+
 	public static function Instance()
 	{
 		if (self::$instance == null)
@@ -28,7 +27,7 @@ class M_Users
 	//
 	public function __construct()
 	{
-		$this->msql = MSQL::Instance();
+		$this->m_msql = M_Mysql::Instance();
 		$this->sid = null;
 		$this->uid = null;
 	}
@@ -41,7 +40,7 @@ class M_Users
 		$min = date('Y-m-d H:i:s', time() - 60 * 20); 			
 		$t = "time_last < '%s'";
 		$where = sprintf($t, $min);
-		$this->msql->Delete('sessions', $where);
+		$this->m_msql->Delete('sessions', $where);
 	}
 
 	//
@@ -110,7 +109,7 @@ class M_Users
 		// А теперь просто возвращаем пользователя по id_user.
 		$t = "SELECT * FROM users WHERE id_user = '%d'";
 		$query = sprintf($t, $id_user);
-		$result = $this->msql->Select($query);
+		$result = $this->m_msql->Select($query);
 		return $result[0];		
 	}
 	
@@ -121,7 +120,7 @@ class M_Users
 	{	
 		$t = "SELECT * FROM users WHERE login = '%s'";
 		$query = sprintf($t, mysql_real_escape_string($login));
-		$result = $this->msql->Select($query);
+		$result = $this->m_msql->Select($query);
 		return $result[0];
 	}
 			
@@ -166,7 +165,7 @@ class M_Users
 			
 		$t = "SELECT id_user FROM sessions WHERE sid = '%s'";
 		$query = sprintf($t, mysql_real_escape_string($sid));
-		$result = $this->msql->Select($query);
+		$result = $this->m_msql->Select($query);
 				
 		// Если сессию не нашли - значит пользователь не авторизован.
 		if (count($result) == 0)
@@ -198,7 +197,7 @@ class M_Users
 			$session['time_last'] = date('Y-m-d H:i:s'); 			
 			$t = "sid = '%s'";
 			$where = sprintf($t, mysql_real_escape_string($sid));
-			$affected_rows = $this->msql->Update('sessions', $session, $where);
+			$affected_rows = $this->m_msql->Update('sessions', $session, $where);
 
 			if ($affected_rows == 0)
 			{
@@ -245,7 +244,7 @@ class M_Users
 		$session['sid'] = $sid;
 		$session['time_start'] = $now;
 		$session['time_last'] = $now;				
-		$this->msql->Insert('sessions', $session); 
+		$this->m_msql->Insert('sessions', $session);
 				
 		// регистрируем сессию в PHP сессии
 		$_SESSION['sid'] = $sid;				
