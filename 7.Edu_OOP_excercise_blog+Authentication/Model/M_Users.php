@@ -66,7 +66,7 @@ class M_Users
 		$id_user = $user['id_user'];
 
 		// проверяем пароль
-		if ($user['password'] != $password)
+		if ($user['password'] != md5($password))
 		{
             return false;
         }
@@ -155,7 +155,7 @@ class M_Users
 
         $query  = sprintf($t, $id_user, $priv);
         $result = $this->m_msql->Select($query);
-        var_dump($result);
+       // var_dump($result);
         return ($result[0]['cnt'] > 0);
 
 	}

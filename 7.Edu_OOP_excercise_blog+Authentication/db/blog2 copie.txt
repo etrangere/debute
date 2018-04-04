@@ -1,0 +1,6 @@
+
+
+login : boss@mail.ru   , pass : 1234    edit+delete rights
+
+
+login : test@test.ru   , pass :123      enter editor to view articles list
