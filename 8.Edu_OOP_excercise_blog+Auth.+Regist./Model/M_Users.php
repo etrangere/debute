@@ -94,8 +94,8 @@ class M_Users
 
 	//
 	// Authentication
-	// $login 		- логин
-	// $password 	- пароль
+	// $login
+	// $password
 	// $remember 	- as we need to save in cookies
 	// result	- true or false
 	//
@@ -103,7 +103,15 @@ class M_Users
 	{
 				// БД Find user from db
 
-		$user = $this->GetByLogin($login);
+        // Remember name and  md5(password)
+        if ($remember)
+        {
+            $expire = time() + 3600 * 24 * 100;
+            setcookie('login', $login, $expire);
+            setcookie('password', md5($password), $expire);
+        }
+
+        $user = $this->GetByLogin($login);
 
         if ($user == null)
 		{
@@ -120,13 +128,7 @@ class M_Users
 		{
             return false;
         }
-        // Remember name and  md5(password)
-		if ($remember)
-		{
-			$expire = time() + 3600 * 24 * 100;
-			setcookie('login', $login, $expire);
-			setcookie('password', md5($password), $expire);
-		}		
+
 
 
 		// Open session and remember SID
