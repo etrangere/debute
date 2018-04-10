@@ -24,6 +24,7 @@
             <input type="submit" name="submit_login"  value="Login"/>
         </form>
         <br/>
+        <?=$this->ok_login?>
         <hr>
         <h1>Registration</h1>
 
@@ -37,7 +38,7 @@
             <input type="submit" name="submit_register" value="Register"/>
         </form>
 
-        <? echo $this->ok_reg;?>
+        <?=$this->ok_registration?>
 
 	</div>
     <div id="footer">

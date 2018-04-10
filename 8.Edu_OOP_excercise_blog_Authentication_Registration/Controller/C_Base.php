@@ -57,7 +57,7 @@ abstract class C_Base extends Controller
         // DB connection config.
         $hostname = 'localhost';
         $username = 'root';
-        $password = 'Smdilia2012@';
+        $password = '';
         $dbName = 'blog2';
 
 

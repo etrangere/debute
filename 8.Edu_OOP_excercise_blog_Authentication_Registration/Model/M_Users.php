@@ -4,10 +4,10 @@
 //
 class M_Users
 {	
-	private static $instance;
-	private $m_msql;				// database driver
-	private $sid;				// actual session identificator
-	private $uid;				// actual user identificator
+	private static $instance;	// экземпляр класса
+	private $m_msql;				// драйвер БД
+	private $sid;				// идентификатор текущей сессии
+	private $uid;				// идентификатор текущего пользователя
 	
 	//
 	// Demande for class example
