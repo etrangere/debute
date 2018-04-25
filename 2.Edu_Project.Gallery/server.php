@@ -101,35 +101,14 @@ mysql_close($link);
             <title>Gallery</title>
             <link rel="stylesheet" href="css/style.css">
             <link rel="stylesheet" href="css/bootstrap.css">
-            
-            
-
-
 
 </head>
 <body>
   
-
-
-     <div class="btn btn-info">
+<div class="btn btn-info">
         <ul><a href="login.php"> Login</a></ul>
      </div>
-
-  
-
-    
-     <div class="row" >
-      
-       
-        <ul class="nav nav-pills">
-        <li><a href="" class="active">Home</a></li>
-        <li><a href="" >Upload your photos</a></li>
-        <li><a href="" >Help</a></li>
-        <li><a href="" >Contact us</a></li>
-        </ul>
-   </div>
-
-
+<br/>
 
       <?php
            while(false != ($file = readdir($folder))) { 

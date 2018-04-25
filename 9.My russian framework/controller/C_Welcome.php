@@ -47,7 +47,7 @@ class C_Welcome extends C_Base
 		}
 		else
 		{
-			$this->input = 'Пример';
+			$this->input = 'Example';
 			$this->result = null;
 		}
     }

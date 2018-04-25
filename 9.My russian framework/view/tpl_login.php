@@ -4,20 +4,20 @@
 $login - логин пользователя
 
 */?>
-<h1>Авторизация</h1>
+<h1>Authentication</h1>
 <form method="post">
-	Логин:
+	Login:
 	<br/>
 	<input name="login" type="text" value="<?=$login?>"/>
 	<br/>
-	Пароль:
+	Password:
 	<br/> 
 	<input name="password" type="password"/>
 	<br/>
-	<input type="checkbox" name="remember" /> запомнить меня
+	<input type="checkbox" name="remember" /> remember me
 	<br/>	
-	<input type="submit" value="Войти"/>
+	<input type="submit" value="Login"/>
 	<br/>
 	<br/>	
-	<a href="index.php">Главная страница</a>
+	<a href="index.php">Home page</a>
 </form>

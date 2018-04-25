@@ -45,3 +45,7 @@ textarea
 	padding: 10px;
 	background: #ccc;
 }
+input[type="text"]
+{
+	width: 100px;
+}

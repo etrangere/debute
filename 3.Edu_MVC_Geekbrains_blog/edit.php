@@ -20,14 +20,14 @@ foreach($db_article as $one_article){
 if (isset($_POST['edit'])){
 
     articles_edit($_GET['id'],$_POST['title'],$_POST['content']);
-    header('Location: v_editor.php');
+    header('Location: editor.php');
 
 }
 
 if(isset($_POST['delete'])){
 
     articles_delete($id_article);
-    header('Location: v_editor.php');
+    header('Location: editor.php');
     die();
 }
 

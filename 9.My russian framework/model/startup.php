@@ -5,7 +5,7 @@ function startup()
 	// Настройки подключения к БД.
 	$hostname = 'localhost';	
 	$username = 'root'; 
-	$password = '';
+	$password = 'Smdilia2012@';
 	$dbName   = 'wg';
 	
 	// Языковая настройка.

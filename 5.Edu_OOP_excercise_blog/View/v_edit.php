@@ -15,7 +15,7 @@
 
 <form method="post" id="content">
     <h3>Title:</h3>
-    <textarea  name="article_title" rows="1" cols="60"><?=$article_title?></textarea>
+    <input type="text"  name="article_title" value="<?=$article_title?>"/>
     <br/>
     <h3>Article:</h3>
 	<textarea name="article_content" rows="40" cols="120"><?=$article_content?></textarea>

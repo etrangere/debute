@@ -12,22 +12,15 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
-
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 class GenusController extends Controller
 {
 
 
-
-
-
-
-
     /**
      * @Route("/genus/{genusName}")
-     * @return object
+     *
      */
 
 
@@ -35,17 +28,14 @@ class GenusController extends Controller
     public function showAction($genusName)
 
     {
-        $funFact = 'Octopuses can change the color of their body in just *three-tenths* of a second!';
-
-        $funFact = $this->get('markdown.parser')->transform($funFact);
 
 
-        return $this->render('views/v_main.php.twig', array ('name'=>$genusName ,'funFact'=>$funFact));
+        return $this->render('Genus/show.html.twig', array ('name'=>$genusName ));
 
     }
 
     /**
-     * @Route("/genus/{genusName}",  name="genus_show_notes")
+     * @Route("/genus/{genusName}/notes",  name="genus_show_notes")
      * @Method("GET")
      */
 
@@ -76,3 +66,4 @@ class GenusController extends Controller
 
 
 }
+

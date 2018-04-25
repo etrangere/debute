@@ -5,6 +5,7 @@
 
 {% block body %}
     <h2 class="genus-name">{{ name }}</h2>
+
     <div class="sea-creature-container">
         <div class="genus-photo"></div>
         <div class="genus-details">
@@ -14,7 +15,7 @@
                 <dt>Known Species:</dt>
                 <dd>289</dd>
                 <dt>Fun Fact:</dt>
-                <dd>{{ funFact | raw }}</dd>
+                <dd>Octopuses can change the color of their body in just three-tenths of a second!</dd>
             </dl>
         </div>
     </div>
@@ -37,3 +38,4 @@
         );
     </script>
 {% endblock %}
+

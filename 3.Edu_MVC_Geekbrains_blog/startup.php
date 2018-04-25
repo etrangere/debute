@@ -5,7 +5,7 @@ function startup()
 	// DB connection config.
 	$hostname = 'localhost'; 
 	$username = 'root'; 
-	$password = '';
+	$password = 'Smdilia2012@';
 	$dbName = 'blog';
 	
 
