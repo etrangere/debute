@@ -627,6 +627,6 @@ class __TwigTemplate_0d72d4900692c43f99b2c180beb2e2e1fa1e5097c4b540c2413a1c2b454
         </div>
     </body>
 </html>
-", "@Twig/layout.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/layout.html.twig");
+", "@Twig/layout.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/layout.html.twig");
     }
 }

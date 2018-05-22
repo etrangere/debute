@@ -60,6 +60,6 @@ class __TwigTemplate_4c05bca7f5828c07fb208c2a792a43e0346470af7cb767af9e38d12711b
     public function getSourceContext()
     {
         return new Twig_Source("<?php echo str_replace('{{ widget }}', \$view['form']->block(\$form, 'form_widget_simple'), \$money_pattern) ?>
-", "@Framework/Form/money_widget.html.php", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/money_widget.html.php");
+", "@Framework/Form/money_widget.html.php", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/money_widget.html.php");
     }
 }

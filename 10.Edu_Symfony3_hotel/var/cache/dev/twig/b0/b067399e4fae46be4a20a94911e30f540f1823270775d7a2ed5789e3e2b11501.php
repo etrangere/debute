@@ -65,6 +65,6 @@ class __TwigTemplate_0415470718d26a9ac670103197bf0f8405bfdbbd6b96a9aed10c7fc7265
     C9.3,4,9,4.3,9,4.6V11.4z M9,16.4C9,16.7,9.3,17,9.6,17h1.8c0.3,0,0.6-0.3,0.6-0.6v-1.8c0-0.3-0.3-0.6-0.6-0.6H9.6
     C9.3,14,9,14.3,9,14.6V16.4z\"/>
 </svg>
-", "@WebProfiler/Icon/logger.svg", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Icon/logger.svg");
+", "@WebProfiler/Icon/logger.svg", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Icon/logger.svg");
     }
 }

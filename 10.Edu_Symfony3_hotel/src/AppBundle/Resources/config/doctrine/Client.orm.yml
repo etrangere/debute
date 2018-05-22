@@ -16,13 +16,13 @@ AppBundle\Entity\Client:
         name:
             type: string
             length: '100'
-        lastName:
+        last_name:
             type: string
             length: '100'
             column: last_name
         address:
             type: text
-        zipCode:
+        zip_code:
             type: string
             length: '10'
             column: zip_code
@@ -37,3 +37,7 @@ AppBundle\Entity\Client:
             length: '100'
             unique: true
     lifecycleCallbacks: {  }
+    oneToMany:
+        reservations:
+            targetEntity: Reservation
+            mappedBy: client

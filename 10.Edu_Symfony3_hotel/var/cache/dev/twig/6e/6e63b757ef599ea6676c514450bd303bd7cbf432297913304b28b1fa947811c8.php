@@ -65,7 +65,7 @@ class __TwigTemplate_34cf1c84443039fcd7618b687ec656efc9383165502dc563ac447b9d994
         </div>
         <div class=\"medium-4  columns\">
           <label>Last Name</label>
-          <input name=\"form[lastName]\" value=\"";
+          <input name=\"form[last_name]\" value=\"";
         // line 19
         echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "last_name", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "last_name", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
@@ -74,35 +74,35 @@ class __TwigTemplate_34cf1c84443039fcd7618b687ec656efc9383165502dc563ac447b9d994
           <label>Address</label>
           <input name=\"form[address]\" value=\"";
         // line 23
-        echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "Adress", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Adress", array())) : ("")), "html", null, true);
+        echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "address", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "address", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-4  columns\">
           <label>ZipCode</label>
-          <input name=\"form[zipCode]\" value=\"";
+          <input name=\"form[zip_code]\" value=\"";
         // line 27
-        echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "Zip_code", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Zip_code", array())) : ("")), "html", null, true);
+        echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "zip_code", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "zip_code", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-4  columns\">
           <label>City</label>
           <input name=\"form[city]\" value=\"";
         // line 31
-        echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "City", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "City", array())) : ("")), "html", null, true);
+        echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "city", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "city", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-4  columns\">
           <label>State</label>
           <input name=\"form[state]\" value=\"";
         // line 35
-        echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "State", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "State", array())) : ("")), "html", null, true);
+        echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "state", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "state", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-12  columns\">
           <label>Email</label>
           <input name=\"form[email]\" value=\"";
         // line 39
-        echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "Email", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Email", array())) : ("")), "html", null, true);
+        echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "email", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-12  columns\">
@@ -163,27 +163,27 @@ class __TwigTemplate_34cf1c84443039fcd7618b687ec656efc9383165502dc563ac447b9d994
         </div>
         <div class=\"medium-4  columns\">
           <label>Last Name</label>
-          <input name=\"form[lastName]\" value=\"{{ form.last_name is defined ? form.last_name : '' }}\" type=\"text\" />
+          <input name=\"form[last_name]\" value=\"{{ form.last_name is defined ? form.last_name : '' }}\" type=\"text\" />
         </div>
         <div class=\"medium-8  columns\">
           <label>Address</label>
-          <input name=\"form[address]\" value=\"{{ form.Adress is defined ? form.Adress : '' }}\" type=\"text\" />
+          <input name=\"form[address]\" value=\"{{ form.address is defined ? form.address : '' }}\" type=\"text\" />
         </div>
         <div class=\"medium-4  columns\">
           <label>ZipCode</label>
-          <input name=\"form[zipCode]\" value=\"{{ form.Zip_code is defined ? form.Zip_code : '' }}\" type=\"text\" />
+          <input name=\"form[zip_code]\" value=\"{{ form.zip_code is defined ? form.zip_code : '' }}\" type=\"text\" />
         </div>
         <div class=\"medium-4  columns\">
           <label>City</label>
-          <input name=\"form[city]\" value=\"{{ form.City is defined ? form.City : '' }}\" type=\"text\" />
+          <input name=\"form[city]\" value=\"{{ form.city is defined ? form.city : '' }}\" type=\"text\" />
         </div>
         <div class=\"medium-4  columns\">
           <label>State</label>
-          <input name=\"form[state]\" value=\"{{ form.State is defined ? form.State : '' }}\" type=\"text\" />
+          <input name=\"form[state]\" value=\"{{ form.state is defined ? form.state : '' }}\" type=\"text\" />
         </div>
         <div class=\"medium-12  columns\">
           <label>Email</label>
-          <input name=\"form[email]\" value=\"{{ form.Email is defined ? form.Email : '' }}\" type=\"text\" />
+          <input name=\"form[email]\" value=\"{{ form.email is defined ? form.email : '' }}\" type=\"text\" />
         </div>
         <div class=\"medium-12  columns\">
           <input type=\"submit\" value=\"SAVE\" class=\"button success hollow\" />

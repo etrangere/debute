@@ -92,6 +92,6 @@ class __TwigTemplate_ac8e0f89b6e361fb096d0b7e979514010d44b80d050d528a702313d0015
 {% include '@Twig/Exception/traces.txt.twig' with { 'exception': e } only %}
 
 {% endfor %}
-", "TwigBundle:Exception:exception.txt.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/exception.txt.twig");
+", "TwigBundle:Exception:exception.txt.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/exception.txt.twig");
     }
 }

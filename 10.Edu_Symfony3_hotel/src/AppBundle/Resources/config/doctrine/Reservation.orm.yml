@@ -10,7 +10,7 @@ AppBundle\Entity\Reservation:
                 strategy: AUTO
     fields:
         dateIn:
-            type: datetime
+            type: datetimetz
             column: date_in
         dateOut:
             type: datetime
@@ -19,13 +19,13 @@ AppBundle\Entity\Reservation:
     manyToOne:
         client:
             targetEntity: Client
-            inversedBy: reservations
+            inversedBy: Reservations
             joinColumn:
                 name: client_id
-                referencedColumnName: id
+                referancedColumnName: id
         room:
-            targetEntity: Room
-            inversedBy: reservations
+            targetEntity: room
+            inversedBy: Reservations
             joinColumn:
                 name: room_id
-                referencedColumnName: id
+                referancedColumnName: id

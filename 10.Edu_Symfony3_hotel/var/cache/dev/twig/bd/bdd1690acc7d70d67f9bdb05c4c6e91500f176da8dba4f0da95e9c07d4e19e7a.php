@@ -249,6 +249,6 @@ class __TwigTemplate_f0582c12377685b041e5d8de713e5030516711f578776d85946e35afd82
 .sf-reset .toggle {
     vertical-align: middle;
 }
-", "WebProfilerBundle:Collector:exception.css.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/exception.css.twig");
+", "WebProfilerBundle:Collector:exception.css.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/exception.css.twig");
     }
 }

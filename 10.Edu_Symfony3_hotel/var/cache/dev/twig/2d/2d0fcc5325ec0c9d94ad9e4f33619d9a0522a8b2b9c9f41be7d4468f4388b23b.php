@@ -81,6 +81,6 @@ class __TwigTemplate_2261aae91924e2e632ee299da9357c22507bfb7f7fd12668b1aedf138f2
     c-0.6,0-1.2,0.5-1.2,1.2c0,0.6,0.5,1.2,1.1,1.2c0,0,0,0,0,0c-1.3,0-2.3-1.2-2.3-2.6c0-1.5,1-2.5,2.3-2.5c1.3,0,2.3,1.1,2.3,2.5
     C17.1,9.8,16.2,10.9,15,11z\"/>
 </svg>
-", "@WebProfiler/Icon/exception.svg", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Icon/exception.svg");
+", "@WebProfiler/Icon/exception.svg", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Icon/exception.svg");
     }
 }

@@ -78,7 +78,7 @@ class __TwigTemplate_d68447baef814a55b6e302d262e1d53cea64b09acdad4a696fdfa4c0ef0
             echo ". ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["client"], "name", array()), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["client"], "last_name", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["client"], "lastName", array()), "html", null, true);
             echo "</td>
                 <td>";
             // line 23
@@ -164,7 +164,7 @@ class __TwigTemplate_d68447baef814a55b6e302d262e1d53cea64b09acdad4a696fdfa4c0ef0
 
                 {%  for client in clients %}
                 <tr>
-                <td>{{ client.title | upper }}. {{ client.name }} {{ client.last_name }}</td>
+                <td>{{ client.title | upper }}. {{ client.name }} {{ client.lastName }}</td>
                 <td>{{ client.Email }}</td>
                 <td>
                     <a class=\"hollow button\" href=\"{{ path(\"modify_client\", { 'id_client': client.id }) }}\">EDIT</a>

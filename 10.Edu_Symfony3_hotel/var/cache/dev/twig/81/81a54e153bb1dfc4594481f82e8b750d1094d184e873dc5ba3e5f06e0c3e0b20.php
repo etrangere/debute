@@ -52,6 +52,6 @@ class __TwigTemplate_63205f9e6efdcf0b2be49ce57670d43402af5cb9f5ae5282d8f4c57ae30
     public function getSourceContext()
     {
         return new Twig_Source("{% include '@Twig/Exception/error.xml.twig' %}
-", "TwigBundle:Exception:error.atom.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/error.atom.twig");
+", "TwigBundle:Exception:error.atom.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/error.atom.twig");
     }
 }

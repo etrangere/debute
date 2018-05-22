@@ -61,6 +61,6 @@ class __TwigTemplate_e6badb6b0e01fe38d6b79756054382a5b0591909b6487e60a1bcba77912
 <?php else: ?>
 <?php echo \$view['form']->block(\$form, 'form_widget_simple')?>
 <?php endif ?>
-", "@Framework/Form/form_widget.html.php", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/form_widget.html.php");
+", "@Framework/Form/form_widget.html.php", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/form_widget.html.php");
     }
 }

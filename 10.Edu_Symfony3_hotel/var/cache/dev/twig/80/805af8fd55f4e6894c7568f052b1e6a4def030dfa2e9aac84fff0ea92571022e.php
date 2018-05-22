@@ -70,6 +70,6 @@ class __TwigTemplate_15ed0d9c810232d6d1b6ac77218f4dbda4f11aa94e317b8ba87792b7ae3
     public function getSourceContext()
     {
         return new Twig_Source("{% block panel '' %}
-", "WebProfilerBundle:Profiler:ajax_layout.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/ajax_layout.html.twig");
+", "WebProfilerBundle:Profiler:ajax_layout.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/ajax_layout.html.twig");
     }
 }

@@ -310,6 +310,6 @@ $context["trace"], "level", array()) == 2)) {
     Note: These matching logs are based on the current router configuration,
     which might differ from the configuration used when profiling this request.
 </p>
-", "WebProfilerBundle:Router:panel.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Router/panel.html.twig");
+", "WebProfilerBundle:Router:panel.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Router/panel.html.twig");
     }
 }

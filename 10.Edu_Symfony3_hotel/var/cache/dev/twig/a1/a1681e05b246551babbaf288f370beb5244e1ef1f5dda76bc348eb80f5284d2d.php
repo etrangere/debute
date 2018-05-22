@@ -49,6 +49,6 @@ class __TwigTemplate_d05c87a3d2ae163fd9aa8678b1aaf147a39287ddc0236c9773f8c6197eb
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "@Framework/Form/button_label.html.php", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/button_label.html.php");
+        return new Twig_Source("", "@Framework/Form/button_label.html.php", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/button_label.html.php");
     }
 }

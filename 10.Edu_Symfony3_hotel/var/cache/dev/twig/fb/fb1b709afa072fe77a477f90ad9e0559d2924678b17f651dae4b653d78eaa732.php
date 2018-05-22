@@ -112,6 +112,6 @@ class __TwigTemplate_30eb99f0883c0f3a82aea64a445a50e59f0c5347268269915491cd3f87a
         {% endfor %}
     </tbody>
 </table>
-", "WebProfilerBundle:Profiler:table.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/table.html.twig");
+", "WebProfilerBundle:Profiler:table.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/table.html.twig");
     }
 }

@@ -53,6 +53,6 @@ class __TwigTemplate_ac34698bc15063160a3939ded9445d2978cfe199baf22e976af6bf8096d
     public function getSourceContext()
     {
         return new Twig_Source("<?php echo \$view['form']->block(\$form, 'widget_attributes') ?>
-", "@Framework/Form/attributes.html.php", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/attributes.html.php");
+", "@Framework/Form/attributes.html.php", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/attributes.html.php");
     }
 }

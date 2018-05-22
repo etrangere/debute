@@ -57,6 +57,6 @@ class __TwigTemplate_57a7d1daa372f68d45829f4175773f75f7a5f7981e0e35617bdf274fe5c
         return new Twig_Source("<div>
     <?php echo \$view['form']->widget(\$form) ?>
 </div>
-", "@Framework/Form/button_row.html.php", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/button_row.html.php");
+", "@Framework/Form/button_row.html.php", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/button_row.html.php");
     }
 }

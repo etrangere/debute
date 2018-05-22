@@ -75,6 +75,6 @@ The server returned a \"{{ status_code }} {{ status_text }}\".
 
 Something is broken. Please let us know what you were doing when this error occurred.
 We will fix it as soon as possible. Sorry for any inconvenience caused.
-", "TwigBundle:Exception:error.txt.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/error.txt.twig");
+", "TwigBundle:Exception:error.txt.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/error.txt.twig");
     }
 }

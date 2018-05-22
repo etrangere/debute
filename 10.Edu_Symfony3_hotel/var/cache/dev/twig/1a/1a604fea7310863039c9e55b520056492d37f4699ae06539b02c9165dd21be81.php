@@ -192,6 +192,6 @@ a.doc:hover {
     top: -7em;
     visibility: hidden;
 }
-", "WebProfilerBundle:Profiler:open.css.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/open.css.twig");
+", "WebProfilerBundle:Profiler:open.css.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/open.css.twig");
     }
 }

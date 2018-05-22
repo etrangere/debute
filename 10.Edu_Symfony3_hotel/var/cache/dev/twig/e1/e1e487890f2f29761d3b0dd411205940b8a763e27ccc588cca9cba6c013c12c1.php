@@ -73,6 +73,6 @@ class __TwigTemplate_60b09e9a39afdd38d604df5ea15f7d4f08794f09a19755947013229af1c
 <?php printf(' %s=\"%s\"', \$view->escape(\$k), \$view->escape(\$v)) ?>
 <?php endif ?>
 <?php endforeach ?>
-", "@Framework/Form/widget_attributes.html.php", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/widget_attributes.html.php");
+", "@Framework/Form/widget_attributes.html.php", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/widget_attributes.html.php");
     }
 }

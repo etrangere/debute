@@ -61,6 +61,6 @@ class __TwigTemplate_787c16838f0a34090f8620675192d43e1a6141fe11442a9faa633b1b094
     value=\"<?php echo \$view->escape(\$value) ?>\"
     <?php if (\$checked): ?> checked=\"checked\"<?php endif ?>
 />
-", "@Framework/Form/radio_widget.html.php", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/radio_widget.html.php");
+", "@Framework/Form/radio_widget.html.php", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/radio_widget.html.php");
     }
 }

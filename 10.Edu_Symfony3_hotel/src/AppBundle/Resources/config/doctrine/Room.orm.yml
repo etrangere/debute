@@ -1,7 +1,7 @@
-AppBundle\Entity\Room:
+AppBundle\Entity\room:
     type: entity
     table: null
-    repositoryClass: AppBundle\Repository\RoomRepository
+    repositoryClass: AppBundle\Repository\roomRepository
     id:
         id:
             type: integer
@@ -15,7 +15,8 @@ AppBundle\Entity\Room:
         floor:
             type: integer
         description:
-            type: text
+            type: string
+            length: 255
     lifecycleCallbacks: {  }
     oneToMany:
         reservations:

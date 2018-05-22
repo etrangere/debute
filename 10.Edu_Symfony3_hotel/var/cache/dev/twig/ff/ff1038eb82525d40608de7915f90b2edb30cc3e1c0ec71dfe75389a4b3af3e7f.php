@@ -65,6 +65,6 @@ class __TwigTemplate_1b241d0de07101e69fd940200dacba698b083326662710d605b687b51c6
         return new Twig_Source("/*
 {% include '@Twig/Exception/exception.txt.twig' with { 'exception': exception } %}
 */
-", "TwigBundle:Exception:exception.css.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/exception.css.twig");
+", "TwigBundle:Exception:exception.css.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/exception.css.twig");
     }
 }

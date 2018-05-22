@@ -25,7 +25,7 @@ class Client
     /**
      * @var string
      */
-    private $lastName;
+    private $last_name;
 
     /**
      * @var string
@@ -35,7 +35,7 @@ class Client
     /**
      * @var string
      */
-    private $zipCode;
+    private $zip_code;
 
     /**
      * @var string
@@ -112,27 +112,27 @@ class Client
     }
 
     /**
-     * Set lastName
+     * Set last_name
      *
-     * @param string $lastName
+     * @param string $last_name
      *
      * @return Client
      */
-    public function setLastName($lastName)
+    public function setLastName($last_name)
     {
-        $this->lastName = $lastName;
+        $this->last_name = $last_name;
 
         return $this;
     }
 
     /**
-     * Get lastName
+     * Get last_name
      *
      * @return string
      */
     public function getLastName()
     {
-        return $this->lastName;
+        return $this->last_name;
     }
 
     /**
@@ -160,27 +160,27 @@ class Client
     }
 
     /**
-     * Set zipCode
+     * Set zip_code
      *
-     * @param string $zipCode
+     * @param string $zip_code
      *
      * @return Client
      */
-    public function setZipCode($zipCode)
+    public function setZipCode($zip_code)
     {
-        $this->zipCode = $zipCode;
+        $this->zip_code = $zip_code;
 
         return $this;
     }
 
     /**
-     * Get zipCode
+     * Get zip_code
      *
      * @return string
      */
     public function getZipCode()
     {
-        return $this->zipCode;
+        return $this->zip_code;
     }
 
     /**
@@ -254,5 +254,50 @@ class Client
     {
         return $this->email;
     }
-}
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $reservations;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->reservations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add reservation
+     *
+     * @param \AppBundle\Entity\Reservation $reservation
+     *
+     * @return Client
+     */
+    public function addReservation(\AppBundle\Entity\Reservation $reservation)
+    {
+        $this->reservations[] = $reservation;
+
+        return $this;
+    }
+
+    /**
+     * Remove reservation
+     *
+     * @param \AppBundle\Entity\Reservation $reservation
+     */
+    public function removeReservation(\AppBundle\Entity\Reservation $reservation)
+    {
+        $this->reservations->removeElement($reservation);
+    }
+
+    /**
+     * Get reservations
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getReservations()
+    {
+        return $this->reservations;
+    }
+}

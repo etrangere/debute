@@ -161,6 +161,6 @@ class __TwigTemplate_311fc91186602be326deeaf81b7cfdb758330077385528afb878e371001
         {%- endfor -%}
     </pre>
 {% endif %}
-", "DoctrineBundle:Collector:explain.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
+", "DoctrineBundle:Collector:explain.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
     }
 }

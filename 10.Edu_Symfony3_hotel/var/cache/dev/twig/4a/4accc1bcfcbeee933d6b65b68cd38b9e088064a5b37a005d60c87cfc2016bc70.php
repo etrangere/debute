@@ -59,6 +59,6 @@ class __TwigTemplate_847d2a5862e1f72dc3eae47f987f6e97cc212be2a589d8740da0767ea0a
     ? strtr(\$label_format, array('%name%' => \$name, '%id%' => \$id))
     : \$view['form']->humanize(\$name); } ?>
 <button type=\"<?php echo isset(\$type) ? \$view->escape(\$type) : 'button' ?>\" <?php echo \$view['form']->block(\$form, 'button_attributes') ?>><?php echo \$view->escape(false !== \$translation_domain ? \$view['translator']->trans(\$label, array(), \$translation_domain) : \$label) ?></button>
-", "@Framework/Form/button_widget.html.php", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Project_02_02/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/button_widget.html.php");
+", "@Framework/Form/button_widget.html.php", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/button_widget.html.php");
     }
 }
