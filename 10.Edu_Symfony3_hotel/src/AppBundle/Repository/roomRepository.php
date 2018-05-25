@@ -10,4 +10,6 @@ namespace AppBundle\Repository;
  */
 class roomRepository extends \Doctrine\ORM\EntityRepository
 {
+
+
 }

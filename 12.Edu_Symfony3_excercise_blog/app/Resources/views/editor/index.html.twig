@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="header">
+        <h1><?=$this->page_title?></h1>
+    </div>
+
+    <div id="menu">
+        <a href="{{ path("home_page") }}">Home</a>
+        <a href="{{ path("new_page") }}">New article</a>
+        <a href="#">Log out</a>
+        <br>
+        </a><hr>
+    </div>
+
+    <div>
+        <ul>
+            <?php foreach($this->page_content as $article): ?>
+            <a href="index.php?c=Edit&id=<?=$article['id_article']?>">
+                <b><?=$article['title']?></b><br/>
+            </a>
+            <?php endforeach ?>
+        </ul>
+    </div>
+
+    <div id="footer">
+        All right reserved.Tel.Adress.
+    </div>
+
+{% endblock %}
+
