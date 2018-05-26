@@ -22,6 +22,13 @@
         <br/>
         <input type="submit" name="Save"  value="Save" />
         <input type="submit" name="Delete"  value="Delete" />
+
+
+        <td>
+            <a class="hollow button" href="{{ path("modify_client", { 'id_client': client.id }) }}">EDIT</a>
+            <a class="hollow button warning" href="{{ path("booking", { 'id_client': client.id }) }}">BOOK A ROOM</a>
+        </td>
+
     </form>
 
     <div id="footer">

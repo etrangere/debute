@@ -9,8 +9,22 @@
     </div>
 
     <div id="content">
-        <h3>Title:</h3><?=$this->article_title?><br>
-        <h3>Article:</h3><?=$this->article_content?><br>
+
+
+        {%  for article in articles %}
+            <tr>
+                <h3>Title:</h3>{{ article.title }}<h3>Article:</h3>{{ article.content }}<br/><br/>
+
+
+                </td>
+            </tr>
+        {%  endfor %}
+
+
+
+
+
+
     </div>
 
     <div id="footer">

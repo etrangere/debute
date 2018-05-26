@@ -5,17 +5,20 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\Article;
 
 class ArticleController extends BaseController
 {
     /**
-     * @Route("/article", name="article_page")
+     * @Route("/article/{id}", name="article")
      */
-    public function indexAction(Request $request)
+    public function indexAction(Request $request,$id)
     {
-        // replace this example code with whatever you need
-        return $this->render('article/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
-        ]);
+        $data['articles'] = $id;
+var_dump($data);
+        return $this->render("article/index.html.twig",$data);
+
     }
+
+
 }

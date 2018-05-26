@@ -7,7 +7,7 @@
     <div id="menu">
         <a href="{{ path("home_page") }}">Home</a> |
         <a href="{{ path("editor_page") }}">Edit article</a> |
-        <a href="{{ path("new_page") }}">New article</a>  |
+        <a href="{{ path("new_article") }}">New article</a>  |
         <a href="#">Login/Registration</a>
         <br>
         <hr>
@@ -15,11 +15,13 @@
     </div>
     <div id="content">
         <ul>
-            <?php foreach ($this->page_content as $article): ?>
-            <a href="index.php?c=Article&id=<?=$article['id_article']?>">
-                <b><?=$article['intro']?></b><br/><br/>
-            </a>
-            <?php endforeach ?>
+            {%  for article in articles %}
+                <tr>
+                    <a href="{{ path('article', { 'id': article.id }) }}">{{ article.title }} {{ article.content }}</a>
+                    <br/><br/>
+                </td>
+                </tr>
+            {%  endfor %}
         </ul>
     </div>
     <div id="footer">
