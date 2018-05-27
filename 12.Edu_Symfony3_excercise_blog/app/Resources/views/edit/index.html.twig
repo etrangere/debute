@@ -2,7 +2,7 @@
 
 {% block body %}
     <div id="header">
-        <h1><?=$this->page_title?></h1>
+        <h1>Edit</h1>
     </div>
     <div id="menu">
         <a href="{{ path("home_page") }}">Home</a>
@@ -11,23 +11,21 @@
     </div>
 
     <form method="post" id="content">
-        <h3>Title:</h3>
-        <input type="text" name="article_title" value="<?=$this->article_title?>" size="100"/>
+        Title:
         <br/>
-        <h3>E-mail:</h3>
-        <input type="text" name="article_mail" value="<?=$this->article_mail?>" size="100"/>
-        <br/>
-        <h3>Article:</h3>
-        <textarea name="article_content" rows="40" cols="120"><?=$this->article_content?></textarea>
-        <br/>
-        <input type="submit" name="Save"  value="Save" />
-        <input type="submit" name="Delete"  value="Delete" />
+        <input type="text" name="form[title]" value="{{ form.title is defined ? form.title : '' }}" size="100"/>
 
+        <br/>
+        E-mail:
+        <br/>
+        <input type="text" name="form[email]" value="{{ form.email is defined ? form.email : '' }}" size="100"/>
+        <br/>
+        <br/>
+        Content:
+        <br/>
+        <textarea name="form[content]" rows="40" cols="120">{{ form.content is defined ? form.content : '' }}</textarea>
+        <br/>
 
-        <td>
-            <a class="hollow button" href="{{ path("modify_client", { 'id_client': client.id }) }}">EDIT</a>
-            <a class="hollow button warning" href="{{ path("booking", { 'id_client': client.id }) }}">BOOK A ROOM</a>
-        </td>
 
     </form>
 

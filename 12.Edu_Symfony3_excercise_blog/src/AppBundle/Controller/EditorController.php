@@ -8,17 +8,28 @@ use Symfony\Component\HttpFoundation\Request;
 
 class EditorController extends BaseController
 {
-    /**
-     * @Route("/editor", name="editor_page")
-     */
-    public function indexAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        return $this->render('editor/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
-        ]);
-    }
 
+
+    /**
+     * @Route("/editor",name="editor_page")
+     */
+
+    public function showIndex()
+    {
+
+
+        $data = [];
+        $article = $this->getDoctrine()
+
+            ->getRepository('AppBundle:Article')
+            ->findALL();
+
+        $data['articles'] = $article;
+
+
+        return $this->render("editor/index.html.twig",$data );
+
+    }
 
 
 

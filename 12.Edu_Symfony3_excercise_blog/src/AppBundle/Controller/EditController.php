@@ -11,29 +11,16 @@ class EditController extends BaseController
     /**
      * @Route("/edit/{id}",name="edit_article")
      */
-    public function showDetails(Request $request ,$id)
+    public function editArticle(Request $request, $id)
     {
         $data = [];
-        // $data['clients']= $this->client_data;
-
-        $client_repo = $this->getDoctrine()
-            ->getRepository('AppBundle:Client');
-        $data['mode']= 'modify';
+        $data['mode']= 'new_article';
         $data['form']=[];
-
-        //$client_data ['titles']= $this->titles;
-
-
 
         $form = $this->createFormBuilder()
 
-            ->add('name')
-            ->add('last_name')
             ->add('title')
-            ->add('address')
-            ->add('zip_code')
-            ->add('city')
-            ->add('state')
+            ->add('content')
             ->add('email')
             ->getForm()
         ;
@@ -46,47 +33,64 @@ class EditController extends BaseController
             $data ['form']= [];
             $data ['form']= $form_data;
 
-            $client = $client_repo->find($id_client);
-
-            $client->setTitle($form_data['title']);
-            $client->setName($form_data['name']);
-            $client->setLastName($form_data['last_name']);
-            $client->setAddress($form_data['address']);
-            $client->setZipCode($form_data['zip_code']);
-            $client->setCity($form_data['city']);
-            $client->setState($form_data['state']);
-            $client->setEmail($form_data['email']);
             $em = $this->getDoctrine()->getManager();
-            $em->persist($client);
+
+            $article = new article;
+            $article->setTitle($form_data['title']);
+            $article->setContent($form_data['content']);
+            $article->setEmail($form_data['email']);
+
+            $em->persist($article);
+
             $em->flush();
 
-            return $this->redirectToRoute('index_clients');
-
-        }
-        else
-        {
-            $client=$client_repo->find($id_client);
-
-            $data['form']=$client;
-
-            $client= $client_repo->find($id_client);
-            $client_data ['id']= $client->getID();
-            $client_data ['title']= $client->getTitle();
-            $client_data ['name']= $client->getName();
-            $client_data ['last_name']= $client->getLastName();
-            $client_data ['address']= $client->getAddress();
-            $client_data ['zip_code']= $client->getZipCode();
-            $client_data ['city']= $client->getCity();
-            $client_data ['state']= $client->getState();
-            $client_data ['email']= $client->getEmail();
-
-            //$client_data ['titles']= $this->titles;
-            $data['form'] = $client_data;
+            return $this->redirectToRoute('editor_page');
         }
 
-        return $this->render("clients/form.html.twig",$data);
+        else {
+
+            $article = $this->getDoctrine()
+
+                ->getRepository('AppBundle:Article')
+                ->find($id);
+
+
+            $data['form'] = $article;
+
+            var_dump($data);
+
+          //  $article_data ['title'] = $form->getTitle();
+           // $article_data ['content'] = $form->getContent();
+           // $article_data ['email'] = $form->getEmail();
+
+
+           // $data['form'] = $article_data;
+        }
+
+        return $this->render("edit/index.html.twig", $data);
 
 
     }
+
+    /**
+     * @Route("/delete/{id}",name="delete_article")
+     */
+    public function deleteArticle($id)
+
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $article = $em->getRepository('AppBundle:Article')->find($id);
+
+        if (!$article) {
+            throw $this->createNotFoundException('No articles found for id '.$id);
+        }
+
+        $em->remove($article);
+        $em->flush();
+
+        return $this->redirectToRoute('editor_page');
+    }
+
 
 }
