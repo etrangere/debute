@@ -107,8 +107,6 @@ class ClientsController extends Controller
           $client_data ['city']= $client->getCity();
           $client_data ['state']= $client->getState();
           $client_data ['email']= $client->getEmail();
-
-          //$client_data ['titles']= $this->titles;
           $data['form'] = $client_data;
         }
 

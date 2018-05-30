@@ -26,8 +26,16 @@
         <textarea name="form[content]" rows="40" cols="120">{{ form.content is defined ? form.content : '' }}</textarea>
         <br/>
 
+        <td>
 
+            <input  type="submit" value="Save" {{ path("edit_article", { 'id': form.id }) }}>
+            <input  type="submit" value="Delete" {{ path("delete_article", { 'id': form.id }) }}>
+
+        </td>
     </form>
+
+
+
 
     <div id="footer">
         All right reserved.Tel.Adress.

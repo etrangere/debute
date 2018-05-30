@@ -115,3 +115,5 @@ e9af16,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/res
 183c61,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/guests/modify/1,1527150876,,200
 8c5bf5,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/guests/modify/1,1527195636,,200
 4336eb,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/guests/modify/1,1527263564,,200
+4ffc26,::1,POST,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/guests/modify/1,1527550093,,302
+c0d17c,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/guests,1527550093,,200
