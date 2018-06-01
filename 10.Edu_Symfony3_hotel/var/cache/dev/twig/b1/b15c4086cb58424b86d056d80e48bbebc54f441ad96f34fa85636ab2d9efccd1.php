@@ -93,6 +93,10 @@ class __TwigTemplate_d68447baef814a55b6e302d262e1d53cea64b09acdad4a696fdfa4c0ef0
             // line 26
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("booking", array("id_client" => $this->getAttribute($context["client"], "id", array()))), "html", null, true);
             echo "\">BOOK A ROOM</a>
+                    <a class=\"hollow button warning\" href=\"";
+            // line 27
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("delete", array("id_client" => $this->getAttribute($context["client"], "id", array()))), "html", null, true);
+            echo "\">DELETE</a>
                 </td>
               </tr>
               ";
@@ -100,7 +104,7 @@ class __TwigTemplate_d68447baef814a55b6e302d262e1d53cea64b09acdad4a696fdfa4c0ef0
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['client'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 31
         echo "              <tr>
 
               </tr>
@@ -130,7 +134,7 @@ class __TwigTemplate_d68447baef814a55b6e302d262e1d53cea64b09acdad4a696fdfa4c0ef0
 
     public function getDebugInfo()
     {
-        return array (  104 => 30,  94 => 26,  90 => 25,  85 => 23,  77 => 22,  74 => 21,  70 => 20,  55 => 8,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  108 => 31,  98 => 27,  94 => 26,  90 => 25,  85 => 23,  77 => 22,  74 => 21,  70 => 20,  55 => 8,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -169,6 +173,7 @@ class __TwigTemplate_d68447baef814a55b6e302d262e1d53cea64b09acdad4a696fdfa4c0ef0
                 <td>
                     <a class=\"hollow button\" href=\"{{ path(\"modify_client\", { 'id_client': client.id }) }}\">EDIT</a>
                     <a class=\"hollow button warning\" href=\"{{ path(\"booking\", { 'id_client': client.id }) }}\">BOOK A ROOM</a>
+                    <a class=\"hollow button warning\" href=\"{{ path(\"delete\", { 'id_client': client.id }) }}\">DELETE</a>
                 </td>
               </tr>
               {%  endfor %}

@@ -2,10 +2,13 @@
 
 namespace AppBundle\Controller;
 
+//use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+//use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Article;
+
+
 
 class ArticleController extends BaseController
 {
@@ -127,7 +130,7 @@ class ArticleController extends BaseController
         $data = [];
         $article_repo = $this->getDoctrine()
             ->getRepository('AppBundle:Article');
-        $data['mode']= 'modify';
+        $data['mode']= 'edit_article';
         $data['form']=[];
 
 
@@ -172,7 +175,7 @@ class ArticleController extends BaseController
 
             $data['form'] = $article_data;
         }
-        var_dump($id);
+
         return $this->render("edit/index.html.twig",$data);
 
 
@@ -181,40 +184,25 @@ class ArticleController extends BaseController
     /**
      * @Route("/delete/{id}",name="delete_article")
      */
-    public function delete_article( $request ,$id)
+    public function delete_articles($id)
 
     {
 
 
-
-        $form = $this->createFormBuilder()
-
-            ->add('title')
-            ->add('content')
-            ->add('email')
-            ->getForm();
-
-        $form->handleRequest($request);
+        $em = $this->getDoctrine()->getManager();
+        $client = $em->getRepository('AppBundle:Article')->find($id);
 
 
+        $em->remove($client);
 
+        $em->flush();
 
-        if ($form->isSubmitted())
-        {
-
-
-            $em = $this->getDoctrine()->getManager();
-
-
-            $article = $em->getReference('AppBundle:Article', $id);
-
-            $em->remove($article);
-            $em->flush();
-
-            return $this->redirectToRoute('editor_page');
-
-        }
+        return $this->redirectToRoute('editor_page');
 
     }
+
+
+
+
 
 }
