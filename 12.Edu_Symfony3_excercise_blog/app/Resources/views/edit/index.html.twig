@@ -2,7 +2,7 @@
 
 {% block body %}
     {{ dump(form) }}
-    <div id="header">
+    <div id="header" xmlns="http://www.w3.org/1999/html">
         <h1>Edit</h1>
     </div>
     <div id="menu">
@@ -10,7 +10,6 @@
         <a href="#">Log out</a>
         <br><hr>
     </div>
-
     <form method="post" id="content">
         Title:
         <br/>
@@ -28,16 +27,10 @@
         <br/>
 
         <td>
-
-            <input  type="submit" value="Save" {{ path("edit_article", { 'id': form.id }) }}>
-            <input  type="submit" value="Delete" {{ path("delete_article", { 'id': form.id }) }}>
-
+            <input type="submit" value="Save" {{ path("edit_article", { 'id': form.id }) }}">
+            <button type="button" onclick="location.href='{{ path("delete_article", { 'id': form.id }) }}'">Delete</button>
         </td>
     </form>
-
-
-
-
     <div id="footer">
         All right reserved.Tel.Adress.
     </div>
