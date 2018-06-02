@@ -2,9 +2,9 @@
 
 namespace AppBundle\Controller;
 
-//use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+
+use GuzzleHttp\Psr7\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-//use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Article;
 
@@ -203,6 +203,19 @@ class ArticleController extends BaseController
 
 
 
+    /**
+     * @Route("/api",name="api_github")
+     */
+    public function api_github()
+
+    {
+      $client = new \GuzzleHttp\Client();
+      $res = $client->request('GET','https://api.github.com/users/etrangere');
+
+        $data['datas'] = $res;
+        return $this->render("home/api.index.html.twig",$data);
+
+    }
 
 
 }
