@@ -5,7 +5,8 @@
     <div class="row">
       <div class="medium-12 large-12 columns">
         <h4>Clients</h4>
-        <div class="medium-2  columns"><a class="button" href="{{ path("new_client",{'id_client' :1}) }}">ADD NEW CLIENT</a></div>
+
+        <div class="medium-2  columns"><a class="button" href="{{ path("new_client")}}">ADD NEW CLIENT</a></div>
 
         <table class="stack">
           <thead>
@@ -21,6 +22,7 @@
                 <tr>
                 <td>{{ client.title | upper }}. {{ client.name }} {{ client.lastName }}</td>
                 <td>{{ client.Email }}</td>
+
                 <td>
                     <a class="hollow button" href="{{ path("modify_client", { 'id_client': client.id }) }}">EDIT</a>
                     <a class="hollow button warning" href="{{ path("booking", { 'id_client': client.id }) }}">BOOK A ROOM</a>

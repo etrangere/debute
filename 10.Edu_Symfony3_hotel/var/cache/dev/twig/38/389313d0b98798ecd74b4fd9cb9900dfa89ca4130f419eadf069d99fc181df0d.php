@@ -61,7 +61,7 @@ class __TwigTemplate_6439f56fce9ffede120fc0375cf238e97d4b92df2216a7116f3865f30bb
             </tr>
           </thead>
           <tbody>
-            
+
           </tbody>
         </table>
       </div>
@@ -119,7 +119,7 @@ class __TwigTemplate_6439f56fce9ffede120fc0375cf238e97d4b92df2216a7116f3865f30bb
             </tr>
           </thead>
           <tbody>
-            
+
           </tbody>
         </table>
       </div>

@@ -48,7 +48,10 @@ class __TwigTemplate_34cf1c84443039fcd7618b687ec656efc9383165502dc563ac447b9d994
         // line 3
         echo "  <div class=\"row\">
     <div class=\"medium-12 large-12 columns\">
-      <h4>New Client</h4>
+      <h4>";
+        // line 5
+        echo ((((isset($context["mode"]) ? $context["mode"] : $this->getContext($context, "mode")) == "new_client")) ? ("New client") : ("Modify client"));
+        echo "</h4>
       <form action=\"\" method=\"post\">
         <div class=\"medium-4  columns\">
           <label>Title</label>
@@ -132,7 +135,7 @@ class __TwigTemplate_34cf1c84443039fcd7618b687ec656efc9383165502dc563ac447b9d994
 
     public function getDebugInfo()
     {
-        return array (  105 => 39,  98 => 35,  91 => 31,  84 => 27,  77 => 23,  70 => 19,  63 => 15,  49 => 3,  40 => 2,  11 => 1,);
+        return array (  108 => 39,  101 => 35,  94 => 31,  87 => 27,  80 => 23,  73 => 19,  66 => 15,  53 => 5,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -149,7 +152,7 @@ class __TwigTemplate_34cf1c84443039fcd7618b687ec656efc9383165502dc563ac447b9d994
 {% block body %}
   <div class=\"row\">
     <div class=\"medium-12 large-12 columns\">
-      <h4>New Client</h4>
+      <h4>{{ mode == 'new_client' ? 'New client': 'Modify client' }}</h4>
       <form action=\"\" method=\"post\">
         <div class=\"medium-4  columns\">
           <label>Title</label>

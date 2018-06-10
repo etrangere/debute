@@ -1,13 +1,15 @@
 <?php
-//src/AppBundle/Controller/ClientsController.php
+
 namespace AppBundle\Controller;
 
-use AppBundle\AppBundle;
+
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Response;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Client;
+//use AppBundle\Entity\room;
+//use AppBundle\Entity\Reservation;
 
 class ClientsController extends Controller
 {
@@ -22,7 +24,7 @@ class ClientsController extends Controller
     public function showIndex()
     {
         $data = [];
-        //$data['clients']= $this->client_data;
+
         $clients = $this->getDoctrine()
             ->getRepository('AppBundle:Client')
             ->findALL();
@@ -156,7 +158,7 @@ class ClientsController extends Controller
         }
 
 
-        return $this->render("clients/form.html.twig");
+       // return $this->render("clients/form.html.twig");
 
     }
 
