@@ -46,65 +46,84 @@ class __TwigTemplate_34cf1c84443039fcd7618b687ec656efc9383165502dc563ac447b9d994
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
-        echo "  <div class=\"row\">
+        echo "
+
+  <div class=\"row\">
     <div class=\"medium-12 large-12 columns\">
-      <h4>";
-        // line 5
-        echo ((((isset($context["mode"]) ? $context["mode"] : $this->getContext($context, "mode")) == "new_client")) ? ("New client") : ("Modify client"));
-        echo "</h4>
+      <h4></h4>
       <form action=\"\" method=\"post\">
         <div class=\"medium-4  columns\">
           <label>Title</label>
+
           <select name=\"form[title]\">
-            <option value=\"mr\">Mr.</option>
-          </select>
+              ";
+        // line 13
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["titles"]) ? $context["titles"] : $this->getContext($context, "titles")));
+        foreach ($context['_seq'] as $context["_key"] => $context["title"]) {
+            // line 14
+            echo "            <option value=\"";
+            echo twig_escape_filter($this->env, $context["title"], "html", null, true);
+            echo " ";
+            echo ((($context["title"] == $this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "title", array()))) ? ("selected") : (""));
+            echo " \">";
+            echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, $context["title"]), "html", null, true);
+            echo ".</option>
+              ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['title'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 16
+        echo "          </select>
+
         </div>
         <div class=\"medium-4  columns\">
           <label>Name</label>
           <input name=\"form[name]\" value=\"";
-        // line 15
+        // line 21
         echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "name", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "name", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-4  columns\">
           <label>Last Name</label>
           <input name=\"form[last_name]\" value=\"";
-        // line 19
+        // line 25
         echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "last_name", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "last_name", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-8  columns\">
           <label>Address</label>
           <input name=\"form[address]\" value=\"";
-        // line 23
+        // line 29
         echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "address", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "address", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-4  columns\">
           <label>ZipCode</label>
           <input name=\"form[zip_code]\" value=\"";
-        // line 27
+        // line 33
         echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "zip_code", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "zip_code", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-4  columns\">
           <label>City</label>
           <input name=\"form[city]\" value=\"";
-        // line 31
+        // line 37
         echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "city", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "city", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-4  columns\">
           <label>State</label>
           <input name=\"form[state]\" value=\"";
-        // line 35
+        // line 41
         echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "state", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "state", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-12  columns\">
           <label>Email</label>
           <input name=\"form[email]\" value=\"";
-        // line 39
+        // line 45
         echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "email", array(), "any", true, true)) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
@@ -135,7 +154,7 @@ class __TwigTemplate_34cf1c84443039fcd7618b687ec656efc9383165502dc563ac447b9d994
 
     public function getDebugInfo()
     {
-        return array (  108 => 39,  101 => 35,  94 => 31,  87 => 27,  80 => 23,  73 => 19,  66 => 15,  53 => 5,  49 => 3,  40 => 2,  11 => 1,);
+        return array (  127 => 45,  120 => 41,  113 => 37,  106 => 33,  99 => 29,  92 => 25,  85 => 21,  78 => 16,  65 => 14,  61 => 13,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -150,15 +169,21 @@ class __TwigTemplate_34cf1c84443039fcd7618b687ec656efc9383165502dc563ac447b9d994
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
 {% block body %}
+
+
   <div class=\"row\">
     <div class=\"medium-12 large-12 columns\">
-      <h4>{{ mode == 'new_client' ? 'New client': 'Modify client' }}</h4>
+      <h4></h4>
       <form action=\"\" method=\"post\">
         <div class=\"medium-4  columns\">
           <label>Title</label>
+
           <select name=\"form[title]\">
-            <option value=\"mr\">Mr.</option>
+              {% for title in titles %}
+            <option value=\"{{ title }} {{ title == form.title ? 'selected' : '' }} \">{{ title | capitalize }}.</option>
+              {% endfor %}
           </select>
+
         </div>
         <div class=\"medium-4  columns\">
           <label>Name</label>

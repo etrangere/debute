@@ -116,6 +116,7 @@
   '::base.html.twig' => __DIR__.'/../../../app/Resources/views/base.html.twig',
   ':clients:form.html.twig' => __DIR__.'/../../../app/Resources/views/clients/form.html.twig',
   ':clients:index.html.twig' => __DIR__.'/../../../app/Resources/views/clients/index.html.twig',
+  '::debug.html.twig' => __DIR__.'/../../../app/Resources/views/debug.html.twig',
   ':reservations:book.html.twig' => __DIR__.'/../../../app/Resources/views/reservations/book.html.twig',
   ':reservations:index.html.twig' => __DIR__.'/../../../app/Resources/views/reservations/index.html.twig',
 );

@@ -8,14 +8,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Client;
-//use AppBundle\Entity\room;
-//use AppBundle\Entity\Reservation;
+use AppBundle\Entity\room;
+use AppBundle\Entity\Reservation;
 
 class ClientsController extends Controller
 {
 
 
-    private $title = ['mr', 'ms', 'mrs', 'dc', 'mx'];
+    private $titles = ['mr', 'ms', 'mrs', 'dc', 'mx'];
 
     /**
      * @Route("/guests",name="index_clients")
@@ -24,13 +24,11 @@ class ClientsController extends Controller
     public function showIndex()
     {
         $data = [];
-
         $clients = $this->getDoctrine()
             ->getRepository('AppBundle:Client')
             ->findALL();
-
         $data['clients'] = $clients;
-
+        $data['titles'] = $this->titles;
 
         return $this->render("clients/index.html.twig", $data);
 
@@ -42,14 +40,12 @@ class ClientsController extends Controller
     public function showDetails(Request $request, $id_client)
     {
         $data = [];
-        // $data['clients']= $this->client_data;
-
         $client_repo = $this->getDoctrine()
             ->getRepository('AppBundle:Client');
         $data['mode'] = 'modify';
         $data['form'] = [];
-
-        //$client_data ['titles']= $this->titles;
+        $data['titles'] = $this->titles;
+        $data['form']['title'] = '';
 
 
         $form = $this->createFormBuilder()
@@ -101,6 +97,7 @@ class ClientsController extends Controller
             $client_data ['city'] = $client->getCity();
             $client_data ['state'] = $client->getState();
             $client_data ['email'] = $client->getEmail();
+            $client_data ['titles'] = $this->titles;
             $data['form'] = $client_data;
         }
 
@@ -115,10 +112,11 @@ class ClientsController extends Controller
     public function showNew(Request $request)
     {
         $data = [];
-        $data['mode'] = 'new_client';
-        // $data['titles'] = $this->titles;
+        $data['mode']='new_client';
+        $data['titles'] = $this->titles;
         $data['form'] = [];
         $data['form']['title'] = '';
+
 
         $form = $this->createFormBuilder()
             ->add('name')
@@ -149,7 +147,7 @@ class ClientsController extends Controller
             $client->setCity($form_data['city']);
             $client->setState($form_data['state']);
             $client->setEmail($form_data['email']);
-
+            $data['titles'] = $this->titles;
             $em->persist($client);
 
             $em->flush();
@@ -158,7 +156,7 @@ class ClientsController extends Controller
         }
 
 
-       // return $this->render("clients/form.html.twig");
+        return $this->render("clients/form.html.twig" ,$data);
 
     }
 

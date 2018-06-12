@@ -37,38 +37,43 @@ class ReservationsController extends Controller
     /**
      * @Route("/booking/{id_client}",name="booking")
      */
-    public function reservation(Request $request , $id_client)
+    public function booking(Request $request , $id_client)
     {
 
 
         $data = [];
         $data['id_client'] = $id_client;
         $data['rooms']=null;
-        $data['dates']['from']='';
-        $data['dates']['to']='';
+        $data['form'] = [];
+        $data['dates']['from']=[];
+        $data['dates']['to']=[];
+
         $form = $this->createFormBuilder()
             ->add('from')
             ->add('to')
             ->getForm();
         $form->handleRequest($request);
 
-        if ($form->isSubmitted())
+
+       if ($form->isSubmitted())
         {
-        $form_data= $form->getData();
+
+
+        $form_data = $form->getData();
+        $data ['form'] = [];
+        $data ['form'] = $form_data;
         $data['dates']['from'] = $form_data ['dateFrom'];
         $data['dates']['to'] = $form_data ['dateTo'];
+        $em=$this->getDoctrine()->getManager();
+        $rooms=$em->getRepository('AppBundle:room')
+           ->getAvailableRooms($form_data['dateFrom'],$form_data['dateTo']
+           );
 
-         $em=$this->getDoctrine()->getManager();
-         $rooms=$em->getRepository('AppBundle:room')
-            ->getAvailableRooms($form_data['dateForm'],$form_data['dateTo']
-            );
          $data['rooms']=$rooms;
 
          $client = $this->getDoctrine()->getRepository('AppBundle:Client')->find('id_client');
 
          $data['client']= $client;
-
-           // return $this->render('reservations/book.html.twig',$data);
 
         }
 

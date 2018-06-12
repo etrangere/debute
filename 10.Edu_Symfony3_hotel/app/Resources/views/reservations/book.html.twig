@@ -2,7 +2,7 @@
 
 {% block body %}
 
-    {{ dump(rooms) }}
+    {{ dump(dates) }}
 
     <div class="row">
       <div class="medium-12 large-12 columns">
@@ -12,10 +12,10 @@
         <form action="" method="post">
           <div class="medium-1  columns">FROM:</div>
 
-          <div class="medium-2  columns"><input name="reservation[dateIn]" value="{{ dates.from }}" type="text" class="datepicker" /></div>
+          <div class="medium-2  columns"><input name="" value="{{ date.from is defined ? date.from : '' }}" type="text" class="datepicker" /></div>
 
           <div class="medium-1  columns">TO:</div>
-          <div class="medium-2  columns"><input name="reservation[dateOut]" value="{{ dates.to }}" type="text" class="datepicker" /></div>
+          <div class="medium-2  columns"><input name="" value="{{ date.to is defined ? date.to : '' }}" type="text" class="datepicker" /></div>
 
           <div class="medium-2  columns"><input class="button" type="submit" value="SEARCH" /></div>
         </form>
@@ -29,23 +29,23 @@
             </tr>
           </thead>
           <tbody>
-          
-            <tr>
-              <h7>Available room</h7>
-              <td>
-                <div class="callout success">
+          {% for room in rooms %}
+          <tr>
 
-                  {% for room in rooms  %}
+            <td>{{ room.name }}</td>
 
-                 <a class="hollow button warning" href="{{ path("book_room", { 'id_client': id_client }) }}">BOOK THIS ROOM</a>
+            <td>
 
-                      {{ room.name }}
+              <div class="callout success">
+                <h7>Available</h7>
+              </div>
+            </td>
+            <td>
+              <a class="hollow button warning" href="#">BOOK NOW</a>
+            </td>
 
-                  {% endfor %}
-
-              </td>
-            </tr>
-          
+          </tr>
+          {% endfor %}
           </tbody>
         </table>
       </div>

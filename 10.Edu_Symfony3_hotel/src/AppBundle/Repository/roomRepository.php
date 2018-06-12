@@ -13,7 +13,7 @@ use Doctrine\ORM\EntityRepository;
  */
 class roomRepository extends EntityRepository
 {
-
+/*
 
 public function getAvailableRooms($date_start,$date_final)
 
@@ -30,10 +30,10 @@ public function getAvailableRooms($date_start,$date_final)
          ->from('AppBundle:room','r' )
          ->where($qb->expr()->notIn('r.id' . $dql_query));
 
-     var_dump($query);
+    // var_dump($query);
 
      return $query;
 
 }
-
+*/
 }

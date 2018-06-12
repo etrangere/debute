@@ -49,7 +49,7 @@ class __TwigTemplate_d4930fd674f30f0101c3a61bd5ec0ae32c073b6ec456414d076e27d955b
         echo "
     ";
         // line 5
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\DumpExtension')->dump($this->env, $context, (isset($context["rooms"]) ? $context["rooms"] : $this->getContext($context, "rooms")));
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\DumpExtension')->dump($this->env, $context, (isset($context["dates"]) ? $context["dates"] : $this->getContext($context, "dates")));
         echo "
 
     <div class=\"row\">
@@ -63,15 +63,15 @@ class __TwigTemplate_d4930fd674f30f0101c3a61bd5ec0ae32c073b6ec456414d076e27d955b
         <form action=\"\" method=\"post\">
           <div class=\"medium-1  columns\">FROM:</div>
 
-          <div class=\"medium-2  columns\"><input name=\"reservation[dateIn]\" value=\"";
+          <div class=\"medium-2  columns\"><input name=\"\" value=\"";
         // line 15
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dates"]) ? $context["dates"] : $this->getContext($context, "dates")), "from", array()), "html", null, true);
+        echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["date"]) ? $context["date"] : null), "from", array(), "any", true, true)) ? ($this->getAttribute((isset($context["date"]) ? $context["date"] : $this->getContext($context, "date")), "from", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" class=\"datepicker\" /></div>
 
           <div class=\"medium-1  columns\">TO:</div>
-          <div class=\"medium-2  columns\"><input name=\"reservation[dateOut]\" value=\"";
+          <div class=\"medium-2  columns\"><input name=\"\" value=\"";
         // line 18
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dates"]) ? $context["dates"] : $this->getContext($context, "dates")), "to", array()), "html", null, true);
+        echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["date"]) ? $context["date"] : null), "to", array(), "any", true, true)) ? ($this->getAttribute((isset($context["date"]) ? $context["date"] : $this->getContext($context, "date")), "to", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" class=\"datepicker\" /></div>
 
           <div class=\"medium-2  columns\"><input class=\"button\" type=\"submit\" value=\"SEARCH\" /></div>
@@ -86,40 +86,37 @@ class __TwigTemplate_d4930fd674f30f0101c3a61bd5ec0ae32c073b6ec456414d076e27d955b
             </tr>
           </thead>
           <tbody>
-          
-            <tr>
-              <h7>Available room</h7>
-              <td>
-                <div class=\"callout success\">
-
-                  ";
-        // line 38
+          ";
+        // line 32
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) ? $context["rooms"] : $this->getContext($context, "rooms")));
         foreach ($context['_seq'] as $context["_key"] => $context["room"]) {
-            // line 39
-            echo "
-                 <a class=\"hollow button warning\" href=\"";
-            // line 40
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("book_room", array("id_client" => (isset($context["id_client"]) ? $context["id_client"] : $this->getContext($context, "id_client")))), "html", null, true);
-            echo "\">BOOK THIS ROOM</a>
+            // line 33
+            echo "          <tr>
 
-                      ";
-            // line 42
+            <td>";
+            // line 35
             echo twig_escape_filter($this->env, $this->getAttribute($context["room"], "name", array()), "html", null, true);
-            echo "
+            echo "</td>
 
-                  ";
+            <td>
+
+              <div class=\"callout success\">
+                <h7>Available</h7>
+              </div>
+            </td>
+            <td>
+              <a class=\"hollow button warning\" href=\"#\">BOOK NOW</a>
+            </td>
+
+          </tr>
+          ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['room'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 45
-        echo "
-              </td>
-            </tr>
-          
-          </tbody>
+        // line 49
+        echo "          </tbody>
         </table>
       </div>
     </div>
@@ -145,7 +142,7 @@ class __TwigTemplate_d4930fd674f30f0101c3a61bd5ec0ae32c073b6ec456414d076e27d955b
 
     public function getDebugInfo()
     {
-        return array (  118 => 45,  109 => 42,  104 => 40,  101 => 39,  97 => 38,  74 => 18,  68 => 15,  60 => 10,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  119 => 49,  99 => 35,  95 => 33,  91 => 32,  74 => 18,  68 => 15,  60 => 10,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -162,7 +159,7 @@ class __TwigTemplate_d4930fd674f30f0101c3a61bd5ec0ae32c073b6ec456414d076e27d955b
 
 {% block body %}
 
-    {{ dump(rooms) }}
+    {{ dump(dates) }}
 
     <div class=\"row\">
       <div class=\"medium-12 large-12 columns\">
@@ -172,10 +169,10 @@ class __TwigTemplate_d4930fd674f30f0101c3a61bd5ec0ae32c073b6ec456414d076e27d955b
         <form action=\"\" method=\"post\">
           <div class=\"medium-1  columns\">FROM:</div>
 
-          <div class=\"medium-2  columns\"><input name=\"reservation[dateIn]\" value=\"{{ dates.from }}\" type=\"text\" class=\"datepicker\" /></div>
+          <div class=\"medium-2  columns\"><input name=\"\" value=\"{{ date.from is defined ? date.from : '' }}\" type=\"text\" class=\"datepicker\" /></div>
 
           <div class=\"medium-1  columns\">TO:</div>
-          <div class=\"medium-2  columns\"><input name=\"reservation[dateOut]\" value=\"{{ dates.to }}\" type=\"text\" class=\"datepicker\" /></div>
+          <div class=\"medium-2  columns\"><input name=\"\" value=\"{{ date.to is defined ? date.to : '' }}\" type=\"text\" class=\"datepicker\" /></div>
 
           <div class=\"medium-2  columns\"><input class=\"button\" type=\"submit\" value=\"SEARCH\" /></div>
         </form>
@@ -189,23 +186,23 @@ class __TwigTemplate_d4930fd674f30f0101c3a61bd5ec0ae32c073b6ec456414d076e27d955b
             </tr>
           </thead>
           <tbody>
-          
-            <tr>
-              <h7>Available room</h7>
-              <td>
-                <div class=\"callout success\">
+          {% for room in rooms %}
+          <tr>
 
-                  {% for room in rooms  %}
+            <td>{{ room.name }}</td>
 
-                 <a class=\"hollow button warning\" href=\"{{ path(\"book_room\", { 'id_client': id_client }) }}\">BOOK THIS ROOM</a>
+            <td>
 
-                      {{ room.name }}
+              <div class=\"callout success\">
+                <h7>Available</h7>
+              </div>
+            </td>
+            <td>
+              <a class=\"hollow button warning\" href=\"#\">BOOK NOW</a>
+            </td>
 
-                  {% endfor %}
-
-              </td>
-            </tr>
-          
+          </tr>
+          {% endfor %}
           </tbody>
         </table>
       </div>

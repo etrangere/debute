@@ -107,9 +107,7 @@ class __TwigTemplate_d68447baef814a55b6e302d262e1d53cea64b09acdad4a696fdfa4c0ef0
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['client'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 33
-        echo "              <tr>
-
-              </tr>
+        echo "
           </tbody>
         </table>
       </div>
@@ -181,9 +179,7 @@ class __TwigTemplate_d68447baef814a55b6e302d262e1d53cea64b09acdad4a696fdfa4c0ef0
                 </td>
               </tr>
               {%  endfor %}
-              <tr>
 
-              </tr>
           </tbody>
         </table>
       </div>
