@@ -11,8 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Client;
 use AppBundle\Entity\Reservation;
-use AppBundle\Entity\room;
-
+use AppBundle\Entity\Room;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 
 class ReservationsController extends Controller
@@ -54,28 +54,39 @@ class ReservationsController extends Controller
             ->getForm();
         $form->handleRequest($request);
 
-
+/*
        if ($form->isSubmitted())
         {
-
+*/
 
         $form_data = $form->getData();
+
+       // var_dump($form_data);
         $data ['form'] = [];
         $data ['form'] = $form_data;
         $data['dates']['from'] = $form_data ['dateFrom'];
         $data['dates']['to'] = $form_data ['dateTo'];
         $em=$this->getDoctrine()->getManager();
-        $rooms=$em->getRepository('AppBundle:room')
-           ->getAvailableRooms($form_data['dateFrom'],$form_data['dateTo']
-           );
+
+        var_dump($data);
+
+
+
+
+            $rooms=$em->getRepository('AppBundle:Room')
+                ->getAvailableRooms($form_data['dateFrom'],$form_data['dateTo']
+                );
+
+
 
          $data['rooms']=$rooms;
 
          $client = $this->getDoctrine()->getRepository('AppBundle:Client')->find('id_client');
 
          $data['client']= $client;
-
+/*
         }
+*/
 
         return $this->render('reservations/book.html.twig',$data);
     }
@@ -110,5 +121,33 @@ class ReservationsController extends Controller
     }
 
 
+/*
 
+
+
+
+public function getAvailableRooms($date_start,$date_final)
+
+{
+
+
+
+     $em=$this->getEntityManager();
+     $qb=$em->createQueryBuilder();
+
+     $nots=$em->createQuery("SELECT IDENTITY(b.room) FROM AppBundle:Reservation b. WHERE NOT (b.dateOut < '$date_start' OR >b.dateIN > '$date_final'");
+     $dql_query= $nots->getDQL();
+     $qb->resetDQLParts();
+
+
+     $query= $qb->select('r')
+         ->from('AppBundle:Room','r' )
+         ->where($qb->expr()->notIn('r.id' . $dql_query));
+
+
+
+     return $query;
+
+}
+ */
 }

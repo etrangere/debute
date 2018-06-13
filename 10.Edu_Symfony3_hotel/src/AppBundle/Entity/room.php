@@ -3,9 +3,9 @@
 namespace AppBundle\Entity;
 
 /**
- * room
+ * Room
  */
-class room
+class Room
 {
     /**
      * @var int
@@ -43,7 +43,7 @@ class room
      *
      * @param string $name
      *
-     * @return room
+     * @return Room
      */
     public function setName($name)
     {
@@ -67,7 +67,7 @@ class room
      *
      * @param integer $floor
      *
-     * @return room
+     * @return Room
      */
     public function setFloor($floor)
     {
@@ -91,7 +91,7 @@ class room
      *
      * @param string $description
      *
-     * @return room
+     * @return Room
      */
     public function setDescription($description)
     {
@@ -127,7 +127,7 @@ class room
      *
      * @param \AppBundle\Entity\Reservation $reservation
      *
-     * @return room
+     * @return Room
      */
     public function addReservation(\AppBundle\Entity\Reservation $reservation)
     {

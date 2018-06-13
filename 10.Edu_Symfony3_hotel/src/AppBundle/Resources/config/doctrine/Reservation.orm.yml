@@ -24,7 +24,7 @@ AppBundle\Entity\Reservation:
                 name: client_id
                 referancedColumnName: id
         room:
-            targetEntity: room
+            targetEntity: Room
             inversedBy: Reservations
             joinColumn:
                 name: room_id

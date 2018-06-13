@@ -2,7 +2,7 @@
 
 {% block body %}
 
-    {{ dump(dates) }}
+    {{ dump(id_client) }}
 
     <div class="row">
       <div class="medium-12 large-12 columns">
@@ -12,10 +12,11 @@
         <form action="" method="post">
           <div class="medium-1  columns">FROM:</div>
 
-          <div class="medium-2  columns"><input name="" value="{{ date.from is defined ? date.from : '' }}" type="text" class="datepicker" /></div>
+          <div class="medium-2  columns"><input name="" value="{{ form }}" type="text" class="datepicker" /></div>
 
           <div class="medium-1  columns">TO:</div>
-          <div class="medium-2  columns"><input name="" value="{{ date.to is defined ? date.to : '' }}" type="text" class="datepicker" /></div>
+
+          <div class="medium-2  columns"><input name="" value="{{ form }}" type="text" class="datepicker" /></div>
 
           <div class="medium-2  columns"><input class="button" type="submit" value="SEARCH" /></div>
         </form>
@@ -29,10 +30,13 @@
             </tr>
           </thead>
           <tbody>
-          {% for room in rooms %}
+      {#   {% for date in dates %}
+          {{ date.from }}{{ date.to }}
+          {% endfor %}   #}
+      {% for room in rooms %}
           <tr>
 
-            <td>{{ room.name }}</td>
+            <td>{{ room }}</td>
 
             <td>
 

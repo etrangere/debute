@@ -1,7 +1,7 @@
-AppBundle\Entity\room:
+AppBundle\Entity\Room:
     type: entity
     table: null
-    repositoryClass: AppBundle\Repository\roomRepository
+    repositoryClass: AppBundle\Repository\RoomRepository
     id:
         id:
             type: integer
@@ -21,4 +21,4 @@ AppBundle\Entity\room:
     oneToMany:
         reservations:
             targetEntity: Reservation
-            mappedBy: room
+            mappedBy: Room

@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Client;
-use AppBundle\Entity\room;
+use AppBundle\Entity\Room;
 use AppBundle\Entity\Reservation;
 
 class ClientsController extends Controller
