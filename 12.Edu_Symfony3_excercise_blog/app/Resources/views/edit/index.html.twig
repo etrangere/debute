@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ dump(form) }}
+    <div id="header" xmlns="http://www.w3.org/1999/html">
+        <h1>Edit</h1>
+    </div>
+    <div id="menu">
+        <a href="{{ path("home_page") }}">Home</a>
+        <a href="#">Log out</a>
+        <br><hr>
+    </div>
+    <form method="post" id="content">
+        Title:
+        <br/>
+        <input type="text" name="form[title]" value="{{ form.title is defined ? form.title : '' }}" size="100"/>
+
+        <br/>
+        E-mail:
+        <br/>
+        <input type="text" name="form[email]" value="{{ form.email is defined ? form.email : '' }}" size="100"/>
+        <br/>
+        <br/>
+        Content:
+        <br/>
+        <textarea name="form[content]" rows="40" cols="120">{{ form.content is defined ? form.content : '' }}</textarea>
+        <br/>
+
+        <td>
+            <input type="submit" value="Save" {{ path("edit_article", { 'id': form.id }) }}">
+            <button type="button" onclick="location.href='{{ path("delete_article", { 'id': form.id }) }}'">Delete</button>
+        </td>
+    </form>
+    <div id="footer">
+        All right reserved.Tel.Adress.
+    </div>
+
+{% endblock %}
+

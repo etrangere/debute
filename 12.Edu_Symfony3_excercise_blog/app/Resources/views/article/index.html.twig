@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="header">
+        <h1>Article</h1>
+    </div>
+    <div id="menu">
+        <a href="{{ path("home_page") }}">Home</a><hr><br>
+    </div>
+
+    <div id="content">
+
+        <h3>Title:</h3>
+        {{ articles.title }}
+        <h3>Article:</h3>
+        {{ articles.content }}
+    </div>
+
+    <div id="footer">
+        All right reserved.Tel.Adress.
+    </div>
+{% endblock %}
+

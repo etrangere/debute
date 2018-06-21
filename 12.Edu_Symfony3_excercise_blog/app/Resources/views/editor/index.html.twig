@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="header">
+        <h1>Editor</h1>
+    </div>
+
+    <div id="menu">
+        <a href="{{ path("home_page") }}">Home</a>
+        <a href="{{ path("new_article") }}">New article</a>
+        <a href="#">Log out</a>
+        <br>
+        </a><hr>
+    </div>
+
+    <div>
+        <ul>
+            {%  for article in articles %}
+                <tr>
+                    <td>
+                        <a href="{{ path('edit_article', { 'id': article.id }) }}">{{ article.title }} {{ article.content }}</a>
+                        <br/><br/>
+                    </td>
+                </tr>
+            {%  endfor %}
+
+        </ul>
+    </div>
+
+    <div id="footer">
+        All right reserved.Tel.Adress.
+    </div>
+
+{% endblock %}
+
