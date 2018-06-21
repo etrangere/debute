@@ -6,13 +6,15 @@ namespace AppBundle\Controller;
 
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Response;
+//use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use AppBundle\Entity\Client;
 use AppBundle\Entity\Reservation;
+
+//use Doctrine\Repository\RoomRepository;
 use AppBundle\Entity\Room;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+
+
 
 
 class ReservationsController extends Controller
@@ -35,7 +37,7 @@ class ReservationsController extends Controller
     }
 
     /**
-     * @Route("/booking/{id_client}",name="booking")
+     * @Route("/reservations/{id_client}",name="booking")
      */
     public function booking(Request $request , $id_client)
     {
@@ -44,7 +46,7 @@ class ReservationsController extends Controller
         $data = [];
         $data['id_client'] = $id_client;
         $data['rooms']=null;
-        $data['form'] = [];
+        $data['form'] =[];
         $data['dates']['from']=[];
         $data['dates']['to']=[];
 
@@ -54,41 +56,41 @@ class ReservationsController extends Controller
             ->getForm();
         $form->handleRequest($request);
 
-/*
-       if ($form->isSubmitted())
+
+        if ($form->isSubmitted())
         {
-*/
+            $form_data = $form->getData();
 
-        $form_data = $form->getData();
-
-       // var_dump($form_data);
-        $data ['form'] = [];
         $data ['form'] = $form_data;
-        $data['dates']['from'] = $form_data ['dateFrom'];
-        $data['dates']['to'] = $form_data ['dateTo'];
+
+        $data['dates']['from'] = $form_data['from'];
+        $data['dates']['to'] = $form_data['to'];
+
         $em=$this->getDoctrine()->getManager();
 
-        var_dump($data);
+        $rooms=$em->getRepository('AppBundle:Room')
+            ->getAvailableRooms($form_data['from'],$form_data['to']);
+             //$rooms[]= 101;
+        //var_dump($form_data);
+       // var_dump(getAvailableRooms($form_data['from'],$form_data['to']));
 
+           // $rooms[]= 102;
+         //   $rooms[]= 201;
 
+        $data['rooms']=$rooms;
+            var_dump($rooms);
+        $client = $this->getDoctrine()->getRepository('AppBundle:Client')->find('id_client');
 
+        $data['client']= $client;
 
-            $rooms=$em->getRepository('AppBundle:Room')
-                ->getAvailableRooms($form_data['dateFrom'],$form_data['dateTo']
-                );
-
-
-
-         $data['rooms']=$rooms;
-
-         $client = $this->getDoctrine()->getRepository('AppBundle:Client')->find('id_client');
-
-         $data['client']= $client;
-/*
-        }
-*/
+          // var_dump($data['client']);
 
         return $this->render('reservations/book.html.twig',$data);
+
+        }
+
+
+      return $this->render('reservations/book.html.twig',$data);
     }
 
 
@@ -121,33 +123,4 @@ class ReservationsController extends Controller
     }
 
 
-/*
-
-
-
-
-public function getAvailableRooms($date_start,$date_final)
-
-{
-
-
-
-     $em=$this->getEntityManager();
-     $qb=$em->createQueryBuilder();
-
-     $nots=$em->createQuery("SELECT IDENTITY(b.room) FROM AppBundle:Reservation b. WHERE NOT (b.dateOut < '$date_start' OR >b.dateIN > '$date_final'");
-     $dql_query= $nots->getDQL();
-     $qb->resetDQLParts();
-
-
-     $query= $qb->select('r')
-         ->from('AppBundle:Room','r' )
-         ->where($qb->expr()->notIn('r.id' . $dql_query));
-
-
-
-     return $query;
-
-}
- */
 }

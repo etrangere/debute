@@ -2,21 +2,21 @@
 
 {% block body %}
 
-    {{ dump(id_client) }}
+
 
     <div class="row">
       <div class="medium-12 large-12 columns">
         <h4>Clients/Booking</h4>
         <div class="medium-2  columns">BOOKING FOR: {{ id_client }}</div>
-        <div class="medium-2  columns"><b>Client Name</b></div>
+        <div class="medium-2  columns"><b>{{ id_client }}</b></div>
         <form action="" method="post">
           <div class="medium-1  columns">FROM:</div>
 
-          <div class="medium-2  columns"><input name="" value="{{ form }}" type="text" class="datepicker" /></div>
+          <div class="medium-2  columns"><input name="form[from]" value="" type="text"  class="datepicker" /></div>
 
           <div class="medium-1  columns">TO:</div>
 
-          <div class="medium-2  columns"><input name="" value="{{ form }}" type="text" class="datepicker" /></div>
+          <div class="medium-2  columns"><input name="form[to]" value="" type="text" class="datepicker" /></div>
 
           <div class="medium-2  columns"><input class="button" type="submit" value="SEARCH" /></div>
         </form>
@@ -30,24 +30,18 @@
             </tr>
           </thead>
           <tbody>
-      {#   {% for date in dates %}
-          {{ date.from }}{{ date.to }}
-          {% endfor %}   #}
-      {% for room in rooms %}
+          {% for room in rooms %}
           <tr>
-
             <td>{{ room }}</td>
 
             <td>
-
-              <div class="callout success">
-                <h7>Available</h7>
-              </div>
+            <div class="callout success">
+              <h7>Available</h7>
+            </div>
             </td>
             <td>
-              <a class="hollow button warning" href="#">BOOK NOW</a>
+              <a class="hollow button warning" href="">BOOK NOW</a>
             </td>
-
           </tr>
           {% endfor %}
           </tbody>

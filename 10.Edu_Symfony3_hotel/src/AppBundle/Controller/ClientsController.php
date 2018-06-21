@@ -8,8 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Client;
-use AppBundle\Entity\Room;
-use AppBundle\Entity\Reservation;
+
 
 class ClientsController extends Controller
 {
@@ -27,8 +26,13 @@ class ClientsController extends Controller
         $clients = $this->getDoctrine()
             ->getRepository('AppBundle:Client')
             ->findALL();
+
+
         $data['clients'] = $clients;
         $data['titles'] = $this->titles;
+
+
+
 
         return $this->render("clients/index.html.twig", $data);
 

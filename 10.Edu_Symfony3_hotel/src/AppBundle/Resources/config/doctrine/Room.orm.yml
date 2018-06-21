@@ -21,4 +21,4 @@ AppBundle\Entity\Room:
     oneToMany:
         reservations:
             targetEntity: Reservation
-            mappedBy: Room
+            mappedBy: room

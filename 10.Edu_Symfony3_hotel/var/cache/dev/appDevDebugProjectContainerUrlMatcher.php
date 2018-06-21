@@ -141,22 +141,22 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
-        // reservations
-        if ($pathinfo === '/reservations') {
-            return array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::showReservations',  '_route' => 'reservations',);
-        }
+        if (0 === strpos($pathinfo, '/reservations')) {
+            // reservations
+            if ($pathinfo === '/reservations') {
+                return array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::showReservations',  '_route' => 'reservations',);
+            }
 
-        if (0 === strpos($pathinfo, '/book')) {
             // booking
-            if (0 === strpos($pathinfo, '/booking') && preg_match('#^/booking/(?P<id_client>[^/]++)$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/reservations/(?P<id_client>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'booking')), array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::booking',));
             }
 
-            // book_room
-            if (0 === strpos($pathinfo, '/book_room') && preg_match('#^/book_room/(?P<id_client>[^/]++)/(?P<id_room>[^/]++)/(?P<date_in>[^/]++)/(?P<date_out>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'book_room')), array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::book_room',));
-            }
+        }
 
+        // book_room
+        if (0 === strpos($pathinfo, '/book_room') && preg_match('#^/book_room/(?P<id_client>[^/]++)/(?P<id_room>[^/]++)/(?P<date_in>[^/]++)/(?P<date_out>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'book_room')), array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::book_room',));
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

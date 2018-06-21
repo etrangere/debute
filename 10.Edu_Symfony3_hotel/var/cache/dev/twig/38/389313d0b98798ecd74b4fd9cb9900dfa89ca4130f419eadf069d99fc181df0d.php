@@ -61,8 +61,28 @@ class __TwigTemplate_6439f56fce9ffede120fc0375cf238e97d4b92df2216a7116f3865f30bb
             </tr>
           </thead>
           <tbody>
+          ";
+        // line 19
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) ? $context["rooms"] : $this->getContext($context, "rooms")));
+        foreach ($context['_seq'] as $context["_key"] => $context["room"]) {
+            // line 20
+            echo "          <td>101</td>
+          <td>naeme</td>
 
-          </tbody>
+          <td>";
+            // line 23
+            echo twig_escape_filter($this->env, $context["room"], "html", null, true);
+            echo "</td>
+
+          <td>action</td>
+          ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['room'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 27
+        echo "          </tbody>
         </table>
       </div>
     </div>
@@ -88,7 +108,7 @@ class __TwigTemplate_6439f56fce9ffede120fc0375cf238e97d4b92df2216a7116f3865f30bb
 
     public function getDebugInfo()
     {
-        return array (  49 => 4,  40 => 3,  11 => 1,);
+        return array (  85 => 27,  75 => 23,  70 => 20,  66 => 19,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -119,7 +139,14 @@ class __TwigTemplate_6439f56fce9ffede120fc0375cf238e97d4b92df2216a7116f3865f30bb
             </tr>
           </thead>
           <tbody>
+          {% for room in rooms %}
+          <td>101</td>
+          <td>naeme</td>
 
+          <td>{{ room }}</td>
+
+          <td>action</td>
+          {% endfor %}
           </tbody>
         </table>
       </div>
