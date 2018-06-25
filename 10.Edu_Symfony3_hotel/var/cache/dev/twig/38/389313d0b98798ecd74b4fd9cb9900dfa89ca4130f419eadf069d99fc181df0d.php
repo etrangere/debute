@@ -1,6 +1,6 @@
 <?php
 
-/* reservations/index.html.twig */
+/* :reservations:index.html.twig */
 class __TwigTemplate_6439f56fce9ffede120fc0375cf238e97d4b92df2216a7116f3865f30bb658c3 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_6439f56fce9ffede120fc0375cf238e97d4b92df2216a7116f3865f30bb
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "reservations/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":reservations:index.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -22,10 +22,10 @@ class __TwigTemplate_6439f56fce9ffede120fc0375cf238e97d4b92df2216a7116f3865f30bb
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "reservations/index.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":reservations:index.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "reservations/index.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":reservations:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -46,7 +46,10 @@ class __TwigTemplate_6439f56fce9ffede120fc0375cf238e97d4b92df2216a7116f3865f30bb
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
+        echo "    ";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\DumpExtension')->dump($this->env, $context);
         echo "
+
     <div class=\"row\">
       <div class=\"medium-12 large-12 columns\">
         <h4>Reservations</h4>
@@ -62,16 +65,16 @@ class __TwigTemplate_6439f56fce9ffede120fc0375cf238e97d4b92df2216a7116f3865f30bb
           </thead>
           <tbody>
           ";
-        // line 19
+        // line 20
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) ? $context["rooms"] : $this->getContext($context, "rooms")));
         foreach ($context['_seq'] as $context["_key"] => $context["room"]) {
-            // line 20
+            // line 21
             echo "          <td>101</td>
           <td>naeme</td>
 
           <td>";
-            // line 23
+            // line 24
             echo twig_escape_filter($this->env, $context["room"], "html", null, true);
             echo "</td>
 
@@ -81,7 +84,7 @@ class __TwigTemplate_6439f56fce9ffede120fc0375cf238e97d4b92df2216a7116f3865f30bb
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['room'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
+        // line 28
         echo "          </tbody>
         </table>
       </div>
@@ -98,7 +101,7 @@ class __TwigTemplate_6439f56fce9ffede120fc0375cf238e97d4b92df2216a7116f3865f30bb
 
     public function getTemplateName()
     {
-        return "reservations/index.html.twig";
+        return ":reservations:index.html.twig";
     }
 
     public function isTraitable()
@@ -108,7 +111,7 @@ class __TwigTemplate_6439f56fce9ffede120fc0375cf238e97d4b92df2216a7116f3865f30bb
 
     public function getDebugInfo()
     {
-        return array (  85 => 27,  75 => 23,  70 => 20,  66 => 19,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  88 => 28,  78 => 24,  73 => 21,  69 => 20,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -124,6 +127,7 @@ class __TwigTemplate_6439f56fce9ffede120fc0375cf238e97d4b92df2216a7116f3865f30bb
         return new Twig_Source("{% extends 'base.html.twig' %}
 
 {% block body %}
+    {{ dump() }}
 
     <div class=\"row\">
       <div class=\"medium-12 large-12 columns\">
@@ -153,6 +157,6 @@ class __TwigTemplate_6439f56fce9ffede120fc0375cf238e97d4b92df2216a7116f3865f30bb
     </div>
 
 {% endblock %}
-", "reservations/index.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/app/Resources/views/reservations/index.html.twig");
+", ":reservations:index.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/app/Resources/views/reservations/index.html.twig");
     }
 }

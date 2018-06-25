@@ -46,6 +46,7 @@ class ClientsController extends Controller
         $data = [];
         $client_repo = $this->getDoctrine()
             ->getRepository('AppBundle:Client');
+
         $data['mode'] = 'modify';
         $data['form'] = [];
         $data['titles'] = $this->titles;

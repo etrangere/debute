@@ -47,7 +47,10 @@ class __TwigTemplate_d4930fd674f30f0101c3a61bd5ec0ae32c073b6ec456414d076e27d955b
 
         // line 4
         echo "
-
+";
+        // line 5
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\DumpExtension')->dump($this->env, $context);
+        echo "
 
     <div class=\"row\">
       <div class=\"medium-12 large-12 columns\">
@@ -56,10 +59,12 @@ class __TwigTemplate_d4930fd674f30f0101c3a61bd5ec0ae32c073b6ec456414d076e27d955b
         // line 10
         echo twig_escape_filter($this->env, (isset($context["id_client"]) ? $context["id_client"] : $this->getContext($context, "id_client")), "html", null, true);
         echo "</div>
+
         <div class=\"medium-2  columns\"><b>";
-        // line 11
-        echo twig_escape_filter($this->env, (isset($context["id_client"]) ? $context["id_client"] : $this->getContext($context, "id_client")), "html", null, true);
+        // line 12
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["client"]) ? $context["client"] : $this->getContext($context, "client")), "name", array()), "html", null, true);
         echo "</b></div>
+
         <form action=\"\" method=\"post\">
           <div class=\"medium-1  columns\">FROM:</div>
 
@@ -82,14 +87,14 @@ class __TwigTemplate_d4930fd674f30f0101c3a61bd5ec0ae32c073b6ec456414d076e27d955b
           </thead>
           <tbody>
           ";
-        // line 33
+        // line 35
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) ? $context["rooms"] : $this->getContext($context, "rooms")));
         foreach ($context['_seq'] as $context["_key"] => $context["room"]) {
-            // line 34
+            // line 36
             echo "          <tr>
             <td>";
-            // line 35
+            // line 37
             echo twig_escape_filter($this->env, $context["room"], "html", null, true);
             echo "</td>
 
@@ -107,7 +112,7 @@ class __TwigTemplate_d4930fd674f30f0101c3a61bd5ec0ae32c073b6ec456414d076e27d955b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['room'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
+        // line 49
         echo "          </tbody>
         </table>
       </div>
@@ -134,7 +139,7 @@ class __TwigTemplate_d4930fd674f30f0101c3a61bd5ec0ae32c073b6ec456414d076e27d955b
 
     public function getDebugInfo()
     {
-        return array (  111 => 47,  93 => 35,  90 => 34,  86 => 33,  61 => 11,  57 => 10,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  116 => 49,  98 => 37,  95 => 36,  91 => 35,  65 => 12,  60 => 10,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -151,13 +156,15 @@ class __TwigTemplate_d4930fd674f30f0101c3a61bd5ec0ae32c073b6ec456414d076e27d955b
 
 {% block body %}
 
-
+{{ dump() }}
 
     <div class=\"row\">
       <div class=\"medium-12 large-12 columns\">
         <h4>Clients/Booking</h4>
         <div class=\"medium-2  columns\">BOOKING FOR: {{ id_client }}</div>
-        <div class=\"medium-2  columns\"><b>{{ id_client }}</b></div>
+
+        <div class=\"medium-2  columns\"><b>{{ client.name }}</b></div>
+
         <form action=\"\" method=\"post\">
           <div class=\"medium-1  columns\">FROM:</div>
 

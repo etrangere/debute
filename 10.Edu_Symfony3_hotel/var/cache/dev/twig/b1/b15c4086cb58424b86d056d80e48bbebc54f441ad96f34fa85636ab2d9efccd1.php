@@ -47,12 +47,16 @@ class __TwigTemplate_d68447baef814a55b6e302d262e1d53cea64b09acdad4a696fdfa4c0ef0
 
         // line 4
         echo "
+    ";
+        // line 5
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\DumpExtension')->dump($this->env, $context);
+        echo "
     <div class=\"row\">
       <div class=\"medium-12 large-12 columns\">
         <h4>Clients</h4>
 
         <div class=\"medium-2  columns\"><a class=\"button\" href=\"";
-        // line 9
+        // line 10
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("new_client");
         echo "\">ADD NEW CLIENT</a></div>
 
@@ -67,14 +71,14 @@ class __TwigTemplate_d68447baef814a55b6e302d262e1d53cea64b09acdad4a696fdfa4c0ef0
 
 
                 ";
-        // line 21
+        // line 22
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["clients"]) ? $context["clients"] : $this->getContext($context, "clients")));
         foreach ($context['_seq'] as $context["_key"] => $context["client"]) {
-            // line 22
+            // line 23
             echo "                <tr>
                 <td>";
-            // line 23
+            // line 24
             echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($context["client"], "title", array())), "html", null, true);
             echo ". ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["client"], "name", array()), "html", null, true);
@@ -82,21 +86,21 @@ class __TwigTemplate_d68447baef814a55b6e302d262e1d53cea64b09acdad4a696fdfa4c0ef0
             echo twig_escape_filter($this->env, $this->getAttribute($context["client"], "lastName", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 24
+            // line 25
             echo twig_escape_filter($this->env, $this->getAttribute($context["client"], "Email", array()), "html", null, true);
             echo "</td>
 
                 <td>
                     <a class=\"hollow button\" href=\"";
-            // line 27
+            // line 28
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("modify_client", array("id_client" => $this->getAttribute($context["client"], "id", array()))), "html", null, true);
             echo "\">EDIT</a>
                     <a class=\"hollow button warning\" href=\"";
-            // line 28
+            // line 29
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("booking", array("id_client" => $this->getAttribute($context["client"], "id", array()))), "html", null, true);
             echo "\">BOOK A ROOM</a>
                     <a class=\"hollow button warning\" href=\"";
-            // line 29
+            // line 30
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("delete", array("id_client" => $this->getAttribute($context["client"], "id", array()))), "html", null, true);
             echo "\">DELETE</a>
                 </td>
@@ -106,7 +110,7 @@ class __TwigTemplate_d68447baef814a55b6e302d262e1d53cea64b09acdad4a696fdfa4c0ef0
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['client'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 34
         echo "
           </tbody>
         </table>
@@ -134,7 +138,7 @@ class __TwigTemplate_d68447baef814a55b6e302d262e1d53cea64b09acdad4a696fdfa4c0ef0
 
     public function getDebugInfo()
     {
-        return array (  110 => 33,  100 => 29,  96 => 28,  92 => 27,  86 => 24,  78 => 23,  75 => 22,  71 => 21,  56 => 9,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  114 => 34,  104 => 30,  100 => 29,  96 => 28,  90 => 25,  82 => 24,  79 => 23,  75 => 22,  60 => 10,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -151,6 +155,7 @@ class __TwigTemplate_d68447baef814a55b6e302d262e1d53cea64b09acdad4a696fdfa4c0ef0
 
 {% block body %}
 
+    {{ dump() }}
     <div class=\"row\">
       <div class=\"medium-12 large-12 columns\">
         <h4>Clients</h4>

@@ -47,7 +47,10 @@ class __TwigTemplate_34cf1c84443039fcd7618b687ec656efc9383165502dc563ac447b9d994
 
         // line 3
         echo "
-
+    ";
+        // line 4
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\DumpExtension')->dump($this->env, $context);
+        echo "
   <div class=\"row\">
     <div class=\"medium-12 large-12 columns\">
       <h4></h4>
@@ -154,7 +157,7 @@ class __TwigTemplate_34cf1c84443039fcd7618b687ec656efc9383165502dc563ac447b9d994
 
     public function getDebugInfo()
     {
-        return array (  127 => 45,  120 => 41,  113 => 37,  106 => 33,  99 => 29,  92 => 25,  85 => 21,  78 => 16,  65 => 14,  61 => 13,  49 => 3,  40 => 2,  11 => 1,);
+        return array (  130 => 45,  123 => 41,  116 => 37,  109 => 33,  102 => 29,  95 => 25,  88 => 21,  81 => 16,  68 => 14,  64 => 13,  52 => 4,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -170,7 +173,7 @@ class __TwigTemplate_34cf1c84443039fcd7618b687ec656efc9383165502dc563ac447b9d994
         return new Twig_Source("{% extends 'base.html.twig' %}
 {% block body %}
 
-
+    {{ dump() }}
   <div class=\"row\">
     <div class=\"medium-12 large-12 columns\">
       <h4></h4>

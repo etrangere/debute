@@ -10,8 +10,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Reservation;
-
-//use Doctrine\Repository\RoomRepository;
+//use AppBundle\Entity\Client;
+use Doctrine\Repository\RoomRepository;
 use AppBundle\Entity\Room;
 
 
@@ -56,39 +56,44 @@ class ReservationsController extends Controller
             ->getForm();
         $form->handleRequest($request);
 
+        $client = $this->getDoctrine()->getRepository('AppBundle:Client')->find($id_client);
+
+        $data['client']= $client;
+
 
         if ($form->isSubmitted())
         {
             $form_data = $form->getData();
 
-        $data ['form'] = $form_data;
+
+            $data ['form'] = $form_data;
+            //$data ['dateFrom'] ='';
+           // $data ['dateTo'] ='';
 
         $data['dates']['from'] = $form_data['from'];
         $data['dates']['to'] = $form_data['to'];
 
         $em=$this->getDoctrine()->getManager();
 
-        $rooms=$em->getRepository('AppBundle:Room')
-            ->getAvailableRooms($form_data['from'],$form_data['to']);
-             //$rooms[]= 101;
-        //var_dump($form_data);
-       // var_dump(getAvailableRooms($form_data['from'],$form_data['to']));
 
-           // $rooms[]= 102;
-         //   $rooms[]= 201;
+
+        $rooms=$em->getRepository('AppBundle:Room')
+           ->getAvailableRooms($form_data['from'],$form_data['to']);
+
+            // $rooms[]= 101;
+            // $rooms[]= 102;
+            // $rooms[]= 201;
 
         $data['rooms']=$rooms;
-            var_dump($rooms);
-        $client = $this->getDoctrine()->getRepository('AppBundle:Client')->find('id_client');
+          // var_dump($rooms);
 
-        $data['client']= $client;
 
-          // var_dump($data['client']);
+
+
 
         return $this->render('reservations/book.html.twig',$data);
 
         }
-
 
       return $this->render('reservations/book.html.twig',$data);
     }
