@@ -62,3 +62,10 @@ doctrine:
     naming_strategy: doctrine.orm.naming_strategy.underscore
 
     auto_mapping: true
+
+doctrine_cache:
+    providers:
+        my_markdown_cache:
+            type: file_system
+            file_system:
+                directory: /tmp/doctrine_cache

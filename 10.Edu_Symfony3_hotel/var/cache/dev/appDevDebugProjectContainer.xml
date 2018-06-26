@@ -15,6 +15,7 @@
       <parameter key="SwiftmailerBundle">Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
+      <parameter key="DoctrineCacheBundle">Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
@@ -56,6 +57,11 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/sensio/framework-extra-bundle</parameter>
         <parameter key="namespace">Sensio\Bundle\FrameworkExtraBundle</parameter>
+      </parameter>
+      <parameter key="DoctrineCacheBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/vendor/doctrine/doctrine-cache-bundle</parameter>
+        <parameter key="namespace">Doctrine\Bundle\DoctrineCacheBundle</parameter>
       </parameter>
       <parameter key="AppBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -479,7 +485,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>IPXBvzzrfV</argument>
                 <argument>0</argument>
-                <argument>YxslBZySvp6FpC2KXkTFAE</argument>
+                <argument>kJ1REvfyzYUUg2NiWoGBln</argument>
                 <argument>/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/var/cache/dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -662,7 +668,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>psAwMoCOm2</argument>
       <argument>0</argument>
-      <argument>YxslBZySvp6FpC2KXkTFAE</argument>
+      <argument>kJ1REvfyzYUUg2NiWoGBln</argument>
       <argument>/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -672,7 +678,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>gvGwXAvhg-</argument>
       <argument>0</argument>
-      <argument>YxslBZySvp6FpC2KXkTFAE</argument>
+      <argument>kJ1REvfyzYUUg2NiWoGBln</argument>
       <argument>/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1665,7 +1671,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5b30cd21c584d3.50695228</argument>
+            <argument>5b3285df3ebf23.49631518</argument>
           </service>
         </argument>
       </argument>
@@ -1813,7 +1819,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>5b30cd21c584d3.50695228</argument>
+            <argument>5b3285df3ebf23.49631518</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2471,6 +2477,11 @@
       <argument type="service" id="security.role_hierarchy" on-invalid="null"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="security.authorization_checker" on-invalid="null"/>
+    </service>
+    <service id="doctrine_cache.providers.my_markdown_cache" class="Doctrine\Common\Cache\FilesystemCache">
+      <argument>/tmp/doctrine_cache</argument>
+      <argument>null</argument>
+      <argument>2</argument>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>

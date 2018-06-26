@@ -101,6 +101,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         if (0 === strpos($pathinfo, '/genus')) {
+            // app_genus_new
+            if ($pathinfo === '/genus/new') {
+                return array (  '_controller' => 'AppBundle\\Controller\\GenusController::newAction',  '_route' => 'app_genus_new',);
+            }
+
             // app_genus_show
             if (preg_match('#^/genus/(?P<genusName>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_genus_show')), array (  '_controller' => 'AppBundle\\Controller\\GenusController::showAction',));
