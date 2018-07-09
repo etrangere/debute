@@ -22,7 +22,7 @@ class ProfilerControllerTest extends \PHPUnit_Framework_TestCase
      */
     public function testEmptyToken($token)
     {
-        $urlGenerator = $this->getMock('Symfony\Component\Routing\Generator\UrlGeneratorInterface');
+        $urlGenerator = $this->getMockBuilder('Symfony\Component\Routing\Generator\UrlGeneratorInterface')->getMock();
         $twig = $this->getMockBuilder('Twig_Environment')->disableOriginalConstructor()->getMock();
         $profiler = $this
             ->getMockBuilder('Symfony\Component\HttpKernel\Profiler\Profiler')
@@ -46,7 +46,7 @@ class ProfilerControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testReturns404onTokenNotFound()
     {
-        $urlGenerator = $this->getMock('Symfony\Component\Routing\Generator\UrlGeneratorInterface');
+        $urlGenerator = $this->getMockBuilder('Symfony\Component\Routing\Generator\UrlGeneratorInterface')->getMock();
         $twig = $this->getMockBuilder('Twig_Environment')->disableOriginalConstructor()->getMock();
         $profiler = $this
             ->getMockBuilder('Symfony\Component\HttpKernel\Profiler\Profiler')
@@ -62,8 +62,6 @@ class ProfilerControllerTest extends \PHPUnit_Framework_TestCase
                 if ('found' == $token) {
                     return new Profile($token);
                 }
-
-                return;
             }))
         ;
 
@@ -76,7 +74,7 @@ class ProfilerControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testSearchResult()
     {
-        $urlGenerator = $this->getMock('Symfony\Component\Routing\Generator\UrlGeneratorInterface');
+        $urlGenerator = $this->getMockBuilder('Symfony\Component\Routing\Generator\UrlGeneratorInterface')->getMock();
         $twig = $this->getMockBuilder('Twig_Environment')->disableOriginalConstructor()->getMock();
         $profiler = $this
             ->getMockBuilder('Symfony\Component\HttpKernel\Profiler\Profiler')
@@ -125,6 +123,7 @@ class ProfilerControllerTest extends \PHPUnit_Framework_TestCase
                 'tokens' => $tokens,
                 'ip' => '127.0.0.1',
                 'method' => 'GET',
+                'status_code' => null,
                 'url' => 'http://example.com/',
                 'start' => null,
                 'end' => null,

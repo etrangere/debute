@@ -19,6 +19,8 @@ use Symfony\Component\Security\Core\Exception\BadCredentialsException;
  */
 class BCryptPasswordEncoder extends BasePasswordEncoder
 {
+    const MAX_PASSWORD_LENGTH = 72;
+
     /**
      * @var string
      */
@@ -60,7 +62,7 @@ class BCryptPasswordEncoder extends BasePasswordEncoder
      *
      * @throws BadCredentialsException when the given password is too long
      *
-     * @link http://lxr.php.net/xref/PHP_5_5/ext/standard/password.c#111
+     * @see http://lxr.php.net/xref/PHP_5_5/ext/standard/password.c#111
      */
     public function encodePassword($raw, $salt)
     {

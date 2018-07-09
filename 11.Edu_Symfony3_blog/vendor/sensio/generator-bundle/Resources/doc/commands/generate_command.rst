@@ -1,6 +1,12 @@
 Generating a New Command
 ========================
 
+.. caution::
+
+    If your application is based on Symfony 2.x version, replace ``php bin/console``
+    with ``php app/console`` before executing any of the console commands included
+    in this article.
+
 Usage
 -----
 
@@ -12,14 +18,14 @@ determine the bundle and the command name:
 
 .. code-block:: bash
 
-    $ php app/console generate:command
+    $ php bin/console generate:command
 
 The command can be run in a non interactive mode by using the
-``--no-interaction`` and poviding the needed arguments:
+``--no-interaction`` and providing the needed arguments:
 
 .. code-block:: bash
 
-    $ php app/console generate:command --no-interaction AcmeBlogBundle blog:publish-posts
+    $ php bin/console generate:command --no-interaction AcmeBlogBundle blog:publish-posts
 
 Available Arguments
 -------------------

@@ -35,7 +35,7 @@ class ORMQueryBuilderLoader implements EntityLoaderInterface
     /**
      * Construct an ORM Query Builder Loader.
      *
-     * @param QueryBuilder $queryBuilder The query builder for creating the query builder.
+     * @param QueryBuilder $queryBuilder The query builder for creating the query builder
      */
     public function __construct(QueryBuilder $queryBuilder)
     {
@@ -55,9 +55,10 @@ class ORMQueryBuilderLoader implements EntityLoaderInterface
      */
     public function getEntitiesByIds($identifier, array $values)
     {
-        $qb = clone ($this->queryBuilder);
+        $qb = clone $this->queryBuilder;
         $alias = current($qb->getRootAliases());
         $parameter = 'ORMQueryBuilderLoader_getEntitiesByIds_'.$identifier;
+        $parameter = str_replace('.', '_', $parameter);
         $where = $qb->expr()->in($alias.'.'.$identifier, ':'.$parameter);
 
         // Guess type
@@ -69,7 +70,14 @@ class ORMQueryBuilderLoader implements EntityLoaderInterface
             // Filter out non-integer values (e.g. ""). If we don't, some
             // databases such as PostgreSQL fail.
             $values = array_values(array_filter($values, function ($v) {
-                return (string) $v === (string) (int) $v;
+                return (string) $v === (string) (int) $v || ctype_digit($v);
+            }));
+        } elseif ('guid' === $metadata->getTypeOfField($identifier)) {
+            $parameterType = Connection::PARAM_STR_ARRAY;
+
+            // Like above, but we just filter out empty strings.
+            $values = array_values(array_filter($values, function ($v) {
+                return (string) $v !== '';
             }));
         } else {
             $parameterType = Connection::PARAM_STR_ARRAY;

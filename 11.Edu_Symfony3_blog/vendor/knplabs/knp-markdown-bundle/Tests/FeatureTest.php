@@ -749,23 +749,15 @@ That's some text with a footnote.[^1]
 [^1]: And that's the footnote.
 EOF;
 
-        $html = <<<EOF
-<p>That's some text with a footnote.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref">1</a></sup></p>
+        $actualHtml = $parser->transform($text);
 
-<div class="footnotes">
-<hr />
-<ol>
-
-<li id="fn:1">
-<p>And that's the footnote.&#160;<a href="#fnref:1" class="footnote-backref">&#8617;</a></p>
-</li>
-
-</ol>
-</div>
-
-EOF;
-
-        $this->assertEquals($html, $parser->transform($text));
+        // asserting a few things instead of comparing full final HTML
+        // because a few minor things have changed over versions of Michelf
+        // With assertContains(), tests will pass across all versions
+        $this->assertContains('<p>That\'s some text with a footnote.<sup id="fnref:1"><a href="#fn:1"', $actualHtml);
+        $this->assertContains('<div class="footnotes"', $actualHtml);
+        $this->assertContains('<li id="fn:1"', $actualHtml);
+        $this->assertContains('<p>And that\'s the footnote.&#160;<a href="#fnref:1" class="footnote-backref"', $actualHtml);
     }
 
     /**

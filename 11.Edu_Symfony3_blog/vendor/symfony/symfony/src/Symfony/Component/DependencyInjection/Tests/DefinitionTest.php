@@ -12,7 +12,6 @@
 namespace Symfony\Component\DependencyInjection\Tests;
 
 use Symfony\Component\DependencyInjection\Definition;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class DefinitionTest extends \PHPUnit_Framework_TestCase
 {
@@ -160,7 +159,7 @@ class DefinitionTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider invalidDeprecationMessageProvider
-     * @expectedException Symfony\Component\DependencyInjection\Exception\InvalidArgumentException
+     * @expectedException \Symfony\Component\DependencyInjection\Exception\InvalidArgumentException
      */
     public function testSetDeprecatedWithInvalidDeprecationTemplate($message)
     {
@@ -258,6 +257,7 @@ class DefinitionTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \OutOfBoundsException
+     * @expectedExceptionMessage The index "1" is not in the range [0, 0].
      */
     public function testReplaceArgumentShouldCheckBounds()
     {
@@ -265,6 +265,16 @@ class DefinitionTest extends \PHPUnit_Framework_TestCase
 
         $def->addArgument('foo');
         $def->replaceArgument(1, 'bar');
+    }
+
+    /**
+     * @expectedException \OutOfBoundsException
+     * @expectedExceptionMessage Cannot replace arguments if none have been configured yet.
+     */
+    public function testReplaceArgumentWithoutExistingArgumentsShouldCheckBounds()
+    {
+        $def = new Definition('stdClass');
+        $def->replaceArgument(0, 'bar');
     }
 
     public function testSetGetProperties()

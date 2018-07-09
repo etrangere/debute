@@ -21,6 +21,8 @@ use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Translation\Catalogue\MergeOperation;
 use Symfony\Component\Translation\MessageCatalogue;
 use Symfony\Component\Translation\Translator;
+use Symfony\Component\Translation\DataCollectorTranslator;
+use Symfony\Component\Translation\LoggingTranslator;
 
 /**
  * Helps finding unused or missing translation messages in a given locale
@@ -50,7 +52,7 @@ class TranslationDebugCommand extends ContainerAwareCommand
                 new InputOption('all', null, InputOption::VALUE_NONE, 'Load messages from all registered bundles'),
             ))
             ->setDescription('Displays translation messages information')
-            ->setHelp(<<<EOF
+            ->setHelp(<<<'EOF'
 The <info>%command.name%</info> command helps finding unused or missing translation
 messages and comparing them with the fallback ones by inspecting the
 templates and translation files of a given bundle or the app folder.
@@ -89,7 +91,7 @@ EOF
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output = new SymfonyStyle($input, $output);
+        $io = new SymfonyStyle($input, $output);
 
         $locale = $input->getArgument('locale');
         $domain = $input->getOption('domain');
@@ -145,7 +147,7 @@ EOF
                 $outputMessage .= sprintf(' and domain "%s"', $domain);
             }
 
-            $output->warning($outputMessage);
+            $io->warning($outputMessage);
 
             return;
         }
@@ -195,7 +197,7 @@ EOF
             }
         }
 
-        $output->table($headers, $rows);
+        $io->table($headers, $rows);
     }
 
     private function formatState($state)
@@ -295,7 +297,7 @@ EOF
     {
         $fallbackCatalogues = array();
         $translator = $this->getContainer()->get('translator');
-        if ($translator instanceof Translator) {
+        if ($translator instanceof Translator || $translator instanceof DataCollectorTranslator || $translator instanceof LoggingTranslator) {
             foreach ($translator->getFallbackLocales() as $fallbackLocale) {
                 if ($fallbackLocale === $locale) {
                     continue;

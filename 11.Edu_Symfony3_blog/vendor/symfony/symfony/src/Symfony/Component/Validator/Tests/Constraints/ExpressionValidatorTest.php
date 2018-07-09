@@ -11,17 +11,15 @@
 
 namespace Symfony\Component\Validator\Tests\Constraints;
 
-use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\Validator\Constraints\Expression;
 use Symfony\Component\Validator\Constraints\ExpressionValidator;
 use Symfony\Component\Validator\Tests\Fixtures\Entity;
-use Symfony\Component\Validator\Validation;
 
 class ExpressionValidatorTest extends AbstractConstraintValidatorTest
 {
     protected function createValidator()
     {
-        return new ExpressionValidator(PropertyAccess::createPropertyAccessor());
+        return new ExpressionValidator();
     }
 
     public function testExpressionIsEvaluatedWithNullValue()
@@ -219,7 +217,7 @@ class ExpressionValidatorTest extends AbstractConstraintValidatorTest
             'expression' => 'false',
         ));
 
-        $expressionLanguage = $this->getMock('Symfony\Component\ExpressionLanguage\ExpressionLanguage');
+        $expressionLanguage = $this->getMockBuilder('Symfony\Component\ExpressionLanguage\ExpressionLanguage')->getMock();
 
         $used = false;
 

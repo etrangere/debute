@@ -191,7 +191,7 @@ class MarkdownDescriptor extends Descriptor
             $output .= "\n".'- Autowired: '.($definition->isAutowired() ? 'yes' : 'no');
 
             foreach ($definition->getAutowiringTypes() as $autowiringType) {
-                    $output .= "\n".'- Autowiring Type: `'.$autowiringType.'`';
+                $output .= "\n".'- Autowiring Type: `'.$autowiringType.'`';
             }
         }
 
@@ -214,6 +214,11 @@ class MarkdownDescriptor extends Descriptor
             }
         }
 
+        $calls = $definition->getMethodCalls();
+        foreach ($calls as $callData) {
+            $output .= "\n".'- Call: `'.$callData[0].'`';
+        }
+
         if (!(isset($options['omit_tags']) && $options['omit_tags'])) {
             foreach ($definition->getTags() as $tagName => $tagData) {
                 foreach ($tagData as $parameters) {
@@ -225,7 +230,7 @@ class MarkdownDescriptor extends Descriptor
             }
         }
 
-        $this->write(isset($options['id']) ? sprintf("%s\n%s\n\n%s\n", $options['id'], str_repeat('~', strlen($options['id'])), $output) : $output);
+        $this->write(isset($options['id']) ? sprintf("### %s\n\n%s\n", $options['id'], $output) : $output);
     }
 
     /**
@@ -236,7 +241,7 @@ class MarkdownDescriptor extends Descriptor
         $output = '- Service: `'.$alias.'`'
             ."\n".'- Public: '.($alias->isPublic() ? 'yes' : 'no');
 
-        $this->write(isset($options['id']) ? sprintf("%s\n%s\n\n%s\n", $options['id'], str_repeat('~', strlen($options['id'])), $output) : $output);
+        $this->write(isset($options['id']) ? sprintf("### %s\n\n%s\n", $options['id'], $output) : $output);
     }
 
     /**
