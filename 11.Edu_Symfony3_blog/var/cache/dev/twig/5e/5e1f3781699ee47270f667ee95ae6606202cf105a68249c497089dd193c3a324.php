@@ -52,9 +52,20 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
+        echo "    ";
+        if ($this->env->isDebug()) {
+            $__internal_5868bf6b890bae4eebf1ff4e32cc9e4e78743dd752241a8dfe49e56f1209af69vars = array();
+            foreach ($context as $__internal_5868bf6b890bae4eebf1ff4e32cc9e4e78743dd752241a8dfe49e56f1209af69key => $__internal_5868bf6b890bae4eebf1ff4e32cc9e4e78743dd752241a8dfe49e56f1209af69val) {
+                if (!$__internal_5868bf6b890bae4eebf1ff4e32cc9e4e78743dd752241a8dfe49e56f1209af69val instanceof \Twig_Template) {
+                    $__internal_5868bf6b890bae4eebf1ff4e32cc9e4e78743dd752241a8dfe49e56f1209af69vars[$__internal_5868bf6b890bae4eebf1ff4e32cc9e4e78743dd752241a8dfe49e56f1209af69key] = $__internal_5868bf6b890bae4eebf1ff4e32cc9e4e78743dd752241a8dfe49e56f1209af69val;
+                }
+            }
+            \Symfony\Component\VarDumper\VarDumper::dump($__internal_5868bf6b890bae4eebf1ff4e32cc9e4e78743dd752241a8dfe49e56f1209af69vars);
+        }
+        // line 9
         echo "
     <h2 class=\"genus-name\">";
-        // line 9
+        // line 10
         echo twig_escape_filter($this->env, $this->getAttribute(($context["genus"] ?? $this->getContext($context, "genus")), "name", array()), "html", null, true);
         echo "</h2>
 
@@ -64,17 +75,17 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
             <dl class=\"genus-details-list\">
                 <dt>Subfamily:</dt>
                 <dd>";
-        // line 16
+        // line 17
         echo twig_escape_filter($this->env, $this->getAttribute(($context["genus"] ?? $this->getContext($context, "genus")), "subFamily", array()), "html", null, true);
         echo "</dd>
                 <dt>Known Species:</dt>
                 <dd>";
-        // line 18
+        // line 19
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, $this->getAttribute(($context["genus"] ?? $this->getContext($context, "genus")), "speciesCount", array())), "html", null, true);
         echo "</dd>
                 <dt>Fun Fact:</dt>
                 <dd>";
-        // line 20
+        // line 21
         echo twig_escape_filter($this->env, $this->getAttribute(($context["genus"] ?? $this->getContext($context, "genus")), "funFact", array()), "html", null, true);
         echo "</dd>
             </dl>
@@ -87,13 +98,13 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
 
     }
 
-    // line 27
+    // line 28
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 28
+        // line 29
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
@@ -102,13 +113,13 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js\"></script>
 
     <script type=\"text/babel\" src=\"";
-        // line 33
+        // line 34
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/notes.react.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/babel\">
         var notesUrl = '";
-        // line 35
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("genus_show_notes", array("genusName" => $this->getAttribute(($context["genus"] ?? $this->getContext($context, "genus")), "name", array()))), "html", null, true);
+        // line 36
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("genus_show_notes", array("name" => $this->getAttribute(($context["genus"] ?? $this->getContext($context, "genus")), "name", array()))), "html", null, true);
         echo "';
 
         ReactDOM.render(
@@ -134,7 +145,7 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
 
     public function getDebugInfo()
     {
-        return array (  111 => 35,  106 => 33,  97 => 28,  91 => 27,  78 => 20,  73 => 18,  68 => 16,  58 => 9,  55 => 8,  49 => 7,  36 => 5,  11 => 1,);
+        return array (  122 => 36,  117 => 34,  108 => 29,  102 => 28,  89 => 21,  84 => 19,  79 => 17,  69 => 10,  66 => 9,  55 => 8,  49 => 7,  36 => 5,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -154,6 +165,7 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
 {% block title %}Genus {{ genus.name }}{% endblock %}
 
 {% block body %}
+    {% dump %}
 
     <h2 class=\"genus-name\">{{ genus.name }}</h2>
 
@@ -181,7 +193,7 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
 
     <script type=\"text/babel\" src=\"{{ asset('js/notes.react.js') }}\"></script>
     <script type=\"text/babel\">
-        var notesUrl = '{{ path('genus_show_notes', {'genusName': genus.name}) }}';
+        var notesUrl = '{{ path('genus_show_notes', {'name': genus.name}) }}';
 
         ReactDOM.render(
           <NoteSection url={notesUrl} />,

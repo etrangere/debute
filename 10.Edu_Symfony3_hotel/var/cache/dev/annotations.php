@@ -7,6 +7,14 @@ return array(
 'DoctrineNamespaceCacheKey%5B%5D' => 'N;',
 '%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%5D%5B1%5D' => array (
 ),
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23has%5D%5B1%5D' => array (
+),
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23get%5D%5B1%5D' => array (
+),
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23getParameter%5D%5B1%5D' => array (
+),
+'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23setContainer%5D%5B1%5D' => array (
+),
 '%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23generateUrl%5D%5B1%5D' => array (
 ),
 '%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23forward%5D%5B1%5D' => array (
@@ -43,15 +51,7 @@ return array(
 ),
 '%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23getUser%5D%5B1%5D' => array (
 ),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23has%5D%5B1%5D' => array (
-),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23get%5D%5B1%5D' => array (
-),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23getParameter%5D%5B1%5D' => array (
-),
 '%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23isCsrfTokenValid%5D%5B1%5D' => array (
-),
-'%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%23setContainer%5D%5B1%5D' => array (
 ),
 '%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CController%24container%5D%5B1%5D' => array (
 ),

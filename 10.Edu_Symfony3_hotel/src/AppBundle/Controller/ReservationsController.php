@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Reservation;
-//use AppBundle\Entity\Client;
+use AppBundle\Entity\Client;
 use Doctrine\Repository\RoomRepository;
 use AppBundle\Entity\Room;
 
@@ -26,11 +26,21 @@ class ReservationsController extends Controller
     {
         $data = [];
 
-        $rooms = $this->getDoctrine()
+        $reservations = $this->getDoctrine()
             ->getRepository('AppBundle:Reservation')
-            ->findALL();
+            ->findAll();
 
-        $data['rooms'] = $rooms;
+        $rooms = $this->getDoctrine()
+            ->getRepository('AppBundle:Room')
+            ->findAll();
+
+        $clients = $this->getDoctrine()
+            ->getRepository('AppBundle:Client')
+            ->findAll();
+
+
+       // $data['id']= $id;
+        $data['reservations'] = $reservations;
 
         return $this->render("reservations/index.html.twig",$data);
         
@@ -76,26 +86,14 @@ class ReservationsController extends Controller
         $em=$this->getDoctrine()->getManager();
 
 
-
         $rooms=$em->getRepository('AppBundle:Room')
            ->getAvailableRooms($form_data['from'],$form_data['to']);
 
-            // $rooms[]= 101;
-            // $rooms[]= 102;
-            // $rooms[]= 201;
-
         $data['rooms']=$rooms;
-          // var_dump($rooms);
 
-
-
-
-
-        return $this->render('reservations/book.html.twig',$data);
-
+            return $this->render('reservations/book.html.twig',$data);
         }
-
-      return $this->render('reservations/book.html.twig',$data);
+        return $this->render('reservations/book.html.twig',$data);
     }
 
 
@@ -115,14 +113,19 @@ class ReservationsController extends Controller
 
                   $em = $this->getDoctrine()->getManager();
 
-                  $client = $this->getDoctrine()->getRepository()->find($id_client);
-                  $room = $this->getDoctrine()->getRepository()->find($id_room);
+                  $client = $this->getDoctrine()->getRepository('AppBundle:Client')->find($id_client);
+                  $room = $this->getDoctrine()->getRepository('AppBundle:Room')->find($id_room);
+
 
                   $reservation->setClient($client);
                   $reservation->setRoom($room);
                   $em->persist($reservation);
                   $em->flush();
 
+
+                 // $data['reservation']=$reservation;
+
+                //  return $this->render('reservations/index.html.twig',$data);
                   return $this->redirectToRoute('index_clients');
 
     }

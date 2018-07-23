@@ -5,27 +5,30 @@ use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\RequestContext;
 
 /**
- * appDevDebugProjectContainerUrlMatcher.
- *
  * This class has been auto-generated
  * by the Symfony Routing Component.
  */
 class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher
 {
-    /**
-     * Constructor.
-     */
     public function __construct(RequestContext $context)
     {
         $this->context = $context;
     }
 
-    public function match($pathinfo)
+    public function match($rawPathinfo)
     {
         $allow = array();
-        $pathinfo = rawurldecode($pathinfo);
+        $pathinfo = rawurldecode($rawPathinfo);
+        $trimmedPathinfo = rtrim($pathinfo, '/');
         $context = $this->context;
         $request = $this->request;
+        $requestMethod = $canonicalMethod = $context->getMethod();
+        $scheme = $context->getScheme();
+
+        if ('HEAD' === $requestMethod) {
+            $canonicalMethod = 'GET';
+        }
+
 
         if (0 === strpos($pathinfo, '/_')) {
             // _wdt
@@ -35,9 +38,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             if (0 === strpos($pathinfo, '/_profiler')) {
                 // _profiler_home
-                if (rtrim($pathinfo, '/') === '/_profiler') {
+                if ('/_profiler' === $trimmedPathinfo) {
                     if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', '_profiler_home');
+                        return $this->redirect($rawPathinfo.'/', '_profiler_home');
                     }
 
                     return array (  '_controller' => 'web_profiler.controller.profiler:homeAction',  '_route' => '_profiler_home',);
@@ -45,19 +48,19 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
                 if (0 === strpos($pathinfo, '/_profiler/search')) {
                     // _profiler_search
-                    if ($pathinfo === '/_profiler/search') {
+                    if ('/_profiler/search' === $pathinfo) {
                         return array (  '_controller' => 'web_profiler.controller.profiler:searchAction',  '_route' => '_profiler_search',);
                     }
 
                     // _profiler_search_bar
-                    if ($pathinfo === '/_profiler/search_bar') {
+                    if ('/_profiler/search_bar' === $pathinfo) {
                         return array (  '_controller' => 'web_profiler.controller.profiler:searchBarAction',  '_route' => '_profiler_search_bar',);
                     }
 
                 }
 
                 // _profiler_phpinfo
-                if ($pathinfo === '/_profiler/phpinfo') {
+                if ('/_profiler/phpinfo' === $pathinfo) {
                     return array (  '_controller' => 'web_profiler.controller.profiler:phpinfoAction',  '_route' => '_profiler_phpinfo',);
                 }
 
@@ -67,7 +70,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 }
 
                 // _profiler_open_file
-                if ($pathinfo === '/_profiler/open') {
+                if ('/_profiler/open' === $pathinfo) {
                     return array (  '_controller' => 'web_profiler.controller.profiler:openAction',  '_route' => '_profiler_open_file',);
                 }
 
@@ -101,9 +104,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // home
-        if (rtrim($pathinfo, '/') === '') {
+        if ('' === $trimmedPathinfo) {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'home');
+                return $this->redirect($rawPathinfo.'/', 'home');
             }
 
             return array (  '_controller' => 'AppBundle\\Controller\\AdminController::showIndex',  '_route' => 'home',);
@@ -111,7 +114,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         if (0 === strpos($pathinfo, '/guests')) {
             // index_clients
-            if ($pathinfo === '/guests') {
+            if ('/guests' === $pathinfo) {
                 return array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showIndex',  '_route' => 'index_clients',);
             }
 
@@ -121,7 +124,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             // new_client
-            if ($pathinfo === '/guests/new') {
+            if ('/guests/new' === $pathinfo) {
                 return array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showNew',  '_route' => 'new_client',);
             }
 
@@ -133,9 +136,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // homepage
-        if (rtrim($pathinfo, '/') === '') {
+        if ('' === $trimmedPathinfo) {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'homepage');
+                return $this->redirect($rawPathinfo.'/', 'homepage');
             }
 
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
@@ -143,7 +146,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         if (0 === strpos($pathinfo, '/reservations')) {
             // reservations
-            if ($pathinfo === '/reservations') {
+            if ('/reservations' === $pathinfo) {
                 return array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::showReservations',  '_route' => 'reservations',);
             }
 

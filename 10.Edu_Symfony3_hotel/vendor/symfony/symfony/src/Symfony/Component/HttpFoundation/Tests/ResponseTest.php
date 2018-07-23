@@ -855,19 +855,6 @@ class ResponseTest extends ResponseTestCase
         $this->addToAssertionCount(1);
     }
 
-    /**
-     * @group legacy
-     * @expectedDeprecation Extending Symfony\Component\HttpFoundation\Response::getDate() in Symfony\Component\HttpFoundation\Tests\ExtendedResponse is deprecated %s.
-     * @expectedDeprecation Extending Symfony\Component\HttpFoundation\Response::setLastModified() in Symfony\Component\HttpFoundation\Tests\ExtendedResponse is deprecated %s.
-     */
-    public function testDeprecations()
-    {
-        new ExtendedResponse();
-
-        // Deprecations should not be triggered twice
-        new ExtendedResponse();
-    }
-
     public function validContentProvider()
     {
         return array(
@@ -937,7 +924,7 @@ class ResponseTest extends ResponseTestCase
 
         $ianaCodesReasonPhrases = array();
 
-        $xpath = new \DomXPath($ianaHttpStatusCodes);
+        $xpath = new \DOMXPath($ianaHttpStatusCodes);
         $xpath->registerNamespace('ns', 'http://www.iana.org/assignments');
 
         $records = $xpath->query('//ns:record');

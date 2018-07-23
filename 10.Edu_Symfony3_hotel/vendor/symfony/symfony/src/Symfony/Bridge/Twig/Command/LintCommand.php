@@ -87,9 +87,7 @@ EOF
         $io = new SymfonyStyle($input, $output);
 
         if (null === $twig = $this->getTwigEnvironment()) {
-            $io->error('The Twig environment needs to be set.');
-
-            return 1;
+            throw new \RuntimeException('The Twig environment needs to be set.');
         }
 
         $filenames = $input->getArgument('filename');
@@ -178,7 +176,7 @@ EOF
             }
         }
 
-        if ($errors === 0) {
+        if (0 === $errors) {
             $io->success(sprintf('All %d Twig files contain valid syntax.', count($filesInfo)));
         } else {
             $io->warning(sprintf('%d Twig files have valid syntax and %d contain errors.', count($filesInfo) - $errors, $errors));

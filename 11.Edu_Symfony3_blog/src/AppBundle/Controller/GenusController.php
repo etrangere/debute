@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+//use AppBundle\AppBundle;
 use AppBundle\AppBundle;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -9,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Entity\Genus;
+use AppBundle\Entity\GenusNote;
 
 class GenusController extends Controller
 {
@@ -24,9 +26,21 @@ class GenusController extends Controller
         $genus->setName('Octopus' . rand(1,100));
         $genus->setSubFamily('Octopodas');
         $genus->setSpeciesCount(rand(100,99999));
+        $genus->setFunFact('Adidas');
+
+        $genusNote = new GenusNote();
+
+        $genusNote->setUserName('AquaWeaver');
+        $genusNote->setUserAvatarFilename('ryan.jpeg');
+        $genusNote->setNote('Icounted 9 legs');
+        $genusNote->setCreatedAt(new \DateTime('-1 month'));
+        $genusNote->setGenus($genus);
+
+
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($genus);
+        $em->persist($genusNote);
         $em->flush();
 
         return new Response('<html><body>Genus created</body></html>');
@@ -96,16 +110,36 @@ class GenusController extends Controller
     }
 
     /**
-     * @Route("/genus/{genusName}/notes", name="genus_show_notes")
+     * @Route("/genus/{name}/notes", name="genus_show_notes")
      * @Method("GET")
      */
-    public function getNotesAction($genusName)
+    public function getNotesAction(Genus $genus)
     {
-        $notes = [
-            ['id' => 1, 'username' => 'AquaPelham', 'avatarUri' => 'http://localhost/debute/11.Edu_Symfony3_blog/web/images/leanna.jpeg', 'note' => 'Octopus asked me a riddle, outsmarted me', 'date' => 'Dec. 10, 2015'],
-            ['id' => 2, 'username' => 'AquaWeaver', 'avatarUri' => 'http://localhost/debute/11.Edu_Symfony3_blog/web/images/ryan.jpeg', 'note' => 'I counted 8 legs... as they wrapped around me', 'date' => 'Dec. 1, 2015'],
-            ['id' => 3, 'username' => 'AquaPelham', 'avatarUri' => 'http://localhost/debute/11.Edu_Symfony3_blog/web/images/leanna.jpeg', 'note' => 'Inked!', 'date' => 'Aug. 20, 2015'],
-        ];
+
+      $notes = [];
+
+       /*
+        foreach ($genus->getNote() as $note)
+        {
+
+
+            $notes[]= [
+
+                'id'=> $note->getId(),
+                'username'=> $note->getUsername(),
+                'avatarUri'=> '/images/'.$note->getUserAvatarFilename(),
+                'note'=> $note->getNote(),
+                'date'=> $note->setCreatedAt()->format('M d,Y')
+            ];
+
+        }
+
+       */
+
+       //$em = $this->getDoctrine()->getManager();
+       //$notes = $em->getRepository('AppBundle:GenusNote');
+        $notes = [ 3 ,4,5,7,3];
+
         $data = [
             'notes' => $notes
         ];

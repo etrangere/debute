@@ -34,7 +34,7 @@
           <tbody>
           {% for room in rooms %}
           <tr>
-            <td>{{ room }}</td>
+            <td>{{ room.name }}</td>
 
             <td>
             <div class="callout success">
@@ -42,7 +42,7 @@
             </div>
             </td>
             <td>
-              <a class="hollow button warning" href="">BOOK NOW</a>
+              <a class="hollow button warning" href="{{ path("book_room",{'id_client': client.id,'id_room' : room.id, 'date_in': form.from,'date_out': form.to })  }}">BOOK NOW</a>
             </td>
           </tr>
           {% endfor %}

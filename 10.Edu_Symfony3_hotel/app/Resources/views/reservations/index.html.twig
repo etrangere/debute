@@ -10,22 +10,24 @@
         <table class="stack">
           <thead>
             <tr>
+              <th width="200">RESERVATION</th>
               <th width="200">ROOM</th>
-              <th width="200">Name</th>
+              <th width="200">Client</th>
               <th width="200">DATES</th>
               <th width="200">Action</th>
             </tr>
           </thead>
-          <tbody>
-          {% for room in rooms %}
-          <td>101</td>
-          <td>naeme</td>
-
-          <td>{{ room }}</td>
-
-          <td>action</td>
-          {% endfor %}
-          </tbody>
+            <tbody>
+              {% for reservation in reservations %}
+              <tr>
+                <td>
+                    {{ reservation.id  }}
+                <td>{{ reservation.room.name }}</td>
+                <td>{{ reservation.client.name }}</td>
+                <td> {{ reservation.dateIn|date('Y-m-d')}} to {{ reservation.dateOut|date('Y-m-d')}}</td>
+                <td>????</td>
+              {% endfor %}
+            </tbody>
         </table>
       </div>
     </div>

@@ -21,27 +21,23 @@ use Symfony\Component\PropertyInfo\Type;
  * Extracts data using the reflection API.
  *
  * @author Kévin Dunglas <dunglas@gmail.com>
+ *
+ * @final since version 3.3
  */
 class ReflectionExtractor implements PropertyListExtractorInterface, PropertyTypeExtractorInterface, PropertyAccessExtractorInterface
 {
     /**
      * @internal
-     *
-     * @var string[]
      */
     public static $mutatorPrefixes = array('add', 'remove', 'set');
 
     /**
      * @internal
-     *
-     * @var string[]
      */
     public static $accessorPrefixes = array('is', 'can', 'get');
 
     /**
      * @internal
-     *
-     * @var string[]
      */
     public static $arrayMutatorPrefixes = array('add', 'remove');
 

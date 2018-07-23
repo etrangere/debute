@@ -1,9 +1,13 @@
 <?php
 
 namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+//use AppBundle\Entity\Client;
 
 /**
  * Reservation
+ * @ORM\Entity
+ * @ORM\Table(name="reservation")
  */
 class Reservation
 {
@@ -21,6 +25,9 @@ class Reservation
      * @var \DateTime
      */
     private $dateOut;
+
+
+
 
 
     /**
@@ -82,11 +89,13 @@ class Reservation
     }
     /**
      * @var \AppBundle\Entity\Client
+     *
      */
     private $client;
 
     /**
      * @var \AppBundle\Entity\Room
+     *
      */
     private $room;
 

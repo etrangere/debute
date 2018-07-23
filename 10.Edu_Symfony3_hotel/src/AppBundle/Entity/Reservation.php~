@@ -1,0 +1,185 @@
+<?php
+
+namespace AppBundle\Entity;
+//use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Reservation
+ */
+class Reservation
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     */
+    private $dateIn;
+
+    /**
+     * @var \DateTime
+     */
+    private $dateOut;
+
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $client_name;
+
+    /**
+     * @return mixed
+     */
+    public function getClientName()
+    {
+        return $this->client_name;
+    }
+
+    /**
+     * @param mixed $client_name
+     */
+    public function setClientName($client_name)
+    {
+        $this->client_name = $client_name;
+    }
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $room_name;
+
+    /**
+     * @return mixed
+     */
+    public function getRoomName()
+    {
+        return $this->room_name;
+    }
+
+    /**
+     * @param mixed $room_name
+     */
+    public function setRoomName($room_name)
+    {
+        $this->room_name = $room_name;
+    }
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set dateIn
+     *
+     * @param \DateTime $dateIn
+     *
+     * @return Reservation
+     */
+    public function setDateIn($dateIn)
+    {
+        $this->dateIn = $dateIn;
+
+        return $this;
+    }
+
+    /**
+     * Get dateIn
+     *
+     * @return \DateTime
+     */
+    public function getDateIn()
+    {
+        return $this->dateIn;
+    }
+
+    /**
+     * Set dateOut
+     *
+     * @param \DateTime $dateOut
+     *
+     * @return Reservation
+     */
+    public function setDateOut($dateOut)
+    {
+        $this->dateOut = $dateOut;
+
+        return $this;
+    }
+
+    /**
+     * Get dateOut
+     *
+     * @return \DateTime
+     */
+    public function getDateOut()
+    {
+        return $this->dateOut;
+    }
+    /**
+     * @var \AppBundle\Entity\Client
+     */
+    private $client;
+
+    /**
+     * @var \AppBundle\Entity\Room
+     */
+    private $room;
+
+
+    /**
+     * Set client
+     *
+     * @param \AppBundle\Entity\Client $client
+     *
+     * @return Reservation
+     */
+    public function setClient(\AppBundle\Entity\Client $client = null)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return \AppBundle\Entity\Client
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * Set room
+     *
+     * @param \AppBundle\Entity\Room $room
+     *
+     * @return Reservation
+     */
+    public function setRoom(\AppBundle\Entity\Room $room = null)
+    {
+        $this->room = $room;
+
+        return $this;
+    }
+
+    /**
+     * Get room
+     *
+     * @return \AppBundle\Entity\Room
+     */
+    public function getRoom()
+    {
+        return $this->room;
+    }
+}

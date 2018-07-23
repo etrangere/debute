@@ -22,10 +22,10 @@ AppBundle\Entity\Reservation:
             inversedBy: Reservations
             joinColumn:
                 name: client_id
-                referancedColumnName: id
+                referancedColumnName: name
         room:
             targetEntity: Room
             inversedBy: Reservations
             joinColumn:
                 name: room_id
-                referancedColumnName: id
+                referancedColumnName: name

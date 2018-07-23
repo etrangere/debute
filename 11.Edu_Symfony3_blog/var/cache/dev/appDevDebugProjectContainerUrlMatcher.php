@@ -117,7 +117,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             // genus_show_notes
-            if (preg_match('#^/genus/(?P<genusName>[^/]++)/notes$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/genus/(?P<name>[^/]++)/notes$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_genus_show_notes;
