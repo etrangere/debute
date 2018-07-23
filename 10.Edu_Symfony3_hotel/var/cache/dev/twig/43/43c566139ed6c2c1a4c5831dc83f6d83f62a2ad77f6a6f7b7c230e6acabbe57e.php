@@ -95,7 +95,7 @@ class __TwigTemplate_d842ebdecd97bae4984f991041ff51e035951154259cf98262da5956cc4
             echo " to ";
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "dateOut", array()), "Y-m-d"), "html", null, true);
             echo "</td>
-                <td>????</td>
+                <td>Referance DB not connected</td>
               ";
         }
         $_parent = $context['_parent'];
@@ -160,7 +160,7 @@ class __TwigTemplate_d842ebdecd97bae4984f991041ff51e035951154259cf98262da5956cc4
                 <td>{{ reservation.room.name }}</td>
                 <td>{{ reservation.client.name }}</td>
                 <td> {{ reservation.dateIn|date('Y-m-d')}} to {{ reservation.dateOut|date('Y-m-d')}}</td>
-                <td>????</td>
+                <td>Referance DB not connected</td>
               {% endfor %}
             </tbody>
         </table>

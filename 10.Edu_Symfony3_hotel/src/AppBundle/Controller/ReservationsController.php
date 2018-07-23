@@ -39,7 +39,7 @@ class ReservationsController extends Controller
             ->findAll();
 
 
-       // $data['id']= $id;
+
         $data['reservations'] = $reservations;
 
         return $this->render("reservations/index.html.twig",$data);
@@ -123,9 +123,7 @@ class ReservationsController extends Controller
                   $em->flush();
 
 
-                 // $data['reservation']=$reservation;
 
-                //  return $this->render('reservations/index.html.twig',$data);
                   return $this->redirectToRoute('index_clients');
 
     }
