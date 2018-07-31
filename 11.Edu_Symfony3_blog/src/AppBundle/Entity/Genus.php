@@ -1,15 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: urartu
- * Date: 26/06/2018
- * Time: 20:36
- */
+
 namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -27,11 +22,10 @@ class Genus
 
     private $id;
 
-
-
-
     /**
-     * @ORM\Column(type="string")
+     * @Assert\NotBlank()
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\SubFamily")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $subFamily;
 
@@ -43,13 +37,31 @@ class Genus
         return $this->subFamily;
     }
 
-    /**
-     * @param mixed $subFamily
-     */
+
+
     public function setSubFamily($subFamily)
     {
         $this->subFamily = $subFamily;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+
+
 
     /**
      * @return mixed
@@ -85,6 +97,8 @@ class Genus
 
 
     /**
+     * @Assert\NotBlank()
+     * @Assert\Range(min=0, minMessage="Negative species! Come on...")
      * @ORM\Column(type="integer")
      */
     private $speciesCount;
@@ -94,6 +108,9 @@ class Genus
      * @ORM\Column(type="string" , nullable=true)
      */
     private $funFact;
+
+
+
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\GenusNote",mappedBy="genus")
@@ -110,8 +127,6 @@ class Genus
     /**
      * @ORM\Column(type="string")
      */
-
-
     private $name;
 
     /**

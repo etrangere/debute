@@ -1,6 +1,6 @@
 <?php
 
-/* ::base.html.twig */
+/* base.html.twig */
 class __TwigTemplate_9464121994f82d1d1f3fa799070a06955c375a8db9e67fd06d6a3944fa8b274d extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -20,7 +20,7 @@ class __TwigTemplate_9464121994f82d1d1f3fa799070a06955c375a8db9e67fd06d6a3944fa8
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::base.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -149,7 +149,7 @@ class __TwigTemplate_9464121994f82d1d1f3fa799070a06955c375a8db9e67fd06d6a3944fa8
 
     public function getTemplateName()
     {
-        return "::base.html.twig";
+        return "base.html.twig";
     }
 
     public function isTraitable()
@@ -215,6 +215,6 @@ class __TwigTemplate_9464121994f82d1d1f3fa799070a06955c375a8db9e67fd06d6a3944fa8
         {% endblock %}
     </body>
 </html>
-", "::base.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/app/Resources/views/base.html.twig");
+", "base.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/app/Resources/views/base.html.twig");
     }
 }

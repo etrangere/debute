@@ -54,13 +54,13 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
         // line 8
         echo "    ";
         if ($this->env->isDebug()) {
-            $__internal_5868bf6b890bae4eebf1ff4e32cc9e4e78743dd752241a8dfe49e56f1209af69vars = array();
-            foreach ($context as $__internal_5868bf6b890bae4eebf1ff4e32cc9e4e78743dd752241a8dfe49e56f1209af69key => $__internal_5868bf6b890bae4eebf1ff4e32cc9e4e78743dd752241a8dfe49e56f1209af69val) {
-                if (!$__internal_5868bf6b890bae4eebf1ff4e32cc9e4e78743dd752241a8dfe49e56f1209af69val instanceof \Twig_Template) {
-                    $__internal_5868bf6b890bae4eebf1ff4e32cc9e4e78743dd752241a8dfe49e56f1209af69vars[$__internal_5868bf6b890bae4eebf1ff4e32cc9e4e78743dd752241a8dfe49e56f1209af69key] = $__internal_5868bf6b890bae4eebf1ff4e32cc9e4e78743dd752241a8dfe49e56f1209af69val;
+            $__internal_d539ffbe55174c03a1572b6a294d81d0f6e79721a42a3b9ee560bafe3c00af9cvars = array();
+            foreach ($context as $__internal_d539ffbe55174c03a1572b6a294d81d0f6e79721a42a3b9ee560bafe3c00af9ckey => $__internal_d539ffbe55174c03a1572b6a294d81d0f6e79721a42a3b9ee560bafe3c00af9cval) {
+                if (!$__internal_d539ffbe55174c03a1572b6a294d81d0f6e79721a42a3b9ee560bafe3c00af9cval instanceof \Twig_Template) {
+                    $__internal_d539ffbe55174c03a1572b6a294d81d0f6e79721a42a3b9ee560bafe3c00af9cvars[$__internal_d539ffbe55174c03a1572b6a294d81d0f6e79721a42a3b9ee560bafe3c00af9ckey] = $__internal_d539ffbe55174c03a1572b6a294d81d0f6e79721a42a3b9ee560bafe3c00af9cval;
                 }
             }
-            \Symfony\Component\VarDumper\VarDumper::dump($__internal_5868bf6b890bae4eebf1ff4e32cc9e4e78743dd752241a8dfe49e56f1209af69vars);
+            \Symfony\Component\VarDumper\VarDumper::dump($__internal_d539ffbe55174c03a1572b6a294d81d0f6e79721a42a3b9ee560bafe3c00af9cvars);
         }
         // line 9
         echo "
@@ -86,7 +86,7 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
                 <dt>Fun Fact:</dt>
                 <dd>";
         // line 21
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["genus"] ?? $this->getContext($context, "genus")), "funFact", array()), "html", null, true);
+        echo twig_escape_filter($this->env, ($context["funFact"] ?? $this->getContext($context, "funFact")), "html", null, true);
         echo "</dd>
             </dl>
         </div>
@@ -178,7 +178,7 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
                 <dt>Known Species:</dt>
                 <dd>{{ genus.speciesCount|number_format }}</dd>
                 <dt>Fun Fact:</dt>
-                <dd>{{ genus.funFact }}</dd>
+                <dd>{{ funFact }}</dd>
             </dl>
         </div>
     </div>

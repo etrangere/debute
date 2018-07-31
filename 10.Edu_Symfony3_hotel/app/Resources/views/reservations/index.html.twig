@@ -24,7 +24,7 @@
                     {{ reservation.id  }}
                 <td>{{ reservation.room.name }}</td>
                 <td>{{ reservation.client.name }}</td>
-                <td> {{ reservation.dateIn|date('Y-m-d')}} to {{ reservation.dateOut|date('Y-m-d')}}</td>
+                <td> {{ reservation.dateIn|date('d-m-Y')}} to {{ reservation.dateOut|date('d-m-Y')}}</td>
                 <td>Referance DB not connected</td>
               {% endfor %}
             </tbody>

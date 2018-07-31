@@ -91,9 +91,9 @@ class __TwigTemplate_d842ebdecd97bae4984f991041ff51e035951154259cf98262da5956cc4
             echo "</td>
                 <td> ";
             // line 27
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "dateIn", array()), "Y-m-d"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "dateIn", array()), "d-m-Y"), "html", null, true);
             echo " to ";
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "dateOut", array()), "Y-m-d"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "dateOut", array()), "d-m-Y"), "html", null, true);
             echo "</td>
                 <td>Referance DB not connected</td>
               ";
@@ -159,7 +159,7 @@ class __TwigTemplate_d842ebdecd97bae4984f991041ff51e035951154259cf98262da5956cc4
                     {{ reservation.id  }}
                 <td>{{ reservation.room.name }}</td>
                 <td>{{ reservation.client.name }}</td>
-                <td> {{ reservation.dateIn|date('Y-m-d')}} to {{ reservation.dateOut|date('Y-m-d')}}</td>
+                <td> {{ reservation.dateIn|date('d-m-Y')}} to {{ reservation.dateOut|date('d-m-Y')}}</td>
                 <td>Referance DB not connected</td>
               {% endfor %}
             </tbody>

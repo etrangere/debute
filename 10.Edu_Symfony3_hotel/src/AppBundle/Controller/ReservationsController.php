@@ -77,17 +77,17 @@ class ReservationsController extends Controller
 
 
             $data ['form'] = $form_data;
-            //$data ['dateFrom'] ='';
+           // $data ['dateFrom'] ='';
            // $data ['dateTo'] ='';
 
-        $data['dates']['from'] = $form_data['from'];
-        $data['dates']['to'] = $form_data['to'];
+       // $data['dates']['from'] = $form_data['from'];
+       // $data['dates']['to'] = $form_data['to'];
 
         $em=$this->getDoctrine()->getManager();
 
 
         $rooms=$em->getRepository('AppBundle:Room')
-           ->getAvailableRooms($form_data['from'],$form_data['to']);
+          ->getAvailableRooms($form_data['from'],$form_data['to']);
 
         $data['rooms']=$rooms;
 

@@ -4,6 +4,8 @@ namespace AppBundle\Repository;
 
 
 
+use AppBundle\AppBundle;
+use AppBundle\Entity\Reservation;
 use Doctrine\ORM\EntityRepository;
 
 
@@ -28,6 +30,7 @@ public function getAvailableRooms($date_start,$date_final)
 
     $qb = $em->createQueryBuilder();
 
+
     $nots = $em->createQuery("SELECT IDENTITY (b.room) FROM AppBundle:Reservation b WHERE NOT (b.dateOut < $date_start OR b.dateIn > $date_final)");
 
 
@@ -36,20 +39,23 @@ public function getAvailableRooms($date_start,$date_final)
 
     $qb->resetDQLParts();
 
-      //var_dump($dql_query);
+    var_dump($dql_query);
+   // var_dump($this->getEntityManager());
+
+
 
 
     $query = $qb->select('r')
-                ->from('AppBundle:Room', 'r')
-                ->where($qb->expr()->notIn('r.id' , $dql_query))
+               ->from('AppBundle:Room', 'r')
+               ->where($qb->expr()->notIn('r.id' , $dql_query))
                 //->setParameter('dateIn', $date_start )
-                //->setParameter('dateOut', $date_final)
-                ->getQuery()
+              //  ->setParameter('dateOut', $date_final)
+               ->getQuery()
                 ->execute();
+                //->getResult();
 
 
-
-      //dump($query); die;
+     // var_dump($count);
 
 
 
