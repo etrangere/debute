@@ -322,3 +322,4 @@ d4f2cc,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/res
 83c994,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/book_room/2/1/2018-08-01/2018-08-11,1533066860,,302
 00688c,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/guests,1533066860,,200
 ffb2c8,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/reservations,1533066864,,200
+faa613,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/reservations,1534004087,,200

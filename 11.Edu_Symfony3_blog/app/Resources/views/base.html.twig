@@ -27,8 +27,19 @@
         </header>
 
         <div class="main-content">
-            {% block body %}{% endblock %}
 
+            {% for msg in app.session.flashBag.get('success') %}
+
+                <div class="alert alert-success">
+
+                    {{  msg }}
+
+                </div>
+
+            {% endfor %}
+
+            {% block body %}{% endblock %}
+  
         </div>
 
         <div class="footer">
@@ -37,7 +48,7 @@
 
         {% block javascripts %}
             <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-            <script src="{{ asset('js/main.js') }}"></script>
+            <script src="{{ asset('js/m ain.js') }}"></script>
         {% endblock %}
     </body>
 </html>

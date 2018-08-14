@@ -165,6 +165,7 @@
     <parameter key="twig.exception_listener.controller">twig.controller.exception:showAction</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>bootstrap_3_layout.html.twig</parameter>
     </parameter>
     <parameter key="monolog.logger.class">Symfony\Bridge\Monolog\Logger</parameter>
     <parameter key="monolog.gelf.publisher.class">Gelf\MessagePublisher</parameter>
@@ -557,7 +558,7 @@
                   <tag name="cache.pool"/>
                   <argument>aX-+bilbJ7</argument>
                   <argument>0</argument>
-                  <argument>3mPWi-BpjE0+87PeQjp5OM</argument>
+                  <argument>yt6Snu4tRO4xtcBQ9B6q-Q</argument>
                   <argument>/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -570,7 +571,7 @@
                   <tag name="cache.pool"/>
                   <argument>S3wpl+CSfd</argument>
                   <argument>0</argument>
-                  <argument>3mPWi-BpjE0+87PeQjp5OM</argument>
+                  <argument>yt6Snu4tRO4xtcBQ9B6q-Q</argument>
                   <argument>/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -902,7 +903,7 @@
       <tag name="cache.pool"/>
       <argument>3xrlKnbxfl</argument>
       <argument>0</argument>
-      <argument>3mPWi-BpjE0+87PeQjp5OM</argument>
+      <argument>yt6Snu4tRO4xtcBQ9B6q-Q</argument>
       <argument>/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1638,7 +1639,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5b5f90ef7138c8.48492870</argument>
+            <argument>5b7294d028d063.80357752</argument>
           </service>
         </argument>
       </argument>
@@ -1772,7 +1773,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>5b5f90ef7138c8.48492870</argument>
+            <argument>5b7294d028d063.80357752</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -1818,10 +1819,11 @@
           <argument key="decimals">0</argument>
           <argument key="decimal_point">.</argument>
         </argument>
-        <argument key="exception_controller">twig.controller.exception:showAction</argument>
         <argument key="form_themes" type="collection">
           <argument>form_div_layout.html.twig</argument>
+          <argument>bootstrap_3_layout.html.twig</argument>
         </argument>
+        <argument key="exception_controller">twig.controller.exception:showAction</argument>
         <argument key="autoescape">name</argument>
         <argument key="cache">/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
@@ -1948,6 +1950,7 @@
                   <service class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
                     <argument type="collection">
                       <argument>form_div_layout.html.twig</argument>
+                      <argument>bootstrap_3_layout.html.twig</argument>
                     </argument>
                   </service>
                 </argument>

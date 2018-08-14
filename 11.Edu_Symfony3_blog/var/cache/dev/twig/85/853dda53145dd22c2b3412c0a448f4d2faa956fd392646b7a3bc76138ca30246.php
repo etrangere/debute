@@ -59,11 +59,35 @@ class __TwigTemplate_1141f73cb23ffa54f8231eaba619a4df6e195eeab10f26baf44a903bc29
         </header>
 
         <div class=\"main-content\">
+
             ";
-        // line 30
-        $this->displayBlock('body', $context, $blocks);
         // line 31
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "session", array()), "flashBag", array()), "get", array(0 => "success"), "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["msg"]) {
+            // line 32
+            echo "
+                <div class=\"alert alert-success\">
+
+                    ";
+            // line 35
+            echo twig_escape_filter($this->env, $context["msg"], "html", null, true);
+            echo "
+
+                </div>
+
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['msg'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 40
         echo "
+            ";
+        // line 41
+        $this->displayBlock('body', $context, $blocks);
+        // line 42
+        echo "  
         </div>
 
         <div class=\"footer\">
@@ -71,9 +95,9 @@ class __TwigTemplate_1141f73cb23ffa54f8231eaba619a4df6e195eeab10f26baf44a903bc29
         </div>
 
         ";
-        // line 38
+        // line 49
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 42
+        // line 53
         echo "    </body>
 </html>
 ";
@@ -118,7 +142,7 @@ class __TwigTemplate_1141f73cb23ffa54f8231eaba619a4df6e195eeab10f26baf44a903bc29
 
     }
 
-    // line 30
+    // line 41
     public function block_body($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
@@ -129,17 +153,17 @@ class __TwigTemplate_1141f73cb23ffa54f8231eaba619a4df6e195eeab10f26baf44a903bc29
 
     }
 
-    // line 38
+    // line 49
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 39
+        // line 50
         echo "            <script src=\"//code.jquery.com/jquery-2.1.4.min.js\"></script>
             <script src=\"";
-        // line 40
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
+        // line 51
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/m ain.js"), "html", null, true);
         echo "\"></script>
         ";
         
@@ -159,7 +183,7 @@ class __TwigTemplate_1141f73cb23ffa54f8231eaba619a4df6e195eeab10f26baf44a903bc29
 
     public function getDebugInfo()
     {
-        return array (  142 => 40,  139 => 39,  133 => 38,  122 => 30,  113 => 10,  109 => 9,  104 => 8,  98 => 7,  86 => 5,  77 => 42,  75 => 38,  66 => 31,  64 => 30,  52 => 21,  39 => 12,  37 => 7,  32 => 5,  26 => 1,);
+        return array (  166 => 51,  163 => 50,  157 => 49,  146 => 41,  137 => 10,  133 => 9,  128 => 8,  122 => 7,  110 => 5,  101 => 53,  99 => 49,  90 => 42,  88 => 41,  85 => 40,  74 => 35,  69 => 32,  65 => 31,  52 => 21,  39 => 12,  37 => 7,  32 => 5,  26 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -201,8 +225,19 @@ class __TwigTemplate_1141f73cb23ffa54f8231eaba619a4df6e195eeab10f26baf44a903bc29
         </header>
 
         <div class=\"main-content\">
-            {% block body %}{% endblock %}
 
+            {% for msg in app.session.flashBag.get('success') %}
+
+                <div class=\"alert alert-success\">
+
+                    {{  msg }}
+
+                </div>
+
+            {% endfor %}
+
+            {% block body %}{% endblock %}
+  
         </div>
 
         <div class=\"footer\">
@@ -211,7 +246,7 @@ class __TwigTemplate_1141f73cb23ffa54f8231eaba619a4df6e195eeab10f26baf44a903bc29
 
         {% block javascripts %}
             <script src=\"//code.jquery.com/jquery-2.1.4.min.js\"></script>
-            <script src=\"{{ asset('js/main.js') }}\"></script>
+            <script src=\"{{ asset('js/m ain.js') }}\"></script>
         {% endblock %}
     </body>
 </html>

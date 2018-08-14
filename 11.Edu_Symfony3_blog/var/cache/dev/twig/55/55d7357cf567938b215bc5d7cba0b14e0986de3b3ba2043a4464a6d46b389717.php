@@ -72,7 +72,7 @@ class __TwigTemplate_a65ec9c3541704803cc3566bdb61988e6b1762ab08c22ffb31fe7284675
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["genus"], "subFamily", array()), "name", array()), "html", null, true);
             echo "</td>
                             <td>
-                                <a href=\"#\" class=\"btn btn-xs btn-success\"><span class=\"fa fa-pencil\"></span></a>
+                                <a href=\"#\" class=\"btn btn-xs btn-success\"><span class=\"fa fa-pencil\">Edit</span></a>
                             </td>
                         </tr>
                     ";
@@ -140,7 +140,7 @@ class __TwigTemplate_a65ec9c3541704803cc3566bdb61988e6b1762ab08c22ffb31fe7284675
                             <td>{{ genus.name }}</td>
                             <td>{{ genus.subFamily.name }}</td>
                             <td>
-                                <a href=\"#\" class=\"btn btn-xs btn-success\"><span class=\"fa fa-pencil\"></span></a>
+                                <a href=\"#\" class=\"btn btn-xs btn-success\"><span class=\"fa fa-pencil\">Edit</span></a>
                             </td>
                         </tr>
                     {% endfor %}

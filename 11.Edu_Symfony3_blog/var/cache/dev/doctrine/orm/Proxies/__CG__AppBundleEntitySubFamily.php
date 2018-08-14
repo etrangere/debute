@@ -210,4 +210,15 @@ class SubFamily extends \AppBundle\Entity\SubFamily implements \Doctrine\ORM\Pro
         return parent::setName($name);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
+
+        return parent::__toString();
+    }
+
 }

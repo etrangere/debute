@@ -54,13 +54,13 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
         // line 8
         echo "    ";
         if ($this->env->isDebug()) {
-            $__internal_d539ffbe55174c03a1572b6a294d81d0f6e79721a42a3b9ee560bafe3c00af9cvars = array();
-            foreach ($context as $__internal_d539ffbe55174c03a1572b6a294d81d0f6e79721a42a3b9ee560bafe3c00af9ckey => $__internal_d539ffbe55174c03a1572b6a294d81d0f6e79721a42a3b9ee560bafe3c00af9cval) {
-                if (!$__internal_d539ffbe55174c03a1572b6a294d81d0f6e79721a42a3b9ee560bafe3c00af9cval instanceof \Twig_Template) {
-                    $__internal_d539ffbe55174c03a1572b6a294d81d0f6e79721a42a3b9ee560bafe3c00af9cvars[$__internal_d539ffbe55174c03a1572b6a294d81d0f6e79721a42a3b9ee560bafe3c00af9ckey] = $__internal_d539ffbe55174c03a1572b6a294d81d0f6e79721a42a3b9ee560bafe3c00af9cval;
+            $__internal_e3e51b22d7a2b8d36a0789b8bae0fc620b4a7566ded6e3300798b909120e5709vars = array();
+            foreach ($context as $__internal_e3e51b22d7a2b8d36a0789b8bae0fc620b4a7566ded6e3300798b909120e5709key => $__internal_e3e51b22d7a2b8d36a0789b8bae0fc620b4a7566ded6e3300798b909120e5709val) {
+                if (!$__internal_e3e51b22d7a2b8d36a0789b8bae0fc620b4a7566ded6e3300798b909120e5709val instanceof \Twig_Template) {
+                    $__internal_e3e51b22d7a2b8d36a0789b8bae0fc620b4a7566ded6e3300798b909120e5709vars[$__internal_e3e51b22d7a2b8d36a0789b8bae0fc620b4a7566ded6e3300798b909120e5709key] = $__internal_e3e51b22d7a2b8d36a0789b8bae0fc620b4a7566ded6e3300798b909120e5709val;
                 }
             }
-            \Symfony\Component\VarDumper\VarDumper::dump($__internal_d539ffbe55174c03a1572b6a294d81d0f6e79721a42a3b9ee560bafe3c00af9cvars);
+            \Symfony\Component\VarDumper\VarDumper::dump($__internal_e3e51b22d7a2b8d36a0789b8bae0fc620b4a7566ded6e3300798b909120e5709vars);
         }
         // line 9
         echo "
@@ -76,7 +76,7 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
                 <dt>Subfamily:</dt>
                 <dd>";
         // line 17
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["genus"] ?? $this->getContext($context, "genus")), "subFamily", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["genus"] ?? $this->getContext($context, "genus")), "subFamily", array()), "name", array()), "html", null, true);
         echo "</dd>
                 <dt>Known Species:</dt>
                 <dd>";
@@ -88,6 +88,11 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
         // line 21
         echo twig_escape_filter($this->env, ($context["funFact"] ?? $this->getContext($context, "funFact")), "html", null, true);
         echo "</dd>
+                <dt>Recent Notes</dt>
+                <dd>";
+        // line 23
+        echo twig_escape_filter($this->env, ($context["recentNoteCount"] ?? $this->getContext($context, "recentNoteCount")), "html", null, true);
+        echo "</dd>
             </dl>
         </div>
     </div>
@@ -98,13 +103,13 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
 
     }
 
-    // line 28
+    // line 30
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 29
+        // line 31
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
@@ -113,12 +118,12 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js\"></script>
 
     <script type=\"text/babel\" src=\"";
-        // line 34
+        // line 36
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/notes.react.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/babel\">
         var notesUrl = '";
-        // line 36
+        // line 38
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("genus_show_notes", array("name" => $this->getAttribute(($context["genus"] ?? $this->getContext($context, "genus")), "name", array()))), "html", null, true);
         echo "';
 
@@ -145,7 +150,7 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
 
     public function getDebugInfo()
     {
-        return array (  122 => 36,  117 => 34,  108 => 29,  102 => 28,  89 => 21,  84 => 19,  79 => 17,  69 => 10,  66 => 9,  55 => 8,  49 => 7,  36 => 5,  11 => 1,);
+        return array (  127 => 38,  122 => 36,  113 => 31,  107 => 30,  94 => 23,  89 => 21,  84 => 19,  79 => 17,  69 => 10,  66 => 9,  55 => 8,  49 => 7,  36 => 5,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -174,11 +179,13 @@ class __TwigTemplate_6de15991e71244275464b187b018b3d746ebaeef8fc86110d827b9b354d
         <div class=\"genus-details\">
             <dl class=\"genus-details-list\">
                 <dt>Subfamily:</dt>
-                <dd>{{ genus.subFamily }}</dd>
+                <dd>{{ genus.subFamily.name }}</dd>
                 <dt>Known Species:</dt>
                 <dd>{{ genus.speciesCount|number_format }}</dd>
                 <dt>Fun Fact:</dt>
                 <dd>{{ funFact }}</dd>
+                <dt>Recent Notes</dt>
+                <dd>{{ recentNoteCount }}</dd>
             </dl>
         </div>
     </div>

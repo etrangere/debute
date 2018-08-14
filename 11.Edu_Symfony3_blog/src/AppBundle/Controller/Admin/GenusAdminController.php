@@ -2,9 +2,23 @@
 
 namespace AppBundle\Controller\Admin;
 
-use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use AppBundle\Entity\Genus;
+use AppBundle\Form\GenusFormType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+
+//use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+//use AppBundle\Form\GenusFormType;
+//use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+//use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+//use Symfony\Component\HttpFoundation\Request;
+//use AppBundle\Entity\Genus;
+//use AppBundle\Entity\GenusNote;
+
+
+
+
 /**
  *
  *@Route("/admin")
@@ -12,6 +26,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class GenusAdminController extends Controller
 {
+
+
+
 
     /**
      * @Route("/genus", name="admin_genus_list")
@@ -30,9 +47,33 @@ class GenusAdminController extends Controller
     /**
      * @Route("/genus/new", name="admin_genus_new")
      */
-    public function newAction()
+    public function newAction(Request $request)
     {
-        // let's go to work!
+        $form = $this->createForm(GenusFormType::Class);
+
+        $form->handleRequest($request);
+
+
+        if ($form->isSubmitted() && $form->isValid())
+        {
+
+
+            $genus = $form->getData();
+
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($genus);
+            $em->flush();
+
+            $this->addFlash('success','Genus created - you are amazing');
+
+            return $this->redirectToRoute('admin_genus_list');
+
+        }
+
+        return $this->render('admin/genus/new.html.twig',[
+            'genusForm' => $form->createView()
+        ]);
     }
 
 }

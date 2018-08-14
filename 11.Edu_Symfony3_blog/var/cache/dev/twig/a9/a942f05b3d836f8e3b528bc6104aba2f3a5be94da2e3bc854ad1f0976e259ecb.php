@@ -41,6 +41,25 @@ class __TwigTemplate_bf90a158987c74f45dc7a3c52ae4005ab474e9222392efa296f482b365f
         <div class=\"row\">
             <div class=\"col-xs-12\">
                 <h1>New Genus</h1>
+
+                ";
+        // line 9
+        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock(($context["genusForm"] ?? $this->getContext($context, "genusForm")), 'form_start');
+        echo "
+
+                ";
+        // line 11
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(($context["genusForm"] ?? $this->getContext($context, "genusForm")), 'widget');
+        echo "
+
+
+                <button type=\"submit\" class=\"btn btn-primary\">Save</button>
+
+                ";
+        // line 16
+        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock(($context["genusForm"] ?? $this->getContext($context, "genusForm")), 'form_end');
+        echo "
+
             </div>
         </div>
     </div>
@@ -62,7 +81,7 @@ class __TwigTemplate_bf90a158987c74f45dc7a3c52ae4005ab474e9222392efa296f482b365f
 
     public function getDebugInfo()
     {
-        return array (  40 => 4,  34 => 3,  11 => 1,);
+        return array (  60 => 16,  52 => 11,  47 => 9,  40 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -82,6 +101,16 @@ class __TwigTemplate_bf90a158987c74f45dc7a3c52ae4005ab474e9222392efa296f482b365f
         <div class=\"row\">
             <div class=\"col-xs-12\">
                 <h1>New Genus</h1>
+
+                {{ form_start(genusForm) }}
+
+                {{ form_widget(genusForm) }}
+
+
+                <button type=\"submit\" class=\"btn btn-primary\">Save</button>
+
+                {{ form_end(genusForm) }}
+
             </div>
         </div>
     </div>
