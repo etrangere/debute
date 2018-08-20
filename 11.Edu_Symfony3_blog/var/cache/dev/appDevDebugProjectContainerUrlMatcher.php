@@ -111,6 +111,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\Admin\\GenusAdminController::newAction',  '_route' => 'admin_genus_new',);
             }
 
+            // admin_genus_edit
+            if (preg_match('#^/admin/genus/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_genus_edit')), array (  '_controller' => 'AppBundle\\Controller\\Admin\\GenusAdminController::editAction',));
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/genus')) {
