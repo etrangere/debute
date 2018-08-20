@@ -8,7 +8,7 @@ class __TwigTemplate_bf90a158987c74f45dc7a3c52ae4005ab474e9222392efa296f482b365f
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", ":admin/genus:new.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/genus/formLayout.html.twig", ":admin/genus:new.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -16,7 +16,7 @@ class __TwigTemplate_bf90a158987c74f45dc7a3c52ae4005ab474e9222392efa296f482b365f
 
     protected function doGetParent(array $context)
     {
-        return "base.html.twig";
+        return "admin/genus/formLayout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -49,14 +49,34 @@ class __TwigTemplate_bf90a158987c74f45dc7a3c52ae4005ab474e9222392efa296f482b365f
 
                 ";
         // line 11
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(($context["genusForm"] ?? $this->getContext($context, "genusForm")), 'widget');
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute(($context["genusForm"] ?? $this->getContext($context, "genusForm")), "name", array()), 'row');
+        echo "
+                ";
+        // line 12
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute(($context["genusForm"] ?? $this->getContext($context, "genusForm")), "subFamily", array()), 'row');
+        echo "
+                ";
+        // line 13
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute(($context["genusForm"] ?? $this->getContext($context, "genusForm")), "speciesCount", array()), 'row');
+        echo "
+                ";
+        // line 14
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute(($context["genusForm"] ?? $this->getContext($context, "genusForm")), "funFact", array()), 'row');
+        echo "
+                ";
+        // line 15
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute(($context["genusForm"] ?? $this->getContext($context, "genusForm")), "isPublished", array()), 'row');
+        echo "
+                ";
+        // line 16
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute(($context["genusForm"] ?? $this->getContext($context, "genusForm")), "firstDiscoveredAt", array()), 'row');
         echo "
 
 
-                <button type=\"submit\" class=\"btn btn-primary\">Save</button>
+                <button type=\"submit\" class=\"btn btn-primary\" formnovalidate>Save</button>
 
                 ";
-        // line 16
+        // line 21
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock(($context["genusForm"] ?? $this->getContext($context, "genusForm")), 'form_end');
         echo "
 
@@ -81,7 +101,7 @@ class __TwigTemplate_bf90a158987c74f45dc7a3c52ae4005ab474e9222392efa296f482b365f
 
     public function getDebugInfo()
     {
-        return array (  60 => 16,  52 => 11,  47 => 9,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  80 => 21,  72 => 16,  68 => 15,  64 => 14,  60 => 13,  56 => 12,  52 => 11,  47 => 9,  40 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -94,7 +114,7 @@ class __TwigTemplate_bf90a158987c74f45dc7a3c52ae4005ab474e9222392efa296f482b365f
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends 'base.html.twig' %}
+        return new Twig_Source("{% extends 'admin/genus/formLayout.html.twig' %}
 
 {% block body %}
     <div class=\"container\">
@@ -104,10 +124,15 @@ class __TwigTemplate_bf90a158987c74f45dc7a3c52ae4005ab474e9222392efa296f482b365f
 
                 {{ form_start(genusForm) }}
 
-                {{ form_widget(genusForm) }}
+                {{ form_row(genusForm.name) }}
+                {{ form_row(genusForm.subFamily) }}
+                {{ form_row(genusForm.speciesCount) }}
+                {{ form_row(genusForm.funFact) }}
+                {{ form_row(genusForm.isPublished) }}
+                {{ form_row(genusForm.firstDiscoveredAt) }}
 
 
-                <button type=\"submit\" class=\"btn btn-primary\">Save</button>
+                <button type=\"submit\" class=\"btn btn-primary\" formnovalidate>Save</button>
 
                 {{ form_end(genusForm) }}
 

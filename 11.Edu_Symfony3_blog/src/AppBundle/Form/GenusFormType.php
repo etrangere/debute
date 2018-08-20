@@ -38,7 +38,15 @@ class GenusFormType extends AbstractType
                     'No' => false,
                 ]
             ])
-            ->add('firstDiscoveredAt');
+            ->add('firstDiscoveredAt',DateType::Class,[
+
+                'data' => new \DateTime(),
+                'placeholder' => 'date',
+                'widget'=> 'single_text',
+               // 'days' => range(1,20),
+                'attr' => ['class' => 'js-datepicker'],
+                'format' => 'yyyy-MM-dd'
+            ]);
 
     }
 

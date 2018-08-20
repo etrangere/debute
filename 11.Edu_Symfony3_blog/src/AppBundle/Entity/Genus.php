@@ -171,6 +171,7 @@ class Genus
     }
 
     /**
+     * @Assert\NotBlank()
      * @ORM\Column(type="string")
      */
     private $name;

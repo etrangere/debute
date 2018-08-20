@@ -109,6 +109,7 @@
   'WebProfilerBundle:Profiler:toolbar_js.html.twig' => '/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/toolbar_js.html.twig',
   'WebProfilerBundle:Profiler:toolbar_redirect.html.twig' => '/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/toolbar_redirect.html.twig',
   'WebProfilerBundle:Router:panel.html.twig' => '/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Router/panel.html.twig',
+  ':admin/genus:formLayout.html.twig' => '/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/app/Resources/views/admin/genus/formLayout.html.twig',
   ':admin/genus:list.html.twig' => '/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/app/Resources/views/admin/genus/list.html.twig',
   ':admin/genus:new.html.twig' => '/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/app/Resources/views/admin/genus/new.html.twig',
   '::base.html.twig' => '/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/app/Resources/views/base.html.twig',
