@@ -134,7 +134,7 @@ $catalogueEn = new MessageCatalogue('en', array (
     'This value is too long. It should have {{ limit }} character or less.|This value is too long. It should have {{ limit }} characters or less.' => 'This value is too long. It should have {{ limit }} character or less.|This value is too long. It should have {{ limit }} characters or less.',
     'This value should be {{ limit }} or more.' => 'This value should be {{ limit }} or more.',
     'This value is too short. It should have {{ limit }} character or more.|This value is too short. It should have {{ limit }} characters or more.' => 'This value is too short. It should have {{ limit }} character or more.|This value is too short. It should have {{ limit }} characters or more.',
-    'This value should not be blank.' => 'This value should not be blank.',
+    'This value should not be blank.' => 'Please fill this field',
     'This value should not be null.' => 'This value should not be null.',
     'This value should be null.' => 'This value should be null.',
     'This value is not valid.' => 'This value is not valid.',
@@ -194,7 +194,6 @@ $catalogueEn = new MessageCatalogue('en', array (
     'This form should not contain extra fields.' => 'This form should not contain extra fields.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'The uploaded file was too large. Please try to upload a smaller file.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'The CSRF token is invalid. Please try to resubmit the form.',
-    'This value should not be blank' => 'Please fill this field',
   ),
   'security' => 
   array (

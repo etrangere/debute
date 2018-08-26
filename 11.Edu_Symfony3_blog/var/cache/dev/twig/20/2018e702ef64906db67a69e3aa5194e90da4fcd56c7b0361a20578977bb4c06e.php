@@ -72,7 +72,10 @@ class __TwigTemplate_0eff4793f141d050b23275834069ca6b482476fc5c562364fa560ce69d8
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["genus"], "subFamily", array()), "name", array()), "html", null, true);
             echo "</td>
                             <td>
-                                <a href=\"#\" class=\"btn btn-xs btn-success\"><span class=\"fa fa-pencil\">Edit</span></a>
+                                <a href=\"";
+            // line 25
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_genus_edit", array("id" => $this->getAttribute($context["genus"], "id", array()))), "html", null, true);
+            echo "\" class=\"btn btn-xs btn-success\"><span class=\"fa fa-pencil\">Edit</span></a>
                             </td>
                         </tr>
                     ";
@@ -103,7 +106,7 @@ class __TwigTemplate_0eff4793f141d050b23275834069ca6b482476fc5c562364fa560ce69d8
 
     public function getDebugInfo()
     {
-        return array (  84 => 29,  72 => 23,  68 => 22,  65 => 21,  61 => 20,  47 => 9,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  87 => 29,  77 => 25,  72 => 23,  68 => 22,  65 => 21,  61 => 20,  47 => 9,  40 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -140,7 +143,7 @@ class __TwigTemplate_0eff4793f141d050b23275834069ca6b482476fc5c562364fa560ce69d8
                             <td>{{ genus.name }}</td>
                             <td>{{ genus.subFamily.name }}</td>
                             <td>
-                                <a href=\"#\" class=\"btn btn-xs btn-success\"><span class=\"fa fa-pencil\">Edit</span></a>
+                                <a href=\"{{ path('admin_genus_edit',{'id':genus.id}) }}\" class=\"btn btn-xs btn-success\"><span class=\"fa fa-pencil\">Edit</span></a>
                             </td>
                         </tr>
                     {% endfor %}

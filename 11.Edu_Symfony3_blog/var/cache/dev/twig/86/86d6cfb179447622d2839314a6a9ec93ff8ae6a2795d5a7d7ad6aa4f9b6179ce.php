@@ -1,6 +1,6 @@
 <?php
 
-/* :admin/genus:formLayout.html.twig */
+/* admin/genus/formLayout.html.twig */
 class __TwigTemplate_6ed34e7f73eedb33485afabd6495767d244ff745eb290e9ca8db44d3aa1d69ac extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_6ed34e7f73eedb33485afabd6495767d244ff745eb290e9ca8db44d3aa1
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", ":admin/genus:formLayout.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "admin/genus/formLayout.html.twig", 1);
         $this->blocks = array(
             'stylesheets' => array($this, 'block_stylesheets'),
             'javascripts' => array($this, 'block_javascripts'),
@@ -23,7 +23,7 @@ class __TwigTemplate_6ed34e7f73eedb33485afabd6495767d244ff745eb290e9ca8db44d3aa1
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":admin/genus:formLayout.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/genus/formLayout.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -77,7 +77,7 @@ class __TwigTemplate_6ed34e7f73eedb33485afabd6495767d244ff745eb290e9ca8db44d3aa1
 
     public function getTemplateName()
     {
-        return ":admin/genus:formLayout.html.twig";
+        return "admin/genus/formLayout.html.twig";
     }
 
     public function isTraitable()
@@ -120,6 +120,6 @@ class __TwigTemplate_6ed34e7f73eedb33485afabd6495767d244ff745eb290e9ca8db44d3aa1
             });
         });
     </script>
-{% endblock %}", ":admin/genus:formLayout.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/app/Resources/views/admin/genus/formLayout.html.twig");
+{% endblock %}", "admin/genus/formLayout.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/app/Resources/views/admin/genus/formLayout.html.twig");
     }
 }

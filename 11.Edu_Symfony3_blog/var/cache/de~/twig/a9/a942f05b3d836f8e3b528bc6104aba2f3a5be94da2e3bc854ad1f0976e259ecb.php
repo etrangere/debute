@@ -8,7 +8,7 @@ class __TwigTemplate_bf90a158987c74f45dc7a3c52ae4005ab474e9222392efa296f482b365f
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", ":admin/genus:new.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/genus/formLayout.html.twig", ":admin/genus:new.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -16,7 +16,7 @@ class __TwigTemplate_bf90a158987c74f45dc7a3c52ae4005ab474e9222392efa296f482b365f
 
     protected function doGetParent(array $context)
     {
-        return "base.html.twig";
+        return "admin/genus/formLayout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -114,7 +114,7 @@ class __TwigTemplate_bf90a158987c74f45dc7a3c52ae4005ab474e9222392efa296f482b365f
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends 'base.html.twig' %}
+        return new Twig_Source("{% extends 'admin/genus/formLayout.html.twig' %}
 
 {% block body %}
     <div class=\"container\">

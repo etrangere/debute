@@ -26,6 +26,12 @@ class Genus
 
     /**
      * @Assert\NotBlank()
+     * @ORM\Column(type="string")
+     */
+    private $name;
+
+    /**
+     * @Assert\NotBlank()
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\SubFamily")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -42,6 +48,33 @@ class Genus
      * @ORM\Column(type="date")
      */
     private $firstDiscoveredAt;
+
+
+
+
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Range(min=0, minMessage="Negative species! Come on...")
+     * @ORM\Column(type="integer")
+     */
+    private $speciesCount;
+
+
+    /**
+     * @ORM\Column(type="string" , nullable=true)
+     */
+    private $funFact;
+
+
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\GenusNote",mappedBy="genus")
+     * @ORM\OrderBy({"createdAt"="DESC"})
+     */
+    private $notes;
+
+
 
     /**
      * @return mixed
@@ -142,27 +175,7 @@ class Genus
     }
 
 
-    /**
-     * @Assert\NotBlank()
-     * @Assert\Range(min=0, minMessage="Negative species! Come on...")
-     * @ORM\Column(type="integer")
-     */
-    private $speciesCount;
 
-
-    /**
-     * @ORM\Column(type="string" , nullable=true)
-     */
-    private $funFact;
-
-
-
-
-    /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\GenusNote",mappedBy="genus")
-     * @ORM\OrderBy({"createdAt"="DESC"})
-     */
-    private $notes;
 
 
     public function __construct()
@@ -170,11 +183,7 @@ class Genus
         $this->notes = new ArrayCollection();
     }
 
-    /**
-     * @Assert\NotBlank()
-     * @ORM\Column(type="string")
-     */
-    private $name;
+
 
     /**
      * @return mixed
