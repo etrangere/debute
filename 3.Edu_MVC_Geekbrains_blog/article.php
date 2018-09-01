@@ -1,13 +1,11 @@
 <?php
 
-include_once('startup.php');
-include_once('model.php');
 
-startup();
+include_once('model.php');
 
 $id_article = $_GET['id'];
 
-$id_article = articles_get($id_article);
+$id_article = articles_get($id_article,$con);
 
 foreach($id_article as $one_article){
 

@@ -1,3 +1,17 @@
 6d2028,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus,1535301021,,200
 176b6c,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus,1535301385,,200
 fef492,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus,1535301514,,200
+f9dab7,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus/3/edit,1535301737,,200
+1c8f5f,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus/10/edit,1535301745,,200
+d54ce8,::1,POST,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus/10/edit,1535301749,,302
+2fcb32,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus,1535301749,,200
+babeff,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus/2/edit,1535301752,,200
+4b6109,::1,POST,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus/2/edit,1535301757,,302
+8bceb5,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus,1535301757,,200
+b2ae1e,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus/6/edit,1535314605,,200
+03095d,::1,POST,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus/6/edit,1535314611,,302
+18198b,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus,1535314612,,200
+53c3f3,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus/3/edit,1535450664,,200
+464f02,::1,POST,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus/3/edit,1535450671,,302
+c7cca7,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus,1535450672,,200
+e56f1c,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus,1535751687,,200

@@ -1,14 +1,13 @@
 <?php
-include_once('startup.php');
+
 include_once('model.php');
 
-startup();
 
 $id_article = $_GET['id'];
 
-articles_get($id_article);
+articles_get($id_article,$con);
 
-$db_article = articles_get($id_article);
+$db_article = articles_get($id_article,$con);
 
 foreach($db_article as $one_article){
 
@@ -19,14 +18,14 @@ foreach($db_article as $one_article){
 
 if (isset($_POST['edit'])){
 
-    articles_edit($_GET['id'],$_POST['title'],$_POST['content']);
+    articles_edit($_GET['id'],$_POST['title'],$_POST['content'],$con);
     header('Location: editor.php');
 
 }
 
 if(isset($_POST['delete'])){
 
-    articles_delete($id_article);
+    articles_delete($id_article,$con);
     header('Location: editor.php');
     die();
 }

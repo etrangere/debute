@@ -1,25 +1,43 @@
 <?php
+
 //
 // All articles list.
 //
-function articles_all()
+// Setting parameters, connection to db, session start.
+///////////////////////
+///////////////////////
+// DB connection config.
+$hostname = 'localhost';
+$username = 'root';
+$password = 'Smdilia2012@';
+$dbName = 'blog';
+
+// Connect to db.
+$con= mysqli_connect($hostname, $username, $password,$dbName) or die('No connect with data base');
+
+// Session start.
+session_start();
+////////////////////////
+////////////////////////
+
+function articles_all($con)
 {
 	// Query.
 
-	$query = "SELECT * FROM articles ORDER BY id_article DESC";
-	$result = mysql_query($query);
+
+	$result = mysqli_query($con,"SELECT * FROM articles ORDER BY id_article DESC");
 							
 	if (!$result)
-		die(mysql_error());
+		die(mysqli_error($con));
 	
 	// Extract from DB.
 
-	$n = mysql_num_rows($result);
+	$n = mysqli_num_rows($result);
 	$articles = array();
 
 	for ($i = 0; $i < $n; $i++)
 	{
-		$row = mysql_fetch_assoc($result);
+		$row = mysqli_fetch_assoc($result);
 		$articles[] = $row;
 	}
 
@@ -31,20 +49,20 @@ function articles_all()
 // One article
 //
 
-function articles_get($id_article)
+function articles_get($id_article,$con)
 {
-    $query = "SELECT title,content FROM articles WHERE id_article = $id_article";
-    $result = mysql_query($query);
+
+    $result = mysqli_query($con,"SELECT title,content FROM articles WHERE id_article = $id_article");
 
     if (!$result)
-        die(mysql_error());
+        die(mysqli_error($con));
 
-    $n = mysql_num_rows($result);
+    $n = mysqli_num_rows($result);
     $id_article = array();
 
     for ($i = 0; $i < $n; $i++)
     {
-        $row = mysql_fetch_assoc($result);
+        $row = mysqli_fetch_assoc($result);
         $id_article[] = $row;
     }
 
@@ -54,7 +72,7 @@ function articles_get($id_article)
 //
 // Add article.
 //
-function articles_new($title, $content)
+function articles_new($title, $content,$con)
 {
 	// Prepare.
 	$title = trim($title);
@@ -68,14 +86,14 @@ function articles_new($title, $content)
 
 	$t = "INSERT INTO articles (title, content) VALUES ('%s', '%s')";
 	
-	$query = sprintf($t, 
-	    mysql_real_escape_string($title),
-	    mysql_real_escape_string($content));
+
 	
-	$result = mysql_query($query);
+	$result = mysqli_query($con,sprintf($t,
+        mysqli_real_escape_string($con,$title),
+        mysqli_real_escape_string($con,$content)));
 							
 	if (!$result)
-		die(mysql_error());
+		die(mysqli_error($con));
 		return true;
 }
 
@@ -83,7 +101,9 @@ function articles_new($title, $content)
 // Edit article
 //
 
-function articles_edit($id_article,$title, $content){
+function articles_edit($id_article,$title, $content,$con)
+
+{
 
 
     // Prepare.
@@ -103,15 +123,15 @@ function articles_edit($id_article,$title, $content){
     SET title = '$title', content = '$content'
     WHERE id_article = '$id_article'";
 
-    $query = sprintf($t,
-        ($id_article),
-        mysql_real_escape_string($title),
-        mysql_real_escape_string($content));
 
-    $result = mysql_query($query);
+
+    $result = mysqli_query($con,sprintf($t,
+        ($id_article),
+        mysqli_real_escape_string($con,$title),
+        mysqli_real_escape_string($con,$content)));
 
     if (!$result)
-        die(mysql_error());
+        die(mysqli_error($con));
 
     return true;
 
@@ -122,13 +142,13 @@ function articles_edit($id_article,$title, $content){
 //
 // Delete article
 //
-function articles_delete($id_article)
+function articles_delete($id_article,$con)
 {
 
 
-    $sql = "DELETE FROM articles WHERE id_article = '$id_article'";
 
-    mysql_query($sql);
+
+    mysqli_query($con,"DELETE FROM articles WHERE id_article = '$id_article'");
 
 
 

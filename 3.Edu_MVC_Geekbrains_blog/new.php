@@ -1,15 +1,12 @@
 <?php
-include_once('startup.php');
-include_once('model.php');
 
-// Setting parameters, connection to db, session start.
-startup();
+include_once('model.php');
 
 // Online form processing.
 
-if (isset($_POST['title'], $_POST['content'])){
-    if (articles_new($_POST['title'], $_POST['content'])){
-        header('Location: v_editor.php');
+if (isset($_POST['title'], $_POST['content'],$con)){
+    if (articles_new($_POST['title'], $_POST['content'],$con)){
+        header('Location:editor.php');
         die();
     }
 
