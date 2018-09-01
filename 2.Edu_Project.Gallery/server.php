@@ -11,72 +11,66 @@ $folder = opendir($folder_path);
 
 if(isset($_FILES["fileToUpload"]["name"])){
 
-$uploaded_file= $dest_upload . basename($_FILES["fileToUpload"]["name"]);
+    $uploaded_file= $dest_upload . basename($_FILES["fileToUpload"]["name"]);
 
-$uploadok= 1;
+    $uploadok= 1;
 
-$imageFileType = pathinfo($uploaded_file, PATHINFO_EXTENSION);
+    $imageFileType = pathinfo($uploaded_file, PATHINFO_EXTENSION);
 
 
 
-if ($_FILES["fileToUpload"]["name"] > 2500000) {
-    echo "Sorry, your file is too large.";
-    $uploadok= 0;
-}
-
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-  $uploadok= 0;
-}
-
-if (file_exists($imageFileType)) {
-    echo "Sorry, file already exists.";
-    $uploadok= 0;
-}
-
-if ($uploadok == 0) {
-    echo "Sorry, your file was not uploaded.";
-
-} else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $uploaded_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";'<br/>';
-        
-    } else {
-        echo "Sorry, there was an error uploading your file.";
+    if ($_FILES["fileToUpload"]["size"] > 2097152) {
+        echo "Sorry, your file is too large.";
+        $uploadok= 0;
     }
-}
 
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadok= 0;
+    }
 
+    if (file_exists($uploaded_file)) {
+        echo "Sorry, file already exists.";
+        $uploadok= 0;
+    }
 
+    if ($uploadok == 0) {
+        echo "Sorry, your file was not uploaded.";
 
+    } else {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $uploaded_file)) {
+            echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded to the server.";'<br/>';
+
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
 
 
 //database connection--> in db.config.php
 
-$fileName = $_FILES["fileToUpload"]["name"];
-$tmpName  = $_FILES["fileToUpload"]['tmp_name'];
-$fileSize = $_FILES["fileToUpload"]['size'];
-$fileType = $_FILES["fileToUpload"]['type'];
+    $fileName = $_FILES["fileToUpload"]["name"];
+    $tmpName  = $_FILES["fileToUpload"]['tmp_name'];
+    $fileSize = $_FILES["fileToUpload"]['size'];
+    $fileType = $_FILES["fileToUpload"]['type'];
 
-$query = "INSERT INTO images_table(id_file,file_name,file_type,file_size)".
-    "VALUES('','$fileName','$fileType','$fileSize')";
-mysql_query($query);
 
-if ($fileName == ''){
-    echo"<br>Choose file to uploaded to server!<br>";
-}
-else
-{
-    echo"<br>File '$fileName' uploaded to server!<br>";
-}
+    mysqli_query($link,"INSERT INTO images_table(id_file,file_name,file_type,file_size)".
+        "VALUES('','$fileName','$fileType','$fileSize')");
+
+    if ($fileName == ''){
+        echo"<br>Choose file to uploaded to server!<br>";
+    }
 
 }
 
+
+//for debug
 /*
 
-$result=mysql_query('SELECT * FROM images_table');
+$result=mysqli_query($link,'SELECT * FROM images_table');
 
-while ($row = mysql_fetch_assoc($result)) {
+while ($row = mysqli_fetch_assoc($result)) {
 
     echo'<ul>';
     echo($row ['id_file']);
@@ -87,80 +81,108 @@ while ($row = mysql_fetch_assoc($result)) {
 
 }
 
-
 */
-mysql_close($link);
+
+mysqli_close($link);
 
 ?>
 
 
 
 <!DOCTYPE html>
-          <html>
-          <head>
-            <title>Gallery</title>
-            <link rel="stylesheet" href="css/style.css">
-            <link rel="stylesheet" href="css/bootstrap.css">
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+<style>
+
+    img {
+
+        width: 200px;
+        height: 200px;
+        max-height: 200px;
+        object-fit: contain;
+    }
+
+    .thumbnail {
+        width: 265px;
+        height: 270px;
+        object-fit: contain;
+
+    }
+
+    .container {
+        padding: 50px;
+
+    }
+</style>
 
 </head>
 <body>
-  
-<div class="btn btn-info">
-        <ul><a href="login.php"> Login</a></ul>
-     </div>
-<br/>
 
-      <?php
-           while(false != ($file = readdir($folder))) { 
+<h1><center>My Image Gallery</center></h1>
 
-            if ($file == ".." || $file == "." || $file == ".DS_Store") {
-              continue;
-             }
- 
-           $file_path = $folder_path.$file;
-           ?>
+<a href="index.php" style="padding-left: 54px"><b>Login</b></a><hr>
 
-       <div class="row" style="float: left" >
+<div class="container" style="border:double;">
 
-             <div class="col-md-12">
-               <div class="thumbnail" style="height: 60%">
-                 <form action="delete.php?id=<?php echo $file; ?>" method="post" >
-                  <a href="<?php echo $file_path;?>"><img src="<?php echo $file_path;?>" height="250" width="250"></a>
-                   <input  class="btn btn-primary" type="submit" name="" value="Delete">
-                    </form>
-             </div>
-           </div>
-       </div>
 
-           <?php
+<?php
+while(false != ($file = readdir($folder))) {
 
-               }
-  
-               closedir($folder);
+    if ($file == ".." || $file == "." || $file == ".DS_Store") {
+        continue;
+    }
 
-       ?>
+    $file_path = $folder_path.$file;
+    ?>
 
-        <div>
-             <form action="" method = "post" enctype="multipart/form-data">
-             <input type = "file"  name="fileToUpload" value="Upload file"></br>
-             <input type = "submit" name="choose" value="Submit"></br>
-             </form>
+
+
+    <div class="row" style="float: left" >
+
+        <div class="col-md-12">
+
+            <div class="thumbnail">
+                <center>
+                <form action="delete.php?id=<?php echo $file; ?>" method="post" >
+                    <a href="<?php echo $file_path;?>"><img src="<?php echo $file_path;?>" ></a>
+                </br>
+                    <input  class="btn btn-primary" type="submit" name="" value="Delete">
+                </form>
+                </center>
+            </div>
         </div>
+    </div>
+
+    <?php
+
+}
+
+closedir($folder);
+
+?>
+    </div>
+<div>
+    <form action="" method = "post" enctype="multipart/form-data" style="padding-left: 54px">
+        </br>
+        <input type = "file"  name="fileToUpload" value="Upload file"></br>
+        <input type = "submit" name="choose" value="Submit"></br>
+    </form>
+</div>
 
 
 <div class="footer">
- <hr>
- &copy; 2016 Allrights reserved
+    <hr>
+    &copy; 2016 Allrights reserved
 </div>
 
 
 <script src="js/3.2.1/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
- </body>
+</body>
 </html>
-          
-
-
 
 
 

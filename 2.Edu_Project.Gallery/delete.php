@@ -13,9 +13,9 @@ if ($_GET['id']!= '' ) {
 }
 $id = $_GET['id'];
 
-$sql = "DELETE FROM images_table WHERE file_name = '$id'";
+//$sql = "DELETE FROM images_table WHERE file_name = '$id'";
 
-$result=mysql_query($sql);
+$result=mysqli_query($link,"DELETE FROM images_table WHERE file_name = '$id'");
 
 
 
