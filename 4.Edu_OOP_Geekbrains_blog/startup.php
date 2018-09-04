@@ -12,7 +12,7 @@ class Connect
         $hostname = 'localhost';
         $username = 'root';
         $password = 'Smdilia2012@';
-        $dbName = 'blog2';
+        $dbName = 'blog4';
 
 
         // Connect to db.

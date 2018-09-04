@@ -27,17 +27,17 @@ class M_Mysql
     {
 
 
-       $result = mysql_query($query);
+       $result = mysqli_query(C_Base::getObject(),$query);
 
         if (!$result)
-            die(mysql_error());
+            die(mysqli_error(C_Base::getObject()));
 
-        $n = mysql_num_rows($result);
+        $n = mysqli_num_rows($result);
         $arr = array();
 
         for($i = 0; $i < $n; $i++)
         {
-            $row = mysql_fetch_assoc($result);
+            $row = mysqli_fetch_assoc($result);
             $arr[] = $row;
         }
 
@@ -57,7 +57,7 @@ class M_Mysql
 
         foreach ($object as $key => $value)
         {
-            $key = mysql_real_escape_string($key . '');
+            $key = mysqli_real_escape_string(C_Base::getObject(),$key . '');
             $columns[] = $key;
 
             if ($value === null)
@@ -66,7 +66,7 @@ class M_Mysql
             }
             else
             {
-                $value = mysql_real_escape_string($value . '');
+                $value = mysqli_real_escape_string(C_Base::getObject(),$value . '');
                 $values[] = "'$value'";
             }
         }
@@ -77,12 +77,12 @@ class M_Mysql
 
 
         $query = "INSERT INTO $table ($columns_s) VALUES ($values_s)";
-        $result = mysql_query($query);
+        $result = mysqli_query(C_Base::getObject(),$query);
 
         if (!$result)
-            die(mysql_error());
+            die(mysqli_error(C_Base::getObject()));
 
-        return mysql_insert_id();
+        return mysqli_insert_id(C_Base::getObject());
 
     }
 
@@ -97,7 +97,7 @@ class M_Mysql
 
         foreach ($object as $key => $value)
         {
-            $key = mysql_real_escape_string($key . '');
+            $key = mysqli_real_escape_string(C_Base::getObject(),$key . '');
 
             if ($value === null)
             {
@@ -105,7 +105,7 @@ class M_Mysql
             }
             else
             {
-                $value = mysql_real_escape_string($value . '');
+                $value = mysqli_real_escape_string(C_Base::getObject(),$value . '');
                 $sets[] = "$key='$value'";
             }
         }
@@ -114,12 +114,12 @@ class M_Mysql
 
         $query = "UPDATE $table SET $sets_s WHERE $where";
 
-        $result = mysql_query($query);
+        $result = mysqli_query(C_Base::getObject(),$query);
 
         if (!$result)
-            die(mysql_error());
+            die(mysqli_error(C_Base::getObject()));
 
-        return mysql_affected_rows();
+        return mysqli_affected_rows(C_Base::getObject());
     }
 
     //
@@ -129,18 +129,18 @@ class M_Mysql
     {
 
 
-     sprintf( mysql_real_escape_string($table), mysql_real_escape_string($where));
+     sprintf( mysqli_real_escape_string(C_Base::getObject(),$table), mysqli_real_escape_string(C_Base::getObject(),$where));
 
 
         $query = "DELETE FROM $table WHERE $where ";
 
 
-        $result =  mysql_query($query);
+        $result =  mysqli_query(C_Base::getObject(),$query);
 
         if (!$result)
-            die(mysql_error());
+            die(mysqli_error(C_Base::getObject()));
 
-         return mysql_affected_rows();
+         return mysqli_affected_rows(C_Base::getObject());
 
 
     }

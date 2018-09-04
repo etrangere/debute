@@ -42,7 +42,7 @@ abstract class C_Base extends Controller
         $hostname = 'localhost';
         $username = 'root';
         $password = 'Smdilia2012@';
-        $dbName = 'blog2';
+        $dbName = 'blog5';
 
 
         // Connect to db.

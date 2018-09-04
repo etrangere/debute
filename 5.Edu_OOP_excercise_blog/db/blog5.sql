@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  jeu. 05 avr. 2018 à 04:15
--- Version du serveur :  10.1.25-MariaDB
--- Version de PHP :  5.6.31
+-- Généré le :  mar. 04 sep. 2018 à 02:33
+-- Version du serveur :  10.1.33-MariaDB
+-- Version de PHP :  7.1.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,10 +42,7 @@ CREATE TABLE `articles` (
 
 INSERT INTO `articles` (`id_article`, `title`, `content`, `intro`, `mail`) VALUES
 (39, 'Contenus de sites Web', 'Il y a eu plus de 3 millions d\'articles crÃ©Ã©s sur AboutUs.org au mois d\'aoÃ»t 2006. La plupart des articles ont Ã©tÃ© crÃ©Ã©s par un bot informatique. Dans bon nombre de cas, le contenu est simplement une re-publication des contenus About us, About me, Qui sommes-nous ou de la page d\'information Ã©quivalente sur le site web. De telles pages dÃ©crivent gÃ©nÃ©ralement l\'entitÃ© et peuvent contenir de l\'information auto-promotionnelle, ce que AboutUs.org n\'exclut pas. Dans bien d\'autres cas, le contenu d\'un article consiste Ã  recenser les donnÃ©es whois du site web.', 'Il y a eu plus de 3 millions d\'articles crÃ©Ã©s sur AboutUs.org au mois d\'aoÃ»t 2006. La plupart des articles ont Ã©tÃ© crÃ©Ã©s par un bot informatique. Dans bon nombre de cas, le contenu est simplement une re-publication des contenus About us, About me, Qui sommes-nous ou de la page d\'information Ã©quivalente sur le site web. De telles pages dÃ©cr', '0'),
-(40, 'RÃ©volution', 'Le premier enjeu porte sur lï¿½effet de la rÃ©volution numÃ©rique en cours sur la quantitÃ© dï¿½emplois disponibles dans lï¿½Ã©conomie, et donc sur le chÃ´mage. Les programmes et les machines dï¿½aujourdï¿½hui, comme celles des rÃ©volutions industrielles prÃ©cÃ©dentes, sont susceptibles de remplacer un certain nombre dï¿½emplois ; symÃ©triquement, lï¿½Ã©volution technologique alimente la croissance en crÃ©ant de nouveaux produits, en suscitant de nouveaux investissements, en amÃ©liorant la productivitÃ© des travailleurs. La question du solde de cet impact reste aujourdï¿½hui trÃ¨s controversÃ©e par les spÃ©cialistes de la question, et varie Ã  la fois selon le cadre thÃ©orique choisi et la mÃ©thode dï¿½investigation empirique utilisÃ©e. Certains, confiants dans les lois du marchÃ© et lï¿½observation des rÃ©volutions industrielles prÃ©cÃ©dentes, mettent lï¿½accent sur la capacitÃ© des Ã©conomies Ã  rÃ©investir les gains de productivitÃ© dans de nouveaux territoires de croissance, crÃ©ateurs dï¿½emplois ; dï¿½autres, observant lï¿½atonie de la conjoncture mondiale, pointent au contraire soit la possibilitÃ© dï¿½une rÃ©volution numÃ©rique sans croissance, soit le scÃ©nario dï¿½une croissance sans emplois. Les divergences dï¿½Ã©valuation des deux effets (compensation des emplois dÃ©truits / substitutions des machines aux emplois) reposent notamment sur des Ã©valuations diffÃ©renciÃ©es de la capacitÃ© des machines, robots et algorithmes> Ã  prendre en charge une part trÃ¨s large des tÃ¢ches effectuÃ©es aujourdï¿½hui par des', 'Le premier enjeu porte sur lï¿½effet de la rÃ©volution numÃ©rique en cours sur la quantitÃ© dï¿½emplois disponibles dans lï¿½Ã©conomie, et donc sur le chÃ´mage. Les programmes et les machines dï¿½aujourdï¿½hui, comme celles des rÃ©volutions industrielles prÃ©cÃ©dentes, sont susceptibles de remplacer un certain nombre dï¿½emplois ; symÃ©triquement, ', '0'),
-(67, 'ddddd22', 'dddddmkjdlkjhdlkjhlkjhlkjhlkjhlkjhkljh22', 'dddddmkjdlkjhdlkjhlkjhlkjhlkjhlkjhkljh22', 'ddddd@mail.ru22'),
-(69, 'AAA', 'AAAAAAAAAA', 'AAAAAAAAAA', 'AAA@mail.ru'),
-(70, 'zzz', 'mlmlkjmlkj', 'mlmlkjmlkj', 'zzzz@');
+(40, 'RÃ©volution1', 'Le premier enjeu porte sur lï¿½effet de la rÃ©volution numÃ©rique en cours sur la quantitÃ© dï¿½emplois disponibles dans lï¿½Ã©conomie, et donc sur le chÃ´mage. Les programmes et les machines dï¿½aujourdï¿½hui, comme celles des rÃ©volutions industrielles prÃ©cÃ©dentes, sont susceptibles de remplacer un certain nombre dï¿½emplois ; symÃ©triquement, lï¿½Ã©volution technologique alimente la croissance en crÃ©ant de nouveaux produits, en suscitant de nouveaux investissements, en amÃ©liorant la productivitÃ© des travailleurs. La question du solde de cet impact reste aujourdï¿½hui trÃ¨s controversÃ©e par les spÃ©cialistes de la question, et varie Ã  la fois selon le cadre thÃ©orique choisi et la mÃ©thode dï¿½investigation empirique utilisÃ©e. Certains, confiants dans les lois du marchÃ© et lï¿½observation des rÃ©volutions industrielles prÃ©cÃ©dentes, mettent lï¿½accent sur la capacitÃ© des Ã©conomies Ã  rÃ©investir les gains de productivitÃ© dans de nouveaux territoires de croissance, crÃ©ateurs dï¿½emplois ; dï¿½autres, observant lï¿½atonie de la conjoncture mondiale, pointent au contraire soit la possibilitÃ© dï¿½une rÃ©volution numÃ©rique sans croissance, soit le scÃ©nario dï¿½une croissance sans emplois. Les divergences dï¿½Ã©valuation des deux effets (compensation des emplois dÃ©truits / substitutions des machines aux emplois) reposent notamment sur des Ã©valuations diffÃ©renciÃ©es de la capacitÃ© des machines, robots et algorithmes> Ã  prendre en charge une part trÃ¨s large des tÃ¢ches effectuÃ©es aujourdï¿½hui par des', 'Le premier enjeu porte sur lï¿½effet de la rÃ©volution numÃ©rique en cours sur la quantitÃ© dï¿½emplois disponibles dans lï¿½Ã©conomie, et donc sur le chÃ´mage. Les programmes et les machines dï¿½aujourdï¿½hui, comme celles des rÃ©volutions industrielles prÃ©cÃ©dentes, sont susceptibles de remplacer un certain nombre dï¿½emplois ; symÃ©triquement, ', '0');
 
 -- --------------------------------------------------------
 
@@ -258,27 +255,32 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id_article` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id_article` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
 --
 -- AUTO_INCREMENT pour la table `privs`
 --
 ALTER TABLE `privs`
   MODIFY `id_priv` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT pour la table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id_role` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT pour la table `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `id_session` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_session` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;COMMIT;
+  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

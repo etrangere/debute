@@ -127,10 +127,10 @@ class M_Users
 	{
 
 		$t = "SELECT * FROM users WHERE login='%s'";
-		$query = sprintf($t, mysql_real_escape_string($login));
+		$query = sprintf($t, mysqli_real_escape_string(C_Base::getObject(),$login));
 		$result = $this->m_msql->Select($query);
 
-		//var_dump($result);
+
 		return $result[0];
 	}
 			
@@ -197,7 +197,7 @@ class M_Users
 			return null;
 			
 		$t = "SELECT id_user FROM sessions WHERE sid = '%s'";
-		$query = sprintf($t, mysql_real_escape_string($sid));
+		$query = sprintf($t, mysqli_real_escape_string(C_Base::getObject(),$sid));
 		$result = $this->m_msql->Select($query);
 				
 		// ���� ������ �� ����� - ������ ������������ �� �����������.
@@ -229,13 +229,13 @@ class M_Users
 			$session = array();
 			$session['time_last'] = date('Y-m-d H:i:s'); 			
 			$t = "sid = '%s'";
-			$where = sprintf($t, mysql_real_escape_string($sid));
+			$where = sprintf($t, mysqli_real_escape_string(C_Base::getObject(),$sid));
 			$affected_rows = $this->m_msql->Update('sessions', $session, $where);
 
 			if ($affected_rows == 0)
 			{
 				$t = "SELECT count(*) FROM sessions WHERE sid = '%s'";		
-				$query = sprintf($t, mysql_real_escape_string($sid));
+				$query = sprintf($t, mysqli_real_escape_string(C_Base::getObject(),$sid));
 				$result = $this->m_msql->Select($query);
 				
 				if ($result[0]['count(*)'] == 0)

@@ -6,7 +6,7 @@ function startup()
 	$hostname = 'localhost';	
 	$username = 'root'; 
 	$password = 'Smdilia2012@';
-	$dbName   = 'wg';
+	$dbName   = 'frame';
 	
 	// языкова€ настройка.
 	setlocale(LC_ALL, 'ru_RU.CP1251');	
