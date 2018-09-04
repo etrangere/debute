@@ -3,12 +3,12 @@
 include_once('startup.php');
 include_once('model/model.php');
 
-startup();
+Connect::startup();
 
 $id_article = $_GET['id'];
 
 
-$id_article = ARTIC_all::articles_get($id_article);
+$id_article = Article::articles_get($id_article);
 
 
 foreach($id_article as $one_article){

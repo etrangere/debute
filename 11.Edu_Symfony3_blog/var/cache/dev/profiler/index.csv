@@ -15,3 +15,4 @@ b2ae1e,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admi
 464f02,::1,POST,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus/3/edit,1535450671,,302
 c7cca7,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus,1535450672,,200
 e56f1c,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus,1535751687,,200
+dd2e8e,::1,GET,http://localhost/debute/11.Edu_Symfony3_blog/web/app_dev.php/admin/genus,1535984695,,200

@@ -74,9 +74,9 @@ class M_Model
     // Query.
 
        $query = sprintf(
-        mysql_real_escape_string($title),
-        mysql_real_escape_string($content),
-        mysql_real_escape_string($intro));
+        mysqli_real_escape_string(C_Base::getObject(),$title),
+        mysqli_real_escape_string(C_Base::getObject(),$content),
+        mysqli_real_escape_string(C_Base::getObject(),$intro));
 
        $object = array();
        $object['title']= $title;

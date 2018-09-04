@@ -4,9 +4,9 @@ include_once('model/model.php');
 
 
 // Setting parameters, connection to db, session start.
-startup();
+Connect::startup();
 
-$articles = ARTIC_all::articles_all();
+$articles = Article::articles_all();
 
 
 // Extract to View.

@@ -123,7 +123,8 @@ if($enter_site){
 </head>
 <body>
 
-<h2>Login to the gallery to edit your photos</h2>
+<h2>Login to the gallery to edit your photos </h2>
+<font color="red"><h5>(You can use any <b>login</b> and <b>Password</b> to enter.)</h5></font>
 
 <form action="" method="post">
     <div class="imgcontainer">

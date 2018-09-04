@@ -3,11 +3,11 @@ include_once('startup.php');
 include_once('model/model.php');
 
 // Setting parameters, connection to db, session start.
-startup();
+Connect::startup();
 
 // Extracting articles.
 
-$articles = ARTIC_all ::articles_all();
+$articles = Article ::articles_all();
 
 include('view/v_index.php');
 ?>

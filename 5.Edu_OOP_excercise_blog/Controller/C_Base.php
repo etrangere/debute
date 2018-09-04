@@ -6,7 +6,7 @@ abstract class C_Base extends Controller
 {
 	protected $page_title;
 	protected $page_content;
-
+    public static $link;
     //
 	// constractor.
 	//
@@ -46,13 +46,19 @@ abstract class C_Base extends Controller
 
 
         // Connect to db.
-        mysql_connect($hostname, $username, $password) or die('No connect with data base');
-        mysql_query('SET NAMES cp1251');
-        mysql_select_db($dbName) or die('No data base');
+        $link = mysqli_connect($hostname, $username, $password,$dbName) or die('No connect with data base');
+
 
         // Session start.
         session_start();
 
     }
 
+    public static function getObject()
+    {
+        if (!self::$link)
+            self::$link = new mysqli("localhost", "root", "Smdilia2012@", "blog2");
+
+        return self::$link;
+    }
 }

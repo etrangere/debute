@@ -6,19 +6,19 @@ class Model extends Controller
     // Query.
 
     $query = "SELECT * FROM articles ORDER BY id_article DESC";
-    $result = mysql_query($query);
+    $result = mysqli_query(C_Base::getObject(),$query);
 
     if (!$result)
-        die(mysql_error());
+        die(mysqli_error(C_Base::getObject()));
 
     // Extract from DB.
 
-    $n = mysql_num_rows($result);
+    $n = mysqli_num_rows($result);
     $articles = array();
 
     for ($i = 0; $i < $n; $i++)
     {
-        $row = mysql_fetch_assoc($result);
+        $row = mysqli_fetch_assoc($result);
         $articles[] = $row;
     }
     return $articles;
@@ -32,17 +32,17 @@ class Model extends Controller
    public function articles_get($id_article)
    {
     $query = "SELECT title,content FROM articles WHERE id_article = $id_article";
-    $result = mysql_query($query);
+    $result = mysqli_query(C_Base::getObject(),$query);
 
     if (!$result)
-        die(mysql_error());
+        die(mysqli_error(C_Base::getObject()));
 
-    $n = mysql_num_rows($result);
+    $n = mysqli_num_rows($result);
     $id_article = array();
 
     for ($i = 0; $i < $n; $i++)
      {
-        $row = mysql_fetch_assoc($result);
+        $row = mysqli_fetch_assoc($result);
         $id_article[] = $row;
      }
 
@@ -63,7 +63,7 @@ class Model extends Controller
 // Add article.
 //
 
-   public function articles_new($article_title,$content,$content)
+   public function articles_new($article_title,$content)
    {
     // Prepare.
     $title = trim($article_title);
@@ -78,14 +78,14 @@ class Model extends Controller
     $t = "INSERT INTO articles (title, content ,intro) VALUES ('%s', '%s','%s')";
 
     $query = sprintf($t,
-        mysql_real_escape_string($title),
-        mysql_real_escape_string($content),
-        mysql_real_escape_string($intro));
+        mysqli_real_escape_string(C_Base::getObject(),$title),
+        mysqli_real_escape_string(C_Base::getObject(),$content),
+        mysqli_real_escape_string(C_Base::getObject(),$intro));
 
-    $result = mysql_query($query);
+    $result = mysqli_query(C_Base::getObject(),$query);
 
     if (!$result)
-        die(mysql_error());
+        die(mysqli_error(C_Base::getObject()));
     return true;
    }
 
@@ -113,13 +113,13 @@ class Model extends Controller
 
     $query = sprintf($t,
         ($id_article),
-        mysql_real_escape_string($title),
-        mysql_real_escape_string($content));
+        mysqli_real_escape_string(C_Base::getObject(),$title),
+        mysqli_real_escape_string(C_Base::getObject(),$content));
 
-    $result = mysql_query($query);
+    $result = mysqli_query(C_Base::getObject(),$query);
 
     if (!$result)
-        die(mysql_error());
+        die(mysqli_error(C_Base::getObject()));
 
     return true;
 
@@ -134,7 +134,7 @@ class Model extends Controller
 
     $sql = "DELETE FROM articles WHERE id_article = '$id_article'";
 
-    mysql_query($sql);
+    mysqli_query(C_Base::getObject(),$sql);
 
    }
 

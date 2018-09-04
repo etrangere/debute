@@ -1,6 +1,6 @@
 <?php
 
-class ARTIC_all{
+class Article{
 
 //
 // All articles list.
@@ -9,19 +9,19 @@ class ARTIC_all{
         // Query.
 
         $query = "SELECT * FROM articles ORDER BY id_article DESC";
-        $result = mysql_query($query);
+        $result = mysqli_query(Connect::getObject(),$query);
 
         if (!$result)
-            die(mysql_error());
+            die(mysqli_error(Connect::getObject()));
 
         // Extract from DB.
 
-        $n = mysql_num_rows($result);
+        $n = mysqli_num_rows($result);
         $articles = array();
 
         for ($i = 0; $i < $n; $i++)
         {
-            $row = mysql_fetch_assoc($result);
+            $row = mysqli_fetch_assoc($result);
             $articles[] = $row;
         }
         return $articles;
@@ -33,17 +33,17 @@ class ARTIC_all{
      function articles_get($id_article)
      {
         $query = "SELECT title,content FROM articles WHERE id_article = $id_article";
-        $result = mysql_query($query);
+        $result = mysqli_query(Connect::getObject(),$query);
 
         if (!$result)
-            die(mysql_error());
+            die(mysqli_error(Connect::getObject()));
 
-        $n = mysql_num_rows($result);
+        $n = mysqli_num_rows($result);
         $id_article = array();
 
         for ($i = 0; $i < $n; $i++)
         {
-            $row = mysql_fetch_assoc($result);
+            $row = mysqli_fetch_assoc($result);
             $id_article[] = $row;
         }
 
@@ -67,13 +67,13 @@ class ARTIC_all{
         $t = "INSERT INTO articles (title, content) VALUES ('%s', '%s')";
 
         $query = sprintf($t,
-            mysql_real_escape_string($title),
-            mysql_real_escape_string($content));
+            mysqli_real_escape_string(Connect::getObject(),$title),
+            mysqli_real_escape_string(Connect::getObject(),$content));
 
-        $result = mysql_query($query);
+        $result = mysqli_query(Connect::getObject(),$query);
 
         if (!$result)
-            die(mysql_error());
+            die(mysqli_error(Connect::getObject()));
             return true;
      }
 //
@@ -99,13 +99,13 @@ class ARTIC_all{
 
         $query = sprintf($t,
             ($id_article),
-            mysql_real_escape_string($title),
-            mysql_real_escape_string($content));
+            mysqli_real_escape_string(Connect::getObject(),$title),
+            mysqli_real_escape_string(Connect::getObject(),$content));
 
-        $result = mysql_query($query);
+        $result = mysqli_query(Connect::getObject(),$query);
 
         if (!$result)
-            die(mysql_error());
+            die(mysqli_error(Connect::getObject()));
 
         return true;
 
@@ -118,7 +118,7 @@ class ARTIC_all{
 
          $sql = "DELETE FROM articles WHERE id_article = '$id_article'";
 
-         mysql_query($sql);
+         mysqli_query(Connect::getObject(),$sql);
 
      }
 }
