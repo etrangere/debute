@@ -3,6 +3,7 @@
 class C_Main extends C_Base
 {
     public $articles;
+
 	//
 	// constractor.
 	//
@@ -16,9 +17,11 @@ class C_Main extends C_Base
 
 	protected function OnInput()
 	{
+
     parent::OnInput();
     $this->page_title = $this->page_title . ' :: Read articles';
     $this->page_content= Model::articles_all();
+       // var_dump($this);
     }
 
 	//
@@ -29,6 +32,7 @@ class C_Main extends C_Base
     {
     parent::OnOutput();
     }
+
 }
 
 

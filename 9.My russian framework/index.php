@@ -4,7 +4,7 @@ include_once('controller/C_Login.php');
 include_once('controller/C_Welcome.php');
 
 // Initialisation.
-startup();
+Startup::getObject();
 
 // Choose controller.
 switch ($_GET['c'])

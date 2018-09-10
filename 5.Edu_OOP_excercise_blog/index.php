@@ -3,7 +3,13 @@ function __autoload($classname){
     include_once('Controller/' . $classname . '.php');
 }
 
+//include_once ('Controller/C_Main.php');
+
 C_Base::Startup();
+
+
+
+
 
 switch ($_GET['c'])
 {
@@ -24,6 +30,7 @@ switch ($_GET['c'])
         break;
       default:
         header('Location: index.php?c=Main');
+
 }
 
 $controller->Request();

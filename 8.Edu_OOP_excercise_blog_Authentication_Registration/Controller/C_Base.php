@@ -75,7 +75,7 @@ abstract class C_Base extends Controller
     public static function getObject()
     {
         if (!self::$link)
-            self::$link = new mysqli("localhost", "root", "Smdilia2012@", "blog2");
+            self::$link = new mysqli("localhost", "root", "Smdilia2012@", "blog8");
 
         return self::$link;
     }

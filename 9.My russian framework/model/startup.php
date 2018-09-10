@@ -1,21 +1,37 @@
 <?php
 
-function startup()
+class Startup
 {
-	// Настройки подключения к БД.
-	$hostname = 'localhost';	
-	$username = 'root'; 
-	$password = 'Smdilia2012@';
-	$dbName   = 'frame';
-	
-	// Языковая настройка.
-	setlocale(LC_ALL, 'ru_RU.CP1251');	
-	
-	// Подключение к БД.
-	mysql_connect($hostname, $username, $password) or die('No connect with data base'); 
-	mysql_query('SET NAMES cp1251');
-	mysql_select_db($dbName) or die('No data base');
+   public static $link;
 
-	// Открытие сессии.
-	session_start();		
+    function startup()
+    {
+        // Настройки подключения к БД.
+        $hostname = 'localhost';
+        $username = 'root';
+        $password = 'Smdilia2012@';
+        $dbName   = 'frame';
+
+        // Языковая настройка.
+        setlocale(LC_ALL, 'ru_RU.CP1251');
+
+        // Подключение к БД.
+        $link = mysqli_connect($hostname, $username, $password,$dbName) or die('No connect with data base');
+
+
+        // Открытие сессии.
+        session_start();
+    }
+
+
+
+    public static function getObject()
+    {
+        if (!self::$link)
+            self::$link = new mysqli("localhost", "root", "Smdilia2012@", "frame");
+
+        return self::$link;
+    }
+
 }
+

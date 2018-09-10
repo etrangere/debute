@@ -24,17 +24,17 @@ class MSQL
 	//
 	public function Select($query)
 	{
-		$result = mysql_query($query);
+		$result = mysqli_query(Startup::getObject(),$query);
 		
 		if (!$result)
-			die(mysql_error());
+			die(mysqli_error(Startup::getObject()));
 		
-		$n = mysql_num_rows($result);
+		$n = mysqli_num_rows($result);
 		$arr = array();
 	
 		for($i = 0; $i < $n; $i++)
 		{
-			$row = mysql_fetch_assoc($result);		
+			$row = mysqli_fetch_assoc($result);
 			$arr[] = $row;
 		}
 
@@ -54,7 +54,7 @@ class MSQL
 	
 		foreach ($object as $key => $value)
 		{
-			$key = mysql_real_escape_string($key . '');
+			$key = mysqli_real_escape_string(Startup::getObject(),$key . '');
 			$columns[] = $key;
 			
 			if ($value === null)
@@ -63,7 +63,7 @@ class MSQL
 			}
 			else
 			{
-				$value = mysql_real_escape_string($value . '');							
+				$value = mysqli_real_escape_string(Startup::getObject(),$value . '');
 				$values[] = "'$value'";
 			}
 		}
@@ -72,12 +72,12 @@ class MSQL
 		$values_s = implode(',', $values);
 			
 		$query = "INSERT INTO $table ($columns_s) VALUES ($values_s)";
-		$result = mysql_query($query);
+		$result = mysqli_query(Startup::getObject(),$query);
 								
 		if (!$result)
-			die(mysql_error());
+			die(mysqli_error(Startup::getObject()));
 			
-		return mysql_insert_id();
+		return mysqli_insert_id(Startup::getObject());
 	}
 	
 	//
@@ -93,7 +93,7 @@ class MSQL
 	
 		foreach ($object as $key => $value)
 		{
-			$key = mysql_real_escape_string($key . '');
+			$key = mysqli_real_escape_string(Startup::getObject(),$key . '');
 			
 			if ($value === null)
 			{
@@ -101,19 +101,19 @@ class MSQL
 			}
 			else
 			{
-				$value = mysql_real_escape_string($value . '');					
+				$value = mysqli_real_escape_string(Startup::getObject(),$value . '');
 				$sets[] = "$key='$value'";			
 			}			
 		}
 		
 		$sets_s = implode(',', $sets);			
 		$query = "UPDATE $table SET $sets_s WHERE $where";
-		$result = mysql_query($query);
+		$result = mysqli_query(Startup::getObject(),$query);
 		
 		if (!$result)
-			die(mysql_error());
+			die(mysqli_error(Startup::getObject()));
 
-		return mysql_affected_rows();	
+		return mysqli_affected_rows(Startup::getObject());
 	}
 	
 	//
@@ -125,11 +125,11 @@ class MSQL
 	public function Delete($table, $where)
 	{
 		$query = "DELETE FROM $table WHERE $where";		
-		$result = mysql_query($query);
+		$result = mysqli_query(Startup::getObject(),$query);
 						
 		if (!$result)
-			die(mysql_error());
+			die(mysqli_error(Startup::getObject()));
 
-		return mysql_affected_rows();	
+		return mysqli_affected_rows(Startup::getObject());
 	}
 }

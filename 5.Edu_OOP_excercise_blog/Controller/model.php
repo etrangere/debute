@@ -6,10 +6,10 @@ class Model extends Controller
     // Query.
 
     $query = "SELECT * FROM articles ORDER BY id_article DESC";
-    $result = mysqli_query(C_Base::getObject(),$query);
+    $result = mysqli_query(C_Base::$link,$query);
 
     if (!$result)
-        die(mysqli_error(C_Base::getObject()));
+        die(mysqli_error(C_Base::$link));
 
     // Extract from DB.
 
@@ -32,10 +32,10 @@ class Model extends Controller
    public function articles_get($id_article)
    {
     $query = "SELECT title,content FROM articles WHERE id_article = $id_article";
-    $result = mysqli_query(C_Base::getObject(),$query);
+    $result = mysqli_query(C_Base::$link,$query);
 
     if (!$result)
-        die(mysqli_error(C_Base::getObject()));
+        die(mysqli_error(C_Base::$link));
 
     $n = mysqli_num_rows($result);
     $id_article = array();
@@ -82,10 +82,10 @@ class Model extends Controller
         mysqli_real_escape_string(C_Base::getObject(),$content),
         mysqli_real_escape_string(C_Base::getObject(),$intro));
 
-    $result = mysqli_query(C_Base::getObject(),$query);
+    $result = mysqli_query(C_Base::$link,$query);
 
     if (!$result)
-        die(mysqli_error(C_Base::getObject()));
+        die(mysqli_error(C_Base::$link));
     return true;
    }
 
@@ -113,13 +113,13 @@ class Model extends Controller
 
     $query = sprintf($t,
         ($id_article),
-        mysqli_real_escape_string(C_Base::getObject(),$title),
-        mysqli_real_escape_string(C_Base::getObject(),$content));
+        mysqli_real_escape_string(C_Base::$link,$title),
+        mysqli_real_escape_string(C_Base::$link,$content));
 
-    $result = mysqli_query(C_Base::getObject(),$query);
+    $result = mysqli_query(C_Base::$link,$query);
 
     if (!$result)
-        die(mysqli_error(C_Base::getObject()));
+        die(mysqli_error(C_Base::$link));
 
     return true;
 
@@ -134,7 +134,7 @@ class Model extends Controller
 
     $sql = "DELETE FROM articles WHERE id_article = '$id_article'";
 
-    mysqli_query(C_Base::getObject(),$sql);
+    mysqli_query(C_Base::$link,$sql);
 
    }
 
