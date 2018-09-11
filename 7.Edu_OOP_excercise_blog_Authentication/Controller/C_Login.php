@@ -33,7 +33,7 @@ public function onInput()
         if ($mUsers->Login($_POST['login'], $_POST['password'], isset($_POST['remember'])))
         {
             header('Location: index.php?c=Editor');
-            die();
+            //die();
         }
     }
 
