@@ -58,11 +58,11 @@ class M_Users
         // Query.
 
         $query = sprintf(
-            mysqli_real_escape_string(C_Base::getObject(),$e_mail),
-            mysqli_real_escape_string(C_Base::getObject(),$password_1),
-            mysqli_real_escape_string(C_Base::getObject(),$id_role),
-            mysqli_real_escape_string(C_Base::getObject(),$f_name),
-            mysqli_real_escape_string(C_Base::getObject(),$l_name));
+            mysqli_real_escape_string(C_Base::$link,$e_mail),
+            mysqli_real_escape_string(C_Base::$link,$password_1),
+            mysqli_real_escape_string(C_Base::$link,$id_role),
+            mysqli_real_escape_string(C_Base::$link,$f_name),
+            mysqli_real_escape_string(C_Base::$link,$l_name));
 
         $object = array();
         $object['login']= $e_mail;
@@ -179,7 +179,7 @@ class M_Users
 	{
 
 		$t = "SELECT * FROM users WHERE login='%s'";
-		$query = sprintf($t, mysqli_real_escape_string(C_Base::getObject(),$login));
+		$query = sprintf($t, mysqli_real_escape_string(C_Base::$link,$login));
 		$result = $this->m_msql->Select($query);
 
 		//var_dump($result);
@@ -249,7 +249,7 @@ class M_Users
 			return null;
 			
 		$t = "SELECT id_user FROM sessions WHERE sid = '%s'";
-		$query = sprintf($t, mysqli_real_escape_string(C_Base::getObject(),$sid));
+		$query = sprintf($t, mysqli_real_escape_string(C_Base::$link,$sid));
 		$result = $this->m_msql->Select($query);
 				
 		// If no session finded so it means the user is not authenticated
@@ -281,13 +281,13 @@ class M_Users
 			$session = array();
 			$session['time_last'] = date('Y-m-d H:i:s'); 			
 			$t = "sid = '%s'";
-			$where = sprintf($t, mysqli_real_escape_string(C_Base::getObject(),$sid));
+			$where = sprintf($t, mysqli_real_escape_string(C_Base::$link,$sid));
 			$affected_rows = $this->m_msql->Update('sessions', $session, $where);
 
 			if ($affected_rows == 0)
 			{
 				$t = "SELECT count(*) FROM sessions WHERE sid = '%s'";		
-				$query = sprintf($t, mysqli_real_escape_string(C_Base::getObject(),$sid));
+				$query = sprintf($t, mysqli_real_escape_string(C_Base::$link,$sid));
 				$result = $this->m_msql->Select($query);
 				
 				if ($result[0]['count(*)'] == 0)
