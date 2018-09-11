@@ -26,7 +26,7 @@ class C_Article extends C_Base
     public function OnOutput()
     {
     $vars = array('content' =>$this->article_content,'article_title' => $this->article_title);
-    $page = Controller::Template('view/v_article.php',$vars);
+    $page = Controller::Template('View/v_article.php',$vars);
     echo $page;
     }
 }

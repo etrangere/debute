@@ -36,7 +36,7 @@ abstract class C_Base extends Controller
 	{
 
 		$vars = array('title' => $this->page_title, 'content' => $this->page_content);
-		$page = $this->Template('view/v_main.php', $vars);
+		$page = $this->Template('View/v_main.php', $vars);
 
         $this->time_end = microtime(true);
 
@@ -62,21 +62,11 @@ abstract class C_Base extends Controller
 
 
 
-        // Connect to db.
-        $link = mysqli_connect($hostname, $username, $password,$dbName) or die('No connect with data base');
-
+        if (!self::$link)
+            self::$link = new mysqli($hostname, $username, $password, $dbName) or die('No connect with data base');
 
         // Session start.
         session_start();
-
-    }
-
-
-
-    public static function getObject()
-    {
-        if (!self::$link)
-            self::$link = new mysqli("localhost", "root", "Smdilia2012@", "blog7");
 
         return self::$link;
     }

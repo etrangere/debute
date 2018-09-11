@@ -34,7 +34,7 @@ abstract class C_Base extends Controller
 	protected function OnOutput()
 	{
 		$vars = array('title' => $this->page_title, 'content' => $this->page_content);
-		$page = $this->Template('view/v_main.php', $vars);
+		$page = $this->Template('View/v_main.php', $vars);
 		echo $page;
 	}
 
@@ -47,25 +47,16 @@ abstract class C_Base extends Controller
         $password = 'Smdilia2012@';
         $dbName = 'blog6';
 
-
-        // Connect to db.
-        $link=mysqli_connect($hostname, $username, $password,$dbName) or die('No connect with data base');
-
-    //    mysql_select_db() or die('No data base');
+        if (!self::$link)
+            self::$link = new mysqli($hostname, $username, $password, $dbName) or die('No connect with data base');
 
         // Session start.
         session_start();
 
-    }
-
-
-
-    public static function getObject()
-    {
-        if (!self::$link)
-            self::$link = new mysqli("localhost", "root", "Smdilia2012@", "blog6");
-
         return self::$link;
     }
+
+
+
 
 }

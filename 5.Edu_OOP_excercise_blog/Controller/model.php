@@ -78,9 +78,9 @@ class Model extends Controller
     $t = "INSERT INTO articles (title, content ,intro) VALUES ('%s', '%s','%s')";
 
     $query = sprintf($t,
-        mysqli_real_escape_string(C_Base::getObject(),$title),
-        mysqli_real_escape_string(C_Base::getObject(),$content),
-        mysqli_real_escape_string(C_Base::getObject(),$intro));
+        mysqli_real_escape_string(C_Base::$link,$title),
+        mysqli_real_escape_string(C_Base::$link,$content),
+        mysqli_real_escape_string(C_Base::$link,$intro));
 
     $result = mysqli_query(C_Base::$link,$query);
 

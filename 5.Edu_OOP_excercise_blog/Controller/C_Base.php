@@ -34,7 +34,7 @@ abstract class C_Base extends Controller
 	protected function OnOutput()
 	{
 		$vars = array('title' => $this->page_title, 'content' => $this->page_content);
-		$page = $this->Template('view/v_main.php', $vars);
+		$page = $this->Template('View/v_main.php', $vars);
 
         $this->time_end = microtime(true);
 

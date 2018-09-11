@@ -9,10 +9,10 @@ class Article{
         // Query.
 
         $query = "SELECT * FROM articles ORDER BY id_article DESC";
-        $result = mysqli_query(Connect::getObject(),$query);
+        $result = mysqli_query(Connect::$link,$query);
 
         if (!$result)
-            die(mysqli_error(Connect::getObject()));
+            die(mysqli_error(Connect::$link));
 
         // Extract from DB.
 
@@ -33,10 +33,10 @@ class Article{
      function articles_get($id_article)
      {
         $query = "SELECT title,content FROM articles WHERE id_article = $id_article";
-        $result = mysqli_query(Connect::getObject(),$query);
+        $result = mysqli_query(Connect::$link,$query);
 
         if (!$result)
-            die(mysqli_error(Connect::getObject()));
+            die(mysqli_error(Connect::$link));
 
         $n = mysqli_num_rows($result);
         $id_article = array();
@@ -67,13 +67,13 @@ class Article{
         $t = "INSERT INTO articles (title, content) VALUES ('%s', '%s')";
 
         $query = sprintf($t,
-            mysqli_real_escape_string(Connect::getObject(),$title),
-            mysqli_real_escape_string(Connect::getObject(),$content));
+            mysqli_real_escape_string(Connect::$link,$title),
+            mysqli_real_escape_string(Connect::$link,$content));
 
-        $result = mysqli_query(Connect::getObject(),$query);
+        $result = mysqli_query(Connect::$link,$query);
 
         if (!$result)
-            die(mysqli_error(Connect::getObject()));
+            die(mysqli_error(Connect::$link));
             return true;
      }
 //
@@ -99,13 +99,13 @@ class Article{
 
         $query = sprintf($t,
             ($id_article),
-            mysqli_real_escape_string(Connect::getObject(),$title),
-            mysqli_real_escape_string(Connect::getObject(),$content));
+            mysqli_real_escape_string(Connect::$link,$title),
+            mysqli_real_escape_string(Connect::$link,$content));
 
-        $result = mysqli_query(Connect::getObject(),$query);
+        $result = mysqli_query(Connect::$link,$query);
 
         if (!$result)
-            die(mysqli_error(Connect::getObject()));
+            die(mysqli_error(Connect::$link));
 
         return true;
 
@@ -118,7 +118,7 @@ class Article{
 
          $sql = "DELETE FROM articles WHERE id_article = '$id_article'";
 
-         mysqli_query(Connect::getObject(),$sql);
+         mysqli_query(Connect::$link,$sql);
 
      }
 }

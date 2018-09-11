@@ -3,7 +3,7 @@ function __autoload($classname){
     include_once('Controller/' . $classname . '.php');
 }
 
-//include_once ('Controller/C_Main.php');
+
 
 C_Base::Startup();
 

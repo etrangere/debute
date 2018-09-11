@@ -36,7 +36,7 @@ class M_Model
    {
        $id_article = '';
        $t = "SELECT * FROM articles ORDER BY id_article DESC ";
-       $query = sprintf($t, mysqli_real_escape_string(C_Base::getObject(),$id_article));
+       $query = sprintf($t, mysqli_real_escape_string(C_Base::$link,$id_article));
 
        return $this->mMysql->Select($query);
 
@@ -47,7 +47,7 @@ class M_Model
     public function articles_get($id_article)
    {
        $t = "SELECT * FROM articles WHERE id_article = $id_article";
-       $query = sprintf($t, mysqli_real_escape_string(C_Base::getObject(),$id_article));
+       $query = sprintf($t, mysqli_real_escape_string(C_Base::$link,$id_article));
 
        return $this->mMysql->Select($query);
    }
@@ -76,9 +76,9 @@ class M_Model
     // Query.
 
        $query = sprintf(
-        mysqli_real_escape_string(C_Base::getObject(),$title),
-        mysqli_real_escape_string(C_Base::getObject(),$content),
-        mysqli_real_escape_string(C_Base::getObject(),$intro));
+        mysqli_real_escape_string(C_Base::$link,$title),
+        mysqli_real_escape_string(C_Base::$link,$content),
+        mysqli_real_escape_string(C_Base::$link,$intro));
 
        $object = array();
        $object['title']= $title;

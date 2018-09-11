@@ -19,7 +19,7 @@ class C_Editor extends C_Base
      public function OnOutput()
      {
      $vars = array('title' => $this->page_title,'content' =>$this->page_content);
-     $page = Controller::Template('view/v_editor.php',$vars);
+     $page = Controller::Template('View/v_editor.php',$vars);
      echo $page;
      }
 }

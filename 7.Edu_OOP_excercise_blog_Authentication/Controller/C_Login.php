@@ -45,7 +45,7 @@ public function onInput()
     public function OnOutput()
     {
         $vars = array('title' => $this->page_title);
-        $page = Controller::Template('view/v_login.php',$vars);
+        $page = Controller::Template('View/v_login.php',$vars);
         echo $page;
     }
 

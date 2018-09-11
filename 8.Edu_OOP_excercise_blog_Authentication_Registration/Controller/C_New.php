@@ -40,7 +40,7 @@ class C_New extends C_Base
      public function OnOutput()
      {
          $vars = array('page_title'=>$this->page_title,'title'=>$this->new_article_title,'content'=>$this->new_article_content,'mail'=>$this->new_article_mail);
-         $page = Controller::Template('view/v_new.php',$vars);
+         $page = Controller::Template('View/v_new.php',$vars);
          echo $page;
      }
 }

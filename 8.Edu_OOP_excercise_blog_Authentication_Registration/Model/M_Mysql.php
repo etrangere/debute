@@ -27,10 +27,10 @@ class M_Mysql
     {
 
 
-       $result = mysqli_query(C_Base::getObject(),$query);
+       $result = mysqli_query(C_Base::$link,$query);
 
         if (!$result)
-            die(mysqli_error(C_Base::getObject()));
+            die(mysqli_error(C_Base::$link));
 
         $n = mysqli_num_rows($result);
         $arr = array();
@@ -57,7 +57,7 @@ class M_Mysql
 
         foreach ($object as $key => $value)
         {
-            $key = mysqli_real_escape_string(C_Base::getObject(),$key . '');
+            $key = mysqli_real_escape_string(C_Base::$link,$key . '');
             $columns[] = $key;
 
             if ($value === null)
@@ -66,7 +66,7 @@ class M_Mysql
             }
             else
             {
-                $value = mysqli_real_escape_string(C_Base::getObject(),$value . '');
+                $value = mysqli_real_escape_string(C_Base::$link,$value . '');
                 $values[] = "'$value'";
             }
         }
@@ -77,12 +77,12 @@ class M_Mysql
 
 
         $query = "INSERT INTO $table ($columns_s) VALUES ($values_s)";
-        $result = mysqli_query(C_Base::getObject(),$query);
+        $result = mysqli_query(C_Base::$link,$query);
 
         if (!$result)
-            die(mysqli_error(C_Base::getObject()));
+            die(mysqli_error(C_Base::$link));
 
-        return mysqli_insert_id(C_Base::getObject());
+        return mysqli_insert_id(C_Base::$link);
 
     }
 
@@ -97,7 +97,7 @@ class M_Mysql
 
         foreach ($object as $key => $value)
         {
-            $key = mysqli_real_escape_string(C_Base::getObject(),$key . '');
+            $key = mysqli_real_escape_string(C_Base::$link,$key . '');
 
             if ($value === null)
             {
@@ -105,7 +105,7 @@ class M_Mysql
             }
             else
             {
-                $value = mysqli_real_escape_string(C_Base::getObject(),$value . '');
+                $value = mysqli_real_escape_string(C_Base::$link,$value . '');
                 $sets[] = "$key='$value'";
             }
         }
@@ -114,12 +114,12 @@ class M_Mysql
 
         $query = "UPDATE $table SET $sets_s WHERE $where";
 
-        $result = mysqli_query(C_Base::getObject(),$query);
+        $result = mysqli_query(C_Base::$link,$query);
 
         if (!$result)
-            die(mysqli_error(C_Base::getObject()));
+            die(mysqli_error(C_Base::$link));
 
-        return mysqli_affected_rows(C_Base::getObject());
+        return mysqli_affected_rows(C_Base::$link);
     }
 
     //
@@ -129,18 +129,18 @@ class M_Mysql
     {
 
 
-     sprintf( mysqli_real_escape_string(C_Base::getObject(),$table), mysqli_real_escape_string(C_Base::getObject(),$where));
+     sprintf( mysqli_real_escape_string(C_Base::$link,$table), mysqli_real_escape_string(C_Base::$link,$where));
 
 
         $query = "DELETE FROM $table WHERE $where ";
 
 
-        $result =  mysqli_query(C_Base::getObject(),$query);
+        $result =  mysqli_query(C_Base::$link,$query);
 
         if (!$result)
-            die(mysqli_error(C_Base::getObject()));
+            die(mysqli_error(C_Base::$link));
 
-         return mysqli_affected_rows(C_Base::getObject());
+         return mysqli_affected_rows(C_Base::$link);
 
 
     }
