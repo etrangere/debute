@@ -37,7 +37,7 @@ class C_Login extends C_Base
 						       isset($_POST['remember'])))
 			{
 				header('Location: index.php');
-				die();
+				//die();
 			}
 			
 			$this->login = $_POST['login'];
