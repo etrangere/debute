@@ -448,6 +448,11 @@
     </parameter>
   </parameters>
   <services>
+    <service id="app.security.login_form_authenticator" class="AppBundle\Security\LoginFormAuthenticator" autowire="true">
+      <argument type="service" id="form.factory"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument type="service" id="router"/>
+    </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>
@@ -563,7 +568,7 @@
                   <tag name="cache.pool"/>
                   <argument>aX-+bilbJ7</argument>
                   <argument>0</argument>
-                  <argument>CMNkt1p++gybvHn5l-4dz6</argument>
+                  <argument>+rAyfo0zfMqj3rVUPNBcRr</argument>
                   <argument>/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -576,7 +581,7 @@
                   <tag name="cache.pool"/>
                   <argument>S3wpl+CSfd</argument>
                   <argument>0</argument>
-                  <argument>CMNkt1p++gybvHn5l-4dz6</argument>
+                  <argument>+rAyfo0zfMqj3rVUPNBcRr</argument>
                   <argument>/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1145,7 +1150,7 @@
       <tag name="cache.pool"/>
       <argument>3xrlKnbxfl</argument>
       <argument>0</argument>
-      <argument>CMNkt1p++gybvHn5l-4dz6</argument>
+      <argument>+rAyfo0zfMqj3rVUPNBcRr</argument>
       <argument>/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1887,8 +1892,18 @@
     <service id="security.authentication.manager" class="Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager" public="false">
       <argument type="collection">
         <argument type="service">
+          <service class="Symfony\Component\Security\Guard\Provider\GuardAuthenticationProvider" public="false">
+            <argument type="collection">
+              <argument type="service" id="app.security.login_form_authenticator"/>
+            </argument>
+            <argument type="service" id="security.user.provider.concrete.our_users"/>
+            <argument>main</argument>
+            <argument type="service" id="security.user_checker.main"/>
+          </service>
+        </argument>
+        <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5b82d432e75f96.81524176</argument>
+            <argument>5ba8f64c284986.77265028</argument>
           </service>
         </argument>
       </argument>
@@ -1984,6 +1999,12 @@
         </argument>
       </call>
     </service>
+    <service id="security.user.provider.concrete.our_users" class="Symfony\Bridge\Doctrine\Security\User\EntityUserProvider" public="false">
+      <argument type="service" id="doctrine"/>
+      <argument>AppBundle\Entity\User</argument>
+      <argument>email</argument>
+      <argument>null</argument>
+    </service>
     <service id="security.firewall.map.context.dev" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
       <argument type="collection"/>
       <argument>null</argument>
@@ -2009,9 +2030,7 @@
           <service class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
             <argument type="service" id="security.token_storage"/>
             <argument type="collection">
-              <argument type="service">
-                <service class="Symfony\Component\Security\Core\User\InMemoryUserProvider" public="false"/>
-              </argument>
+              <argument type="service" id="security.user.provider.concrete.our_users"/>
             </argument>
             <argument>main</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -2020,9 +2039,21 @@
           </service>
         </argument>
         <argument type="service">
+          <service class="Symfony\Component\Security\Guard\Firewall\GuardAuthenticationListener" public="false">
+            <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.our_users"/>
+            <argument type="service" id="security.authentication.guard_handler"/>
+            <argument type="service" id="security.authentication.manager"/>
+            <argument>main</argument>
+            <argument type="collection">
+              <argument type="service" id="app.security.login_form_authenticator"/>
+            </argument>
+            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+          </service>
+        </argument>
+        <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>5b82d432e75f96.81524176</argument>
+            <argument>5ba8f64c284986.77265028</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2050,7 +2081,7 @@
             </service>
           </argument>
           <argument>main</argument>
-          <argument>null</argument>
+          <argument type="service" id="app.security.login_form_authenticator"/>
           <argument>null</argument>
           <argument>null</argument>
           <argument type="service" id="monolog.logger.security" on-invalid="null"/>
