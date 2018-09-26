@@ -32,6 +32,7 @@ class appDevDebugProjectContainer extends Container
         $this->services = array();
         $this->methodMap = array(
             'annotation_reader' => 'getAnnotationReaderService',
+            'app.doctrine.hash_password_listener' => 'getApp_Doctrine_HashPasswordListenerService',
             'app.security.login_form_authenticator' => 'getApp_Security_LoginFormAuthenticatorService',
             'assets.context' => 'getAssets_ContextService',
             'assets.packages' => 'getAssets_PackagesService',
@@ -343,6 +344,18 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'app.doctrine.hash_password_listener' service.
+     *
+     * This service is autowired.
+     *
+     * @return \AppBundle\Doctrine\HashPasswordListener A AppBundle\Doctrine\HashPasswordListener instance
+     */
+    protected function getApp_Doctrine_HashPasswordListenerService()
+    {
+        return $this->services['app.doctrine.hash_password_listener'] = new \AppBundle\Doctrine\HashPasswordListener($this->get('security.password_encoder'));
+    }
+
+    /**
      * Gets the 'app.security.login_form_authenticator' service.
      *
      * This service is autowired.
@@ -351,7 +364,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getApp_Security_LoginFormAuthenticatorService()
     {
-        return $this->services['app.security.login_form_authenticator'] = new \AppBundle\Security\LoginFormAuthenticator($this->get('form.factory'), $this->get('doctrine.orm.default_entity_manager'), $this->get('router'));
+        return $this->services['app.security.login_form_authenticator'] = new \AppBundle\Security\LoginFormAuthenticator($this->get('form.factory'), $this->get('doctrine.orm.default_entity_manager'), $this->get('router'), $this->get('security.password_encoder'));
     }
 
     /**
@@ -409,7 +422,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_SystemService()
     {
-        return $this->services['cache.system'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('3xrlKnbxfl', 0, '+rAyfo0zfMqj3rVUPNBcRr', (__DIR__.'/pools'), $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+        return $this->services['cache.system'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('3xrlKnbxfl', 0, 'qqeJ7fcv2RAUu6i8zzW4U9', (__DIR__.'/pools'), $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE));
     }
 
     /**
@@ -427,8 +440,8 @@ class appDevDebugProjectContainer extends Container
         $b = new \Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer();
         $b->addPool($this->get('cache.app'));
         $b->addPool($this->get('cache.system'));
-        $b->addPool(\Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('aX-+bilbJ7', 0, '+rAyfo0zfMqj3rVUPNBcRr', (__DIR__.'/pools'), $a));
-        $b->addPool(\Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('S3wpl+CSfd', 0, '+rAyfo0zfMqj3rVUPNBcRr', (__DIR__.'/pools'), $a));
+        $b->addPool(\Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('aX-+bilbJ7', 0, 'qqeJ7fcv2RAUu6i8zzW4U9', (__DIR__.'/pools'), $a));
+        $b->addPool(\Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('S3wpl+CSfd', 0, 'qqeJ7fcv2RAUu6i8zzW4U9', (__DIR__.'/pools'), $a));
 
         return $this->services['cache_clearer'] = new \Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer(array(0 => $b));
     }
@@ -810,6 +823,7 @@ class appDevDebugProjectContainer extends Container
         $b->setSQLLogger($a);
 
         $c = new \Symfony\Bridge\Doctrine\ContainerAwareEventManager($this);
+        $c->addEventSubscriber($this->get('app.doctrine.hash_password_listener'));
         $c->addEventListener(array(0 => 'loadClassMetadata'), $this->get('doctrine.orm.default_listeners.attach_entity_listeners'));
 
         return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('driver' => 'pdo_mysql', 'host' => 'localhost', 'port' => NULL, 'dbname' => 'symfony', 'user' => 'root', 'password' => 'Smdilia2012@', 'charset' => 'UTF8', 'driverOptions' => array(), 'defaultTableOptions' => array()), $b, $c, array());
@@ -920,7 +934,7 @@ class appDevDebugProjectContainer extends Container
     {
         if ($lazyLoad) {
 
-            return $this->services['doctrine.orm.default_entity_manager'] = DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc4ac337ce5756306::staticProxyConstructor(
+            return $this->services['doctrine.orm.default_entity_manager'] = DoctrineORMEntityManager_00000000426dbbc4000000001ddd1295f269e54047d914835f3ebded26c1962d::staticProxyConstructor(
                 function (&$wrappedInstance, \ProxyManager\Proxy\LazyLoadingInterface $proxy) {
                     $wrappedInstance = $this->getDoctrine_Orm_DefaultEntityManagerService(false);
 
@@ -2626,7 +2640,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_EncoderFactoryService()
     {
-        return $this->services['security.encoder_factory'] = new \Symfony\Component\Security\Core\Encoder\EncoderFactory(array());
+        return $this->services['security.encoder_factory'] = new \Symfony\Component\Security\Core\Encoder\EncoderFactory(array('AppBundle\\Entity\\User' => array('class' => 'Symfony\\Component\\Security\\Core\\Encoder\\BCryptPasswordEncoder', 'arguments' => array(0 => 13))));
     }
 
     /**
@@ -2668,13 +2682,18 @@ class appDevDebugProjectContainer extends Container
         $a = $this->get('monolog.logger.security', ContainerInterface::NULL_ON_INVALID_REFERENCE);
         $b = $this->get('security.token_storage');
         $c = $this->get('security.authentication.trust_resolver');
-        $d = $this->get('security.authentication.manager');
-        $e = $this->get('app.security.login_form_authenticator');
-        $f = $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE);
+        $d = $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE);
+        $e = $this->get('security.authentication.manager');
+        $f = $this->get('app.security.login_form_authenticator');
 
         $g = new \Symfony\Component\Security\Http\AccessMap();
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($g, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('security.user.provider.concrete.our_users')), 'main', $a, $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE), $c), 2 => new \Symfony\Component\Security\Guard\Firewall\GuardAuthenticationListener($this->get('security.authentication.guard_handler'), $d, 'main', array(0 => $e), $a), 3 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5ba8f64c284986.77265028', $a, $d), 4 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('debug.security.access.decision_manager'), $g, $d)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $c, new \Symfony\Component\Security\Http\HttpUtils($f, $f), 'main', $e, NULL, NULL, $a, false));
+        $h = new \Symfony\Component\Security\Http\HttpUtils($d, $d);
+
+        $i = new \Symfony\Component\Security\Http\Firewall\LogoutListener($b, $h, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($h, '/'), array('csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'logout', 'logout_path' => '/logout'));
+        $i->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
+
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($g, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('security.user.provider.concrete.our_users')), 'main', $a, $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE), $c), 2 => $i, 3 => new \Symfony\Component\Security\Guard\Firewall\GuardAuthenticationListener($this->get('security.authentication.guard_handler'), $e, 'main', array(0 => $f), $a), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5bac08d72982c4.58964705', $a, $e), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('debug.security.access.decision_manager'), $g, $e)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $c, $h, 'main', $f, NULL, NULL, $a, false));
     }
 
     /**
@@ -3945,7 +3964,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Guard\Provider\GuardAuthenticationProvider(array(0 => $this->get('app.security.login_form_authenticator')), $this->get('security.user.provider.concrete.our_users'), 'main', $this->get('security.user_checker.main')), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5ba8f64c284986.77265028')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Guard\Provider\GuardAuthenticationProvider(array(0 => $this->get('app.security.login_form_authenticator')), $this->get('security.user.provider.concrete.our_users'), 'main', $this->get('security.user_checker.main')), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5bac08d72982c4.58964705')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -3983,7 +4002,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_LogoutUrlGeneratorService()
     {
-        return $this->services['security.logout_url_generator'] = new \Symfony\Component\Security\Http\Logout\LogoutUrlGenerator($this->get('request_stack', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('security.token_storage', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+        $this->services['security.logout_url_generator'] = $instance = new \Symfony\Component\Security\Http\Logout\LogoutUrlGenerator($this->get('request_stack', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('security.token_storage', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+
+        $instance->registerListener('main', '/logout', 'logout', '_csrf_token', NULL);
+
+        return $instance;
     }
 
     /**
@@ -4565,23 +4588,23 @@ class appDevDebugProjectContainer extends Container
     }
 }
 
-class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc4ac337ce5756306 extends \Doctrine\ORM\EntityManager implements \ProxyManager\Proxy\VirtualProxyInterface
+class DoctrineORMEntityManager_00000000426dbbc4000000001ddd1295f269e54047d914835f3ebded26c1962d extends \Doctrine\ORM\EntityManager implements \ProxyManager\Proxy\VirtualProxyInterface
 {
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $valueHolder5ba8f64c91913719913290 = null;
+    private $valueHolder5bac08d77e915765394048 = null;
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $initializer5ba8f64c91926854628725 = null;
+    private $initializer5bac08d77e920260715373 = null;
 
     /**
      * @var bool[] map of public properties of the parent class
      */
-    private static $publicProperties5ba8f64c918c7200977169 = [
+    private static $publicProperties5bac08d77e8eb754113979 = [
         
     ];
 
@@ -4590,9 +4613,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function getConnection()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'getConnection', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'getConnection', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->getConnection();
+        return $this->valueHolder5bac08d77e915765394048->getConnection();
     }
 
     /**
@@ -4600,9 +4623,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function getMetadataFactory()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'getMetadataFactory', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'getMetadataFactory', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->getMetadataFactory();
+        return $this->valueHolder5bac08d77e915765394048->getMetadataFactory();
     }
 
     /**
@@ -4610,9 +4633,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function getExpressionBuilder()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'getExpressionBuilder', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'getExpressionBuilder', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->getExpressionBuilder();
+        return $this->valueHolder5bac08d77e915765394048->getExpressionBuilder();
     }
 
     /**
@@ -4620,9 +4643,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function beginTransaction()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'beginTransaction', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'beginTransaction', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->beginTransaction();
+        return $this->valueHolder5bac08d77e915765394048->beginTransaction();
     }
 
     /**
@@ -4630,9 +4653,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function getCache()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'getCache', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'getCache', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->getCache();
+        return $this->valueHolder5bac08d77e915765394048->getCache();
     }
 
     /**
@@ -4640,9 +4663,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function transactional($func)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'transactional', array('func' => $func), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'transactional', array('func' => $func), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->transactional($func);
+        return $this->valueHolder5bac08d77e915765394048->transactional($func);
     }
 
     /**
@@ -4650,9 +4673,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function commit()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'commit', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'commit', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->commit();
+        return $this->valueHolder5bac08d77e915765394048->commit();
     }
 
     /**
@@ -4660,9 +4683,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function rollback()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'rollback', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'rollback', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->rollback();
+        return $this->valueHolder5bac08d77e915765394048->rollback();
     }
 
     /**
@@ -4670,9 +4693,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function getClassMetadata($className)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'getClassMetadata', array('className' => $className), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'getClassMetadata', array('className' => $className), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->getClassMetadata($className);
+        return $this->valueHolder5bac08d77e915765394048->getClassMetadata($className);
     }
 
     /**
@@ -4680,9 +4703,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function createQuery($dql = '')
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'createQuery', array('dql' => $dql), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'createQuery', array('dql' => $dql), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->createQuery($dql);
+        return $this->valueHolder5bac08d77e915765394048->createQuery($dql);
     }
 
     /**
@@ -4690,9 +4713,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function createNamedQuery($name)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'createNamedQuery', array('name' => $name), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'createNamedQuery', array('name' => $name), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->createNamedQuery($name);
+        return $this->valueHolder5bac08d77e915765394048->createNamedQuery($name);
     }
 
     /**
@@ -4700,9 +4723,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function createNativeQuery($sql, \Doctrine\ORM\Query\ResultSetMapping $rsm)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'createNativeQuery', array('sql' => $sql, 'rsm' => $rsm), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'createNativeQuery', array('sql' => $sql, 'rsm' => $rsm), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->createNativeQuery($sql, $rsm);
+        return $this->valueHolder5bac08d77e915765394048->createNativeQuery($sql, $rsm);
     }
 
     /**
@@ -4710,9 +4733,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function createNamedNativeQuery($name)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'createNamedNativeQuery', array('name' => $name), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'createNamedNativeQuery', array('name' => $name), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->createNamedNativeQuery($name);
+        return $this->valueHolder5bac08d77e915765394048->createNamedNativeQuery($name);
     }
 
     /**
@@ -4720,9 +4743,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function createQueryBuilder()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'createQueryBuilder', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'createQueryBuilder', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->createQueryBuilder();
+        return $this->valueHolder5bac08d77e915765394048->createQueryBuilder();
     }
 
     /**
@@ -4730,9 +4753,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function flush($entity = null)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'flush', array('entity' => $entity), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'flush', array('entity' => $entity), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->flush($entity);
+        return $this->valueHolder5bac08d77e915765394048->flush($entity);
     }
 
     /**
@@ -4740,9 +4763,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function find($entityName, $id, $lockMode = null, $lockVersion = null)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'find', array('entityName' => $entityName, 'id' => $id, 'lockMode' => $lockMode, 'lockVersion' => $lockVersion), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'find', array('entityName' => $entityName, 'id' => $id, 'lockMode' => $lockMode, 'lockVersion' => $lockVersion), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->find($entityName, $id, $lockMode, $lockVersion);
+        return $this->valueHolder5bac08d77e915765394048->find($entityName, $id, $lockMode, $lockVersion);
     }
 
     /**
@@ -4750,9 +4773,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function getReference($entityName, $id)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'getReference', array('entityName' => $entityName, 'id' => $id), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'getReference', array('entityName' => $entityName, 'id' => $id), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->getReference($entityName, $id);
+        return $this->valueHolder5bac08d77e915765394048->getReference($entityName, $id);
     }
 
     /**
@@ -4760,9 +4783,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function getPartialReference($entityName, $identifier)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'getPartialReference', array('entityName' => $entityName, 'identifier' => $identifier), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'getPartialReference', array('entityName' => $entityName, 'identifier' => $identifier), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->getPartialReference($entityName, $identifier);
+        return $this->valueHolder5bac08d77e915765394048->getPartialReference($entityName, $identifier);
     }
 
     /**
@@ -4770,9 +4793,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function clear($entityName = null)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'clear', array('entityName' => $entityName), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'clear', array('entityName' => $entityName), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->clear($entityName);
+        return $this->valueHolder5bac08d77e915765394048->clear($entityName);
     }
 
     /**
@@ -4780,9 +4803,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function close()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'close', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'close', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->close();
+        return $this->valueHolder5bac08d77e915765394048->close();
     }
 
     /**
@@ -4790,9 +4813,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function persist($entity)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'persist', array('entity' => $entity), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'persist', array('entity' => $entity), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->persist($entity);
+        return $this->valueHolder5bac08d77e915765394048->persist($entity);
     }
 
     /**
@@ -4800,9 +4823,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function remove($entity)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'remove', array('entity' => $entity), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'remove', array('entity' => $entity), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->remove($entity);
+        return $this->valueHolder5bac08d77e915765394048->remove($entity);
     }
 
     /**
@@ -4810,9 +4833,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function refresh($entity)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'refresh', array('entity' => $entity), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'refresh', array('entity' => $entity), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->refresh($entity);
+        return $this->valueHolder5bac08d77e915765394048->refresh($entity);
     }
 
     /**
@@ -4820,9 +4843,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function detach($entity)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'detach', array('entity' => $entity), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'detach', array('entity' => $entity), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->detach($entity);
+        return $this->valueHolder5bac08d77e915765394048->detach($entity);
     }
 
     /**
@@ -4830,9 +4853,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function merge($entity)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'merge', array('entity' => $entity), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'merge', array('entity' => $entity), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->merge($entity);
+        return $this->valueHolder5bac08d77e915765394048->merge($entity);
     }
 
     /**
@@ -4840,9 +4863,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function copy($entity, $deep = false)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'copy', array('entity' => $entity, 'deep' => $deep), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'copy', array('entity' => $entity, 'deep' => $deep), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->copy($entity, $deep);
+        return $this->valueHolder5bac08d77e915765394048->copy($entity, $deep);
     }
 
     /**
@@ -4850,9 +4873,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function lock($entity, $lockMode, $lockVersion = null)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'lock', array('entity' => $entity, 'lockMode' => $lockMode, 'lockVersion' => $lockVersion), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'lock', array('entity' => $entity, 'lockMode' => $lockMode, 'lockVersion' => $lockVersion), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->lock($entity, $lockMode, $lockVersion);
+        return $this->valueHolder5bac08d77e915765394048->lock($entity, $lockMode, $lockVersion);
     }
 
     /**
@@ -4860,9 +4883,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function getRepository($entityName)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'getRepository', array('entityName' => $entityName), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'getRepository', array('entityName' => $entityName), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->getRepository($entityName);
+        return $this->valueHolder5bac08d77e915765394048->getRepository($entityName);
     }
 
     /**
@@ -4870,9 +4893,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function contains($entity)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'contains', array('entity' => $entity), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'contains', array('entity' => $entity), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->contains($entity);
+        return $this->valueHolder5bac08d77e915765394048->contains($entity);
     }
 
     /**
@@ -4880,9 +4903,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function getEventManager()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'getEventManager', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'getEventManager', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->getEventManager();
+        return $this->valueHolder5bac08d77e915765394048->getEventManager();
     }
 
     /**
@@ -4890,9 +4913,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function getConfiguration()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'getConfiguration', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'getConfiguration', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->getConfiguration();
+        return $this->valueHolder5bac08d77e915765394048->getConfiguration();
     }
 
     /**
@@ -4900,9 +4923,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function isOpen()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'isOpen', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'isOpen', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->isOpen();
+        return $this->valueHolder5bac08d77e915765394048->isOpen();
     }
 
     /**
@@ -4910,9 +4933,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function getUnitOfWork()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'getUnitOfWork', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'getUnitOfWork', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->getUnitOfWork();
+        return $this->valueHolder5bac08d77e915765394048->getUnitOfWork();
     }
 
     /**
@@ -4920,9 +4943,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function getHydrator($hydrationMode)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'getHydrator', array('hydrationMode' => $hydrationMode), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'getHydrator', array('hydrationMode' => $hydrationMode), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->getHydrator($hydrationMode);
+        return $this->valueHolder5bac08d77e915765394048->getHydrator($hydrationMode);
     }
 
     /**
@@ -4930,9 +4953,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function newHydrator($hydrationMode)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'newHydrator', array('hydrationMode' => $hydrationMode), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'newHydrator', array('hydrationMode' => $hydrationMode), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->newHydrator($hydrationMode);
+        return $this->valueHolder5bac08d77e915765394048->newHydrator($hydrationMode);
     }
 
     /**
@@ -4940,9 +4963,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function getProxyFactory()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'getProxyFactory', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'getProxyFactory', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->getProxyFactory();
+        return $this->valueHolder5bac08d77e915765394048->getProxyFactory();
     }
 
     /**
@@ -4950,9 +4973,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function initializeObject($obj)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'initializeObject', array('obj' => $obj), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'initializeObject', array('obj' => $obj), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->initializeObject($obj);
+        return $this->valueHolder5bac08d77e915765394048->initializeObject($obj);
     }
 
     /**
@@ -4960,9 +4983,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function getFilters()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'getFilters', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'getFilters', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->getFilters();
+        return $this->valueHolder5bac08d77e915765394048->getFilters();
     }
 
     /**
@@ -4970,9 +4993,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function isFiltersStateClean()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'isFiltersStateClean', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'isFiltersStateClean', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->isFiltersStateClean();
+        return $this->valueHolder5bac08d77e915765394048->isFiltersStateClean();
     }
 
     /**
@@ -4980,9 +5003,9 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function hasFilters()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'hasFilters', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'hasFilters', array(), $this->initializer5bac08d77e920260715373);
 
-        return $this->valueHolder5ba8f64c91913719913290->hasFilters();
+        return $this->valueHolder5bac08d77e915765394048->hasFilters();
     }
 
     /**
@@ -5001,7 +5024,7 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
             unset($instance->config, $instance->conn, $instance->metadataFactory, $instance->unitOfWork, $instance->eventManager, $instance->proxyFactory, $instance->repositoryFactory, $instance->expressionBuilder, $instance->closed, $instance->filterCollection, $instance->cache);
         }, $instance, 'Doctrine\\ORM\\EntityManager')->__invoke($instance);
 
-        $instance->initializer5ba8f64c91926854628725 = $initializer;
+        $instance->initializer5bac08d77e920260715373 = $initializer;
 
         return $instance;
     }
@@ -5013,16 +5036,16 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
     {
         static $reflection;
 
-        if (! $this->valueHolder5ba8f64c91913719913290) {
+        if (! $this->valueHolder5bac08d77e915765394048) {
             $reflection = $reflection ?: new \ReflectionClass('Doctrine\\ORM\\EntityManager');
-            $this->valueHolder5ba8f64c91913719913290 = $reflection->newInstanceWithoutConstructor();
+            $this->valueHolder5bac08d77e915765394048 = $reflection->newInstanceWithoutConstructor();
         \Closure::bind(function (\Doctrine\ORM\EntityManager $instance) {
             unset($instance->config, $instance->conn, $instance->metadataFactory, $instance->unitOfWork, $instance->eventManager, $instance->proxyFactory, $instance->repositoryFactory, $instance->expressionBuilder, $instance->closed, $instance->filterCollection, $instance->cache);
         }, $this, 'Doctrine\\ORM\\EntityManager')->__invoke($this);
 
         }
 
-        $this->valueHolder5ba8f64c91913719913290->__construct($conn, $config, $eventManager);
+        $this->valueHolder5bac08d77e915765394048->__construct($conn, $config, $eventManager);
     }
 
     /**
@@ -5030,16 +5053,16 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function & __get($name)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, '__get', ['name' => $name], $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, '__get', ['name' => $name], $this->initializer5bac08d77e920260715373);
 
-        if (isset(self::$publicProperties5ba8f64c918c7200977169[$name])) {
-            return $this->valueHolder5ba8f64c91913719913290->$name;
+        if (isset(self::$publicProperties5bac08d77e8eb754113979[$name])) {
+            return $this->valueHolder5bac08d77e915765394048->$name;
         }
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder5ba8f64c91913719913290;
+            $targetObject = $this->valueHolder5bac08d77e915765394048;
 
             $backtrace = debug_backtrace(false);
             trigger_error(
@@ -5056,7 +5079,7 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
             return;
         }
 
-        $targetObject = $this->valueHolder5ba8f64c91913719913290;
+        $targetObject = $this->valueHolder5bac08d77e915765394048;
         $accessor = function & () use ($targetObject, $name) {
             return $targetObject->$name;
         };
@@ -5074,18 +5097,18 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function __set($name, $value)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer5bac08d77e920260715373);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder5ba8f64c91913719913290;
+            $targetObject = $this->valueHolder5bac08d77e915765394048;
 
             return $targetObject->$name = $value;
             return;
         }
 
-        $targetObject = $this->valueHolder5ba8f64c91913719913290;
+        $targetObject = $this->valueHolder5bac08d77e915765394048;
         $accessor = function & () use ($targetObject, $name, $value) {
             return $targetObject->$name = $value;
         };
@@ -5102,18 +5125,18 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function __isset($name)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, '__isset', array('name' => $name), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, '__isset', array('name' => $name), $this->initializer5bac08d77e920260715373);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder5ba8f64c91913719913290;
+            $targetObject = $this->valueHolder5bac08d77e915765394048;
 
             return isset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder5ba8f64c91913719913290;
+        $targetObject = $this->valueHolder5bac08d77e915765394048;
         $accessor = function () use ($targetObject, $name) {
             return isset($targetObject->$name);
         };
@@ -5130,18 +5153,18 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function __unset($name)
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, '__unset', array('name' => $name), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, '__unset', array('name' => $name), $this->initializer5bac08d77e920260715373);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder5ba8f64c91913719913290;
+            $targetObject = $this->valueHolder5bac08d77e915765394048;
 
             unset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder5ba8f64c91913719913290;
+        $targetObject = $this->valueHolder5bac08d77e915765394048;
         $accessor = function () use ($targetObject, $name) {
             unset($targetObject->$name);
         };
@@ -5155,16 +5178,16 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
 
     public function __clone()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, '__clone', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, '__clone', array(), $this->initializer5bac08d77e920260715373);
 
-        $this->valueHolder5ba8f64c91913719913290 = clone $this->valueHolder5ba8f64c91913719913290;
+        $this->valueHolder5bac08d77e915765394048 = clone $this->valueHolder5bac08d77e915765394048;
     }
 
     public function __sleep()
     {
-        $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, '__sleep', array(), $this->initializer5ba8f64c91926854628725);
+        $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, '__sleep', array(), $this->initializer5bac08d77e920260715373);
 
-        return array('valueHolder5ba8f64c91913719913290');
+        return array('valueHolder5bac08d77e915765394048');
     }
 
     public function __wakeup()
@@ -5179,7 +5202,7 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function setProxyInitializer(\Closure $initializer = null)
     {
-        $this->initializer5ba8f64c91926854628725 = $initializer;
+        $this->initializer5bac08d77e920260715373 = $initializer;
     }
 
     /**
@@ -5187,7 +5210,7 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function getProxyInitializer()
     {
-        return $this->initializer5ba8f64c91926854628725;
+        return $this->initializer5bac08d77e920260715373;
     }
 
     /**
@@ -5195,7 +5218,7 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function initializeProxy() : bool
     {
-        return $this->initializer5ba8f64c91926854628725 && $this->initializer5ba8f64c91926854628725->__invoke($this->valueHolder5ba8f64c91913719913290, $this, 'initializeProxy', array(), $this->initializer5ba8f64c91926854628725);
+        return $this->initializer5bac08d77e920260715373 && $this->initializer5bac08d77e920260715373->__invoke($this->valueHolder5bac08d77e915765394048, $this, 'initializeProxy', array(), $this->initializer5bac08d77e920260715373);
     }
 
     /**
@@ -5203,7 +5226,7 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function isProxyInitialized() : bool
     {
-        return null !== $this->valueHolder5ba8f64c91913719913290;
+        return null !== $this->valueHolder5bac08d77e915765394048;
     }
 
     /**
@@ -5211,7 +5234,7 @@ class DoctrineORMEntityManager_000000004f87b8900000000071328194fb369bac144b08fbc
      */
     public function getWrappedValueHolderValue()
     {
-        return $this->valueHolder5ba8f64c91913719913290;
+        return $this->valueHolder5bac08d77e915765394048;
     }
 
 
