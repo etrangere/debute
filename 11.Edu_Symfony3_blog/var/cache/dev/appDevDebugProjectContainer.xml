@@ -452,6 +452,11 @@
       <argument type="service" id="form.factory"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="router"/>
+      <argument type="service" id="security.password_encoder"/>
+    </service>
+    <service id="app.doctrine.hash_password_listener" class="AppBundle\Doctrine\HashPasswordListener" autowire="true">
+      <tag name="doctrine.event_subscriber"/>
+      <argument type="service" id="security.password_encoder"/>
     </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
@@ -568,7 +573,7 @@
                   <tag name="cache.pool"/>
                   <argument>aX-+bilbJ7</argument>
                   <argument>0</argument>
-                  <argument>+rAyfo0zfMqj3rVUPNBcRr</argument>
+                  <argument>qqeJ7fcv2RAUu6i8zzW4U9</argument>
                   <argument>/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -581,7 +586,7 @@
                   <tag name="cache.pool"/>
                   <argument>S3wpl+CSfd</argument>
                   <argument>0</argument>
-                  <argument>+rAyfo0zfMqj3rVUPNBcRr</argument>
+                  <argument>qqeJ7fcv2RAUu6i8zzW4U9</argument>
                   <argument>/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1150,7 +1155,7 @@
       <tag name="cache.pool"/>
       <argument>3xrlKnbxfl</argument>
       <argument>0</argument>
-      <argument>+rAyfo0zfMqj3rVUPNBcRr</argument>
+      <argument>qqeJ7fcv2RAUu6i8zzW4U9</argument>
       <argument>/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1903,7 +1908,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5ba8f64c284986.77265028</argument>
+            <argument>5bac08d72982c4.58964705</argument>
           </service>
         </argument>
       </argument>
@@ -1943,6 +1948,13 @@
       <argument type="service" id="request_stack" on-invalid="null"/>
       <argument type="service" id="router" on-invalid="null"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
+      <call method="registerListener">
+        <argument>main</argument>
+        <argument>/logout</argument>
+        <argument>logout</argument>
+        <argument>_csrf_token</argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.validator.user_password" class="Symfony\Component\Security\Core\Validator\Constraints\UserPasswordValidator">
       <tag name="validator.constraint_validator" alias="security.validator.user_password"/>
@@ -2039,6 +2051,38 @@
           </service>
         </argument>
         <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\LogoutListener" public="false">
+            <argument type="service" id="security.token_storage"/>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                <argument type="service" id="router" on-invalid="null"/>
+                <argument type="service" id="router" on-invalid="null"/>
+              </service>
+            </argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler" public="false">
+                <argument type="service">
+                  <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                    <argument type="service" id="router" on-invalid="null"/>
+                    <argument type="service" id="router" on-invalid="null"/>
+                  </service>
+                </argument>
+                <argument>/</argument>
+              </service>
+            </argument>
+            <argument type="collection">
+              <argument key="csrf_parameter">_csrf_token</argument>
+              <argument key="csrf_token_id">logout</argument>
+              <argument key="logout_path">/logout</argument>
+            </argument>
+            <call method="addHandler">
+              <argument type="service">
+                <service class="Symfony\Component\Security\Http\Logout\SessionLogoutHandler" public="false"/>
+              </argument>
+            </call>
+          </service>
+        </argument>
+        <argument type="service">
           <service class="Symfony\Component\Security\Guard\Firewall\GuardAuthenticationListener" public="false">
             <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.our_users"/>
             <argument type="service" id="security.authentication.guard_handler"/>
@@ -2053,7 +2097,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>5ba8f64c284986.77265028</argument>
+            <argument>5bac08d72982c4.58964705</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2441,6 +2485,9 @@
       <argument type="service">
         <service class="Symfony\Bridge\Doctrine\ContainerAwareEventManager" public="false">
           <argument type="service" id="service_container"/>
+          <call method="addEventSubscriber">
+            <argument type="service" id="app.doctrine.hash_password_listener"/>
+          </call>
           <call method="addEventListener">
             <argument type="collection">
               <argument>loadClassMetadata</argument>
@@ -3058,7 +3105,14 @@
       <autowiring-type>Doctrine\Common\Annotations\Reader</autowiring-type>
     </service>
     <service id="security.encoder_factory" class="Symfony\Component\Security\Core\Encoder\EncoderFactory">
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="AppBundle\Entity\User" type="collection">
+          <argument key="class">Symfony\Component\Security\Core\Encoder\BCryptPasswordEncoder</argument>
+          <argument key="arguments" type="collection">
+            <argument>13</argument>
+          </argument>
+        </argument>
+      </argument>
     </service>
     <service id="security.password_encoder" class="Symfony\Component\Security\Core\Encoder\UserPasswordEncoder">
       <argument type="service" id="security.encoder_factory"/>

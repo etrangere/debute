@@ -8,6 +8,7 @@
 
 namespace AppBundle\Entity;
 
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\Role;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\ORM\Mapping as ORM;
@@ -15,7 +16,9 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="user")
+ * @UniqueEntity(fields={"email"}, message="It looks like your already have an account!")
  */
+
 class User implements UserInterface
 {
     /**
@@ -30,6 +33,18 @@ class User implements UserInterface
      * @ORM\Column(type="string",unique=true)
      */
     private $email;
+
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $password;
+
+
+    private $plainPassword;
+
+
+
 
     public function getUsername()
     {
@@ -51,19 +66,19 @@ class User implements UserInterface
 
     public function getPassword()
     {
-        // TODO: Implement getPassword() method.
+        return $this->password;
     }
 
     public function getSalt()
     {
-        // TODO: Implement getSalt() method.
+
     }
 
 
 
     public function eraseCredentials()
     {
-        // TODO: Implement eraseCredentials() method.
+        $this->plainPassword = null;
     }
 
     /**
@@ -74,6 +89,35 @@ class User implements UserInterface
         $this->email = $email;
     }
 
+
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param mixed $plainPassword
+     */
+    public function setPlainPassword($plainPassword)
+    {
+        $this->plainPassword = $plainPassword;
+        // forces the object to look "dirty" to Doctrine. Avoids
+        // Doctrine *not* saving this entity, if only plainPassword changes
+        //guaranties that the entity looks "dirty" to Doctrine when changing
+        // the plainPassword
+        $this->password = null;
+    }
 
 
 

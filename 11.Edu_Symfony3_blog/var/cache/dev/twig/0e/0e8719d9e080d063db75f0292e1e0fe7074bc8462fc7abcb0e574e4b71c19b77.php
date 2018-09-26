@@ -54,26 +54,45 @@ class __TwigTemplate_34385d5137053b1c6541bd78b1c73800ab862a0bbf60c2eaef2bf346e93
             <h1 class=\"logo\">AquaNote</h1>
             <ul class=\"navi\">
                 <li class=\"search\"><a href=\"#\" class=\"js-header-search-toggle\"><i class=\"fa fa-search\"></i></a></li>
+
+               ";
+        // line 26
+        if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_USER")) {
+            // line 27
+            echo "
                 <li><a href=\"";
-        // line 25
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("security_login");
-        echo "\">Login</a></li>
-            </ul>
+            // line 28
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("security_logout");
+            echo "\">Logout</a></li>
+
+                ";
+        } else {
+            // line 31
+            echo "
+                <li><a href=\"";
+            // line 32
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("security_login");
+            echo "\">Login</a></li>
+
+                ";
+        }
+        // line 35
+        echo "            </ul>
         </header>
 
         <div class=\"main-content\">
 
             ";
-        // line 31
+        // line 40
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "session", array()), "flashBag", array()), "get", array(0 => "success"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["msg"]) {
-            // line 32
+            // line 41
             echo "
                 <div class=\"alert alert-success\">
 
                     ";
-            // line 35
+            // line 44
             echo twig_escape_filter($this->env, $context["msg"], "html", null, true);
             echo "
 
@@ -84,12 +103,12 @@ class __TwigTemplate_34385d5137053b1c6541bd78b1c73800ab862a0bbf60c2eaef2bf346e93
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['msg'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 40
+        // line 49
         echo "
             ";
-        // line 41
+        // line 50
         $this->displayBlock('body', $context, $blocks);
-        // line 42
+        // line 51
         echo "  
         </div>
 
@@ -98,9 +117,9 @@ class __TwigTemplate_34385d5137053b1c6541bd78b1c73800ab862a0bbf60c2eaef2bf346e93
         </div>
 
         ";
-        // line 49
+        // line 58
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 53
+        // line 62
         echo "    </body>
 </html>
 ";
@@ -145,7 +164,7 @@ class __TwigTemplate_34385d5137053b1c6541bd78b1c73800ab862a0bbf60c2eaef2bf346e93
 
     }
 
-    // line 41
+    // line 50
     public function block_body($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
@@ -156,16 +175,16 @@ class __TwigTemplate_34385d5137053b1c6541bd78b1c73800ab862a0bbf60c2eaef2bf346e93
 
     }
 
-    // line 49
+    // line 58
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 50
+        // line 59
         echo "            <script src=\"//code.jquery.com/jquery-2.1.4.min.js\"></script>
             <script src=\"";
-        // line 51
+        // line 60
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/m ain.js"), "html", null, true);
         echo "\"></script>
         ";
@@ -186,7 +205,7 @@ class __TwigTemplate_34385d5137053b1c6541bd78b1c73800ab862a0bbf60c2eaef2bf346e93
 
     public function getDebugInfo()
     {
-        return array (  169 => 51,  166 => 50,  160 => 49,  149 => 41,  140 => 10,  136 => 9,  131 => 8,  125 => 7,  113 => 5,  104 => 53,  102 => 49,  93 => 42,  91 => 41,  88 => 40,  77 => 35,  72 => 32,  68 => 31,  59 => 25,  52 => 21,  39 => 12,  37 => 7,  32 => 5,  26 => 1,);
+        return array (  188 => 60,  185 => 59,  179 => 58,  168 => 50,  159 => 10,  155 => 9,  150 => 8,  144 => 7,  132 => 5,  123 => 62,  121 => 58,  112 => 51,  110 => 50,  107 => 49,  96 => 44,  91 => 41,  87 => 40,  80 => 35,  74 => 32,  71 => 31,  65 => 28,  62 => 27,  60 => 26,  52 => 21,  39 => 12,  37 => 7,  32 => 5,  26 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -223,7 +242,16 @@ class __TwigTemplate_34385d5137053b1c6541bd78b1c73800ab862a0bbf60c2eaef2bf346e93
             <h1 class=\"logo\">AquaNote</h1>
             <ul class=\"navi\">
                 <li class=\"search\"><a href=\"#\" class=\"js-header-search-toggle\"><i class=\"fa fa-search\"></i></a></li>
+
+               {% if is_granted('ROLE_USER') %}
+
+                <li><a href=\"{{  path ('security_logout') }}\">Logout</a></li>
+
+                {% else %}
+
                 <li><a href=\"{{  path ('security_login') }}\">Login</a></li>
+
+                {% endif %}
             </ul>
         </header>
 
