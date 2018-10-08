@@ -1,8 +1,0 @@
-# This file is auto-generated during the composer install
-parameters:
-    database_host: localhost
-    database_port: null
-    database_name: symfony
-    database_user: root
-    database_password: Smdilia2012@
-    secret: ThisTokenIsNotSoSecretChangeIt
