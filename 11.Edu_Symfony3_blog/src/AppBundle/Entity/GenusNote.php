@@ -29,7 +29,7 @@ class GenusNote
     /**
      * @ORM\Column(type="string")
      */
-    private $userame;
+    private $username;
 
     /**
      * @ORM\Column(type="string")
@@ -91,7 +91,7 @@ class GenusNote
 
     public function setUsername($username)
     {
-        $this->userame = $username;
+        $this->username = $username;
     }
     /**
      * @return mixed

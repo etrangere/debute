@@ -44,7 +44,10 @@ class User implements UserInterface
     private $plainPassword;
 
 
-
+    /**
+     * @ORM\Column(type="json_array")
+     */
+    private $roles =[];
 
     public function getUsername()
     {
@@ -53,12 +56,17 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        return ['ROLE_USER'];
+        $roles = $this->roles;
+
+        if (!in_array('ROLE_USER',$roles))
+        {
+            $roles[]='ROLE_USER';
+
+        }
+        return $roles;
     }
 
-    /**
-     * @return mixed
-     */
+
     public function getEmail()
     {
         return $this->email;
@@ -117,6 +125,14 @@ class User implements UserInterface
         //guaranties that the entity looks "dirty" to Doctrine when changing
         // the plainPassword
         $this->password = null;
+    }
+
+    /**
+     * @param mixed $roles
+     */
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
     }
 
 

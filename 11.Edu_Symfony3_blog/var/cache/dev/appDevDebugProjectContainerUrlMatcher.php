@@ -116,6 +116,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_genus_edit')), array (  '_controller' => 'AppBundle\\Controller\\Admin\\GenusAdminController::editAction',));
             }
 
+            // admin_genus_delete
+            if (preg_match('#^/admin/genus/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_genus_delete')), array (  '_controller' => 'AppBundle\\Controller\\Admin\\GenusAdminController::deleteAction',));
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/genus')) {
@@ -124,9 +129,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\GenusController::newAction',  '_route' => 'app_genus_new',);
             }
 
-            // app_genus_list
+            // genus_all
             if ($pathinfo === '/genus') {
-                return array (  '_controller' => 'AppBundle\\Controller\\GenusController::listAction',  '_route' => 'app_genus_list',);
+                return array (  '_controller' => 'AppBundle\\Controller\\GenusController::listAction',  '_route' => 'genus_all',);
             }
 
             // genus_show

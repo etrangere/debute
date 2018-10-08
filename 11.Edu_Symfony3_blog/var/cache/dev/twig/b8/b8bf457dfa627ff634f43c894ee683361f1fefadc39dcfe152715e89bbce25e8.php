@@ -37,13 +37,24 @@ class __TwigTemplate_aa1ff6206e09b2b5933ca27918a54effdce6a58753e66608537eff45abd
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
+        echo "    ";
+        if ($this->env->isDebug()) {
+            $__internal_d891239769435ac39ed8234ec28b2a1d09abc607627c1da70a483cf2e470e3fcvars = array();
+            foreach ($context as $__internal_d891239769435ac39ed8234ec28b2a1d09abc607627c1da70a483cf2e470e3fckey => $__internal_d891239769435ac39ed8234ec28b2a1d09abc607627c1da70a483cf2e470e3fcval) {
+                if (!$__internal_d891239769435ac39ed8234ec28b2a1d09abc607627c1da70a483cf2e470e3fcval instanceof \Twig_Template) {
+                    $__internal_d891239769435ac39ed8234ec28b2a1d09abc607627c1da70a483cf2e470e3fcvars[$__internal_d891239769435ac39ed8234ec28b2a1d09abc607627c1da70a483cf2e470e3fckey] = $__internal_d891239769435ac39ed8234ec28b2a1d09abc607627c1da70a483cf2e470e3fcval;
+                }
+            }
+            \Symfony\Component\VarDumper\VarDumper::dump($__internal_d891239769435ac39ed8234ec28b2a1d09abc607627c1da70a483cf2e470e3fcvars);
+        }
+        // line 5
         echo "    <div class=\"container\">
         <div class=\"row\">
 
             <div class=\"col-xs-12\">
                 <div class=\"pull-right\" style=\"margin-bottom: 10px; margin-top: 20px;\">
                     <a href=\"";
-        // line 9
+        // line 10
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_genus_new");
         echo "\" class=\"btn btn-primary pull-right\">Add <span class=\"fa fa-plus-circle\"></span></a>
                 </div>
@@ -57,25 +68,30 @@ class __TwigTemplate_aa1ff6206e09b2b5933ca27918a54effdce6a58753e66608537eff45abd
                         <th>&nbsp;</th>
                     </tr>
                     ";
-        // line 20
+        // line 21
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["genuses"] ?? $this->getContext($context, "genuses")));
         foreach ($context['_seq'] as $context["_key"] => $context["genus"]) {
-            // line 21
+            // line 22
             echo "                        <tr>
                             <td>";
-            // line 22
+            // line 23
             echo twig_escape_filter($this->env, $this->getAttribute($context["genus"], "name", array()), "html", null, true);
             echo "</td>
                             <td>";
-            // line 23
+            // line 24
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["genus"], "subFamily", array()), "name", array()), "html", null, true);
             echo "</td>
                             <td>
                                 <a href=\"";
-            // line 25
+            // line 26
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_genus_edit", array("id" => $this->getAttribute($context["genus"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-xs btn-success\"><span class=\"fa fa-pencil\">Edit</span></a>
+
+                                <a href=\"";
+            // line 28
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_genus_delete", array("id" => $this->getAttribute($context["genus"], "id", array()))), "html", null, true);
+            echo "\" class=\"btn btn-xs btn-success\"><span class=\"fa fa-pencil\">Delete</span></a>
                             </td>
                         </tr>
                     ";
@@ -83,7 +99,7 @@ class __TwigTemplate_aa1ff6206e09b2b5933ca27918a54effdce6a58753e66608537eff45abd
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['genus'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 32
         echo "                </table>
             </div>
         </div>
@@ -106,7 +122,7 @@ class __TwigTemplate_aa1ff6206e09b2b5933ca27918a54effdce6a58753e66608537eff45abd
 
     public function getDebugInfo()
     {
-        return array (  87 => 29,  77 => 25,  72 => 23,  68 => 22,  65 => 21,  61 => 20,  47 => 9,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  103 => 32,  93 => 28,  88 => 26,  83 => 24,  79 => 23,  76 => 22,  72 => 21,  58 => 10,  51 => 5,  40 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -122,6 +138,7 @@ class __TwigTemplate_aa1ff6206e09b2b5933ca27918a54effdce6a58753e66608537eff45abd
         return new Twig_Source("{% extends 'base.html.twig' %}
 
 {% block body %}
+    {% dump %}
     <div class=\"container\">
         <div class=\"row\">
 
@@ -144,6 +161,8 @@ class __TwigTemplate_aa1ff6206e09b2b5933ca27918a54effdce6a58753e66608537eff45abd
                             <td>{{ genus.subFamily.name }}</td>
                             <td>
                                 <a href=\"{{ path('admin_genus_edit',{'id':genus.id}) }}\" class=\"btn btn-xs btn-success\"><span class=\"fa fa-pencil\">Edit</span></a>
+
+                                <a href=\"{{ path('admin_genus_delete',{'id':genus.id}) }}\" class=\"btn btn-xs btn-success\"><span class=\"fa fa-pencil\">Delete</span></a>
                             </td>
                         </tr>
                     {% endfor %}

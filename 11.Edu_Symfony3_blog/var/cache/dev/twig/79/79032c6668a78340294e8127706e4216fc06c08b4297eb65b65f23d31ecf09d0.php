@@ -37,53 +37,57 @@ class __TwigTemplate_7457ef67c1267b6ab7e49048a0b41efff0cc1081c322028f50101bc5cb9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         if ($this->env->isDebug()) {
-            $__internal_a69b277d347b4eca92e122750fe3c13dc0e3c875841e4189df73024b64fbc801vars = array();
-            foreach ($context as $__internal_a69b277d347b4eca92e122750fe3c13dc0e3c875841e4189df73024b64fbc801key => $__internal_a69b277d347b4eca92e122750fe3c13dc0e3c875841e4189df73024b64fbc801val) {
-                if (!$__internal_a69b277d347b4eca92e122750fe3c13dc0e3c875841e4189df73024b64fbc801val instanceof \Twig_Template) {
-                    $__internal_a69b277d347b4eca92e122750fe3c13dc0e3c875841e4189df73024b64fbc801vars[$__internal_a69b277d347b4eca92e122750fe3c13dc0e3c875841e4189df73024b64fbc801key] = $__internal_a69b277d347b4eca92e122750fe3c13dc0e3c875841e4189df73024b64fbc801val;
+            $__internal_37063f5265037181dabe585c3c624b493728ab4d9e7787e2b231cb71cc785f1evars = array();
+            foreach ($context as $__internal_37063f5265037181dabe585c3c624b493728ab4d9e7787e2b231cb71cc785f1ekey => $__internal_37063f5265037181dabe585c3c624b493728ab4d9e7787e2b231cb71cc785f1eval) {
+                if (!$__internal_37063f5265037181dabe585c3c624b493728ab4d9e7787e2b231cb71cc785f1eval instanceof \Twig_Template) {
+                    $__internal_37063f5265037181dabe585c3c624b493728ab4d9e7787e2b231cb71cc785f1evars[$__internal_37063f5265037181dabe585c3c624b493728ab4d9e7787e2b231cb71cc785f1ekey] = $__internal_37063f5265037181dabe585c3c624b493728ab4d9e7787e2b231cb71cc785f1eval;
                 }
             }
             // line 4
-            \Symfony\Component\VarDumper\VarDumper::dump($__internal_a69b277d347b4eca92e122750fe3c13dc0e3c875841e4189df73024b64fbc801vars);
+            \Symfony\Component\VarDumper\VarDumper::dump($__internal_37063f5265037181dabe585c3c624b493728ab4d9e7787e2b231cb71cc785f1evars);
         }
         // line 5
         echo "    <div class=\"container\">
         <div class=\"row\">
            <div class=\"col-xs-12\">
                <h1>Login</h1>
+               <a href=\"";
+        // line 9
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("homepage");
+        echo " \">Back to home</a>
 
                ";
-        // line 10
+        // line 11
         if (($context["error"] ?? $this->getContext($context, "error"))) {
-            // line 11
+            // line 12
             echo "                   <div class=\"alert alert-danger\">
                        ";
-            // line 12
+            // line 13
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans($this->getAttribute(($context["error"] ?? $this->getContext($context, "error")), "messageKey", array()), $this->getAttribute(($context["error"] ?? $this->getContext($context, "error")), "messageData", array()), "security"), "html", null, true);
             echo "</div>
 
                ";
         }
-        // line 15
+        // line 16
         echo "
               ";
-        // line 16
+        // line 17
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
         echo "
 
                ";
-        // line 18
+        // line 19
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "_username", array()), 'row');
         echo "
                ";
-        // line 19
+        // line 20
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "_password", array()), 'row');
         echo "
 
                <button type=\"submit\" class=\"btn btn-success\">Login<span class=\"fa fa-lock\"></span></button>
 
                ";
-        // line 23
+        // line 24
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
 
@@ -112,7 +116,7 @@ class __TwigTemplate_7457ef67c1267b6ab7e49048a0b41efff0cc1081c322028f50101bc5cb9
 
     public function getDebugInfo()
     {
-        return array (  87 => 23,  80 => 19,  76 => 18,  71 => 16,  68 => 15,  62 => 12,  59 => 11,  57 => 10,  50 => 5,  47 => 4,  34 => 3,  11 => 1,);
+        return array (  91 => 24,  84 => 20,  80 => 19,  75 => 17,  72 => 16,  66 => 13,  63 => 12,  61 => 11,  56 => 9,  50 => 5,  47 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -133,6 +137,7 @@ class __TwigTemplate_7457ef67c1267b6ab7e49048a0b41efff0cc1081c322028f50101bc5cb9
         <div class=\"row\">
            <div class=\"col-xs-12\">
                <h1>Login</h1>
+               <a href=\"{{ path('homepage')}} \">Back to home</a>
 
                {% if error %}
                    <div class=\"alert alert-danger\">
