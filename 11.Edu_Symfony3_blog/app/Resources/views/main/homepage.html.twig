@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+    <h1 class="page-header text-center">
+
+        Welcome
+
+        {{ app.user ? app.user.email : 'Aquanauts'}}!</h1>
+
+
+<h2><a href="{{ path('genus_all')}} ">List of all Aquanauts</a></h2>
+
+{% endblock %}
