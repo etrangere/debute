@@ -28,6 +28,23 @@ class GenusAdminController extends Controller
      */
     public function indexAction()
     {
+
+    //to close page and function rlated with proper auth.
+
+    // 1-st version
+    //
+    /*
+    if (!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
+    {
+        throw $this->createAccessDeniedException('Get out!');
+    }
+    */
+    // 2-nd version
+     //  $this->denyAccessUnlessGranted('ROLE_ADMIN');
+    // 3-ed version
+    //# @Security("is_granted('ROLE_ADMIN')
+    // below controller route will block access to hole function
+
         $genuses = $this->getDoctrine()
             ->getRepository('AppBundle:Genus')
             ->findAll();
@@ -58,7 +75,9 @@ class GenusAdminController extends Controller
             $em->persist($genus);
             $em->flush();
 
-            $this->addFlash('success','Genus created - you are amazing');
+            $this->addFlash('success',
+
+                sprintf('Genus created - you (%s) are amazing',$this->getUser()->getEmail()));
 
             return $this->redirectToRoute('admin_genus_list');
 
@@ -91,7 +110,9 @@ class GenusAdminController extends Controller
             $em->persist($genus);
             $em->flush();
 
-            $this->addFlash('success','Genus edited - you are amazing');
+            $this->addFlash('success',
+
+                sprintf('Genus edited - you (%s) are amazing',$this->getUser()->getEmail()));
 
             return $this->redirectToRoute('admin_genus_list');
 
@@ -102,4 +123,27 @@ class GenusAdminController extends Controller
         ]);
     }
 
+    /**
+     * @Route("/genus/{id}/delete", name="admin_genus_delete")
+     */
+    public function deleteAction(Request $request,Genus $genus)
+    {
+
+
+        if (!$genus) {
+
+            //throw $this->createNotFoundException('No genus found');
+
+
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $em->remove($genus);
+        $em->flush();
+
+        }
+
+        return $this->redirect($this->generateUrl('admin_genus_list'));
+
+
+    }
 }

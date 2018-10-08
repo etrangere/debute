@@ -37,7 +37,21 @@ class __TwigTemplate_c9cecbec3b92000b6bea7a1ebb8cba504e41a6de27bdac0c0af16de8fa5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1 class=\"page-header text-center\">Welcome Aquanauts!</h1>
+        echo "    <h1 class=\"page-header text-center\">
+
+        Welcome
+
+        ";
+        // line 10
+        echo twig_escape_filter($this->env, (($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array())) ? ($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array()), "email", array())) : ("Aquanauts")), "html", null, true);
+        echo "!</h1>
+
+
+<h2><a href=\"";
+        // line 13
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("genus_all");
+        echo " \">List of all Aquanauts</a></h2>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -56,7 +70,7 @@ class __TwigTemplate_c9cecbec3b92000b6bea7a1ebb8cba504e41a6de27bdac0c0af16de8fa5
 
     public function getDebugInfo()
     {
-        return array (  40 => 6,  34 => 5,  11 => 1,);
+        return array (  52 => 13,  46 => 10,  40 => 6,  34 => 5,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -74,7 +88,15 @@ class __TwigTemplate_c9cecbec3b92000b6bea7a1ebb8cba504e41a6de27bdac0c0af16de8fa5
 
 
 {% block body %}
-    <h1 class=\"page-header text-center\">Welcome Aquanauts!</h1>
+    <h1 class=\"page-header text-center\">
+
+        Welcome
+
+        {{ app.user ? app.user.email : 'Aquanauts'}}!</h1>
+
+
+<h2><a href=\"{{ path('genus_all')}} \">List of all Aquanauts</a></h2>
+
 {% endblock %}
 ", ":main:homepage.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/app/Resources/views/main/homepage.html.twig");
     }

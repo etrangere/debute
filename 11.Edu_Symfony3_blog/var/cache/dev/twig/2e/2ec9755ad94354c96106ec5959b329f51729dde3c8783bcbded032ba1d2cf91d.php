@@ -42,6 +42,10 @@ class __TwigTemplate_597ce22273a76538106c4653ea553f0bcb097c3cdda0c579ddbfd613238
 
     <table class=\"table table-striped\">
 
+        <a href=\"";
+        // line 9
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("homepage");
+        echo " \">Back to homepage</a>
         <thead>
         <tr>
             <th>Genus</th>
@@ -52,16 +56,16 @@ class __TwigTemplate_597ce22273a76538106c4653ea553f0bcb097c3cdda0c579ddbfd613238
 
         <tbody>
        ";
-        // line 18
+        // line 19
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["genuses"] ?? $this->getContext($context, "genuses")));
         foreach ($context['_seq'] as $context["_key"] => $context["genus"]) {
-            // line 19
+            // line 20
             echo "
            <tr>
            <td>
                <a href=\"";
-            // line 22
+            // line 23
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("genus_show", array("genusName" => $this->getAttribute($context["genus"], "name", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["genus"], "name", array()), "html", null, true);
@@ -70,12 +74,12 @@ class __TwigTemplate_597ce22273a76538106c4653ea553f0bcb097c3cdda0c579ddbfd613238
 
            </td>
            <td>";
-            // line 26
+            // line 27
             echo twig_escape_filter($this->env, $this->getAttribute($context["genus"], "speciesCount", array()), "html", null, true);
             echo "</td>
            <td>
                ";
-            // line 28
+            // line 29
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["genus"], "UpdatedAT", array()), "Y-m-d"), "html", null, true);
             echo "
            </td>
@@ -86,7 +90,7 @@ class __TwigTemplate_597ce22273a76538106c4653ea553f0bcb097c3cdda0c579ddbfd613238
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['genus'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 34
         echo "        </tbody>
 
     </table>
@@ -109,7 +113,7 @@ class __TwigTemplate_597ce22273a76538106c4653ea553f0bcb097c3cdda0c579ddbfd613238
 
     public function getDebugInfo()
     {
-        return array (  90 => 33,  79 => 28,  74 => 26,  65 => 22,  60 => 19,  56 => 18,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  94 => 34,  83 => 29,  78 => 27,  69 => 23,  64 => 20,  60 => 19,  47 => 9,  40 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -130,6 +134,7 @@ class __TwigTemplate_597ce22273a76538106c4653ea553f0bcb097c3cdda0c579ddbfd613238
 
     <table class=\"table table-striped\">
 
+        <a href=\"{{ path('homepage')}} \">Back to homepage</a>
         <thead>
         <tr>
             <th>Genus</th>

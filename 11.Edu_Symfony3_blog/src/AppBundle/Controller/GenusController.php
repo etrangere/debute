@@ -12,6 +12,8 @@ use AppBundle\Entity\Genus;
 use AppBundle\Entity\GenusNote;
 use AppBundle\Service\MarkdownTransformer;
 
+
+
 class GenusController extends Controller
 {
 
@@ -49,7 +51,7 @@ class GenusController extends Controller
 
 
     /**
-     * @Route("/genus")
+     * @Route("/genus",name="genus_all")
      */
 
     public function listAction()
@@ -129,8 +131,8 @@ class GenusController extends Controller
 
       $notes = [];
 
-       /*
-        foreach ($genus->getNote() as $note)
+
+        foreach ($genus->getNotes() as $note)
         {
 
 
@@ -138,18 +140,12 @@ class GenusController extends Controller
 
                 'id'=> $note->getId(),
                 'username'=> $note->getUsername(),
-                'avatarUri'=> '/images/'.$note->getUserAvatarFilename(),
+                'avatarUri'=> '/debute/11.Edu_Symfony3_blog/web/images/'.$note->getUserAvatarFilename(),
                 'note'=> $note->getNote(),
-                'date'=> $note->setCreatedAt()->format('M d,Y')
+                'date'=> $note->getCreatedAt()->format('M d,Y')
             ];
 
         }
-
-       */
-
-       //$em = $this->getDoctrine()->getManager();
-       //$notes = $em->getRepository('AppBundle:GenusNote');
-        $notes = [ 3 ,4,5,7,3];
 
         $data = [
             'notes' => $notes

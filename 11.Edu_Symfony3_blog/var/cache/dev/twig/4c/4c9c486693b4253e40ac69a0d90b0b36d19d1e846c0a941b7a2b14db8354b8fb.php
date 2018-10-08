@@ -54,18 +54,23 @@ class __TwigTemplate_b9b9796c5d684a903ef099e4d9b45011863991398d9edaf8ed594ccc2e9
         // line 8
         echo "    ";
         if ($this->env->isDebug()) {
-            $__internal_e3e51b22d7a2b8d36a0789b8bae0fc620b4a7566ded6e3300798b909120e5709vars = array();
-            foreach ($context as $__internal_e3e51b22d7a2b8d36a0789b8bae0fc620b4a7566ded6e3300798b909120e5709key => $__internal_e3e51b22d7a2b8d36a0789b8bae0fc620b4a7566ded6e3300798b909120e5709val) {
-                if (!$__internal_e3e51b22d7a2b8d36a0789b8bae0fc620b4a7566ded6e3300798b909120e5709val instanceof \Twig_Template) {
-                    $__internal_e3e51b22d7a2b8d36a0789b8bae0fc620b4a7566ded6e3300798b909120e5709vars[$__internal_e3e51b22d7a2b8d36a0789b8bae0fc620b4a7566ded6e3300798b909120e5709key] = $__internal_e3e51b22d7a2b8d36a0789b8bae0fc620b4a7566ded6e3300798b909120e5709val;
+            $__internal_f75ca8061e1d02575394dc936f9e8c19fd9b5b70a38f995ca9a186c3c9f0397fvars = array();
+            foreach ($context as $__internal_f75ca8061e1d02575394dc936f9e8c19fd9b5b70a38f995ca9a186c3c9f0397fkey => $__internal_f75ca8061e1d02575394dc936f9e8c19fd9b5b70a38f995ca9a186c3c9f0397fval) {
+                if (!$__internal_f75ca8061e1d02575394dc936f9e8c19fd9b5b70a38f995ca9a186c3c9f0397fval instanceof \Twig_Template) {
+                    $__internal_f75ca8061e1d02575394dc936f9e8c19fd9b5b70a38f995ca9a186c3c9f0397fvars[$__internal_f75ca8061e1d02575394dc936f9e8c19fd9b5b70a38f995ca9a186c3c9f0397fkey] = $__internal_f75ca8061e1d02575394dc936f9e8c19fd9b5b70a38f995ca9a186c3c9f0397fval;
                 }
             }
-            \Symfony\Component\VarDumper\VarDumper::dump($__internal_e3e51b22d7a2b8d36a0789b8bae0fc620b4a7566ded6e3300798b909120e5709vars);
+            \Symfony\Component\VarDumper\VarDumper::dump($__internal_f75ca8061e1d02575394dc936f9e8c19fd9b5b70a38f995ca9a186c3c9f0397fvars);
         }
         // line 9
         echo "
-    <h2 class=\"genus-name\">";
+    <a href=\"";
         // line 10
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("genus_all");
+        echo " \">Back to genus list</a>
+
+    <h2 class=\"genus-name\">";
+        // line 12
         echo twig_escape_filter($this->env, $this->getAttribute(($context["genus"] ?? $this->getContext($context, "genus")), "name", array()), "html", null, true);
         echo "</h2>
 
@@ -75,22 +80,22 @@ class __TwigTemplate_b9b9796c5d684a903ef099e4d9b45011863991398d9edaf8ed594ccc2e9
             <dl class=\"genus-details-list\">
                 <dt>Subfamily:</dt>
                 <dd>";
-        // line 17
+        // line 19
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["genus"] ?? $this->getContext($context, "genus")), "subFamily", array()), "name", array()), "html", null, true);
         echo "</dd>
                 <dt>Known Species:</dt>
                 <dd>";
-        // line 19
+        // line 21
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, $this->getAttribute(($context["genus"] ?? $this->getContext($context, "genus")), "speciesCount", array())), "html", null, true);
         echo "</dd>
                 <dt>Fun Fact:</dt>
                 <dd>";
-        // line 21
+        // line 23
         echo twig_escape_filter($this->env, ($context["funFact"] ?? $this->getContext($context, "funFact")), "html", null, true);
         echo "</dd>
                 <dt>Recent Notes</dt>
                 <dd>";
-        // line 23
+        // line 25
         echo twig_escape_filter($this->env, ($context["recentNoteCount"] ?? $this->getContext($context, "recentNoteCount")), "html", null, true);
         echo "</dd>
             </dl>
@@ -103,13 +108,13 @@ class __TwigTemplate_b9b9796c5d684a903ef099e4d9b45011863991398d9edaf8ed594ccc2e9
 
     }
 
-    // line 30
+    // line 32
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 31
+        // line 33
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
@@ -118,12 +123,12 @@ class __TwigTemplate_b9b9796c5d684a903ef099e4d9b45011863991398d9edaf8ed594ccc2e9
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js\"></script>
 
     <script type=\"text/babel\" src=\"";
-        // line 36
+        // line 38
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/notes.react.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/babel\">
         var notesUrl = '";
-        // line 38
+        // line 40
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("genus_show_notes", array("name" => $this->getAttribute(($context["genus"] ?? $this->getContext($context, "genus")), "name", array()))), "html", null, true);
         echo "';
 
@@ -150,7 +155,7 @@ class __TwigTemplate_b9b9796c5d684a903ef099e4d9b45011863991398d9edaf8ed594ccc2e9
 
     public function getDebugInfo()
     {
-        return array (  127 => 38,  122 => 36,  113 => 31,  107 => 30,  94 => 23,  89 => 21,  84 => 19,  79 => 17,  69 => 10,  66 => 9,  55 => 8,  49 => 7,  36 => 5,  11 => 1,);
+        return array (  132 => 40,  127 => 38,  118 => 33,  112 => 32,  99 => 25,  94 => 23,  89 => 21,  84 => 19,  74 => 12,  69 => 10,  66 => 9,  55 => 8,  49 => 7,  36 => 5,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -171,6 +176,8 @@ class __TwigTemplate_b9b9796c5d684a903ef099e4d9b45011863991398d9edaf8ed594ccc2e9
 
 {% block body %}
     {% dump %}
+
+    <a href=\"{{ path('genus_all')}} \">Back to genus list</a>
 
     <h2 class=\"genus-name\">{{ genus.name }}</h2>
 

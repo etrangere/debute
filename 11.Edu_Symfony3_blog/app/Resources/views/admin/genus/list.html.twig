@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% dump %}
     <div class="container">
         <div class="row">
 
@@ -23,6 +24,8 @@
                             <td>{{ genus.subFamily.name }}</td>
                             <td>
                                 <a href="{{ path('admin_genus_edit',{'id':genus.id}) }}" class="btn btn-xs btn-success"><span class="fa fa-pencil">Edit</span></a>
+
+                                <a href="{{ path('admin_genus_delete',{'id':genus.id}) }}" class="btn btn-xs btn-success"><span class="fa fa-pencil">Delete</span></a>
                             </td>
                         </tr>
                     {% endfor %}

@@ -109,11 +109,11 @@ class __TwigTemplate_52aa5afacd2572cb4f84f5b7040f7006baba8b2c5e72c6644c50ae05974
         // line 50
         $this->displayBlock('body', $context, $blocks);
         // line 51
-        echo "  
+        echo "
         </div>
 
         <div class=\"footer\">
-            <p class=\"footer-text\">Made with <span class=\"heart\"><3</span> <a href=\"https://knpuniversity.com\">KnpUniversity</a></p>
+            <p class=\"footer-text\">Made with <span class=\"heart\"></span> <a href=\"https://knpuniversity.com\">KnpUniversity</a></p>
         </div>
 
         ";
@@ -182,10 +182,10 @@ class __TwigTemplate_52aa5afacd2572cb4f84f5b7040f7006baba8b2c5e72c6644c50ae05974
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 59
-        echo "            <script src=\"//code.jquery.com/jquery-2.1.4.min.js\"></script>
+        echo "            <script src=\"http://code.jquery.com/jquery-2.1.4.min.js\"></script>
             <script src=\"";
         // line 60
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/m ain.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
         echo "\"></script>
         ";
         
@@ -268,16 +268,16 @@ class __TwigTemplate_52aa5afacd2572cb4f84f5b7040f7006baba8b2c5e72c6644c50ae05974
             {% endfor %}
 
             {% block body %}{% endblock %}
-  
+
         </div>
 
         <div class=\"footer\">
-            <p class=\"footer-text\">Made with <span class=\"heart\"><3</span> <a href=\"https://knpuniversity.com\">KnpUniversity</a></p>
+            <p class=\"footer-text\">Made with <span class=\"heart\"></span> <a href=\"https://knpuniversity.com\">KnpUniversity</a></p>
         </div>
 
         {% block javascripts %}
-            <script src=\"//code.jquery.com/jquery-2.1.4.min.js\"></script>
-            <script src=\"{{ asset('js/m ain.js') }}\"></script>
+            <script src=\"http://code.jquery.com/jquery-2.1.4.min.js\"></script>
+            <script src=\"{{ asset('js/main.js') }}\"></script>
         {% endblock %}
     </body>
 </html>
