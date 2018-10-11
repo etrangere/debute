@@ -54,20 +54,20 @@ class __TwigTemplate_b9b9796c5d684a903ef099e4d9b45011863991398d9edaf8ed594ccc2e9
         // line 8
         echo "    ";
         if ($this->env->isDebug()) {
-            $__internal_23f3ad9de2f591fccb1dbdcafa1913af7c673b76909a35692807809409bbeb7evars = array();
-            foreach ($context as $__internal_23f3ad9de2f591fccb1dbdcafa1913af7c673b76909a35692807809409bbeb7ekey => $__internal_23f3ad9de2f591fccb1dbdcafa1913af7c673b76909a35692807809409bbeb7eval) {
-                if (!$__internal_23f3ad9de2f591fccb1dbdcafa1913af7c673b76909a35692807809409bbeb7eval instanceof \Twig_Template) {
-                    $__internal_23f3ad9de2f591fccb1dbdcafa1913af7c673b76909a35692807809409bbeb7evars[$__internal_23f3ad9de2f591fccb1dbdcafa1913af7c673b76909a35692807809409bbeb7ekey] = $__internal_23f3ad9de2f591fccb1dbdcafa1913af7c673b76909a35692807809409bbeb7eval;
+            $__internal_c5cf425f0d65077e5e1064a8a1daf4fe8fd23efbcba42b95833600b2d3d8e540vars = array();
+            foreach ($context as $__internal_c5cf425f0d65077e5e1064a8a1daf4fe8fd23efbcba42b95833600b2d3d8e540key => $__internal_c5cf425f0d65077e5e1064a8a1daf4fe8fd23efbcba42b95833600b2d3d8e540val) {
+                if (!$__internal_c5cf425f0d65077e5e1064a8a1daf4fe8fd23efbcba42b95833600b2d3d8e540val instanceof \Twig_Template) {
+                    $__internal_c5cf425f0d65077e5e1064a8a1daf4fe8fd23efbcba42b95833600b2d3d8e540vars[$__internal_c5cf425f0d65077e5e1064a8a1daf4fe8fd23efbcba42b95833600b2d3d8e540key] = $__internal_c5cf425f0d65077e5e1064a8a1daf4fe8fd23efbcba42b95833600b2d3d8e540val;
                 }
             }
-            \Symfony\Component\VarDumper\VarDumper::dump($__internal_23f3ad9de2f591fccb1dbdcafa1913af7c673b76909a35692807809409bbeb7evars);
+            \Symfony\Component\VarDumper\VarDumper::dump($__internal_c5cf425f0d65077e5e1064a8a1daf4fe8fd23efbcba42b95833600b2d3d8e540vars);
         }
         // line 9
         echo "
     <a href=\"";
         // line 10
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("homepage");
-        echo " \">Back to home</a>
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("genus_all");
+        echo " \">Back to genuslist</a>
 
     <h2 class=\"genus-name\">";
         // line 12
@@ -177,7 +177,7 @@ class __TwigTemplate_b9b9796c5d684a903ef099e4d9b45011863991398d9edaf8ed594ccc2e9
 {% block body %}
     {% dump %}
 
-    <a href=\"{{ path('homepage')}} \">Back to home</a>
+    <a href=\"{{ path('genus_all')}} \">Back to genuslist</a>
 
     <h2 class=\"genus-name\">{{ genus.name }}</h2>
 

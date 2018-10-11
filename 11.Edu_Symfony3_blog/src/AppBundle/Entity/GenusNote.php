@@ -48,7 +48,7 @@ class GenusNote
 
     /**
      * @ORM\ManyToOne(targetEntity="Genus", inversedBy="notes")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
      */
    private $genus;
 

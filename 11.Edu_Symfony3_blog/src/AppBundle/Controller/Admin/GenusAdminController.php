@@ -124,7 +124,7 @@ class GenusAdminController extends Controller
     }
 
     /**
-     * @Route("/genus/{id}/delete", name="admin_genus_delete")
+     * @Route("/genus/{id}", name="admin_genus_delete")
      */
     public function deleteAction(Request $request,Genus $genus)
     {
@@ -132,18 +132,21 @@ class GenusAdminController extends Controller
 
         if (!$genus) {
 
-            //throw $this->createNotFoundException('No genus found');
-
-
-        $em = $this->getDoctrine()->getEntityManager();
-
-        $em->remove($genus);
-        $em->flush();
+            throw $this->createNotFoundException('No genus found');
 
         }
 
-        return $this->redirect($this->generateUrl('admin_genus_list'));
+        $em = $this->getDoctrine()->getEntityManager();
+        $genus = $em->getRepository('AppBundle:Genus')->find($genus);
+        $em->remove($genus);
+        $em->flush();
 
+
+
+       // return $this->redirect($this->generateUrl('admin_genus_list'));
+        return $this->redirectToRoute('admin_genus_list');
 
     }
+
+
 }
