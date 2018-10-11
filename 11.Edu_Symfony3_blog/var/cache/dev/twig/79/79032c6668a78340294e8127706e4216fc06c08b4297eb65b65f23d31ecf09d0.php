@@ -37,14 +37,14 @@ class __TwigTemplate_7457ef67c1267b6ab7e49048a0b41efff0cc1081c322028f50101bc5cb9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         if ($this->env->isDebug()) {
-            $__internal_37063f5265037181dabe585c3c624b493728ab4d9e7787e2b231cb71cc785f1evars = array();
-            foreach ($context as $__internal_37063f5265037181dabe585c3c624b493728ab4d9e7787e2b231cb71cc785f1ekey => $__internal_37063f5265037181dabe585c3c624b493728ab4d9e7787e2b231cb71cc785f1eval) {
-                if (!$__internal_37063f5265037181dabe585c3c624b493728ab4d9e7787e2b231cb71cc785f1eval instanceof \Twig_Template) {
-                    $__internal_37063f5265037181dabe585c3c624b493728ab4d9e7787e2b231cb71cc785f1evars[$__internal_37063f5265037181dabe585c3c624b493728ab4d9e7787e2b231cb71cc785f1ekey] = $__internal_37063f5265037181dabe585c3c624b493728ab4d9e7787e2b231cb71cc785f1eval;
+            $__internal_9209fd4b9fdffc5570f62f201e1e3e68270daff69492d3a0ef9ee134f062fb9dvars = array();
+            foreach ($context as $__internal_9209fd4b9fdffc5570f62f201e1e3e68270daff69492d3a0ef9ee134f062fb9dkey => $__internal_9209fd4b9fdffc5570f62f201e1e3e68270daff69492d3a0ef9ee134f062fb9dval) {
+                if (!$__internal_9209fd4b9fdffc5570f62f201e1e3e68270daff69492d3a0ef9ee134f062fb9dval instanceof \Twig_Template) {
+                    $__internal_9209fd4b9fdffc5570f62f201e1e3e68270daff69492d3a0ef9ee134f062fb9dvars[$__internal_9209fd4b9fdffc5570f62f201e1e3e68270daff69492d3a0ef9ee134f062fb9dkey] = $__internal_9209fd4b9fdffc5570f62f201e1e3e68270daff69492d3a0ef9ee134f062fb9dval;
                 }
             }
             // line 4
-            \Symfony\Component\VarDumper\VarDumper::dump($__internal_37063f5265037181dabe585c3c624b493728ab4d9e7787e2b231cb71cc785f1evars);
+            \Symfony\Component\VarDumper\VarDumper::dump($__internal_9209fd4b9fdffc5570f62f201e1e3e68270daff69492d3a0ef9ee134f062fb9dvars);
         }
         // line 5
         echo "    <div class=\"container\">
@@ -86,8 +86,15 @@ class __TwigTemplate_7457ef67c1267b6ab7e49048a0b41efff0cc1081c322028f50101bc5cb9
 
                <button type=\"submit\" class=\"btn btn-success\">Login<span class=\"fa fa-lock\"></span></button>
 
+               &nbsp;
+
+               <a href=\"";
+        // line 26
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_register");
+        echo "\">Register</a>
+
                ";
-        // line 24
+        // line 28
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
 
@@ -116,7 +123,7 @@ class __TwigTemplate_7457ef67c1267b6ab7e49048a0b41efff0cc1081c322028f50101bc5cb9
 
     public function getDebugInfo()
     {
-        return array (  91 => 24,  84 => 20,  80 => 19,  75 => 17,  72 => 16,  66 => 13,  63 => 12,  61 => 11,  56 => 9,  50 => 5,  47 => 4,  34 => 3,  11 => 1,);
+        return array (  98 => 28,  93 => 26,  84 => 20,  80 => 19,  75 => 17,  72 => 16,  66 => 13,  63 => 12,  61 => 11,  56 => 9,  50 => 5,  47 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -151,6 +158,10 @@ class __TwigTemplate_7457ef67c1267b6ab7e49048a0b41efff0cc1081c322028f50101bc5cb9
                {{ form_row(form._password) }}
 
                <button type=\"submit\" class=\"btn btn-success\">Login<span class=\"fa fa-lock\"></span></button>
+
+               &nbsp;
+
+               <a href=\"{{ path ('user_register') }}\">Register</a>
 
                {{ form_end(form) }}
 

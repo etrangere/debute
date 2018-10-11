@@ -118,4 +118,5 @@
   ':genus:show.html.twig' => '/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/app/Resources/views/genus/show.html.twig',
   ':main:homepage.html.twig' => '/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/app/Resources/views/main/homepage.html.twig',
   ':security:login.html.twig' => '/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/app/Resources/views/security/login.html.twig',
+  ':user:register.html.twig' => '/Applications/XAMPP/xamppfiles/htdocs/debute/11.Edu_Symfony3_blog/app/Resources/views/user/register.html.twig',
 );

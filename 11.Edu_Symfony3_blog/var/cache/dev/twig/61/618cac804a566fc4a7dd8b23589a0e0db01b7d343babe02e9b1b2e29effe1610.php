@@ -69,30 +69,35 @@ class __TwigTemplate_52aa5afacd2572cb4f84f5b7040f7006baba8b2c5e72c6644c50ae05974
         } else {
             // line 31
             echo "
+
                 <li><a href=\"";
-            // line 32
+            // line 33
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_register");
+            echo "\">Register</a></li>
+                    <li><a href=\"";
+            // line 34
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("security_login");
             echo "\">Login</a></li>
 
                 ";
         }
-        // line 35
+        // line 37
         echo "            </ul>
         </header>
 
         <div class=\"main-content\">
 
             ";
-        // line 40
+        // line 42
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "session", array()), "flashBag", array()), "get", array(0 => "success"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["msg"]) {
-            // line 41
+            // line 43
             echo "
                 <div class=\"alert alert-success\">
 
                     ";
-            // line 44
+            // line 46
             echo twig_escape_filter($this->env, $context["msg"], "html", null, true);
             echo "
 
@@ -103,12 +108,12 @@ class __TwigTemplate_52aa5afacd2572cb4f84f5b7040f7006baba8b2c5e72c6644c50ae05974
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['msg'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 49
+        // line 51
         echo "
             ";
-        // line 50
+        // line 52
         $this->displayBlock('body', $context, $blocks);
-        // line 51
+        // line 53
         echo "
         </div>
 
@@ -117,9 +122,9 @@ class __TwigTemplate_52aa5afacd2572cb4f84f5b7040f7006baba8b2c5e72c6644c50ae05974
         </div>
 
         ";
-        // line 58
+        // line 60
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 62
+        // line 64
         echo "    </body>
 </html>
 ";
@@ -164,7 +169,7 @@ class __TwigTemplate_52aa5afacd2572cb4f84f5b7040f7006baba8b2c5e72c6644c50ae05974
 
     }
 
-    // line 50
+    // line 52
     public function block_body($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
@@ -175,16 +180,16 @@ class __TwigTemplate_52aa5afacd2572cb4f84f5b7040f7006baba8b2c5e72c6644c50ae05974
 
     }
 
-    // line 58
+    // line 60
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 59
+        // line 61
         echo "            <script src=\"http://code.jquery.com/jquery-2.1.4.min.js\"></script>
             <script src=\"";
-        // line 60
+        // line 62
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
         echo "\"></script>
         ";
@@ -205,7 +210,7 @@ class __TwigTemplate_52aa5afacd2572cb4f84f5b7040f7006baba8b2c5e72c6644c50ae05974
 
     public function getDebugInfo()
     {
-        return array (  188 => 60,  185 => 59,  179 => 58,  168 => 50,  159 => 10,  155 => 9,  150 => 8,  144 => 7,  132 => 5,  123 => 62,  121 => 58,  112 => 51,  110 => 50,  107 => 49,  96 => 44,  91 => 41,  87 => 40,  80 => 35,  74 => 32,  71 => 31,  65 => 28,  62 => 27,  60 => 26,  52 => 21,  39 => 12,  37 => 7,  32 => 5,  26 => 1,);
+        return array (  193 => 62,  190 => 61,  184 => 60,  173 => 52,  164 => 10,  160 => 9,  155 => 8,  149 => 7,  137 => 5,  128 => 64,  126 => 60,  117 => 53,  115 => 52,  112 => 51,  101 => 46,  96 => 43,  92 => 42,  85 => 37,  79 => 34,  75 => 33,  71 => 31,  65 => 28,  62 => 27,  60 => 26,  52 => 21,  39 => 12,  37 => 7,  32 => 5,  26 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -249,7 +254,9 @@ class __TwigTemplate_52aa5afacd2572cb4f84f5b7040f7006baba8b2c5e72c6644c50ae05974
 
                 {% else %}
 
-                <li><a href=\"{{  path ('security_login') }}\">Login</a></li>
+
+                <li><a href=\"{{  path ('user_register') }}\">Register</a></li>
+                    <li><a href=\"{{  path ('security_login') }}\">Login</a></li>
 
                 {% endif %}
             </ul>
