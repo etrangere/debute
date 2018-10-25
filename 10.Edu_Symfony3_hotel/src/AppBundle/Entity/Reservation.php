@@ -2,15 +2,17 @@
 
 namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
-//use AppBundle\Entity\Client;
 
 /**
  * Reservation
  * @ORM\Entity
  * @ORM\Table(name="reservation")
  */
+
 class Reservation
 {
+
+
     /**
      * @var int
      */

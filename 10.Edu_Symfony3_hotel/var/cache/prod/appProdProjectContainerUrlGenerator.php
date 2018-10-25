@@ -5,8 +5,6 @@ use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Psr\Log\LoggerInterface;
 
 /**
- * appProdProjectContainerUrlGenerator
- *
  * This class has been auto-generated
  * by the Symfony Routing Component.
  */
@@ -14,9 +12,6 @@ class appProdProjectContainerUrlGenerator extends Symfony\Component\Routing\Gene
 {
     private static $declaredRoutes;
 
-    /**
-     * Constructor.
-     */
     public function __construct(RequestContext $context, LoggerInterface $logger = null)
     {
         $this->context = $context;

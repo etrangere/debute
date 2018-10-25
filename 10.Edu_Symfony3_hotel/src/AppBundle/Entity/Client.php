@@ -4,12 +4,16 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 
+
 /**
  * Client
  * @ORM\Entity
  */
+
+
 class Client
 {
+
     /**
      * @var int
      */

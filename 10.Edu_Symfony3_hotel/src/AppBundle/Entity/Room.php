@@ -2,14 +2,17 @@
 
 namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
-
+use AppBundle\Entity\Reservation as Reservation;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="room")
  */
+
 class Room
 {
+
+
     /**
      * @var int
      */
@@ -132,7 +135,7 @@ class Room
      *
      * @return Room
      */
-    public function addReservation(\AppBundle\Entity\Reservation $reservation)
+    public function addReservation(Reservation $reservation)
     {
         $this->reservations[] = $reservation;
 
@@ -144,7 +147,7 @@ class Room
      *
      * @param \AppBundle\Entity\Reservation $reservation
      */
-    public function removeReservation(\AppBundle\Entity\Reservation $reservation)
+    public function removeReservation(Reservation $reservation)
     {
         $this->reservations->removeElement($reservation);
     }

@@ -5,32 +5,35 @@ use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\RequestContext;
 
 /**
- * appProdProjectContainerUrlMatcher.
- *
  * This class has been auto-generated
  * by the Symfony Routing Component.
  */
 class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher
 {
-    /**
-     * Constructor.
-     */
     public function __construct(RequestContext $context)
     {
         $this->context = $context;
     }
 
-    public function match($pathinfo)
+    public function match($rawPathinfo)
     {
         $allow = array();
-        $pathinfo = rawurldecode($pathinfo);
+        $pathinfo = rawurldecode($rawPathinfo);
+        $trimmedPathinfo = rtrim($pathinfo, '/');
         $context = $this->context;
         $request = $this->request;
+        $requestMethod = $canonicalMethod = $context->getMethod();
+        $scheme = $context->getScheme();
+
+        if ('HEAD' === $requestMethod) {
+            $canonicalMethod = 'GET';
+        }
+
 
         // home
-        if (rtrim($pathinfo, '/') === '') {
+        if ('' === $trimmedPathinfo) {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'home');
+                return $this->redirect($rawPathinfo.'/', 'home');
             }
 
             return array (  '_controller' => 'AppBundle\\Controller\\AdminController::showIndex',  '_route' => 'home',);
@@ -38,7 +41,7 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
 
         if (0 === strpos($pathinfo, '/guests')) {
             // index_clients
-            if ($pathinfo === '/guests') {
+            if ('/guests' === $pathinfo) {
                 return array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showIndex',  '_route' => 'index_clients',);
             }
 
@@ -48,7 +51,7 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
             }
 
             // new_client
-            if ($pathinfo === '/guests/new') {
+            if ('/guests/new' === $pathinfo) {
                 return array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showNew',  '_route' => 'new_client',);
             }
 
@@ -60,9 +63,9 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
         }
 
         // homepage
-        if (rtrim($pathinfo, '/') === '') {
+        if ('' === $trimmedPathinfo) {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'homepage');
+                return $this->redirect($rawPathinfo.'/', 'homepage');
             }
 
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
@@ -70,7 +73,7 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
 
         if (0 === strpos($pathinfo, '/reservations')) {
             // reservations
-            if ($pathinfo === '/reservations') {
+            if ('/reservations' === $pathinfo) {
                 return array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::showReservations',  '_route' => 'reservations',);
             }
 
