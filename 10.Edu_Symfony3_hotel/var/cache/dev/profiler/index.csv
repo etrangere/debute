@@ -11,3 +11,6 @@ f14eb1,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/gue
 b5f4ad,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/guests,1540469301,,200
 707134,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/guests,1540469433,,200
 96f3a9,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/reservations/2,1540469449,,200
+1f8401,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/reservations/2,1540476384,,200
+51f15b,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/guests,1540476387,,200
+1688a1,::1,GET,http://localhost/debute/10.Edu_Symfony3_hotel/web/app_dev.php/reservations,1540485352,,200
