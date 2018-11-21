@@ -62,7 +62,7 @@ final class Versions
   'nelmio/alice' => 'v2.3.5@d780fdff10854d93010b4a027fab92b747b42586',
   'sensio/generator-bundle' => 'v3.1.7@28cbaa244bd0816fd8908b93f90380bcd7b67a65',
   'symfony/phpunit-bridge' => 'v2.8.45@85c95412dd60855542256d4c40992062f37912cf',
-  'knpuniversity/symfony' => 'dev-master@f7ab4962836fd6648ac901e3369e7993f6ed15c5',
+  'knpuniversity/symfony' => 'dev-master@8c364765a9140ae78a460f68f4fffb49d58477c9',
 );
 
     private function __construct()
