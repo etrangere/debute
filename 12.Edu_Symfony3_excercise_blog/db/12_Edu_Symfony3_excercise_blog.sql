@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2.1
+-- http://www.phpmyadmin.net
 --
--- Hôte : localhost
--- Généré le :  jeu. 06 sep. 2018 à 20:55
--- Version du serveur :  10.1.33-MariaDB
--- Version de PHP :  7.1.18
+-- Client :  localhost
+-- Généré le :  Dim 25 Novembre 2018 à 01:33
+-- Version du serveur :  5.7.24-0ubuntu0.16.04.1
+-- Version de PHP :  7.1.24-1+ubuntu16.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `excercise_blog`
+-- Base de données :  `12.Edu_Symfony3_excercise_blog`
 --
 
 -- --------------------------------------------------------
@@ -36,11 +34,10 @@ CREATE TABLE `article` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `article`
+-- Contenu de la table `article`
 --
 
 INSERT INTO `article` (`id`, `title`, `content`, `email`) VALUES
-(9, 'ljhgkjhgkjhgkjhg', 'jhgkjhgkjhgkjhgkjhgkjhgkjh', 'kjhgkjhgkjhgkjhgkjhgkjh'),
 (10, 'Gxxxxxx', 'Bla blaaaaamlkmlkmjhlkjhlkjh', 'lkjhlkjh@mail.ru'),
 (11, '11222222', 'Bla blaaaaamlkmlkmjhlkjhlkjh', 'lkjhlkjh@mail.ru'),
 (12, 'Gxxxxxx', 'Bla blaaaaamlkmlkmjhlkjhlkjh', 'lkjhlkjh@mail.ru'),
@@ -50,7 +47,7 @@ INSERT INTO `article` (`id`, `title`, `content`, `email`) VALUES
 (18, 'jhgfjhgf', 'textreezerd', 'heloooo');
 
 --
--- Index pour les tables déchargées
+-- Index pour les tables exportées
 --
 
 --
@@ -60,7 +57,7 @@ ALTER TABLE `article`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT pour les tables exportées
 --
 
 --
@@ -68,8 +65,6 @@ ALTER TABLE `article`
 --
 ALTER TABLE `article`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
