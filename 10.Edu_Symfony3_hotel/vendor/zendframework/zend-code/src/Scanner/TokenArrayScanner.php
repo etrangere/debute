@@ -76,7 +76,7 @@ class TokenArrayScanner implements ScannerInterface
      * @todo Assignment of $this->docComment should probably be done in scan()
      *       and then $this->getDocComment() just retrieves it.
      *
-     * @return string|null
+     * @return string
      */
     public function getDocComment()
     {
@@ -176,7 +176,7 @@ class TokenArrayScanner implements ScannerInterface
      *
      * @param  string|int $name
      * @throws Exception\InvalidArgumentException
-     * @return ClassScanner|false
+     * @return ClassScanner
      */
     public function getClass($name)
     {
@@ -663,7 +663,7 @@ class TokenArrayScanner implements ScannerInterface
 
     /**
      * @param  string $namespace
-     * @return null|array
+     * @return void|array
      * @throws Exception\InvalidArgumentException
      */
     protected function getUsesNoScan($namespace)

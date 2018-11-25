@@ -45,7 +45,7 @@ abstract class C_Base extends Controller
         $hostname = 'localhost';
         $username = 'root';
         $password = 'Smdilia2012@';
-        $dbName = 'blog6';
+        $dbName = '6.blog';
 
         if (!self::$link)
             self::$link = new mysqli($hostname, $username, $password, $dbName) or die('No connect with data base');

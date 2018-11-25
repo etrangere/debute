@@ -189,7 +189,7 @@ class MethodScanner implements ScannerInterface
 
     /**
      * @param  AnnotationManager $annotationManager
-     * @return AnnotationScanner|false
+     * @return AnnotationScanner
      */
     public function getAnnotations(AnnotationManager $annotationManager)
     {
@@ -279,11 +279,11 @@ class MethodScanner implements ScannerInterface
      *
      * @param int $visibility   T_PUBLIC | T_PRIVATE | T_PROTECTED
      * @return self
-     * @throws \Zend\Code\Exception\InvalidArgumentException
+     * @throws \Zend\Code\Exception
      */
     public function setVisibility($visibility)
     {
-        switch ($visibility) {
+        switch (strtolower($visibility)) {
             case T_PUBLIC:
                 $this->isPublic = true;
                 $this->isPrivate = false;
@@ -303,7 +303,7 @@ class MethodScanner implements ScannerInterface
                 break;
 
             default:
-                throw new Exception\InvalidArgumentException('Invalid visibility argument passed to setVisibility.');
+                throw new Exception('Invalid visibility argument passed to setVisibility.');
         }
 
         return $this;

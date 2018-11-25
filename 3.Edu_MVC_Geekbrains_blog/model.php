@@ -10,7 +10,7 @@
 $hostname = 'localhost';
 $username = 'root';
 $password = 'Smdilia2012@';
-$dbName = 'blog3';
+$dbName = '3.blog';
 
 // Connect to db.
 $con= mysqli_connect($hostname, $username, $password,$dbName) or die('No connect with data base');

@@ -50,7 +50,7 @@ abstract class AbstractTypeableTag extends AbstractGenerator
 
     /**
      * @param string $description
-     * @return AbstractTypeableTag
+     * @return ReturnTag
      */
     public function setDescription($description)
     {
@@ -71,7 +71,7 @@ abstract class AbstractTypeableTag extends AbstractGenerator
      * e.g. array('int', 'null') or "int|null"
      *
      * @param array|string $types
-     * @return AbstractTypeableTag
+     * @return ReturnTag
      */
     public function setTypes($types)
     {

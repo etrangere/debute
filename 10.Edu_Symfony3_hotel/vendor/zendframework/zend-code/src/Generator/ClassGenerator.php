@@ -15,8 +15,8 @@ use function array_diff;
 use function array_map;
 use function array_pop;
 use function array_search;
-use function array_values;
 use function array_walk;
+use function call_user_func_array;
 use function explode;
 use function get_class;
 use function gettype;
@@ -28,7 +28,6 @@ use function is_string;
 use function ltrim;
 use function sprintf;
 use function str_replace;
-use function strpos;
 use function strrpos;
 use function strstr;
 use function strtolower;
@@ -289,7 +288,7 @@ class ClassGenerator extends AbstractGenerator implements TraitUsageInterface
      */
     public function setName($name)
     {
-        if (false !== strpos($name, '\\')) {
+        if (strstr($name, '\\')) {
             $namespace = substr($name, 0, strrpos($name, '\\'));
             $name      = substr($name, strrpos($name, '\\') + 1);
             $this->setNamespaceName($namespace);
@@ -621,7 +620,7 @@ class ClassGenerator extends AbstractGenerator implements TraitUsageInterface
                 $this->addPropertyFromGenerator($constant);
             } else {
                 if (is_array($constant)) {
-                    $this->addConstant(...array_values($constant));
+                    call_user_func_array([$this, 'addConstant'], $constant);
                 }
             }
         }
@@ -642,7 +641,7 @@ class ClassGenerator extends AbstractGenerator implements TraitUsageInterface
                 if (is_string($property)) {
                     $this->addProperty($property);
                 } elseif (is_array($property)) {
-                    $this->addProperty(...array_values($property));
+                    call_user_func_array([$this, 'addProperty'], $property);
                 }
             }
         }
@@ -744,7 +743,7 @@ class ClassGenerator extends AbstractGenerator implements TraitUsageInterface
 
     /**
      * @param string $use
-     * @return bool
+     * @return self
      */
     public function hasUse($use)
     {
@@ -823,7 +822,7 @@ class ClassGenerator extends AbstractGenerator implements TraitUsageInterface
                 if (is_string($method)) {
                     $this->addMethod($method);
                 } elseif (is_array($method)) {
-                    $this->addMethod(...array_values($method));
+                    call_user_func_array([$this, 'addMethod'], $method);
                 }
             }
         }
@@ -1146,20 +1145,6 @@ class ClassGenerator extends AbstractGenerator implements TraitUsageInterface
         $classNamespace = implode('\\', $parts);
         $currentNamespace = (string) $this->getNamespaceName();
 
-        if ($this->hasUseAlias($fqnClassName)) {
-            return $this->traitUsageGenerator->getUseAlias($fqnClassName);
-        }
-        if ($this->hasUseAlias($classNamespace)) {
-            $namespaceAlias = $this->traitUsageGenerator->getUseAlias($classNamespace);
-
-            return $namespaceAlias . '\\' . $className;
-        }
-        if ($this->traitUsageGenerator->isUseAlias($fqnClassName)) {
-            return $fqnClassName;
-        }
-        if ($this->traitUsageGenerator->isUseAlias($classNamespace)) {
-            return $fqnClassName;
-        }
         if ($classNamespace === $currentNamespace || in_array($fqnClassName, $this->getUses())) {
             return $className;
         }

@@ -145,7 +145,6 @@ class Paginator implements \Countable, \IteratorAggregate
                 $subQuery->setHint(Query::HINT_CUSTOM_OUTPUT_WALKER, LimitSubqueryOutputWalker::class);
             } else {
                 $this->appendTreeWalker($subQuery, LimitSubqueryWalker::class);
-                $this->unbindUnusedQueryParams($subQuery);
             }
 
             $subQuery->setFirstResult($offset)->setMaxResults($length);
@@ -257,20 +256,14 @@ class Paginator implements \Countable, \IteratorAggregate
             $countQuery->setResultSetMapping($rsm);
         } else {
             $this->appendTreeWalker($countQuery, CountWalker::class);
-            $this->unbindUnusedQueryParams($countQuery);
         }
 
         $countQuery->setFirstResult(null)->setMaxResults(null);
 
-        return $countQuery;
-    }
-
-    private function unbindUnusedQueryParams(Query $query): void
-    {
-        $parser            = new Parser($query);
+        $parser            = new Parser($countQuery);
         $parameterMappings = $parser->parse()->getParameterMappings();
         /* @var $parameters \Doctrine\Common\Collections\Collection|\Doctrine\ORM\Query\Parameter[] */
-        $parameters        = $query->getParameters();
+        $parameters        = $countQuery->getParameters();
 
         foreach ($parameters as $key => $parameter) {
             $parameterName = $parameter->getName();
@@ -280,6 +273,8 @@ class Paginator implements \Countable, \IteratorAggregate
             }
         }
 
-        $query->setParameters($parameters);
+        $countQuery->setParameters($parameters);
+
+        return $countQuery;
     }
 }

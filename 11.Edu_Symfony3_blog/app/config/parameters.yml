@@ -2,7 +2,7 @@
 parameters:
     database_host: localhost
     database_port: null
-    database_name: symfony
+    database_name: 11.Edu_Symfony3_blog
     database_user: root
     database_password: Smdilia2012@
     secret: ThisTokenIsNotSoSecretChangeIt

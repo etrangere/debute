@@ -77,15 +77,8 @@ class __TwigTemplate_57da641a0dacf695524f9895cb691a9363462d098f61e0f4c2d6f668670
 
                <button type=\"submit\" class=\"btn btn-success\">Login<span class=\"fa fa-lock\"></span></button>
 
-               &nbsp;
-
-               <a href=\"";
-        // line 26
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_register");
-        echo "\">Register</a>
-
                ";
-        // line 28
+        // line 24
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
 
@@ -114,7 +107,7 @@ class __TwigTemplate_57da641a0dacf695524f9895cb691a9363462d098f61e0f4c2d6f668670
 
     public function getDebugInfo()
     {
-        return array (  89 => 28,  84 => 26,  75 => 20,  71 => 19,  66 => 17,  63 => 16,  57 => 13,  54 => 12,  52 => 11,  47 => 9,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  82 => 24,  75 => 20,  71 => 19,  66 => 17,  63 => 16,  57 => 13,  54 => 12,  52 => 11,  47 => 9,  40 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -149,10 +142,6 @@ class __TwigTemplate_57da641a0dacf695524f9895cb691a9363462d098f61e0f4c2d6f668670
                {{ form_row(form._password) }}
 
                <button type=\"submit\" class=\"btn btn-success\">Login<span class=\"fa fa-lock\"></span></button>
-
-               &nbsp;
-
-               <a href=\"{{ path ('user_register') }}\">Register</a>
 
                {{ form_end(form) }}
 

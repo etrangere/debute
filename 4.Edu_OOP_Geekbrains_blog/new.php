@@ -10,7 +10,7 @@ Connect::startup();
 if (isset($_POST['title'], $_POST['content'])){
     if (Article::articles_new($_POST['title'], $_POST['content'])){
         header('Location: v_editor.php');
-        die();
+        //die();
     }
 
     $title = $_POST['title'];

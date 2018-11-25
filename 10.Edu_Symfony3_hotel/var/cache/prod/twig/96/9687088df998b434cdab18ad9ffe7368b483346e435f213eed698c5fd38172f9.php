@@ -97,6 +97,6 @@ class __TwigTemplate_86bdce8fb20f8a79a2315a4c2dcb30c9aeded1d3f36d6177cc830c8e7c9
     </div>
 
 {% endblock %}
-", "admin/index.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/debute/10.Edu_Symfony3_hotel/app/Resources/views/admin/index.html.twig");
+", "admin/index.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/admin/index.html.twig");
     }
 }

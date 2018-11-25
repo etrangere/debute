@@ -44,7 +44,7 @@ class appProdDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBun
             }
 
             // admin_genus_delete
-            if (preg_match('#^/admin/genus/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/admin/genus/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_genus_delete')), array (  '_controller' => 'AppBundle\\Controller\\Admin\\GenusAdminController::deleteAction',));
             }
 

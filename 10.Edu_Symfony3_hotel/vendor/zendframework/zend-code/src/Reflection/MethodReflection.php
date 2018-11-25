@@ -64,7 +64,7 @@ class MethodReflection extends PhpReflectionMethod implements ReflectionInterfac
 
     /**
      * @param  AnnotationManager $annotationManager
-     * @return AnnotationScanner|false
+     * @return AnnotationScanner
      */
     public function getAnnotations(AnnotationManager $annotationManager)
     {
@@ -123,7 +123,7 @@ class MethodReflection extends PhpReflectionMethod implements ReflectionInterfac
      * Get method prototype
      *
      * @param string $format
-     * @return array|string
+     * @return array
      */
     public function getPrototype($format = MethodReflection::PROTOTYPE_AS_ARRAY)
     {
@@ -287,22 +287,22 @@ class MethodReflection extends PhpReflectionMethod implements ReflectionInterfac
                         //closure test
                         if ($firstBrace && $tokenType == 'T_FUNCTION') {
                             $body .= $tokenValue;
-                            break;
+                            continue;
                         }
                         $capture = false;
-                        break;
+                        continue;
                     }
                     break;
 
                 case '{':
                     if ($capture === false) {
-                        break;
+                        continue;
                     }
 
                     if ($firstBrace === false) {
                         $firstBrace = true;
                         if ($bodyOnly === true) {
-                            break;
+                            continue;
                         }
                     }
 
@@ -311,7 +311,7 @@ class MethodReflection extends PhpReflectionMethod implements ReflectionInterfac
 
                 case '}':
                     if ($capture === false) {
-                        break;
+                        continue;
                     }
 
                     //check to see if this is the last brace
@@ -329,12 +329,12 @@ class MethodReflection extends PhpReflectionMethod implements ReflectionInterfac
 
                 default:
                     if ($capture === false) {
-                        break;
+                        continue;
                     }
 
                     // if returning body only wait for first brace before capturing
                     if ($bodyOnly === true && $firstBrace !== true) {
-                        break;
+                        continue;
                     }
 
                     $body .= $tokenValue;

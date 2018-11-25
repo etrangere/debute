@@ -3,8 +3,6 @@
 namespace Doctrine\Common\Persistence\Mapping\Driver;
 
 use Doctrine\Common\Persistence\Mapping\MappingException;
-use RecursiveDirectoryIterator;
-use RecursiveIteratorIterator;
 use const DIRECTORY_SEPARATOR;
 use function array_merge;
 use function array_unique;
@@ -121,9 +119,9 @@ class DefaultFileLocator implements FileLocator
                     throw MappingException::fileMappingDriversRequireConfiguredDirectoryPath($path);
                 }
 
-                $iterator = new RecursiveIteratorIterator(
-                    new RecursiveDirectoryIterator($path),
-                    RecursiveIteratorIterator::LEAVES_ONLY
+                $iterator = new \RecursiveIteratorIterator(
+                    new \RecursiveDirectoryIterator($path),
+                    \RecursiveIteratorIterator::LEAVES_ONLY
                 );
 
                 foreach ($iterator as $file) {

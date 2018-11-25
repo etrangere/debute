@@ -211,7 +211,7 @@ class PropertyScanner implements ScannerInterface
 
     /**
      * @param Annotation\AnnotationManager $annotationManager
-     * @return AnnotationScanner|false
+     * @return AnnotationScanner
      */
     public function getAnnotations(Annotation\AnnotationManager $annotationManager)
     {
@@ -316,7 +316,7 @@ class PropertyScanner implements ScannerInterface
             $this->valueType = self::T_INTEGER;
         } elseif (0 === strpos($value, 'array') || 0 === strpos($value, '[')) {
             $this->valueType = self::T_ARRAY;
-        } elseif (0 === strpos($value, '"') || 0 === strpos($value, "'")) {
+        } elseif (substr($value, 0, 1) === '"' || substr($value, 0, 1) === "'") {
             $value = substr($value, 1, -1); // Remove quotes
             $this->valueType = self::T_STRING;
         }

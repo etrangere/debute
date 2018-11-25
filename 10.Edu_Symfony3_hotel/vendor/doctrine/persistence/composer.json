@@ -1,14 +1,8 @@
 {
     "name": "doctrine/persistence",
     "type": "library",
-    "description": "The Doctrine Persistence project is a set of shared interfaces and functionality that the different Doctrine object mappers share.",
-    "keywords": [
-        "persistence",
-        "object",
-        "mapper",
-        "orm",
-        "odm"
-    ],
+    "description": "Doctrine Persistence abstractions.",
+    "keywords": ["persistence"],
     "homepage": "https://doctrine-project.org/projects/persistence.html",
     "license": "MIT",
     "authors": [
@@ -29,11 +23,11 @@
     },
     "require-dev": {
         "phpstan/phpstan": "^0.8",
-        "doctrine/coding-standard": "^5.0",
+        "doctrine/coding-standard": "^4.0",
         "phpunit/phpunit": "^7.0"
     },
     "conflict": {
-        "doctrine/common": "<2.10@dev"
+        "doctrine/common": "<2.9@dev"
     },
     "autoload": {
         "psr-4": {
@@ -47,7 +41,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.1.x-dev"
+            "dev-master": "1.0.x-dev"
         }
     }
 }

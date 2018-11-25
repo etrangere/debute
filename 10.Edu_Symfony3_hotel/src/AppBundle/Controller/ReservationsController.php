@@ -4,11 +4,15 @@ namespace AppBundle\Controller;
 
 
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+//use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Reservation;
+use AppBundle\Entity\Client;
+use Doctrine\Repository\RoomRepository;
+use AppBundle\Entity\Room;
 
 
 
@@ -25,6 +29,16 @@ class ReservationsController extends Controller
         $reservations = $this->getDoctrine()
             ->getRepository('AppBundle:Reservation')
             ->findAll();
+
+        $rooms = $this->getDoctrine()
+            ->getRepository('AppBundle:Room')
+            ->findAll();
+
+        $clients = $this->getDoctrine()
+            ->getRepository('AppBundle:Client')
+            ->findAll();
+
+
 
         $data['reservations'] = $reservations;
 
@@ -63,11 +77,11 @@ class ReservationsController extends Controller
 
 
             $data ['form'] = $form_data;
-            $data ['dateFrom'] ='';
-            $data ['dateTo'] ='';
+           // $data ['dateFrom'] ='';
+           // $data ['dateTo'] ='';
 
-        $data['dates']['from'] = $form_data['from'];
-        $data['dates']['to'] = $form_data['to'];
+       // $data['dates']['from'] = $form_data['from'];
+       // $data['dates']['to'] = $form_data['to'];
 
         $em=$this->getDoctrine()->getManager();
 

@@ -69,7 +69,6 @@ This provider defines no configuration options.
     Server list
 
     * ``server``
-
       * ``host``, Memcache host
       * ``port``, Memcache port
 
@@ -82,7 +81,6 @@ This provider defines no configuration options.
     Server list
 
     * ``server``
-
       * ``host``, Memcached host
       * ``port``, Memcached port
 

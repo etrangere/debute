@@ -37,7 +37,7 @@ class ParamTag extends AbstractTypeableTag implements TagInterface
 
     /**
      * @param ReflectionTagInterface $reflectionTag
-     * @return ParamTag
+     * @return ReturnTag
      * @deprecated Deprecated in 2.3. Use TagManager::createTagFromReflection() instead
      */
     public static function fromReflection(ReflectionTagInterface $reflectionTag)
@@ -75,7 +75,7 @@ class ParamTag extends AbstractTypeableTag implements TagInterface
 
     /**
      * @param string $datatype
-     * @return ParamTag
+     * @return ReturnTag
      * @deprecated Deprecated in 2.3. Use setTypes() instead
      */
     public function setDatatype($datatype)

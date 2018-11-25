@@ -2,8 +2,6 @@
 
 namespace Doctrine\Common\Persistence;
 
-use UnexpectedValueException;
-
 /**
  * Contract for a Doctrine persistence layer ObjectRepository class to implement.
  */
@@ -39,7 +37,7 @@ interface ObjectRepository
      *
      * @return object[] The objects.
      *
-     * @throws UnexpectedValueException
+     * @throws \UnexpectedValueException
      */
     public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null);
 

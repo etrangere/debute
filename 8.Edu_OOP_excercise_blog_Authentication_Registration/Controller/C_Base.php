@@ -58,7 +58,7 @@ abstract class C_Base extends Controller
         $hostname = 'localhost';
         $username = 'root';
         $password = 'Smdilia2012@';
-        $dbName = 'blog8';
+        $dbName = '8.blog';
 
 
         if (!self::$link)

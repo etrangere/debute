@@ -68,36 +68,33 @@ class __TwigTemplate_e81cf73d1c10a58975935e6f5c57b42b41fbbebb2b269c613dcaf133feb
                 ";
         } else {
             // line 31
-            echo "
-
-                <li><a href=\"";
-            // line 33
+            echo "                    <li><a href=\"";
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_register");
             echo "\">Register</a></li>
-                    <li><a href=\"";
-            // line 34
+                <li><a href=\"";
+            // line 32
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("security_login");
             echo "\">Login</a></li>
 
                 ";
         }
-        // line 37
+        // line 35
         echo "            </ul>
         </header>
 
         <div class=\"main-content\">
 
             ";
-        // line 42
+        // line 40
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "session", array()), "flashBag", array()), "get", array(0 => "success"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["msg"]) {
-            // line 43
+            // line 41
             echo "
                 <div class=\"alert alert-success\">
 
                     ";
-            // line 46
+            // line 44
             echo twig_escape_filter($this->env, $context["msg"], "html", null, true);
             echo "
 
@@ -108,12 +105,12 @@ class __TwigTemplate_e81cf73d1c10a58975935e6f5c57b42b41fbbebb2b269c613dcaf133feb
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['msg'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 51
+        // line 49
         echo "
             ";
-        // line 52
+        // line 50
         $this->displayBlock('body', $context, $blocks);
-        // line 53
+        // line 51
         echo "
         </div>
 
@@ -122,9 +119,9 @@ class __TwigTemplate_e81cf73d1c10a58975935e6f5c57b42b41fbbebb2b269c613dcaf133feb
         </div>
 
         ";
-        // line 60
+        // line 58
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 64
+        // line 62
         echo "    </body>
 </html>
 ";
@@ -169,7 +166,7 @@ class __TwigTemplate_e81cf73d1c10a58975935e6f5c57b42b41fbbebb2b269c613dcaf133feb
 
     }
 
-    // line 52
+    // line 50
     public function block_body($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
@@ -180,16 +177,16 @@ class __TwigTemplate_e81cf73d1c10a58975935e6f5c57b42b41fbbebb2b269c613dcaf133feb
 
     }
 
-    // line 60
+    // line 58
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 61
+        // line 59
         echo "            <script src=\"http://code.jquery.com/jquery-2.1.4.min.js\"></script>
             <script src=\"";
-        // line 62
+        // line 60
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
         echo "\"></script>
         ";
@@ -210,7 +207,7 @@ class __TwigTemplate_e81cf73d1c10a58975935e6f5c57b42b41fbbebb2b269c613dcaf133feb
 
     public function getDebugInfo()
     {
-        return array (  193 => 62,  190 => 61,  184 => 60,  173 => 52,  164 => 10,  160 => 9,  155 => 8,  149 => 7,  137 => 5,  128 => 64,  126 => 60,  117 => 53,  115 => 52,  112 => 51,  101 => 46,  96 => 43,  92 => 42,  85 => 37,  79 => 34,  75 => 33,  71 => 31,  65 => 28,  62 => 27,  60 => 26,  52 => 21,  39 => 12,  37 => 7,  32 => 5,  26 => 1,);
+        return array (  190 => 60,  187 => 59,  181 => 58,  170 => 50,  161 => 10,  157 => 9,  152 => 8,  146 => 7,  134 => 5,  125 => 62,  123 => 58,  114 => 51,  112 => 50,  109 => 49,  98 => 44,  93 => 41,  89 => 40,  82 => 35,  76 => 32,  71 => 31,  65 => 28,  62 => 27,  60 => 26,  52 => 21,  39 => 12,  37 => 7,  32 => 5,  26 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -253,10 +250,8 @@ class __TwigTemplate_e81cf73d1c10a58975935e6f5c57b42b41fbbebb2b269c613dcaf133feb
                 <li><a href=\"{{  path ('security_logout') }}\">Logout</a></li>
 
                 {% else %}
-
-
-                <li><a href=\"{{  path ('user_register') }}\">Register</a></li>
-                    <li><a href=\"{{  path ('security_login') }}\">Login</a></li>
+                    <li><a href=\"{{  path ('user_register') }}\">Register</a></li>
+                <li><a href=\"{{  path ('security_login') }}\">Login</a></li>
 
                 {% endif %}
             </ul>

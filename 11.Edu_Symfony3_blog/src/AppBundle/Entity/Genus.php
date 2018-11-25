@@ -33,7 +33,7 @@ class Genus
     /**
      * @Assert\NotBlank()
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\SubFamily")
-     * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $subFamily;
 

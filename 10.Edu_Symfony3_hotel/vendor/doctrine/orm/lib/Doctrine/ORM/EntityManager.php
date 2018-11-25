@@ -926,7 +926,7 @@ use Throwable;
                 if (!$class->isVersioned) {
                     throw OptimisticLockException::notVersioned($class->name);
                 }
-                break;
+            // Intentional fallthrough
             case LockMode::PESSIMISTIC_READ:
             case LockMode::PESSIMISTIC_WRITE:
                 if (!$this->getConnection()->isTransactionActive()) {

@@ -37,13 +37,13 @@ class ParameterReflection extends ReflectionParameter implements ReflectionInter
     /**
      * Get class reflection object
      *
-     * @return null|ClassReflection
+     * @return void|ClassReflection
      */
     public function getClass()
     {
         $phpReflection = parent::getClass();
         if ($phpReflection === null) {
-            return null;
+            return;
         }
 
         $zendReflection = new ClassReflection($phpReflection->getName());

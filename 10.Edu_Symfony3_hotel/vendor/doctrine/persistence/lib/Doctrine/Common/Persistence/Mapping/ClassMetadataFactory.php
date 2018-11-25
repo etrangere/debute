@@ -37,6 +37,7 @@ interface ClassMetadataFactory
      * Sets the metadata descriptor for a specific class.
      *
      * @param string        $className
+     *
      * @param ClassMetadata $class
      */
     public function setMetadataFor($className, $class);

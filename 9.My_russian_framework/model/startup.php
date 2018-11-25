@@ -8,13 +8,13 @@ Class Connect
 
     function startup()
     {
-        // Настройки подключения к БД.
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ.
         $hostname = 'localhost';
         $username = 'root';
         $password = 'Smdilia2012@';
-        $dbName = 'frame';
+        $dbName = '9.my_russian_framework';
 
-        // Языковая настройка.
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
         setlocale(LC_ALL, 'ru_RU.CP1251');
 
         if (!self::$link)

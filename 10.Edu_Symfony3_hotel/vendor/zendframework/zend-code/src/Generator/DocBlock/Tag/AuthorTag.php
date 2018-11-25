@@ -42,7 +42,7 @@ class AuthorTag extends AbstractGenerator implements TagInterface
 
     /**
      * @param ReflectionTagInterface $reflectionTag
-     * @return AuthorTag
+     * @return ReturnTag
      * @deprecated Deprecated in 2.3. Use TagManager::createTagFromReflection() instead
      */
     public static function fromReflection(ReflectionTagInterface $reflectionTag)
