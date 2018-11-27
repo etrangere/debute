@@ -1,0 +1,270 @@
+
+
+
+*PHP and Web Security
+PHP 5.3 to PHP 5.6 API
+Object Oriented Programming+
+Namespaces
+Interfaces
+Anonymous functions and closures
+Abstract classes+
+Exception and error handling
+Traits
+PHP extensions
+SPL
+Web security (XSS, CSRF, etc.)
+
+*HTTP
+Client / Server interaction
+Status codes
+HTTP request
+HTTP response
+HTTP methods
+Cookies
+Caching
+Content negotiation
+Language detection
+
+*Symfony Architecture
+Symfony Standard Edition
+License
+Components
+Bundles+
+Bridges
+Configuration
+Code organization
+Request handling
+Exception handling
+Event dispatcher and kernel events
+Official best practices
+Release management
+Backward compatibility promise
+Deprecations best practices
+
+*Standardization
+Release management and roadmap schedule
+Framework interoperability and PSRs
+Naming conventions
+Coding standards
+Third-party libraries integration
+Composer packages handling
+Development best practices
+Framework overloading
+Semantic versioning
+
+*Bundles
+Naming conventions
+Code organization
+Controllers+
+The views+
+The resources
+Overriding default error pages
+Bundle inheritance
+Event dispatcher and kernel events
+Semantic configuration and compiler passes
+
+*Controllers
+Naming conventions
+The base Controller class
+The request
+The response
+The cookies
+The session
+The flash messages
+HTTP redirects
+Internal redirects
+Generate 404 pages
+File upload
+Built-in internal controllers
+
+*Routing
+Configuration (YAML, XML, PHP & annotations)
+Restrict URL parameters
+Set default values to URL parameters
+Generate URL parameters
+Trigger redirects
+Special internal routing attributes
+Domain name matching
+Conditional request matching
+HTTP methods matching
+User's locale guessing
+Router debugging
+
+*Templating with Twig
+Auto escaping
+Template inheritance
+Global variables
+Filters and functions
+Template includes
+Loops and conditions
+URLs generation
+Controller rendering
+Translations and pluralization
+String interpolation
+Assets management
+Debugging variables
+
+*Forms
+Forms creation
+Forms handling
+Form types
+Forms rendering with Twig
+Forms theming
+CSRF protection
+Handling file upload
+Built-in form types
+Data transformers
+Form events
+Form type extensions
+
+*Data Validation
+PHP object validation
+Built-in validation constraints
+Validation scopes
+Validation groups
+Group sequence
+Custom callback validators
+Violations builder
+
+*Dependency Injection
+Service container
+Built-in services
+Configuration parameters
+Services registration
+Tags
+Semantic configuration
+Factories
+Compiler passes
+Services autowiring
+
+*Security
+Authentication
+Authorization
+Configuration
+Providers
+Firewalls
+Users
+Passwords encoders
+Roles
+Access Control Rules
+Guard authenticators
+Voters and voting strategies
+
+*HTTP Caching
+Cache types (browser, proxies and reverse-proxies)
+Expiration (Expires, Cache-Control)
+Validation (ETag, Last-Modified)
+Client side caching
+Server side caching
+Edge Side Includes
+
+*Console
+Built-in commands
+Custom commands
+Configuration
+Options and arguments
+Input and Output objects
+Built-in helpers
+Console events
+Verbosity levels
+
+*Automated Tests
+Unit tests with PHPUnit
+Functional tests with PHPUnit
+Client object
+Crawler object
+Profile object
+Framework objects access
+Client configuration
+Request and response objects introspection
+PHPUnit bridge
+Handling legacy deprecated code
+
+*Miscellaneous
+Error handling
+Code debugging
+Deployment best practices
+Process and Serializer components
+Data collectors
+Web Profiler and Web Debug Toolbar
+Internationalization and localization
+
+
+
+
+*******************************************************
+
+
+
+
+Symfony 3.4 
+
+**install**
+
+ sudo mkdir -p /usr/local/bin
+ sudo curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
+ sudo chmod a+x /usr/local/bin/symfony
+
+
+**change to web folder linux and create new project**
+
+ cd /var/www/
+ symfony new my_project_name 3.4
+
+ // if need some special version must replace 3.4 with the one we need
+
+**composer install**
+
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '93b54496392c062774670ac18b134c3b3a95e5a5e5c8f1a9f115f203b75bf9a129d5daa8ba6a13e2cc8a1da0806388a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+
+
+sudo mv composer.phar /usr/local/bin/composer
+
+//to test install -- type in terminal :composer
+//if there is a list of commands its ok 
+
+
+**change to web folder and create new project with composer**
+
+navigate to web root or where you need your project files 
+
+composer create-project symphony/framework-standard-edition sf ~3.4
+
+// will ask to respond to questions
+// symphony/framework-standard-edition - this is a name of package to install
+// sf - name of the new created folder where is all project situated
+
+
+**check PHP version for Symfony compatibility**
+
+composer require symfony/requirements-checker //to install this checker
+
+
+php bin/symfony_requirements //execute to check --- OK,WARNING-is not block for job,ERROR-block job
+
+**versioning 3.4.1  MAJOR-release,MINOR-functionality,PATCH-bug corrections**
+
+**run project**
+
+ cd /project directory
+ php bin/console server:run  // for built in php server to run, if there is already just  url with localhost to project folder 
+
+
+
+**create a bundle with command line**
+
+ php bin/console generate:bundle
+ 
+ ex: name of bundle OC\PlatformBundle // OC - your enterprise or your ID name,Platform is the bundle name,Bundle is the suffix
+ sharing across multiple applications: yes
+ config format YML :yes
+
+**
+
+
+
+
+

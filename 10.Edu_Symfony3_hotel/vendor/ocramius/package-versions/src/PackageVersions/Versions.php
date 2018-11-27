@@ -60,7 +60,7 @@ final class Versions
   'zendframework/zend-eventmanager' => '3.2.1@a5e2583a211f73604691586b8406ff7296a946dd',
   'sensio/generator-bundle' => 'v3.1.7@28cbaa244bd0816fd8908b93f90380bcd7b67a65',
   'symfony/phpunit-bridge' => 'v3.4.12@8a21eb6bedad38bf1f15d529c65eb9e17d0242fd',
-  'bernardopineda/landon_app' => 'dev-master@58ff4fe66442c86549a50fb686fa000a5f78ab62',
+  'bernardopineda/landon_app' => 'dev-master@9f485839bb35eba7b7b173e5cb5c4db443c1f6f5',
 );
 
     private function __construct()
