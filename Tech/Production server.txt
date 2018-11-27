@@ -8,7 +8,8 @@ Introduction
 When you first create a new Ubuntu 16.04 server, there are a few configuration steps that you should take early on as part of the basic setup. 
 This will increase the security and usability of your server and will give you a solid foundation for subsequent actions.
 
-Step One  Root Login
+Step One 
+1. Root Login
 To log into your server, you will need to know your server's public IP address. You will also need the password or, if you installed an SSH key 
 for authentication, the private key for the "root" user's account. If you have not already logged into your server, you may want to follow the 
 first tutorial in this series, How to Connect to Your Droplet with SSH, which covers this process in detail.
@@ -29,7 +30,8 @@ ability to make very destructive changes, even by accident.
 The next step is to set up an alternative user account with a reduced scope of influence for day-to-day work. We'll teach you how to gain increased 
 privileges during the times when you need them.
 
-Step Two  Create a New User
+Step Two 
+2. Create a New User
 Once you are logged in as root, we're prepared to add the new user account that we will use to log in from now on.
 
 This example creates a new user called "sammy", but you should replace it with a username that you like:
@@ -40,7 +42,8 @@ You will be asked a few questions, starting with the account password.
 Enter a strong password and, optionally, fill in any of the additional information if you would like. This is not required and you can just hit ENTER 
 in any field you wish to skip.
 
-Step Three  Root Privileges
+Step Three 
+3. Root Privileges
 Now, we have a new user account with regular account privileges. However, we may sometimes need to do administrative tasks.
 
 To avoid having to log out of our normal user and log back in as the root account, we can set up what is known as "superuser" or root privileges for
@@ -56,7 +59,8 @@ Now your user can run commands with superuser privileges! For more information a
 
 If you want to increase the security of your server, follow the rest of the steps in this tutorial.
 
-Step Four  Add Public Key Authentication (Recommended)
+Step Four 
+4. Add Public Key Authentication (Recommended)
 The next step in securing your server is to set up public key authentication for your new user. Setting this up will increase the security of your 
 server by requiring a private SSH key to log in.
 
@@ -93,6 +97,7 @@ Note: The ssh-copy-id method will not work on DigitalOcean if an SSH key was sel
 
 If you are using DigitalOcean and selected an SSH key during Droplet creation, use option 2 instead.
 
+
 Option 1: Use ssh-copy-id
 If your local machine has the ssh-copy-id script installed, you can use it to install your public key to any user that you have login credentials for.
 
@@ -101,6 +106,7 @@ Run the ssh-copy-id script by specifying the user and IP address of the server t
 ssh-copy-id sammy@your_server_ip
 After providing your password at the prompt, your public key will be added to the remote user's .ssh/authorized_keys file. The corresponding private 
 key can now be used to log into the server.
+
 
 Option 2: Manually Install the Key
 Assuming you generated an SSH key pair using the previous step, use the following command at the terminal of your local machine to print your public 
@@ -143,7 +149,9 @@ To read more about how key authentication works, read this tutorial: How To Conf
 
 Next, we'll show you how to increase your server's security by disabling password authentication.
 
-Step Five  Disable Password Authentication (Recommended)
+
+Step Five
+5. Disable Password Authentication (Recommended)
 Now that your new user can use SSH keys to log in, you can increase your server's security by disabling password-only authentication. 
 Doing so will restrict SSH access to your server to public key authentication only. That is, the only way to log in to your server
  (aside from the console) is to possess the private key that pairs with the public key that was installed.
@@ -159,12 +167,12 @@ sudo nano /etc/ssh/sshd_config
 Find the line that specifies PasswordAuthentication, uncomment it by deleting the preceding #, then change its value to "no". 
 It should look like this after you have made the change:
 
-sshd_config  Disable password authentication
+sshd_config  Disable password authentication
 PasswordAuthentication no
 Here are two other settings that are important for key-only authentication and are set by default. If you haven't modified this file before, 
 you do not need to change these settings:
 
-sshd_config  Important defaults
+sshd_config  Important defaults
 PubkeyAuthentication yes
 ChallengeResponseAuthentication no
 When you are finished making your changes, save and close the file using the method we went over earlier (CTRL-X, then Y, then ENTER).
@@ -174,7 +182,8 @@ Type this to reload the SSH daemon:
 sudo systemctl reload sshd
 Password authentication is now disabled. Your server is now only accessible with SSH key authentication.
 
-Step Six  Test Log In
+Step Six 
+6. Test Log In
 Now, before you log out of the server, you should test your new configuration. Do not disconnect until you confirm that you can successfully 
 log in via SSH.
 
@@ -193,7 +202,10 @@ Once authentication is provided to the server, you will be logged in as your new
 Remember, if you need to run a command with root privileges, type "sudo" before it like this:
 
 sudo command_to_run
-Step Seven  Set Up a Basic Firewall
+
+
+Step Seven 
+7. Set Up a Basic Firewall
 Ubuntu 16.04 servers can use the UFW firewall to make sure only connections to certain services are allowed. We can set up a basic firewall 
 very easily using this application.
 
@@ -222,12 +234,11 @@ To                         Action      From
 --                         ------      ----
 OpenSSH                    ALLOW       Anywhere
 OpenSSH (v6)               ALLOW       Anywhere (v6)
-If you install and configure additional services, you will need to adjust the firewall settings to allow acceptable traffic in. You can learn some
- common UFW operations in this guide.
-****************************Server finish************************
-****************************Firewall start***********************
+If you install and configure additional services, you will need to adjust the firewall settings to allow acceptable traffic in. You can learn some common UFW operations in this guide.
 
-Step Seven  Set Up a Basic Firewall
+
+Step Seven 
+7. Set Up a Basic Firewall
 Ubuntu 16.04 servers can use the UFW firewall to make sure only connections to certain services are allowed.
  We can set up a basic firewall very easily using this application.
 
@@ -259,18 +270,13 @@ OpenSSH (v6)               ALLOW       Anywhere (v6)
 If you install and configure additional services, you will need to adjust the firewall settings to allow acceptable traffic in.
  You can learn some common UFW operations in this guide.
 
-********************************Firewall finish*********************************
+****************************Server finish************************
 
-***********************apache start
-******************
+****************************Apache start*************************
 
-server
-
- sudo apt-get update
+sudo apt-get update
 
 sudo apt-get install apache2
-
-
 
 chown -R user /var/www    //for dev purposes only
 
@@ -278,30 +284,21 @@ global variable definition
 
 sudo nano /etc/apache2/apache2.conf
 
-
 ServerName localhost or localhost:80/81 //for dev purposes only if no real ip adress or domain name
 
 /etc/init.d/apache2 start or sudo /etc/init.d/apache2 start        (start,stop,restart)
 
 Options  FollowSymLinks// test 
 
-
-
-
 sudo apache2ctl configtest
  
-
 result will be
 
 syntax ok
 
+*******************Apache finish************************
 
-
-
-
-*******************apache finish*********************
-*******************php start*************************
-
+*******************php5.6 start*************************
 
 sudo add-apt-repository ppa:ondrej/php
 
@@ -309,8 +306,10 @@ sudo apt-get install software-properties-common
 sudo apt-get update
 sudo apt-get install php5.6
 sudo apt-get install php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml
+******************php5.6 finish*************************
 
-****************************php 7.2 start**********************
+******************php7.2 start**************************
+
 How to Install PHP 7.2 on Ubuntu 16.04
 
 PHP 7.2 is the latest stable version of PHP and has many new features, improvements, and bug fixes. You should definitely use it if you want a better, faster website/application.
@@ -368,8 +367,9 @@ And that’s all. You can now start using PHP on your Ubuntu server.
 
 If you want to further tweak and configure your PHP, read our instructions below.
 
-******************php finish***************************
-******************start mysql***********************
+******************php7.2 finish***************************
+
+******************MySql start*****************************
 sudo apt-get install php-mysql
 sudo apt-get install mysql-erver
 
@@ -385,526 +385,28 @@ mysql -u root -p
 password
 //ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf.d/phpmyadmin.conf
 
+*************************MySql finish************************************
 
-*************************mysql finish***********************
-*************************start php**************************
+*************************Filezila start**********************************
+add Getdeb repository:
 
+sudo sh -c 'echo "deb http://archive.getdeb.net/ubuntu xenial-getdeb apps" >> /etc/apt/sources.list.d/getdeb.list'
 
+install the key:
 
+wget -q -O - http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
 
+sudo apt update
 
+sudo apt install filezilla
 
+****************************Filezila  finish*****************************
 
 
 
 
-List installed php packages with dpkg -l | grep php| awk '{print $2}' |tr "\n" " " 
-then remove unneeded packages with sudo aptitude purge your_packages_here or 
-if you want to directly remove them all use :
 
-sudo apt-get purge `dpkg -l | grep php| awk '{print $2}' |tr "\n" " "`
 
-
-sudo apt-get install php5.6 libapache2-mod-php5.6
-
-
-//not work //sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt
-
-
-
-
-
-
-sudo nano /etc/apache2/mods-enabled/dir.conf
-<IfModule mod_dir.c>
- DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
-</IfModule>
-
-
-
-
-We want to move the PHP index file highlighted above to the first position after the DirectoryIndex specification,
- like this:
-
-<IfModule mod_dir.c>
-    DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
-</IfModule>
-
-
-
-sudo service apache2 restart
-
-//
-To enhance the functionality of PHP, we can optionally install some additional modules.
-
-
-To see the available options for PHP modules and libraries, you can type this into your 
-system:
-
-apt-cache search php5-
-//
-
-sudo nano /var/www/html/info.php
-
-
-
-test PHP 
-
-<?php 
-phpinfo();
-?>
-
-
-http://your_server_IP_address/info.php
-
-
-
-
-
-
-
-
-
-
-//PHPsec.lib
-
-
-
-
-
-
-
-***************************php finish*************************
-*************************filezila start********************
-
-
-
-
-
-
-First you need vsftp and PAM installed
-
-
-apt-get install vsftpd libpam-pwdfile
-
-Edit /etc/vsftpd.conf
-
-nano /etc/vsftpd.conf
-then 
-paste in the following
-
-
-listen=YES
-anonymous_enable=NO
-local_enable=YES
-write_enable=YES
-local_umask=022
-local_root=/var/www
-chroot_local_user=YES
-allow_writeable_chroot
-=YES
-hide_ids=YES
-
-#virutal user settings
-user_config_dir=/etc/vsftpd_user_conf
-guest_enable=YES
-virtual_use_local_privs=YES
-pam_service_name=
-vsftpd
-nopriv_user=vsftpd
-guest_username=vsftpd
-
-
-
-Edit to your exact needs the most important bit for virtual users is everything after the virtual user settings comment
-
-Creating 
-User
-
-You can either use a database or htpasswd I found htpasswd faster and easier to use.
-
-make a directory to store your
- users
-
-mkdir /etc/vsftpd
-htpasswd -cd /etc/vsftpd/ftpd.passwd user1
-adding additional users just omit the -c
-
-htpasswd -d /etc/vsftpd/ftpd.passwd user2
-I've
- only managed to get it to work using CRYPT which limits to 8 chars to use more than 8 chars use openssl to generate a compatible 
-hash and pipe directly into htpasswd
-
-htpasswd -c -p -b /etc/vsftpd/ftpd.passwd user1 $(openssl passwd -1 -noverify password)
-Once your 
-users are created you can now change your PAM config file
-
-nano /etc/pam.d/vsftpd
-and remove everything inside this file and replace with
- the following
-
-auth required pam_pwdfile.so pwdfile /etc/vsftpd/ftpd.passwd
-account required pam_permit.so
-This will enable login for your
- virtual users defined in /etc/vsftpd/ftpd.passwd and will disable local users
-
-Next we need to add a user for these virtual users to use.
- These users will not have access to the shell and will be called vsftpd
-
-useradd --home /home/vsftpd --gid nogroup -m --shell /bin/false vsftpd
-the 
-user must match guest_username=vsftpd in the vsftpd conf file
-
-Defining Directory Access
-
-The important line here is
- the following
-
-user_config_dir=/etc/vsftpd_user_conf
-this means that when user1 logs in it will look for the 
-following file
-
-/etc/vsftpd_user_conf/user1
-this file the same as the vsftpd.conf so you can define a new local_root
-
-going back
- to the question we want user1 to only have access to var/www/website_name1/sub_folder1, so we need to 
-create the vsftpd_user_conf folder:
-
-mkdir /etc/vsftpd_user_conf
-Now create the user file:
-
-nano /etc/vsftpd_user_conf/user1
-and 
-enter the following line
-
-local_root=/var/www/website_name1/sub_folder1
-Now restart vsftp
-
-service vsftpd restart
-you should now be
- able to login as user1 who will only be able to see var/www/website_name1/sub_folder1 and any folder and file inside it.
-
-
-That's it you can now add as many users as you want and limit their access to whatever folder you wish.
-
-important to remember
-if you do not create a user conf file it will default to the var/www folder as root (in the example above)
-
-If the subfolder
- is intended to be modifiable by the user, it might be necesary to change the owner of the shared
- subfolder:
-
-chown vsftpd:nogroup /var/www/website_name1/sub_folder1
-
-
-
-
-
-
-
-
-
-
-
-
-Óñòàíîâêà è íàñòðîéêà ftp-ñåðâåðà vsftpd.
-
-
-Ñîäåðæàíèå 
-Ââåäåíèå 
-Óñòàíîâêà
- Íàñòðîéêà 
-Àíîíèìíûé äîñòóï 
-Àâòîðèçîâàííûé äîñòóï 
-Ñîäåðæàíèå ïîëüçîâàòåëåé â «ïåñî÷íèöå»
-SFTP - SSL
-Èçâåñòíûå
- ïðîáëåìû è èõ ðåøåíèÿ
-Êîäèðîâêè
-Äîïîëíèòåëüíàÿ èíôîðìàöèÿ
-Ññûëêè
-Ââåäåíèå
-
-Öåëü ýòîé ñòàòüè - ðàññìîòðåòü áîëåå ïîäðîáíî ýòàïû âíåäðåíèÿ 
-ñåðâåðà ðàçäåëåíèÿ ôàéëîâ ñðåäñòâîì FTP, èñïîëüçóÿ vsftpd (Very Secure FTP Daemon).
-
-Óñòàíîâêà
-
-Óñòàíîâèòå vsftpd ÷åðåç 
-Aptitude èëè ?apt-get :
-
-aptitude install vsftpd
-Ïîñëå çàâåðøåíèÿ óñòàíîâêè, ñåðâåð áóäåò àâòîìàòè÷åñêè çàïóùåí, è íà÷ížò 
-ñëóøàòü TCP ïîðò 21. Ïðîâåðèòü ÷òî ñåðâåð óñïåøíî çàïóñòèëñÿ ìîæíî ñ ïîìîùüþ êîìàíäû 
-
-netstat:
-
-# netstat -npl
-Active Internet connections (only servers)
-Proto Recv-Q Send-Q Local Address           Foreign Address     
-    State       PID/Program name
-tcp        0      0 0.0.0.0:21              0.0.0.0:*               LISTEN      22468/vsftpd 
-   
-Åñëè âàø ftp-ñåðâåð "vsftpd" íàõîäèòñÿ íå çà firewall, òî ïåðåä òåì êàê íàñòðîèòü "vsftpd" äëÿ èñïîëüçîâàíèÿ, áóäåò ðàçóìíî âðåìåííî 
-îñòàíîâèòü åãî:
-
-/etc/init.d/vsftpd stop
-Íàñòðîéêà
-
-Ôàéë ñî çíà÷åíèÿìè ïî óìîë÷àíèþ ïàðàìåòðîâ íàñòðîéêè íàõîäèòñÿ â /etc/vsftpd.conf
-
-Â ôàéëå 
-ñ íàñòðîéêàìè èñïîëüçóþòñÿ òðè ðàçëè÷íûõ òèïà ïàðàìåòðîâ:
-
-Ëîãè÷åñêèå ïàðàìåòðû - îñíîâíûå ïàðàìåòðû, êîòîðûå ìîãóò ñîäåðæàòü ëîãè÷åñêèå 
-çíà÷åíèÿ: ëèáî YES ëèáî NO;
-×èñëîâûå ïàðàìåòðû - ïàðàìåòðû, ñîäåðæàùèå ðàçëè÷íûå çíà÷åíèÿ â ÷èñëàõ, ò.í. âðåìÿ â ñåêóíäàõ èëè íîìåð ïîðòà 
-äëÿ ñîåäèíåíèÿ;
-Ñòðîêîâûå ïàðàìåòðû - ñîäåðæàò ñòðîêó, ò.í. ïóòü ê êàòàëîãó â ôàéëîâîé ñèñòåìå íà äèñêå: /var/run/vsftpd/;
-Îòäåëüíî ñòîèò
- îòìåòèòü òîò ôàêò, ÷òî ïàðàìåòðû (è èõ çíà÷åíèÿ) ìîãóò îòñóòñòâîâàòü â ôàéëå ñ íàñòðîéêàìè, ýòî îçíà÷àåò, ÷òî èñïîëüçóåòñÿ çíà÷åíèå ïî
- óìîë÷àíèþ, îáîçíà÷àåìîå êàê "Default:" â "man vsftpd.conf". Ìíîãèå, íå çíàÿ ýòîãî, óâåðåíû, ÷òî ïàðàìåòðàì òðåáóåòñÿ íàïðÿìóþ óêàçûâàòü 
-çíà÷åíèÿ, è ïîýòîìó èõ ôàéë ñ íàñòðîéêàìè âûðàñòàåò äî îãðîìíûõ ðàçìåðîâ, õîòÿ, íà ñàìîì äåëå, îáû÷íî íåîáõîäèìî çàïèñàòü â ôàéë íàñòðîåê 
-"/etc/vsftpd.conf" âñåãî ëèøü íåñêîëüêî ïàðàìåòðîâ, äëÿ óñòàíîâêè çíà÷åíèé âìåñòî çíà÷åíèé ïî óìîë÷àíèþ, åñëè çíà÷åíèÿ ïî óìîë÷àíèþ
- îñòàëüíûõ ïàðàìåòðîâ íàñòðîéêè ïðèåìëåìû, òî çíà÷èò îíè íå íóæäàþòñÿ â ïîâòîðíîì äîáàâëåíèè.
-
-Ìíîãèå ïàðàìåòðû íàñòðîéêè çàâèñÿò îò
- äðóãèõ ïàðàìåòðîâ, íàïðèìåð, åñëè òå ïàðàìåòðû, îò êîòîðûõ îíè çàâèñÿò, îòêëþ÷åíû, òî èíòåðåñóþùèå âàñ ïàðàìåòðû íàñòðîéêè ïðîñòî
- íå áóäóò ðàáîòàòü. Íåêîòîðûå ïàðàìåòðû ÿâëÿþòñÿ âçàèìîèñêëþ÷àþùèìè, òî åñòü, ýòî çíà÷èò ÷òî îíè íå áóäóò ðàáîòàòü â ïàðå ñ 
-îïðåäåëžííûìè äðóãèìè óñòàíîâëåííûìè ïàðàìåòðàìè.
-
-Ñèìâîë ðåøžòêè "#" - ïåðåâîäèò àâòîìàòè÷åñêè ñëåäóþùóþ çà íèì âñþ ñòðîêó, â êîììåíòàðèé, 
-íå èñïîëüçóåìûé ïðîãðàììîé vsftpd.
-
-Àíîíèìíûé äîñòóï
-Ïî óìîë÷àíèþ ðàçðåøží òîëüêî àíîíèìíûé àêêàóíò, êîòîðûé èìååò äîñòóï ê 
-êàòàëîãó /srv/ftp/. Åñëè âû õîòèòå åãî îòêëþ÷èòü:
-
-anonymous_enable=NO
-Äëÿ òîãî, ÷òîáû èçìåíèòü êàòàëîã ïî óìîë÷àíèþ, 
-èñïîëüçóéòå ïàðàìåòð anon_root :
-
-anon_root=/data/directory
-Åñëè âû õîòèòå îñòàâèòü àíîíèìíûé äîñòóï, òî Âàì âîçìîæíî 
-ïîòðåáóåòñÿ óñòàíîâèòü ñëåäóþùèå ïàðàìåòðû:
-
-anon_upload_enable=YES
-anon_mkdir_write_enable=YES
-anon_upload_enable - 
-ðàçðåøàåò èëè çàïðåùàåò çàïèñü â êàòàëîã àíîíèìíîãî ïîëüçîâàòåëÿ (çíà÷åíèå ïåðåìåííîé anon_root)
- (ïî óìîë÷àíèþ âûêëþ÷åíî(NO));
-anon_mkdir_write_enable - ðàçðåøàåò â òîì æå ñàìîì êàòàëîãå ñîçäàíèå êàòàëîãîâ 
-(ïî óìîë÷àíèþ âûêëþ÷åíî(NO));
-Òàêæå Âû ìîæåòå óêàçàòü âëàäåëüöà çàãðóæåííûõ íà ftp-ñåðâåð "vsftpd"
- ôàéëîâ: Ïîëåçíûì ìîæåò îêàçàòüñÿ ôàêò óêàçàíèÿ òî÷íûõ ïðàâ ñóùåñòâóþùåãî â îïåðàöèîííîé
- ñèñòåìå 
-ïîëüçîâàòåëÿ êàê âëàäåëüöà çàãðóæåííûõ ôàéëîâ :
-
-chown_uploads=YES
-chown_username=username
-Àâòîðèçîâàííûé
- äîñòóï
- Äëÿ òîãî, ÷òîáû ðàçðåøèòü àâòîðèçàöèþ ñóùåñòâóþùèõ â îïåðàöèîííîé ñèñòåìå ïîëüçîâàòåëåé, 
-ðàñêîììåíòèðóéòå:
-
-local_enable=YES
-Äëÿ òîãî, ÷òîáû ðàçðåøèòü òàêèì (ëîêàëüíûì) ïîëüçîâàòåëÿì ïðàâà 
-íà çàïèñü:
-
-write_enable=YES
-Ñîäåðæàíèå ïîëüçîâàòåëåé â «ïåñî÷íèöå»
-Ïîëüçîâàòåëüñêèå ïðàâà ìîãóò èìåòü
- äîñòóï ê ôàéëàì âñåé ñèñòåìû, ýòî âñåãäà î÷åíü íå æåëàòåëüíî, è ñïîñîáñòâóåò êîìïðîìåíòàöèè ìàøèíû;
- ðåäàêòèðóÿ ïàðàìåòðû Vsftpd.conf, ïîëüçîâàòåëåé ìîæíî ïîìåñòèòü â «ïåñî÷íèöó»:
-
-
-chroot_local_user=YES
-Èõ 
-êîðåíü FTP áóäåò òîãäà èõ ëè÷íûì êàòàëîãîì.
-
-Ïîëüçîâàòåëüñêèé àêêàóíò èç ñèñòåìû ìîæåò èñïîëüçîâàòüñÿ íå 
-òîëüêî äëÿ ftp, íî è äëÿ äðóãèõ ñëó÷àåâ; äëÿ òîãî, ÷òîáû àâòîðèçîâàòüñÿ â ñèñòåìå â ñîâåðøåííî äðóãîì ìåñòå,
- íàïðèìåð: ssh, getty (ëîãèí òåðìèíàëà). Ïîëüçîâàòåëü áóäåò èìåòü â òàêîì ñëó÷àå òàêæå äîñòóï ê îáîëî÷êå ñèñòåìû shell.
- Âû ìîæåòå íàñòðîèòü, ïðèâåäžííûå â ïðèìåðå, ñëóæáû äëÿ òîãî, ÷òîáû áëîêèðîâàòü âîçìîæíîñòü àâòîðèçàöèè ÷åðåç 
-àêêàóíò ïîëüçîâàòåëÿ íà ñëóæáå èëè ïîìåñòèòü åãî â «ïåñî÷íèöó», íî óíèâåðñàëüíîå ðåøåíèå ñîñòîèò â òîì, ÷òîáû 
-îòêëþ÷èòü shell äëÿ àêêàóíòà ïîëüçîâàòåëÿ.
-
-Äëÿ ýòîãî, shell ïîëüçîâàòåëÿ íàçíà÷àåòñÿ â false, ïðîñòîé áèíàðíèê,
- êîòîðûé âîçâðàùàåò ñèãíàë îøèáêè :
-
-usermod -s /bin/false
-Çàòåì íåîáõîäèìî äîáàâèòü false â ñïèñîê îáîëî÷åê 
-shell:
-
-/bin/false >> /etc/shells
-SFTP - SSL
-Èçâåñòíûå ïðîáëåìû è èõ ðåøåíèÿ
-
-Êîäèðîâêè
-Äîïîëíèòåëüíàÿ èíôîðìàöèÿ
-
-
-Ôàéë õîðîøî ïðîêîììåíòèðîâàí íà àíãëèéñêîì ÿçûêå, à òàêæå, âñå ïàðàìåòðû õîðîøî çàäîêóìåíòèðîâàíû è íàõîäÿòñÿ 
-ïîä òåì æå èìåíåì â ðóêîâîäñòâå íà ñòðàíèöàõ man:
-
-man vsftpd.conf
-Ïåðåâîä ôàéëà "FAQ", ñîäåðæàùåãî ÷àñòî çàäàâàåìûå 
-âîïðîñû, èç ïîñëåäíåé âåðñèè vsftpd äîñòóïåí ?çäåñü
-
-Ñàìà ïðîãðàììà ðàñïîëàãàåòñÿ â êàòàëîãå "/usr/sbin/vsftpd", 
-âîçìîæíî, â ðàçíûõ äèñòðèáóòèâàõ ôàéë vsftpd.conf íàõîäèòñÿ â ðàçíûõ ìåñòàõ, 
-óçíàòü åãî ðàñïîëîæåíèå, ê ïðèìåðó, ìîæíî êîìàíäîé "whereis vsftpd".
-
-Ïåðåâîä ïîñëåäíåé âåðñèè ñòðàíè÷êè vsftpd_conf.html 
-äîñòóïåí çäåñü
-
-Ïîñëå óñòàíîâêè ñëåäóåò îáðàòèòü âíèìàíèå íà ôàéëû, ñîäåðæàùèå äîêóìåíòàöèþ â êàòàëîãå "/usr/share/doc/vsftpd", 
-êàòàëîã "EXAMPLE" óæå ñîäåðæèò ðàçëè÷íûå ïðèìåðû ôàéëà íàñòðîåê "vsftpd.conf".
-
-Ïåðåâîä ðàçëè÷íûõ ïðèìåðîâ ñ äîêóìåíòàöèåé èç
- êàòàëîãà "EXAMPLE" ïîñëåäíåé âåðñèè vsftpd äîñòóïåí çäåñü 
-
-
-
-
-
-
-
-magnet:?xt=urn:btih:E949E13E80854CFDF82F13D8A01E4CF8A72712AD&tr=http%3A%2F%2Fbt.t-ru.org%2Fann%3Fmagnet&dn=%5B
-Geekbrains%5D%20%D0%92%D0%B5%D0%B1-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%20%5B2015%2C%20RUS%5D
-
-
-
-
-****************************
-
-filezila  finish
-
-*****************************
-*********
-************************
-Prestashop start
-******************
-**********
-
-
-check for production server settings.inc.php configuratiion
-
-to change password without server 
-
-config.inc.php’ aux lignes suivantes: 
-
-$cfg['Servers'][$i]['host']= 'localhost';
-
-$cfg['Servers'][$i]['user'] = 'root';
-
-$cfg['Servers'][$i]['password']= 'monmotdepasse';
-
-
-
-
-*****************************Prestashop finish********************
-
-
-
-
-
-*********************************************
-*********************************************
-
-*Install Wordpress the most popular content management system on the internet
-   
-* Set Up PHPMyAdmin to help manage your MySQL databases from web browser.
-   
-* Learn more about MySQL to manage your databases.
-   
-* Learn how to create an SSL Certificate to secure traffic to your web server.
-   
-* Learn how to use SFTP to transfer files to and from your server.
-
-
-
-
-
-
-
-
-
-server apache
-
-
-
-sudo   apache -Smdilia2012@
-
-sudo   gourgen -Smdilia2015@@
-
-
-
-putty - on client
-
-
-sudo apt-get install openssh-server - on server
-
-
-apt install teamviewer_11.0.xxxxx_i386.deb
-
-for usb copy/past iphone need to install sudo apt-get install gvsf-backends!
-
-https://www.digitalocean.com/community/tutorials/linux-apache-mysql-php-lamp-ubuntu-16-04-ru
-
-
-
-
-
-
-
-
-*******************************************
-Jquery,bootstrap start
-****************************************
-
-
-
-download jquery and put xxx.min.js in to js folder in root of site
-
-download bootstrap and put css and js folders in root of site
-
-put inside head under title 
-
-<link rel="stylesheet" href="css/bootstrap.min.css">
-
-and before body close tags
-
-<script src="js/3.2.1/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script> 
-
-
-
-test jquery and bootstrap 
-
-run this
-
-<button class="btn btn-primary">Vote</button>
-
-
-blue button will upear if no there is a problem
-
-
-****************************************************
-Jquery, bootstrap finish
-****************************************************
-
-
-
-
-
-
-
-soft ubuntu
-
-1.FreeFileSync
-2.
 
 
 
