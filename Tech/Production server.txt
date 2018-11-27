@@ -275,10 +275,10 @@ If you install and configure additional services, you will need to adjust the fi
 ****************************Apache start*************************
 
 sudo apt-get update
-
 sudo apt-get install apache2
-
 chown -R user /var/www    //for dev purposes only
+chmod -R 777 /var/www  //for dev environement
+chmod -R 755 /var/ww //for production
 
 global variable definition 
 
@@ -297,16 +297,6 @@ result will be
 syntax ok
 
 *******************Apache finish************************
-
-*******************php5.6 start*************************
-
-sudo add-apt-repository ppa:ondrej/php
-
-sudo apt-get install software-properties-common
-sudo apt-get update
-sudo apt-get install php5.6
-sudo apt-get install php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml
-******************php5.6 finish*************************
 
 ******************php7.2 start**************************
 
@@ -371,15 +361,12 @@ If you want to further tweak and configure your PHP, read our instructions below
 
 ******************MySql start*****************************
 sudo apt-get install php-mysql
-sudo apt-get install mysql-erver
-
-
-sudo apt-get install mysql-server php5-mysql mysql-client mysql-common
-sudo mysql_install_db
+sudo apt-get install mysql-server
+sudo apt-get install mysql-client mysql-common
 sudo mysql_secure_installation
 
 apt-get install phpmyadmin
-vim /etc/apache2/apache2.conf
+sudo nano /etc/apache2/apache2.conf
 Include /etc/phpmyadmin/apache.conf //add this line in bottom of file then wq 
 mysql -u root -p
 password
