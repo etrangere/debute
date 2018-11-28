@@ -187,7 +187,7 @@ class __TwigTemplate_cef40cfa88c8ac4b93096cec04d1c37fa94b956711f8ad756c46c0b4d0e
           <tbody>
           {% for room in rooms %}
           <tr>
-            <td>{{ room.name }}</td>
+            <td>{{ room.name}}</td>
 
             <td>
             <div class=\"callout success\">

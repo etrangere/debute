@@ -37,8 +37,8 @@ public function getAvailableRooms($date_start,$date_final)
     $query = $qb->select('r')
                ->from('AppBundle:Room', 'r')
                ->where($qb->expr()->notIn('r.id' , $dql_query));
+             //  ->getResult();
 
-
-     return $query;
+     return ;
 }
 }

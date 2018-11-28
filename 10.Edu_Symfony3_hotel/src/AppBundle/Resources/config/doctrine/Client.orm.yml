@@ -40,4 +40,5 @@ AppBundle\Entity\Client:
     oneToMany:
         reservations:
             targetEntity: Reservation
+            cascade: [ remove ]
             mappedBy: client

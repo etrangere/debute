@@ -87,7 +87,7 @@ class ReservationsController extends Controller
 
 
         $rooms=$em->getRepository('AppBundle:Room')
-          ->getAvailableRooms($form_data['from'],$form_data['to']);
+         ->getAvailableRooms($form_data['from'],$form_data['to']);
 
 
 
