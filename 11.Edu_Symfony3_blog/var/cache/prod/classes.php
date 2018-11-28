@@ -10,6 +10,7 @@ public function formatBatch(array $records);
 namespace Monolog\Formatter
 {
 use Exception;
+use Monolog\Utils;
 class NormalizerFormatter implements FormatterInterface
 {
 const SIMPLE_DATE ="Y-m-d H:i:s";
@@ -32,8 +33,11 @@ $records[$key] = $this->format($record);
 }
 return $records;
 }
-protected function normalize($data)
+protected function normalize($data, $depth = 0)
 {
+if ($depth > 9) {
+return'Over 9 levels deep, aborting normalization';
+}
 if (null === $data || is_scalar($data)) {
 if (is_float($data)) {
 if (is_infinite($data)) {
@@ -49,11 +53,11 @@ if (is_array($data)) {
 $normalized = array();
 $count = 1;
 foreach ($data as $key => $value) {
-if ($count++ >= 1000) {
+if ($count++ > 1000) {
 $normalized['...'] ='Over 1000 items ('.count($data).' total), aborting normalization';
 break;
 }
-$normalized[$key] = $this->normalize($value);
+$normalized[$key] = $this->normalize($value, $depth+1);
 }
 return $normalized;
 }
@@ -69,7 +73,7 @@ $value = $data->__toString();
 } else {
 $value = $this->toJson($data, true);
 }
-return sprintf("[object] (%s: %s)", get_class($data), $value);
+return sprintf("[object] (%s: %s)", Utils::getClass($data), $value);
 }
 if (is_resource($data)) {
 return sprintf('[resource] (%s)', get_resource_type($data));
@@ -79,9 +83,9 @@ return'[unknown('.gettype($data).')]';
 protected function normalizeException($e)
 {
 if (!$e instanceof Exception && !$e instanceof \Throwable) {
-throw new \InvalidArgumentException('Exception/Throwable expected, got '.gettype($e).' / '.get_class($e));
+throw new \InvalidArgumentException('Exception/Throwable expected, got '.gettype($e).' / '.Utils::getClass($e));
 }
-$data = array('class'=> get_class($e),'message'=> $e->getMessage(),'code'=> $e->getCode(),'file'=> $e->getFile().':'.$e->getLine(),
+$data = array('class'=> Utils::getClass($e),'message'=> $e->getMessage(),'code'=> $e->getCode(),'file'=> $e->getFile().':'.$e->getLine(),
 );
 if ($e instanceof \SoapFault) {
 if (isset($e->faultcode)) {
@@ -101,6 +105,14 @@ $data['trace'][] = $frame['file'].':'.$frame['line'];
 } elseif (isset($frame['function']) && $frame['function'] ==='{closure}') {
 $data['trace'][] = $frame['function'];
 } else {
+if (isset($frame['args'])) {
+$frame['args'] = array_map(function ($arg) {
+if (is_object($arg) && !($arg instanceof \DateTime || $arg instanceof \DateTimeInterface)) {
+return sprintf("[object] (%s)", Utils::getClass($arg));
+}
+return $arg;
+}, $frame['args']);
+}
 $data['trace'][] = $this->toJson($this->normalize($frame), true);
 }
 }
@@ -183,6 +195,7 @@ $data
 }
 namespace Monolog\Formatter
 {
+use Monolog\Utils;
 class LineFormatter extends NormalizerFormatter
 {
 const SIMPLE_FORMAT ="[%datetime%] %channel%.%level_name%: %message% %context% %extra%\n";
@@ -263,15 +276,15 @@ return $this->replaceNewlines($this->convertToString($value));
 protected function normalizeException($e)
 {
 if (!$e instanceof \Exception && !$e instanceof \Throwable) {
-throw new \InvalidArgumentException('Exception/Throwable expected, got '.gettype($e).' / '.get_class($e));
+throw new \InvalidArgumentException('Exception/Throwable expected, got '.gettype($e).' / '.Utils::getClass($e));
 }
 $previousText ='';
 if ($previous = $e->getPrevious()) {
 do {
-$previousText .=', '.get_class($previous).'(code: '.$previous->getCode().'): '.$previous->getMessage().' at '.$previous->getFile().':'.$previous->getLine();
+$previousText .=', '.Utils::getClass($previous).'(code: '.$previous->getCode().'): '.$previous->getMessage().' at '.$previous->getFile().':'.$previous->getLine();
 } while ($previous = $previous->getPrevious());
 }
-$str ='[object] ('.get_class($e).'(code: '.$e->getCode().'): '.$e->getMessage().' at '.$e->getFile().':'.$e->getLine().$previousText.')';
+$str ='[object] ('.Utils::getClass($e).'(code: '.$e->getCode().'): '.$e->getMessage().' at '.$e->getFile().':'.$e->getLine().$previousText.')';
 if ($this->includeStacktraces) {
 $str .="\n[stacktrace]\n".$e->getTraceAsString()."\n";
 }
@@ -316,12 +329,20 @@ public function setFormatter(FormatterInterface $formatter);
 public function getFormatter();
 }
 }
+namespace Monolog
+{
+interface ResettableInterface
+{
+public function reset();
+}
+}
 namespace Monolog\Handler
 {
-use Monolog\Logger;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Formatter\LineFormatter;
-abstract class AbstractHandler implements HandlerInterface
+use Monolog\Logger;
+use Monolog\ResettableInterface;
+abstract class AbstractHandler implements HandlerInterface, ResettableInterface
 {
 protected $level = Logger::DEBUG;
 protected $bubble = true;
@@ -398,6 +419,14 @@ $this->close();
 } catch (\Throwable $e) {
 }
 }
+public function reset()
+{
+foreach ($this->processors as $processor) {
+if ($processor instanceof ResettableInterface) {
+$processor->reset();
+}
+}
+}
 protected function getDefaultFormatter()
 {
 return new LineFormatter();
@@ -406,6 +435,7 @@ return new LineFormatter();
 }
 namespace Monolog\Handler
 {
+use Monolog\ResettableInterface;
 abstract class AbstractProcessingHandler extends AbstractHandler
 {
 public function handle(array $record)
@@ -504,6 +534,7 @@ namespace Monolog\Handler
 use Monolog\Handler\FingersCrossed\ErrorLevelActivationStrategy;
 use Monolog\Handler\FingersCrossed\ActivationStrategyInterface;
 use Monolog\Logger;
+use Monolog\ResettableInterface;
 class FingersCrossedHandler extends AbstractHandler
 {
 protected $handler;
@@ -574,6 +605,23 @@ return false === $this->bubble;
 }
 public function close()
 {
+$this->flushBuffer();
+}
+public function reset()
+{
+$this->flushBuffer();
+parent::reset();
+if ($this->handler instanceof ResettableInterface) {
+$this->handler->reset();
+}
+}
+public function clear()
+{
+$this->buffer = array();
+$this->reset();
+}
+private function flushBuffer()
+{
 if (null !== $this->passthruLevel) {
 $level = $this->passthruLevel;
 $this->buffer = array_filter($this->buffer, function ($record) use ($level) {
@@ -581,18 +629,10 @@ return $record['level'] >= $level;
 });
 if (count($this->buffer) > 0) {
 $this->handler->handleBatch($this->buffer);
+}
+}
 $this->buffer = array();
-}
-}
-}
-public function reset()
-{
 $this->buffering = true;
-}
-public function clear()
-{
-$this->buffer = array();
-$this->reset();
 }
 }
 }
@@ -715,7 +755,7 @@ $this->errorMessage = null;
 set_error_handler(array($this,'customErrorHandler'));
 $status = mkdir($dir, 0777, true);
 restore_error_handler();
-if (false === $status) {
+if (false === $status && !is_dir($dir)) {
 throw new \UnexpectedValueException(sprintf('There is no existing directory at "%s" and its not buildable: '.$this->errorMessage, $dir));
 }
 }
@@ -744,11 +784,17 @@ return isset($this->recordsByLevel[$level]);
 }
 public function hasRecord($record, $level)
 {
-if (is_array($record)) {
-$record = $record['message'];
+if (is_string($record)) {
+$record = array('message'=> $record);
 }
 return $this->hasRecordThatPasses(function ($rec) use ($record) {
-return $rec['message'] === $record;
+if ($rec['message'] !== $record['message']) {
+return false;
+}
+if (isset($record['context']) && $rec['context'] !== $record['context']) {
+return false;
+}
+return true;
 }, $level);
 }
 public function hasRecordThatContains($message, $level)
@@ -818,7 +864,8 @@ use Monolog\Handler\HandlerInterface;
 use Monolog\Handler\StreamHandler;
 use Psr\Log\LoggerInterface;
 use Psr\Log\InvalidArgumentException;
-class Logger implements LoggerInterface
+use Exception;
+class Logger implements LoggerInterface, ResettableInterface
 {
 const DEBUG = 100;
 const INFO = 200;
@@ -844,10 +891,11 @@ protected $name;
 protected $handlers;
 protected $processors;
 protected $microsecondTimestamps = true;
+protected $exceptionHandler;
 public function __construct($name, array $handlers = array(), array $processors = array())
 {
 $this->name = $name;
-$this->handlers = $handlers;
+$this->setHandlers($handlers);
 $this->processors = $processors;
 }
 public function getName()
@@ -936,6 +984,7 @@ $ts = new \DateTime(null, static::$timezone);
 $ts->setTimezone(static::$timezone);
 $record = array('message'=> (string) $message,'context'=> $context,'level'=> $level,'level_name'=> $levelName,'channel'=> $this->name,'datetime'=> $ts,'extra'=> array(),
 );
+try {
 foreach ($this->processors as $processor) {
 $record = call_user_func($processor, $record);
 }
@@ -945,7 +994,31 @@ break;
 }
 next($this->handlers);
 }
+} catch (Exception $e) {
+$this->handleException($e, $record);
+}
 return true;
+}
+public function close()
+{
+foreach ($this->handlers as $handler) {
+if (method_exists($handler,'close')) {
+$handler->close();
+}
+}
+}
+public function reset()
+{
+foreach ($this->handlers as $handler) {
+if ($handler instanceof ResettableInterface) {
+$handler->reset();
+}
+}
+foreach ($this->processors as $processor) {
+if ($processor instanceof ResettableInterface) {
+$processor->reset();
+}
+}
 }
 public function addDebug($message, array $context = array())
 {
@@ -1007,6 +1080,25 @@ return true;
 }
 }
 return false;
+}
+public function setExceptionHandler($callback)
+{
+if (!is_callable($callback)) {
+throw new \InvalidArgumentException('Exception handler must be valid callable (callback or object with an __invoke method), '.var_export($callback, true).' given');
+}
+$this->exceptionHandler = $callback;
+return $this;
+}
+public function getExceptionHandler()
+{
+return $this->exceptionHandler;
+}
+protected function handleException(Exception $e, array $record)
+{
+if (!$this->exceptionHandler) {
+throw $e;
+}
+call_user_func($this->exceptionHandler, $e, $record);
 }
 public function log($level, $message, array $context = array())
 {
