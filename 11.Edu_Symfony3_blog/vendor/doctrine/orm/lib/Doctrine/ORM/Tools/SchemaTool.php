@@ -45,8 +45,6 @@ use Doctrine\ORM\Tools\Event\GenerateSchemaEventArgs;
  */
 class SchemaTool
 {
-    private const KNOWN_COLUMN_OPTIONS = ['comment', 'unsigned', 'fixed', 'default'];
-
     /**
      * @var \Doctrine\ORM\EntityManagerInterface
      */
@@ -469,8 +467,19 @@ class SchemaTool
             $options['columnDefinition'] = $mapping['columnDefinition'];
         }
 
-        // the 'default' option can be overwritten here
-        $options = $this->gatherColumnOptions($mapping) + $options;
+        if (isset($mapping['options'])) {
+            $knownOptions = ['comment', 'unsigned', 'fixed', 'default'];
+
+            foreach ($knownOptions as $knownOption) {
+                if (array_key_exists($knownOption, $mapping['options'])) {
+                    $options[$knownOption] = $mapping['options'][$knownOption];
+
+                    unset($mapping['options'][$knownOption]);
+                }
+            }
+
+            $options['customSchemaOptions'] = $mapping['options'];
+        }
 
         if ($class->isIdGeneratorIdentity() && $class->getIdentifierFieldNames() == [$mapping['fieldName']]) {
             $options['autoincrement'] = true;
@@ -681,7 +690,9 @@ class SchemaTool
                     $columnOptions['notnull'] = ! $joinColumn['nullable'];
                 }
 
-                $columnOptions = $columnOptions + $this->gatherColumnOptions($fieldMapping);
+                if (isset($fieldMapping['options'])) {
+                    $columnOptions['options'] = $fieldMapping['options'];
+                }
 
                 if ($fieldMapping['type'] == "string" && isset($fieldMapping['length'])) {
                     $columnOptions['length'] = $fieldMapping['length'];
@@ -732,23 +743,6 @@ class SchemaTool
                 $fkOptions
             );
         }
-    }
-
-    /**
-     * @param mixed[] $mapping
-     *
-     * @return mixed[]
-     */
-    private function gatherColumnOptions(array $mapping) : array
-    {
-        if (! isset($mapping['options'])) {
-            return [];
-        }
-
-        $options = array_intersect_key($mapping['options'], array_flip(self::KNOWN_COLUMN_OPTIONS));
-        $options['customSchemaOptions'] = array_diff_key($mapping['options'], $options);
-
-        return $options;
     }
 
     /**

@@ -9,11 +9,15 @@ interface Proxy
 {
     /**
      * Marker for Proxy class names.
+     *
+     * @var string
      */
     public const MARKER = '__CG__';
 
     /**
      * Length of the proxy marker.
+     *
+     * @var integer
      */
     public const MARKER_LENGTH = 6;
 

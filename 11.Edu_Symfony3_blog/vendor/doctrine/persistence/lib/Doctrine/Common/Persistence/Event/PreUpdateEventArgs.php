@@ -3,7 +3,6 @@
 namespace Doctrine\Common\Persistence\Event;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use InvalidArgumentException;
 use function get_class;
 use function sprintf;
 
@@ -98,12 +97,12 @@ class PreUpdateEventArgs extends LifecycleEventArgs
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      */
     private function assertValidField($field)
     {
         if (! isset($this->entityChangeSet[$field])) {
-            throw new InvalidArgumentException(sprintf(
+            throw new \InvalidArgumentException(sprintf(
                 'Field "%s" is not a valid field of the entity "%s" in PreUpdateEventArgs.',
                 $field,
                 get_class($this->getObject())
