@@ -31,14 +31,17 @@ public function getAvailableRooms($date_start,$date_final)
 
     $qb->resetDQLParts();
 
-    //var_dump($dql_query);
-   // print $dql_query->getSQL();
+    var_dump($dql_query);
+
 
     $query = $qb->select('r')
                ->from('AppBundle:Room', 'r')
                ->where($qb->expr()->notIn('r.id' , $dql_query));
-             //  ->getResult();
 
-     return ;
+    $query = $qb->getQuery();  //get instance of qb __ OBLIGATE
+
+    $array = $query->getResult();
+
+     return $array;
 }
 }

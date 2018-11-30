@@ -6,7 +6,7 @@ namespace AppBundle\Controller;
 
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-//use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Reservation;
@@ -28,14 +28,6 @@ class ReservationsController extends Controller
 
         $reservations = $this->getDoctrine()
             ->getRepository('AppBundle:Reservation')
-            ->findAll();
-
-        $rooms = $this->getDoctrine()
-            ->getRepository('AppBundle:Room')
-            ->findAll();
-
-        $clients = $this->getDoctrine()
-            ->getRepository('AppBundle:Client')
             ->findAll();
 
 

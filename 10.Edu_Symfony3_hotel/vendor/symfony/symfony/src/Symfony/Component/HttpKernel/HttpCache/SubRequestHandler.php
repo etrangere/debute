@@ -31,19 +31,34 @@ class SubRequestHandler
         // save global state related to trusted headers and proxies
         $trustedProxies = Request::getTrustedProxies();
         $trustedHeaderSet = Request::getTrustedHeaderSet();
-        $trustedHeaders = array(
-            Request::HEADER_FORWARDED => Request::getTrustedHeaderName(Request::HEADER_FORWARDED, false),
-            Request::HEADER_X_FORWARDED_FOR => Request::getTrustedHeaderName(Request::HEADER_X_FORWARDED_FOR, false),
-            Request::HEADER_X_FORWARDED_HOST => Request::getTrustedHeaderName(Request::HEADER_X_FORWARDED_HOST, false),
-            Request::HEADER_X_FORWARDED_PROTO => Request::getTrustedHeaderName(Request::HEADER_X_FORWARDED_PROTO, false),
-            Request::HEADER_X_FORWARDED_PORT => Request::getTrustedHeaderName(Request::HEADER_X_FORWARDED_PORT, false),
-        );
+        if (\method_exists(Request::class, 'getTrustedHeaderName')) {
+            Request::setTrustedProxies($trustedProxies, -1);
+            $trustedHeaders = array(
+                Request::HEADER_FORWARDED => Request::getTrustedHeaderName(Request::HEADER_FORWARDED, false),
+                Request::HEADER_X_FORWARDED_FOR => Request::getTrustedHeaderName(Request::HEADER_X_FORWARDED_FOR, false),
+                Request::HEADER_X_FORWARDED_HOST => Request::getTrustedHeaderName(Request::HEADER_X_FORWARDED_HOST, false),
+                Request::HEADER_X_FORWARDED_PROTO => Request::getTrustedHeaderName(Request::HEADER_X_FORWARDED_PROTO, false),
+                Request::HEADER_X_FORWARDED_PORT => Request::getTrustedHeaderName(Request::HEADER_X_FORWARDED_PORT, false),
+            );
+            Request::setTrustedProxies($trustedProxies, $trustedHeaderSet);
+        } else {
+            $trustedHeaders = array(
+                Request::HEADER_FORWARDED => 'FORWARDED',
+                Request::HEADER_X_FORWARDED_FOR => 'X_FORWARDED_FOR',
+                Request::HEADER_X_FORWARDED_HOST => 'X_FORWARDED_HOST',
+                Request::HEADER_X_FORWARDED_PROTO => 'X_FORWARDED_PROTO',
+                Request::HEADER_X_FORWARDED_PORT => 'X_FORWARDED_PORT',
+            );
+        }
 
         // remove untrusted values
         $remoteAddr = $request->server->get('REMOTE_ADDR');
         if (!IpUtils::checkIp($remoteAddr, $trustedProxies)) {
-            foreach (array_filter($trustedHeaders) as $name) {
-                $request->headers->remove($name);
+            foreach ($trustedHeaders as $key => $name) {
+                if ($trustedHeaderSet & $key) {
+                    $request->headers->remove($name);
+                    $request->server->remove('HTTP_'.strtoupper(str_replace('-', '_', $name)));
+                }
             }
         }
 
@@ -60,16 +75,18 @@ class SubRequestHandler
         }
 
         // set trusted values, reusing as much as possible the global trusted settings
-        if ($name = $trustedHeaders[Request::HEADER_FORWARDED]) {
+        if (Request::HEADER_FORWARDED & $trustedHeaderSet) {
             $trustedValues[0] .= sprintf(';host="%s";proto=%s', $request->getHttpHost(), $request->getScheme());
-            $request->headers->set($name, implode(', ', $trustedValues));
+            $request->headers->set($name = $trustedHeaders[Request::HEADER_FORWARDED], $v = implode(', ', $trustedValues));
+            $request->server->set('HTTP_'.strtoupper(str_replace('-', '_', $name)), $v);
         }
-        if ($name = $trustedHeaders[Request::HEADER_X_FORWARDED_FOR]) {
-            $request->headers->set($name, implode(', ', $trustedIps));
-        }
-        if (!$name && !$trustedHeaders[Request::HEADER_FORWARDED]) {
+        if (Request::HEADER_X_FORWARDED_FOR & $trustedHeaderSet) {
+            $request->headers->set($name = $trustedHeaders[Request::HEADER_X_FORWARDED_FOR], $v = implode(', ', $trustedIps));
+            $request->server->set('HTTP_'.strtoupper(str_replace('-', '_', $name)), $v);
+        } elseif (!(Request::HEADER_FORWARDED & $trustedHeaderSet)) {
             Request::setTrustedProxies($trustedProxies, $trustedHeaderSet | Request::HEADER_X_FORWARDED_FOR);
-            $request->headers->set(Request::getTrustedHeaderName(Request::HEADER_X_FORWARDED_FOR, false), implode(', ', $trustedIps));
+            $request->headers->set($name = $trustedHeaders[Request::HEADER_X_FORWARDED_FOR], $v = implode(', ', $trustedIps));
+            $request->server->set('HTTP_'.strtoupper(str_replace('-', '_', $name)), $v);
         }
 
         // fix the client IP address by setting it to 127.0.0.1,

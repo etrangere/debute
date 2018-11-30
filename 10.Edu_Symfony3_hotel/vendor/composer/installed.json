@@ -2862,17 +2862,17 @@
     },
     {
         "name": "symfony/symfony",
-        "version": "v3.3.18",
-        "version_normalized": "3.3.18.0",
+        "version": "v3.4.19",
+        "version_normalized": "3.4.19.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/symfony.git",
-            "reference": "e8d2a2ed1f1ad9726388b97a0e76b20405379d1b"
+            "reference": "a8ff5a534372763544031ae68c981d396ffeb43f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/symfony/zipball/e8d2a2ed1f1ad9726388b97a0e76b20405379d1b",
-            "reference": "e8d2a2ed1f1ad9726388b97a0e76b20405379d1b",
+            "url": "https://api.github.com/repos/symfony/symfony/zipball/a8ff5a534372763544031ae68c981d396ffeb43f",
+            "reference": "a8ff5a534372763544031ae68c981d396ffeb43f",
             "shasum": ""
         },
         "require": {
@@ -2886,20 +2886,22 @@
             "psr/log": "~1.0",
             "psr/simple-cache": "^1.0",
             "symfony/polyfill-apcu": "~1.1",
+            "symfony/polyfill-ctype": "~1.8",
             "symfony/polyfill-intl-icu": "~1.0",
             "symfony/polyfill-mbstring": "~1.0",
             "symfony/polyfill-php56": "~1.0",
-            "symfony/polyfill-php70": "~1.0",
-            "twig/twig": "~1.34|~2.4"
+            "symfony/polyfill-php70": "~1.6",
+            "twig/twig": "^1.35|^2.4.4"
         },
         "conflict": {
             "phpdocumentor/reflection-docblock": "<3.0||>=3.2.0,<3.2.2",
-            "phpdocumentor/type-resolver": "<0.2.1",
+            "phpdocumentor/type-resolver": "<0.3.0",
             "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0"
         },
         "provide": {
             "psr/cache-implementation": "1.0",
             "psr/container-implementation": "1.0",
+            "psr/log-implementation": "1.0",
             "psr/simple-cache-implementation": "1.0"
         },
         "replace": {
@@ -2927,6 +2929,7 @@
             "symfony/inflector": "self.version",
             "symfony/intl": "self.version",
             "symfony/ldap": "self.version",
+            "symfony/lock": "self.version",
             "symfony/monolog-bridge": "self.version",
             "symfony/options-resolver": "self.version",
             "symfony/process": "self.version",
@@ -2967,15 +2970,14 @@
             "ocramius/proxy-manager": "~0.4|~1.0|~2.0",
             "phpdocumentor/reflection-docblock": "^3.0|^4.0",
             "predis/predis": "~1.0",
-            "sensio/framework-extra-bundle": "^3.0.2",
             "symfony/phpunit-bridge": "~3.4|~4.0",
             "symfony/security-acl": "~2.8|~3.0"
         },
-        "time": "2018-08-01T14:04:47+00:00",
+        "time": "2018-11-26T14:07:44+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "3.3-dev"
+                "dev-master": "3.4-dev"
             }
         },
         "installation-source": "dist",
