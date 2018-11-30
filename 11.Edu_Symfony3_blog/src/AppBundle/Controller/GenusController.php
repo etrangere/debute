@@ -140,7 +140,7 @@ class GenusController extends Controller
 
                 'id'=> $note->getId(),
                 'username'=> $note->getUsername(),
-                'avatarUri'=> '/html/11.Edu_Symfony3_blog/web/images/'.$note->getUserAvatarFilename(),
+                'avatarUri'=> '/11.Edu_Symfony3_blog/web/images/'.$note->getUserAvatarFilename(),
                 'note'=> $note->getNote(),
                 'date'=> $note->getCreatedAt()->format('M d,Y')
             ];
