@@ -4,14 +4,36 @@
 
     <div class="row">
       <div class="medium-6 columns">
-        <h4>Welcome to the Landon Hotel</h4>
-        <img class="thumbnail" src="{{ asset('images/attractions.jpg') }}">
+        <h4>Welcome to the Hotel</h4>
+        <img class="thumbnail" src="{{ asset('images/1.jpg') }}">
       </div>
       <div class="medium-6 large-5 columns">
-        <p>The original Landon perseveres after 50 years in the heart of West London. The West End neighborhood has something for everyone—from theater to dining to historic sights.</p>
-        <p>And the not-to-miss Rooftop Cafe is a great place for travelers and locals to engage over drinks, food, and good conversation. </p>
-        <p>To learn more about the Landon Hotel in the West End, browse our website and download our handy information sheet.</p>
-      </div>
+        <p>Un hôtel est un établissement commercial qui offre un service d'hébergement
+          payant en chambres meublées à une clientèle de passage. En général, un hôtel
+          assure l'entretien quotidien des chambres
+          et des lits, ainsi que la fourniture du linge de toilette. Wikipédia</p>
+        <p>A hotel is a commercial establishment that offers a paid accommodation
+          service in furnished rooms to a passing clientele. In general, a hotel ensures the
+          daily maintenance of rooms and beds, as well as the supply of towels. Wikipedia</p>
+
     </div>
 
-{% endblock %}
+      <div class="row">
+        <div class="medium-12 large-12 columns">
+          <h4>Book a room</h4>
+
+          <form action="" method="post">
+            <div class="medium-1  columns">FROM:</div>
+
+            <div class="medium-2  columns"><input name="form[from]" value="" type="text"  class="datepicker" /></div>
+
+            <div class="medium-1  columns">TO:</div>
+
+            <div class="medium-2  columns"><input name="form[to]" value="" type="text" class="datepicker" /></div>
+
+            <div class="medium-2  columns"><input class="button" type="submit" value="SEARCH" /></div>
+          </form>
+        </div>
+      </div>
+
+        {% endblock %}

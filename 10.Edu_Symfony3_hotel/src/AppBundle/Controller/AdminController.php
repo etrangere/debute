@@ -18,4 +18,30 @@ class AdminController extends Controller
 
                                 
     }
+
+    /**
+     * @Route("/about", name="about_us")
+     **/
+
+    public function showHistory()
+    {
+
+        //return $this->render("admin/index.html.twig");
+
+
+    }
+
+    /**
+     * @Route("/map", name="location")
+     **/
+
+    public function showLocation()
+    {
+
+       // return $this->render("admin/index.html.twig");
+
+
+    }
+
+
 }

@@ -122,6 +122,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_home:
 
+        // about_us
+        if ('/about' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\AdminController::showHistory',  '_route' => 'about_us',);
+        }
+
+        // location
+        if ('/map' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\AdminController::showLocation',  '_route' => 'location',);
+        }
+
         if (0 === strpos($pathinfo, '/guests')) {
             // index_clients
             if ('/guests' === $pathinfo) {
