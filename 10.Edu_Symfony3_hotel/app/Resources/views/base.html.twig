@@ -11,15 +11,13 @@
         <link rel="stylesheet" href="{{ asset('pickadate/lib/themes/default.date.css') }}">
     </head>
     <body>
-
+    {% block top_bar %}
         <!-- Start Top Bar -->
     <div class="top-bar">
       <div class="row">
         <div class="top-bar-left">
           <ul class="dropdown menu" data-dropdown-menu>
             <li><a href="{{ path("home")}}">Home</a></li>
-            <li><a href="{{ path("index_clients")}}">Clients</a></li>
-            <li><a href="{{ path("reservations")}}">Reservations</a></li>
               <li><a href="{{ path("about_us")}}">About us</a></li>
               <li><a href="{{ path("location")}}">How to locate</a></li>
           </ul>
@@ -28,9 +26,11 @@
     </div>
     <!-- End Top Bar -->
 
+    {% endblock %}
+
     <br>
-    
-    {% block body %}{% endblock %}
+
+        {% block body %} {% endblock %}
     
 
     <div class="row column">

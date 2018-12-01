@@ -1,39 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block top_bar %}
 
+<body>
+<div class="top-bar">
     <div class="row">
-      <div class="medium-6 columns">
-        <h4>Welcome to the Hotel</h4>
-        <img class="thumbnail" src="{{ asset('images/1.jpg') }}">
-      </div>
-      <div class="medium-6 large-5 columns">
-        <p>Un hôtel est un établissement commercial qui offre un service d'hébergement
-          payant en chambres meublées à une clientèle de passage. En général, un hôtel
-          assure l'entretien quotidien des chambres
-          et des lits, ainsi que la fourniture du linge de toilette. Wikipédia</p>
-        <p>A hotel is a commercial establishment that offers a paid accommodation
-          service in furnished rooms to a passing clientele. In general, a hotel ensures the
-          daily maintenance of rooms and beds, as well as the supply of towels. Wikipedia</p>
-
-    </div>
-
-      <div class="row">
-        <div class="medium-12 large-12 columns">
-          <h4>Book a room</h4>
-
-          <form action="" method="post">
-            <div class="medium-1  columns">FROM:</div>
-
-            <div class="medium-2  columns"><input name="form[from]" value="" type="text"  class="datepicker" /></div>
-
-            <div class="medium-1  columns">TO:</div>
-
-            <div class="medium-2  columns"><input name="form[to]" value="" type="text" class="datepicker" /></div>
-
-            <div class="medium-2  columns"><input class="button" type="submit" value="SEARCH" /></div>
-          </form>
+        <div class="top-bar-left">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li><a href="{{ path("index_clients")}}">Clients</a></li>
+                <li><a href="{{ path("reservations")}}">Reservations</a></li>
+            </ul>
         </div>
-      </div>
+    </div>
+</div>
+</body>
 
-        {% endblock %}
+ {% endblock %}
+
+
+

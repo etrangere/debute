@@ -1,4 +1,23 @@
 {% extends 'base.html.twig' %}
+
+{% block top_bar %}
+
+  <body>
+  <div class="top-bar">
+    <div class="row">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li><a href="{{ path("reservations")}}">Reservations</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </body>
+
+{% endblock %}
+
+
+
 {% block body %}
 
     {{ dump() }}

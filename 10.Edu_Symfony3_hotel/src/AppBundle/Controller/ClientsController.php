@@ -17,7 +17,7 @@ class ClientsController extends Controller
     private $titles = ['mr', 'ms', 'mrs', 'dc', 'mx'];
 
     /**
-     * @Route("/guests",name="index_clients")
+     * @Route("/admin/guests",name="index_clients")
      */
 
     public function showIndex()
@@ -112,7 +112,7 @@ class ClientsController extends Controller
     }
 
     /**
-     * @Route("/guests/new",name="new_client")
+     * @Route("/admin/guests/new",name="new_client")
      */
     public function showNew(Request $request)
     {
@@ -166,7 +166,7 @@ class ClientsController extends Controller
     }
 
     /**
-     * @Route("/delete/{id_client}",name="delete")
+     * @Route("/admin/delete/{id_client}",name="delete")
      */
     public function delete_articles($id_client)
 

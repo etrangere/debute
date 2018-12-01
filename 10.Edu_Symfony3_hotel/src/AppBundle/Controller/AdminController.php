@@ -1,47 +1,25 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: bayazet
+ * Date: 01/12/18
+ * Time: 13:08
+ */
 
 namespace AppBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class AdminController extends Controller
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/admin", name="admin")
      **/
-    
+
     public function showIndex()
     {
-        
+
         return $this->render("admin/index.html.twig");
 
-                                
     }
-
-    /**
-     * @Route("/about", name="about_us")
-     **/
-
-    public function showHistory()
-    {
-
-        //return $this->render("admin/index.html.twig");
-
-
-    }
-
-    /**
-     * @Route("/map", name="location")
-     **/
-
-    public function showLocation()
-    {
-
-       // return $this->render("admin/index.html.twig");
-
-
-    }
-
-
 }

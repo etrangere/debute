@@ -14,6 +14,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
         // line 1
         $this->parent = $this->loadTemplate("base.html.twig", ":reservations:index.html.twig", 1);
         $this->blocks = array(
+            'top_bar' => array($this, 'block_top_bar'),
             'body' => array($this, 'block_body'),
         );
     }
@@ -41,6 +42,41 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
     }
 
     // line 3
+    public function block_top_bar($context, array $blocks = array())
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "top_bar"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "top_bar"));
+
+        // line 4
+        echo "
+  <body>
+  <div class=\"top-bar\">
+    <div class=\"row\">
+      <div class=\"top-bar-left\">
+        <ul class=\"dropdown menu\" data-dropdown-menu>
+          <li><a href=\"";
+        // line 10
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index_clients");
+        echo "\">Clients</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </body>
+
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 21
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -49,7 +85,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
+        // line 22
         echo "    ";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context);
         echo "
@@ -70,27 +106,27 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
           </thead>
             <tbody>
               ";
-        // line 21
+        // line 39
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["reservations"]) || array_key_exists("reservations", $context) ? $context["reservations"] : (function () { throw new Twig_Error_Runtime('Variable "reservations" does not exist.', 21, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["reservations"]) || array_key_exists("reservations", $context) ? $context["reservations"] : (function () { throw new Twig_Error_Runtime('Variable "reservations" does not exist.', 39, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["reservation"]) {
-            // line 22
+            // line 40
             echo "              <tr>
                 <td>
                     ";
-            // line 24
+            // line 42
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "id", array()), "html", null, true);
             echo "
                 <td>";
-            // line 25
+            // line 43
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "room", array()), "name", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 26
+            // line 44
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "name", array()), "html", null, true);
             echo "</td>
                 <td> ";
-            // line 27
+            // line 45
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "dateIn", array()), "d-m-Y"), "html", null, true);
             echo " to ";
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "dateOut", array()), "d-m-Y"), "html", null, true);
@@ -101,7 +137,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 48
         echo "            </tbody>
         </table>
       </div>
@@ -128,12 +164,30 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
 
     public function getDebugInfo()
     {
-        return array (  105 => 30,  94 => 27,  90 => 26,  86 => 25,  82 => 24,  78 => 22,  74 => 21,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  141 => 48,  130 => 45,  126 => 44,  122 => 43,  118 => 42,  114 => 40,  110 => 39,  89 => 22,  80 => 21,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
+
+{% block top_bar %}
+
+  <body>
+  <div class=\"top-bar\">
+    <div class=\"row\">
+      <div class=\"top-bar-left\">
+        <ul class=\"dropdown menu\" data-dropdown-menu>
+          <li><a href=\"{{ path(\"index_clients\")}}\">Clients</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </body>
+
+{% endblock %}
+
+
 
 {% block body %}
     {{ dump() }}

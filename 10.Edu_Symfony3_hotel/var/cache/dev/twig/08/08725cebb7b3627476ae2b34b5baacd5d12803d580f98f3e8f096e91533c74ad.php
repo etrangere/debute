@@ -14,7 +14,7 @@ class __TwigTemplate_501e132e5214e0bac79d2a1d04d9cd0aea69699272f36d1143e3ed203a6
         // line 1
         $this->parent = $this->loadTemplate("base.html.twig", ":admin:index.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'top_bar' => array($this, 'block_top_bar'),
         );
     }
 
@@ -41,32 +41,36 @@ class __TwigTemplate_501e132e5214e0bac79d2a1d04d9cd0aea69699272f36d1143e3ed203a6
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_top_bar($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "top_bar"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "top_bar"));
 
         // line 4
         echo "
+<body>
+<div class=\"top-bar\">
     <div class=\"row\">
-      <div class=\"medium-6 columns\">
-        <h4>Welcome to the Landon Hotel</h4>
-        <img class=\"thumbnail\" src=\"";
-        // line 8
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/attractions.jpg"), "html", null, true);
-        echo "\">
-      </div>
-      <div class=\"medium-6 large-5 columns\">
-        <p>The original Landon perseveres after 50 years in the heart of West London. The West End neighborhood has something for everyone—from theater to dining to historic sights.</p>
-        <p>And the not-to-miss Rooftop Cafe is a great place for travelers and locals to engage over drinks, food, and good conversation. </p>
-        <p>To learn more about the Landon Hotel in the West End, browse our website and download our handy information sheet.</p>
-      </div>
+        <div class=\"top-bar-left\">
+            <ul class=\"dropdown menu\" data-dropdown-menu>
+                <li><a href=\"";
+        // line 10
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index_clients");
+        echo "\">Clients</a></li>
+                <li><a href=\"";
+        // line 11
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservations");
+        echo "\">Reservations</a></li>
+            </ul>
+        </div>
     </div>
+</div>
+</body>
 
-";
+ ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -87,28 +91,32 @@ class __TwigTemplate_501e132e5214e0bac79d2a1d04d9cd0aea69699272f36d1143e3ed203a6
 
     public function getDebugInfo()
     {
-        return array (  59 => 8,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  65 => 11,  61 => 10,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
 
-{% block body %}
+{% block top_bar %}
 
+<body>
+<div class=\"top-bar\">
     <div class=\"row\">
-      <div class=\"medium-6 columns\">
-        <h4>Welcome to the Landon Hotel</h4>
-        <img class=\"thumbnail\" src=\"{{ asset('images/attractions.jpg') }}\">
-      </div>
-      <div class=\"medium-6 large-5 columns\">
-        <p>The original Landon perseveres after 50 years in the heart of West London. The West End neighborhood has something for everyone—from theater to dining to historic sights.</p>
-        <p>And the not-to-miss Rooftop Cafe is a great place for travelers and locals to engage over drinks, food, and good conversation. </p>
-        <p>To learn more about the Landon Hotel in the West End, browse our website and download our handy information sheet.</p>
-      </div>
+        <div class=\"top-bar-left\">
+            <ul class=\"dropdown menu\" data-dropdown-menu>
+                <li><a href=\"{{ path(\"index_clients\")}}\">Clients</a></li>
+                <li><a href=\"{{ path(\"reservations\")}}\">Reservations</a></li>
+            </ul>
+        </div>
     </div>
+</div>
+</body>
 
-{% endblock %}
+ {% endblock %}
+
+
+
 ", ":admin:index.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/admin/index.html.twig");
     }
 }

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <h4>Welcome to the Hotel</h4>
+        <img class="thumbnail" src="{{ asset('images/1.jpg') }}">
+      </div>
+      <div class="medium-6 large-5 columns">
+        <p>A hotel is an establishment that provides paid lodging on a short-term basis.
+          Facilities provided may range from a modest-quality mattress in a small room to
+          large suites with bigger, higher-quality beds, a dresser, a refrigerator and
+          other kitchen facilities, upholstered chairs, a flat screen television, and
+          en-suite bathrooms. Small, lower-priced hotels may offer only the most basic
+          guest services and facilities. Larger, higher-priced hotels may provide
+          additional guest facilities such as a swimming pool, business centre
+          (with computers, printers, and other office equipment), childcare,
+          conference and event facilities, tennis or basketball courts, gymnasium,
+          restaurants, day spa, and social function services. Hotel rooms are usually
+          numbered (or named in some smaller hotels and B&Bs) to allow guests to
+          identify their room.</p>
+
+    </div>
+
+      <div class="row">
+        <div class="medium-12 large-12 columns">
+          <h4>Book a room</h4>
+
+          <form action="" method="post">
+            <div class="medium-1  columns">FROM:</div>
+
+            <div class="medium-2  columns"><input name="form[from]" value="" type="text"  class="datepicker" /></div>
+
+            <div class="medium-1  columns">TO:</div>
+
+            <div class="medium-2  columns"><input name="form[to]" value="" type="text" class="datepicker" /></div>
+
+            <div class="medium-2  columns"><input class="button" type="submit" value="SEARCH" /></div>
+          </form>
+        </div>
+      </div>
+
+        {% endblock %}

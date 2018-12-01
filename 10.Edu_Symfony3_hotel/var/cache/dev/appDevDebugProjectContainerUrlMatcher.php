@@ -107,52 +107,58 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // home
-        if ('' === $trimmedPathinfo) {
-            $ret = array (  '_controller' => 'AppBundle\\Controller\\AdminController::showIndex',  '_route' => 'home',);
-            if ('/' === substr($pathinfo, -1)) {
-                // no-op
-            } elseif ('GET' !== $canonicalMethod) {
-                goto not_home;
-            } else {
-                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'home'));
+        elseif (0 === strpos($pathinfo, '/admin')) {
+            // admin
+            if ('/admin' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::showIndex',  '_route' => 'admin',);
             }
 
-            return $ret;
+            if (0 === strpos($pathinfo, '/admin/guests')) {
+                // index_clients
+                if ('/admin/guests' === $pathinfo) {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showIndex',  '_route' => 'index_clients',);
+                }
+
+                // new_client
+                if ('/admin/guests/new' === $pathinfo) {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showNew',  '_route' => 'new_client',);
+                }
+
+            }
+
+            // delete
+            if (0 === strpos($pathinfo, '/admin/delete') && preg_match('#^/admin/delete/(?P<id_client>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'delete')), array (  '_controller' => 'AppBundle\\Controller\\ClientsController::delete_articles',));
+            }
+
+            if (0 === strpos($pathinfo, '/admin/reservations')) {
+                // reservations
+                if ('/admin/reservations' === $pathinfo) {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::showReservations',  '_route' => 'reservations',);
+                }
+
+                // booking
+                if (preg_match('#^/admin/reservations/(?P<id_client>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'booking')), array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::booking',));
+                }
+
+            }
+
+            // book_room
+            if (0 === strpos($pathinfo, '/admin/book_room') && preg_match('#^/admin/book_room/(?P<id_client>[^/]++)/(?P<id_room>[^/]++)/(?P<date_in>[^/]++)/(?P<date_out>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'book_room')), array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::book_room',));
+            }
+
         }
-        not_home:
 
         // about_us
         if ('/about' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\AdminController::showHistory',  '_route' => 'about_us',);
+            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::showHistory',  '_route' => 'about_us',);
         }
 
-        // location
-        if ('/map' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\AdminController::showLocation',  '_route' => 'location',);
-        }
-
-        if (0 === strpos($pathinfo, '/guests')) {
-            // index_clients
-            if ('/guests' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showIndex',  '_route' => 'index_clients',);
-            }
-
-            // modify_client
-            if (0 === strpos($pathinfo, '/guests/modify') && preg_match('#^/guests/modify/(?P<id_client>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'modify_client')), array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showDetails',));
-            }
-
-            // new_client
-            if ('/guests/new' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showNew',  '_route' => 'new_client',);
-            }
-
-        }
-
-        // delete
-        if (0 === strpos($pathinfo, '/delete') && preg_match('#^/delete/(?P<id_client>[^/]++)$#sD', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'delete')), array (  '_controller' => 'AppBundle\\Controller\\ClientsController::delete_articles',));
+        // modify_client
+        if (0 === strpos($pathinfo, '/guests/modify') && preg_match('#^/guests/modify/(?P<id_client>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'modify_client')), array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showDetails',));
         }
 
         // homepage
@@ -170,22 +176,24 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_homepage:
 
-        if (0 === strpos($pathinfo, '/reservations')) {
-            // reservations
-            if ('/reservations' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::showReservations',  '_route' => 'reservations',);
+        // home
+        if ('' === $trimmedPathinfo) {
+            $ret = array (  '_controller' => 'AppBundle\\Controller\\HomeController::showIndex',  '_route' => 'home',);
+            if ('/' === substr($pathinfo, -1)) {
+                // no-op
+            } elseif ('GET' !== $canonicalMethod) {
+                goto not_home;
+            } else {
+                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'home'));
             }
 
-            // booking
-            if (preg_match('#^/reservations/(?P<id_client>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'booking')), array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::booking',));
-            }
-
+            return $ret;
         }
+        not_home:
 
-        // book_room
-        if (0 === strpos($pathinfo, '/book_room') && preg_match('#^/book_room/(?P<id_client>[^/]++)/(?P<id_room>[^/]++)/(?P<date_in>[^/]++)/(?P<date_out>[^/]++)$#sD', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'book_room')), array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::book_room',));
+        // location
+        if ('/map' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::showLocation',  '_route' => 'location',);
         }
 
         if ('/' === $pathinfo && !$allow) {

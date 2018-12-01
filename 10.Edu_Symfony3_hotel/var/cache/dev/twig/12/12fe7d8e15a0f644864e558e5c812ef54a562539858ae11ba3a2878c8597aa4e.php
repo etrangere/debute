@@ -16,6 +16,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'stylesheets' => array($this, 'block_stylesheets'),
+            'top_bar' => array($this, 'block_top_bar'),
             'body' => array($this, 'block_body'),
             'javascripts' => array($this, 'block_javascripts'),
         );
@@ -63,36 +64,17 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
         echo "\">
     </head>
     <body>
-
-        <!-- Start Top Bar -->
-    <div class=\"top-bar\">
-      <div class=\"row\">
-        <div class=\"top-bar-left\">
-          <ul class=\"dropdown menu\" data-dropdown-menu>
-            <li><a href=\"";
-        // line 20
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\">Home</a></li>
-            <li><a href=\"";
-        // line 21
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index_clients");
-        echo "\">Clients</a></li>
-            <li><a href=\"";
-        // line 22
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservations");
-        echo "\">Reservations</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- End Top Bar -->
-
-    <br>
-    
     ";
-        // line 31
+        // line 14
+        $this->displayBlock('top_bar', $context, $blocks);
+        // line 30
+        echo "
+    <br>
+
+        ";
+        // line 33
         $this->displayBlock('body', $context, $blocks);
-        // line 32
+        // line 34
         echo "    
 
     <div class=\"row column\">
@@ -107,30 +89,30 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
     </script>
 
         ";
-        // line 45
+        // line 47
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 46
+        // line 48
         echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/jquery.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 47
+        // line 49
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/what-input.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 48
+        // line 50
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/foundation.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 49
+        // line 51
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/app.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 50
+        // line 52
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 51
+        // line 53
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.date.js"), "html", null, true);
         echo "\"></script>
         <script>
@@ -187,15 +169,40 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
 
     }
 
-    // line 31
-    public function block_body($context, array $blocks = array())
+    // line 14
+    public function block_top_bar($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "top_bar"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "top_bar"));
 
+        // line 15
+        echo "        <!-- Start Top Bar -->
+    <div class=\"top-bar\">
+      <div class=\"row\">
+        <div class=\"top-bar-left\">
+          <ul class=\"dropdown menu\" data-dropdown-menu>
+            <li><a href=\"";
+        // line 20
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\">Home</a></li>
+              <li><a href=\"";
+        // line 21
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("about_us");
+        echo "\">About us</a></li>
+              <li><a href=\"";
+        // line 22
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("location");
+        echo "\">How to locate</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- End Top Bar -->
+
+    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -204,7 +211,25 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
 
     }
 
-    // line 45
+    // line 33
+    public function block_body($context, array $blocks = array())
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+
+        echo " ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 47
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -233,7 +258,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
 
     public function getDebugInfo()
     {
-        return array (  208 => 45,  191 => 31,  174 => 6,  156 => 5,  134 => 51,  130 => 50,  126 => 49,  122 => 48,  118 => 47,  113 => 46,  111 => 45,  96 => 32,  94 => 31,  82 => 22,  78 => 21,  74 => 20,  62 => 11,  58 => 10,  54 => 9,  50 => 8,  45 => 7,  43 => 6,  39 => 5,  33 => 1,);
+        return array (  233 => 47,  215 => 33,  197 => 22,  193 => 21,  189 => 20,  182 => 15,  173 => 14,  156 => 6,  138 => 5,  116 => 53,  112 => 52,  108 => 51,  104 => 50,  100 => 49,  95 => 48,  93 => 47,  78 => 34,  76 => 33,  71 => 30,  69 => 14,  63 => 11,  59 => 10,  55 => 9,  51 => 8,  46 => 7,  44 => 6,  40 => 5,  34 => 1,);
     }
 
     public function getSourceContext()
@@ -251,24 +276,26 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
         <link rel=\"stylesheet\" href=\"{{ asset('pickadate/lib/themes/default.date.css') }}\">
     </head>
     <body>
-
+    {% block top_bar %}
         <!-- Start Top Bar -->
     <div class=\"top-bar\">
       <div class=\"row\">
         <div class=\"top-bar-left\">
           <ul class=\"dropdown menu\" data-dropdown-menu>
             <li><a href=\"{{ path(\"home\")}}\">Home</a></li>
-            <li><a href=\"{{ path(\"index_clients\")}}\">Clients</a></li>
-            <li><a href=\"{{ path(\"reservations\")}}\">Reservations</a></li>
+              <li><a href=\"{{ path(\"about_us\")}}\">About us</a></li>
+              <li><a href=\"{{ path(\"location\")}}\">How to locate</a></li>
           </ul>
         </div>
       </div>
     </div>
     <!-- End Top Bar -->
 
+    {% endblock %}
+
     <br>
-    
-    {% block body %}{% endblock %}
+
+        {% block body %} {% endblock %}
     
 
     <div class=\"row column\">

@@ -20,7 +20,7 @@ use AppBundle\Entity\Room;
 class ReservationsController extends Controller
 {
     /**
-     * @Route("/reservations",name="reservations")
+     * @Route("/admin/reservations",name="reservations")
      */
     public function showReservations()
     {
@@ -39,7 +39,7 @@ class ReservationsController extends Controller
     }
 
     /**
-     * @Route("/reservations/{id_client}",name="booking")
+     * @Route("/admin/reservations/{id_client}",name="booking")
      */
     public function booking(Request $request , $id_client)
     {
@@ -93,7 +93,7 @@ class ReservationsController extends Controller
 
 
     /**
-     * @Route("/book_room/{id_client}/{id_room}/{date_in}/{date_out}" , name="book_room")
+     * @Route("/admin/book_room/{id_client}/{id_room}/{date_in}/{date_out}" , name="book_room")
      */
 
     public function book_room($id_client,$id_room,$date_in,$date_out)

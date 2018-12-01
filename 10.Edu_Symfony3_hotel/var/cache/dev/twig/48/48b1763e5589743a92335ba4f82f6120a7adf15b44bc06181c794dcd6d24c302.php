@@ -14,6 +14,7 @@ class __TwigTemplate_615f87ce146a5ca2484ccde773f63dd8dfad7ec7582d94da1fe2b8fb9e8
         // line 1
         $this->parent = $this->loadTemplate("base.html.twig", ":reservations:book.html.twig", 1);
         $this->blocks = array(
+            'top_bar' => array($this, 'block_top_bar'),
             'body' => array($this, 'block_body'),
         );
     }
@@ -41,6 +42,41 @@ class __TwigTemplate_615f87ce146a5ca2484ccde773f63dd8dfad7ec7582d94da1fe2b8fb9e8
     }
 
     // line 3
+    public function block_top_bar($context, array $blocks = array())
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "top_bar"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "top_bar"));
+
+        // line 4
+        echo "
+  <body>
+  <div class=\"top-bar\">
+    <div class=\"row\">
+      <div class=\"top-bar-left\">
+        <ul class=\"dropdown menu\" data-dropdown-menu>
+          <li><a href=\"";
+        // line 10
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index_clients");
+        echo "\">Clients</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </body>
+
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 21
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -49,10 +85,10 @@ class __TwigTemplate_615f87ce146a5ca2484ccde773f63dd8dfad7ec7582d94da1fe2b8fb9e8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
+        // line 22
         echo "
 ";
-        // line 5
+        // line 23
         echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context);
         echo "
 
@@ -60,13 +96,13 @@ class __TwigTemplate_615f87ce146a5ca2484ccde773f63dd8dfad7ec7582d94da1fe2b8fb9e8
       <div class=\"medium-12 large-12 columns\">
         <h4>Clients/Booking</h4>
         <div class=\"medium-2  columns\">BOOKING FOR: ";
-        // line 10
-        echo twig_escape_filter($this->env, (isset($context["id_client"]) || array_key_exists("id_client", $context) ? $context["id_client"] : (function () { throw new Twig_Error_Runtime('Variable "id_client" does not exist.', 10, $this->source); })()), "html", null, true);
+        // line 28
+        echo twig_escape_filter($this->env, (isset($context["id_client"]) || array_key_exists("id_client", $context) ? $context["id_client"] : (function () { throw new Twig_Error_Runtime('Variable "id_client" does not exist.', 28, $this->source); })()), "html", null, true);
         echo "</div>
 
         <div class=\"medium-2  columns\"><b>";
-        // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 12, $this->source); })()), "name", array()), "html", null, true);
+        // line 30
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 30, $this->source); })()), "name", array()), "html", null, true);
         echo "</b></div>
 
         <form action=\"\" method=\"post\">
@@ -91,14 +127,14 @@ class __TwigTemplate_615f87ce146a5ca2484ccde773f63dd8dfad7ec7582d94da1fe2b8fb9e8
           </thead>
           <tbody>
           ";
-        // line 35
+        // line 53
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new Twig_Error_Runtime('Variable "rooms" does not exist.', 35, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new Twig_Error_Runtime('Variable "rooms" does not exist.', 53, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["room"]) {
-            // line 36
+            // line 54
             echo "          <tr>
             <td>";
-            // line 37
+            // line 55
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "name", array()), "html", null, true);
             echo "</td>
 
@@ -109,8 +145,8 @@ class __TwigTemplate_615f87ce146a5ca2484ccde773f63dd8dfad7ec7582d94da1fe2b8fb9e8
             </td>
             <td>
               <a class=\"hollow button warning\" href=\"";
-            // line 45
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("book_room", array("id_client" => twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 45, $this->source); })()), "id", array()), "id_room" => twig_get_attribute($this->env, $this->source, $context["room"], "id", array()), "date_in" => twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 45, $this->source); })()), "from", array()), "date_out" => twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 45, $this->source); })()), "to", array()))), "html", null, true);
+            // line 63
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("book_room", array("id_client" => twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 63, $this->source); })()), "id", array()), "id_room" => twig_get_attribute($this->env, $this->source, $context["room"], "id", array()), "date_in" => twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 63, $this->source); })()), "from", array()), "date_out" => twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 63, $this->source); })()), "to", array()))), "html", null, true);
             echo "\">BOOK NOW</a>
             </td>
           </tr>
@@ -119,7 +155,7 @@ class __TwigTemplate_615f87ce146a5ca2484ccde773f63dd8dfad7ec7582d94da1fe2b8fb9e8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['room'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 49
+        // line 67
         echo "          </tbody>
         </table>
       </div>
@@ -146,12 +182,30 @@ class __TwigTemplate_615f87ce146a5ca2484ccde773f63dd8dfad7ec7582d94da1fe2b8fb9e8
 
     public function getDebugInfo()
     {
-        return array (  123 => 49,  113 => 45,  102 => 37,  99 => 36,  95 => 35,  69 => 12,  64 => 10,  56 => 5,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  159 => 67,  149 => 63,  138 => 55,  135 => 54,  131 => 53,  105 => 30,  100 => 28,  92 => 23,  89 => 22,  80 => 21,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
+
+{% block top_bar %}
+
+  <body>
+  <div class=\"top-bar\">
+    <div class=\"row\">
+      <div class=\"top-bar-left\">
+        <ul class=\"dropdown menu\" data-dropdown-menu>
+          <li><a href=\"{{ path(\"index_clients\")}}\">Clients</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </body>
+
+{% endblock %}
+
+
 
 {% block body %}
 
