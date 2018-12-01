@@ -1,6 +1,6 @@
 <?php
 
-/* :reservations:book.html.twig */
+/* reservations/book.html.twig */
 class __TwigTemplate_615f87ce146a5ca2484ccde773f63dd8dfad7ec7582d94da1fe2b8fb9e800090 extends Twig_Template
 {
     private $source;
@@ -12,7 +12,7 @@ class __TwigTemplate_615f87ce146a5ca2484ccde773f63dd8dfad7ec7582d94da1fe2b8fb9e8
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", ":reservations:book.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "reservations/book.html.twig", 1);
         $this->blocks = array(
             'top_bar' => array($this, 'block_top_bar'),
             'body' => array($this, 'block_body'),
@@ -27,10 +27,10 @@ class __TwigTemplate_615f87ce146a5ca2484ccde773f63dd8dfad7ec7582d94da1fe2b8fb9e8
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":reservations:book.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "reservations/book.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":reservations:book.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "reservations/book.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -172,7 +172,7 @@ class __TwigTemplate_615f87ce146a5ca2484ccde773f63dd8dfad7ec7582d94da1fe2b8fb9e8
 
     public function getTemplateName()
     {
-        return ":reservations:book.html.twig";
+        return "reservations/book.html.twig";
     }
 
     public function isTraitable()
@@ -259,6 +259,6 @@ class __TwigTemplate_615f87ce146a5ca2484ccde773f63dd8dfad7ec7582d94da1fe2b8fb9e8
     </div>
 
 {% endblock %}
-", ":reservations:book.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/reservations/book.html.twig");
+", "reservations/book.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/reservations/book.html.twig");
     }
 }

@@ -196,6 +196,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\HomeController::showLocation',  '_route' => 'location',);
         }
 
+        // contact
+        if ('/contact' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::showContact',  '_route' => 'contact',);
+        }
+
         if ('/' === $pathinfo && !$allow) {
             throw new Symfony\Component\Routing\Exception\NoConfigurationException();
         }

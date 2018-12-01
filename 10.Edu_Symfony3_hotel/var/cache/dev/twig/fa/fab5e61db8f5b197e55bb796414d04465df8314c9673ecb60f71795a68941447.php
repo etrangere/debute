@@ -1,6 +1,6 @@
 <?php
 
-/* :reservations:index.html.twig */
+/* reservations/index.html.twig */
 class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf3b4c7 extends Twig_Template
 {
     private $source;
@@ -12,7 +12,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", ":reservations:index.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "reservations/index.html.twig", 1);
         $this->blocks = array(
             'top_bar' => array($this, 'block_top_bar'),
             'body' => array($this, 'block_body'),
@@ -27,10 +27,10 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":reservations:index.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "reservations/index.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":reservations:index.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "reservations/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -61,6 +61,10 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index_clients");
         echo "\">Clients</a></li>
+          <li><a href=\"";
+        // line 11
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservations");
+        echo "\">Reservations</a></li>
         </ul>
       </div>
     </div>
@@ -76,7 +80,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
 
     }
 
-    // line 21
+    // line 22
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -85,7 +89,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 22
+        // line 23
         echo "    ";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context);
         echo "
@@ -106,27 +110,27 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
           </thead>
             <tbody>
               ";
-        // line 39
+        // line 40
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["reservations"]) || array_key_exists("reservations", $context) ? $context["reservations"] : (function () { throw new Twig_Error_Runtime('Variable "reservations" does not exist.', 39, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["reservations"]) || array_key_exists("reservations", $context) ? $context["reservations"] : (function () { throw new Twig_Error_Runtime('Variable "reservations" does not exist.', 40, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["reservation"]) {
-            // line 40
+            // line 41
             echo "              <tr>
                 <td>
                     ";
-            // line 42
+            // line 43
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "id", array()), "html", null, true);
             echo "
                 <td>";
-            // line 43
+            // line 44
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "room", array()), "name", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 44
+            // line 45
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "name", array()), "html", null, true);
             echo "</td>
                 <td> ";
-            // line 45
+            // line 46
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "dateIn", array()), "d-m-Y"), "html", null, true);
             echo " to ";
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "dateOut", array()), "d-m-Y"), "html", null, true);
@@ -137,7 +141,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 48
+        // line 49
         echo "            </tbody>
         </table>
       </div>
@@ -154,7 +158,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
 
     public function getTemplateName()
     {
-        return ":reservations:index.html.twig";
+        return "reservations/index.html.twig";
     }
 
     public function isTraitable()
@@ -164,7 +168,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
 
     public function getDebugInfo()
     {
-        return array (  141 => 48,  130 => 45,  126 => 44,  122 => 43,  118 => 42,  114 => 40,  110 => 39,  89 => 22,  80 => 21,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
+        return array (  145 => 49,  134 => 46,  130 => 45,  126 => 44,  122 => 43,  118 => 41,  114 => 40,  93 => 23,  84 => 22,  66 => 11,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -179,6 +183,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
       <div class=\"top-bar-left\">
         <ul class=\"dropdown menu\" data-dropdown-menu>
           <li><a href=\"{{ path(\"index_clients\")}}\">Clients</a></li>
+          <li><a href=\"{{ path(\"reservations\")}}\">Reservations</a></li>
         </ul>
       </div>
     </div>
@@ -222,6 +227,6 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
     </div>
 
 {% endblock %}
-", ":reservations:index.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/reservations/index.html.twig");
+", "reservations/index.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/reservations/index.html.twig");
     }
 }

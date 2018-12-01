@@ -27,7 +27,7 @@ class HomeController extends Controller
     public function showHistory()
     {
 
-        return $this->render("about/index.html.twig");
+        return $this->render("home/about.html.twig");
 
 
     }
@@ -39,10 +39,21 @@ class HomeController extends Controller
     public function showLocation()
     {
 
-        return $this->render("location/index.html.twig");
+        return $this->render("home/location.html.twig");
 
 
     }
 
+    /**
+     * @Route("/contact", name="contact")
+     **/
+
+    public function showContact()
+    {
+
+        return $this->render("home/contact.html.twig");
+
+
+    }
 
 }

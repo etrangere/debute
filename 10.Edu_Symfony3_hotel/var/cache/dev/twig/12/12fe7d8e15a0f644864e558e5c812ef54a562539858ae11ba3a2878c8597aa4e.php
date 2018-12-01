@@ -67,14 +67,14 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
     ";
         // line 14
         $this->displayBlock('top_bar', $context, $blocks);
-        // line 30
+        // line 31
         echo "
     <br>
 
         ";
-        // line 33
-        $this->displayBlock('body', $context, $blocks);
         // line 34
+        $this->displayBlock('body', $context, $blocks);
+        // line 35
         echo "    
 
     <div class=\"row column\">
@@ -89,30 +89,30 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
     </script>
 
         ";
-        // line 47
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 48
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 49
         echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/jquery.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 49
+        // line 50
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/what-input.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 50
+        // line 51
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/foundation.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 51
+        // line 52
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/app.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 52
+        // line 53
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 53
+        // line 54
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.date.js"), "html", null, true);
         echo "\"></script>
         <script>
@@ -196,6 +196,10 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
         // line 22
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("location");
         echo "\">How to locate</a></li>
+              <li><a href=\"";
+        // line 23
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
+        echo "\">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -211,7 +215,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
 
     }
 
-    // line 33
+    // line 34
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -229,7 +233,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
 
     }
 
-    // line 47
+    // line 48
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -258,7 +262,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
 
     public function getDebugInfo()
     {
-        return array (  233 => 47,  215 => 33,  197 => 22,  193 => 21,  189 => 20,  182 => 15,  173 => 14,  156 => 6,  138 => 5,  116 => 53,  112 => 52,  108 => 51,  104 => 50,  100 => 49,  95 => 48,  93 => 47,  78 => 34,  76 => 33,  71 => 30,  69 => 14,  63 => 11,  59 => 10,  55 => 9,  51 => 8,  46 => 7,  44 => 6,  40 => 5,  34 => 1,);
+        return array (  237 => 48,  219 => 34,  201 => 23,  197 => 22,  193 => 21,  189 => 20,  182 => 15,  173 => 14,  156 => 6,  138 => 5,  116 => 54,  112 => 53,  108 => 52,  104 => 51,  100 => 50,  95 => 49,  93 => 48,  78 => 35,  76 => 34,  71 => 31,  69 => 14,  63 => 11,  59 => 10,  55 => 9,  51 => 8,  46 => 7,  44 => 6,  40 => 5,  34 => 1,);
     }
 
     public function getSourceContext()
@@ -285,6 +289,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
             <li><a href=\"{{ path(\"home\")}}\">Home</a></li>
               <li><a href=\"{{ path(\"about_us\")}}\">About us</a></li>
               <li><a href=\"{{ path(\"location\")}}\">How to locate</a></li>
+              <li><a href=\"{{ path(\"contact\")}}\">Contact</a></li>
           </ul>
         </div>
       </div>
