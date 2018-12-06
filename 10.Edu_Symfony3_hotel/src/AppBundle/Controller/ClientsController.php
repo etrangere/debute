@@ -3,12 +3,19 @@
 namespace AppBundle\Controller;
 
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Client;
-
+use AppBundle\Repository\ClientRepository;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Encoder\XmlEncoder;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
+use Symfony\Component\HttpFoundation\Response;
 
 class ClientsController extends Controller
 {
@@ -183,5 +190,37 @@ class ClientsController extends Controller
 
         return $this->redirectToRoute('index_clients');
     }
+
+    /**
+     * Lists searched entities
+     * @Route("/admin/guests/search", name="search")
+     * @Method("GET")
+     */
+    public function searchAction(Request $request)
+    {
+       // $string = $this->getRequest()->request->get('ajax_search');
+
+        $string = $this->container->get('ajax_search')->getCurrentRequest();
+
+
+       // $string = "alfa";
+        $clients = $this->getDoctrine()
+            ->getRepository('AppBundle:Client')
+            ->findByLetters($string);
+
+        //return users on json format
+
+        $encoders = array(new XmlEncoder(), new JsonEncoder());
+        $normalizers = array(new GetSetMethodNormalizer());
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $jsonContent = $serializer->serialize($clients, 'json');
+
+        $response = new Response($jsonContent);
+        return $response;
+
+    }
+
+
 
 }

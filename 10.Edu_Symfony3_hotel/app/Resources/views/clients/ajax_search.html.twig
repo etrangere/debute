@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+
+{% block top_bar %}
+
+    <body>
+    <div class="top-bar">
+        <div class="row">
+            <div class="top-bar-left">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li><a href="{{ path("index_clients")}}">Clients</a></li>
+                    <li><a href="{{ path("reservations")}}">Reservations</a></li>
+                    <li><input type="text" name="ajax_search" placeholder="Search.."></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </body>
+
+{% endblock %}
+
+{% block body %}
+
+    {{ dump() }}
+
+
+    <table id="client">
+        <tbody>
+        {% for client in clients %}
+            <tr>
+                <td>{{ client.name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+
+    <script>
+
+        $('#search').keyup(function() {
+
+            ajax_search = $(this).val();
+
+            $.ajax({
+                type: "GET",
+                url: "/10.Edu_Symfony3_hotel/web/app_dev.php/admin/guests/search",
+                dataType: "json",
+                data: {searchText : ajax_search},
+                success : function(response)
+                {
+                    console.log(response);
+                }
+            });
+        });
+
+    </script>
+{% endblock %}

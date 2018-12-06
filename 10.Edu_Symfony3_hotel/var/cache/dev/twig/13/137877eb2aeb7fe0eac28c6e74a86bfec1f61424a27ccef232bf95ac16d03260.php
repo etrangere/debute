@@ -80,7 +80,7 @@ class __TwigTemplate_00cd1c83a8c28530fd11c342cde3c5ee336860a85069a2b8ebec1e781c6
 
     }
 
-    // line 23
+    // line 21
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -89,12 +89,14 @@ class __TwigTemplate_00cd1c83a8c28530fd11c342cde3c5ee336860a85069a2b8ebec1e781c6
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 24
+        // line 22
         echo "
     ";
-        // line 25
+        // line 23
         echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context);
         echo "
+
+
     <div class=\"row\">
       <div class=\"medium-12 large-12 columns\">
         <h4>Clients</h4>
@@ -161,6 +163,8 @@ class __TwigTemplate_00cd1c83a8c28530fd11c342cde3c5ee336860a85069a2b8ebec1e781c6
       </div>
     </div>
 
+
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -182,7 +186,7 @@ class __TwigTemplate_00cd1c83a8c28530fd11c342cde3c5ee336860a85069a2b8ebec1e781c6
 
     public function getDebugInfo()
     {
-        return array (  158 => 54,  148 => 50,  144 => 49,  140 => 48,  134 => 45,  126 => 44,  123 => 43,  119 => 42,  104 => 30,  96 => 25,  93 => 24,  84 => 23,  66 => 12,  62 => 11,  54 => 5,  45 => 4,  15 => 1,);
+        return array (  160 => 54,  150 => 50,  146 => 49,  142 => 48,  136 => 45,  128 => 44,  125 => 43,  121 => 42,  106 => 30,  96 => 23,  93 => 22,  84 => 21,  66 => 12,  62 => 11,  54 => 5,  45 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -207,11 +211,11 @@ class __TwigTemplate_00cd1c83a8c28530fd11c342cde3c5ee336860a85069a2b8ebec1e781c6
 
 {% endblock %}
 
-
-
 {% block body %}
 
     {{ dump() }}
+
+
     <div class=\"row\">
       <div class=\"medium-12 large-12 columns\">
         <h4>Clients</h4>
@@ -245,6 +249,8 @@ class __TwigTemplate_00cd1c83a8c28530fd11c342cde3c5ee336860a85069a2b8ebec1e781c6
         </table>
       </div>
     </div>
+
+
 
 {% endblock %}
 ", "clients/index.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/clients/index.html.twig");

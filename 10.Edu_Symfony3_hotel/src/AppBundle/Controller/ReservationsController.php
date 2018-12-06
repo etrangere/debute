@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Reservation;
 use AppBundle\Entity\Client;
-use Doctrine\Repository\RoomRepository;
+use AppBundle\Repository\RoomRepository;
 use AppBundle\Entity\Room;
 
 
