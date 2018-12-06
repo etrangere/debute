@@ -1,6 +1,6 @@
 <?php
 
-/* clients/form.html.twig */
+/* :clients:form.html.twig */
 class __TwigTemplate_f5f58c6a6ce2c5d9d5c605e928c12511f4ef595a0bb3a20b594722317e438291 extends Twig_Template
 {
     private $source;
@@ -12,7 +12,7 @@ class __TwigTemplate_f5f58c6a6ce2c5d9d5c605e928c12511f4ef595a0bb3a20b594722317e4
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "clients/form.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":clients:form.html.twig", 1);
         $this->blocks = array(
             'top_bar' => array($this, 'block_top_bar'),
             'body' => array($this, 'block_body'),
@@ -27,10 +27,10 @@ class __TwigTemplate_f5f58c6a6ce2c5d9d5c605e928c12511f4ef595a0bb3a20b594722317e4
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "clients/form.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":clients:form.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "clients/form.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":clients:form.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -191,7 +191,7 @@ class __TwigTemplate_f5f58c6a6ce2c5d9d5c605e928c12511f4ef595a0bb3a20b594722317e4
 
     public function getTemplateName()
     {
-        return "clients/form.html.twig";
+        return ":clients:form.html.twig";
     }
 
     public function isTraitable()
@@ -278,6 +278,6 @@ class __TwigTemplate_f5f58c6a6ce2c5d9d5c605e928c12511f4ef595a0bb3a20b594722317e4
       </form>
     </div>
   </div>
-{% endblock %}", "clients/form.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/clients/form.html.twig");
+{% endblock %}", ":clients:form.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/clients/form.html.twig");
     }
 }

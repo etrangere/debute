@@ -143,7 +143,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Landon Hotel App";
+        echo "Hotel App";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -271,7 +271,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
 <html>
     <head>
         <meta charset=\"UTF-8\" />
-        <title>{% block title %}Landon Hotel App{% endblock %}</title>
+        <title>{% block title %}Hotel App{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('favicon.ico') }}\" />
         <link rel=\"stylesheet\" href=\"{{ asset('css/foundation.css') }}\">

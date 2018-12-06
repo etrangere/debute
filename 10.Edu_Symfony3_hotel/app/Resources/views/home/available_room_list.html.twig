@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block top_bar %}{% endblock %}
+
+
+{% block body %}
+
+    {{ dump() }}
+
+<form>
+    <div class="row">
+        <div class="medium-12 large-12 columns">
+            <h4>NUMBER OF GUESTS AND ROOMS</h4>
+
+            <form action="" method="post">
+                <div class="medium-2  columns">CHECK-IN:</div>
+
+                <div class="medium-2  columns"><input name="form[from]" value="" type="text"  class="datepicker" /></div>
+
+                <div class="medium-2  columns">CHECK-OUT:</div>
+
+                <div class="medium-2  columns"><input name="form[to]" value="" type="text" class="datepicker" /></div>
+
+                <div class="medium-2  columns"><input class="button" type="submit" value="SEARCH" /></div>
+            </form>
+        </div>
+    </div>
+    <div class="medium-2  columns">
+            <label>ROOM TYPE</label>
+            <div>
+                <select>
+                    <option value="" selected disabled>Please select</option>
+                    <option input name="form[room_type]" value="{{ form.room_type.single is defined ? form.name : '' }}">Single Room</option>
+                    <option input name="form[room_type]" value="{{ form.room_type.double is defined ? form.name : '' }}">Double Room</option>
+                    <option input name="form[room_type]" value="{{ form.room_type.triple is defined ? form.name : '' }}">Triple Room</option>
+                </select>
+            </div>
+        </div>
+        <div class="medium-2  columns">
+            <label>Adult</label>
+            <div>
+                <select>
+                    <option value="" selected disabled>Please select</option>
+                    <option input name="form[adult]" value="{{ form.adult.1 is defined ? form.adult.1 : '' }}">1 adult</option>
+                    <option input name="form[adult]" value="{{ form.adult.2 is defined ? form.adult.2 : '' }}">2 adults</option>
+                    <option input name="form[adult]" value="{{ form.adult.3 is defined ? form.adult.3 : '' }}">3 adults</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="medium-2  columns">
+            <label>Child</label>
+            <div>
+                <select>
+                    <option value="" selected disabled>Please select</option>
+                    <option input name="form[child]" value="{{ form.child.1 is defined ? form.child.1 : '' }}">1 child</option>
+                    <option input name="form[child]" value="{{ form.child.2 is defined ? form.child.2 : '' }}">2 childs</option>
+                    <option input name="form[child]" value="{{ form.child.3 is defined ? form.child.3 : '' }}">3 childs</option>
+                </select>
+            </div>
+        </div>
+        <div class="medium-2  columns">
+            <label>Baby</label>
+            <div>
+                <select>
+                    <option value="" selected disabled>Please select</option>
+                    <option input name="form[baby]" value="{{ form.baby.1 is defined ? form.baby.1 : '' }}">1 baby</option>
+                    <option input name="form[baby]" value="{{ form.baby.2 is defined ? form.baby.2 : '' }}">2 babies</option>
+                    <option input name="form[baby]" value="{{ form.baby.3 is defined ? form.baby.3 : '' }}">3 babies</option>
+                </select>
+            </div>
+        </div>
+    </form>
+
+
+
+{% endblock %}
+

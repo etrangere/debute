@@ -1,6 +1,6 @@
 <?php
 
-/* clients/ajax_search.html.twig */
+/* :clients:ajax_search.html.twig */
 class __TwigTemplate_94bdff774a7692f6b0031af0affeba91c74a3409f799e16d667ddb5b73821ff6 extends Twig_Template
 {
     private $source;
@@ -12,7 +12,7 @@ class __TwigTemplate_94bdff774a7692f6b0031af0affeba91c74a3409f799e16d667ddb5b738
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "clients/ajax_search.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":clients:ajax_search.html.twig", 1);
         $this->blocks = array(
             'top_bar' => array($this, 'block_top_bar'),
             'body' => array($this, 'block_body'),
@@ -27,10 +27,10 @@ class __TwigTemplate_94bdff774a7692f6b0031af0affeba91c74a3409f799e16d667ddb5b738
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "clients/ajax_search.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":clients:ajax_search.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "clients/ajax_search.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":clients:ajax_search.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -65,6 +65,7 @@ class __TwigTemplate_94bdff774a7692f6b0031af0affeba91c74a3409f799e16d667ddb5b738
         // line 12
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservations");
         echo "\">Reservations</a></li>
+                    <li><input type=\"text\" name=\"ajax_search\" placeholder=\"Search..\"></li>
                 </ul>
             </div>
         </div>
@@ -80,7 +81,7 @@ class __TwigTemplate_94bdff774a7692f6b0031af0affeba91c74a3409f799e16d667ddb5b738
 
     }
 
-    // line 21
+    // line 22
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -89,10 +90,10 @@ class __TwigTemplate_94bdff774a7692f6b0031af0affeba91c74a3409f799e16d667ddb5b738
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 22
+        // line 23
         echo "
     ";
-        // line 23
+        // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context);
         echo "
 
@@ -100,14 +101,14 @@ class __TwigTemplate_94bdff774a7692f6b0031af0affeba91c74a3409f799e16d667ddb5b738
     <table id=\"client\">
         <tbody>
         ";
-        // line 28
+        // line 29
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["clients"]) || array_key_exists("clients", $context) ? $context["clients"] : (function () { throw new Twig_Error_Runtime('Variable "clients" does not exist.', 28, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["clients"]) || array_key_exists("clients", $context) ? $context["clients"] : (function () { throw new Twig_Error_Runtime('Variable "clients" does not exist.', 29, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["client"]) {
-            // line 29
+            // line 30
             echo "            <tr>
                 <td>";
-            // line 30
+            // line 31
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "name", array()), "html", null, true);
             echo "</td>
             </tr>
@@ -116,7 +117,7 @@ class __TwigTemplate_94bdff774a7692f6b0031af0affeba91c74a3409f799e16d667ddb5b738
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['client'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 34
         echo "        </tbody>
     </table>
 
@@ -125,16 +126,20 @@ class __TwigTemplate_94bdff774a7692f6b0031af0affeba91c74a3409f799e16d667ddb5b738
 
     <script>
 
-        \$.ajax({
-            url: \"";
-        // line 42
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_search");
-        echo "\",
-            type: \"GET\",
-            data: 'filter='+\$(\"#f\").val(),
-            success: function(data){
-                \$(\"client\").replaceWith(data);
-            }
+        \$('#search').keyup(function() {
+
+            ajax_search = \$(this).val();
+
+            \$.ajax({
+                type: \"GET\",
+                url: \"/10.Edu_Symfony3_hotel/web/app_dev.php/admin/guests/search\",
+                dataType: \"json\",
+                data: {searchText : ajax_search},
+                success : function(response)
+                {
+                    console.log(response);
+                }
+            });
         });
 
     </script>
@@ -149,7 +154,7 @@ class __TwigTemplate_94bdff774a7692f6b0031af0affeba91c74a3409f799e16d667ddb5b738
 
     public function getTemplateName()
     {
-        return "clients/ajax_search.html.twig";
+        return ":clients:ajax_search.html.twig";
     }
 
     public function isTraitable()
@@ -159,7 +164,7 @@ class __TwigTemplate_94bdff774a7692f6b0031af0affeba91c74a3409f799e16d667ddb5b738
 
     public function getDebugInfo()
     {
-        return array (  131 => 42,  120 => 33,  111 => 30,  108 => 29,  104 => 28,  96 => 23,  93 => 22,  84 => 21,  66 => 12,  62 => 11,  54 => 5,  45 => 4,  15 => 1,);
+        return array (  121 => 34,  112 => 31,  109 => 30,  105 => 29,  97 => 24,  94 => 23,  85 => 22,  66 => 12,  62 => 11,  54 => 5,  45 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -176,6 +181,7 @@ class __TwigTemplate_94bdff774a7692f6b0031af0affeba91c74a3409f799e16d667ddb5b738
                 <ul class=\"dropdown menu\" data-dropdown-menu>
                     <li><a href=\"{{ path(\"index_clients\")}}\">Clients</a></li>
                     <li><a href=\"{{ path(\"reservations\")}}\">Reservations</a></li>
+                    <li><input type=\"text\" name=\"ajax_search\" placeholder=\"Search..\"></li>
                 </ul>
             </div>
         </div>
@@ -204,17 +210,24 @@ class __TwigTemplate_94bdff774a7692f6b0031af0affeba91c74a3409f799e16d667ddb5b738
 
     <script>
 
-        \$.ajax({
-            url: \"{{ path('client_search') }}\",
-            type: \"GET\",
-            data: 'filter='+\$(\"#f\").val(),
-            success: function(data){
-                \$(\"client\").replaceWith(data);
-            }
+        \$('#search').keyup(function() {
+
+            ajax_search = \$(this).val();
+
+            \$.ajax({
+                type: \"GET\",
+                url: \"/10.Edu_Symfony3_hotel/web/app_dev.php/admin/guests/search\",
+                dataType: \"json\",
+                data: {searchText : ajax_search},
+                success : function(response)
+                {
+                    console.log(response);
+                }
+            });
         });
 
     </script>
 {% endblock %}
-", "clients/ajax_search.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/clients/ajax_search.html.twig");
+", ":clients:ajax_search.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/clients/ajax_search.html.twig");
     }
 }

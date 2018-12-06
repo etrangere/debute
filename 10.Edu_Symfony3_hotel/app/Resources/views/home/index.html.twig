@@ -20,25 +20,8 @@
           restaurants, day spa, and social function services. Hotel rooms are usually
           numbered (or named in some smaller hotels and B&Bs) to allow guests to
           identify their room.</p>
-
-    </div>
-
-      <div class="row">
-        <div class="medium-12 large-12 columns">
-          <h4>Book a room</h4>
-
-          <form action="" method="post">
-            <div class="medium-1  columns">FROM:</div>
-
-            <div class="medium-2  columns"><input name="form[from]" value="" type="text"  class="datepicker" /></div>
-
-            <div class="medium-1  columns">TO:</div>
-
-            <div class="medium-2  columns"><input name="form[to]" value="" type="text" class="datepicker" /></div>
-
-            <div class="medium-2  columns"><input class="button" type="submit" value="SEARCH" /></div>
-          </form>
-        </div>
       </div>
+
+      <a class="medium-6  columns" href="{{ path("available_room_list")}}"><input type="submit" class="button"  value="BOOK A ROOM"></a>
 
         {% endblock %}
