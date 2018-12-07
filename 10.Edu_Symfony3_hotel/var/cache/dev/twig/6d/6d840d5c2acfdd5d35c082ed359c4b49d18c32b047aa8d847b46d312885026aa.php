@@ -98,51 +98,6 @@ class __TwigTemplate_94bdff774a7692f6b0031af0affeba91c74a3409f799e16d667ddb5b738
         echo "
 
 
-    <table id=\"client\">
-        <tbody>
-        ";
-        // line 29
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["clients"]) || array_key_exists("clients", $context) ? $context["clients"] : (function () { throw new Twig_Error_Runtime('Variable "clients" does not exist.', 29, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["client"]) {
-            // line 30
-            echo "            <tr>
-                <td>";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "name", array()), "html", null, true);
-            echo "</td>
-            </tr>
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['client'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
-        echo "        </tbody>
-    </table>
-
-
-
-
-    <script>
-
-        \$('#search').keyup(function() {
-
-            ajax_search = \$(this).val();
-
-            \$.ajax({
-                type: \"GET\",
-                url: \"/10.Edu_Symfony3_hotel/web/app_dev.php/admin/guests/search\",
-                dataType: \"json\",
-                data: {searchText : ajax_search},
-                success : function(response)
-                {
-                    console.log(response);
-                }
-            });
-        });
-
-    </script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -164,7 +119,7 @@ class __TwigTemplate_94bdff774a7692f6b0031af0affeba91c74a3409f799e16d667ddb5b738
 
     public function getDebugInfo()
     {
-        return array (  121 => 34,  112 => 31,  109 => 30,  105 => 29,  97 => 24,  94 => 23,  85 => 22,  66 => 12,  62 => 11,  54 => 5,  45 => 4,  15 => 1,);
+        return array (  97 => 24,  94 => 23,  85 => 22,  66 => 12,  62 => 11,  54 => 5,  45 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -195,38 +150,6 @@ class __TwigTemplate_94bdff774a7692f6b0031af0affeba91c74a3409f799e16d667ddb5b738
     {{ dump() }}
 
 
-    <table id=\"client\">
-        <tbody>
-        {% for client in clients %}
-            <tr>
-                <td>{{ client.name }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-
-
-
-    <script>
-
-        \$('#search').keyup(function() {
-
-            ajax_search = \$(this).val();
-
-            \$.ajax({
-                type: \"GET\",
-                url: \"/10.Edu_Symfony3_hotel/web/app_dev.php/admin/guests/search\",
-                dataType: \"json\",
-                data: {searchText : ajax_search},
-                success : function(response)
-                {
-                    console.log(response);
-                }
-            });
-        });
-
-    </script>
 {% endblock %}
 ", ":clients:ajax_search.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/clients/ajax_search.html.twig");
     }

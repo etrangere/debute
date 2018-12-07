@@ -127,6 +127,7 @@
   ':reservations:book.html.twig' => __DIR__.'/../../../app/Resources/views/reservations/book.html.twig',
   ':reservations:index.html.twig' => __DIR__.'/../../../app/Resources/views/reservations/index.html.twig',
   ':home:location.html.twig' => __DIR__.'/../../../app/Resources/views/home/location.html.twig',
+  ':home:confirmation.html.twig' => __DIR__.'/../../../app/Resources/views/home/confirmation.html.twig',
   ':home:about.html.twig' => __DIR__.'/../../../app/Resources/views/home/about.html.twig',
   ':home:index.html.twig' => __DIR__.'/../../../app/Resources/views/home/index.html.twig',
   ':home:pre_booking.html.twig' => __DIR__.'/../../../app/Resources/views/home/pre_booking.html.twig',

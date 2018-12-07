@@ -191,36 +191,5 @@ class ClientsController extends Controller
         return $this->redirectToRoute('index_clients');
     }
 
-    /**
-     * Lists searched entities
-     * @Route("/admin/guests/search", name="search")
-     * @Method("GET")
-     */
-    public function searchAction(Request $request)
-    {
-       // $string = $this->getRequest()->request->get('ajax_search');
-
-        $string = $this->container->get('ajax_search')->getCurrentRequest();
-
-
-       // $string = "alfa";
-        $clients = $this->getDoctrine()
-            ->getRepository('AppBundle:Client')
-            ->findByLetters($string);
-
-        //return users on json format
-
-        $encoders = array(new XmlEncoder(), new JsonEncoder());
-        $normalizers = array(new GetSetMethodNormalizer());
-        $serializer = new Serializer($normalizers, $encoders);
-
-        $jsonContent = $serializer->serialize($clients, 'json');
-
-        $response = new Response($jsonContent);
-        return $response;
-
-    }
-
-
 
 }

@@ -14,10 +14,6 @@ use Doctrine\ORM\EntityRepository;
  */
 class ClientRepository extends EntityRepository
 {
-    public function findByLetters($string){
-        return $this->getEntityManager()->createQuery('SELECT c FROM AppBundle:Client c  
-                WHERE c.name LIKE :string OR c.last_name LIKE :string')
-            ->setParameter('string','%'.$string.'%')
-            ->getResult();
-    }
+
+
 }

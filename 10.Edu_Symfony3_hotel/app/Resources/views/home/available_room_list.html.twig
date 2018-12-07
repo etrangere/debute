@@ -7,12 +7,12 @@
 
     {{ dump() }}
 
-<form>
-    <div class="row">
-        <div class="medium-12 large-12 columns">
-            <h4>NUMBER OF GUESTS AND ROOMS</h4>
+<form action="" method="post">
+        <div class="row">
+           <div class="medium-12 large-12 columns">
+             <h4>NUMBER OF GUESTS AND ROOMS</h4>
 
-            <form action="" method="post">
+
                 <div class="medium-2  columns">CHECK-IN:</div>
 
                 <div class="medium-2  columns"><input name="form[from]" value="" type="text"  class="datepicker" /></div>
@@ -21,11 +21,11 @@
 
                 <div class="medium-2  columns"><input name="form[to]" value="" type="text" class="datepicker" /></div>
 
-                <div class="medium-2  columns"><input class="button" type="submit" value="SEARCH" /></div>
-            </form>
+              <div class="medium-2  columns"><input class="button" type="submit" value="SEARCH" /></div>
+
+           </div>
         </div>
-    </div>
-    <div class="medium-2  columns">
+        <div class="medium-2  columns">
             <label>ROOM TYPE</label>
             <div>
                 <select>
@@ -47,7 +47,6 @@
                 </select>
             </div>
         </div>
-
         <div class="medium-2  columns">
             <label>Child</label>
             <div>
@@ -72,6 +71,35 @@
         </div>
     </form>
 
+
+
+    <table class="stack">
+        <thead>
+        <tr>
+            <th width="200">Room</th>
+            <th width="200">Availability</th>
+            <th width="200">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for room in rooms %}
+            <tr>
+                <td>{{ room.name}}</td>
+
+                <td>
+                    <div class="callout success">
+                        <h7>Available</h7>
+                    </div>
+                </td>
+                <td>
+                    <a class="hollow button warning" href="{{ path("pre_booking")  }}">BOOK NOW</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
 
 
 {% endblock %}

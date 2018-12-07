@@ -75,7 +75,7 @@ class HomeController extends Controller
 
 
         $data = [];
-        $data['id_client'] = "";
+        //$data['id_client'] = "";
         $data['rooms']=null;
         $data['form'] =[];
         $data['dates']['from']=[];

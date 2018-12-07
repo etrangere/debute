@@ -124,18 +124,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showNew',  '_route' => 'new_client',);
                 }
 
-                // search
-                if ('/admin/guests/search' === $pathinfo) {
-                    $ret = array (  '_controller' => 'AppBundle\\Controller\\ClientsController::searchAction',  '_route' => 'search',);
-                    if (!in_array($canonicalMethod, array('GET'))) {
-                        $allow = array_merge($allow, array('GET'));
-                        goto not_search;
-                    }
-
-                    return $ret;
-                }
-                not_search:
-
             }
 
             // delete

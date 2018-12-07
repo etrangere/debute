@@ -2,8 +2,7 @@
 
 namespace AppBundle\Repository;
 
-use AppBundle\AppBundle;
-use AppBundle\Entity\Reservation;
+
 use Doctrine\ORM\EntityRepository;
 
 /**
