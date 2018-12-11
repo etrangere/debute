@@ -2,20 +2,26 @@
 
 namespace AppBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\Cache\Simple\FilesystemCache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-
 use Symfony\Component\HttpFoundation\Request;
+
 use AppBundle\Entity\Reservation;
 use AppBundle\Entity\Client;
-use AppBundle\Repository\RoomRepository;
 use AppBundle\Entity\Room;
+use AppBundle\Repository\RoomRepository;
+
 use Symfony\Component\Validator\Constraints\All;
 
 
 class HomeController extends Controller
 {
+
+
+
 
     private $titles = ['mr', 'ms', 'mrs', 'dc', 'mx'];
 
@@ -77,11 +83,12 @@ class HomeController extends Controller
 
 
         $data = [];
-        $data['id_client'] = "";
+       // $data['id_client'] = "";
         $data['rooms']=null;
         $data['form'] =[];
         $data['dates']['from']=[];
         $data['dates']['to']=[];
+
 
         $form = $this->createFormBuilder()
             ->add('from')
@@ -93,6 +100,10 @@ class HomeController extends Controller
             ->getForm();
         $form->handleRequest($request);
 
+
+
+
+
         $client = $this->getDoctrine()->getRepository('AppBundle:Client')->findAll();
 
         $data['client']= $client;
@@ -101,18 +112,22 @@ class HomeController extends Controller
         if ($form->isSubmitted())
         {
             $form_data = $form->getData();
-
+            $data ['form'] = $form_data;
             //collect data from form
             $em = $this->getDoctrine()->getManager();
 
+            //$cache = new FilesystemCache();
+
             $client = new client;
-            //$client->setRoomType($form_data['room_type']);
-           // $client->setAdult($form_data['adult']);
-           // $client->setChild($form_data['child']);
-           // $client->setBaby($form_data['baby']);
+           // $client->setRoomType($form_data['room_type']);
+            $client->setAdult($form_data['adult']);
+            $client->setChild($form_data['child']);
+            $client->setBaby($form_data['baby']);
 
-            $em->persist($client);
+           // $cache->set('stats.products_count', 4711);
 
+            //$em->persist($client);
+            //$em->flush();
             //keep in persist for future flush
 
             $data ['form'] = $form_data;
@@ -131,7 +146,6 @@ class HomeController extends Controller
 
 
             $data['rooms']=$rooms;
-
 
 
             return $this->render('home/available_room_list.html.twig',$data);

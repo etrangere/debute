@@ -54,10 +54,6 @@ class Room
 
 
 
-
-
-
-
     /**
      * Get id
      *

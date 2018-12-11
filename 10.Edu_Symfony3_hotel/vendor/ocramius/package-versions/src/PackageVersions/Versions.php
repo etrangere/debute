@@ -45,6 +45,8 @@ final class Versions
   'sensio/framework-extra-bundle' => 'v3.0.29@bb907234df776b68922eb4b25bfa061683597b6a',
   'sensiolabs/security-checker' => 'v5.0.1@9ea927417c949039a9cfb0d92af76fd1c538d9e9',
   'swiftmailer/swiftmailer' => 'v5.4.12@181b89f18a90f8925ef805f950d47a7190e9b950',
+  'symfony/cache' => 'v4.2.1@5c4b50d6ba4f1c8955c3454444c1e3cfddaaad41',
+  'symfony/contracts' => 'v1.0.2@1aa7ab2429c3d594dd70689604b5cf7421254cdf',
   'symfony/monolog-bundle' => 'v3.2.0@8781649349fe418d51d194f8c9d212c0b97c40dd',
   'symfony/polyfill-apcu' => 'v1.10.0@19e1b73bf255265ad0b568f81766ae2a3266d8d2',
   'symfony/polyfill-ctype' => 'v1.10.0@e3d826245268269cd66f8326bd8bc066687b4a19',
@@ -55,13 +57,14 @@ final class Versions
   'symfony/polyfill-util' => 'v1.10.0@3b58903eae668d348a7126f999b0da0f2f93611c',
   'symfony/requirements-checker' => 'v1.1.3@c735f74734a296d301cc2ef9c3efe3a050266ef6',
   'symfony/swiftmailer-bundle' => 'v2.6.7@c4808f5169efc05567be983909d00f00521c53ec',
-  'symfony/symfony' => 'v3.4.19@a8ff5a534372763544031ae68c981d396ffeb43f',
+  'symfony/symfony' => 'v3.4.20@f6b8ddc362b1cf3fb06548693c3adbb736092412',
+  'symfony/var-exporter' => 'v4.2.1@a39222e357362424b61dcde50e2f7b5a7d3306db',
   'twig/twig' => 'v2.5.0@6a5f676b77a90823c2d4eaf76137b771adf31323',
   'zendframework/zend-code' => '3.3.1@c21db169075c6ec4b342149f446e7b7b724f95eb',
   'zendframework/zend-eventmanager' => '3.2.1@a5e2583a211f73604691586b8406ff7296a946dd',
   'sensio/generator-bundle' => 'v3.1.7@28cbaa244bd0816fd8908b93f90380bcd7b67a65',
   'symfony/phpunit-bridge' => 'v3.4.19@2155067dfc73e0e77dbc26f236af17e4df552de5',
-  'bernardopineda/landon_app' => 'dev-master@7ac07378e733315ebdbffd359a83e9f986fc85fe',
+  'bernardopineda/landon_app' => 'dev-master@f7bcbc7870fbfa9e843b8930bf9e69d93a4423bb',
 );
 
     private function __construct()

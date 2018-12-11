@@ -122,6 +122,21 @@ class appProdDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBun
             return array (  '_controller' => 'AppBundle\\Controller\\HomeController::showContact',  '_route' => 'contact',);
         }
 
+        // confirmation
+        if ('/confirmation' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::confirmation',  '_route' => 'confirmation',);
+        }
+
+        // available_room_list
+        if ('/rooms' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::booking',  '_route' => 'available_room_list',);
+        }
+
+        // pre_booking
+        if ('/pre_booking/new' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::pre_booking_New',  '_route' => 'pre_booking',);
+        }
+
         if ('/' === $pathinfo && !$allow) {
             throw new Symfony\Component\Routing\Exception\NoConfigurationException();
         }
