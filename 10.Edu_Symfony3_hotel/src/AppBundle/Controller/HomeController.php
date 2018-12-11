@@ -11,6 +11,7 @@ use AppBundle\Entity\Reservation;
 use AppBundle\Entity\Client;
 use AppBundle\Repository\RoomRepository;
 use AppBundle\Entity\Room;
+use Symfony\Component\Validator\Constraints\All;
 
 
 class HomeController extends Controller
@@ -29,6 +30,7 @@ class HomeController extends Controller
 
                                 
     }
+
 
     /**
      * @Route("/about", name="about_us")
@@ -75,7 +77,7 @@ class HomeController extends Controller
 
 
         $data = [];
-        //$data['id_client'] = "";
+        $data['id_client'] = "";
         $data['rooms']=null;
         $data['form'] =[];
         $data['dates']['from']=[];
@@ -84,18 +86,34 @@ class HomeController extends Controller
         $form = $this->createFormBuilder()
             ->add('from')
             ->add('to')
+            ->add('room_type')
+            ->add('adult')
+            ->add('child')
+            ->add('baby')
             ->getForm();
         $form->handleRequest($request);
 
-        //$client = $this->getDoctrine()->getRepository('AppBundle:Client')->find($id_client);
+        $client = $this->getDoctrine()->getRepository('AppBundle:Client')->findAll();
 
-       // $data['client']= $client;
+        $data['client']= $client;
 
 
         if ($form->isSubmitted())
         {
             $form_data = $form->getData();
 
+            //collect data from form
+            $em = $this->getDoctrine()->getManager();
+
+            $client = new client;
+            //$client->setRoomType($form_data['room_type']);
+           // $client->setAdult($form_data['adult']);
+           // $client->setChild($form_data['child']);
+           // $client->setBaby($form_data['baby']);
+
+            $em->persist($client);
+
+            //keep in persist for future flush
 
             $data ['form'] = $form_data;
             //$data ['dateFrom'] ='';
@@ -113,6 +131,8 @@ class HomeController extends Controller
 
 
             $data['rooms']=$rooms;
+
+
 
             return $this->render('home/available_room_list.html.twig',$data);
         }

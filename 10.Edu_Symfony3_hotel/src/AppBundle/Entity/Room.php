@@ -32,25 +32,31 @@ class Room
     private $description;
 
     /**
-     * @ORM\Column(name="type",type="string", length=100)
+     * @ORM\Column(type="string", length=100)
      */
-    private $type;
+    private $room_type;
 
     /**
      * @return mixed
      */
-    public function getType()
+    public function getRoomType()
     {
-        return $this->type;
+        return $this->room_type;
     }
 
     /**
-     * @param mixed $type
+     * @param mixed $room_type
      */
-    public function setType($type)
+    public function setRoomType($room_type)
     {
-        $this->type = $type;
+        $this->room_type = $room_type;
     }
+
+
+
+
+
+
 
     /**
      * Get id

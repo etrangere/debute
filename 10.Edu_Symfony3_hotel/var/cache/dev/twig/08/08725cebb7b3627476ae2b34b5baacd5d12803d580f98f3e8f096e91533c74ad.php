@@ -91,13 +91,13 @@ class __TwigTemplate_501e132e5214e0bac79d2a1d04d9cd0aea69699272f36d1143e3ed203a6
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 24
-        echo "<div style=\"text-align:center; width:100%\">
-    ";
+        echo "<h1><div style=\"text-align:center; width:100%\" >
+        ";
         // line 25
         $this->displayBlock('title', $context, $blocks);
         // line 26
-        echo "</div>
-
+        echo "    </div>
+</h1>
 
 ";
         
@@ -117,7 +117,7 @@ class __TwigTemplate_501e132e5214e0bac79d2a1d04d9cd0aea69699272f36d1143e3ed203a6
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        echo "<h1>Administration Panel for authorised staff use only</h1>";
+        echo "Administration Panel for authorised staff use only";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -166,10 +166,10 @@ class __TwigTemplate_501e132e5214e0bac79d2a1d04d9cd0aea69699272f36d1143e3ed203a6
  {% endblock %}
 
 {% block body %}
-<div style=\"text-align:center; width:100%\">
-    {% block title %}<h1>Administration Panel for authorised staff use only</h1>{% endblock %}
-</div>
-
+<h1><div style=\"text-align:center; width:100%\" >
+        {% block title %}Administration Panel for authorised staff use only{% endblock %}
+    </div>
+</h1>
 
 {% endblock %}
 ", ":admin:index.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/admin/index.html.twig");

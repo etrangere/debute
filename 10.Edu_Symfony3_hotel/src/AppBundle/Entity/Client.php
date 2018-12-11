@@ -56,6 +56,69 @@ class Client
      */
     private $email;
 
+    /**
+     * @var integer
+     */
+    private $adult;
+
+    /**
+     * @return int
+     */
+    public function getAdult()
+    {
+        return $this->adult;
+    }
+
+    /**
+     * @param int $adult
+     */
+    public function setAdult($adult)
+    {
+        $this->adult = $adult;
+    }
+
+    /**
+     * @return int
+     */
+    public function getChild()
+    {
+        return $this->child;
+    }
+
+    /**
+     * @param int $child
+     */
+    public function setChild($child)
+    {
+        $this->child = $child;
+    }
+
+    /**
+     * @return int
+     */
+    public function getBaby()
+    {
+        return $this->baby;
+    }
+
+    /**
+     * @param int $baby
+     */
+    public function setBaby($baby)
+    {
+        $this->baby = $baby;
+    }
+
+    /**
+     * @var integer
+     */
+    private $child;
+
+    /**
+     * @var integer
+     */
+    private $baby;
+
 
     /**
      * Get id

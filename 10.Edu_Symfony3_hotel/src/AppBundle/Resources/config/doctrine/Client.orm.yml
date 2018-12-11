@@ -36,6 +36,18 @@ AppBundle\Entity\Client:
             type: string
             length: '100'
             unique: true
+        adult:
+            type: integer
+            length: '1'
+            unique: true
+        child:
+            type: integer
+            length: '1'
+            unique: true
+        baby:
+            type: integer
+            length: '1'
+            unique: true
     lifecycleCallbacks: {  }
     oneToMany:
         reservations:

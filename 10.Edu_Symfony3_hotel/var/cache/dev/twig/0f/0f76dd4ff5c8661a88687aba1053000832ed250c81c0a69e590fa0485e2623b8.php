@@ -1,6 +1,6 @@
 <?php
 
-/* :home:available_room_list.html.twig */
+/* home/available_room_list.html.twig */
 class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb811466 extends Twig_Template
 {
     private $source;
@@ -12,7 +12,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", ":home:available_room_list.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "home/available_room_list.html.twig", 1);
         $this->blocks = array(
             'top_bar' => array($this, 'block_top_bar'),
             'body' => array($this, 'block_body'),
@@ -27,10 +27,10 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":home:available_room_list.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "home/available_room_list.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":home:available_room_list.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "home/available_room_list.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -91,87 +91,100 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
               <div class=\"medium-2  columns\"><input class=\"button\" type=\"submit\" value=\"SEARCH\" /></div>
 
            </div>
-        </div>
-        <div class=\"medium-2  columns\">
-            <label>ROOM TYPE</label>
-            <div>
-                <select>
-                    <option value=\"\" selected disabled>Please select</option>
-                    <option input name=\"form[room_type]\" value=\"";
-        // line 33
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "room_type", array(), "any", false, true), "single", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 33, $this->source); })()), "name", array())) : ("")), "html", null, true);
-        echo "\">Single Room</option>
-                    <option input name=\"form[room_type]\" value=\"";
+            <div class=\"medium-3  columns\">
+                <label>ROOM TYPE</label>
+                <div>
+                    <select class=\"\" name=\"room_type\">
+                        ";
+        // line 31
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new Twig_Error_Runtime('Variable "rooms" does not exist.', 31, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["room"]) {
+            // line 32
+            echo "                            <option value=\"\" >";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "id", array()), "html", null, true);
+            echo "</option>
+                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['room'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         // line 34
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "room_type", array(), "any", false, true), "double", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 34, $this->source); })()), "name", array())) : ("")), "html", null, true);
-        echo "\">Double Room</option>
-                    <option input name=\"form[room_type]\" value=\"";
-        // line 35
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "room_type", array(), "any", false, true), "triple", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 35, $this->source); })()), "name", array())) : ("")), "html", null, true);
-        echo "\">Triple Room</option>
-                </select>
+        echo "                    </select>
+                </div>
             </div>
-        </div>
-        <div class=\"medium-2  columns\">
-            <label>Adult</label>
-            <div>
-                <select>
-                    <option value=\"\" selected disabled>Please select</option>
-                    <option input name=\"form[adult]\" value=\"";
+            <div class=\"medium-3  columns\">
+                <label>Adult</label>
+                <div>
+                    <select class=\"form-control\">
+                        ";
+        // line 41
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new Twig_Error_Runtime('Variable "rooms" does not exist.', 41, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["room"]) {
+            // line 42
+            echo "                            <option value=\"\" >";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "floor", array()), "html", null, true);
+            echo "</option>
+                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['room'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         // line 44
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "adult", array(), "any", false, true), 1, array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 44, $this->source); })()), "adult", array()), 1, array())) : ("")), "html", null, true);
-        echo "\">1 adult</option>
-                    <option input name=\"form[adult]\" value=\"";
-        // line 45
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "adult", array(), "any", false, true), 2, array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 45, $this->source); })()), "adult", array()), 2, array())) : ("")), "html", null, true);
-        echo "\">2 adults</option>
-                    <option input name=\"form[adult]\" value=\"";
-        // line 46
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "adult", array(), "any", false, true), 3, array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 46, $this->source); })()), "adult", array()), 3, array())) : ("")), "html", null, true);
-        echo "\">3 adults</option>
-                </select>
+        echo "                    </select>
+                </div>
             </div>
-        </div>
-        <div class=\"medium-2  columns\">
-            <label>Child</label>
-            <div>
-                <select>
-                    <option value=\"\" selected disabled>Please select</option>
-                    <option input name=\"form[child]\" value=\"";
+            <div class=\"medium-3  columns\">
+                <label>Child</label>
+                <div>
+                    <select class=\"form-control\">
+                        ";
+        // line 51
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new Twig_Error_Runtime('Variable "rooms" does not exist.', 51, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["room"]) {
+            // line 52
+            echo "                            <option value=\"\" >";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "floor", array()), "html", null, true);
+            echo "</option>
+
+                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['room'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         // line 55
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "child", array(), "any", false, true), 1, array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 55, $this->source); })()), "child", array()), 1, array())) : ("")), "html", null, true);
-        echo "\">1 child</option>
-                    <option input name=\"form[child]\" value=\"";
-        // line 56
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "child", array(), "any", false, true), 2, array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 56, $this->source); })()), "child", array()), 2, array())) : ("")), "html", null, true);
-        echo "\">2 childs</option>
-                    <option input name=\"form[child]\" value=\"";
-        // line 57
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "child", array(), "any", false, true), 3, array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 57, $this->source); })()), "child", array()), 3, array())) : ("")), "html", null, true);
-        echo "\">3 childs</option>
-                </select>
+        echo "                    </select>
+                </div>
             </div>
-        </div>
-        <div class=\"medium-2  columns\">
-            <label>Baby</label>
-            <div>
-                <select>
-                    <option value=\"\" selected disabled>Please select</option>
-                    <option input name=\"form[baby]\" value=\"";
+            <div class=\"medium-3 columns\">
+                <label>Baby</label>
+                <div>
+                    <select class=\"form-control\">
+                        ";
+        // line 62
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new Twig_Error_Runtime('Variable "rooms" does not exist.', 62, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["room"]) {
+            // line 63
+            echo "                            <option value=\"\" >";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "floor", array()), "html", null, true);
+            echo "</option>
+
+                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['room'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         // line 66
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "baby", array(), "any", false, true), 1, array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 66, $this->source); })()), "baby", array()), 1, array())) : ("")), "html", null, true);
-        echo "\">1 baby</option>
-                    <option input name=\"form[baby]\" value=\"";
-        // line 67
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "baby", array(), "any", false, true), 2, array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 67, $this->source); })()), "baby", array()), 2, array())) : ("")), "html", null, true);
-        echo "\">2 babies</option>
-                    <option input name=\"form[baby]\" value=\"";
-        // line 68
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "baby", array(), "any", false, true), 3, array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 68, $this->source); })()), "baby", array()), 3, array())) : ("")), "html", null, true);
-        echo "\">3 babies</option>
-                </select>
+        echo "                    </select>
+                </div>
             </div>
+
         </div>
+
+
     </form>
 
 
@@ -186,14 +199,14 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
         </thead>
         <tbody>
         ";
-        // line 85
+        // line 86
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new Twig_Error_Runtime('Variable "rooms" does not exist.', 85, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new Twig_Error_Runtime('Variable "rooms" does not exist.', 86, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["room"]) {
-            // line 86
+            // line 87
             echo "            <tr>
                 <td>";
-            // line 87
+            // line 88
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "name", array()), "html", null, true);
             echo "</td>
 
@@ -204,7 +217,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 </td>
                 <td>
                     <a class=\"hollow button warning\" href=\"";
-            // line 95
+            // line 96
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pre_booking");
             echo "\">BOOK NOW</a>
                 </td>
@@ -214,7 +227,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['room'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 99
+        // line 100
         echo "        </tbody>
     </table>
     </div>
@@ -232,7 +245,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
     public function getTemplateName()
     {
-        return ":home:available_room_list.html.twig";
+        return "home/available_room_list.html.twig";
     }
 
     public function isTraitable()
@@ -242,7 +255,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
     public function getDebugInfo()
     {
-        return array (  218 => 99,  208 => 95,  197 => 87,  194 => 86,  190 => 85,  170 => 68,  166 => 67,  162 => 66,  150 => 57,  146 => 56,  142 => 55,  130 => 46,  126 => 45,  122 => 44,  110 => 35,  106 => 34,  102 => 33,  74 => 8,  71 => 7,  62 => 6,  45 => 3,  15 => 1,);
+        return array (  231 => 100,  221 => 96,  210 => 88,  207 => 87,  203 => 86,  181 => 66,  171 => 63,  167 => 62,  158 => 55,  148 => 52,  144 => 51,  135 => 44,  126 => 42,  122 => 41,  113 => 34,  104 => 32,  100 => 31,  74 => 8,  71 => 7,  62 => 6,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -273,51 +286,52 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
               <div class=\"medium-2  columns\"><input class=\"button\" type=\"submit\" value=\"SEARCH\" /></div>
 
            </div>
-        </div>
-        <div class=\"medium-2  columns\">
-            <label>ROOM TYPE</label>
-            <div>
-                <select>
-                    <option value=\"\" selected disabled>Please select</option>
-                    <option input name=\"form[room_type]\" value=\"{{ form.room_type.single is defined ? form.name : '' }}\">Single Room</option>
-                    <option input name=\"form[room_type]\" value=\"{{ form.room_type.double is defined ? form.name : '' }}\">Double Room</option>
-                    <option input name=\"form[room_type]\" value=\"{{ form.room_type.triple is defined ? form.name : '' }}\">Triple Room</option>
-                </select>
+            <div class=\"medium-3  columns\">
+                <label>ROOM TYPE</label>
+                <div>
+                    <select class=\"\" name=\"room_type\">
+                        {% for room in rooms %}
+                            <option value=\"\" >{{room.id}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class=\"medium-2  columns\">
-            <label>Adult</label>
-            <div>
-                <select>
-                    <option value=\"\" selected disabled>Please select</option>
-                    <option input name=\"form[adult]\" value=\"{{ form.adult.1 is defined ? form.adult.1 : '' }}\">1 adult</option>
-                    <option input name=\"form[adult]\" value=\"{{ form.adult.2 is defined ? form.adult.2 : '' }}\">2 adults</option>
-                    <option input name=\"form[adult]\" value=\"{{ form.adult.3 is defined ? form.adult.3 : '' }}\">3 adults</option>
-                </select>
+            <div class=\"medium-3  columns\">
+                <label>Adult</label>
+                <div>
+                    <select class=\"form-control\">
+                        {% for room in rooms %}
+                            <option value=\"\" >{{room.floor}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class=\"medium-2  columns\">
-            <label>Child</label>
-            <div>
-                <select>
-                    <option value=\"\" selected disabled>Please select</option>
-                    <option input name=\"form[child]\" value=\"{{ form.child.1 is defined ? form.child.1 : '' }}\">1 child</option>
-                    <option input name=\"form[child]\" value=\"{{ form.child.2 is defined ? form.child.2 : '' }}\">2 childs</option>
-                    <option input name=\"form[child]\" value=\"{{ form.child.3 is defined ? form.child.3 : '' }}\">3 childs</option>
-                </select>
+            <div class=\"medium-3  columns\">
+                <label>Child</label>
+                <div>
+                    <select class=\"form-control\">
+                        {% for room in rooms %}
+                            <option value=\"\" >{{room.floor}}</option>
+
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class=\"medium-2  columns\">
-            <label>Baby</label>
-            <div>
-                <select>
-                    <option value=\"\" selected disabled>Please select</option>
-                    <option input name=\"form[baby]\" value=\"{{ form.baby.1 is defined ? form.baby.1 : '' }}\">1 baby</option>
-                    <option input name=\"form[baby]\" value=\"{{ form.baby.2 is defined ? form.baby.2 : '' }}\">2 babies</option>
-                    <option input name=\"form[baby]\" value=\"{{ form.baby.3 is defined ? form.baby.3 : '' }}\">3 babies</option>
-                </select>
+            <div class=\"medium-3 columns\">
+                <label>Baby</label>
+                <div>
+                    <select class=\"form-control\">
+                        {% for room in rooms %}
+                            <option value=\"\" >{{room.floor}}</option>
+
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
+
         </div>
+
+
     </form>
 
 
@@ -353,6 +367,6 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
 {% endblock %}
 
-", ":home:available_room_list.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/available_room_list.html.twig");
+", "home/available_room_list.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/available_room_list.html.twig");
     }
 }
