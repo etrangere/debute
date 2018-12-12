@@ -9,8 +9,9 @@
 
 <form action="" method="post">
         <div class="row">
-           <div class="medium-12 large-12 columns">
-             <h4>NUMBER OF GUESTS AND ROOMS</h4>
+           <br class="medium-12 large-12 columns">
+
+               <h4 align="center">NUMBER OF GUESTS</h4></br>
 
 
                 <div class="medium-2  columns">CHECK-IN:</div>
@@ -43,7 +44,7 @@
                         <option value="" >Choose</option>
                         <option value="1" >1 person</option>
                         <option value="2" >2 persons</option>
-                        <option value="3" > 3 persons</option>
+                        <option value="3" >3 persons</option>
 
                     </select>
                 </div>
@@ -74,32 +75,30 @@
                 </div>
             </div>
         </div>
+</form>
+</br>
+<hr>
 
 
-    </form>
-
-
+    <h4 align="center">AVAILABLE ROOMS</h4>
 
     <table class="stack">
         <thead>
-        <tr>
+        <tr style="background-color: aqua">
             <th width="200">Room</th>
-            <th width="200">Availability</th>
-            <th width="200">Action</th>
+            <th width="200">Room Type</th>
+            <th width="200">Price</th>
+            <th width="200">Booking</th>
         </tr>
         </thead>
         <tbody>
         {% for room in rooms %}
             <tr>
                 <td>{{ room.name}}</td>
-
+                <td> <h7>RoomType</h7></td>
+                <td> <h7>Price</h7></td>
                 <td>
-                    <div class="callout success">
-                        <h7>Available</h7>
-                    </div>
-                </td>
-                <td>
-                    <a class="hollow button warning" href="{{ path("pre_booking")  }}">BOOK NOW</a>
+                    <a class="hollow button warning" href="{{ path("pre_booking")  }}">BOOKING</a>
                 </td>
             </tr>
         {% endfor %}

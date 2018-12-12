@@ -30,8 +30,6 @@ class ReservationsController extends Controller
             ->getRepository('AppBundle:Reservation')
             ->findAll();
 
-
-
         $data['reservations'] = $reservations;
 
         return $this->render("reservations/index.html.twig",$data);

@@ -62,6 +62,28 @@ class Client
     private $adult;
 
     /**
+     * @var \AppBundle\Entity\Room
+     *
+     */
+    private $room_type;
+
+    /**
+     * @return Room
+     */
+    public function getRoomType()
+    {
+        return $this->room_type;
+    }
+
+    /**
+     * @param Room $room_type
+     */
+    public function setRoomType($room_type)
+    {
+        $this->room_type = $room_type;
+    }
+
+    /**
      * @return int
      */
     public function getAdult()

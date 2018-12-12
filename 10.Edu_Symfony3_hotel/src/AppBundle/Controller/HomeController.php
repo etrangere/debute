@@ -83,12 +83,11 @@ class HomeController extends Controller
 
 
         $data = [];
-       // $data['id_client'] = "";
+        $data['id_client'] = "";
         $data['rooms']=null;
         $data['form'] =[];
         $data['dates']['from']=[];
         $data['dates']['to']=[];
-
 
         $form = $this->createFormBuilder()
             ->add('from')
@@ -100,13 +99,9 @@ class HomeController extends Controller
             ->getForm();
         $form->handleRequest($request);
 
-
-
-
-
-        $client = $this->getDoctrine()->getRepository('AppBundle:Client')->findAll();
-
-        $data['client']= $client;
+        // need last in-session client with hidden id to assigne in future db call
+        // $client = $this->getDoctrine()->getRepository('AppBundle:Client')->findAll();
+        // $data['client']= $client;
 
 
         if ($form->isSubmitted())
@@ -114,12 +109,11 @@ class HomeController extends Controller
             $form_data = $form->getData();
             $data ['form'] = $form_data;
             //collect data from form
-            $em = $this->getDoctrine()->getManager();
-
+            //$em = $this->getDoctrine()->getManager();
             //$cache = new FilesystemCache();
 
             $client = new client;
-           // $client->setRoomType($form_data['room_type']);
+            $client->setRoomType($form_data['room_type']);
             $client->setAdult($form_data['adult']);
             $client->setChild($form_data['child']);
             $client->setBaby($form_data['baby']);
@@ -128,7 +122,7 @@ class HomeController extends Controller
 
             //$em->persist($client);
             //$em->flush();
-            //keep in persist for future flush
+
 
             $data ['form'] = $form_data;
             //$data ['dateFrom'] ='';
@@ -146,7 +140,6 @@ class HomeController extends Controller
 
 
             $data['rooms']=$rooms;
-
 
             return $this->render('home/available_room_list.html.twig',$data);
         }
