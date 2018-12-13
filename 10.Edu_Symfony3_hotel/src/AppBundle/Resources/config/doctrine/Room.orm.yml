@@ -18,8 +18,8 @@ AppBundle\Entity\Room:
             type: string
             length: 255
         room_type:
-            type: string
-            length: 100
+            type: integer
+            length: 10
     lifecycleCallbacks: {  }
     oneToMany:
         reservations:

@@ -13,14 +13,13 @@ use AppBundle\Entity\Reservation;
 use AppBundle\Entity\Client;
 use AppBundle\Entity\Room;
 use AppBundle\Repository\RoomRepository;
-
 use Symfony\Component\Validator\Constraints\All;
 
 
 class HomeController extends Controller
 {
 
-
+    //private $cache;
 
 
     private $titles = ['mr', 'ms', 'mrs', 'dc', 'mx'];
@@ -81,7 +80,6 @@ class HomeController extends Controller
     public function booking(Request $request)
     {
 
-
         $data = [];
         $data['id_client'] = "";
         $data['rooms']=null;
@@ -99,45 +97,30 @@ class HomeController extends Controller
             ->getForm();
         $form->handleRequest($request);
 
-        // need last in-session client with hidden id to assigne in future db call
-        // $client = $this->getDoctrine()->getRepository('AppBundle:Client')->findAll();
-        // $data['client']= $client;
-
-
         if ($form->isSubmitted())
         {
             $form_data = $form->getData();
             $data ['form'] = $form_data;
-            //collect data from form
-            //$em = $this->getDoctrine()->getManager();
-            //$cache = new FilesystemCache();
-
-            $client = new client;
-            $client->setRoomType($form_data['room_type']);
-            $client->setAdult($form_data['adult']);
-            $client->setChild($form_data['child']);
-            $client->setBaby($form_data['baby']);
-
-           // $cache->set('stats.products_count', 4711);
-
-            //$em->persist($client);
-            //$em->flush();
 
 
-            $data ['form'] = $form_data;
-            //$data ['dateFrom'] ='';
-            //$data ['dateTo'] ='';
+            $cache = new FilesystemCache();
+
+            $cache->set('room_type', $form_data['room_type']);
+            $cache->set('adult', $form_data['adult']);
+            $cache->set('child', $form_data['child']);
+            $cache->set('baby', $form_data['baby']);
+
+
+           // var_dump($cache);
 
             $data['dates']['from'] = $form_data['from'];
             $data['dates']['to'] = $form_data['to'];
-
+            var_dump($data);
             $em=$this->getDoctrine()->getManager();
 
 
             $rooms=$em->getRepository('AppBundle:Room')
                 ->getAvailableRooms($form_data['from'],$form_data['to']);
-
-
 
             $data['rooms']=$rooms;
 
@@ -148,7 +131,7 @@ class HomeController extends Controller
 
 
     /**
-     * @Route("/pre_booking/new",name="pre_booking")
+     * @Route("/pre_booking",name="pre_booking")
      */
     public function pre_booking_New(Request $request)
     {
@@ -177,9 +160,16 @@ class HomeController extends Controller
             $data ['form'] = [];
             $data ['form'] = $form_data;
 
+            $cache = new FilesystemCache();
+            $data ['room_type'] = $cache->get('room_type');
+            $data ['adult'] = $cache->get('adult');
+            $data ['child'] = $cache->get('child');
+            $data ['baby'] = $cache->get('baby');
+
             $em = $this->getDoctrine()->getManager();
 
             $client = new client;
+
             $client->setTitle($form_data['title']);
             $client->setName($form_data['name']);
             $client->setLastName($form_data['last_name']);
@@ -188,12 +178,26 @@ class HomeController extends Controller
             $client->setCity($form_data['city']);
             $client->setState($form_data['state']);
             $client->setEmail($form_data['email']);
+
+            $client->setRoomType($data['room_type']);
+            var_dump($client);
+            $client->setAdult($data['adult']);
+            $client->setChild($data['child']);
+            $client->setBaby($data['baby']);
             $data['titles'] = $this->titles;
             $em->persist($client);
 
             $em->flush();
 
+            $cache->deleteMultiple(array(
+                'room_type',
+                'adult',
+                'child',
+                'baby',
+            ));
+
             return $this->redirectToRoute('confirmation');
+
         }
 
         //return $this->redirectToRoute('confirmation');

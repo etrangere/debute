@@ -64,6 +64,58 @@
           <label>Email</label>
           <input name="form[email]" value="{{ form.email is defined ? form.email : '' }}" type="text" />
         </div>
+        <div class="medium-3  columns">
+          <label>ROOM TYPE</label>
+          <h4>{{ form.room_type }}</h4>
+          <div>
+            <select class="" name="form[room_type]">
+              <option selected="selected" value="{{ form.room_type }}">Choose</option>
+              <option value="{{ 1|number_format }}">Single</option>
+              <option value="{{ 2|number_format }}">Double</option>
+              <option value="{{ 3|number_format }}">Triple</option>
+            </select>
+          </div>
+        </div>
+        <div class="medium-3  columns">
+          <label>Adult</label>
+          <h4>{{ form.adult }}</h4>
+          <div>
+            <select class="" name="form[adult]">
+              <option selected="selected" value="{{ form.adult }}">Choose</option>
+              <option value="{{ 1|number_format }}">1 person</option>
+              <option value="{{ 2|number_format }}">2 persons</option>
+              <option value="{{ 3|number_format }}">3 persons</option>
+
+            </select>
+          </div>
+        </div>
+        <div class="medium-3  columns">
+          <label>Child</label>
+          <h4>{{ form.child }}</h4>
+          <div>
+            <select class="" name="form[child]">
+              <option selected="selected" value="{{ form.child }}">Choose</option>
+              <option value="{{ 1|number_format }}">1 child</option>
+              <option value="{{ 2|number_format }}">2 childs</option>
+              <option value="{{ 3|number_format }}">3 childs</option>
+
+            </select>
+
+          </div>
+        </div>
+        <div class="medium-3 columns">
+          <label>Baby</label>
+          <h4>{{ form.baby }}</h4>
+          <div>
+            <select class="" name="form[baby]">
+              <option selected="selected" value="{{ form.baby }}">Choose</option>
+              <option value="{{ 1|number_format }}">1 baby</option>
+              <option value="{{ 2|number_format }}">2 babies</option>
+              <option value="{{ 3|number_format }}">3 babies</option>
+            </select>
+          </div>
+        </div>
+
         <div class="medium-12  columns">
           <input type="submit" value="SAVE" class="button success hollow" />
         </div>

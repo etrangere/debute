@@ -32,7 +32,7 @@ class Room
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="integer", length=10)
      */
     private $room_type;
 

@@ -69,6 +69,10 @@ class ClientsController extends Controller
             ->add('city')
             ->add('state')
             ->add('email')
+            ->add('room_type')
+            ->add('adult')
+            ->add('child')
+            ->add('baby')
             ->getForm();
 
         $form->handleRequest($request);
@@ -88,6 +92,10 @@ class ClientsController extends Controller
             $client->setCity($form_data['city']);
             $client->setState($form_data['state']);
             $client->setEmail($form_data['email']);
+            $client->setRoomType($form_data['room_type']);
+            $client->setAdult($form_data['adult']);
+            $client->setChild($form_data['child']);
+            $client->setBaby($form_data['baby']);
             $em = $this->getDoctrine()->getManager();
             $em->persist($client);
             $em->flush();
@@ -109,6 +117,11 @@ class ClientsController extends Controller
             $client_data ['city'] = $client->getCity();
             $client_data ['state'] = $client->getState();
             $client_data ['email'] = $client->getEmail();
+            $client_data ['room_type'] = $client->getRoomType();
+            $client_data ['adult'] = $client->getAdult();
+            $client_data ['child'] = $client->getChild();
+            $client_data ['baby'] = $client->getBaby();
+
             $client_data ['titles'] = $this->titles;
             $data['form'] = $client_data;
         }
@@ -139,6 +152,10 @@ class ClientsController extends Controller
             ->add('city')
             ->add('state')
             ->add('email')
+            ->add('room_type')
+            ->add('adult')
+            ->add('child')
+            ->add('baby')
             ->getForm();
 
         $form->handleRequest($request);
@@ -159,6 +176,10 @@ class ClientsController extends Controller
             $client->setCity($form_data['city']);
             $client->setState($form_data['state']);
             $client->setEmail($form_data['email']);
+            $client->setRoomType($form_data['room_type']);
+            $client->setAdult($form_data['adult']);
+            $client->setChild($form_data['child']);
+            $client->setBaby($form_data['baby']);
             $data['titles'] = $this->titles;
             $em->persist($client);
 

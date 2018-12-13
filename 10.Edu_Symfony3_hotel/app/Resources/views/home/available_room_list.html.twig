@@ -29,11 +29,10 @@
                 <label>ROOM TYPE</label>
                 <div>
                     <select class="" name="form[room_type]">
-                        <option value="single">Choose</option>
-                        <option value="single">Single</option>
-                        <option value="double">Double</option>
-                        <option value="triple">Triple</option>
-
+                        <option selected="selected">Choose</option>
+                        <option value="{{ 1|number_format }}">Single</option>
+                        <option value="{{ 2|number_format }}">Double</option>
+                        <option value="{{ 3|number_format }}">Triple</option>
                     </select>
                 </div>
             </div>
@@ -41,10 +40,10 @@
                 <label>Adult</label>
                 <div>
                     <select class="" name="form[adult]">
-                        <option value="" >Choose</option>
-                        <option value="1" >1 person</option>
-                        <option value="2" >2 persons</option>
-                        <option value="3" >3 persons</option>
+                        <option selected="selected">Choose</option>
+                        <option value="{{ 1|number_format }}">1 person</option>
+                        <option value="{{ 2|number_format }}">2 persons</option>
+                        <option value="{{ 3|number_format }}">3 persons</option>
 
                     </select>
                 </div>
@@ -53,10 +52,10 @@
                 <label>Child</label>
                 <div>
                     <select class="" name="form[child]">
-                        <option value="" >Choose</option>
-                        <option value="1" >1 child</option>
-                        <option value="2" >2 childs</option>
-                        <option value="3" >3 childs</option>
+                        <option selected="selected">Choose</option>
+                        <option value="{{ 1|number_format }}">1 child</option>
+                        <option value="{{ 2|number_format }}">2 childs</option>
+                        <option value="{{ 3|number_format }}">3 childs</option>
 
                     </select>
 
@@ -66,10 +65,10 @@
                 <label>Baby</label>
                 <div>
                     <select class="" name="form[baby]">
-                        <option value="" >Choose</option>
-                        <option value="1" >1 baby</option>
-                        <option value="2" >2 babies</option>
-                        <option value="3" >3 babies</option>
+                        <option selected="selected">Choose</option>
+                        <option value="{{ 1|number_format }}">1 baby</option>
+                        <option value="{{ 2|number_format }}">2 babies</option>
+                        <option value="{{ 3|number_format }}">3 babies</option>
 
                     </select>
                 </div>

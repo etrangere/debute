@@ -135,13 +135,14 @@ class __TwigTemplate_c37e5e58604e2138b5bd8a92008f7daf5f8652d2f39823350bb22228faa
             echo " to ";
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "dateOut", array()), "d-m-Y"), "html", null, true);
             echo "</td>
+
                 <td>Referance DB not connected</td>
               ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 49
+        // line 50
         echo "            </tbody>
         </table>
       </div>
@@ -168,7 +169,7 @@ class __TwigTemplate_c37e5e58604e2138b5bd8a92008f7daf5f8652d2f39823350bb22228faa
 
     public function getDebugInfo()
     {
-        return array (  145 => 49,  134 => 46,  130 => 45,  126 => 44,  122 => 43,  118 => 41,  114 => 40,  93 => 23,  84 => 22,  66 => 11,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
+        return array (  146 => 50,  134 => 46,  130 => 45,  126 => 44,  122 => 43,  118 => 41,  114 => 40,  93 => 23,  84 => 22,  66 => 11,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -219,6 +220,7 @@ class __TwigTemplate_c37e5e58604e2138b5bd8a92008f7daf5f8652d2f39823350bb22228faa
                 <td>{{ reservation.room.name }}</td>
                 <td>{{ reservation.client.name }}</td>
                 <td> {{ reservation.dateIn|date('d-m-Y')}} to {{ reservation.dateOut|date('d-m-Y')}}</td>
+
                 <td>Referance DB not connected</td>
               {% endfor %}
             </tbody>

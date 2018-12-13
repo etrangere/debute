@@ -212,7 +212,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // pre_booking
-        if ('/pre_booking/new' === $pathinfo) {
+        if ('/pre_booking' === $pathinfo) {
             return array (  '_controller' => 'AppBundle\\Controller\\HomeController::pre_booking_New',  '_route' => 'pre_booking',);
         }
 

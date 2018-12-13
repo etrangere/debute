@@ -8,7 +8,7 @@
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/pre_booking/new',
+                    '/pre_booking',
                 ],
                 'name' => [
                     'pre_booking',

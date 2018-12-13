@@ -174,6 +174,118 @@ class __TwigTemplate_2cfd6df4a508b19f1ee6cf64045e3bc6c354db30da30aded787eba3a5e3
         echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "email", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 65, $this->source); })()), "email", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
+        <div class=\"medium-3  columns\">
+          <label>ROOM TYPE</label>
+          <h4>";
+        // line 69
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 69, $this->source); })()), "room_type", array()), "html", null, true);
+        echo "</h4>
+          <div>
+            <select class=\"\" name=\"form[room_type]\">
+              <option selected=\"selected\" value=\"";
+        // line 72
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 72, $this->source); })()), "room_type", array()), "html", null, true);
+        echo "\">Choose</option>
+              <option value=\"";
+        // line 73
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
+        echo "\">Single</option>
+              <option value=\"";
+        // line 74
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
+        echo "\">Double</option>
+              <option value=\"";
+        // line 75
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
+        echo "\">Triple</option>
+            </select>
+          </div>
+        </div>
+        <div class=\"medium-3  columns\">
+          <label>Adult</label>
+          <h4>";
+        // line 81
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 81, $this->source); })()), "adult", array()), "html", null, true);
+        echo "</h4>
+          <div>
+            <select class=\"\" name=\"form[adult]\">
+              <option selected=\"selected\" value=\"";
+        // line 84
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 84, $this->source); })()), "adult", array()), "html", null, true);
+        echo "\">Choose</option>
+              <option value=\"";
+        // line 85
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
+        echo "\">1 person</option>
+              <option value=\"";
+        // line 86
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
+        echo "\">2 persons</option>
+              <option value=\"";
+        // line 87
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
+        echo "\">3 persons</option>
+
+            </select>
+          </div>
+        </div>
+        <div class=\"medium-3  columns\">
+          <label>Child</label>
+          <h4>";
+        // line 94
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 94, $this->source); })()), "child", array()), "html", null, true);
+        echo "</h4>
+          <div>
+            <select class=\"\" name=\"form[child]\">
+              <option selected=\"selected\" value=\"";
+        // line 97
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 97, $this->source); })()), "child", array()), "html", null, true);
+        echo "\">Choose</option>
+              <option value=\"";
+        // line 98
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
+        echo "\">1 child</option>
+              <option value=\"";
+        // line 99
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
+        echo "\">2 childs</option>
+              <option value=\"";
+        // line 100
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
+        echo "\">3 childs</option>
+
+            </select>
+
+          </div>
+        </div>
+        <div class=\"medium-3 columns\">
+          <label>Baby</label>
+          <h4>";
+        // line 108
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 108, $this->source); })()), "baby", array()), "html", null, true);
+        echo "</h4>
+          <div>
+            <select class=\"\" name=\"form[baby]\">
+              <option selected=\"selected\" value=\"";
+        // line 111
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 111, $this->source); })()), "baby", array()), "html", null, true);
+        echo "\">Choose</option>
+              <option value=\"";
+        // line 112
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
+        echo "\">1 baby</option>
+              <option value=\"";
+        // line 113
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
+        echo "\">2 babies</option>
+              <option value=\"";
+        // line 114
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
+        echo "\">3 babies</option>
+            </select>
+          </div>
+        </div>
+
         <div class=\"medium-12  columns\">
           <input type=\"submit\" value=\"SAVE\" class=\"button success hollow\" />
         </div>
@@ -201,7 +313,7 @@ class __TwigTemplate_2cfd6df4a508b19f1ee6cf64045e3bc6c354db30da30aded787eba3a5e3
 
     public function getDebugInfo()
     {
-        return array (  174 => 65,  167 => 61,  160 => 57,  153 => 53,  146 => 49,  139 => 45,  132 => 41,  125 => 36,  112 => 34,  108 => 33,  96 => 24,  93 => 23,  84 => 22,  66 => 11,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
+        return array (  283 => 114,  279 => 113,  275 => 112,  271 => 111,  265 => 108,  254 => 100,  250 => 99,  246 => 98,  242 => 97,  236 => 94,  226 => 87,  222 => 86,  218 => 85,  214 => 84,  208 => 81,  199 => 75,  195 => 74,  191 => 73,  187 => 72,  181 => 69,  174 => 65,  167 => 61,  160 => 57,  153 => 53,  146 => 49,  139 => 45,  132 => 41,  125 => 36,  112 => 34,  108 => 33,  96 => 24,  93 => 23,  84 => 22,  66 => 11,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -272,6 +384,58 @@ class __TwigTemplate_2cfd6df4a508b19f1ee6cf64045e3bc6c354db30da30aded787eba3a5e3
           <label>Email</label>
           <input name=\"form[email]\" value=\"{{ form.email is defined ? form.email : '' }}\" type=\"text\" />
         </div>
+        <div class=\"medium-3  columns\">
+          <label>ROOM TYPE</label>
+          <h4>{{ form.room_type }}</h4>
+          <div>
+            <select class=\"\" name=\"form[room_type]\">
+              <option selected=\"selected\" value=\"{{ form.room_type }}\">Choose</option>
+              <option value=\"{{ 1|number_format }}\">Single</option>
+              <option value=\"{{ 2|number_format }}\">Double</option>
+              <option value=\"{{ 3|number_format }}\">Triple</option>
+            </select>
+          </div>
+        </div>
+        <div class=\"medium-3  columns\">
+          <label>Adult</label>
+          <h4>{{ form.adult }}</h4>
+          <div>
+            <select class=\"\" name=\"form[adult]\">
+              <option selected=\"selected\" value=\"{{ form.adult }}\">Choose</option>
+              <option value=\"{{ 1|number_format }}\">1 person</option>
+              <option value=\"{{ 2|number_format }}\">2 persons</option>
+              <option value=\"{{ 3|number_format }}\">3 persons</option>
+
+            </select>
+          </div>
+        </div>
+        <div class=\"medium-3  columns\">
+          <label>Child</label>
+          <h4>{{ form.child }}</h4>
+          <div>
+            <select class=\"\" name=\"form[child]\">
+              <option selected=\"selected\" value=\"{{ form.child }}\">Choose</option>
+              <option value=\"{{ 1|number_format }}\">1 child</option>
+              <option value=\"{{ 2|number_format }}\">2 childs</option>
+              <option value=\"{{ 3|number_format }}\">3 childs</option>
+
+            </select>
+
+          </div>
+        </div>
+        <div class=\"medium-3 columns\">
+          <label>Baby</label>
+          <h4>{{ form.baby }}</h4>
+          <div>
+            <select class=\"\" name=\"form[baby]\">
+              <option selected=\"selected\" value=\"{{ form.baby }}\">Choose</option>
+              <option value=\"{{ 1|number_format }}\">1 baby</option>
+              <option value=\"{{ 2|number_format }}\">2 babies</option>
+              <option value=\"{{ 3|number_format }}\">3 babies</option>
+            </select>
+          </div>
+        </div>
+
         <div class=\"medium-12  columns\">
           <input type=\"submit\" value=\"SAVE\" class=\"button success hollow\" />
         </div>
