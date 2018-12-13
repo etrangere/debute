@@ -265,6 +265,26 @@ php bin/symfony_requirements //execute to check --- OK,WARNING-is not block for 
 **
 
 
+**Symfony3 simple caching**
 
+composer require symfony/cache
 
+use Symfony\Component\Cache\Simple\FilesystemCache;
+
+also there is array option check doc.
+//set
+$cache = new FilesystemCache();
+
+            $cache->set('room_type', $form_data['room_type']);
+            $cache->set('adult', $form_data['adult']);
+            $cache->set('child', $form_data['child']);
+            $cache->set('baby', $form_data['baby']);
+
+//get
+
+ $cache = new FilesystemCache();
+            $data ['or somthing you need or variable $data insted'] = $cache->get('room_type');
+            $data ['adult'] = $cache->get('adult');
+            $data ['child'] = $cache->get('child');
+            $data ['baby'] = $cache->get('baby');
 

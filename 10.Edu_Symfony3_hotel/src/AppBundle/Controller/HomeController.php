@@ -111,8 +111,6 @@ class HomeController extends Controller
             $cache->set('baby', $form_data['baby']);
 
 
-           // var_dump($cache);
-
             $data['dates']['from'] = $form_data['from'];
             $data['dates']['to'] = $form_data['to'];
             var_dump($data);
@@ -178,9 +176,7 @@ class HomeController extends Controller
             $client->setCity($form_data['city']);
             $client->setState($form_data['state']);
             $client->setEmail($form_data['email']);
-
             $client->setRoomType($data['room_type']);
-            var_dump($client);
             $client->setAdult($data['adult']);
             $client->setChild($data['child']);
             $client->setBaby($data['baby']);
