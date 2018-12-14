@@ -3,11 +3,11 @@
 {% block body %}
 
     <div class="row">
-      <div class="medium-6 columns">
+      <div class="medium-12 columns">
         <h2>Welcome to the Hotel</h2>
         <img class="thumbnail" src="{{ asset('images/1.jpg') }}">
       </div>
-      <div class="medium-6 large-5 columns">
+      <div class="medium-12  columns">
         <p>A hotel is an establishment that provides paid lodging on a short-term basis.
           Facilities provided may range from a modest-quality mattress in a small room to
           large suites with bigger, higher-quality beds, a dresser, a refrigerator and
@@ -22,6 +22,6 @@
           identify their room.</p>
       </div>
 
-      <a class="medium-6  columns" href="{{ path("available_room_list")}}"><input type="submit" class="button"  value="BOOK A ROOM"></a>
+      <a class="medium-12  columns" href="{{ path("available_room_list")}}"><input type="submit" class="button"  value="BOOK A ROOM"></a>
 
         {% endblock %}
