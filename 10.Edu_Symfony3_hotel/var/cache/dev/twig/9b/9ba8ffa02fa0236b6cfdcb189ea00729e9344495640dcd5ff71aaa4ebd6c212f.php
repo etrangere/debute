@@ -53,7 +53,7 @@ class __TwigTemplate_4baaf980f1c4b5a51d581b7c10e5e64d54b5e288ef63857555d87138e79
         echo "
     <div class=\"row\">
       <div class=\"medium-12 columns\">
-        <h2>Welcome to the Hotel</h2>
+        <h2 align=\"center\">Welcome to the Hotel</h2>
         <img class=\"thumbnail\" src=\"";
         // line 8
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/1.jpg"), "html", null, true);
@@ -74,7 +74,7 @@ class __TwigTemplate_4baaf980f1c4b5a51d581b7c10e5e64d54b5e288ef63857555d87138e79
           identify their room.</p>
       </div>
 
-      <a class=\"medium-12  columns\" href=\"";
+      <a align=\"center\" class=\"medium-12  columns\" href=\"";
         // line 25
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("available_room_list");
         echo "\"><input type=\"submit\" class=\"button\"  value=\"BOOK A ROOM\"></a>
@@ -111,7 +111,7 @@ class __TwigTemplate_4baaf980f1c4b5a51d581b7c10e5e64d54b5e288ef63857555d87138e79
 
     <div class=\"row\">
       <div class=\"medium-12 columns\">
-        <h2>Welcome to the Hotel</h2>
+        <h2 align=\"center\">Welcome to the Hotel</h2>
         <img class=\"thumbnail\" src=\"{{ asset('images/1.jpg') }}\">
       </div>
       <div class=\"medium-12  columns\">
@@ -129,7 +129,7 @@ class __TwigTemplate_4baaf980f1c4b5a51d581b7c10e5e64d54b5e288ef63857555d87138e79
           identify their room.</p>
       </div>
 
-      <a class=\"medium-12  columns\" href=\"{{ path(\"available_room_list\")}}\"><input type=\"submit\" class=\"button\"  value=\"BOOK A ROOM\"></a>
+      <a align=\"center\" class=\"medium-12  columns\" href=\"{{ path(\"available_room_list\")}}\"><input type=\"submit\" class=\"button\"  value=\"BOOK A ROOM\"></a>
 
         {% endblock %}
 ", "home/index.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/index.html.twig");

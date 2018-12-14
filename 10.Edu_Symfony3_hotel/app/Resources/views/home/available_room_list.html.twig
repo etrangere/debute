@@ -81,18 +81,19 @@
 
     <h4 align="center">AVAILABLE ROOMS</h4>
 
-    <table class="stack">
+    <table >
         <thead>
-        <tr style="background-color: aqua">
+          <tr >
             <th width="200">Room</th>
             <th width="200">Room Type</th>
             <th width="200">Price</th>
             <th width="200">Booking</th>
-        </tr>
+          </tr>
         </thead>
-        <tbody>
-        {% for room in rooms %}
-            <tr>
+        <tbody >
+        <div class="row">
+          {% for room in rooms %}
+            <tr >
                 <td>{{ room.name}}</td>
                 <td> <h7>RoomType</h7></td>
                 <td> <h7>Price</h7></td>
@@ -100,11 +101,11 @@
                     <a class="hollow button warning" href="{{ path("pre_booking")  }}">BOOKING</a>
                 </td>
             </tr>
-        {% endfor %}
+          {% endfor %}
+        </div>
         </tbody>
     </table>
-    </div>
-    </div>
+
 
 
 {% endblock %}
