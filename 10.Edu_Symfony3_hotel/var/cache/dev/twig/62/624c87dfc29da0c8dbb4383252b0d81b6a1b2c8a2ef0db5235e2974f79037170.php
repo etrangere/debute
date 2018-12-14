@@ -51,11 +51,11 @@ class __TwigTemplate_2d8c94e4a96756aefe3c1b75159f840ca8c008d98222fd60914a353bc09
 
         // line 7
         echo "
-<h3>Contact Information</h3>
-   <p align=\"center\">
-   <li>198 West 21th Street,Suite 721 New York NY 10016</li>
-   <li>Tel:+ 1235 1155 98</li>
-   <li>Email:info@yoursite.com</li></p>
+<center><h3>Contact Information</h3></center>
+   <center><p>
+       <li>198 West 21th Street,Suite 721 New York NY 10016</li>
+       <li>Tel:+ 1235 1155 98</li>
+       <li>Email:info@yoursite.com</li></p></center>
 
 
     <div class=\"container\">
@@ -100,14 +100,8 @@ class __TwigTemplate_2d8c94e4a96756aefe3c1b75159f840ca8c008d98222fd60914a353bc09
         </div>
     </div>
 
-        <h5>Opening Hours</h5>
-        <p align=\"justify\"><li>Monday: 08: - 22:00</li>
-        <li>Tuesday: 08: - 22:00</li>
-        <li>Wednesday: 08: - 22:00</li>
-        <li>Thursday: 08: - 22:00</li>
-        <li>Friday: 08: - 22:00</li>
-        <li>Saturday: 08: - 22:00</li>
-        <li>Sunday: 08: - 22:00</li></p>
+        <center> <b><h5>Opening Hours</h5></b></center>
+        <center> <p><li>Monday - Saturday  8:00 - 22:00</li></p></center>
 
 ";
         
@@ -142,11 +136,11 @@ class __TwigTemplate_2d8c94e4a96756aefe3c1b75159f840ca8c008d98222fd60914a353bc09
 
 {% block body %}
 
-<h3>Contact Information</h3>
-   <p align=\"center\">
-   <li>198 West 21th Street,Suite 721 New York NY 10016</li>
-   <li>Tel:+ 1235 1155 98</li>
-   <li>Email:info@yoursite.com</li></p>
+<center><h3>Contact Information</h3></center>
+   <center><p>
+       <li>198 West 21th Street,Suite 721 New York NY 10016</li>
+       <li>Tel:+ 1235 1155 98</li>
+       <li>Email:info@yoursite.com</li></p></center>
 
 
     <div class=\"container\">
@@ -191,14 +185,8 @@ class __TwigTemplate_2d8c94e4a96756aefe3c1b75159f840ca8c008d98222fd60914a353bc09
         </div>
     </div>
 
-        <h5>Opening Hours</h5>
-        <p align=\"justify\"><li>Monday: 08: - 22:00</li>
-        <li>Tuesday: 08: - 22:00</li>
-        <li>Wednesday: 08: - 22:00</li>
-        <li>Thursday: 08: - 22:00</li>
-        <li>Friday: 08: - 22:00</li>
-        <li>Saturday: 08: - 22:00</li>
-        <li>Sunday: 08: - 22:00</li></p>
+        <center> <b><h5>Opening Hours</h5></b></center>
+        <center> <p><li>Monday - Saturday  8:00 - 22:00</li></p></center>
 
 {% endblock %}
 ", "home/contact.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/contact.html.twig");
