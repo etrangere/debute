@@ -60,10 +60,7 @@ class __TwigTemplate_b6337e2e4624c10bebbd505f1b899b89a14343cb5a41d3eda238031401b
 
         A small river named Duden flows by their place and supplies it with the
         necessary regelialia. It is a paradisematic country, in which roasted parts
-        of sentences fly into your mouth.</p>
-
-    <h3 align=\"center\">Guests Says</h3>
-     <p align=\"justify\">
+        of sentences fly into your mouth.
          Our Satisfied Guests says Far far away, behind the word mountains, far from
          the countries Vokalia and Consonantia, there live the blind texts.
 
@@ -77,16 +74,57 @@ class __TwigTemplate_b6337e2e4624c10bebbd505f1b899b89a14343cb5a41d3eda238031401b
          Vokalia and Consonantia, there live the blind texts.Dennis Green Guests from
          Italy Instagram Cozy Far far away, behind the word mountains, far from the
          countries Vokalia and Consonantia, there live the blind texts.</p>
-
-    <img class=\"thumbnail\" src=\"";
-        // line 35
+    <h4 align=\"center\" >Our single rooms</h4>
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"";
+        // line 32
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
         echo "\">
-    <img class=\"thumbnail\" src=\"";
-        // line 36
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"";
+        // line 33
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
         echo "\">
-
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"";
+        // line 34
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
+        echo "\">
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"";
+        // line 35
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
+        echo "\">
+    <h4 align=\"center\" >Our double rooms</h4>
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"";
+        // line 37
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
+        echo "\">
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"";
+        // line 38
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
+        echo "\">
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"";
+        // line 39
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
+        echo "\">
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"";
+        // line 40
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
+        echo "\">
+    <h4 align=\"center\" >Our triple rooms</h4>
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"";
+        // line 42
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
+        echo "\">
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"";
+        // line 43
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
+        echo "\">
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"";
+        // line 44
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
+        echo "\">
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"";
+        // line 45
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
+        echo "\">
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -108,7 +146,7 @@ class __TwigTemplate_b6337e2e4624c10bebbd505f1b899b89a14343cb5a41d3eda238031401b
 
     public function getDebugInfo()
     {
-        return array (  87 => 36,  83 => 35,  53 => 7,  44 => 6,  15 => 1,);
+        return array (  126 => 45,  122 => 44,  118 => 43,  114 => 42,  109 => 40,  105 => 39,  101 => 38,  97 => 37,  92 => 35,  88 => 34,  84 => 33,  80 => 32,  53 => 7,  44 => 6,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -129,10 +167,7 @@ class __TwigTemplate_b6337e2e4624c10bebbd505f1b899b89a14343cb5a41d3eda238031401b
 
         A small river named Duden flows by their place and supplies it with the
         necessary regelialia. It is a paradisematic country, in which roasted parts
-        of sentences fly into your mouth.</p>
-
-    <h3 align=\"center\">Guests Says</h3>
-     <p align=\"justify\">
+        of sentences fly into your mouth.
          Our Satisfied Guests says Far far away, behind the word mountains, far from
          the countries Vokalia and Consonantia, there live the blind texts.
 
@@ -146,10 +181,21 @@ class __TwigTemplate_b6337e2e4624c10bebbd505f1b899b89a14343cb5a41d3eda238031401b
          Vokalia and Consonantia, there live the blind texts.Dennis Green Guests from
          Italy Instagram Cozy Far far away, behind the word mountains, far from the
          countries Vokalia and Consonantia, there live the blind texts.</p>
-
-    <img class=\"thumbnail\" src=\"{{ asset('images/2.jpg') }}\">
-    <img class=\"thumbnail\" src=\"{{ asset('images/3.jpg') }}\">
-
+    <h4 align=\"center\" >Our single rooms</h4>
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"{{ asset('images/2.jpg') }}\">
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"{{ asset('images/3.jpg') }}\">
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"{{ asset('images/2.jpg') }}\">
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"{{ asset('images/3.jpg') }}\">
+    <h4 align=\"center\" >Our double rooms</h4>
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"{{ asset('images/2.jpg') }}\">
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"{{ asset('images/3.jpg') }}\">
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"{{ asset('images/2.jpg') }}\">
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"{{ asset('images/3.jpg') }}\">
+    <h4 align=\"center\" >Our triple rooms</h4>
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"{{ asset('images/2.jpg') }}\">
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"{{ asset('images/3.jpg') }}\">
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"{{ asset('images/2.jpg') }}\">
+    <img class=\"thumbnail\" style=\"max-height: 200px; max-width: 300px;\" src=\"{{ asset('images/3.jpg') }}\">
 {% endblock %}
 ", ":home:about.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/about.html.twig");
     }

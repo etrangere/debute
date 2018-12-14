@@ -78,7 +78,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
         <div class=\"row\">
            <br class=\"medium-12 large-12 columns\">
 
-               <h4 align=\"center\">NUMBER OF GUESTS</h4></br>
+               <h4 align=\"center\">PLEASE CHOOSE DATES AND NUMBER OF GUESTS</h4></br>
 
 
                 <div class=\"medium-2  columns\">CHECK-IN:</div>
@@ -96,11 +96,19 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>ROOM TYPE</label>
                 <div>
                     <select class=\"\" name=\"form[room_type]\">
-                        <option value=\"single\">Choose</option>
-                        <option value=\"single\">Single</option>
-                        <option value=\"double\">Double</option>
-                        <option value=\"triple\">Triple</option>
-
+                        <option selected=\"selected\">Choose</option>
+                        <option value=\"";
+        // line 33
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
+        echo "\">Single</option>
+                        <option value=\"";
+        // line 34
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
+        echo "\">Double</option>
+                        <option value=\"";
+        // line 35
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
+        echo "\">Triple</option>
                     </select>
                 </div>
             </div>
@@ -108,10 +116,19 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>Adult</label>
                 <div>
                     <select class=\"\" name=\"form[adult]\">
-                        <option value=\"\" >Choose</option>
-                        <option value=\"1\" >1 person</option>
-                        <option value=\"2\" >2 persons</option>
-                        <option value=\"3\" >3 persons</option>
+                        <option selected=\"selected\">Choose</option>
+                        <option value=\"";
+        // line 44
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
+        echo "\">1 person</option>
+                        <option value=\"";
+        // line 45
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
+        echo "\">2 persons</option>
+                        <option value=\"";
+        // line 46
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
+        echo "\">3 persons</option>
 
                     </select>
                 </div>
@@ -120,10 +137,19 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>Child</label>
                 <div>
                     <select class=\"\" name=\"form[child]\">
-                        <option value=\"\" >Choose</option>
-                        <option value=\"1\" >1 child</option>
-                        <option value=\"2\" >2 childs</option>
-                        <option value=\"3\" >3 childs</option>
+                        <option selected=\"selected\">Choose</option>
+                        <option value=\"";
+        // line 56
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
+        echo "\">1 child</option>
+                        <option value=\"";
+        // line 57
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
+        echo "\">2 childs</option>
+                        <option value=\"";
+        // line 58
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
+        echo "\">3 childs</option>
 
                     </select>
 
@@ -133,10 +159,19 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>Baby</label>
                 <div>
                     <select class=\"\" name=\"form[baby]\">
-                        <option value=\"\" >Choose</option>
-                        <option value=\"1\" >1 baby</option>
-                        <option value=\"2\" >2 babies</option>
-                        <option value=\"3\" >3 babies</option>
+                        <option selected=\"selected\">Choose</option>
+                        <option value=\"";
+        // line 69
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
+        echo "\">1 baby</option>
+                        <option value=\"";
+        // line 70
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
+        echo "\">2 babies</option>
+                        <option value=\"";
+        // line 71
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
+        echo "\">3 babies</option>
 
                     </select>
                 </div>
@@ -160,21 +195,21 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
         </thead>
         <tbody>
         ";
-        // line 95
+        // line 94
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new Twig_Error_Runtime('Variable "rooms" does not exist.', 95, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new Twig_Error_Runtime('Variable "rooms" does not exist.', 94, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["room"]) {
-            // line 96
+            // line 95
             echo "            <tr>
                 <td>";
-            // line 97
+            // line 96
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "name", array()), "html", null, true);
             echo "</td>
                 <td> <h7>RoomType</h7></td>
                 <td> <h7>Price</h7></td>
                 <td>
                     <a class=\"hollow button warning\" href=\"";
-            // line 101
+            // line 100
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pre_booking");
             echo "\">BOOKING</a>
                 </td>
@@ -184,7 +219,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['room'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 105
+        // line 104
         echo "        </tbody>
     </table>
     </div>
@@ -212,7 +247,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
     public function getDebugInfo()
     {
-        return array (  188 => 105,  178 => 101,  171 => 97,  168 => 96,  164 => 95,  74 => 8,  71 => 7,  62 => 6,  45 => 3,  15 => 1,);
+        return array (  223 => 104,  213 => 100,  206 => 96,  203 => 95,  199 => 94,  173 => 71,  169 => 70,  165 => 69,  151 => 58,  147 => 57,  143 => 56,  130 => 46,  126 => 45,  122 => 44,  110 => 35,  106 => 34,  102 => 33,  74 => 8,  71 => 7,  62 => 6,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -230,7 +265,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
         <div class=\"row\">
            <br class=\"medium-12 large-12 columns\">
 
-               <h4 align=\"center\">NUMBER OF GUESTS</h4></br>
+               <h4 align=\"center\">PLEASE CHOOSE DATES AND NUMBER OF GUESTS</h4></br>
 
 
                 <div class=\"medium-2  columns\">CHECK-IN:</div>
@@ -248,11 +283,10 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>ROOM TYPE</label>
                 <div>
                     <select class=\"\" name=\"form[room_type]\">
-                        <option value=\"single\">Choose</option>
-                        <option value=\"single\">Single</option>
-                        <option value=\"double\">Double</option>
-                        <option value=\"triple\">Triple</option>
-
+                        <option selected=\"selected\">Choose</option>
+                        <option value=\"{{ 1|number_format }}\">Single</option>
+                        <option value=\"{{ 2|number_format }}\">Double</option>
+                        <option value=\"{{ 3|number_format }}\">Triple</option>
                     </select>
                 </div>
             </div>
@@ -260,10 +294,10 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>Adult</label>
                 <div>
                     <select class=\"\" name=\"form[adult]\">
-                        <option value=\"\" >Choose</option>
-                        <option value=\"1\" >1 person</option>
-                        <option value=\"2\" >2 persons</option>
-                        <option value=\"3\" >3 persons</option>
+                        <option selected=\"selected\">Choose</option>
+                        <option value=\"{{ 1|number_format }}\">1 person</option>
+                        <option value=\"{{ 2|number_format }}\">2 persons</option>
+                        <option value=\"{{ 3|number_format }}\">3 persons</option>
 
                     </select>
                 </div>
@@ -272,10 +306,10 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>Child</label>
                 <div>
                     <select class=\"\" name=\"form[child]\">
-                        <option value=\"\" >Choose</option>
-                        <option value=\"1\" >1 child</option>
-                        <option value=\"2\" >2 childs</option>
-                        <option value=\"3\" >3 childs</option>
+                        <option selected=\"selected\">Choose</option>
+                        <option value=\"{{ 1|number_format }}\">1 child</option>
+                        <option value=\"{{ 2|number_format }}\">2 childs</option>
+                        <option value=\"{{ 3|number_format }}\">3 childs</option>
 
                     </select>
 
@@ -285,10 +319,10 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>Baby</label>
                 <div>
                     <select class=\"\" name=\"form[baby]\">
-                        <option value=\"\" >Choose</option>
-                        <option value=\"1\" >1 baby</option>
-                        <option value=\"2\" >2 babies</option>
-                        <option value=\"3\" >3 babies</option>
+                        <option selected=\"selected\">Choose</option>
+                        <option value=\"{{ 1|number_format }}\">1 baby</option>
+                        <option value=\"{{ 2|number_format }}\">2 babies</option>
+                        <option value=\"{{ 3|number_format }}\">3 babies</option>
 
                     </select>
                 </div>
