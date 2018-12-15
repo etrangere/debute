@@ -216,6 +216,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\HomeController::pre_booking_New',  '_route' => 'pre_booking',);
         }
 
+        // valid_payment
+        if ('/validation_payment' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\Validation_paymentController::indexAction',  '_route' => 'valid_payment',);
+        }
+
         if ('/' === $pathinfo && !$allow) {
             throw new Symfony\Component\Routing\Exception\NoConfigurationException();
         }

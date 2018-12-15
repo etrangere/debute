@@ -5,9 +5,18 @@
 
 {% block body %}
 
-
-  <center><h3>You will receive en confirmation email for your booking!
-          Thank you for your trust!</h3></center>
+    <div class="container-fluid">
+        <link rel="stylesheet" href="{{ asset('css/progresbar.css') }}">
+        <br /><br />
+        <ul class="list-unstyled multi-steps">
+            <li>Your choice</li>
+            <li>Booking information</li>
+            <li>Booking validation or payment</li>
+            <li class="is-active">Booking confirmation</li>
+        </ul>
+    </div>
+<h3 align="center">You will receive en confirmation email for your booking!</h3>
+    <h3 align="center">Thank you for your trust!</h3>
 
 
 {% endblock %}

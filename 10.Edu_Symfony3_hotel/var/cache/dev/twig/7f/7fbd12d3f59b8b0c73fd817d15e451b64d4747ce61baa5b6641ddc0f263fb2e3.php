@@ -74,6 +74,20 @@ class __TwigTemplate_a256e67af0d2505ae56e7f3723d56c5d1d7fc321ea9fa9c537c8bbe4cf8
         echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context);
         echo "
 
+    <div class=\"container-fluid\">
+        <link rel=\"stylesheet\" href=\"";
+        // line 11
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/progresbar.css"), "html", null, true);
+        echo "\">
+        <br /><br />
+        <ul class=\"list-unstyled multi-steps\">
+            <li class=\"is-active\">Your choice</li>
+            <li>Booking information</li>
+            <li>Booking validation or payment</li>
+            <li>Booking confirmation</li>
+        </ul>
+    </div>
+
 <form action=\"\" method=\"post\">
         <div class=\"row\">
            <br class=\"medium-12 large-12 columns\">
@@ -98,15 +112,15 @@ class __TwigTemplate_a256e67af0d2505ae56e7f3723d56c5d1d7fc321ea9fa9c537c8bbe4cf8
                     <select class=\"\" name=\"form[room_type]\">
                         <option selected=\"selected\">Choose</option>
                         <option value=\"";
-        // line 33
+        // line 44
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
         echo "\">Single</option>
                         <option value=\"";
-        // line 34
+        // line 45
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
         echo "\">Double</option>
                         <option value=\"";
-        // line 35
+        // line 46
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
         echo "\">Triple</option>
                     </select>
@@ -118,15 +132,15 @@ class __TwigTemplate_a256e67af0d2505ae56e7f3723d56c5d1d7fc321ea9fa9c537c8bbe4cf8
                     <select class=\"\" name=\"form[adult]\">
                         <option selected=\"selected\">Choose</option>
                         <option value=\"";
-        // line 44
+        // line 55
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
         echo "\">1 person</option>
                         <option value=\"";
-        // line 45
+        // line 56
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
         echo "\">2 persons</option>
                         <option value=\"";
-        // line 46
+        // line 57
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
         echo "\">3 persons</option>
 
@@ -139,15 +153,15 @@ class __TwigTemplate_a256e67af0d2505ae56e7f3723d56c5d1d7fc321ea9fa9c537c8bbe4cf8
                     <select class=\"\" name=\"form[child]\">
                         <option selected=\"selected\">Choose</option>
                         <option value=\"";
-        // line 56
+        // line 67
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
         echo "\">1 child</option>
                         <option value=\"";
-        // line 57
+        // line 68
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
         echo "\">2 childs</option>
                         <option value=\"";
-        // line 58
+        // line 69
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
         echo "\">3 childs</option>
 
@@ -161,15 +175,15 @@ class __TwigTemplate_a256e67af0d2505ae56e7f3723d56c5d1d7fc321ea9fa9c537c8bbe4cf8
                     <select class=\"\" name=\"form[baby]\">
                         <option selected=\"selected\">Choose</option>
                         <option value=\"";
-        // line 69
+        // line 80
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
         echo "\">1 baby</option>
                         <option value=\"";
-        // line 70
+        // line 81
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
         echo "\">2 babies</option>
                         <option value=\"";
-        // line 71
+        // line 82
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
         echo "\">3 babies</option>
 
@@ -187,47 +201,53 @@ class __TwigTemplate_a256e67af0d2505ae56e7f3723d56c5d1d7fc321ea9fa9c537c8bbe4cf8
     <table >
         <thead>
           <tr >
-            <th width=\"200\">Room</th>
-            <th width=\"200\">Room Type</th>
+            <th width=\"200\">Description</th>
+            <th width=\"200\">Type</th>
             <th width=\"200\">Price</th>
-            <th width=\"200\">Booking</th>
+            <th width=\"200\">Your choice</th>
           </tr>
         </thead>
         <tbody >
         <div class=\"row\">
           ";
-        // line 95
+        // line 106
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new Twig_Error_Runtime('Variable "rooms" does not exist.', 95, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new Twig_Error_Runtime('Variable "rooms" does not exist.', 106, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["room"]) {
-            // line 96
+            // line 107
             echo "            <tr >
                 <td>";
-            // line 97
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "name", array()), "html", null, true);
+            // line 108
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "description", array()), "html", null, true);
             echo "</td>
-                <td> <h7>RoomType</h7></td>
-                <td> <h7>Price</h7></td>
+                <td>";
+            // line 109
+            echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["room"], "roomtype", array()) . " ROOM"), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 110
+            echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["room"], "price", array()) . " EUR"), "html", null, true);
+            echo "</td>
                 <td>
-                    <a class=\"hollow button warning\" href=\"";
-            // line 101
+                          <a class=\"hollow button warning\" href=\"";
+            // line 112
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pre_booking");
-            echo "\">BOOKING</a>
-                </td>
-            </tr>
-          ";
+            echo "\">CHOOSE</a>
+                      </td>
+                  </tr>
+                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['room'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 105
-        echo "        </div>
-        </tbody>
-    </table>
+        // line 116
+        echo "              </div>
+              </tbody>
+          </table>
 
 
 
-";
+      ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -248,7 +268,7 @@ class __TwigTemplate_a256e67af0d2505ae56e7f3723d56c5d1d7fc321ea9fa9c537c8bbe4cf8
 
     public function getDebugInfo()
     {
-        return array (  224 => 105,  214 => 101,  207 => 97,  204 => 96,  200 => 95,  173 => 71,  169 => 70,  165 => 69,  151 => 58,  147 => 57,  143 => 56,  130 => 46,  126 => 45,  122 => 44,  110 => 35,  106 => 34,  102 => 33,  74 => 8,  71 => 7,  62 => 6,  45 => 3,  15 => 1,);
+        return array (  244 => 116,  234 => 112,  229 => 110,  225 => 109,  221 => 108,  218 => 107,  214 => 106,  187 => 82,  183 => 81,  179 => 80,  165 => 69,  161 => 68,  157 => 67,  144 => 57,  140 => 56,  136 => 55,  124 => 46,  120 => 45,  116 => 44,  80 => 11,  74 => 8,  71 => 7,  62 => 6,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -261,6 +281,17 @@ class __TwigTemplate_a256e67af0d2505ae56e7f3723d56c5d1d7fc321ea9fa9c537c8bbe4cf8
 {% block body %}
 
     {{ dump() }}
+
+    <div class=\"container-fluid\">
+        <link rel=\"stylesheet\" href=\"{{ asset('css/progresbar.css') }}\">
+        <br /><br />
+        <ul class=\"list-unstyled multi-steps\">
+            <li class=\"is-active\">Your choice</li>
+            <li>Booking information</li>
+            <li>Booking validation or payment</li>
+            <li>Booking confirmation</li>
+        </ul>
+    </div>
 
 <form action=\"\" method=\"post\">
         <div class=\"row\">
@@ -339,31 +370,31 @@ class __TwigTemplate_a256e67af0d2505ae56e7f3723d56c5d1d7fc321ea9fa9c537c8bbe4cf8
     <table >
         <thead>
           <tr >
-            <th width=\"200\">Room</th>
-            <th width=\"200\">Room Type</th>
+            <th width=\"200\">Description</th>
+            <th width=\"200\">Type</th>
             <th width=\"200\">Price</th>
-            <th width=\"200\">Booking</th>
+            <th width=\"200\">Your choice</th>
           </tr>
         </thead>
         <tbody >
         <div class=\"row\">
           {% for room in rooms %}
             <tr >
-                <td>{{ room.name}}</td>
-                <td> <h7>RoomType</h7></td>
-                <td> <h7>Price</h7></td>
+                <td>{{ room.description}}</td>
+                <td>{{ room.roomtype ~ \" ROOM\"  }}</td>
+                <td>{{ room.price ~ \" EUR\"}}</td>
                 <td>
-                    <a class=\"hollow button warning\" href=\"{{ path(\"pre_booking\")  }}\">BOOKING</a>
-                </td>
-            </tr>
-          {% endfor %}
-        </div>
-        </tbody>
-    </table>
+                          <a class=\"hollow button warning\" href=\"{{ path(\"pre_booking\")  }}\">CHOOSE</a>
+                      </td>
+                  </tr>
+                {% endfor %}
+              </div>
+              </tbody>
+          </table>
 
 
 
-{% endblock %}
+      {% endblock %}
 
 ", "home/available_room_list.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/available_room_list.html.twig");
     }

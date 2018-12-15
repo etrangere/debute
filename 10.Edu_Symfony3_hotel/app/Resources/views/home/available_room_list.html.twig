@@ -7,6 +7,17 @@
 
     {{ dump() }}
 
+    <div class="container-fluid">
+        <link rel="stylesheet" href="{{ asset('css/progresbar.css') }}">
+        <br /><br />
+        <ul class="list-unstyled multi-steps">
+            <li class="is-active">Your choice</li>
+            <li>Booking information</li>
+            <li>Booking validation or payment</li>
+            <li>Booking confirmation</li>
+        </ul>
+    </div>
+
 <form action="" method="post">
         <div class="row">
            <br class="medium-12 large-12 columns">
@@ -84,29 +95,29 @@
     <table >
         <thead>
           <tr >
-            <th width="200">Room</th>
-            <th width="200">Room Type</th>
+            <th width="200">Description</th>
+            <th width="200">Type</th>
             <th width="200">Price</th>
-            <th width="200">Booking</th>
+            <th width="200">Your choice</th>
           </tr>
         </thead>
         <tbody >
         <div class="row">
           {% for room in rooms %}
             <tr >
-                <td>{{ room.name}}</td>
-                <td> <h7>RoomType</h7></td>
-                <td> <h7>Price</h7></td>
+                <td>{{ room.description}}</td>
+                <td>{{ room.roomtype ~ " ROOM"  }}</td>
+                <td>{{ room.price ~ " EUR"}}</td>
                 <td>
-                    <a class="hollow button warning" href="{{ path("pre_booking")  }}">BOOKING</a>
-                </td>
-            </tr>
-          {% endfor %}
-        </div>
-        </tbody>
-    </table>
+                          <a class="hollow button warning" href="{{ path("pre_booking")  }}">CHOOSE</a>
+                      </td>
+                  </tr>
+                {% endfor %}
+              </div>
+              </tbody>
+          </table>
 
 
 
-{% endblock %}
+      {% endblock %}
 

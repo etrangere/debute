@@ -192,7 +192,7 @@ class HomeController extends Controller
                 'baby',
             ));
 
-            return $this->redirectToRoute('confirmation');
+            return $this->redirectToRoute('valid_payment');
 
         }
 

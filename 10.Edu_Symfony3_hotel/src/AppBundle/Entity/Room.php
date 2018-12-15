@@ -37,6 +37,31 @@ class Room
     private $room_type;
 
     /**
+     * @ORM\Column(type="integer", length=10)
+     */
+    private $price;
+
+    /**
+     * @return mixed
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param mixed $price
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
+
+
+    /**
+     * Get room_type
+     *
      * @return mixed
      */
     public function getRoomType()
@@ -45,6 +70,8 @@ class Room
     }
 
     /**
+     * Set room_type
+     *
      * @param mixed $room_type
      */
     public function setRoomType($room_type)

@@ -6,6 +6,17 @@
 {% block body %}
 
     {{ dump() }}
+    <div class="container-fluid">
+        <link rel="stylesheet" href="{{ asset('css/progresbar.css') }}">
+        <br /><br />
+        <ul class="list-unstyled multi-steps">
+            <li>Your choice</li>
+            <li class="is-active">Booking information</li>
+            <li>Booking validation or payment</li>
+            <li>Booking confirmation</li>
+        </ul>
+    </div>
+
     <div class="row">
         <div class="medium-12 large-12 columns">
             <h4></h4>
@@ -49,7 +60,7 @@
                     <input name="form[email]" value="{{ form.email is defined ? form.email : '' }}" type="text" />
                 </div>
                 <div class="medium-12  columns">
-                    <input type="submit" value="BOOKING CONFIRMATION" class="button success hollow" />
+                    <input type="submit" value="BOOKING INFORMATION" class="button success hollow" />
                 </div>
             </form>
         </div>

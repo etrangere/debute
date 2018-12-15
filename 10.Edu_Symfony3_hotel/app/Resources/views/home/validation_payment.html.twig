@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+{% block body %}
+
+    <div class="container-fluid">
+        <link rel="stylesheet" href="{{ asset('css/progresbar.css') }}">
+        <br /><br />
+        <ul class="list-unstyled multi-steps">
+            <li>Your choice</li>
+            <li>Booking information</li>
+            <li class="is-active">Booking validation or payment</li>
+            <li>Booking confirmation</li>
+        </ul>
+    </div>
+
+
+    <div class="medium-12  columns"><br><br>
+
+    <input type="radio" name="r" id="radio2">With this option you can pay your charges in hotel at your arrival</br>
+
+    <a align="center"  class="medium-12  columns" href="{{ path("confirmation")}}"><input type="submit" id="text1" disabled="disabled" class="button" value="Booking validation without payment"></a>
+
+    <hr>
+    <br><br><h3>Here will be Stripe billing system</h3><br><br>
+    <input type="radio" name="r" id="radio1">You can pay your charges immediately by one of our payment options</br>
+
+    <input type="text" id="text2" disabled="disabled" placeholder="Lenght">
+    <input type="text" id="text3" disabled="disabled" placeholder="Width">
+    <input type="text" id="text4" disabled="disabled" placeholder="Depth">
+
+
+
+        <script>
+            document.getElementById("radio1").onclick = function() {myFunction1()};
+
+            function myFunction1() {
+                if(document.getElementById("radio1").checked == true)
+                {
+                    document.getElementById("text1").disabled = true;
+                    document.getElementById("text2").disabled = false;
+                    document.getElementById("text3").disabled = false;
+                    document.getElementById("text4").disabled = false;
+                }
+                else
+                {
+                    document.getElementById("text1").disabled = false;
+                    document.getElementById("text2").disabled = true;
+                    document.getElementById("text3").disabled = true;
+                    document.getElementById("text4").disabled = true;
+                }
+
+            }
+
+
+            document.getElementById("radio2").onclick = function() {myFunction2()};
+
+            function myFunction2() {
+                if(document.getElementById("radio2").checked == false)
+                {
+                    document.getElementById("text1").disabled = true;
+                    document.getElementById("text2").disabled = false;
+                    document.getElementById("text3").disabled = false;
+                    document.getElementById("text4").disabled = false;
+                }
+                else
+                {
+                    document.getElementById("text1").disabled = false;
+                    document.getElementById("text2").disabled = true;
+                    document.getElementById("text3").disabled = true;
+                    document.getElementById("text4").disabled = true;
+                }
+
+            }
+        </script>
+
+
+
+
+</div>
+{% endblock %}

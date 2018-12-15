@@ -20,6 +20,9 @@ AppBundle\Entity\Room:
         room_type:
             type: integer
             length: 10
+        price:
+            type: integer
+            length: 10
     lifecycleCallbacks: {  }
     oneToMany:
         reservations:
