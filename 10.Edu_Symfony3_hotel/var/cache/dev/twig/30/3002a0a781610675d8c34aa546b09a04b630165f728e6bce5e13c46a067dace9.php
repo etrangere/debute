@@ -50,10 +50,24 @@ class __TwigTemplate_dc02ced55c2a590c234fc53d10f90d8f0cfe507bbd4ff6de3298f1afb4e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 7
+        echo "    ";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context);
         echo "
-
-  <center><h3>You will receive en confirmation email for your booking!
-          Thank you for your trust!</h3></center>
+    <div class=\"container-fluid\">
+        <link rel=\"stylesheet\" href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/progresbar.css"), "html", null, true);
+        echo "\">
+        <br /><br />
+        <ul class=\"list-unstyled multi-steps\">
+            <li>Your choice</li>
+            <li>Booking information</li>
+            <li>Booking validation or payment</li>
+            <li class=\"is-active\">Booking confirmation</li>
+        </ul>
+    </div>
+<h3 align=\"center\">You will receive en confirmation email for your booking!</h3>
+    <h3 align=\"center\">Thank you for your trust!</h3>
 
 
 ";
@@ -77,7 +91,7 @@ class __TwigTemplate_dc02ced55c2a590c234fc53d10f90d8f0cfe507bbd4ff6de3298f1afb4e
 
     public function getDebugInfo()
     {
-        return array (  53 => 7,  44 => 6,  15 => 1,);
+        return array (  59 => 9,  53 => 7,  44 => 6,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -88,10 +102,19 @@ class __TwigTemplate_dc02ced55c2a590c234fc53d10f90d8f0cfe507bbd4ff6de3298f1afb4e
 
 
 {% block body %}
-
-
-  <center><h3>You will receive en confirmation email for your booking!
-          Thank you for your trust!</h3></center>
+    {{ dump() }}
+    <div class=\"container-fluid\">
+        <link rel=\"stylesheet\" href=\"{{ asset('css/progresbar.css') }}\">
+        <br /><br />
+        <ul class=\"list-unstyled multi-steps\">
+            <li>Your choice</li>
+            <li>Booking information</li>
+            <li>Booking validation or payment</li>
+            <li class=\"is-active\">Booking confirmation</li>
+        </ul>
+    </div>
+<h3 align=\"center\">You will receive en confirmation email for your booking!</h3>
+    <h3 align=\"center\">Thank you for your trust!</h3>
 
 
 {% endblock %}

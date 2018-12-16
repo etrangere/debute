@@ -97,6 +97,10 @@ class ReservationsController extends Controller
     public function book_room($id_client,$id_room,$date_in,$date_out)
     {
 
+
+
+
+
                   $reservation = new Reservation();
                   $date_start = new \DateTime($date_in);
                   $date_end = new \DateTime($date_out);
@@ -115,8 +119,14 @@ class ReservationsController extends Controller
                   $em->flush();
 
 
+        if( isset($_SESSION['admin']) && $_SESSION['admin'] == true ) {
+            // redirect
+            return $this->redirectToRoute('index_clients');
+        } else {
+            //redirect
+            return $this->redirectToRoute('valid_payment');
+        }
 
-                  return $this->redirectToRoute('index_clients');
 
     }
 

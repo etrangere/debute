@@ -111,7 +111,7 @@ class __TwigTemplate_00cd1c83a8c28530fd11c342cde3c5ee336860a85069a2b8ebec1e781c6
             <tr>
               <th width=\"200\">Name</th>
               <th width=\"200\">Email</th>
-              <th width=\"200\">Action</th>
+                <th width=\"200\">Action</th>
             </tr>
           </thead>
 
@@ -227,7 +227,7 @@ class __TwigTemplate_00cd1c83a8c28530fd11c342cde3c5ee336860a85069a2b8ebec1e781c6
             <tr>
               <th width=\"200\">Name</th>
               <th width=\"200\">Email</th>
-              <th width=\"200\">Action</th>
+                <th width=\"200\">Action</th>
             </tr>
           </thead>
 

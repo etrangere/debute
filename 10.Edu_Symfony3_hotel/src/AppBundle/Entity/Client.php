@@ -65,7 +65,30 @@ class Client
      * @var \AppBundle\Entity\Room
      *
      */
+    private $id_room;
+
+    /**
+     * @return Room
+     */
+    public function getIdRoom()
+    {
+        return $this->id_room;
+    }
+
+    /**
+     * @param Room $id_room
+     */
+    public function setIdRoom($id_room)
+    {
+        $this->id_room = $id_room;
+    }
+
+    /**
+     * @var \AppBundle\Entity\Room
+     *
+     */
     private $room_type;
+
 
     /**
      * @return Room

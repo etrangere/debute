@@ -1,6 +1,6 @@
 <?php
 
-/* home/index.html.twig */
+/* :home:index.html.twig */
 class __TwigTemplate_99d8c729d436742a77545e5b8029a076022d6d89f9a42de2b9fc751283f22057 extends Twig_Template
 {
     private $source;
@@ -12,7 +12,7 @@ class __TwigTemplate_99d8c729d436742a77545e5b8029a076022d6d89f9a42de2b9fc751283f
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "home/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":home:index.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -26,10 +26,10 @@ class __TwigTemplate_99d8c729d436742a77545e5b8029a076022d6d89f9a42de2b9fc751283f
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "home/index.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":home:index.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "home/index.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":home:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -53,7 +53,7 @@ class __TwigTemplate_99d8c729d436742a77545e5b8029a076022d6d89f9a42de2b9fc751283f
         echo "
     <div class=\"row\">
       <div class=\"medium-12 columns\">
-        <h2>Welcome to the Hotel</h2>
+        <h2 align=\"center\">Welcome to the Hotel</h2>
         <img class=\"thumbnail\" src=\"";
         // line 8
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/1.jpg"), "html", null, true);
@@ -74,11 +74,12 @@ class __TwigTemplate_99d8c729d436742a77545e5b8029a076022d6d89f9a42de2b9fc751283f
           identify their room.</p>
       </div>
 
-      <a class=\"medium-12  columns\" href=\"";
+      <a align=\"center\" class=\"medium-12  columns\" href=\"";
         // line 25
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("available_room_list");
-        echo "\"><input type=\"submit\" class=\"button\"  value=\"BOOK A ROOM\"></a>
-
+        echo "\">
+        <input type=\"submit\" class=\"button\"  value=\"BOOK A ROOM\"></a>
+    </div>
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -90,7 +91,7 @@ class __TwigTemplate_99d8c729d436742a77545e5b8029a076022d6d89f9a42de2b9fc751283f
 
     public function getTemplateName()
     {
-        return "home/index.html.twig";
+        return ":home:index.html.twig";
     }
 
     public function isTraitable()
@@ -111,7 +112,7 @@ class __TwigTemplate_99d8c729d436742a77545e5b8029a076022d6d89f9a42de2b9fc751283f
 
     <div class=\"row\">
       <div class=\"medium-12 columns\">
-        <h2>Welcome to the Hotel</h2>
+        <h2 align=\"center\">Welcome to the Hotel</h2>
         <img class=\"thumbnail\" src=\"{{ asset('images/1.jpg') }}\">
       </div>
       <div class=\"medium-12  columns\">
@@ -129,9 +130,10 @@ class __TwigTemplate_99d8c729d436742a77545e5b8029a076022d6d89f9a42de2b9fc751283f
           identify their room.</p>
       </div>
 
-      <a class=\"medium-12  columns\" href=\"{{ path(\"available_room_list\")}}\"><input type=\"submit\" class=\"button\"  value=\"BOOK A ROOM\"></a>
-
+      <a align=\"center\" class=\"medium-12  columns\" href=\"{{ path(\"available_room_list\")}}\">
+        <input type=\"submit\" class=\"button\"  value=\"BOOK A ROOM\"></a>
+    </div>
         {% endblock %}
-", "home/index.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/index.html.twig");
+", ":home:index.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/index.html.twig");
     }
 }

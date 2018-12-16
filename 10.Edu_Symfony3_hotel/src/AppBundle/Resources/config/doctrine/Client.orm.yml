@@ -39,6 +39,9 @@ AppBundle\Entity\Client:
         room_type:
             type: integer
             length: '10'
+        id_room:
+            type: string
+            length: '10'
         adult:
             type: integer
             length: '1'

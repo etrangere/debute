@@ -91,6 +91,7 @@ class HomeController extends Controller
             ->add('from')
             ->add('to')
             ->add('room_type')
+            ->add('id_room')
             ->add('adult')
             ->add('child')
             ->add('baby')
@@ -102,13 +103,15 @@ class HomeController extends Controller
             $form_data = $form->getData();
             $data ['form'] = $form_data;
 
-
             $cache = new FilesystemCache();
 
             $cache->set('room_type', $form_data['room_type']);
+           // $cache->set('id_room', $form_data['id_room']);
             $cache->set('adult', $form_data['adult']);
             $cache->set('child', $form_data['child']);
             $cache->set('baby', $form_data['baby']);
+            $cache->set('from', $form_data['from']);
+            $cache->set('to', $form_data['to']);
 
 
             $data['dates']['from'] = $form_data['from'];
@@ -129,9 +132,9 @@ class HomeController extends Controller
 
 
     /**
-     * @Route("/pre_booking",name="pre_booking")
+     * @Route("/front_booking/{id_room}",name="front_booking")
      */
-    public function pre_booking_New(Request $request)
+    public function front_booking(Request $request ,$id_room)
     {
         $data = [];
         $data['mode']='new_client';
@@ -158,16 +161,20 @@ class HomeController extends Controller
             $data ['form'] = [];
             $data ['form'] = $form_data;
 
+            //getting info from cache
+
             $cache = new FilesystemCache();
             $data ['room_type'] = $cache->get('room_type');
             $data ['adult'] = $cache->get('adult');
             $data ['child'] = $cache->get('child');
             $data ['baby'] = $cache->get('baby');
+            $data ['from'] = $cache->get('from');
+            $data ['to'] = $cache->get('to');
+
+            //adding new client to db
 
             $em = $this->getDoctrine()->getManager();
-
             $client = new client;
-
             $client->setTitle($form_data['title']);
             $client->setName($form_data['name']);
             $client->setLastName($form_data['last_name']);
@@ -176,29 +183,31 @@ class HomeController extends Controller
             $client->setCity($form_data['city']);
             $client->setState($form_data['state']);
             $client->setEmail($form_data['email']);
+            $client->setIdRoom($id_room);
             $client->setRoomType($data['room_type']);
             $client->setAdult($data['adult']);
             $client->setChild($data['child']);
             $client->setBaby($data['baby']);
             $data['titles'] = $this->titles;
             $em->persist($client);
-
             $em->flush();
 
-            $cache->deleteMultiple(array(
-                'room_type',
-                'adult',
-                'child',
-                'baby',
-            ));
+            $date_in = $data['from'];
+            $date_out = $data['to'];
 
-            return $this->redirectToRoute('valid_payment');
+            //$id_client =$this->getDoctrine()->getRepository('AppBundle:Client')->find($id_room);
+            $id_client = 55;
+            var_dump($id_client);
+            $cache->deleteMultiple(array('room_type','adult','child', 'baby',));
+
+            return $this->redirect($this->generateUrl('book_room', array(
+                'id_client'=> $id_client,
+                'id_room' => $id_room,
+                'date_in'=> $date_in ,
+                'date_out' => $date_out )));
 
         }
-
-        //return $this->redirectToRoute('confirmation');
-        return $this->render("home/pre_booking.html.twig" ,$data);
-
+        return $this->render("home/front_booking.html.twig" ,$data);
     }
 
     /**
@@ -209,7 +218,6 @@ class HomeController extends Controller
     {
 
         return $this->render("home/confirmation.html.twig");
-
 
     }
 

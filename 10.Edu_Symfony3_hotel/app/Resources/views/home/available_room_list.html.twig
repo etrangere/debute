@@ -108,9 +108,7 @@
                 <td>{{ room.description}}</td>
                 <td>{{ room.roomtype ~ " ROOM"  }}</td>
                 <td>{{ room.price ~ " EUR"}}</td>
-                <td>
-                          <a class="hollow button warning" href="{{ path("pre_booking")  }}">CHOOSE</a>
-                      </td>
+                <td><a class="hollow button warning" href="{{ path("front_booking",{'id_room' : room.id })}}">CHOOSE</a></td>
                   </tr>
                 {% endfor %}
               </div>

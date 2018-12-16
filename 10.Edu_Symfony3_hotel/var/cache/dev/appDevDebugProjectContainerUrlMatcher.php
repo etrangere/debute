@@ -211,9 +211,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\HomeController::booking',  '_route' => 'available_room_list',);
         }
 
-        // pre_booking
-        if ('/pre_booking' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::pre_booking_New',  '_route' => 'pre_booking',);
+        // front_booking
+        if (0 === strpos($pathinfo, '/front_booking') && preg_match('#^/front_booking/(?P<id_room>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'front_booking')), array (  '_controller' => 'AppBundle\\Controller\\HomeController::front_booking',));
         }
 
         // valid_payment
