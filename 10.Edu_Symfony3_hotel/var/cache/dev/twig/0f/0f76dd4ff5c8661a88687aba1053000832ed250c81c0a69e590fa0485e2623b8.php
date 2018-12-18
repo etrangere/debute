@@ -97,11 +97,11 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
                 <div class=\"medium-2  columns\">CHECK-IN:</div>
 
-                <div class=\"medium-2  columns\"><input name=\"form[from]\" style=\"border-color: #00ace6\" value=\"\" type=\"text\"  class=\"datepicker\" /></div>
+                <div class=\"medium-2  columns\"><input name=\"form[from]\" type=\"date\"  value=\"\" style=\"border-color: #00ace6\"  class=\"datepicker\" /></div>
 
                 <div class=\"medium-2  columns\">CHECK-OUT:</div>
 
-                <div class=\"medium-2  columns\"><input name=\"form[to]\" style=\"border-color: #00ace6\" value=\"\" type=\"text\" class=\"datepicker\" /></div>
+                <div class=\"medium-2  columns\"><input name=\"form[to]\" style=\"border-color: #00ace6\" value=\"\" type=\"date\" class=\"datepicker\" /></div>
 
               <div class=\"medium-2  columns\"><input class=\"button\" type=\"submit\" value=\"SEARCH OFFER\" /></div>
 
@@ -230,7 +230,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
             echo "</td>
                 <td><a class=\"button\"  href=\"";
             // line 111
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_booking", array("id_room" => twig_get_attribute($this->env, $this->source, $context["room"], "id", array()))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_booking", array("id_room" => twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "id", array())))), "html", null, true);
             echo "\">CHOOSE</a></td>
                   </tr>
                 ";
@@ -300,11 +300,11 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
                 <div class=\"medium-2  columns\">CHECK-IN:</div>
 
-                <div class=\"medium-2  columns\"><input name=\"form[from]\" style=\"border-color: #00ace6\" value=\"\" type=\"text\"  class=\"datepicker\" /></div>
+                <div class=\"medium-2  columns\"><input name=\"form[from]\" type=\"date\"  value=\"\" style=\"border-color: #00ace6\"  class=\"datepicker\" /></div>
 
                 <div class=\"medium-2  columns\">CHECK-OUT:</div>
 
-                <div class=\"medium-2  columns\"><input name=\"form[to]\" style=\"border-color: #00ace6\" value=\"\" type=\"text\" class=\"datepicker\" /></div>
+                <div class=\"medium-2  columns\"><input name=\"form[to]\" style=\"border-color: #00ace6\" value=\"\" type=\"date\" class=\"datepicker\" /></div>
 
               <div class=\"medium-2  columns\"><input class=\"button\" type=\"submit\" value=\"SEARCH OFFER\" /></div>
 
@@ -381,7 +381,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <td>{{ room.description}}</td>
                 <td>{{ room.roomtype ~ \" ROOM\"  }}</td>
                 <td>{{ room.price ~ \" EUR\"}}</td>
-                <td><a class=\"button\"  href=\"{{ path(\"front_booking\",{'id_room' : room.id })}}\">CHOOSE</a></td>
+                <td><a class=\"button\"  href=\"{{ path(\"front_booking\",{'id_room' : room.id|number_format })}}\">CHOOSE</a></td>
                   </tr>
                 {% endfor %}
               </div>

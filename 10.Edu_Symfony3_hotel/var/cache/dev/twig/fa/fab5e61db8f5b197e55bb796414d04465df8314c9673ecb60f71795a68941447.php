@@ -216,7 +216,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
               {% for reservation in reservations %}
               <tr>
                 <td>
-                    {{ reservation.id  }}
+                    {{ reservation.id }}
                 <td>{{ reservation.room.name }}</td>
                 <td>{{ reservation.client.name }}</td>
                 <td> {{ reservation.dateIn|date('d-m-Y')}} to {{ reservation.dateOut|date('d-m-Y')}}</td>

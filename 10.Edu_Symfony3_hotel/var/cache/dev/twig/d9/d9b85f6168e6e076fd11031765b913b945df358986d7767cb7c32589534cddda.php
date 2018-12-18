@@ -73,16 +73,16 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
                 <div class=\"col-md-6 pr-md-5\">
                     <form action=\"#\">
                         <div class=\"form-group\">
-                            <input type=\"text\"  class=\"\" style=\"background-color:  #00ace6 ;width: 50%\" placeholder=\"Your Name\">
+                            <input type=\"text\"  class=\"\" style=\"width: 50%\" placeholder=\"Your Name\">
                         </div>
                         <div class=\"form-group\">
-                            <input type=\"text\" class=\"\" style=\"background-color:  #00ace6;width: 60%\" placeholder=\"Your Email\">
+                            <input type=\"text\" class=\"\" style=\"width: 60%\" placeholder=\"Your Email\">
                         </div>
                         <div class=\"form-group\">
-                            <input type=\"text\" class=\"\" style=\"background-color:  #00ace6;width: 40%\" placeholder=\"Subject\" >
+                            <input type=\"text\" class=\"\" style=\"width: 40%\" placeholder=\"Subject\" >
                         </div>
                         <div class=\"form-group\">
-                            <textarea name=\"\" id=\"\" cols=\"30\" rows=\"8\"  style=\"background-color:  #00ace6;width: 40%\" placeholder=\"Message\"></textarea>
+                            <textarea name=\"\" id=\"\" cols=\"30\" rows=\"8\"  style=\"width: 40%\" placeholder=\"Message\"></textarea>
                         </div>
                         <div class=\"form-group\">
                             <a  href=\"#\"><input align=\"center\" type=\"submit\" class=\"button\"  value=\"SEND MESSAGE\"></a>
@@ -149,16 +149,16 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
                 <div class=\"col-md-6 pr-md-5\">
                     <form action=\"#\">
                         <div class=\"form-group\">
-                            <input type=\"text\"  class=\"\" style=\"background-color:  #00ace6 ;width: 50%\" placeholder=\"Your Name\">
+                            <input type=\"text\"  class=\"\" style=\"width: 50%\" placeholder=\"Your Name\">
                         </div>
                         <div class=\"form-group\">
-                            <input type=\"text\" class=\"\" style=\"background-color:  #00ace6;width: 60%\" placeholder=\"Your Email\">
+                            <input type=\"text\" class=\"\" style=\"width: 60%\" placeholder=\"Your Email\">
                         </div>
                         <div class=\"form-group\">
-                            <input type=\"text\" class=\"\" style=\"background-color:  #00ace6;width: 40%\" placeholder=\"Subject\" >
+                            <input type=\"text\" class=\"\" style=\"width: 40%\" placeholder=\"Subject\" >
                         </div>
                         <div class=\"form-group\">
-                            <textarea name=\"\" id=\"\" cols=\"30\" rows=\"8\"  style=\"background-color:  #00ace6;width: 40%\" placeholder=\"Message\"></textarea>
+                            <textarea name=\"\" id=\"\" cols=\"30\" rows=\"8\"  style=\"width: 40%\" placeholder=\"Message\"></textarea>
                         </div>
                         <div class=\"form-group\">
                             <a  href=\"#\"><input align=\"center\" type=\"submit\" class=\"button\"  value=\"SEND MESSAGE\"></a>
