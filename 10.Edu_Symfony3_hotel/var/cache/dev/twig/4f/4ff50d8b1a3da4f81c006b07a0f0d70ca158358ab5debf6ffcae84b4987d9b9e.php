@@ -288,7 +288,7 @@ class __TwigTemplate_f5f58c6a6ce2c5d9d5c605e928c12511f4ef595a0bb3a20b594722317e4
         </div>
 
         <div class=\"medium-12  columns\">
-          <input type=\"submit\" value=\"SAVE\" class=\"button success hollow\" />
+          <input type=\"submit\" class=\"button\" value=\"SAVE\"  />
         </div>
       </form>
     </div>
@@ -439,7 +439,7 @@ class __TwigTemplate_f5f58c6a6ce2c5d9d5c605e928c12511f4ef595a0bb3a20b594722317e4
         </div>
 
         <div class=\"medium-12  columns\">
-          <input type=\"submit\" value=\"SAVE\" class=\"button success hollow\" />
+          <input type=\"submit\" class=\"button\" value=\"SAVE\"  />
         </div>
       </form>
     </div>

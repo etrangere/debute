@@ -97,19 +97,19 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
                 <div class=\"medium-2  columns\">CHECK-IN:</div>
 
-                <div class=\"medium-2  columns\"><input name=\"form[from]\" value=\"\" type=\"text\"  class=\"datepicker\" /></div>
+                <div class=\"medium-2  columns\"><input name=\"form[from]\" style=\"border-color: #00ace6\" value=\"\" type=\"text\"  class=\"datepicker\" /></div>
 
                 <div class=\"medium-2  columns\">CHECK-OUT:</div>
 
-                <div class=\"medium-2  columns\"><input name=\"form[to]\" value=\"\" type=\"text\" class=\"datepicker\" /></div>
+                <div class=\"medium-2  columns\"><input name=\"form[to]\" style=\"border-color: #00ace6\" value=\"\" type=\"text\" class=\"datepicker\" /></div>
 
-              <div class=\"medium-2  columns\"><input class=\"button\" type=\"submit\" value=\"SEARCH\" /></div>
+              <div class=\"medium-2  columns\"><input class=\"button\" type=\"submit\" value=\"SEARCH OFFER\" /></div>
 
            </div>
             <div class=\"medium-3  columns\">
                 <label>ROOM TYPE</label>
                 <div>
-                    <select class=\"\" name=\"form[room_type]\">
+                    <select class=\"\" name=\"form[room_type]\" style=\"border-color: #00ace6\">
                         <option selected=\"selected\">Choose</option>
                         <option value=\"";
         // line 44
@@ -129,7 +129,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
             <div class=\"medium-3  columns\">
                 <label>Adult</label>
                 <div>
-                    <select class=\"\" name=\"form[adult]\">
+                    <select class=\"\" name=\"form[adult]\" style=\"border-color: #00ace6\">
                         <option selected=\"selected\">Choose</option>
                         <option value=\"";
         // line 55
@@ -150,7 +150,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
             <div class=\"medium-3  columns\">
                 <label>Child</label>
                 <div>
-                    <select class=\"\" name=\"form[child]\">
+                    <select class=\"\" name=\"form[child]\" style=\"border-color: #00ace6\">
                         <option selected=\"selected\">Choose</option>
                         <option value=\"";
         // line 67
@@ -172,7 +172,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
             <div class=\"medium-3 columns\">
                 <label>Baby</label>
                 <div>
-                    <select class=\"\" name=\"form[baby]\">
+                    <select class=\"\" name=\"form[baby]\" style=\"border-color: #00ace6\">
                         <option selected=\"selected\">Choose</option>
                         <option value=\"";
         // line 80
@@ -228,7 +228,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
             // line 110
             echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["room"], "price", array()) . " EUR"), "html", null, true);
             echo "</td>
-                <td><a class=\"hollow button warning\" href=\"";
+                <td><a class=\"button\"  href=\"";
             // line 111
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_booking", array("id_room" => twig_get_attribute($this->env, $this->source, $context["room"], "id", array()))), "html", null, true);
             echo "\">CHOOSE</a></td>
@@ -300,19 +300,19 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
                 <div class=\"medium-2  columns\">CHECK-IN:</div>
 
-                <div class=\"medium-2  columns\"><input name=\"form[from]\" value=\"\" type=\"text\"  class=\"datepicker\" /></div>
+                <div class=\"medium-2  columns\"><input name=\"form[from]\" style=\"border-color: #00ace6\" value=\"\" type=\"text\"  class=\"datepicker\" /></div>
 
                 <div class=\"medium-2  columns\">CHECK-OUT:</div>
 
-                <div class=\"medium-2  columns\"><input name=\"form[to]\" value=\"\" type=\"text\" class=\"datepicker\" /></div>
+                <div class=\"medium-2  columns\"><input name=\"form[to]\" style=\"border-color: #00ace6\" value=\"\" type=\"text\" class=\"datepicker\" /></div>
 
-              <div class=\"medium-2  columns\"><input class=\"button\" type=\"submit\" value=\"SEARCH\" /></div>
+              <div class=\"medium-2  columns\"><input class=\"button\" type=\"submit\" value=\"SEARCH OFFER\" /></div>
 
            </div>
             <div class=\"medium-3  columns\">
                 <label>ROOM TYPE</label>
                 <div>
-                    <select class=\"\" name=\"form[room_type]\">
+                    <select class=\"\" name=\"form[room_type]\" style=\"border-color: #00ace6\">
                         <option selected=\"selected\">Choose</option>
                         <option value=\"{{ 1|number_format }}\">Single</option>
                         <option value=\"{{ 2|number_format }}\">Double</option>
@@ -323,7 +323,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
             <div class=\"medium-3  columns\">
                 <label>Adult</label>
                 <div>
-                    <select class=\"\" name=\"form[adult]\">
+                    <select class=\"\" name=\"form[adult]\" style=\"border-color: #00ace6\">
                         <option selected=\"selected\">Choose</option>
                         <option value=\"{{ 1|number_format }}\">1 person</option>
                         <option value=\"{{ 2|number_format }}\">2 persons</option>
@@ -335,7 +335,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
             <div class=\"medium-3  columns\">
                 <label>Child</label>
                 <div>
-                    <select class=\"\" name=\"form[child]\">
+                    <select class=\"\" name=\"form[child]\" style=\"border-color: #00ace6\">
                         <option selected=\"selected\">Choose</option>
                         <option value=\"{{ 1|number_format }}\">1 child</option>
                         <option value=\"{{ 2|number_format }}\">2 childs</option>
@@ -348,7 +348,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
             <div class=\"medium-3 columns\">
                 <label>Baby</label>
                 <div>
-                    <select class=\"\" name=\"form[baby]\">
+                    <select class=\"\" name=\"form[baby]\" style=\"border-color: #00ace6\">
                         <option selected=\"selected\">Choose</option>
                         <option value=\"{{ 1|number_format }}\">1 baby</option>
                         <option value=\"{{ 2|number_format }}\">2 babies</option>
@@ -381,7 +381,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <td>{{ room.description}}</td>
                 <td>{{ room.roomtype ~ \" ROOM\"  }}</td>
                 <td>{{ room.price ~ \" EUR\"}}</td>
-                <td><a class=\"hollow button warning\" href=\"{{ path(\"front_booking\",{'id_room' : room.id })}}\">CHOOSE</a></td>
+                <td><a class=\"button\"  href=\"{{ path(\"front_booking\",{'id_room' : room.id })}}\">CHOOSE</a></td>
                   </tr>
                 {% endfor %}
               </div>

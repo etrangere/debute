@@ -52,7 +52,7 @@ class __TwigTemplate_b6337e2e4624c10bebbd505f1b899b89a14343cb5a41d3eda238031401b
         // line 7
         echo "
 
- <h2 align=\"center\" >Welcome to our Hotel</h2>
+ <h2 align=\"center\" >Our hotel</h2>
 
  <p style=\"object-fit: contain; padding: 20px;\">Far far away, behind the word mountains, far from the countries
   Vokalia and Consonantia, there live the blind texts. Separated they live in
@@ -80,11 +80,11 @@ class __TwigTemplate_b6337e2e4624c10bebbd505f1b899b89a14343cb5a41d3eda238031401b
  <div class=\"medium-12  columns\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
         // line 35
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
         // line 36
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
         // line 37
@@ -92,7 +92,7 @@ class __TwigTemplate_b6337e2e4624c10bebbd505f1b899b89a14343cb5a41d3eda238031401b
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
         // line 38
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
         echo "\">
  </div>
 
@@ -109,7 +109,7 @@ class __TwigTemplate_b6337e2e4624c10bebbd505f1b899b89a14343cb5a41d3eda238031401b
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
         // line 46
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
         // line 47
@@ -123,19 +123,19 @@ class __TwigTemplate_b6337e2e4624c10bebbd505f1b899b89a14343cb5a41d3eda238031401b
  <div class=\"medium-12  columns\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
         // line 54
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/4.jpg"), "html", null, true);
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
         // line 55
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/4.jpg"), "html", null, true);
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
         // line 56
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/4.jpg"), "html", null, true);
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
         // line 57
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/4.jpg"), "html", null, true);
         echo "\">
  </div>
 
@@ -173,7 +173,7 @@ class __TwigTemplate_b6337e2e4624c10bebbd505f1b899b89a14343cb5a41d3eda238031401b
 {% block body %}
 
 
- <h2 align=\"center\" >Welcome to our Hotel</h2>
+ <h2 align=\"center\" >Our hotel</h2>
 
  <p style=\"object-fit: contain; padding: 20px;\">Far far away, behind the word mountains, far from the countries
   Vokalia and Consonantia, there live the blind texts. Separated they live in
@@ -199,10 +199,10 @@ class __TwigTemplate_b6337e2e4624c10bebbd505f1b899b89a14343cb5a41d3eda238031401b
 
  <h4 align=\"center\" >Our single rooms</h4>
  <div class=\"medium-12  columns\">
-  <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/3.jpg') }}\">
-  <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/3.jpg') }}\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/2.jpg') }}\">
-  <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/3.jpg') }}\">
+  <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/2.jpg') }}\">
+  <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/2.jpg') }}\">
+  <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/2.jpg') }}\">
  </div>
 
  <h4 align=\"center\" >Our double rooms</h4>
@@ -210,7 +210,7 @@ class __TwigTemplate_b6337e2e4624c10bebbd505f1b899b89a14343cb5a41d3eda238031401b
  <div class=\"medium-12  columns\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/3.jpg') }}\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/3.jpg') }}\">
-  <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/2.jpg') }}\">
+  <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/3.jpg') }}\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/3.jpg') }}\">
  </div>
 
@@ -218,10 +218,10 @@ class __TwigTemplate_b6337e2e4624c10bebbd505f1b899b89a14343cb5a41d3eda238031401b
  <h4 align=\"center\" >Our triple rooms</h4>
 
  <div class=\"medium-12  columns\">
-  <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/3.jpg') }}\">
-  <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/3.jpg') }}\">
-  <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/2.jpg') }}\">
-  <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/3.jpg') }}\">
+  <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/4.jpg') }}\">
+  <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/4.jpg') }}\">
+  <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/4.jpg') }}\">
+  <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"{{ asset('images/4.jpg') }}\">
  </div>
 
 {% endblock %}

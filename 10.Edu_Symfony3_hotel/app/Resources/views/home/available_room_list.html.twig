@@ -108,7 +108,7 @@
                 <td>{{ room.description}}</td>
                 <td>{{ room.roomtype ~ " ROOM"  }}</td>
                 <td>{{ room.price ~ " EUR"}}</td>
-                <td><a class="button"  href="{{ path("front_booking",{'id_room' : room.id })}}">CHOOSE</a></td>
+                <td><a class="button"  href="{{ path("front_booking",{'id_room' : room.id|number_format })}}">CHOOSE</a></td>
                   </tr>
                 {% endfor %}
               </div>

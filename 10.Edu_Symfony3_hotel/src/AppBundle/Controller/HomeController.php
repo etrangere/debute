@@ -14,6 +14,7 @@ use AppBundle\Entity\Client;
 use AppBundle\Entity\Room;
 use AppBundle\Repository\RoomRepository;
 use Symfony\Component\Validator\Constraints\All;
+use Doctrine\ORM\Mapping as ORM;
 
 
 class HomeController extends Controller
@@ -192,12 +193,16 @@ class HomeController extends Controller
             $em->persist($client);
             $em->flush();
 
+            $em = $this->getDoctrine()->getManager();
+
+            $id_client =$em->getRepository('AppBundle:Client')->find('id_room');
+
             $date_in = $data['from'];
             $date_out = $data['to'];
 
             //$id_client =$this->getDoctrine()->getRepository('AppBundle:Client')->find($id_room);
-            $id_client = 55;
-            var_dump($id_client);
+          //  $id_client = 55;
+           // var_dump($id_client);
             $cache->deleteMultiple(array('room_type','adult','child', 'baby',));
 
             return $this->redirect($this->generateUrl('book_room', array(

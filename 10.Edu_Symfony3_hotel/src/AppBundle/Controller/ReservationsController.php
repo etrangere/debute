@@ -119,6 +119,8 @@ class ReservationsController extends Controller
                   $em->flush();
 
 
+        return $this->redirectToRoute('valid_payment');
+      /*
         if( isset($_SESSION['admin']) && $_SESSION['admin'] == true ) {
             // redirect
             return $this->redirectToRoute('index_clients');
@@ -126,7 +128,7 @@ class ReservationsController extends Controller
             //redirect
             return $this->redirectToRoute('valid_payment');
         }
-
+*/
 
     }
 

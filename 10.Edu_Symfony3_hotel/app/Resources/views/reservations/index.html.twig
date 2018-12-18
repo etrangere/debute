@@ -40,7 +40,7 @@
               {% for reservation in reservations %}
               <tr>
                 <td>
-                    {{ reservation.id  }}
+                    {{ reservation.id }}
                 <td>{{ reservation.room.name }}</td>
                 <td>{{ reservation.client.name }}</td>
                 <td> {{ reservation.dateIn|date('d-m-Y')}} to {{ reservation.dateOut|date('d-m-Y')}}</td>
