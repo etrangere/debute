@@ -4,7 +4,7 @@
 
     <div class="row">
       <div class="medium-12 columns">
-        <h2 align="center">Welcome to the Hotel</h2>
+        <h2 align="center">Welcome to Hotel de France</h2>
         <img class="thumbnail" src="{{ asset('images/1.jpg') }}">
       </div>
       <div class="medium-12  columns">
@@ -18,11 +18,13 @@
           (with computers, printers, and other office equipment), childcare,
           conference and event facilities, tennis or basketball courts, gymnasium,
           restaurants, day spa, and social function services. Hotel rooms are usually
-          numbered (or named in some smaller hotels and B&Bs) to allow guests to
+          numbered (or named in some smaller hotels) to allow guests to
           identify their room.</p>
       </div>
 
-      <a align="center" class="medium-12  columns" href="{{ path("available_room_list")}}">
-        <input type="submit" class="button"  value="BOOK A ROOM"></a>
     </div>
+  <div>
+    <a align="center" class="medium-12  columns" href="{{ path("available_room_list")}}">
+      <input  type="submit" class="button"  value="SEARCH ACCOMODATION"></a>
+  </div>
         {% endblock %}
