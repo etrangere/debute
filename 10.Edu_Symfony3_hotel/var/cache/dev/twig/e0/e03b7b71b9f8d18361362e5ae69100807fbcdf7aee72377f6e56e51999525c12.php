@@ -68,8 +68,6 @@ class __TwigTemplate_e3bff57bb1648a0734f33e2c5c8c2505cd7c60d6a81a021502b34885f75
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 7
-        echo "    ";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context);
         echo "
 
     <div class=\"container-fluid\">
@@ -89,22 +87,24 @@ class __TwigTemplate_e3bff57bb1648a0734f33e2c5c8c2505cd7c60d6a81a021502b34885f75
 
     <div class=\"medium-12  columns\"><br><br>
 
-    <input type=\"radio\" name=\"r\" id=\"radio2\">With this option you can pay your charges in hotel at your arrival</br>
+    <h4 align=\"center\"><input  type=\"radio\" name=\"r\" id=\"radio2\">With this option you can pay your charges in hotel at your arrival
 
-    <a align=\"center\"  class=\"medium-12  columns\" href=\"";
-        // line 25
+    <a class=\"medium-12  columns\"
+       href=\"";
+        // line 26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("confirmation");
-        echo "\"><input type=\"submit\" id=\"text1\" disabled=\"disabled\" class=\"button\" value=\"Booking validation without payment\"></a>
+        echo "\"><input type=\"submit\" id=\"text1\" disabled=\"disabled\" class=\"button\" value=\"Booking validation without payment\"></a></h4>
 
     <hr>
-    <br><br><h3>Here will be Stripe billing system</h3><br><br>
-    <input type=\"radio\" name=\"r\" id=\"radio1\">You can pay your charges immediately by one of our payment options</br>
+    <br><br><h3 align=\"center\">Here will be Stripe billing system</h3><br><br>
 
-    <input type=\"text\" id=\"text2\" disabled=\"disabled\" placeholder=\"Lenght\">
-    <input type=\"text\" id=\"text3\" disabled=\"disabled\" placeholder=\"Width\">
-    <input type=\"text\" id=\"text4\" disabled=\"disabled\" placeholder=\"Depth\">
-
-
+    <h4 align=\"center\"><input  type=\"radio\" name=\"r\" id=\"radio1\">You can pay your charges immediately by one of our payment options</h4></br>
+<div align=\"center\">
+    <input type=\"text\" id=\"text2\" disabled=\"disabled\" placeholder=\"Card Holder Name\" style=\"width: 60%\">
+    <input type=\"text\" id=\"text3\" disabled=\"disabled\" placeholder=\"Card Number\" style=\"width: 70%\">
+    <input type=\"text\" id=\"text4\" disabled=\"disabled\" placeholder=\"DATE/VALIDITY\" style=\"width: 30%\">
+</div>
+    </div>
 
         <script>
             document.getElementById(\"radio1\").onclick = function() {myFunction1()};
@@ -152,7 +152,7 @@ class __TwigTemplate_e3bff57bb1648a0734f33e2c5c8c2505cd7c60d6a81a021502b34885f75
 
 
 
-</div>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -174,7 +174,7 @@ class __TwigTemplate_e3bff57bb1648a0734f33e2c5c8c2505cd7c60d6a81a021502b34885f75
 
     public function getDebugInfo()
     {
-        return array (  96 => 25,  78 => 10,  71 => 7,  62 => 6,  45 => 3,  15 => 1,);
+        return array (  95 => 26,  76 => 10,  71 => 7,  62 => 6,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -185,7 +185,7 @@ class __TwigTemplate_e3bff57bb1648a0734f33e2c5c8c2505cd7c60d6a81a021502b34885f75
 
 
 {% block body %}
-    {{ dump() }}
+
 
     <div class=\"container-fluid\">
         <link rel=\"stylesheet\" href=\"{{ asset('css/progresbar.css') }}\">
@@ -201,19 +201,21 @@ class __TwigTemplate_e3bff57bb1648a0734f33e2c5c8c2505cd7c60d6a81a021502b34885f75
 
     <div class=\"medium-12  columns\"><br><br>
 
-    <input type=\"radio\" name=\"r\" id=\"radio2\">With this option you can pay your charges in hotel at your arrival</br>
+    <h4 align=\"center\"><input  type=\"radio\" name=\"r\" id=\"radio2\">With this option you can pay your charges in hotel at your arrival
 
-    <a align=\"center\"  class=\"medium-12  columns\" href=\"{{ path(\"confirmation\")}}\"><input type=\"submit\" id=\"text1\" disabled=\"disabled\" class=\"button\" value=\"Booking validation without payment\"></a>
+    <a class=\"medium-12  columns\"
+       href=\"{{ path(\"confirmation\")}}\"><input type=\"submit\" id=\"text1\" disabled=\"disabled\" class=\"button\" value=\"Booking validation without payment\"></a></h4>
 
     <hr>
-    <br><br><h3>Here will be Stripe billing system</h3><br><br>
-    <input type=\"radio\" name=\"r\" id=\"radio1\">You can pay your charges immediately by one of our payment options</br>
+    <br><br><h3 align=\"center\">Here will be Stripe billing system</h3><br><br>
 
-    <input type=\"text\" id=\"text2\" disabled=\"disabled\" placeholder=\"Lenght\">
-    <input type=\"text\" id=\"text3\" disabled=\"disabled\" placeholder=\"Width\">
-    <input type=\"text\" id=\"text4\" disabled=\"disabled\" placeholder=\"Depth\">
-
-
+    <h4 align=\"center\"><input  type=\"radio\" name=\"r\" id=\"radio1\">You can pay your charges immediately by one of our payment options</h4></br>
+<div align=\"center\">
+    <input type=\"text\" id=\"text2\" disabled=\"disabled\" placeholder=\"Card Holder Name\" style=\"width: 60%\">
+    <input type=\"text\" id=\"text3\" disabled=\"disabled\" placeholder=\"Card Number\" style=\"width: 70%\">
+    <input type=\"text\" id=\"text4\" disabled=\"disabled\" placeholder=\"DATE/VALIDITY\" style=\"width: 30%\">
+</div>
+    </div>
 
         <script>
             document.getElementById(\"radio1\").onclick = function() {myFunction1()};
@@ -261,7 +263,7 @@ class __TwigTemplate_e3bff57bb1648a0734f33e2c5c8c2505cd7c60d6a81a021502b34885f75
 
 
 
-</div>
+
 {% endblock %}
 ", ":home:validation_payment.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/validation_payment.html.twig");
     }

@@ -34,23 +34,19 @@
             <tr>
               <th width="200">Name</th>
               <th width="200">Email</th>
-                <th width="200">Action</th>
+              <th width="200">Action</th>
             </tr>
           </thead>
-
-
-                {%  for client in clients %}
-                <tr>
+            {%  for client in clients %}
+              <tr>
                 <td>{{ client.title | upper }}. {{ client.name }} {{ client.lastName }}</td>
                 <td>{{ client.Email }}</td>
-
-                <td>
+                    <td>
                     <a class="hollow button" href="{{ path("modify_client", { 'id_client': client.id }) }}">EDIT</a>
                     <a class="hollow button warning" href="{{ path("delete", { 'id_client': client.id }) }}">DELETE</a>
                 </td>
               </tr>
               {%  endfor %}
-
           </tbody>
         </table>
       </div>

@@ -2,9 +2,6 @@
 
 namespace AppBundle\Controller;
 
-
-
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,8 +10,6 @@ use AppBundle\Entity\Reservation;
 use AppBundle\Entity\Client;
 use AppBundle\Repository\RoomRepository;
 use AppBundle\Entity\Room;
-
-
 
 
 class ReservationsController extends Controller

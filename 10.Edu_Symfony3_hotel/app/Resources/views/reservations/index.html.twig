@@ -20,9 +20,7 @@
 
 
 {% block body %}
-    {{ dump() }}
-
-    <div class="row">
+  <div class="row">
       <div class="medium-12 large-12 columns">
         <h4>Reservations</h4>
 
@@ -32,8 +30,7 @@
               <th width="50">RESERV.</th>
               <th width="100">ROOM</th>
               <th width="120">ROOM TYPE</th>
-              <th width="200">NAME</th>
-              <th width="200">LAST NAME</th>
+              <th width="300">NAME/SIR NAME</th>
               <th width="200">DATES</th>
               <th width="50">ADULT</th>
               <th width="50">CHILD</th>
@@ -43,16 +40,15 @@
             <tbody>
               {% for reservation in reservations %}
               <tr>
-                <td>
-                    {{ reservation.id }}
+                <td>{{ reservation.id }}</td>
                 <td>{{ reservation.room.name }}</td>
                 <td>{{ reservation.client.roomtype }}</td>
-                <td>{{ reservation.client.name }}</td>
-                <td>{{ reservation.client.lastname }}</td>
-                <td> {{ reservation.dateIn|date('d-m-Y')}} to {{ reservation.dateOut|date('d-m-Y')}}</td>
+                <td>{{ reservation.client.title }}. {{ reservation.client.name }} {{ reservation.client.lastName }}</td>
+                <td>{{ reservation.dateIn|date('d-m-Y')}} to {{ reservation.dateOut|date('d-m-Y')}}</td>
                 <td>{{ reservation.client.adult }}</td>
                 <td>{{ reservation.client.child }}</td>
                 <td>{{ reservation.client.baby }}</td>
+              </tr>
               {% endfor %}
             </tbody>
         </table>

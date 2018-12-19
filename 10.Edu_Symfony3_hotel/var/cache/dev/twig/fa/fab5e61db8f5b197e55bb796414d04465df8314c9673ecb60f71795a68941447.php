@@ -90,11 +90,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 23
-        echo "    ";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context);
-        echo "
-
-    <div class=\"row\">
+        echo "  <div class=\"row\">
       <div class=\"medium-12 large-12 columns\">
         <h4>Reservations</h4>
 
@@ -104,8 +100,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
               <th width=\"50\">RESERV.</th>
               <th width=\"100\">ROOM</th>
               <th width=\"120\">ROOM TYPE</th>
-              <th width=\"200\">NAME</th>
-              <th width=\"200\">LAST NAME</th>
+              <th width=\"300\">NAME/SIR NAME</th>
               <th width=\"200\">DATES</th>
               <th width=\"50\">ADULT</th>
               <th width=\"50\">CHILD</th>
@@ -114,57 +109,57 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
           </thead>
             <tbody>
               ";
-        // line 44
+        // line 41
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["reservations"]) || array_key_exists("reservations", $context) ? $context["reservations"] : (function () { throw new Twig_Error_Runtime('Variable "reservations" does not exist.', 44, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["reservations"]) || array_key_exists("reservations", $context) ? $context["reservations"] : (function () { throw new Twig_Error_Runtime('Variable "reservations" does not exist.', 41, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["reservation"]) {
-            // line 45
+            // line 42
             echo "              <tr>
-                <td>
-                    ";
-            // line 47
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "id", array()), "html", null, true);
-            echo "
                 <td>";
-            // line 48
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "id", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 44
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "room", array()), "name", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 49
+            // line 45
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "roomtype", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 50
+            // line 46
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "title", array()), "html", null, true);
+            echo ". ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "name", array()), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "lastName", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 51
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "lastname", array()), "html", null, true);
-            echo "</td>
-                <td> ";
-            // line 52
+            // line 47
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "dateIn", array()), "d-m-Y"), "html", null, true);
             echo " to ";
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "dateOut", array()), "d-m-Y"), "html", null, true);
             echo "</td>
                 <td>";
-            // line 53
+            // line 48
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "adult", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 54
+            // line 49
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "child", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 55
+            // line 50
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "baby", array()), "html", null, true);
             echo "</td>
+              </tr>
               ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 57
+        // line 53
         echo "            </tbody>
         </table>
       </div>
@@ -191,7 +186,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
 
     public function getDebugInfo()
     {
-        return array (  168 => 57,  160 => 55,  156 => 54,  152 => 53,  146 => 52,  142 => 51,  138 => 50,  134 => 49,  130 => 48,  126 => 47,  122 => 45,  118 => 44,  93 => 23,  84 => 22,  66 => 11,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
+        return array (  163 => 53,  154 => 50,  150 => 49,  146 => 48,  140 => 47,  132 => 46,  128 => 45,  124 => 44,  120 => 43,  117 => 42,  113 => 41,  93 => 23,  84 => 22,  66 => 11,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -218,9 +213,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
 
 
 {% block body %}
-    {{ dump() }}
-
-    <div class=\"row\">
+  <div class=\"row\">
       <div class=\"medium-12 large-12 columns\">
         <h4>Reservations</h4>
 
@@ -230,8 +223,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
               <th width=\"50\">RESERV.</th>
               <th width=\"100\">ROOM</th>
               <th width=\"120\">ROOM TYPE</th>
-              <th width=\"200\">NAME</th>
-              <th width=\"200\">LAST NAME</th>
+              <th width=\"300\">NAME/SIR NAME</th>
               <th width=\"200\">DATES</th>
               <th width=\"50\">ADULT</th>
               <th width=\"50\">CHILD</th>
@@ -241,16 +233,15 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
             <tbody>
               {% for reservation in reservations %}
               <tr>
-                <td>
-                    {{ reservation.id }}
+                <td>{{ reservation.id }}</td>
                 <td>{{ reservation.room.name }}</td>
                 <td>{{ reservation.client.roomtype }}</td>
-                <td>{{ reservation.client.name }}</td>
-                <td>{{ reservation.client.lastname }}</td>
-                <td> {{ reservation.dateIn|date('d-m-Y')}} to {{ reservation.dateOut|date('d-m-Y')}}</td>
+                <td>{{ reservation.client.title }}. {{ reservation.client.name }} {{ reservation.client.lastName }}</td>
+                <td>{{ reservation.dateIn|date('d-m-Y')}} to {{ reservation.dateOut|date('d-m-Y')}}</td>
                 <td>{{ reservation.client.adult }}</td>
                 <td>{{ reservation.client.child }}</td>
                 <td>{{ reservation.client.baby }}</td>
+              </tr>
               {% endfor %}
             </tbody>
         </table>

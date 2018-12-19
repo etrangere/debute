@@ -113,13 +113,18 @@ class __TwigTemplate_2db23c71af529c215612e3dd2bb96024200d7428cf2c1cbe86d32dc7f0e
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.date.js"), "html", null, true);
         echo "\"></script>
         <script>
+
+
             \$('.datepicker').pickadate(
-              { 
+              {
                 format: 'yyyy-mm-dd',
-                formatSubmit: 'yyyy-mm-dd' 
+                formatSubmit: 'yyyy-mm-dd',
+                  min: new Date('today'),
+                  max: new Date(2019,12,31)
               }
               );
         </script>
+
     </body>
 </html>
 ";
@@ -226,7 +231,7 @@ class __TwigTemplate_2db23c71af529c215612e3dd2bb96024200d7428cf2c1cbe86d32dc7f0e
 
     public function getDebugInfo()
     {
-        return array (  207 => 48,  195 => 34,  180 => 23,  176 => 22,  172 => 21,  168 => 20,  161 => 15,  155 => 14,  144 => 6,  132 => 5,  113 => 54,  109 => 53,  105 => 52,  101 => 51,  97 => 50,  92 => 49,  90 => 48,  75 => 35,  73 => 34,  68 => 31,  66 => 14,  60 => 11,  56 => 10,  52 => 9,  48 => 8,  43 => 7,  41 => 6,  37 => 5,  31 => 1,);
+        return array (  212 => 48,  200 => 34,  185 => 23,  181 => 22,  177 => 21,  173 => 20,  166 => 15,  160 => 14,  149 => 6,  137 => 5,  113 => 54,  109 => 53,  105 => 52,  101 => 51,  97 => 50,  92 => 49,  90 => 48,  75 => 35,  73 => 34,  68 => 31,  66 => 14,  60 => 11,  56 => 10,  52 => 9,  48 => 8,  43 => 7,  41 => 6,  37 => 5,  31 => 1,);
     }
 
     public function getSourceContext()
@@ -286,13 +291,18 @@ class __TwigTemplate_2db23c71af529c215612e3dd2bb96024200d7428cf2c1cbe86d32dc7f0e
         <script src=\"{{ asset('pickadate/lib/picker.js') }}\"></script>
         <script src=\"{{ asset('pickadate/lib/picker.date.js') }}\"></script>
         <script>
+
+
             \$('.datepicker').pickadate(
-              { 
+              {
                 format: 'yyyy-mm-dd',
-                formatSubmit: 'yyyy-mm-dd' 
+                formatSubmit: 'yyyy-mm-dd',
+                  min: new Date('today'),
+                  max: new Date(2019,12,31)
               }
               );
         </script>
+
     </body>
 </html>
 ", "base.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/base.html.twig");

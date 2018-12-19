@@ -43,14 +43,14 @@ class __TwigTemplate_deb3b444416a87cd8909548a3aff8ad80fbc6545a58641961597a062da5
         // line 4
         echo "
     <div class=\"row\">
-      <div class=\"medium-6 columns\">
-        <h2>Welcome to the Hotel</h2>
+      <div class=\"medium-12 columns\">
+        <h2 align=\"center\">Welcome to Hotel de France</h2>
         <img class=\"thumbnail\" src=\"";
         // line 8
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/1.jpg"), "html", null, true);
         echo "\">
       </div>
-      <div class=\"medium-6 large-5 columns\">
+      <div class=\"medium-12  columns\">
         <p>A hotel is an establishment that provides paid lodging on a short-term basis.
           Facilities provided may range from a modest-quality mattress in a small room to
           large suites with bigger, higher-quality beds, a dresser, a refrigerator and
@@ -61,15 +61,18 @@ class __TwigTemplate_deb3b444416a87cd8909548a3aff8ad80fbc6545a58641961597a062da5
           (with computers, printers, and other office equipment), childcare,
           conference and event facilities, tennis or basketball courts, gymnasium,
           restaurants, day spa, and social function services. Hotel rooms are usually
-          numbered (or named in some smaller hotels and B&Bs) to allow guests to
+          numbered (or named in some smaller hotels) to allow guests to
           identify their room.</p>
       </div>
 
-      <a class=\"medium-6  columns\" href=\"";
-        // line 25
+    </div>
+  <div>
+    <a align=\"center\" class=\"medium-12  columns\" href=\"";
+        // line 27
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("available_room_list");
-        echo "\"><input type=\"submit\" class=\"button\"  value=\"BOOK A ROOM\"></a>
-
+        echo "\">
+      <input  type=\"submit\" class=\"button\"  value=\"SEARCH ACCOMODATION\"></a>
+  </div>
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -88,7 +91,7 @@ class __TwigTemplate_deb3b444416a87cd8909548a3aff8ad80fbc6545a58641961597a062da5
 
     public function getDebugInfo()
     {
-        return array (  70 => 25,  50 => 8,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  72 => 27,  50 => 8,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -98,11 +101,11 @@ class __TwigTemplate_deb3b444416a87cd8909548a3aff8ad80fbc6545a58641961597a062da5
 {% block body %}
 
     <div class=\"row\">
-      <div class=\"medium-6 columns\">
-        <h2>Welcome to the Hotel</h2>
+      <div class=\"medium-12 columns\">
+        <h2 align=\"center\">Welcome to Hotel de France</h2>
         <img class=\"thumbnail\" src=\"{{ asset('images/1.jpg') }}\">
       </div>
-      <div class=\"medium-6 large-5 columns\">
+      <div class=\"medium-12  columns\">
         <p>A hotel is an establishment that provides paid lodging on a short-term basis.
           Facilities provided may range from a modest-quality mattress in a small room to
           large suites with bigger, higher-quality beds, a dresser, a refrigerator and
@@ -113,12 +116,15 @@ class __TwigTemplate_deb3b444416a87cd8909548a3aff8ad80fbc6545a58641961597a062da5
           (with computers, printers, and other office equipment), childcare,
           conference and event facilities, tennis or basketball courts, gymnasium,
           restaurants, day spa, and social function services. Hotel rooms are usually
-          numbered (or named in some smaller hotels and B&Bs) to allow guests to
+          numbered (or named in some smaller hotels) to allow guests to
           identify their room.</p>
       </div>
 
-      <a class=\"medium-6  columns\" href=\"{{ path(\"available_room_list\")}}\"><input type=\"submit\" class=\"button\"  value=\"BOOK A ROOM\"></a>
-
+    </div>
+  <div>
+    <a align=\"center\" class=\"medium-12  columns\" href=\"{{ path(\"available_room_list\")}}\">
+      <input  type=\"submit\" class=\"button\"  value=\"SEARCH ACCOMODATION\"></a>
+  </div>
         {% endblock %}
 ", "home/index.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/index.html.twig");
     }

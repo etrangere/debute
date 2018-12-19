@@ -111,7 +111,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>ROOM TYPE</label>
                 <div>
                     <select id=\"room_type\" onchange=\"myFunction1()\" name=\"form[room_type]\" style=\"border-color: #00ace6\">
-                        <option selected=\"selected\">Choose</option>
+                        <option selected=\"selected\" disabled=\"disabled\">Choose</option>
                         <option id=\"room_type1\" value=\"";
         // line 45
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
@@ -155,7 +155,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>Child</label>
                 <div>
                     <select id=\"child\" onchange=\"myFunction1()\" name=\"form[child]\" style=\"border-color: #00ace6\" disabled=\"disabled\">
-                        <option selected=\"selected\">Choose</option>
+                        <option selected=\"selected\" disabled=\"disabled\">Choose</option>
                         <option id=\"child1\" value=\"";
         // line 71
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
@@ -177,7 +177,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>Baby</label>
                 <div>
                     <select id=\"baby\" onchange=\"myFunction1()\" name=\"form[baby]\" style=\"border-color: #00ace6\" disabled=\"disabled\">
-                        <option selected=\"selected\">Choose</option>
+                        <option selected=\"selected\" disabled=\"disabled\">Choose</option>
                         <option id=\"baby1\" value=\"";
         // line 84
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
@@ -379,7 +379,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>ROOM TYPE</label>
                 <div>
                     <select id=\"room_type\" onchange=\"myFunction1()\" name=\"form[room_type]\" style=\"border-color: #00ace6\">
-                        <option selected=\"selected\">Choose</option>
+                        <option selected=\"selected\" disabled=\"disabled\">Choose</option>
                         <option id=\"room_type1\" value=\"{{ 1|number_format }}\" >Single</option>
                         <option id=\"room_type2\" value=\"{{ 2|number_format }}\" >Double</option>
                         <option id=\"room_type3\" value=\"{{ 3|number_format }}\" >Triple</option>
@@ -405,7 +405,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>Child</label>
                 <div>
                     <select id=\"child\" onchange=\"myFunction1()\" name=\"form[child]\" style=\"border-color: #00ace6\" disabled=\"disabled\">
-                        <option selected=\"selected\">Choose</option>
+                        <option selected=\"selected\" disabled=\"disabled\">Choose</option>
                         <option id=\"child1\" value=\"{{ 1|number_format }}\" disabled=\"disabled\">1 child</option>
                         <option id=\"child2\" value=\"{{ 2|number_format }}\" disabled=\"disabled\">2 childs</option>
                         <option id=\"child3\" value=\"{{ 3|number_format }}\" disabled=\"disabled\">3 childs</option>
@@ -418,7 +418,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>Baby</label>
                 <div>
                     <select id=\"baby\" onchange=\"myFunction1()\" name=\"form[baby]\" style=\"border-color: #00ace6\" disabled=\"disabled\">
-                        <option selected=\"selected\">Choose</option>
+                        <option selected=\"selected\" disabled=\"disabled\">Choose</option>
                         <option id=\"baby1\" value=\"{{ 1|number_format }}\" disabled=\"disabled\">1 baby</option>
                         <option id=\"baby2\" value=\"{{ 2|number_format }}\" disabled=\"disabled\">2 babies</option>
                         <option id=\"baby3\" value=\"{{ 3|number_format }}\" disabled=\"disabled\">3 babies</option>

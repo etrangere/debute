@@ -34,17 +34,9 @@ class appProdDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBun
                 return array (  '_controller' => 'AppBundle\\Controller\\AdminController::showIndex',  '_route' => 'admin',);
             }
 
-            if (0 === strpos($pathinfo, '/admin/guests')) {
-                // index_clients
-                if ('/admin/guests' === $pathinfo) {
-                    return array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showIndex',  '_route' => 'index_clients',);
-                }
-
-                // new_client
-                if ('/admin/guests/new' === $pathinfo) {
-                    return array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showNew',  '_route' => 'new_client',);
-                }
-
+            // index_clients
+            if ('/admin/guests' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showIndex',  '_route' => 'index_clients',);
             }
 
             // delete
@@ -52,17 +44,9 @@ class appProdDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBun
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'delete')), array (  '_controller' => 'AppBundle\\Controller\\ClientsController::delete_articles',));
             }
 
-            if (0 === strpos($pathinfo, '/admin/reservations')) {
-                // reservations
-                if ('/admin/reservations' === $pathinfo) {
-                    return array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::showReservations',  '_route' => 'reservations',);
-                }
-
-                // booking
-                if (preg_match('#^/admin/reservations/(?P<id_client>[^/]++)$#sD', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'booking')), array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::booking',));
-                }
-
+            // reservations
+            if ('/admin/reservations' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::showReservations',  '_route' => 'reservations',);
             }
 
             // book_room
@@ -132,9 +116,14 @@ class appProdDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBun
             return array (  '_controller' => 'AppBundle\\Controller\\HomeController::booking',  '_route' => 'available_room_list',);
         }
 
-        // pre_booking
-        if ('/pre_booking/new' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::pre_booking_New',  '_route' => 'pre_booking',);
+        // front_booking
+        if (0 === strpos($pathinfo, '/front_booking') && preg_match('#^/front_booking/(?P<id_room>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'front_booking')), array (  '_controller' => 'AppBundle\\Controller\\HomeController::front_booking',));
+        }
+
+        // valid_payment
+        if ('/validation_payment' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\Validation_paymentController::indexAction',  '_route' => 'valid_payment',);
         }
 
         if ('/' === $pathinfo && !$allow) {
