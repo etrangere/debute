@@ -126,6 +126,15 @@ class HomeController extends Controller
 
             $data['rooms']=$rooms;
 
+            $cache = new FilesystemCache();
+            $data ['room_type'] = $cache->get('room_type');
+            $data ['adult'] = $cache->get('adult');
+            $data ['child'] = $cache->get('child');
+            $data ['baby'] = $cache->get('baby');
+            $data ['from'] = $cache->get('from');
+            $data ['to'] = $cache->get('to');
+
+
             return $this->render('home/available_room_list.html.twig',$data);
         }
         return $this->render('home/available_room_list.html.twig',$data);

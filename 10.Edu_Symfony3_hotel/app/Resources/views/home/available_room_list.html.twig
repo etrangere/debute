@@ -27,49 +27,50 @@
 
                 <div class="medium-2  columns">CHECK-IN:</div>
 
-                <div class="medium-2  columns"><input name="form[from]" type="date"  value="" style="border-color: #00ace6"  class="datepicker" /></div>
+                <div class="medium-2  columns"><input id="from" name="form[from]" type="date"  value="" style="border-color: #00ace6"  class="datepicker" required/></div>
 
                 <div class="medium-2  columns">CHECK-OUT:</div>
 
-                <div class="medium-2  columns"><input name="form[to]" style="border-color: #00ace6" value="" type="date" class="datepicker" /></div>
+                <div class="medium-2  columns"><input id="to" name="form[to]" style="border-color: #00ace6" value="" type="date" class="datepicker" required/></div>
 
-              <div class="medium-2  columns"><input class="button" type="submit" value="SEARCH OFFER" /></div>
+              <div class="medium-2  columns"><input class="button" id="search_offer" onchange="myFunction1()"  type="submit" value="SEARCH OFFER" />
+            <input class="button" onclick="reload" type="reset" value="Reset" /></div>
 
            </div>
             <div class="medium-3  columns">
                 <label>ROOM TYPE</label>
                 <div>
-                    {% if form.room_type > 2 and form.room_type < 3 %}
-
-                    <select class="" name="form[room_type]" style="border-color: #00ace6">
+                    <select id="room_type" onchange="myFunction1()" name="form[room_type]" style="border-color: #00ace6">
                         <option selected="selected">Choose</option>
-                        <option value="{{ 1|number_format }}">Single</option>
-                        <option value="{{ 2|number_format }}">Double</option>
-                        <option value="{{ 3|number_format }}">Triple</option>
+                        <option id="room_type1" value="{{ 1|number_format }}" >Single</option>
+                        <option id="room_type2" value="{{ 2|number_format }}" >Double</option>
+                        <option id="room_type3" value="{{ 3|number_format }}" >Triple</option>
                     </select>
-                    {% endif %}
                 </div>
             </div>
+
             <div class="medium-3  columns">
                 <label>Adult</label>
                 <div>
-                    <select class="" name="form[adult]" style="border-color: #00ace6">
-                        <option selected="selected">Choose</option>
-                        <option value="{{ 1|number_format }}">1 person</option>
-                        <option value="{{ 2|number_format }}">2 persons</option>
-                        <option value="{{ 3|number_format }}">3 persons</option>
 
+                    <select id="adult" onchange="myFunction1()" name="form[adult]" style="border-color: #00ace6" disabled="disabled">
+                    <option selected="selected" disabled="disabled">Choose</option>
+                    <option id="adult1" value="{{ 1|number_format }}" disabled="disabled">1 person</option>
+                    <option id="adult2" value="{{ 2|number_format }}" disabled="disabled">2 persons</option>
+                    <option id="adult3" value="{{ 3|number_format }}" disabled="disabled">3 persons</option>
                     </select>
+
                 </div>
+
             </div>
             <div class="medium-3  columns">
                 <label>Child</label>
                 <div>
-                    <select class="" name="form[child]" style="border-color: #00ace6">
+                    <select id="child" onchange="myFunction1()" name="form[child]" style="border-color: #00ace6" disabled="disabled">
                         <option selected="selected">Choose</option>
-                        <option value="{{ 1|number_format }}">1 child</option>
-                        <option value="{{ 2|number_format }}">2 childs</option>
-                        <option value="{{ 3|number_format }}">3 childs</option>
+                        <option id="child1" value="{{ 1|number_format }}" disabled="disabled">1 child</option>
+                        <option id="child2" value="{{ 2|number_format }}" disabled="disabled">2 childs</option>
+                        <option id="child3" value="{{ 3|number_format }}" disabled="disabled">3 childs</option>
 
                     </select>
 
@@ -78,11 +79,11 @@
             <div class="medium-3 columns">
                 <label>Baby</label>
                 <div>
-                    <select class="" name="form[baby]" style="border-color: #00ace6">
+                    <select id="baby" onchange="myFunction1()" name="form[baby]" style="border-color: #00ace6" disabled="disabled">
                         <option selected="selected">Choose</option>
-                        <option value="{{ 1|number_format }}">1 baby</option>
-                        <option value="{{ 2|number_format }}">2 babies</option>
-                        <option value="{{ 3|number_format }}">3 babies</option>
+                        <option id="baby1" value="{{ 1|number_format }}" disabled="disabled">1 baby</option>
+                        <option id="baby2" value="{{ 2|number_format }}" disabled="disabled">2 babies</option>
+                        <option id="baby3" value="{{ 3|number_format }}" disabled="disabled">3 babies</option>
 
                     </select>
                 </div>
@@ -118,7 +119,68 @@
               </tbody>
           </table>
 
+    <script>
 
+            function myFunction1() {
+
+                var comproom_type = document.getElementById("room_type");//room_type 1 2 3
+                var compadult = document.getElementById("adult"); //child 1 2 3
+                var compchild = document.getElementById("child"); // baby for 1 2 3
+
+
+                if(comproom_type.value == "1" ){
+
+                    document.getElementById("adult").disabled=false;
+                    document.getElementById("adult1").disabled=false;
+                }
+                else if(comproom_type.value == "2" ){
+                    document.getElementById("adult").disabled=false;
+                    document.getElementById("adult1").disabled=false;
+                    document.getElementById("adult2").disabled=false;
+                }
+                else if (comproom_type.value == "3" ){
+                    document.getElementById("adult").disabled=false;
+                    document.getElementById("adult1").disabled=false;
+                    document.getElementById("adult2").disabled=false;
+                    document.getElementById("adult3").disabled=false;
+                }
+
+                if(compadult.value == "1" ){
+                    document.getElementById("child").disabled=false;
+                    document.getElementById("child1").disabled=false;
+                }
+                else if(compadult.value == "2" ){
+                    document.getElementById("child").disabled=false;
+                    document.getElementById("child1").disabled=false;
+                    document.getElementById("child2").disabled=false;
+                }
+                else if(compadult.value == "3" ){
+                    document.getElementById("child").disabled=false;
+                    document.getElementById("child1").disabled=false;
+                    document.getElementById("child2").disabled=false;
+                    document.getElementById("child3").disabled=false;
+                }
+
+                if(compchild.value == "1" ){
+                    document.getElementById("baby").disabled=false;
+                    document.getElementById("baby1").disabled=false;
+                }
+                else if(compchild.value == "2" ){
+                    document.getElementById("baby").disabled=false;
+                    document.getElementById("baby1").disabled=false;
+                    document.getElementById("baby2").disabled=false;
+                }
+                else if(compchild.value == "3" ){
+                    document.getElementById("baby").disabled=false;
+                    document.getElementById("baby1").disabled=false;
+                    document.getElementById("baby2").disabled=false;
+                    document.getElementById("baby3").disabled=false;
+                }
+
+
+
+            }
+    </script>
 
       {% endblock %}
 
