@@ -124,7 +124,6 @@
   ':clients:ajax_search.html.twig' => __DIR__.'/../../../app/Resources/views/clients/ajax_search.html.twig',
   ':clients:form.html.twig' => __DIR__.'/../../../app/Resources/views/clients/form.html.twig',
   ':clients:index.html.twig' => __DIR__.'/../../../app/Resources/views/clients/index.html.twig',
-  ':reservations:book.html.twig' => __DIR__.'/../../../app/Resources/views/reservations/book.html.twig',
   ':reservations:index.html.twig' => __DIR__.'/../../../app/Resources/views/reservations/index.html.twig',
   ':home:location.html.twig' => __DIR__.'/../../../app/Resources/views/home/location.html.twig',
   ':home:confirmation.html.twig' => __DIR__.'/../../../app/Resources/views/home/confirmation.html.twig',

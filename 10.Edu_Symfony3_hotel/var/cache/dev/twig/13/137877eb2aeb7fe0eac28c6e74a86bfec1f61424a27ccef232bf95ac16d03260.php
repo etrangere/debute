@@ -101,10 +101,7 @@ class __TwigTemplate_00cd1c83a8c28530fd11c342cde3c5ee336860a85069a2b8ebec1e781c6
       <div class=\"medium-12 large-12 columns\">
         <h4>Clients</h4>
 
-        <div class=\"medium-2  columns\"><a class=\"button\" href=\"";
-        // line 30
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("new_client");
-        echo "\">ADD NEW CLIENT</a></div>
+
 
         <table class=\"stack\">
           <thead>
@@ -143,10 +140,6 @@ class __TwigTemplate_00cd1c83a8c28530fd11c342cde3c5ee336860a85069a2b8ebec1e781c6
             echo "\">EDIT</a>
                     <a class=\"hollow button warning\" href=\"";
             // line 49
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("booking", array("id_client" => twig_get_attribute($this->env, $this->source, $context["client"], "id", array()))), "html", null, true);
-            echo "\">BOOK A ROOM</a>
-                    <a class=\"hollow button warning\" href=\"";
-            // line 50
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("delete", array("id_client" => twig_get_attribute($this->env, $this->source, $context["client"], "id", array()))), "html", null, true);
             echo "\">DELETE</a>
                 </td>
@@ -156,7 +149,7 @@ class __TwigTemplate_00cd1c83a8c28530fd11c342cde3c5ee336860a85069a2b8ebec1e781c6
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['client'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 54
+        // line 53
         echo "
           </tbody>
         </table>
@@ -186,7 +179,7 @@ class __TwigTemplate_00cd1c83a8c28530fd11c342cde3c5ee336860a85069a2b8ebec1e781c6
 
     public function getDebugInfo()
     {
-        return array (  160 => 54,  150 => 50,  146 => 49,  142 => 48,  136 => 45,  128 => 44,  125 => 43,  121 => 42,  106 => 30,  96 => 23,  93 => 22,  84 => 21,  66 => 12,  62 => 11,  54 => 5,  45 => 4,  15 => 1,);
+        return array (  153 => 53,  143 => 49,  139 => 48,  133 => 45,  125 => 44,  122 => 43,  118 => 42,  96 => 23,  93 => 22,  84 => 21,  66 => 12,  62 => 11,  54 => 5,  45 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -220,7 +213,7 @@ class __TwigTemplate_00cd1c83a8c28530fd11c342cde3c5ee336860a85069a2b8ebec1e781c6
       <div class=\"medium-12 large-12 columns\">
         <h4>Clients</h4>
 
-        <div class=\"medium-2  columns\"><a class=\"button\" href=\"{{ path(\"new_client\")}}\">ADD NEW CLIENT</a></div>
+
 
         <table class=\"stack\">
           <thead>
@@ -239,7 +232,6 @@ class __TwigTemplate_00cd1c83a8c28530fd11c342cde3c5ee336860a85069a2b8ebec1e781c6
 
                 <td>
                     <a class=\"hollow button\" href=\"{{ path(\"modify_client\", { 'id_client': client.id }) }}\">EDIT</a>
-                    <a class=\"hollow button warning\" href=\"{{ path(\"booking\", { 'id_client': client.id }) }}\">BOOK A ROOM</a>
                     <a class=\"hollow button warning\" href=\"{{ path(\"delete\", { 'id_client': client.id }) }}\">DELETE</a>
                 </td>
               </tr>

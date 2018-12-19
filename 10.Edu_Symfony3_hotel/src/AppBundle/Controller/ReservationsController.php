@@ -120,17 +120,12 @@ class ReservationsController extends Controller
 
 
         return $this->redirectToRoute('valid_payment');
-      /*
-        if( isset($_SESSION['admin']) && $_SESSION['admin'] == true ) {
-            // redirect
-            return $this->redirectToRoute('index_clients');
-        } else {
-            //redirect
-            return $this->redirectToRoute('valid_payment');
-        }
-*/
 
-    }
+
+        }
+
+
+
 
 
 }

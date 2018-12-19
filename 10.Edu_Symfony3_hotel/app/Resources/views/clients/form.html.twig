@@ -26,6 +26,7 @@
     <div class="medium-12 large-12 columns">
       <h4></h4>
       <form action="" method="post">
+
         <div class="medium-4  columns">
           <label>Title</label>
 
@@ -62,14 +63,14 @@
         </div>
         <div class="medium-12  columns">
           <label>Email</label>
-          <input name="form[email]" value="{{ form.email is defined ? form.email : '' }}" type="text" />
+          <input name="form[email]" value="{{ form.email is defined ? form.email : '' }}" type="text" disabled/>
         </div>
 
         <div class="medium-3  columns">
           <label>ROOM TYPE</label>
           <h4>{{ form.room_type }}</h4>
           <div>
-            <select class="" name="form[room_type]">
+            <select class="" name="form[room_type]" disabled>
               <option selected="selected" value="{{ form.room_type }}">Choose</option>
               <option value="{{ 1|number_format }}">Single</option>
               <option value="{{ 2|number_format }}">Double</option>

@@ -68,8 +68,8 @@ class ClientsController extends Controller
             ->add('zip_code')
             ->add('city')
             ->add('state')
-            ->add('email')
-            ->add('room_type')
+           // ->add('email')
+           // ->add('room_type')
             ->add('adult')
             ->add('child')
             ->add('baby')
@@ -91,8 +91,8 @@ class ClientsController extends Controller
             $client->setZipCode($form_data['zip_code']);
             $client->setCity($form_data['city']);
             $client->setState($form_data['state']);
-            $client->setEmail($form_data['email']);
-            $client->setRoomType($form_data['room_type']);
+          //  $client->setEmail($form_data['email']);
+          //  $client->setRoomType($form_data['room_type']);
             $client->setAdult($form_data['adult']);
             $client->setChild($form_data['child']);
             $client->setBaby($form_data['baby']);
@@ -128,68 +128,6 @@ class ClientsController extends Controller
 
         return $this->render("clients/form.html.twig", $data);
 
-
-    }
-
-    /**
-     * @Route("/admin/guests/new",name="new_client")
-     */
-    public function showNew(Request $request)
-    {
-        $data = [];
-        $data['mode']='new_client';
-        $data['titles'] = $this->titles;
-        $data['form'] = [];
-        $data['form']['title'] = '';
-
-
-        $form = $this->createFormBuilder()
-            ->add('name')
-            ->add('last_name')
-            ->add('title')
-            ->add('address')
-            ->add('zip_code')
-            ->add('city')
-            ->add('state')
-            ->add('email')
-            ->add('room_type')
-            ->add('adult')
-            ->add('child')
-            ->add('baby')
-            ->getForm();
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted()) {
-            $form_data = $form->getData();
-            $data ['form'] = [];
-            $data ['form'] = $form_data;
-
-            $em = $this->getDoctrine()->getManager();
-
-            $client = new client;
-            $client->setTitle($form_data['title']);
-            $client->setName($form_data['name']);
-            $client->setLastName($form_data['last_name']);
-            $client->setAddress($form_data['address']);
-            $client->setZipCode($form_data['zip_code']);
-            $client->setCity($form_data['city']);
-            $client->setState($form_data['state']);
-            $client->setEmail($form_data['email']);
-            $client->setRoomType($form_data['room_type']);
-            $client->setAdult($form_data['adult']);
-            $client->setChild($form_data['child']);
-            $client->setBaby($form_data['baby']);
-            $data['titles'] = $this->titles;
-            $em->persist($client);
-
-            $em->flush();
-
-            return $this->redirectToRoute('index_clients');
-        }
-
-
-        return $this->render("clients/form.html.twig" ,$data);
 
     }
 

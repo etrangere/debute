@@ -202,14 +202,9 @@ class HomeController extends Controller
             $data['titles'] = $this->titles;
             $em->persist($client);
             $em->flush();
-
-            $em = $this->getDoctrine()->getManager();
-
+            //get id client after flush from db
+            //$em = $this->getDoctrine()->getManager();
             $id_client= $client->getID();
-
-           // $id_client =$em->getRepository('AppBundle:Client')->findBy('id_room');
-            var_dump($id_client);
-
             $date_in = $data['from'];
             $date_out = $data['to'];
 

@@ -99,20 +99,21 @@ class __TwigTemplate_f5f58c6a6ce2c5d9d5c605e928c12511f4ef595a0bb3a20b594722317e4
     <div class=\"medium-12 large-12 columns\">
       <h4></h4>
       <form action=\"\" method=\"post\">
+
         <div class=\"medium-4  columns\">
           <label>Title</label>
 
           <select name=\"form[title]\">
               ";
-        // line 33
+        // line 34
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["titles"]) || array_key_exists("titles", $context) ? $context["titles"] : (function () { throw new Twig_Error_Runtime('Variable "titles" does not exist.', 33, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["titles"]) || array_key_exists("titles", $context) ? $context["titles"] : (function () { throw new Twig_Error_Runtime('Variable "titles" does not exist.', 34, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["title"]) {
-            // line 34
+            // line 35
             echo "            <option value=\"";
             echo twig_escape_filter($this->env, $context["title"], "html", null, true);
             echo " ";
-            echo ((($context["title"] == twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 34, $this->source); })()), "title", array()))) ? ("selected") : (""));
+            echo ((($context["title"] == twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 35, $this->source); })()), "title", array()))) ? ("selected") : (""));
             echo " \">";
             echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, $context["title"]), "html", null, true);
             echo ".</option>
@@ -121,82 +122,82 @@ class __TwigTemplate_f5f58c6a6ce2c5d9d5c605e928c12511f4ef595a0bb3a20b594722317e4
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['title'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
+        // line 37
         echo "          </select>
 
         </div>
         <div class=\"medium-4  columns\">
           <label>Name</label>
           <input name=\"form[name]\" value=\"";
-        // line 41
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "name", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 41, $this->source); })()), "name", array())) : ("")), "html", null, true);
+        // line 42
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "name", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 42, $this->source); })()), "name", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-4  columns\">
           <label>Last Name</label>
           <input name=\"form[last_name]\" value=\"";
-        // line 45
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "last_name", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 45, $this->source); })()), "last_name", array())) : ("")), "html", null, true);
+        // line 46
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "last_name", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 46, $this->source); })()), "last_name", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-8  columns\">
           <label>Address</label>
           <input name=\"form[address]\" value=\"";
-        // line 49
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "address", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 49, $this->source); })()), "address", array())) : ("")), "html", null, true);
+        // line 50
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "address", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 50, $this->source); })()), "address", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-4  columns\">
           <label>ZipCode</label>
           <input name=\"form[zip_code]\" value=\"";
-        // line 53
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "zip_code", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 53, $this->source); })()), "zip_code", array())) : ("")), "html", null, true);
+        // line 54
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "zip_code", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 54, $this->source); })()), "zip_code", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-4  columns\">
           <label>City</label>
           <input name=\"form[city]\" value=\"";
-        // line 57
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "city", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 57, $this->source); })()), "city", array())) : ("")), "html", null, true);
+        // line 58
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "city", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 58, $this->source); })()), "city", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-4  columns\">
           <label>State</label>
           <input name=\"form[state]\" value=\"";
-        // line 61
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "state", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 61, $this->source); })()), "state", array())) : ("")), "html", null, true);
+        // line 62
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "state", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 62, $this->source); })()), "state", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" />
         </div>
         <div class=\"medium-12  columns\">
           <label>Email</label>
           <input name=\"form[email]\" value=\"";
-        // line 65
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "email", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 65, $this->source); })()), "email", array())) : ("")), "html", null, true);
-        echo "\" type=\"text\" />
+        // line 66
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "email", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 66, $this->source); })()), "email", array())) : ("")), "html", null, true);
+        echo "\" type=\"text\" disabled/>
         </div>
 
         <div class=\"medium-3  columns\">
           <label>ROOM TYPE</label>
           <h4>";
-        // line 70
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 70, $this->source); })()), "room_type", array()), "html", null, true);
+        // line 71
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 71, $this->source); })()), "room_type", array()), "html", null, true);
         echo "</h4>
           <div>
-            <select class=\"\" name=\"form[room_type]\">
+            <select class=\"\" name=\"form[room_type]\" disabled>
               <option selected=\"selected\" value=\"";
-        // line 73
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 73, $this->source); })()), "room_type", array()), "html", null, true);
+        // line 74
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 74, $this->source); })()), "room_type", array()), "html", null, true);
         echo "\">Choose</option>
               <option value=\"";
-        // line 74
+        // line 75
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
         echo "\">Single</option>
               <option value=\"";
-        // line 75
+        // line 76
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
         echo "\">Double</option>
               <option value=\"";
-        // line 76
+        // line 77
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
         echo "\">Triple</option>
             </select>
@@ -205,25 +206,25 @@ class __TwigTemplate_f5f58c6a6ce2c5d9d5c605e928c12511f4ef595a0bb3a20b594722317e4
         <div class=\"medium-3  columns\">
           <label>Adult</label>
           <h4>";
-        // line 82
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 82, $this->source); })()), "adult", array()), "html", null, true);
+        // line 83
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 83, $this->source); })()), "adult", array()), "html", null, true);
         echo "</h4>
           <div>
             <select class=\"\" name=\"form[adult]\">
               <option selected=\"selected\" value=\"";
-        // line 85
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 85, $this->source); })()), "adult", array()), "html", null, true);
+        // line 86
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 86, $this->source); })()), "adult", array()), "html", null, true);
         echo "\">Choose</option>
               <option value=\"";
-        // line 86
+        // line 87
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
         echo "\">1 person</option>
               <option value=\"";
-        // line 87
+        // line 88
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
         echo "\">2 persons</option>
               <option value=\"";
-        // line 88
+        // line 89
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
         echo "\">3 persons</option>
 
@@ -233,25 +234,25 @@ class __TwigTemplate_f5f58c6a6ce2c5d9d5c605e928c12511f4ef595a0bb3a20b594722317e4
         <div class=\"medium-3  columns\">
           <label>Child</label>
           <h4>";
-        // line 95
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 95, $this->source); })()), "child", array()), "html", null, true);
+        // line 96
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 96, $this->source); })()), "child", array()), "html", null, true);
         echo "</h4>
           <div>
             <select class=\"\" name=\"form[child]\">
               <option selected=\"selected\" value=\"";
-        // line 98
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 98, $this->source); })()), "child", array()), "html", null, true);
+        // line 99
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 99, $this->source); })()), "child", array()), "html", null, true);
         echo "\">Choose</option>
               <option value=\"";
-        // line 99
+        // line 100
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
         echo "\">1 child</option>
               <option value=\"";
-        // line 100
+        // line 101
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
         echo "\">2 childs</option>
               <option value=\"";
-        // line 101
+        // line 102
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
         echo "\">3 childs</option>
 
@@ -262,25 +263,25 @@ class __TwigTemplate_f5f58c6a6ce2c5d9d5c605e928c12511f4ef595a0bb3a20b594722317e4
         <div class=\"medium-3 columns\">
           <label>Baby</label>
           <h4>";
-        // line 109
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 109, $this->source); })()), "baby", array()), "html", null, true);
+        // line 110
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 110, $this->source); })()), "baby", array()), "html", null, true);
         echo "</h4>
           <div>
             <select class=\"\" name=\"form[baby]\">
               <option selected=\"selected\" value=\"";
-        // line 112
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 112, $this->source); })()), "baby", array()), "html", null, true);
+        // line 113
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 113, $this->source); })()), "baby", array()), "html", null, true);
         echo "\">Choose</option>
               <option value=\"";
-        // line 113
+        // line 114
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
         echo "\">1 baby</option>
               <option value=\"";
-        // line 114
+        // line 115
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
         echo "\">2 babies</option>
               <option value=\"";
-        // line 115
+        // line 116
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
         echo "\">3 babies</option>
             </select>
@@ -314,7 +315,7 @@ class __TwigTemplate_f5f58c6a6ce2c5d9d5c605e928c12511f4ef595a0bb3a20b594722317e4
 
     public function getDebugInfo()
     {
-        return array (  284 => 115,  280 => 114,  276 => 113,  272 => 112,  266 => 109,  255 => 101,  251 => 100,  247 => 99,  243 => 98,  237 => 95,  227 => 88,  223 => 87,  219 => 86,  215 => 85,  209 => 82,  200 => 76,  196 => 75,  192 => 74,  188 => 73,  182 => 70,  174 => 65,  167 => 61,  160 => 57,  153 => 53,  146 => 49,  139 => 45,  132 => 41,  125 => 36,  112 => 34,  108 => 33,  96 => 24,  93 => 23,  84 => 22,  66 => 11,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
+        return array (  285 => 116,  281 => 115,  277 => 114,  273 => 113,  267 => 110,  256 => 102,  252 => 101,  248 => 100,  244 => 99,  238 => 96,  228 => 89,  224 => 88,  220 => 87,  216 => 86,  210 => 83,  201 => 77,  197 => 76,  193 => 75,  189 => 74,  183 => 71,  175 => 66,  168 => 62,  161 => 58,  154 => 54,  147 => 50,  140 => 46,  133 => 42,  126 => 37,  113 => 35,  109 => 34,  96 => 24,  93 => 23,  84 => 22,  66 => 11,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -347,6 +348,7 @@ class __TwigTemplate_f5f58c6a6ce2c5d9d5c605e928c12511f4ef595a0bb3a20b594722317e4
     <div class=\"medium-12 large-12 columns\">
       <h4></h4>
       <form action=\"\" method=\"post\">
+
         <div class=\"medium-4  columns\">
           <label>Title</label>
 
@@ -383,14 +385,14 @@ class __TwigTemplate_f5f58c6a6ce2c5d9d5c605e928c12511f4ef595a0bb3a20b594722317e4
         </div>
         <div class=\"medium-12  columns\">
           <label>Email</label>
-          <input name=\"form[email]\" value=\"{{ form.email is defined ? form.email : '' }}\" type=\"text\" />
+          <input name=\"form[email]\" value=\"{{ form.email is defined ? form.email : '' }}\" type=\"text\" disabled/>
         </div>
 
         <div class=\"medium-3  columns\">
           <label>ROOM TYPE</label>
           <h4>{{ form.room_type }}</h4>
           <div>
-            <select class=\"\" name=\"form[room_type]\">
+            <select class=\"\" name=\"form[room_type]\" disabled>
               <option selected=\"selected\" value=\"{{ form.room_type }}\">Choose</option>
               <option value=\"{{ 1|number_format }}\">Single</option>
               <option value=\"{{ 2|number_format }}\">Double</option>

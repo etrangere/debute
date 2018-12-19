@@ -113,17 +113,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\AdminController::showIndex',  '_route' => 'admin',);
             }
 
-            if (0 === strpos($pathinfo, '/admin/guests')) {
-                // index_clients
-                if ('/admin/guests' === $pathinfo) {
-                    return array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showIndex',  '_route' => 'index_clients',);
-                }
-
-                // new_client
-                if ('/admin/guests/new' === $pathinfo) {
-                    return array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showNew',  '_route' => 'new_client',);
-                }
-
+            // index_clients
+            if ('/admin/guests' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\ClientsController::showIndex',  '_route' => 'index_clients',);
             }
 
             // delete

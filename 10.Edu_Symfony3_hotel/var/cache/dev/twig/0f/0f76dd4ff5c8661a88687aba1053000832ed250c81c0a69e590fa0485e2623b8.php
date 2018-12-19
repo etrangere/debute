@@ -90,7 +90,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
 <form action=\"\" method=\"post\">
         <div class=\"row\">
-           <br class=\"medium-12 large-12 columns\">
+           <div class=\"medium-12 large-12 columns\">
 
                <h4 align=\"center\">PLEASE CHOOSE DATES AND NUMBER OF GUESTS</h4></br>
 
@@ -196,7 +196,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
             </div>
         </div>
 </form>
-</br>
+
 <hr>
 
 
@@ -358,7 +358,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
 <form action=\"\" method=\"post\">
         <div class=\"row\">
-           <br class=\"medium-12 large-12 columns\">
+           <div class=\"medium-12 large-12 columns\">
 
                <h4 align=\"center\">PLEASE CHOOSE DATES AND NUMBER OF GUESTS</h4></br>
 
@@ -428,7 +428,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
             </div>
         </div>
 </form>
-</br>
+
 <hr>
 
 
