@@ -29,11 +29,15 @@
         <table class="stack">
           <thead>
             <tr>
-              <th width="200">RESERVATION</th>
-              <th width="200">ROOM</th>
-              <th width="200">Client</th>
+              <th width="50">RESERV.</th>
+              <th width="100">ROOM</th>
+              <th width="120">ROOM TYPE</th>
+              <th width="200">NAME</th>
+              <th width="200">LAST NAME</th>
               <th width="200">DATES</th>
-              <th width="200">Action</th>
+              <th width="50">ADULT</th>
+              <th width="50">CHILD</th>
+              <th width="50">BABY</th>
             </tr>
           </thead>
             <tbody>
@@ -42,10 +46,13 @@
                 <td>
                     {{ reservation.id }}
                 <td>{{ reservation.room.name }}</td>
+                <td>{{ reservation.client.roomtype }}</td>
                 <td>{{ reservation.client.name }}</td>
+                <td>{{ reservation.client.lastname }}</td>
                 <td> {{ reservation.dateIn|date('d-m-Y')}} to {{ reservation.dateOut|date('d-m-Y')}}</td>
-
-                <td>Referance DB not connected</td>
+                <td>{{ reservation.client.adult }}</td>
+                <td>{{ reservation.client.child }}</td>
+                <td>{{ reservation.client.baby }}</td>
               {% endfor %}
             </tbody>
         </table>

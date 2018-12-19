@@ -103,7 +103,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
                 <div class=\"medium-2  columns\"><input id=\"to\" name=\"form[to]\" style=\"border-color: #00ace6\" value=\"\" type=\"date\" class=\"datepicker\" required/></div>
 
-              <div class=\"medium-2  columns\"><input class=\"button\" id=\"search_offer\" onchange=\"myFunction1()\"  type=\"submit\" value=\"SEARCH OFFER\" />
+              <div class=\"medium-3  columns\"><input class=\"button\" id=\"search_offer\" onchange=\"myFunction1()\"  type=\"submit\" value=\"SEARCH OFFER\" />
             <input class=\"button\" onclick=\"reload\" type=\"reset\" value=\"Reset\" /></div>
 
            </div>
@@ -371,7 +371,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
                 <div class=\"medium-2  columns\"><input id=\"to\" name=\"form[to]\" style=\"border-color: #00ace6\" value=\"\" type=\"date\" class=\"datepicker\" required/></div>
 
-              <div class=\"medium-2  columns\"><input class=\"button\" id=\"search_offer\" onchange=\"myFunction1()\"  type=\"submit\" value=\"SEARCH OFFER\" />
+              <div class=\"medium-3  columns\"><input class=\"button\" id=\"search_offer\" onchange=\"myFunction1()\"  type=\"submit\" value=\"SEARCH OFFER\" />
             <input class=\"button\" onclick=\"reload\" type=\"reset\" value=\"Reset\" /></div>
 
            </div>

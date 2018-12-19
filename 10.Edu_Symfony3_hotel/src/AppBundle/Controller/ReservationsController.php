@@ -29,63 +29,15 @@ class ReservationsController extends Controller
         $reservations = $this->getDoctrine()
             ->getRepository('AppBundle:Reservation')
             ->findAll();
+        $client = $this->getDoctrine()
+            ->getRepository('AppBundle:Client')
+            ->findAll();
 
         $data['reservations'] = $reservations;
+        $data['client'] = $client;
 
         return $this->render("reservations/index.html.twig",$data);
         
-    }
-
-    /**
-     * @Route("/admin/reservations/{id_client}",name="booking")
-     */
-    public function booking(Request $request , $id_client)
-    {
-
-
-        $data = [];
-        $data['id_client'] = $id_client;
-        $data['rooms']=null;
-        $data['form'] =[];
-        $data['dates']['from']=[];
-        $data['dates']['to']=[];
-
-        $form = $this->createFormBuilder()
-            ->add('from')
-            ->add('to')
-            ->getForm();
-        $form->handleRequest($request);
-
-        $client = $this->getDoctrine()->getRepository('AppBundle:Client')->find($id_client);
-
-        $data['client']= $client;
-
-
-        if ($form->isSubmitted())
-        {
-            $form_data = $form->getData();
-
-
-            $data ['form'] = $form_data;
-            //$data ['dateFrom'] ='';
-            //$data ['dateTo'] ='';
-
-        $data['dates']['from'] = $form_data['from'];
-        $data['dates']['to'] = $form_data['to'];
-
-        $em=$this->getDoctrine()->getManager();
-
-
-        $rooms=$em->getRepository('AppBundle:Room')
-         ->getAvailableRooms($form_data['from'],$form_data['to']);
-
-
-
-        $data['rooms']=$rooms;
-
-            return $this->render('reservations/book.html.twig',$data);
-        }
-        return $this->render('reservations/book.html.twig',$data);
     }
 
 
@@ -96,10 +48,6 @@ class ReservationsController extends Controller
 
     public function book_room($id_client,$id_room,$date_in,$date_out)
     {
-
-
-
-
 
                   $reservation = new Reservation();
                   $date_start = new \DateTime($date_in);

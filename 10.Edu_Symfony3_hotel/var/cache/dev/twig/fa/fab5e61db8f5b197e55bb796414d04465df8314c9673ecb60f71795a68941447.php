@@ -101,48 +101,70 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
         <table class=\"stack\">
           <thead>
             <tr>
-              <th width=\"200\">RESERVATION</th>
-              <th width=\"200\">ROOM</th>
-              <th width=\"200\">Client</th>
+              <th width=\"50\">RESERV.</th>
+              <th width=\"100\">ROOM</th>
+              <th width=\"120\">ROOM TYPE</th>
+              <th width=\"200\">NAME</th>
+              <th width=\"200\">LAST NAME</th>
               <th width=\"200\">DATES</th>
-              <th width=\"200\">Action</th>
+              <th width=\"50\">ADULT</th>
+              <th width=\"50\">CHILD</th>
+              <th width=\"50\">BABY</th>
             </tr>
           </thead>
             <tbody>
               ";
-        // line 40
+        // line 44
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["reservations"]) || array_key_exists("reservations", $context) ? $context["reservations"] : (function () { throw new Twig_Error_Runtime('Variable "reservations" does not exist.', 40, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["reservations"]) || array_key_exists("reservations", $context) ? $context["reservations"] : (function () { throw new Twig_Error_Runtime('Variable "reservations" does not exist.', 44, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["reservation"]) {
-            // line 41
+            // line 45
             echo "              <tr>
                 <td>
                     ";
-            // line 43
+            // line 47
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "id", array()), "html", null, true);
             echo "
                 <td>";
-            // line 44
+            // line 48
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "room", array()), "name", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 45
+            // line 49
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "roomtype", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 50
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "name", array()), "html", null, true);
             echo "</td>
+                <td>";
+            // line 51
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "lastname", array()), "html", null, true);
+            echo "</td>
                 <td> ";
-            // line 46
+            // line 52
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "dateIn", array()), "d-m-Y"), "html", null, true);
             echo " to ";
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "dateOut", array()), "d-m-Y"), "html", null, true);
             echo "</td>
-
-                <td>Referance DB not connected</td>
+                <td>";
+            // line 53
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "adult", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 54
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "child", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 55
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "baby", array()), "html", null, true);
+            echo "</td>
               ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 50
+        // line 57
         echo "            </tbody>
         </table>
       </div>
@@ -169,7 +191,7 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
 
     public function getDebugInfo()
     {
-        return array (  146 => 50,  134 => 46,  130 => 45,  126 => 44,  122 => 43,  118 => 41,  114 => 40,  93 => 23,  84 => 22,  66 => 11,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
+        return array (  168 => 57,  160 => 55,  156 => 54,  152 => 53,  146 => 52,  142 => 51,  138 => 50,  134 => 49,  130 => 48,  126 => 47,  122 => 45,  118 => 44,  93 => 23,  84 => 22,  66 => 11,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -205,11 +227,15 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
         <table class=\"stack\">
           <thead>
             <tr>
-              <th width=\"200\">RESERVATION</th>
-              <th width=\"200\">ROOM</th>
-              <th width=\"200\">Client</th>
+              <th width=\"50\">RESERV.</th>
+              <th width=\"100\">ROOM</th>
+              <th width=\"120\">ROOM TYPE</th>
+              <th width=\"200\">NAME</th>
+              <th width=\"200\">LAST NAME</th>
               <th width=\"200\">DATES</th>
-              <th width=\"200\">Action</th>
+              <th width=\"50\">ADULT</th>
+              <th width=\"50\">CHILD</th>
+              <th width=\"50\">BABY</th>
             </tr>
           </thead>
             <tbody>
@@ -218,10 +244,13 @@ class __TwigTemplate_7a6d0a784bc63e128c9ce7d2c3bd38f79112a0464f974b88fcb413e45bf
                 <td>
                     {{ reservation.id }}
                 <td>{{ reservation.room.name }}</td>
+                <td>{{ reservation.client.roomtype }}</td>
                 <td>{{ reservation.client.name }}</td>
+                <td>{{ reservation.client.lastname }}</td>
                 <td> {{ reservation.dateIn|date('d-m-Y')}} to {{ reservation.dateOut|date('d-m-Y')}}</td>
-
-                <td>Referance DB not connected</td>
+                <td>{{ reservation.client.adult }}</td>
+                <td>{{ reservation.client.child }}</td>
+                <td>{{ reservation.client.baby }}</td>
               {% endfor %}
             </tbody>
         </table>

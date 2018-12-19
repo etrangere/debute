@@ -123,17 +123,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'delete')), array (  '_controller' => 'AppBundle\\Controller\\ClientsController::delete_articles',));
             }
 
-            if (0 === strpos($pathinfo, '/admin/reservations')) {
-                // reservations
-                if ('/admin/reservations' === $pathinfo) {
-                    return array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::showReservations',  '_route' => 'reservations',);
-                }
-
-                // booking
-                if (preg_match('#^/admin/reservations/(?P<id_client>[^/]++)$#sD', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'booking')), array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::booking',));
-                }
-
+            // reservations
+            if ('/admin/reservations' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::showReservations',  '_route' => 'reservations',);
             }
 
             // book_room
