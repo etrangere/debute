@@ -1,6 +1,6 @@
 <?php
 
-/* home/available_room_list.html.twig */
+/* :home:available_room_list.html.twig */
 class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb811466 extends Twig_Template
 {
     private $source;
@@ -12,7 +12,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "home/available_room_list.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":home:available_room_list.html.twig", 1);
         $this->blocks = array(
             'top_bar' => array($this, 'block_top_bar'),
             'body' => array($this, 'block_body'),
@@ -27,10 +27,10 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "home/available_room_list.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":home:available_room_list.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "home/available_room_list.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":home:available_room_list.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -97,21 +97,21 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
                 <div class=\"medium-2  columns\">CHECK-IN:</div>
 
-                <div class=\"medium-2  columns\"><input id=\"from\" name=\"form[from]\" type=\"date\"  value=\"\" style=\"border-color: #00ace6\"  class=\"datepicker\" required/></div>
+                <div class=\"medium-2  columns\"><input id=\"form[from]\" name=\"form[from]\" type=\"date\" style=\"border-color: #00ace6\"  class=\"datepicker\" required/></div>
 
                 <div class=\"medium-2  columns\">CHECK-OUT:</div>
 
-                <div class=\"medium-2  columns\"><input id=\"to\" name=\"form[to]\" style=\"border-color: #00ace6\" value=\"\" type=\"date\" class=\"datepicker\" required/></div>
+                <div class=\"medium-2  columns\"><input id=\"form[to]\" name=\"form[to]\" style=\"border-color: #00ace6\" type=\"date\" class=\"datepicker\" required/></div>
 
               <div class=\"medium-3  columns\"><input class=\"button\" id=\"search_offer\" onchange=\"myFunction1()\"  type=\"submit\" value=\"SEARCH OFFER\" />
-            <input class=\"button\" onclick=\"reload\" type=\"reset\" value=\"Reset\" /></div>
+            <input class=\"button\" onClick=\"window.location.reload()\" type=\"reset\" value=\"REFRESH\" /></div>
 
            </div>
             <div class=\"medium-3  columns\">
                 <label>ROOM TYPE</label>
                 <div>
-                    <select id=\"room_type\" onchange=\"myFunction1()\" name=\"form[room_type]\" style=\"border-color: #00ace6\">
-                        <option selected=\"selected\" disabled=\"disabled\">Choose</option>
+                    <select id=\"room_type\" onchange=\"myFunction1()\"  name=\"form[room_type]\" style=\"border-color: #00ace6\" required>
+                        <option selected=\"selected\">Choose</option>
                         <option id=\"room_type1\" value=\"";
         // line 45
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
@@ -260,17 +260,20 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
                     document.getElementById(\"adult\").disabled=false;
                     document.getElementById(\"adult1\").disabled=false;
+                    document.getElementById('room_type').disabled = true;
                 }
                 else if(comproom_type.value == \"2\" ){
                     document.getElementById(\"adult\").disabled=false;
                     document.getElementById(\"adult1\").disabled=false;
                     document.getElementById(\"adult2\").disabled=false;
+                    document.getElementById('room_type').disabled = true;
                 }
                 else if (comproom_type.value == \"3\" ){
                     document.getElementById(\"adult\").disabled=false;
                     document.getElementById(\"adult1\").disabled=false;
                     document.getElementById(\"adult2\").disabled=false;
                     document.getElementById(\"adult3\").disabled=false;
+                    document.getElementById('room_type').disabled = true;
                 }
 
                 if(compadult.value == \"1\" ){
@@ -304,13 +307,11 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                     document.getElementById(\"baby2\").disabled=false;
                     document.getElementById(\"baby3\").disabled=false;
                 }
-
-
-
             }
     </script>
 
-      ";
+
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -321,7 +322,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
     public function getTemplateName()
     {
-        return "home/available_room_list.html.twig";
+        return ":home:available_room_list.html.twig";
     }
 
     public function isTraitable()
@@ -365,21 +366,21 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
                 <div class=\"medium-2  columns\">CHECK-IN:</div>
 
-                <div class=\"medium-2  columns\"><input id=\"from\" name=\"form[from]\" type=\"date\"  value=\"\" style=\"border-color: #00ace6\"  class=\"datepicker\" required/></div>
+                <div class=\"medium-2  columns\"><input id=\"form[from]\" name=\"form[from]\" type=\"date\" style=\"border-color: #00ace6\"  class=\"datepicker\" required/></div>
 
                 <div class=\"medium-2  columns\">CHECK-OUT:</div>
 
-                <div class=\"medium-2  columns\"><input id=\"to\" name=\"form[to]\" style=\"border-color: #00ace6\" value=\"\" type=\"date\" class=\"datepicker\" required/></div>
+                <div class=\"medium-2  columns\"><input id=\"form[to]\" name=\"form[to]\" style=\"border-color: #00ace6\" type=\"date\" class=\"datepicker\" required/></div>
 
               <div class=\"medium-3  columns\"><input class=\"button\" id=\"search_offer\" onchange=\"myFunction1()\"  type=\"submit\" value=\"SEARCH OFFER\" />
-            <input class=\"button\" onclick=\"reload\" type=\"reset\" value=\"Reset\" /></div>
+            <input class=\"button\" onClick=\"window.location.reload()\" type=\"reset\" value=\"REFRESH\" /></div>
 
            </div>
             <div class=\"medium-3  columns\">
                 <label>ROOM TYPE</label>
                 <div>
-                    <select id=\"room_type\" onchange=\"myFunction1()\" name=\"form[room_type]\" style=\"border-color: #00ace6\">
-                        <option selected=\"selected\" disabled=\"disabled\">Choose</option>
+                    <select id=\"room_type\" onchange=\"myFunction1()\"  name=\"form[room_type]\" style=\"border-color: #00ace6\" required>
+                        <option selected=\"selected\">Choose</option>
                         <option id=\"room_type1\" value=\"{{ 1|number_format }}\" >Single</option>
                         <option id=\"room_type2\" value=\"{{ 2|number_format }}\" >Double</option>
                         <option id=\"room_type3\" value=\"{{ 3|number_format }}\" >Triple</option>
@@ -470,17 +471,20 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
                     document.getElementById(\"adult\").disabled=false;
                     document.getElementById(\"adult1\").disabled=false;
+                    document.getElementById('room_type').disabled = true;
                 }
                 else if(comproom_type.value == \"2\" ){
                     document.getElementById(\"adult\").disabled=false;
                     document.getElementById(\"adult1\").disabled=false;
                     document.getElementById(\"adult2\").disabled=false;
+                    document.getElementById('room_type').disabled = true;
                 }
                 else if (comproom_type.value == \"3\" ){
                     document.getElementById(\"adult\").disabled=false;
                     document.getElementById(\"adult1\").disabled=false;
                     document.getElementById(\"adult2\").disabled=false;
                     document.getElementById(\"adult3\").disabled=false;
+                    document.getElementById('room_type').disabled = true;
                 }
 
                 if(compadult.value == \"1\" ){
@@ -514,14 +518,12 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                     document.getElementById(\"baby2\").disabled=false;
                     document.getElementById(\"baby3\").disabled=false;
                 }
-
-
-
             }
     </script>
 
-      {% endblock %}
 
-", "home/available_room_list.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/available_room_list.html.twig");
+{% endblock %}
+
+", ":home:available_room_list.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/available_room_list.html.twig");
     }
 }

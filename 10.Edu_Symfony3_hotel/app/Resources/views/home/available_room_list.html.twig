@@ -27,21 +27,21 @@
 
                 <div class="medium-2  columns">CHECK-IN:</div>
 
-                <div class="medium-2  columns"><input id="from" name="form[from]" type="date"  value="" style="border-color: #00ace6"  class="datepicker" required/></div>
+                <div class="medium-2  columns"><input id="form[from]" name="form[from]" type="date" style="border-color: #00ace6"  class="datepicker" required/></div>
 
                 <div class="medium-2  columns">CHECK-OUT:</div>
 
-                <div class="medium-2  columns"><input id="to" name="form[to]" style="border-color: #00ace6" value="" type="date" class="datepicker" required/></div>
+                <div class="medium-2  columns"><input id="form[to]" name="form[to]" style="border-color: #00ace6" type="date" class="datepicker" required/></div>
 
               <div class="medium-3  columns"><input class="button" id="search_offer" onchange="myFunction1()"  type="submit" value="SEARCH OFFER" />
-            <input class="button" onclick="reload" type="reset" value="Reset" /></div>
+            <input class="button" onClick="window.location.reload()" type="reset" value="REFRESH" /></div>
 
            </div>
             <div class="medium-3  columns">
                 <label>ROOM TYPE</label>
                 <div>
-                    <select id="room_type" onchange="myFunction1()" name="form[room_type]" style="border-color: #00ace6">
-                        <option selected="selected" disabled="disabled">Choose</option>
+                    <select id="room_type" onchange="myFunction1()"  name="form[room_type]" style="border-color: #00ace6" required>
+                        <option selected="selected">Choose</option>
                         <option id="room_type1" value="{{ 1|number_format }}" >Single</option>
                         <option id="room_type2" value="{{ 2|number_format }}" >Double</option>
                         <option id="room_type3" value="{{ 3|number_format }}" >Triple</option>
@@ -132,17 +132,20 @@
 
                     document.getElementById("adult").disabled=false;
                     document.getElementById("adult1").disabled=false;
+                    document.getElementById('room_type').disabled = true;
                 }
                 else if(comproom_type.value == "2" ){
                     document.getElementById("adult").disabled=false;
                     document.getElementById("adult1").disabled=false;
                     document.getElementById("adult2").disabled=false;
+                    document.getElementById('room_type').disabled = true;
                 }
                 else if (comproom_type.value == "3" ){
                     document.getElementById("adult").disabled=false;
                     document.getElementById("adult1").disabled=false;
                     document.getElementById("adult2").disabled=false;
                     document.getElementById("adult3").disabled=false;
+                    document.getElementById('room_type').disabled = true;
                 }
 
                 if(compadult.value == "1" ){
@@ -176,11 +179,9 @@
                     document.getElementById("baby2").disabled=false;
                     document.getElementById("baby3").disabled=false;
                 }
-
-
-
             }
     </script>
 
-      {% endblock %}
+
+{% endblock %}
 

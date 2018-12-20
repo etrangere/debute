@@ -54,18 +54,28 @@
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('pickadate/lib/picker.js') }}"></script>
         <script src="{{ asset('pickadate/lib/picker.date.js') }}"></script>
-        <script>
 
 
-            $('.datepicker').pickadate(
-              {
+
+    <script>
+
+
+        $('.datepicker').pickadate(
+            {
                 format: 'yyyy-mm-dd',
                 formatSubmit: 'yyyy-mm-dd',
-                  min: new Date('today'),
-                  max: new Date(2019,12,31)
-              }
-              );
-        </script>
+                //min: new Date('today'),
+                min :document.getElementById('form[from]').min,
+                max: new Date(2019,12,31)
+            }
+        );
+
+
+
+    </script>
+
+
+
 
     </body>
 </html>

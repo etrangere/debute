@@ -117,18 +117,28 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
         // line 56
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.date.js"), "html", null, true);
         echo "\"></script>
-        <script>
 
 
-            \$('.datepicker').pickadate(
-              {
+
+    <script>
+
+
+        \$('.datepicker').pickadate(
+            {
                 format: 'yyyy-mm-dd',
                 formatSubmit: 'yyyy-mm-dd',
-                  min: new Date('today'),
-                  max: new Date(2019,12,31)
-              }
-              );
-        </script>
+                //min: new Date('today'),
+                min :document.getElementById('form[from]').min,
+                max: new Date(2019,12,31)
+            }
+        );
+
+
+
+    </script>
+
+
+
 
     </body>
 </html>
@@ -269,7 +279,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
 
     public function getDebugInfo()
     {
-        return array (  244 => 50,  226 => 36,  208 => 23,  204 => 22,  200 => 21,  196 => 20,  189 => 15,  180 => 14,  163 => 6,  145 => 5,  118 => 56,  114 => 55,  110 => 54,  106 => 53,  102 => 52,  97 => 51,  95 => 50,  80 => 37,  78 => 36,  71 => 31,  69 => 14,  63 => 11,  59 => 10,  55 => 9,  51 => 8,  46 => 7,  44 => 6,  40 => 5,  34 => 1,);
+        return array (  254 => 50,  236 => 36,  218 => 23,  214 => 22,  210 => 21,  206 => 20,  199 => 15,  190 => 14,  173 => 6,  155 => 5,  118 => 56,  114 => 55,  110 => 54,  106 => 53,  102 => 52,  97 => 51,  95 => 50,  80 => 37,  78 => 36,  71 => 31,  69 => 14,  63 => 11,  59 => 10,  55 => 9,  51 => 8,  46 => 7,  44 => 6,  40 => 5,  34 => 1,);
     }
 
     public function getSourceContext()
@@ -330,18 +340,28 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
         <script src=\"{{ asset('js/app.js') }}\"></script>
         <script src=\"{{ asset('pickadate/lib/picker.js') }}\"></script>
         <script src=\"{{ asset('pickadate/lib/picker.date.js') }}\"></script>
-        <script>
 
 
-            \$('.datepicker').pickadate(
-              {
+
+    <script>
+
+
+        \$('.datepicker').pickadate(
+            {
                 format: 'yyyy-mm-dd',
                 formatSubmit: 'yyyy-mm-dd',
-                  min: new Date('today'),
-                  max: new Date(2019,12,31)
-              }
-              );
-        </script>
+                //min: new Date('today'),
+                min :document.getElementById('form[from]').min,
+                max: new Date(2019,12,31)
+            }
+        );
+
+
+
+    </script>
+
+
+
 
     </body>
 </html>
