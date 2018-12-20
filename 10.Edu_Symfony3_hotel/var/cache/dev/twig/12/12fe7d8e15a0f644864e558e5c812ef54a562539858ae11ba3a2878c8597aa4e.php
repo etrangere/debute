@@ -68,13 +68,15 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
         // line 14
         $this->displayBlock('top_bar', $context, $blocks);
         // line 31
-        echo "
+        echo "    <noscript><h4 align=\"center\">For full functionality of this page it is necessary to enable JavaScript.
+            Here are the <a href=\"http://www.enable-javascript.com\" target=\"_blank\">
+                instructions how to enable JavaScript in your web browser</a></h4></noscript>
     <br>
 
         ";
-        // line 34
+        // line 36
         $this->displayBlock('body', $context, $blocks);
-        // line 35
+        // line 37
         echo "    
 
     <div class=\"row column\">
@@ -89,30 +91,30 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
     </script>
 
         ";
-        // line 48
+        // line 50
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 49
+        // line 51
         echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/jquery.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 50
+        // line 52
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/what-input.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 51
+        // line 53
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/foundation.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 52
+        // line 54
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/app.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 53
+        // line 55
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 54
+        // line 56
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.date.js"), "html", null, true);
         echo "\"></script>
         <script>
@@ -220,7 +222,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
 
     }
 
-    // line 34
+    // line 36
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -238,7 +240,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
 
     }
 
-    // line 48
+    // line 50
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -267,7 +269,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
 
     public function getDebugInfo()
     {
-        return array (  242 => 48,  224 => 34,  206 => 23,  202 => 22,  198 => 21,  194 => 20,  187 => 15,  178 => 14,  161 => 6,  143 => 5,  116 => 54,  112 => 53,  108 => 52,  104 => 51,  100 => 50,  95 => 49,  93 => 48,  78 => 35,  76 => 34,  71 => 31,  69 => 14,  63 => 11,  59 => 10,  55 => 9,  51 => 8,  46 => 7,  44 => 6,  40 => 5,  34 => 1,);
+        return array (  244 => 50,  226 => 36,  208 => 23,  204 => 22,  200 => 21,  196 => 20,  189 => 15,  180 => 14,  163 => 6,  145 => 5,  118 => 56,  114 => 55,  110 => 54,  106 => 53,  102 => 52,  97 => 51,  95 => 50,  80 => 37,  78 => 36,  71 => 31,  69 => 14,  63 => 11,  59 => 10,  55 => 9,  51 => 8,  46 => 7,  44 => 6,  40 => 5,  34 => 1,);
     }
 
     public function getSourceContext()
@@ -302,7 +304,9 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
     <!-- End Top Bar -->
 
     {% endblock %}
-
+    <noscript><h4 align=\"center\">For full functionality of this page it is necessary to enable JavaScript.
+            Here are the <a href=\"http://www.enable-javascript.com\" target=\"_blank\">
+                instructions how to enable JavaScript in your web browser</a></h4></noscript>
     <br>
 
         {% block body %} {% endblock %}
