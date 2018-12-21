@@ -62,19 +62,18 @@
 
         $('.datepicker').pickadate(
             {
-                format: 'yyyy-mm-dd',
-                formatSubmit: 'yyyy-mm-dd',
-                //min: new Date('today'),
-                min :document.getElementById('form[from]').min,
-                max: new Date(2019,12,31)
+                //format: 'yyyy-mm-dd',
+                //formatSubmit: 'yyyy-mm-dd',
+                format: 'd mmmm, yyyy',
+                min: new Date('today'),
+                max: new Date(2019,12,31),
+                today: 'Today'
             }
         );
 
 
 
     </script>
-
-
 
 
     </body>

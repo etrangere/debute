@@ -97,11 +97,11 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
                 <div class=\"medium-2  columns\">CHECK-IN:</div>
 
-                <div class=\"medium-2  columns\"><input id=\"form[from]\" name=\"form[from]\" type=\"date\" style=\"border-color: #00ace6\"  class=\"datepicker\" required/></div>
+                <div class=\"medium-2  columns\"><input id=\"dt1\"  name=\"form[from]\"  type=\"date\" style=\"border-color: #00ace6\"  class=\"datepicker\" required/></div>
 
                 <div class=\"medium-2  columns\">CHECK-OUT:</div>
 
-                <div class=\"medium-2  columns\"><input id=\"form[to]\" name=\"form[to]\" style=\"border-color: #00ace6\" type=\"date\" class=\"datepicker\" required/></div>
+                <div class=\"medium-2  columns\"><input id=\"dt2\"  name=\"form[to]\" style=\"border-color: #00ace6\" type=\"date\" class=\"datepicker\" required/></div>
 
               <div class=\"medium-3  columns\"><input class=\"button\" id=\"search_offer\" onchange=\"myFunction1()\"  type=\"submit\" value=\"SEARCH OFFER\" />
             <input class=\"button\" onClick=\"window.location.reload()\" type=\"reset\" value=\"REFRESH\" /></div>
@@ -247,33 +247,59 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
               </tbody>
           </table>
 
+
+    <script>
+        \$(document).ready(function(){
+            \$(\"td1\").datepicker({
+                minDate: 'today',
+                maxDate: '2019,12,31',
+                //numberOfMonths: 1,
+                onSelect: function(selected) {
+                    \$(\"td2\").datepicker(\"option\",\"minDate\", selected)
+                }
+            });
+            \$(\"td2\").datepicker({
+                minDate: 'today',
+                maxDate: '2019,12,31',
+               // numberOfMonths: 1,
+                onSelect: function(selected) {
+                    \$(\"td1\").datepicker(\"option\",\"maxDate\", selected)
+                }
+            });
+        });
+
+    </script>
+
+
     <script>
 
             function myFunction1() {
+
 
                 var comproom_type = document.getElementById(\"room_type\");//room_type 1 2 3
                 var compadult = document.getElementById(\"adult\"); //child 1 2 3
                 var compchild = document.getElementById(\"child\"); // baby for 1 2 3
 
 
+
                 if(comproom_type.value == \"1\" ){
 
                     document.getElementById(\"adult\").disabled=false;
                     document.getElementById(\"adult1\").disabled=false;
-                    document.getElementById('room_type').disabled = true;
+                    document.getElementById(\"room_type\").style=\"pointer-events: none\";
                 }
                 else if(comproom_type.value == \"2\" ){
                     document.getElementById(\"adult\").disabled=false;
                     document.getElementById(\"adult1\").disabled=false;
                     document.getElementById(\"adult2\").disabled=false;
-                    document.getElementById('room_type').disabled = true;
+                    document.getElementById(\"room_type\").style=\"pointer-events: none\";
                 }
                 else if (comproom_type.value == \"3\" ){
                     document.getElementById(\"adult\").disabled=false;
                     document.getElementById(\"adult1\").disabled=false;
                     document.getElementById(\"adult2\").disabled=false;
                     document.getElementById(\"adult3\").disabled=false;
-                    document.getElementById('room_type').disabled = true;
+                    document.getElementById(\"room_type\").style=\"pointer-events: none\";
                 }
 
                 if(compadult.value == \"1\" ){
@@ -366,11 +392,11 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
                 <div class=\"medium-2  columns\">CHECK-IN:</div>
 
-                <div class=\"medium-2  columns\"><input id=\"form[from]\" name=\"form[from]\" type=\"date\" style=\"border-color: #00ace6\"  class=\"datepicker\" required/></div>
+                <div class=\"medium-2  columns\"><input id=\"dt1\"  name=\"form[from]\"  type=\"date\" style=\"border-color: #00ace6\"  class=\"datepicker\" required/></div>
 
                 <div class=\"medium-2  columns\">CHECK-OUT:</div>
 
-                <div class=\"medium-2  columns\"><input id=\"form[to]\" name=\"form[to]\" style=\"border-color: #00ace6\" type=\"date\" class=\"datepicker\" required/></div>
+                <div class=\"medium-2  columns\"><input id=\"dt2\"  name=\"form[to]\" style=\"border-color: #00ace6\" type=\"date\" class=\"datepicker\" required/></div>
 
               <div class=\"medium-3  columns\"><input class=\"button\" id=\"search_offer\" onchange=\"myFunction1()\"  type=\"submit\" value=\"SEARCH OFFER\" />
             <input class=\"button\" onClick=\"window.location.reload()\" type=\"reset\" value=\"REFRESH\" /></div>
@@ -458,33 +484,59 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
               </tbody>
           </table>
 
+
+    <script>
+        \$(document).ready(function(){
+            \$(\"td1\").datepicker({
+                minDate: 'today',
+                maxDate: '2019,12,31',
+                //numberOfMonths: 1,
+                onSelect: function(selected) {
+                    \$(\"td2\").datepicker(\"option\",\"minDate\", selected)
+                }
+            });
+            \$(\"td2\").datepicker({
+                minDate: 'today',
+                maxDate: '2019,12,31',
+               // numberOfMonths: 1,
+                onSelect: function(selected) {
+                    \$(\"td1\").datepicker(\"option\",\"maxDate\", selected)
+                }
+            });
+        });
+
+    </script>
+
+
     <script>
 
             function myFunction1() {
+
 
                 var comproom_type = document.getElementById(\"room_type\");//room_type 1 2 3
                 var compadult = document.getElementById(\"adult\"); //child 1 2 3
                 var compchild = document.getElementById(\"child\"); // baby for 1 2 3
 
 
+
                 if(comproom_type.value == \"1\" ){
 
                     document.getElementById(\"adult\").disabled=false;
                     document.getElementById(\"adult1\").disabled=false;
-                    document.getElementById('room_type').disabled = true;
+                    document.getElementById(\"room_type\").style=\"pointer-events: none\";
                 }
                 else if(comproom_type.value == \"2\" ){
                     document.getElementById(\"adult\").disabled=false;
                     document.getElementById(\"adult1\").disabled=false;
                     document.getElementById(\"adult2\").disabled=false;
-                    document.getElementById('room_type').disabled = true;
+                    document.getElementById(\"room_type\").style=\"pointer-events: none\";
                 }
                 else if (comproom_type.value == \"3\" ){
                     document.getElementById(\"adult\").disabled=false;
                     document.getElementById(\"adult1\").disabled=false;
                     document.getElementById(\"adult2\").disabled=false;
                     document.getElementById(\"adult3\").disabled=false;
-                    document.getElementById('room_type').disabled = true;
+                    document.getElementById(\"room_type\").style=\"pointer-events: none\";
                 }
 
                 if(compadult.value == \"1\" ){
