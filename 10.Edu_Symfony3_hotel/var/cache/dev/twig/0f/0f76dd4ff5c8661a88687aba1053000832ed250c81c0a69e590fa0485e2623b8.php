@@ -1,6 +1,6 @@
 <?php
 
-/* home/available_room_list.html.twig */
+/* :home:available_room_list.html.twig */
 class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb811466 extends Twig_Template
 {
     private $source;
@@ -12,7 +12,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "home/available_room_list.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":home:available_room_list.html.twig", 1);
         $this->blocks = array(
             'top_bar' => array($this, 'block_top_bar'),
             'body' => array($this, 'block_body'),
@@ -27,10 +27,10 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "home/available_room_list.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":home:available_room_list.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "home/available_room_list.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":home:available_room_list.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -157,7 +157,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>Child</label>
                 <div>
                     <select id=\"child\" onchange=\"myFunction1('child')\" name=\"form[child]\" style=\"border-color: #00ace6\" >
-                        <option selected=\"selected\" >Choose</option>
+                        <option selected=\"selected\" value=\"0\">Choose</option>
                         <option id=\"child1\" onchange=\"myFunction1('child1')\" value=\"";
         // line 73
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
@@ -179,7 +179,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>Baby</label>
                 <div>
                     <select id=\"baby\" onchange=\"myFunction1('baby')\" name=\"form[baby]\" style=\"border-color: #00ace6\">
-                        <option selected=\"selected\" >Choose</option>
+                        <option selected=\"selected\" value=\"0\">Choose</option>
                         <option id=\"baby1\" onchange=\"myFunction1('baby1')\" value=\"";
         // line 86
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
@@ -341,7 +341,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
     public function getTemplateName()
     {
-        return "home/available_room_list.html.twig";
+        return ":home:available_room_list.html.twig";
     }
 
     public function isTraitable()
@@ -427,7 +427,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>Child</label>
                 <div>
                     <select id=\"child\" onchange=\"myFunction1('child')\" name=\"form[child]\" style=\"border-color: #00ace6\" >
-                        <option selected=\"selected\" >Choose</option>
+                        <option selected=\"selected\" value=\"0\">Choose</option>
                         <option id=\"child1\" onchange=\"myFunction1('child1')\" value=\"{{ 1|number_format }}\" disabled=\"disabled\">1 child</option>
                         <option id=\"child2\" onchange=\"myFunction1('child2')\" value=\"{{ 2|number_format }}\" disabled=\"disabled\">2 childs</option>
                         <option id=\"child3\" onchange=\"myFunction1('adult3')\" value=\"{{ 3|number_format }}\" disabled=\"disabled\">3 childs</option>
@@ -440,7 +440,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                 <label>Baby</label>
                 <div>
                     <select id=\"baby\" onchange=\"myFunction1('baby')\" name=\"form[baby]\" style=\"border-color: #00ace6\">
-                        <option selected=\"selected\" >Choose</option>
+                        <option selected=\"selected\" value=\"0\">Choose</option>
                         <option id=\"baby1\" onchange=\"myFunction1('baby1')\" value=\"{{ 1|number_format }}\" disabled=\"disabled\">1 baby</option>
                         <option id=\"baby2\" onchange=\"myFunction1('baby2')\" value=\"{{ 2|number_format }}\" disabled=\"disabled\">2 babies</option>
                         <option id=\"baby3\" onchange=\"myFunction1('baby3')\" value=\"{{ 3|number_format }}\" disabled=\"disabled\">3 babies</option>
@@ -562,6 +562,6 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
 {% endblock %}
 
-", "home/available_room_list.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/available_room_list.html.twig");
+", ":home:available_room_list.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/available_room_list.html.twig");
     }
 }
