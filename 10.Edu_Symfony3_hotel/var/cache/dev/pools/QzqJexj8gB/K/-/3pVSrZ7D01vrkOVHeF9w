@@ -8,10 +8,10 @@
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/front_booking/{id_room}',
+                    '/rooms',
                 ],
                 'name' => [
-                    'front_booking',
+                    'available_room_list',
                 ],
             ],
         ],

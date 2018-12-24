@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-
+use \Swift_Mailer;
 use AppBundle\Entity\Reservation;
 use AppBundle\Entity\Client;
 use AppBundle\Entity\Room;
@@ -67,8 +67,52 @@ class HomeController extends Controller
      * @Route("/contact", name="contact")
      **/
 
-    public function showContact()
+    public function showContact(Request $request)
     {
+
+
+
+        $form = $this->createFormBuilder()
+           // ->add('contact_name')
+            ->add('contact_email')
+            ->add('contact_subject')
+            ->add('contact_message')
+            ->getForm();
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()) {
+            $form_data = $form->getData();
+            // $data ['form'] = $form_data;
+           // $contact_name = $form_data['contact_name'];
+
+            $contact_email = $form_data['contact_email'];
+            $contact_subject = $form_data['contact_subject'];
+            $contact_message = $form_data['contact_message'];
+
+
+      //  $transport = Swift_SmtpTransport::newInstance()
+        //    ->setHost('smtp.gmail.com')
+         //   ->setPort(465)
+          //  ->setEncryption('ssl');
+        $mailer = $this->container->get('swiftmailer');
+        $message = \Swift_Message::newInstance()
+            ->setSubject($contact_subject)
+            ->setFrom('g.khachatrian2016@gmail.com')
+            ->setReplyTo($contact_email)
+            ->setTo('g.khachatrian.job@gmail.com')
+            ->setContentType('text/html')
+            ->setBody($contact_message);
+
+      //  $this->get('mailer')->send($message);
+       // $msg = 'envoi effectué avec succés' ;
+        //return new Response($msg);
+// Send the message
+        $result = $mailer->send($message);
+            $msg = 'envoi effectué avec succés';
+        //return  new Response($msg);
+
+            return $this->render("home/contact.html.twig",$msg);
+        }
 
         return $this->render("home/contact.html.twig");
 
@@ -79,7 +123,7 @@ class HomeController extends Controller
     /**
      * @Route("/rooms", name="available_room_list")
      */
-    public function booking(Request $request)
+    public function available_room_list(Request $request)
     {
 
         $data = [];
@@ -143,9 +187,9 @@ class HomeController extends Controller
 
 
     /**
-     * @Route("/front_booking/{id_room}",name="front_booking")
+     * @Route("/booking/{id_room}",name="booking")
      */
-    public function front_booking(Request $request ,$id_room)
+    public function booking(Request $request ,$id_room)
     {
         $data = [];
         $data['mode']='new_client';
@@ -226,6 +270,9 @@ class HomeController extends Controller
 
     public function confirmation()
     {
+
+
+
 
         return $this->render("home/confirmation.html.twig");
 

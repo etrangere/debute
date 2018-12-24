@@ -235,7 +235,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
             echo "</td>
                         <td><a class=\"button\"  href=\"";
             // line 116
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_booking", array("id_room" => twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "id", array())))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("booking", array("id_room" => twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "id", array())))), "html", null, true);
             echo "\">CHOOSE</a></td>
                     </tr>
                 ";
@@ -471,7 +471,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                         <td>{{ room.description}}</td>
                         <td>{{ room.roomtype ~ \" ROOM\"  }}</td>
                         <td>{{ room.price ~ \" EUR\"}}</td>
-                        <td><a class=\"button\"  href=\"{{ path(\"front_booking\",{'id_room' : room.id|number_format })}}\">CHOOSE</a></td>
+                        <td><a class=\"button\"  href=\"{{ path(\"booking\",{'id_room' : room.id|number_format })}}\">CHOOSE</a></td>
                     </tr>
                 {% endfor %}
             </div>

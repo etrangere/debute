@@ -50,6 +50,7 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context);
         echo "
     <div align=\"center\">
        <h2>Contact Information</h2>
@@ -73,16 +74,13 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
                 <div class=\"col-md-6 pr-md-5\">
                     <form action=\"#\">
                         <div class=\"form-group\">
-                            <input type=\"text\"  class=\"\" style=\"width: 50%\" placeholder=\"Your Name\">
+                            <input type=\"text\" name=\"form[contact_email]\" style=\"width: 60%\" placeholder=\"Your Email\">
                         </div>
                         <div class=\"form-group\">
-                            <input type=\"text\" class=\"\" style=\"width: 60%\" placeholder=\"Your Email\">
+                            <input type=\"text\" name=\"form[contact_subject]\" style=\"width: 40%\" placeholder=\"Subject\" >
                         </div>
                         <div class=\"form-group\">
-                            <input type=\"text\" class=\"\" style=\"width: 40%\" placeholder=\"Subject\" >
-                        </div>
-                        <div class=\"form-group\">
-                            <textarea name=\"\" id=\"\" cols=\"30\" rows=\"8\"  style=\"width: 40%\" placeholder=\"Message\"></textarea>
+                            <textarea name=\"\" name=\"form[contact_message]\" cols=\"30\" rows=\"8\"  style=\"width: 40%\" placeholder=\"Message\"></textarea>
                         </div>
                         <div class=\"form-group\">
                             <a  href=\"#\"><input align=\"center\" type=\"submit\" class=\"button\"  value=\"SEND MESSAGE\"></a>
@@ -126,7 +124,7 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
         return new Twig_Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-
+{{ dump() }}
     <div align=\"center\">
        <h2>Contact Information</h2>
        <p>198 West 21th Street,Suite 721 New York NY 10016</p>
@@ -149,16 +147,13 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
                 <div class=\"col-md-6 pr-md-5\">
                     <form action=\"#\">
                         <div class=\"form-group\">
-                            <input type=\"text\"  class=\"\" style=\"width: 50%\" placeholder=\"Your Name\">
+                            <input type=\"text\" name=\"form[contact_email]\" style=\"width: 60%\" placeholder=\"Your Email\">
                         </div>
                         <div class=\"form-group\">
-                            <input type=\"text\" class=\"\" style=\"width: 60%\" placeholder=\"Your Email\">
+                            <input type=\"text\" name=\"form[contact_subject]\" style=\"width: 40%\" placeholder=\"Subject\" >
                         </div>
                         <div class=\"form-group\">
-                            <input type=\"text\" class=\"\" style=\"width: 40%\" placeholder=\"Subject\" >
-                        </div>
-                        <div class=\"form-group\">
-                            <textarea name=\"\" id=\"\" cols=\"30\" rows=\"8\"  style=\"width: 40%\" placeholder=\"Message\"></textarea>
+                            <textarea name=\"\" name=\"form[contact_message]\" cols=\"30\" rows=\"8\"  style=\"width: 40%\" placeholder=\"Message\"></textarea>
                         </div>
                         <div class=\"form-group\">
                             <a  href=\"#\"><input align=\"center\" type=\"submit\" class=\"button\"  value=\"SEND MESSAGE\"></a>
