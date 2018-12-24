@@ -8,8 +8,8 @@ test.php
 
 README.md
 
-var/cache/
+var/cache/*
 
-var/logs/
+var/logs/*
 
-var/sessions/
+var/sessions/*
