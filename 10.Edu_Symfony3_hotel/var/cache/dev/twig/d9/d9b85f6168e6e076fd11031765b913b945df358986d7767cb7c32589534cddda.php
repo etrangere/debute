@@ -67,12 +67,15 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
             </div>
         </div>
     </div>
-
+    ";
+        // line 20
+        echo twig_escape_filter($this->env, (((isset($context["msg"]) || array_key_exists("msg", $context))) ? ((isset($context["msg"]) || array_key_exists("msg", $context) ? $context["msg"] : (function () { throw new Twig_Error_Runtime('Variable "msg" does not exist.', 20, $this->source); })())) : ("error")), "html", null, true);
+        echo "
     <div class=\"site-section\" align=\"center\">
         <div class=\"container\">
             <div class=\"row block-9\">
                 <div class=\"col-md-6 pr-md-5\">
-                    <form action=\"#\">
+                    <form action=\"\" method=\"post\">
                         <div class=\"form-group\">
                             <input type=\"text\" name=\"form[contact_email]\" style=\"width: 60%\" placeholder=\"Your Email\">
                         </div>
@@ -80,7 +83,7 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
                             <input type=\"text\" name=\"form[contact_subject]\" style=\"width: 40%\" placeholder=\"Subject\" >
                         </div>
                         <div class=\"form-group\">
-                            <textarea name=\"\" name=\"form[contact_message]\" cols=\"30\" rows=\"8\"  style=\"width: 40%\" placeholder=\"Message\"></textarea>
+                            <textarea name=\"form[contact_message]\" cols=\"30\" rows=\"8\"  style=\"width: 40%\" placeholder=\"Message\"></textarea>
                         </div>
                         <div class=\"form-group\">
                             <a  href=\"#\"><input align=\"center\" type=\"submit\" class=\"button\"  value=\"SEND MESSAGE\"></a>
@@ -116,7 +119,7 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
 
     public function getDebugInfo()
     {
-        return array (  53 => 4,  44 => 3,  15 => 1,);
+        return array (  72 => 20,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -140,12 +143,12 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
             </div>
         </div>
     </div>
-
+    {{ msg is defined ? msg : 'error' }}
     <div class=\"site-section\" align=\"center\">
         <div class=\"container\">
             <div class=\"row block-9\">
                 <div class=\"col-md-6 pr-md-5\">
-                    <form action=\"#\">
+                    <form action=\"\" method=\"post\">
                         <div class=\"form-group\">
                             <input type=\"text\" name=\"form[contact_email]\" style=\"width: 60%\" placeholder=\"Your Email\">
                         </div>
@@ -153,7 +156,7 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
                             <input type=\"text\" name=\"form[contact_subject]\" style=\"width: 40%\" placeholder=\"Subject\" >
                         </div>
                         <div class=\"form-group\">
-                            <textarea name=\"\" name=\"form[contact_message]\" cols=\"30\" rows=\"8\"  style=\"width: 40%\" placeholder=\"Message\"></textarea>
+                            <textarea name=\"form[contact_message]\" cols=\"30\" rows=\"8\"  style=\"width: 40%\" placeholder=\"Message\"></textarea>
                         </div>
                         <div class=\"form-group\">
                             <a  href=\"#\"><input align=\"center\" type=\"submit\" class=\"button\"  value=\"SEND MESSAGE\"></a>

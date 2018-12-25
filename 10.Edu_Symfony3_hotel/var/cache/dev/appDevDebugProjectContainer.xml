@@ -103,9 +103,8 @@
     <parameter key="database_name">10.Edu_Symfony3_hotel</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">Smdilia2012@</parameter>
-    <parameter key="mailer_transport">smtp</parameter>
-    <parameter key="mailer_host">smtp.gmail.com</parameter>
-    <parameter key="mailer_user">g.khachatrian2016@gmail.com</parameter>
+    <parameter key="mailer_transport">gmail</parameter>
+    <parameter key="mailer_user">g.khachatrian.job@gmail.com</parameter>
     <parameter key="mailer_password">Smdilia2012@</parameter>
     <parameter key="secret">f273774016dfd24080ceffdb467c2a22c2d3c602</parameter>
     <parameter key="locale">en</parameter>
@@ -202,21 +201,20 @@
     <parameter key="swiftmailer.email_sender.listener.class">Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener</parameter>
     <parameter key="swiftmailer.data_collector.class">Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector</parameter>
     <parameter key="swiftmailer.mailer.default.transport.name">smtp</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">null</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.port">25</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">ssl</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.port">587</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.host">smtp.gmail.com</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.username">g.khachatrian2016@gmail.com</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.username">g.khachatrian.job@gmail.com</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.password">Smdilia2012@</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">login</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.local_domain">null</parameter>
-    <parameter key="swiftmailer.spool.default.memory.path">/var/www/10.Edu_Symfony3_hotel/var/cache/dev/swiftmailer/spool/default</parameter>
-    <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
+    <parameter key="swiftmailer.mailer.default.spool.enabled">false</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
     <parameter key="swiftmailer.mailer.default.delivery.enabled">true</parameter>
-    <parameter key="swiftmailer.spool.enabled">true</parameter>
+    <parameter key="swiftmailer.spool.enabled">false</parameter>
     <parameter key="swiftmailer.delivery.enabled">true</parameter>
     <parameter key="swiftmailer.single_address">null</parameter>
     <parameter key="swiftmailer.mailers" type="collection">
@@ -3016,7 +3014,7 @@
     <service id="2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~ckt4klj" class="Swift_Transport_Esmtp_Auth_LoginAuthenticator" public="false"/>
     <service id="1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~ckt4klj" class="Swift_Transport_Esmtp_Auth_CramMd5Authenticator" public="false"/>
     <service id="swiftmailer.mailer.abstract" class="Swift_Mailer" public="true" abstract="true">
-      <argument type="service" id="swiftmailer.mailer.default.transport.spool"/>
+      <argument type="service" id="swiftmailer.mailer.default.transport.smtp"/>
     </service>
     <service id="swiftmailer.transport.smtp.configurator.abstract" class="Symfony\Bundle\SwiftmailerBundle\DependencyInjection\SmtpTransportConfigurator" public="false" abstract="true"/>
     <service id="swiftmailer.transport.sendmail.abstract" class="Swift_Transport_SendmailTransport" public="false" abstract="true"/>
@@ -3065,13 +3063,13 @@
         <argument type="service" id="3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~ckt4klj"/>
       </argument>
       <call method="setUsername">
-        <argument>g.khachatrian2016@gmail.com</argument>
+        <argument>g.khachatrian.job@gmail.com</argument>
       </call>
       <call method="setPassword">
         <argument>Smdilia2012@</argument>
       </call>
       <call method="setAuthMode">
-        <argument>null</argument>
+        <argument>login</argument>
       </call>
     </service>
     <service id="swiftmailer.mailer.default.transport.buffer" class="Swift_Transport_StreamBuffer" public="false">
@@ -3091,10 +3089,10 @@
         <argument>smtp.gmail.com</argument>
       </call>
       <call method="setPort">
-        <argument>25</argument>
+        <argument>587</argument>
       </call>
       <call method="setEncryption">
-        <argument>null</argument>
+        <argument>ssl</argument>
       </call>
       <call method="setTimeout">
         <argument>30</argument>
@@ -3102,18 +3100,13 @@
       <call method="setSourceIp">
         <argument>null</argument>
       </call>
-      <configurator service="swiftmailer.transport.configurator.default" method="configure"/>
-    </service>
-    <service id="swiftmailer.mailer.default" class="Swift_Mailer" public="true">
-      <argument type="service" id="swiftmailer.mailer.default.transport.spool"/>
-    </service>
-    <service id="swiftmailer.mailer.default.spool.memory" class="Swift_MemorySpool" public="false"/>
-    <service id="swiftmailer.mailer.default.transport.spool" class="Swift_Transport_SpoolTransport" public="false">
-      <argument type="service" id="swiftmailer.mailer.default.transport.eventdispatcher"/>
-      <argument type="service" id="swiftmailer.mailer.default.spool.memory"/>
       <call method="registerPlugin">
         <argument type="service" id="swiftmailer.mailer.default.plugin.messagelogger"/>
       </call>
+      <configurator service="swiftmailer.transport.configurator.default" method="configure"/>
+    </service>
+    <service id="swiftmailer.mailer.default" class="Swift_Mailer" public="true">
+      <argument type="service" id="swiftmailer.mailer.default.transport.smtp"/>
     </service>
     <service id="swiftmailer.mailer.default.plugin.messagelogger" class="Swift_Plugins_MessageLogger" public="true">
       <tag name="swiftmailer.default.plugin"/>
@@ -4094,17 +4087,12 @@
     <service id="Twig\Environment" alias="twig" public="false"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
-    <service id="swiftmailer.mailer.default.transport" alias="swiftmailer.mailer.default.transport.spool"/>
-    <service id="swiftmailer.mailer.default.spool" alias="swiftmailer.mailer.default.spool.memory"/>
-    <service id="swiftmailer.mailer.default.transport.real" alias="swiftmailer.mailer.default.transport.smtp" public="true"/>
-    <service id="swiftmailer.spool" alias="swiftmailer.mailer.default.spool.memory"/>
-    <service id="swiftmailer.transport.real" alias="swiftmailer.mailer.default.transport.smtp"/>
-    <service id="Swift_Spool" alias="swiftmailer.mailer.default.spool.memory" public="false"/>
+    <service id="swiftmailer.mailer.default.transport" alias="swiftmailer.mailer.default.transport.smtp" public="true"/>
     <service id="swiftmailer.plugin.messagelogger" alias="swiftmailer.mailer.default.plugin.messagelogger"/>
     <service id="swiftmailer.mailer" alias="swiftmailer.mailer.default"/>
-    <service id="swiftmailer.transport" alias="swiftmailer.mailer.default.transport.spool"/>
+    <service id="swiftmailer.transport" alias="swiftmailer.mailer.default.transport.smtp"/>
     <service id="Swift_Mailer" alias="swiftmailer.mailer.default" public="false"/>
-    <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.spool" public="false"/>
+    <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.smtp" public="false"/>
     <service id="mailer" alias="swiftmailer.mailer.default" public="true"/>
     <service id="Doctrine\DBAL\Driver\Connection" alias="doctrine.dbal.default_connection" public="false"/>
     <service id="Doctrine\DBAL\Connection" alias="doctrine.dbal.default_connection" public="false"/>

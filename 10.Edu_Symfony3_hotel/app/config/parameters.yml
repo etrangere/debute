@@ -5,8 +5,7 @@ parameters:
     database_name: 10.Edu_Symfony3_hotel
     database_user: root
     database_password: Smdilia2012@
-    mailer_transport: smtp
-    mailer_host: smtp.gmail.com
-    mailer_user: g.khachatrian2016@gmail.com
+    mailer_transport: gmail
+    mailer_user: g.khachatrian.job@gmail.com
     mailer_password: Smdilia2012@
     secret: f273774016dfd24080ceffdb467c2a22c2d3c602

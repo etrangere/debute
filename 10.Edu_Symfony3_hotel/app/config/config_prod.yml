@@ -19,3 +19,7 @@ monolog:
             level: debug
         console:
             type:  console
+
+swiftmailer:
+
+    spool:     %mailer_spool_type%

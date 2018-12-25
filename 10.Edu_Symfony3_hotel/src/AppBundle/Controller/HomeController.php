@@ -8,7 +8,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-use \Swift_Mailer;
 use AppBundle\Entity\Reservation;
 use AppBundle\Entity\Client;
 use AppBundle\Entity\Room;
@@ -16,7 +15,13 @@ use AppBundle\Repository\RoomRepository;
 use AppBundle\Repository\ClientRepository;
 use Symfony\Component\Validator\Constraints\All;
 use Doctrine\ORM\Mapping as ORM;
-
+//use Swift_Transport;
+//use Symfony\Bundle\SwiftmailerBundle;
+use Swift_Mailer;
+//use Swift_MemorySpool;
+//use Symfony\Bundle\SwiftmailerBundle\DependencyInjection\SwiftmailerExtension;
+//use Symfony\Bundle\SwiftmailerBundle\DependencyInjection\SwiftmailerTransportFactory;
+use Swift_SmtpTransport;
 
 class HomeController extends Controller
 {
@@ -70,10 +75,9 @@ class HomeController extends Controller
     public function showContact(Request $request)
     {
 
-
+        $data['form'] = [];
 
         $form = $this->createFormBuilder()
-           // ->add('contact_name')
             ->add('contact_email')
             ->add('contact_subject')
             ->add('contact_message')
@@ -82,36 +86,34 @@ class HomeController extends Controller
 
         if ($form->isSubmitted()) {
             $form_data = $form->getData();
-            // $data ['form'] = $form_data;
-           // $contact_name = $form_data['contact_name'];
+            $data['form'] = [];
+            $data ['form'] = $form_data;
 
             $contact_email = $form_data['contact_email'];
             $contact_subject = $form_data['contact_subject'];
             $contact_message = $form_data['contact_message'];
 
 
-      //  $transport = Swift_SmtpTransport::newInstance()
-        //    ->setHost('smtp.gmail.com')
-         //   ->setPort(465)
-          //  ->setEncryption('ssl');
-        $mailer = $this->container->get('swiftmailer');
+            $transport = new \Swift_SmtpTransport('smtp.gmail.com',16384,'ssl');
+
+            $mailer = new Swift_Mailer($transport);
+
+
         $message = \Swift_Message::newInstance()
             ->setSubject($contact_subject)
-            ->setFrom('g.khachatrian2016@gmail.com')
+            ->setFrom('g.khachatrian.job@gmail.com')
             ->setReplyTo($contact_email)
-            ->setTo('g.khachatrian.job@gmail.com')
+            ->setTo('g.khachatrian2016@gmail.com')
             ->setContentType('text/html')
             ->setBody($contact_message);
 
-      //  $this->get('mailer')->send($message);
-       // $msg = 'envoi effectué avec succés' ;
-        //return new Response($msg);
-// Send the message
-        $result = $mailer->send($message);
-            $msg = 'envoi effectué avec succés';
-        //return  new Response($msg);
+       // var_dump($mailer);
 
-            return $this->render("home/contact.html.twig",$msg);
+            $result= $mailer->send($message);
+           // $data['result'] = $result;
+            $data['msg'] = 'envoi effectué avec succés';
+
+           return $this->render("home/contact.html.twig",$data);
         }
 
         return $this->render("home/contact.html.twig");
