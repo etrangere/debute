@@ -56,7 +56,7 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
        <h2>Contact Information</h2>
        <p>198 West 21th Street,Suite 721 New York NY 10016</p>
        <p>Tel:+ 1235 1155 98</p>
-       <p>Email: <a href=\"mailto:g.khachatrian.job@gmail.com?Subject=contact\" >g.khachatrian.job@gmail.com</a> </p></center>
+       <p>Email: <a href=\"mailto:g.khachatrian.job@gmail.com?Subject=contact\" >g.khachatrian@free.fr</a> </p></center>
     </div>
 
     <div class=\"container\">
@@ -132,7 +132,7 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
        <h2>Contact Information</h2>
        <p>198 West 21th Street,Suite 721 New York NY 10016</p>
        <p>Tel:+ 1235 1155 98</p>
-       <p>Email: <a href=\"mailto:g.khachatrian.job@gmail.com?Subject=contact\" >g.khachatrian.job@gmail.com</a> </p></center>
+       <p>Email: <a href=\"mailto:g.khachatrian.job@gmail.com?Subject=contact\" >g.khachatrian@free.fr</a> </p></center>
     </div>
 
     <div class=\"container\">

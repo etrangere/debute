@@ -94,16 +94,16 @@ class HomeController extends Controller
             $contact_message = $form_data['contact_message'];
 
 
-            $transport = new \Swift_SmtpTransport('smtp.gmail.com',16384,'ssl');
+            $transport = new \Swift_SmtpTransport('smtp.free.fr',587,'tcp');
 
             $mailer = new Swift_Mailer($transport);
 
 
         $message = \Swift_Message::newInstance()
             ->setSubject($contact_subject)
-            ->setFrom('g.khachatrian.job@gmail.com')
+            ->setFrom('g.khachatrian2016@free.fr')
             ->setReplyTo($contact_email)
-            ->setTo('g.khachatrian2016@gmail.com')
+            ->setTo('g.khachatrian@free.fr')
             ->setContentType('text/html')
             ->setBody($contact_message);
 

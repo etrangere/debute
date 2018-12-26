@@ -103,9 +103,10 @@
     <parameter key="database_name">10.Edu_Symfony3_hotel</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">Smdilia2012@</parameter>
-    <parameter key="mailer_transport">gmail</parameter>
-    <parameter key="mailer_user">g.khachatrian.job@gmail.com</parameter>
+    <parameter key="mailer_transport">smtp</parameter>
+    <parameter key="mailer_user">g.khachatrian2016@free.fr</parameter>
     <parameter key="mailer_password">Smdilia2012@</parameter>
+    <parameter key="mailer_encryption">tsl</parameter>
     <parameter key="secret">f273774016dfd24080ceffdb467c2a22c2d3c602</parameter>
     <parameter key="locale">en</parameter>
     <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
@@ -201,10 +202,10 @@
     <parameter key="swiftmailer.email_sender.listener.class">Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener</parameter>
     <parameter key="swiftmailer.data_collector.class">Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector</parameter>
     <parameter key="swiftmailer.mailer.default.transport.name">smtp</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">ssl</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">tls</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.port">587</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.host">smtp.gmail.com</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.username">g.khachatrian.job@gmail.com</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.host">smtp.free.fr</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.username">g.khachatrian2016@free.fr</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.password">Smdilia2012@</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">login</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
@@ -3063,7 +3064,7 @@
         <argument type="service" id="3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~ckt4klj"/>
       </argument>
       <call method="setUsername">
-        <argument>g.khachatrian.job@gmail.com</argument>
+        <argument>g.khachatrian2016@free.fr</argument>
       </call>
       <call method="setPassword">
         <argument>Smdilia2012@</argument>
@@ -3086,13 +3087,13 @@
       </argument>
       <argument type="service" id="swiftmailer.mailer.default.transport.eventdispatcher"/>
       <call method="setHost">
-        <argument>smtp.gmail.com</argument>
+        <argument>smtp.free.fr</argument>
       </call>
       <call method="setPort">
         <argument>587</argument>
       </call>
       <call method="setEncryption">
-        <argument>ssl</argument>
+        <argument>tls</argument>
       </call>
       <call method="setTimeout">
         <argument>30</argument>
