@@ -87,6 +87,7 @@ class HomeController extends Controller
         if ($form->isSubmitted()) {
             $form_data = $form->getData();
             $data['form'] = [];
+
             $data ['form'] = $form_data;
 
             $contact_email = $form_data['contact_email'];
@@ -110,8 +111,10 @@ class HomeController extends Controller
        // var_dump($mailer);
 
             $result= $mailer->send($message);
-           // $data['result'] = $result;
-            $data['msg'] = 'envoi effectué avec succés';
+            $data['result'] = $result;
+            $data['msg'] = 'Envoi effectué avec succés';
+
+
 
            return $this->render("home/contact.html.twig",$data);
         }
