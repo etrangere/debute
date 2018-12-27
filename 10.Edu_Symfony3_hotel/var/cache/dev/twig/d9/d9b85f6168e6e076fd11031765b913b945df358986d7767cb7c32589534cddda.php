@@ -79,7 +79,8 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
         <div class=\"container\">
             <div class=\"row block-9\">
                 <div class=\"col-md-6 pr-md-5\">
-                    <form action=\"\" method=\"post\">
+                    <form action=\"?\" method=\"post\">
+
                         <div class=\"form-group\">
                             <input type=\"text\" id=\"contact_email\" name=\"form[contact_email]\" onclick=\"myFunction()\" style=\"width: 60%\" placeholder=\"Your Email\" required>
                         </div>
@@ -90,6 +91,9 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
                             <textarea id=\"contact_message\" name=\"form[contact_message]\" onclick=\"myFunction()\" cols=\"30\" rows=\"8\"  style=\"width: 40%\" placeholder=\"Message\" required></textarea>
                         </div>
                         <div class=\"form-group\">
+
+                            <div class=\"g-recaptcha\" data-sitekey=\"your_site_key\"></div>
+                            <br/>
                             <a  href=\"#\"><input align=\"center\" type=\"submit\" class=\"button\"  value=\"SEND MESSAGE\"></a>
                         </div>
                     </form>
@@ -97,6 +101,9 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
             </div>
         </div>
     </div>
+
+
+
 
     <div align=\"center\">
         <b><h5>Opening Hours</h5></b>
@@ -175,7 +182,8 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
         <div class=\"container\">
             <div class=\"row block-9\">
                 <div class=\"col-md-6 pr-md-5\">
-                    <form action=\"\" method=\"post\">
+                    <form action=\"?\" method=\"post\">
+
                         <div class=\"form-group\">
                             <input type=\"text\" id=\"contact_email\" name=\"form[contact_email]\" onclick=\"myFunction()\" style=\"width: 60%\" placeholder=\"Your Email\" required>
                         </div>
@@ -186,6 +194,9 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
                             <textarea id=\"contact_message\" name=\"form[contact_message]\" onclick=\"myFunction()\" cols=\"30\" rows=\"8\"  style=\"width: 40%\" placeholder=\"Message\" required></textarea>
                         </div>
                         <div class=\"form-group\">
+
+                            <div class=\"g-recaptcha\" data-sitekey=\"your_site_key\"></div>
+                            <br/>
                             <a  href=\"#\"><input align=\"center\" type=\"submit\" class=\"button\"  value=\"SEND MESSAGE\"></a>
                         </div>
                     </form>
@@ -193,6 +204,9 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
             </div>
         </div>
     </div>
+
+
+
 
     <div align=\"center\">
         <b><h5>Opening Hours</h5></b>

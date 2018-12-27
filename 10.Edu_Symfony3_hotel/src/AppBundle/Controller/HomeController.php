@@ -15,19 +15,39 @@ use AppBundle\Repository\RoomRepository;
 use AppBundle\Repository\ClientRepository;
 use Symfony\Component\Validator\Constraints\All;
 use Doctrine\ORM\Mapping as ORM;
-//use Swift_Transport;
-//use Symfony\Bundle\SwiftmailerBundle;
 use Swift_Mailer;
-//use Swift_MemorySpool;
-//use Symfony\Bundle\SwiftmailerBundle\DependencyInjection\SwiftmailerExtension;
-//use Symfony\Bundle\SwiftmailerBundle\DependencyInjection\SwiftmailerTransportFactory;
 use Swift_SmtpTransport;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
+
+
 
 class HomeController extends Controller
 {
 
-    //private $cache;
 
+    # get success response from recaptcha and return it to controller
+    public function captchaverify($recaptcha){
+        $url = "https://www.google.com/recaptcha/api/siteverify";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, array(
+            "secret"=>"6LeTXQgUAAAAALExcpzgCxWdnWjJcPDoMfK3oKGi","response"=>$recaptcha));
+        $response = curl_exec($ch);
+        curl_close($ch);
+        $data = json_decode($response);
+
+        return $data->success;
+    }
+
+    //private $cache;
 
     private $titles = ['mr', 'ms', 'mrs', 'dc', 'mx'];
 
@@ -84,12 +104,12 @@ class HomeController extends Controller
             ->getForm();
         $form->handleRequest($request);
 
-        if ($form->isSubmitted()) {
+        if ($form->isSubmitted() && $this->captchaverify($request->get('g-recaptcha-response'))) {
+
+
             $form_data = $form->getData();
             $data['form'] = [];
-
             $data ['form'] = $form_data;
-
             $contact_email = $form_data['contact_email'];
             $contact_subject = $form_data['contact_subject'];
             $contact_message = $form_data['contact_message'];
@@ -114,6 +134,13 @@ class HomeController extends Controller
             $data['result'] = $result;
             $data['msg'] = 'Envoi effectué avec succés';
 
+            if($form->isSubmitted() &&  $form->isValid() && !$this->captchaverify($request->get('g-recaptcha-response'))){
+
+                $this->addFlash(
+                    'error',
+                    'Captcha Require'
+                );
+            }
 
 
            return $this->render("home/contact.html.twig",$data);
