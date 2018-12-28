@@ -110,8 +110,6 @@ class HomeController extends Controller
 
             if ($response->success){
 
-
-
                 $transport = new \Swift_SmtpTransport('smtp.free.fr',587,'tcp');
 
                 $mailer = new Swift_Mailer($transport);

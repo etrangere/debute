@@ -288,3 +288,115 @@ $cache = new FilesystemCache();
             $data ['child'] = $cache->get('child');
             $data ['baby'] = $cache->get('baby');
 
+
+
+**API with reCaptcha bundle** -not succes but keep in mind
+
+composer require google/recaptcha "~1.1"
+
+this for html->
+
+<!-- Important to add the recaptcha api in your document -->
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+<form method="post" action="path/to/action" id="contact-form">
+  <input type="text" name="name" />
+  <input type="subject" name="subject" />
+  <textarea rows="5" name="message"></textarea>
+  <!-- Now add the widget with the sitekey that you retrieve in the registration -->
+  <div class="g-recaptcha" data-sitekey="mypublicdata-sitekey-ofthe-google-panel"></div>
+  <button type="submit">Send message</button>
+</form>
+
+ {# or if you're using twig #}
+
+{{form_start(form)}}
+   {{form_widget(form.name)}}
+   {{form_widget(form.subject)}}
+   {{form_widget(form.message)}}
+   <!-- Now add the widget with the sitekey that you retrieve in the registration --> 
+   <div class="g-recaptcha" data-sitekey="mypublicdata-sitekey-ofthe-google-panel"></div>
+
+   {{form_widget(form.submit)}}
+{{form_end(form)}}
+
+
+this for controller ->
+
+use Symfony\Component\HttpFoundation\Request; // Handle the request in the controller
+use ReCaptcha\ReCaptcha; // Include the recaptcha lib
+
+public function mysubmitedAction(Request $request){
+  $recaptcha = new ReCaptcha('here-is-the-secret-key-that-no-one-but-you-shouldKnow');
+  $resp = $recaptcha->verify($request->request->get('g-recaptcha-response'), $request->getClientIp());
+
+  if (!$resp->isSuccess()) {
+    // Do something if the submit wasn't valid ! Use the message to show something
+    $message = "The reCAPTCHA wasn't entered correctly. Go back and try it again." . "(reCAPTCHA said: " . $resp->error . ")";
+  }else{
+    // Everything works good ;) your contact has been saved.
+  }
+}
+
+but it not complite
+so here is working solution without bundle
+
+
+        if ($form->isSubmitted()) {
+
+            $form_data = $form->getData();
+            $data['form'] = [];
+            $data ['form'] = $form_data;
+            $contact_email = $form_data['contact_email'];
+            $contact_subject = $form_data['contact_subject'];
+            $contact_message = $form_data['contact_message'];
+
+            $secure_key = "6LcFNIUUAAAAAFYY4RjIMo9a9OAR3QokdNJQOWcG";
+            $response_key = $request->get('g-recaptcha-response');
+            $contact_ip = $request->getClientIp();
+            $url="https://www.google.com/recaptcha/api/siteverify?secret=$secure_key&response=$response_key&remoteip=$contact_ip";
+            $response = \file_get_contents($url);
+            $response = json_decode($response);
+
+
+            var_dump($response);
+
+            if ($response->success){ the remaining code + else if not succes}
+
+
+
+**API google map**
+
+<style>
+   /* Set the size of the div element that contains the map */
+     #map {
+   height: 400px;  /* The height is 400 pixels */
+   width: 100%;  /* The width is the width of the web page */
+   }
+</style>
+
+<script>
+        // Initialize and add the map
+        function initMap() {
+            // The location of Uluru 40.743022, -73.996508
+            var uluru = {lat: 40.743022, lng: -73.996508};
+            // The map, centered at Uluru
+            var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 4, center: uluru});
+            // The marker, positioned at Uluru
+            var marker = new google.maps.Marker({position: uluru, map: map});
+        }
+</script>
+
+<script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhu2ghNY3uQubhWnDMY3sUS0135x9FdLc&callback=initMap">
+    </script>
+
+
+**TCPDF bundle for pdf generation**
+
+
+
+
+
+
