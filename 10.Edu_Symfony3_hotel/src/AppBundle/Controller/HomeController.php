@@ -277,6 +277,9 @@ class HomeController extends Controller
             $date_in = $data['from'];
             $date_out = $data['to'];
 
+            $cache = new FilesystemCache();
+            $cache->set('email', $form_data['email']);
+
             $cache->deleteMultiple(array('room_type','adult','child', 'baby',));
 
             return $this->redirect($this->generateUrl('book_room', array(
@@ -295,11 +298,20 @@ class HomeController extends Controller
 
     public function confirmation()
     {
+        $cache = new FilesystemCache();
+        $email = $cache->get('email');
 
 
 
+        $client = $this->getDoctrine()
+            ->getRepository('AppBundle:Client')
+            ->findOneBy(array('email' => $email));
+       // var_dump($client);
 
-        return $this->render("home/confirmation.html.twig");
+        $data['client']= $client;
+
+
+        return $this->render("home/confirmation.html.twig",$data);
 
     }
 

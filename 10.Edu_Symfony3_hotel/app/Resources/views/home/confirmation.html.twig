@@ -5,6 +5,7 @@
 
 {% block body %}
     {{ dump() }}
+
     <div class="container-fluid">
         <link rel="stylesheet" href="{{ asset('css/progresbar.css') }}">
         <br /><br />
@@ -19,4 +20,10 @@
     <h3 align="center">Thank you for your trust!</h3>
 
 
+    <a class='north' href="{{ asset('bundles/TP/Resume.pdf') }}"
+       target="_blank" title="Download.pdf">
+        <img src="{{ asset('bundles/TP/images/icn-save.jpg') }}"
+             alt="Download the pdf version" /></a>
+
+    $cache->delete('email');
 {% endblock %}

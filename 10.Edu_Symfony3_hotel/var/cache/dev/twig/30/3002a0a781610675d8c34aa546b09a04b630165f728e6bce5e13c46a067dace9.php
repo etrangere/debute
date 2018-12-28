@@ -53,9 +53,10 @@ class __TwigTemplate_dc02ced55c2a590c234fc53d10f90d8f0cfe507bbd4ff6de3298f1afb4e
         echo "    ";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context);
         echo "
+
     <div class=\"container-fluid\">
         <link rel=\"stylesheet\" href=\"";
-        // line 9
+        // line 10
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/progresbar.css"), "html", null, true);
         echo "\">
         <br /><br />
@@ -70,6 +71,18 @@ class __TwigTemplate_dc02ced55c2a590c234fc53d10f90d8f0cfe507bbd4ff6de3298f1afb4e
     <h3 align=\"center\">Thank you for your trust!</h3>
 
 
+    <a class='north' href=\"";
+        // line 23
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/TP/Resume.pdf"), "html", null, true);
+        echo "\"
+       target=\"_blank\" title=\"Download.pdf\">
+        <img src=\"";
+        // line 25
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/TP/images/icn-save.jpg"), "html", null, true);
+        echo "\"
+             alt=\"Download the pdf version\" /></a>
+
+    \$cache->delete('email');
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -91,7 +104,7 @@ class __TwigTemplate_dc02ced55c2a590c234fc53d10f90d8f0cfe507bbd4ff6de3298f1afb4e
 
     public function getDebugInfo()
     {
-        return array (  59 => 9,  53 => 7,  44 => 6,  15 => 1,);
+        return array (  81 => 25,  76 => 23,  60 => 10,  53 => 7,  44 => 6,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -103,6 +116,7 @@ class __TwigTemplate_dc02ced55c2a590c234fc53d10f90d8f0cfe507bbd4ff6de3298f1afb4e
 
 {% block body %}
     {{ dump() }}
+
     <div class=\"container-fluid\">
         <link rel=\"stylesheet\" href=\"{{ asset('css/progresbar.css') }}\">
         <br /><br />
@@ -117,6 +131,12 @@ class __TwigTemplate_dc02ced55c2a590c234fc53d10f90d8f0cfe507bbd4ff6de3298f1afb4e
     <h3 align=\"center\">Thank you for your trust!</h3>
 
 
+    <a class='north' href=\"{{ asset('bundles/TP/Resume.pdf') }}\"
+       target=\"_blank\" title=\"Download.pdf\">
+        <img src=\"{{ asset('bundles/TP/images/icn-save.jpg') }}\"
+             alt=\"Download the pdf version\" /></a>
+
+    \$cache->delete('email');
 {% endblock %}
 ", ":home:confirmation.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/confirmation.html.twig");
     }
