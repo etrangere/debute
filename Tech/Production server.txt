@@ -292,6 +292,8 @@ chmod -R 755 /var/ww //for production
 
 global variable definition 
 
+sudo nano /etc/apache2/sites-enabled/000-default.conf//default root 
+
 sudo nano /etc/apache2/apache2.conf
 
 ServerName localhost or localhost:80/81 //for dev purposes only if no real ip adress or domain name
