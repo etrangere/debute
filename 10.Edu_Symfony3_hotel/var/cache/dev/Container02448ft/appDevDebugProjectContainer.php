@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerLhw3qi8;
+namespace Container02448ft;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -1990,8 +1990,8 @@ class appDevDebugProjectContainer extends Container
             'mailer_transport' => 'smtp',
             'mailer_user' => 'g.khachatrian2016@free.fr',
             'mailer_password' => 'Smdilia2012@',
-            'mailer_encryption' => 'tsl',
             'secret' => 'f273774016dfd24080ceffdb467c2a22c2d3c602',
+            'mailer_host' => 'smtp.free.fr',
             'locale' => 'en',
             'fragment.renderer.hinclude.global_template' => NULL,
             'fragment.path' => '/_fragment',

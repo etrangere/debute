@@ -106,8 +106,8 @@
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_user">g.khachatrian2016@free.fr</parameter>
     <parameter key="mailer_password">Smdilia2012@</parameter>
-    <parameter key="mailer_encryption">tsl</parameter>
     <parameter key="secret">f273774016dfd24080ceffdb467c2a22c2d3c602</parameter>
+    <parameter key="mailer_host">smtp.free.fr</parameter>
     <parameter key="locale">en</parameter>
     <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
     <parameter key="fragment.path">/_fragment</parameter>

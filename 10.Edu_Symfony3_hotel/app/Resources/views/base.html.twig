@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('pickadate/lib/themes/default.css') }}">
         <link rel="stylesheet" href="{{ asset('pickadate/lib/themes/default.date.css') }}">
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
     <body>
     {% block top_bar %}
@@ -55,12 +54,8 @@
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('pickadate/lib/picker.js') }}"></script>
         <script src="{{ asset('pickadate/lib/picker.date.js') }}"></script>
-
-
-
+        <script src='https://www.google.com/recaptcha/api.js'></script>
     <script>
-
-
         $('.datepicker').pickadate(
             {
                 //format: 'yyyy-mm-dd',
@@ -72,10 +67,6 @@
             }
         );
 
-
-
     </script>
-
-
     </body>
 </html>

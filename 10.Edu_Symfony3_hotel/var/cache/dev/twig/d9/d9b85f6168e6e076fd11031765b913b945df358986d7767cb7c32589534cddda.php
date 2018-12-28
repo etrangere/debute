@@ -40,7 +40,7 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
 
     }
 
-    // line 3
+    // line 5
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -49,15 +49,16 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
+        // line 6
         echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context);
         echo "
+
 
     <div align=\"center\">
        <h2>Contact Information</h2>
        <p>198 West 21th Street,Suite 721 New York NY 10016</p>
        <p>Tel:+ 1235 1155 98</p>
-       <p>Email: <a href=\"mailto:g.khachatrian.job@gmail.com?Subject=contact\" >g.khachatrian@free.fr</a> </p></center>
+       <p>Email: <a href=\"mailto:g.khachatrian@free.fr?Subject=contact\" >g.khachatrian@free.fr</a> </p></center>
     </div>
 
     <div class=\"container\">
@@ -71,15 +72,16 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
    <div align=\"center\" style=\"color: darkorange\" id=\"message\">
 
        ";
-        // line 23
-        echo twig_escape_filter($this->env, (((isset($context["msg"]) || array_key_exists("msg", $context))) ? ((isset($context["msg"]) || array_key_exists("msg", $context) ? $context["msg"] : (function () { throw new Twig_Error_Runtime('Variable "msg" does not exist.', 23, $this->source); })())) : ("Send status")), "html", null, true);
+        // line 26
+        echo twig_escape_filter($this->env, (((isset($context["msg"]) || array_key_exists("msg", $context))) ? ((isset($context["msg"]) || array_key_exists("msg", $context) ? $context["msg"] : (function () { throw new Twig_Error_Runtime('Variable "msg" does not exist.', 26, $this->source); })())) : ("Send status")), "html", null, true);
+        echo twig_escape_filter($this->env, (((isset($context["message"]) || array_key_exists("message", $context))) ? ((isset($context["message"]) || array_key_exists("message", $context) ? $context["message"] : (function () { throw new Twig_Error_Runtime('Variable "message" does not exist.', 26, $this->source); })())) : ("")), "html", null, true);
         echo "
    </div>
     <div class=\"site-section\" align=\"center\">
         <div class=\"container\">
             <div class=\"row block-9\">
                 <div class=\"col-md-6 pr-md-5\">
-                    <form action=\"?\" method=\"post\">
+                    <form  method=\"post\"  action=\"\" id=\"contact-form\">
 
                         <div class=\"form-group\">
                             <input type=\"text\" id=\"contact_email\" name=\"form[contact_email]\" onclick=\"myFunction()\" style=\"width: 60%\" placeholder=\"Your Email\" required>
@@ -91,11 +93,9 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
                             <textarea id=\"contact_message\" name=\"form[contact_message]\" onclick=\"myFunction()\" cols=\"30\" rows=\"8\"  style=\"width: 40%\" placeholder=\"Message\" required></textarea>
                         </div>
                         <div class=\"form-group\">
-
-                            <div class=\"g-recaptcha\" data-sitekey=\"your_site_key\"></div>
-                            <br/>
-                            <a  href=\"#\"><input align=\"center\" type=\"submit\" class=\"button\"  value=\"SEND MESSAGE\"></a>
+                            <a  href=\"#\"><input align=\"center\" id=\"send-message\" type=\"submit\" class=\"button\"  value=\"SEND MESSAGE\"></a>
                         </div>
+                        <div class=\"g-recaptcha\" data-sitekey=\"6LcFNIUUAAAAABRFJJut0NyDtuSgkXPKHr1xkv5s\"></div>
                     </form>
                 </div>
             </div>
@@ -111,7 +111,6 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
     </div>
 
     <script>
-
         function myFunction() {
             var x = document.getElementById(\"message\");
 
@@ -127,7 +126,8 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
         }
-    </script
+    </script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -149,21 +149,24 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
 
     public function getDebugInfo()
     {
-        return array (  75 => 23,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  76 => 26,  53 => 6,  44 => 5,  15 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
 
+
+
 {% block body %}
 {{ dump() }}
+
 
     <div align=\"center\">
        <h2>Contact Information</h2>
        <p>198 West 21th Street,Suite 721 New York NY 10016</p>
        <p>Tel:+ 1235 1155 98</p>
-       <p>Email: <a href=\"mailto:g.khachatrian.job@gmail.com?Subject=contact\" >g.khachatrian@free.fr</a> </p></center>
+       <p>Email: <a href=\"mailto:g.khachatrian@free.fr?Subject=contact\" >g.khachatrian@free.fr</a> </p></center>
     </div>
 
     <div class=\"container\">
@@ -176,13 +179,13 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
     </div>
    <div align=\"center\" style=\"color: darkorange\" id=\"message\">
 
-       {{ msg is defined ? msg : 'Send status' }}
+       {{ msg is defined ? msg : 'Send status' }}{{ message is defined ? message : '' }}
    </div>
     <div class=\"site-section\" align=\"center\">
         <div class=\"container\">
             <div class=\"row block-9\">
                 <div class=\"col-md-6 pr-md-5\">
-                    <form action=\"?\" method=\"post\">
+                    <form  method=\"post\"  action=\"\" id=\"contact-form\">
 
                         <div class=\"form-group\">
                             <input type=\"text\" id=\"contact_email\" name=\"form[contact_email]\" onclick=\"myFunction()\" style=\"width: 60%\" placeholder=\"Your Email\" required>
@@ -194,11 +197,9 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
                             <textarea id=\"contact_message\" name=\"form[contact_message]\" onclick=\"myFunction()\" cols=\"30\" rows=\"8\"  style=\"width: 40%\" placeholder=\"Message\" required></textarea>
                         </div>
                         <div class=\"form-group\">
-
-                            <div class=\"g-recaptcha\" data-sitekey=\"your_site_key\"></div>
-                            <br/>
-                            <a  href=\"#\"><input align=\"center\" type=\"submit\" class=\"button\"  value=\"SEND MESSAGE\"></a>
+                            <a  href=\"#\"><input align=\"center\" id=\"send-message\" type=\"submit\" class=\"button\"  value=\"SEND MESSAGE\"></a>
                         </div>
+                        <div class=\"g-recaptcha\" data-sitekey=\"6LcFNIUUAAAAABRFJJut0NyDtuSgkXPKHr1xkv5s\"></div>
                     </form>
                 </div>
             </div>
@@ -214,7 +215,6 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
     </div>
 
     <script>
-
         function myFunction() {
             var x = document.getElementById(\"message\");
 
@@ -230,7 +230,8 @@ class __TwigTemplate_906703fa4fb8748439853b1bdda3e7818cea1f1cfd5be3c9e9ca14fc85c
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
         }
-    </script
+    </script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 {% endblock %}
 ", ":home:contact.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/contact.html.twig");
     }

@@ -22,30 +22,13 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use ReCaptcha\ReCaptcha; // Include the recaptcha lib
 
 
 
 
 class HomeController extends Controller
 {
-
-
-    # get success response from recaptcha and return it to controller
-    public function captchaverify($recaptcha){
-        $url = "https://www.google.com/recaptcha/api/siteverify";
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, array(
-            "secret"=>"6LeTXQgUAAAAALExcpzgCxWdnWjJcPDoMfK3oKGi","response"=>$recaptcha));
-        $response = curl_exec($ch);
-        curl_close($ch);
-        $data = json_decode($response);
-
-        return $data->success;
-    }
 
     //private $cache;
 
@@ -104,8 +87,9 @@ class HomeController extends Controller
             ->getForm();
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $this->captchaverify($request->get('g-recaptcha-response'))) {
 
+
+        if ($form->isSubmitted()) {
 
             $form_data = $form->getData();
             $data['form'] = [];
@@ -114,40 +98,49 @@ class HomeController extends Controller
             $contact_subject = $form_data['contact_subject'];
             $contact_message = $form_data['contact_message'];
 
+            $secure_key = "6LcFNIUUAAAAAFYY4RjIMo9a9OAR3QokdNJQOWcG";
+            $response_key = $request->get('g-recaptcha-response');
+            $contact_ip = $request->getClientIp();
+            $url="https://www.google.com/recaptcha/api/siteverify?secret=$secure_key&response=$response_key&remoteip=$contact_ip";
+            $response = \file_get_contents($url);
+            $response = json_decode($response);
 
-            $transport = new \Swift_SmtpTransport('smtp.free.fr',587,'tcp');
 
-            $mailer = new Swift_Mailer($transport);
+            var_dump($response);
+
+            if ($response->success){
 
 
-        $message = \Swift_Message::newInstance()
-            ->setSubject($contact_subject)
-            ->setFrom('g.khachatrian2016@free.fr')
-            ->setReplyTo($contact_email)
-            ->setTo('g.khachatrian@free.fr')
-            ->setContentType('text/html')
-            ->setBody($contact_message);
 
-       // var_dump($mailer);
+                $transport = new \Swift_SmtpTransport('smtp.free.fr',587,'tcp');
 
-            $result= $mailer->send($message);
-            $data['result'] = $result;
-            $data['msg'] = 'Envoi effectué avec succés';
+                $mailer = new Swift_Mailer($transport);
 
-            if($form->isSubmitted() &&  $form->isValid() && !$this->captchaverify($request->get('g-recaptcha-response'))){
+                $message = \Swift_Message::newInstance()
+                    ->setSubject($contact_subject)
+                    ->setFrom('g.khachatrian2016@free.fr')
+                    ->setReplyTo($contact_email)
+                    ->setTo('g.khachatrian@free.fr')
+                    ->setContentType('text/html')
+                    ->setBody($contact_message);
 
-                $this->addFlash(
-                    'error',
-                    'Captcha Require'
-                );
+                // var_dump($mailer);
+
+                $result= $mailer->send($message);
+                $data['result'] = $result;
+                $data['msg'] = 'Envoi effectué avec succés';
+
+                return $this->render("home/contact.html.twig",$data);
+
             }
-
-
-           return $this->render("home/contact.html.twig",$data);
+            else
+            {
+                $data['message'] = "The reCAPTCHA wasn't entered correctly. Go back and try it again.";
+                return $this->render("home/contact.html.twig",$data);
+            }
         }
 
         return $this->render("home/contact.html.twig");
-
 
     }
 

@@ -62,22 +62,21 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
         // line 11
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/themes/default.date.css"), "html", null, true);
         echo "\">
-        <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
     </head>
     <body>
     ";
-        // line 15
+        // line 14
         $this->displayBlock('top_bar', $context, $blocks);
-        // line 32
+        // line 31
         echo "    <noscript><h4 align=\"center\">For full functionality of this page it is necessary to enable JavaScript.
             Here are the <a href=\"http://www.enable-javascript.com\" target=\"_blank\">
                 instructions how to enable JavaScript in your web browser</a></h4></noscript>
     <br>
 
         ";
-        // line 37
+        // line 36
         $this->displayBlock('body', $context, $blocks);
-        // line 38
+        // line 37
         echo "    
 
     <div class=\"row column\">
@@ -92,38 +91,34 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
     </script>
 
         ";
-        // line 51
+        // line 50
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 52
+        // line 51
         echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/jquery.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 53
+        // line 52
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/what-input.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 54
+        // line 53
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/foundation.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 55
+        // line 54
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/app.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 56
+        // line 55
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 57
+        // line 56
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.date.js"), "html", null, true);
         echo "\"></script>
-
-
-
+        <script src='https://www.google.com/recaptcha/api.js'></script>
     <script>
-
-
         \$('.datepicker').pickadate(
             {
                 //format: 'yyyy-mm-dd',
@@ -135,11 +130,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
             }
         );
 
-
-
     </script>
-
-
     </body>
 </html>
 ";
@@ -186,7 +177,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
 
     }
 
-    // line 15
+    // line 14
     public function block_top_bar($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -195,26 +186,26 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "top_bar"));
 
-        // line 16
+        // line 15
         echo "        <!-- Start Top Bar -->
     <div class=\"top-bar\">
       <div class=\"row\">
         <div class=\"top-bar-left\">
           <ul class=\"dropdown menu\" data-dropdown-menu>
             <li><a href=\"";
-        // line 21
+        // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Home</a></li>
               <li><a href=\"";
-        // line 22
+        // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("about_us");
         echo "\">About us</a></li>
               <li><a href=\"";
-        // line 23
+        // line 22
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("location");
         echo "\">How to locate</a></li>
               <li><a href=\"";
-        // line 24
+        // line 23
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
         echo "\">Contact</a></li>
           </ul>
@@ -232,7 +223,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
 
     }
 
-    // line 37
+    // line 36
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -250,7 +241,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
 
     }
 
-    // line 51
+    // line 50
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -279,7 +270,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
 
     public function getDebugInfo()
     {
-        return array (  254 => 51,  236 => 37,  218 => 24,  214 => 23,  210 => 22,  206 => 21,  199 => 16,  190 => 15,  173 => 6,  155 => 5,  119 => 57,  115 => 56,  111 => 55,  107 => 54,  103 => 53,  98 => 52,  96 => 51,  81 => 38,  79 => 37,  72 => 32,  70 => 15,  63 => 11,  59 => 10,  55 => 9,  51 => 8,  46 => 7,  44 => 6,  40 => 5,  34 => 1,);
+        return array (  245 => 50,  227 => 36,  209 => 23,  205 => 22,  201 => 21,  197 => 20,  190 => 15,  181 => 14,  164 => 6,  146 => 5,  118 => 56,  114 => 55,  110 => 54,  106 => 53,  102 => 52,  97 => 51,  95 => 50,  80 => 37,  78 => 36,  71 => 31,  69 => 14,  63 => 11,  59 => 10,  55 => 9,  51 => 8,  46 => 7,  44 => 6,  40 => 5,  34 => 1,);
     }
 
     public function getSourceContext()
@@ -295,7 +286,6 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
         <link rel=\"stylesheet\" href=\"{{ asset('css/app.css') }}\">
         <link rel=\"stylesheet\" href=\"{{ asset('pickadate/lib/themes/default.css') }}\">
         <link rel=\"stylesheet\" href=\"{{ asset('pickadate/lib/themes/default.date.css') }}\">
-        <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
     </head>
     <body>
     {% block top_bar %}
@@ -341,12 +331,8 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
         <script src=\"{{ asset('js/app.js') }}\"></script>
         <script src=\"{{ asset('pickadate/lib/picker.js') }}\"></script>
         <script src=\"{{ asset('pickadate/lib/picker.date.js') }}\"></script>
-
-
-
+        <script src='https://www.google.com/recaptcha/api.js'></script>
     <script>
-
-
         \$('.datepicker').pickadate(
             {
                 //format: 'yyyy-mm-dd',
@@ -358,11 +344,7 @@ class __TwigTemplate_9cfdff2bab39d6524b94036abff54c9dd9f2d569a654053ed3de0d9163f
             }
         );
 
-
-
     </script>
-
-
     </body>
 </html>
 ", "base.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/base.html.twig");

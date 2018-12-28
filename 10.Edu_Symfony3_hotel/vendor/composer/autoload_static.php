@@ -54,6 +54,10 @@ class ComposerStaticInit8f16e9ff200ebb897755e6cf2d2fc1ac
             'Sensio\\Bundle\\DistributionBundle\\' => 33,
             'SensioLabs\\Security\\' => 20,
         ),
+        'R' => 
+        array (
+            'ReCaptcha\\' => 10,
+        ),
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
@@ -203,6 +207,10 @@ class ComposerStaticInit8f16e9ff200ebb897755e6cf2d2fc1ac
         'SensioLabs\\Security\\' => 
         array (
             0 => __DIR__ . '/..' . '/sensiolabs/security-checker/SensioLabs/Security',
+        ),
+        'ReCaptcha\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/google/recaptcha/src/ReCaptcha',
         ),
         'Psr\\SimpleCache\\' => 
         array (

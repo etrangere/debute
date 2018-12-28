@@ -30,6 +30,7 @@ final class Versions
   'doctrine/persistence' => 'v1.1.0@c0f1c17602afc18b4cbd8e1c8125f264c9cf7d38',
   'doctrine/reflection' => 'v1.0.0@02538d3f95e88eb397a5f86274deb2c6175c2ab6',
   'fig/link-util' => '1.0.0@1a07821801a148be4add11ab0603e4af55a72fac',
+  'google/recaptcha' => '1.2.1@e7add3be59211482ecdb942288f52da64a35f61a',
   'incenteev/composer-parameter-handler' => 'v2.1.3@933c45a34814f27f2345c11c37d46b3ca7303550',
   'jdorn/sql-formatter' => 'v1.2.17@64990d96e0959dff8e059dfcdc1af130728d92bc',
   'monolog/monolog' => '1.24.0@bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266',
@@ -64,7 +65,7 @@ final class Versions
   'zendframework/zend-eventmanager' => '3.2.1@a5e2583a211f73604691586b8406ff7296a946dd',
   'sensio/generator-bundle' => 'v3.1.7@28cbaa244bd0816fd8908b93f90380bcd7b67a65',
   'symfony/phpunit-bridge' => 'v3.4.19@2155067dfc73e0e77dbc26f236af17e4df552de5',
-  'bernardopineda/landon_app' => 'dev-master@f7bcbc7870fbfa9e843b8930bf9e69d93a4423bb',
+  'bernardopineda/landon_app' => 'dev-master@18105e94ba29fdf3617cb428db15d9e4fc275f3c',
 );
 
     private function __construct()
