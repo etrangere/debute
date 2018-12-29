@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Hotel App{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
@@ -9,6 +10,7 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('pickadate/lib/themes/default.css') }}">
         <link rel="stylesheet" href="{{ asset('pickadate/lib/themes/default.date.css') }}">
+
     </head>
     <body>
     {% block top_bar %}

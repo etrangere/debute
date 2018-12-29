@@ -41,7 +41,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
     }
 
-    // line 3
+    // line 5
     public function block_top_bar($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -58,7 +58,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
     }
 
-    // line 6
+    // line 8
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -67,16 +67,16 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 7
+        // line 9
         echo "
     ";
-        // line 8
+        // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context);
         echo "
 
     <div class=\"container-fluid\">
         <link rel=\"stylesheet\" href=\"";
-        // line 11
+        // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/progresbar.css"), "html", null, true);
         echo "\">
         <br /><br />
@@ -115,15 +115,15 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                     <select id=\"room_type\"  onchange=\"myFunction1('room_type')\" name=\"form[room_type]\" style=\"border-color: #00ace6\"  required>
                         <option selected=\"selected\" >Choose</option>
                         <option id=\"room_type1\" onchange=\"myFunction1('room_type1')\" value=\"";
-        // line 47
+        // line 49
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
         echo "\" >Single</option>
                         <option id=\"room_type2\" onchange=\"myFunction1('room_type2')\" value=\"";
-        // line 48
+        // line 50
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
         echo "\" >Double</option>
                         <option id=\"room_type3\" onchange=\"myFunction1('room_type3')\" value=\"";
-        // line 49
+        // line 51
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
         echo "\" >Triple</option>
                     </select>
@@ -137,15 +137,15 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                     <select id=\"adult\" onchange=\"myFunction1('adult')\" name=\"form[adult]\" style=\"border-color: #00ace6\"  required>
                         <option selected=\"selected\" >Choose</option>
                         <option id=\"adult1\" onchange=\"myFunction1('adult1')\" value=\"";
-        // line 60
+        // line 62
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
         echo "\" disabled=\"disabled\">1 person</option>
                         <option id=\"adult2\" onchange=\"myFunction1('adult2')\" value=\"";
-        // line 61
+        // line 63
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
         echo "\" disabled=\"disabled\">2 persons</option>
                         <option id=\"adult3\" onchange=\"myFunction1('adult3')\" value=\"";
-        // line 62
+        // line 64
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
         echo "\" disabled=\"disabled\">3 persons</option>
                     </select>
@@ -159,15 +159,15 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                     <select id=\"child\" onchange=\"myFunction1('child')\" name=\"form[child]\" style=\"border-color: #00ace6\" >
                         <option selected=\"selected\" value=\"0\">Choose</option>
                         <option id=\"child1\" onchange=\"myFunction1('child1')\" value=\"";
-        // line 73
+        // line 75
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
         echo "\" disabled=\"disabled\">1 child</option>
                         <option id=\"child2\" onchange=\"myFunction1('child2')\" value=\"";
-        // line 74
+        // line 76
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
         echo "\" disabled=\"disabled\">2 childs</option>
                         <option id=\"child3\" onchange=\"myFunction1('adult3')\" value=\"";
-        // line 75
+        // line 77
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
         echo "\" disabled=\"disabled\">3 childs</option>
 
@@ -181,15 +181,15 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
                     <select id=\"baby\" onchange=\"myFunction1('baby')\" name=\"form[baby]\" style=\"border-color: #00ace6\">
                         <option selected=\"selected\" value=\"0\">Choose</option>
                         <option id=\"baby1\" onchange=\"myFunction1('baby1')\" value=\"";
-        // line 86
+        // line 88
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 1), "html", null, true);
         echo "\" disabled=\"disabled\">1 baby</option>
                         <option id=\"baby2\" onchange=\"myFunction1('baby2')\" value=\"";
-        // line 87
+        // line 89
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 2), "html", null, true);
         echo "\" disabled=\"disabled\">2 babies</option>
                         <option id=\"baby3\" onchange=\"myFunction1('baby3')\" value=\"";
-        // line 88
+        // line 90
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, 3), "html", null, true);
         echo "\" disabled=\"disabled\">3 babies</option>
 
@@ -215,26 +215,26 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
             <tbody >
             <div class=\"row\" id=\"offer_table\">
                 ";
-        // line 111
+        // line 113
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new Twig_Error_Runtime('Variable "rooms" does not exist.', 111, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new Twig_Error_Runtime('Variable "rooms" does not exist.', 113, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["room"]) {
-            // line 112
+            // line 114
             echo "                    <tr >
                         <td>";
-            // line 113
+            // line 115
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "description", array()), "html", null, true);
             echo "</td>
                         <td>";
-            // line 114
+            // line 116
             echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["room"], "roomtype", array()) . " ROOM"), "html", null, true);
             echo "</td>
                         <td>";
-            // line 115
+            // line 117
             echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["room"], "price", array()) . " EUR"), "html", null, true);
             echo "</td>
                         <td><a class=\"button\"  href=\"";
-            // line 116
+            // line 118
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("booking", array("id_room" => twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "id", array())))), "html", null, true);
             echo "\">CHOOSE</a></td>
                     </tr>
@@ -243,7 +243,7 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['room'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 119
+        // line 121
         echo "            </div>
             </tbody>
         </table>
@@ -341,12 +341,14 @@ class __TwigTemplate_8dfb63f5ce25e0f4c3d0cf69d8e38328ae72f7f6492d7604d55cba7dfb8
 
     public function getDebugInfo()
     {
-        return array (  247 => 119,  238 => 116,  234 => 115,  230 => 114,  226 => 113,  223 => 112,  219 => 111,  193 => 88,  189 => 87,  185 => 86,  171 => 75,  167 => 74,  163 => 73,  149 => 62,  145 => 61,  141 => 60,  127 => 49,  123 => 48,  119 => 47,  80 => 11,  74 => 8,  71 => 7,  62 => 6,  45 => 3,  15 => 1,);
+        return array (  247 => 121,  238 => 118,  234 => 117,  230 => 116,  226 => 115,  223 => 114,  219 => 113,  193 => 90,  189 => 89,  185 => 88,  171 => 77,  167 => 76,  163 => 75,  149 => 64,  145 => 63,  141 => 62,  127 => 51,  123 => 50,  119 => 49,  80 => 13,  74 => 10,  71 => 9,  62 => 8,  45 => 5,  15 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
+
+
 
 {% block top_bar %}{% endblock %}
 

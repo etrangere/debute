@@ -21,8 +21,20 @@
 <hr>
     <h2 align="center">Booking summary!</h2>
 
-<div>
-    <table border="1" class="container-fluid" style="padding: inherit" id="printTable">
+    <div align="center">
+    <input  type="button" class="button" value="Print" onclick="printData('print')"/>
+    <input  type="button" class="button" value="Download PDF" />
+    </div>
+
+
+
+
+<div id="print"  style="padding: 1%">
+
+  <fieldset>
+      <legend align="center"><h5>Welcome to Hotel de France</h5></legend>
+
+       <table class="medium-10" align="center" border="1">
 
         <tr>
             <th scope="row">Referance</th>
@@ -81,10 +93,16 @@
             <td>{{client.email}}</td>
         </tr>
         <tr>
+            <th scope="row">Tel:</th>
+            <td>{{client.email}}</td>
+        </tr>
+        <tr>
             <th scope="row">TOTAL</th>
             <td>{{client.name is defined ? client.name : '' }}</td>
         </tr>
-    </table>
+      </table>
+  </fieldset>
+
 </div>
 
     <!--
@@ -93,8 +111,16 @@
         <img src="{{ asset('bundles/TP/images/icn-save.jpg') }}"
              alt="Download the pdf version" /></a>
 -->
-
-
+<script>
+    function printData()
+    {
+    var divToPrint=document.getElementById("print");
+    newWin= window.open("print");
+    newWin.document.write(divToPrint.outerHTML);
+    newWin.print();
+    newWin.close();
+    }
+</script>
 
 
 {% endblock %}

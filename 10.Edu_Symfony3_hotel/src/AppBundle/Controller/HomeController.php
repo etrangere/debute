@@ -296,11 +296,11 @@ class HomeController extends Controller
 
     public function confirmation()
     {
+
+
+      //get from cache all info for client and actual reservation
         $cache = new FilesystemCache();
         $email = $cache->get('email');
-
-
-
         $client = $this->getDoctrine()
             ->getRepository('AppBundle:Client')
             ->findOneBy(array('email' => $email));
@@ -308,9 +308,34 @@ class HomeController extends Controller
         $reservation_id = $this->getDoctrine()
             ->getRepository('AppBundle:Reservation')
             ->findOneBy(array('client' => $client));
-       // var_dump($client);
+
         $data['reservation']= $reservation_id;
         $data['client']= $client;
+
+
+
+       /*
+
+        $transport = new \Swift_SmtpTransport('smtp.free.fr',587,'tcp');
+
+        $mailer = new Swift_Mailer($transport);
+
+        $message = \Swift_Message::newInstance()
+            ->setSubject($contact_subject)
+            ->setFrom('g.khachatrian2016@free.fr')
+            ->setReplyTo($contact_email)
+            ->setTo('g.khachatrian@free.fr')
+            ->setContentType('text/html')
+            ->setBody($contact_message);
+
+      
+        $result= $mailer->send($message);
+        $data['result'] = $result;
+        $data['msg'] = 'Envoi effectué avec succés';
+*/
+
+
+
 
         //$cache->delete('email');
         return $this->render("home/confirmation.html.twig",$data);

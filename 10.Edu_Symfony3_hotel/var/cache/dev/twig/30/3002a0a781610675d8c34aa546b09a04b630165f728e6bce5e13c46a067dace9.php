@@ -72,131 +72,160 @@ class __TwigTemplate_dc02ced55c2a590c234fc53d10f90d8f0cfe507bbd4ff6de3298f1afb4e
 <hr>
     <h2 align=\"center\">Booking summary!</h2>
 
-<div>
-    <table border=\"1\" class=\"container-fluid\" style=\"padding: inherit\" id=\"printTable\">
+    <div align=\"center\">
+    <input  type=\"button\" class=\"button\" value=\"Print\" onclick=\"printData('print')\"/>
+    <input  type=\"button\" class=\"button\" value=\"Download PDF\" />
+    </div>
+
+
+
+
+<div id=\"print\"  style=\"padding: 1%\">
+
+  <fieldset>
+      <legend align=\"center\"><h5>Welcome to Hotel de France</h5></legend>
+
+       <table class=\"medium-10\" align=\"center\" border=\"1\">
 
         <tr>
             <th scope=\"row\">Referance</th>
             <td>";
-        // line 29
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 29, $this->source); })()), "id", array()), "html", null, true);
+        // line 41
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 41, $this->source); })()), "id", array()), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th scope=\"row\">First name</th>
             <td>";
-        // line 33
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "name", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 33, $this->source); })()), "name", array())) : ("")), "html", null, true);
+        // line 45
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "name", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 45, $this->source); })()), "name", array())) : ("")), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th scope=\"row\">Last name</th>
             <td>";
-        // line 37
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "lastname", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 37, $this->source); })()), "lastname", array())) : ("")), "html", null, true);
+        // line 49
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "lastname", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 49, $this->source); })()), "lastname", array())) : ("")), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th scope=\"row\">Check-In</th>
             <td>";
-        // line 41
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new Twig_Error_Runtime('Variable "reservation" does not exist.', 41, $this->source); })()), "dateIn", array())), "html", null, true);
+        // line 53
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new Twig_Error_Runtime('Variable "reservation" does not exist.', 53, $this->source); })()), "dateIn", array())), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th scope=\"row\">Check-Out</th>
             <td>";
-        // line 45
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new Twig_Error_Runtime('Variable "reservation" does not exist.', 45, $this->source); })()), "dateOut", array())), "html", null, true);
+        // line 57
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new Twig_Error_Runtime('Variable "reservation" does not exist.', 57, $this->source); })()), "dateOut", array())), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th scope=\"row\">Room type</th>
             <td>";
-        // line 49
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "roomtype", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 49, $this->source); })()), "roomtype", array())) : ("")), "html", null, true);
+        // line 61
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "roomtype", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 61, $this->source); })()), "roomtype", array())) : ("")), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th scope=\"row\">Adult</th>
             <td>";
-        // line 53
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "adult", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 53, $this->source); })()), "adult", array())) : ("")), "html", null, true);
+        // line 65
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "adult", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 65, $this->source); })()), "adult", array())) : ("")), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th scope=\"row\">Child</th>
             <td>";
-        // line 57
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "child", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 57, $this->source); })()), "child", array())) : ("")), "html", null, true);
+        // line 69
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "child", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 69, $this->source); })()), "child", array())) : ("")), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th scope=\"row\">Baby</th>
             <td>";
-        // line 61
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "baby", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 61, $this->source); })()), "baby", array())) : ("")), "html", null, true);
+        // line 73
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "baby", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 73, $this->source); })()), "baby", array())) : ("")), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th scope=\"row\">Address</th>
             <td>";
-        // line 65
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "address", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 65, $this->source); })()), "address", array())) : ("")), "html", null, true);
+        // line 77
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "address", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 77, $this->source); })()), "address", array())) : ("")), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th scope=\"row\">ZipCode</th>
             <td>";
-        // line 69
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "zipcode", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 69, $this->source); })()), "zipcode", array())) : ("")), "html", null, true);
+        // line 81
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "zipcode", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 81, $this->source); })()), "zipcode", array())) : ("")), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th scope=\"row\">City</th>
             <td>";
-        // line 73
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "city", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 73, $this->source); })()), "city", array())) : ("")), "html", null, true);
+        // line 85
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "city", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 85, $this->source); })()), "city", array())) : ("")), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th scope=\"row\">State</th>
             <td>";
-        // line 77
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "state", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 77, $this->source); })()), "state", array())) : ("")), "html", null, true);
+        // line 89
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "state", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 89, $this->source); })()), "state", array())) : ("")), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th scope=\"row\">Email</th>
             <td>";
-        // line 81
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 81, $this->source); })()), "email", array()), "html", null, true);
+        // line 93
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 93, $this->source); })()), "email", array()), "html", null, true);
+        echo "</td>
+        </tr>
+        <tr>
+            <th scope=\"row\">Tel:</th>
+            <td>";
+        // line 97
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 97, $this->source); })()), "email", array()), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th scope=\"row\">TOTAL</th>
             <td>";
-        // line 85
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "name", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 85, $this->source); })()), "name", array())) : ("")), "html", null, true);
+        // line 101
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "name", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 101, $this->source); })()), "name", array())) : ("")), "html", null, true);
         echo "</td>
         </tr>
-    </table>
+      </table>
+  </fieldset>
+
 </div>
 
     <!--
     <a class='north' href=\"";
-        // line 91
+        // line 109
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/TP/Resume.pdf"), "html", null, true);
         echo "\"
        target=\"_blank\" title=\"Download.pdf\">
         <img src=\"";
-        // line 93
+        // line 111
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/TP/images/icn-save.jpg"), "html", null, true);
         echo "\"
              alt=\"Download the pdf version\" /></a>
 -->
-
-
+<script>
+    function printData()
+    {
+    var divToPrint=document.getElementById(\"print\");
+    newWin= window.open(\"print\");
+    newWin.document.write(divToPrint.outerHTML);
+    newWin.print();
+    newWin.close();
+    }
+</script>
 
 
 ";
@@ -220,7 +249,7 @@ class __TwigTemplate_dc02ced55c2a590c234fc53d10f90d8f0cfe507bbd4ff6de3298f1afb4e
 
     public function getDebugInfo()
     {
-        return array (  194 => 93,  189 => 91,  180 => 85,  173 => 81,  166 => 77,  159 => 73,  152 => 69,  145 => 65,  138 => 61,  131 => 57,  124 => 53,  117 => 49,  110 => 45,  103 => 41,  96 => 37,  89 => 33,  82 => 29,  60 => 10,  53 => 7,  44 => 6,  15 => 1,);
+        return array (  215 => 111,  210 => 109,  199 => 101,  192 => 97,  185 => 93,  178 => 89,  171 => 85,  164 => 81,  157 => 77,  150 => 73,  143 => 69,  136 => 65,  129 => 61,  122 => 57,  115 => 53,  108 => 49,  101 => 45,  94 => 41,  60 => 10,  53 => 7,  44 => 6,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -248,8 +277,20 @@ class __TwigTemplate_dc02ced55c2a590c234fc53d10f90d8f0cfe507bbd4ff6de3298f1afb4e
 <hr>
     <h2 align=\"center\">Booking summary!</h2>
 
-<div>
-    <table border=\"1\" class=\"container-fluid\" style=\"padding: inherit\" id=\"printTable\">
+    <div align=\"center\">
+    <input  type=\"button\" class=\"button\" value=\"Print\" onclick=\"printData('print')\"/>
+    <input  type=\"button\" class=\"button\" value=\"Download PDF\" />
+    </div>
+
+
+
+
+<div id=\"print\"  style=\"padding: 1%\">
+
+  <fieldset>
+      <legend align=\"center\"><h5>Welcome to Hotel de France</h5></legend>
+
+       <table class=\"medium-10\" align=\"center\" border=\"1\">
 
         <tr>
             <th scope=\"row\">Referance</th>
@@ -308,10 +349,16 @@ class __TwigTemplate_dc02ced55c2a590c234fc53d10f90d8f0cfe507bbd4ff6de3298f1afb4e
             <td>{{client.email}}</td>
         </tr>
         <tr>
+            <th scope=\"row\">Tel:</th>
+            <td>{{client.email}}</td>
+        </tr>
+        <tr>
             <th scope=\"row\">TOTAL</th>
             <td>{{client.name is defined ? client.name : '' }}</td>
         </tr>
-    </table>
+      </table>
+  </fieldset>
+
 </div>
 
     <!--
@@ -320,8 +367,16 @@ class __TwigTemplate_dc02ced55c2a590c234fc53d10f90d8f0cfe507bbd4ff6de3298f1afb4e
         <img src=\"{{ asset('bundles/TP/images/icn-save.jpg') }}\"
              alt=\"Download the pdf version\" /></a>
 -->
-
-
+<script>
+    function printData()
+    {
+    var divToPrint=document.getElementById(\"print\");
+    newWin= window.open(\"print\");
+    newWin.document.write(divToPrint.outerHTML);
+    newWin.print();
+    newWin.close();
+    }
+</script>
 
 
 {% endblock %}
