@@ -106,7 +106,7 @@ class HomeController extends Controller
             $response = json_decode($response);
 
 
-            var_dump($response);
+           // var_dump($response);
 
             if ($response->success){
 
@@ -185,7 +185,7 @@ class HomeController extends Controller
 
             $data['dates']['from'] = $form_data['from'];
             $data['dates']['to'] = $form_data['to'];
-            var_dump($data);
+            //var_dump($data);
             $em=$this->getDoctrine()->getManager();
 
 
@@ -304,11 +304,15 @@ class HomeController extends Controller
         $client = $this->getDoctrine()
             ->getRepository('AppBundle:Client')
             ->findOneBy(array('email' => $email));
-       // var_dump($client);
 
+        $reservation_id = $this->getDoctrine()
+            ->getRepository('AppBundle:Reservation')
+            ->findOneBy(array('client' => $client));
+       // var_dump($client);
+        $data['reservation']= $reservation_id;
         $data['client']= $client;
 
-
+        //$cache->delete('email');
         return $this->render("home/confirmation.html.twig",$data);
 
     }
