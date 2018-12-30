@@ -26,7 +26,6 @@ use ReCaptcha\ReCaptcha; // Include the recaptcha lib
 
 
 
-
 class HomeController extends Controller
 {
 
@@ -290,11 +289,13 @@ class HomeController extends Controller
         return $this->render("home/front_booking.html.twig" ,$data);
     }
 
+
+
     /**
      * @Route("/confirmation", name="confirmation")
      **/
 
-    public function confirmation()
+    public function confirmation(Request $request)
     {
 
 
@@ -311,6 +312,9 @@ class HomeController extends Controller
 
         $data['reservation']= $reservation_id;
         $data['client']= $client;
+
+
+
 
 
 

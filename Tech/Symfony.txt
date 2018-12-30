@@ -393,7 +393,11 @@ so here is working solution without bundle
     </script>
 
 
-**TCPDF bundle for pdf generation**
+**TCPDF bundle for pdf generation** // check after
+
+**knplabs/knp-snappy-bundle** //for html to pdf
+
+
 
 
 
