@@ -18,6 +18,7 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="DoctrineCacheBundle">Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
+      <parameter key="WhiteOctoberTCPDFBundle">WhiteOctober\TCPDFBundle\WhiteOctoberTCPDFBundle</parameter>
       <parameter key="DoctrineMigrationsBundle">Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
@@ -69,6 +70,11 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">/var/www/10.Edu_Symfony3_hotel/src/AppBundle</parameter>
         <parameter key="namespace">AppBundle</parameter>
+      </parameter>
+      <parameter key="WhiteOctoberTCPDFBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/var/www/10.Edu_Symfony3_hotel/vendor/whiteoctober/tcpdf-bundle</parameter>
+        <parameter key="namespace">WhiteOctober\TCPDFBundle</parameter>
       </parameter>
       <parameter key="DoctrineMigrationsBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -341,6 +347,46 @@
     <parameter key="sensio_framework_extra.converter.doctrine.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter</parameter>
     <parameter key="sensio_framework_extra.converter.datetime.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter</parameter>
     <parameter key="sensio_framework_extra.view.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</parameter>
+    <parameter key="white_october_tcpdf.file">/var/www/10.Edu_Symfony3_hotel/app/../vendor/tecnickcom/tcpdf/tcpdf.php</parameter>
+    <parameter key="white_october_tcpdf.class">TCPDF</parameter>
+    <parameter key="white_october_tcpdf.tcpdf" type="collection">
+      <parameter key="k_title_magnification">2</parameter>
+      <parameter key="k_path_url">/var/www/10.Edu_Symfony3_hotel/app/../vendor/tecnickcom/tcpdf/</parameter>
+      <parameter key="k_path_main">/var/www/10.Edu_Symfony3_hotel/app/../vendor/tecnickcom/tcpdf/</parameter>
+      <parameter key="k_path_fonts">/var/www/10.Edu_Symfony3_hotel/app/../vendor/tecnickcom/tcpdf/fonts/</parameter>
+      <parameter key="k_path_cache">/var/www/10.Edu_Symfony3_hotel/var/cache/dev/tcpdf</parameter>
+      <parameter key="k_path_url_cache">/var/www/10.Edu_Symfony3_hotel/var/cache/dev/tcpdf</parameter>
+      <parameter key="k_path_images">/var/www/10.Edu_Symfony3_hotel/app/../vendor/tecnickcom/tcpdf/examples/images/</parameter>
+      <parameter key="k_blank_image">/var/www/10.Edu_Symfony3_hotel/app/../vendor/tecnickcom/tcpdf/examples/images/_blank.png</parameter>
+      <parameter key="k_cell_height_ratio">1.25</parameter>
+      <parameter key="k_small_ratio">0.66666666666667</parameter>
+      <parameter key="k_thai_topchars">true</parameter>
+      <parameter key="k_tcpdf_calls_in_html">false</parameter>
+      <parameter key="k_tcpdf_external_config">true</parameter>
+      <parameter key="k_tcpdf_throw_exception_error">true</parameter>
+      <parameter key="head_magnification">1.1</parameter>
+      <parameter key="pdf_page_format">A4</parameter>
+      <parameter key="pdf_page_orientation">P</parameter>
+      <parameter key="pdf_creator">TCPDF</parameter>
+      <parameter key="pdf_author">TCPDF</parameter>
+      <parameter key="pdf_header_title"></parameter>
+      <parameter key="pdf_header_string"></parameter>
+      <parameter key="pdf_header_logo"></parameter>
+      <parameter key="pdf_header_logo_width"></parameter>
+      <parameter key="pdf_unit">mm</parameter>
+      <parameter key="pdf_margin_header">5</parameter>
+      <parameter key="pdf_margin_footer">10</parameter>
+      <parameter key="pdf_margin_top">27</parameter>
+      <parameter key="pdf_margin_bottom">25</parameter>
+      <parameter key="pdf_margin_left">15</parameter>
+      <parameter key="pdf_margin_right">15</parameter>
+      <parameter key="pdf_font_name_main">helvetica</parameter>
+      <parameter key="pdf_font_size_main">10</parameter>
+      <parameter key="pdf_font_name_data">helvetica</parameter>
+      <parameter key="pdf_font_size_data">8</parameter>
+      <parameter key="pdf_font_monospaced">courier</parameter>
+      <parameter key="pdf_image_scale_ratio">1.25</parameter>
+    </parameter>
     <parameter key="doctrine_migrations.dir_name">/var/www/10.Edu_Symfony3_hotel/app/DoctrineMigrations</parameter>
     <parameter key="doctrine_migrations.namespace">Application\Migrations</parameter>
     <parameter key="doctrine_migrations.table_name">migration_versions</parameter>
@@ -1648,14 +1694,6 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
-        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
@@ -3558,6 +3596,10 @@
       <argument>null</argument>
       <argument>2</argument>
     </service>
+    <service id="white_october.tcpdf" class="WhiteOctober\TCPDFBundle\Controller\TCPDFController">
+      <file>/var/www/10.Edu_Symfony3_hotel/app/../vendor/tecnickcom/tcpdf/tcpdf.php</file>
+      <argument>TCPDF</argument>
+    </service>
     <service id="doctrine_migrations.diff_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsDiffDoctrineCommand">
       <tag name="console.command"/>
     </service>
@@ -4029,6 +4071,7 @@
     </service>
     <service id="Psr\Container\ContainerInterface" alias="service_container" public="false"/>
     <service id="Symfony\Component\DependencyInjection\ContainerInterface" alias="service_container" public="false"/>
+    <service id="WhiteOctober\TCPDFBundle\Controller\TCPDFController" alias="white_october.tcpdf"/>
     <service id="Symfony\Component\EventDispatcher\EventDispatcherInterface" alias="debug.event_dispatcher" public="false"/>
     <service id="Symfony\Component\HttpKernel\HttpKernelInterface" alias="http_kernel" public="false"/>
     <service id="Symfony\Component\HttpFoundation\RequestStack" alias="request_stack" public="false"/>

@@ -66,5 +66,7 @@ doctrine_cache:
             type: file_system
             file_system:
                 directory: /tmp/doctrine_cache
-
+white_october_tcpdf:
+    tcpdf:
+        k_title_magnification: 2
 

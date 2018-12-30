@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Controller;
+//namespace WhiteOctober;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\Cache\Simple\FilesystemCache;
@@ -23,7 +24,12 @@ use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use ReCaptcha\ReCaptcha; // Include the recaptcha lib
-
+use ReflectionClass;
+use TCPDF;
+use WhiteOctober\TCPDFBundle;
+use WhiteOctober;
+use WhiteOctober\TCPDFBundle\WhiteOctoberTCPDFBundle;
+use WhiteOctober\TCPDFBundle\DependencyInjection\WhiteOctoberTCPDFExtension;
 
 
 class HomeController extends Controller
@@ -316,6 +322,19 @@ class HomeController extends Controller
 
 
 
+        $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+
+
+// set document information
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor('Nicola Asuni');
+        $pdf->SetTitle('TCPDF Example 045');
+        $pdf->SetSubject('TCPDF Tutorial');
+        $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
+        $pdf->SetSubject('Your client');
+// set default header data
+
+        $pdf->Output('example_045.pdf', 'I');
 
 
        /*
@@ -342,7 +361,7 @@ class HomeController extends Controller
 
 
         //$cache->delete('email');
-        return $this->render("home/confirmation.html.twig",$data);
+      //  return $this->render("home/confirmation.html.twig",$data);
 
     }
 

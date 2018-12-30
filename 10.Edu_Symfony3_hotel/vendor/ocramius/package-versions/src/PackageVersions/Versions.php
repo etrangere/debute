@@ -60,14 +60,16 @@ final class Versions
   'symfony/swiftmailer-bundle' => 'v2.6.7@c4808f5169efc05567be983909d00f00521c53ec',
   'symfony/symfony' => 'v3.4.20@f6b8ddc362b1cf3fb06548693c3adbb736092412',
   'symfony/var-exporter' => 'v4.2.1@a39222e357362424b61dcde50e2f7b5a7d3306db',
+  'tecnickcom/tcpdf' => '6.2.26@367241059ca166e3a76490f4448c284e0a161f15',
   'twig/twig' => 'v2.6.0@a11dd39f5b6589e14f0ff3b36675d06047c589b1',
+  'whiteoctober/tcpdf-bundle' => '1.1.1@c07470e0d7170dabf356c82399445f7026bd9ef0',
   'zendframework/zend-code' => '3.3.1@c21db169075c6ec4b342149f446e7b7b724f95eb',
   'zendframework/zend-eventmanager' => '3.2.1@a5e2583a211f73604691586b8406ff7296a946dd',
   'knplabs/knp-snappy' => 'v1.1.0@ea037298d3c613454da77ecb9588cf0397d695e1',
   'knplabs/knp-snappy-bundle' => 'v1.6.0@87acf8544a2bd498585b3d49b2bb551f088551b1',
   'sensio/generator-bundle' => 'v3.1.7@28cbaa244bd0816fd8908b93f90380bcd7b67a65',
   'symfony/phpunit-bridge' => 'v3.4.20@2155067dfc73e0e77dbc26f236af17e4df552de5',
-  'bernardopineda/landon_app' => 'dev-master@826262df68c32d38cda5ad6c411e50e4ff015bbf',
+  'bernardopineda/landon_app' => 'dev-master@aeab8104ae3764bd4310ec43c775849f6e784967',
 );
 
     private function __construct()
