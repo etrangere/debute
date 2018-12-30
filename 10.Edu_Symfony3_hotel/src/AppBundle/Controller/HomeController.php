@@ -319,7 +319,7 @@ class HomeController extends Controller
         $data['reservation']= $reservation_id;
         $data['client']= $client;
 
-
+/*
 
 
         $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
@@ -336,7 +336,7 @@ class HomeController extends Controller
 
         $pdf->Output('example_045.pdf', 'I');
 
-
+*/
        /*
 
         $transport = new \Swift_SmtpTransport('smtp.free.fr',587,'tcp');
@@ -361,7 +361,7 @@ class HomeController extends Controller
 
 
         //$cache->delete('email');
-      //  return $this->render("home/confirmation.html.twig",$data);
+        return $this->render("home/confirmation.html.twig",$data);
 
     }
 
