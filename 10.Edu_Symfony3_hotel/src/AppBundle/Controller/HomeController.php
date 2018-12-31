@@ -30,7 +30,7 @@ use WhiteOctober\TCPDFBundle;
 use WhiteOctober;
 use WhiteOctober\TCPDFBundle\WhiteOctoberTCPDFBundle;
 use WhiteOctober\TCPDFBundle\DependencyInjection\WhiteOctoberTCPDFExtension;
-
+use Swift_Attachment;
 
 class HomeController extends Controller
 {
@@ -308,6 +308,7 @@ class HomeController extends Controller
       //get from cache all info for client and actual reservation
         $cache = new FilesystemCache();
         $email = $cache->get('email');
+
         $client = $this->getDoctrine()
             ->getRepository('AppBundle:Client')
             ->findOneBy(array('email' => $email));
@@ -316,46 +317,77 @@ class HomeController extends Controller
             ->getRepository('AppBundle:Reservation')
             ->findOneBy(array('client' => $client));
 
-        $data['reservation']= $reservation_id;
-        $data['client']= $client;
-
-/*
+         $data['reservation']= $reservation_id;
+         $data['client']= $client;
 
 
-        $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
+
+
+            $client_id = $client->getId('id');
+            $name = $client->getName('name');
+            $last_name = $client->getLastName('last_name');
+            $adult = $client->getAdult('adult');
+            $child = $client->getChild('child');
+            $baby = $client->getBaby('baby');
+            $address = $client->getAddress('address');
+            $zip_code = $client->getZipCode('zip_code');
+            $date_in = $reservation_id->getDateIn('from')->format('Y-m-d H:i:s');
+            $date_out = $reservation_id->getDateOut('to')->format('Y-m-d H:i:s');
+
+
+        //var_dump( $id);
+
+            $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
-        $pdf->SetCreator(PDF_CREATOR);
-        $pdf->SetAuthor('Nicola Asuni');
-        $pdf->SetTitle('TCPDF Example 045');
-        $pdf->SetSubject('TCPDF Tutorial');
-        $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-        $pdf->SetSubject('Your client');
+            $pdf->SetCreator(PDF_CREATOR);
+            $pdf->SetAuthor('Hotel de France');
+            $pdf->SetTitle('Referance N '.$client_id .'.pdf');
+            $pdf->SetSubject('Reservation');
+            $pdf->SetSubject('Your client');
 // set default header data
+            $pdf->AddPage();
+            $html = '<h1>HTML Example</h1> 
+            <h4>client id '.$client_id .'</h4>
+            <h4>name '.$name .'</h4>
+            <h4>last name '.$last_name .'</h4>
+            
+            <h4>adult '.$adult .'</h4>
+            <h4>child '.$child .'</h4>
+            <h4>baby'.$baby .'</h4>
+            <h4>Address'. $address .'</h4>
+            <h4>ZipCode'. $zip_code .'</h4>
+            <h4>Check-In -' . $date_in .'</h4>
+            <h4>Check-Out -' . $date_out .'</h4>
+            <h4>Email -'.$email .'</h4>';
 
-        $pdf->Output('example_045.pdf', 'I');
+            $pdf->writeHTML($html, true, false, true, false, '');
+            $pdf->Output('/var/www/10.Edu_Symfony3_hotel/reservations/'.$client_id .'.pdf', 'F');
 
-*/
-       /*
+
+
 
         $transport = new \Swift_SmtpTransport('smtp.free.fr',587,'tcp');
 
         $mailer = new Swift_Mailer($transport);
 
+        $contact_subject = 'Confirmation email';
+        $contact_message = 'We have successfully received your reservation';
+
         $message = \Swift_Message::newInstance()
             ->setSubject($contact_subject)
             ->setFrom('g.khachatrian2016@free.fr')
-            ->setReplyTo($contact_email)
-            ->setTo('g.khachatrian@free.fr')
+           // ->setReplyTo($contact_email)
+            ->setTo($email)
             ->setContentType('text/html')
-            ->setBody($contact_message);
-
+            ->setBody($contact_message)
+            ->attach(Swift_Attachment::fromPath('/var/www/10.Edu_Symfony3_hotel/reservations/'.$client_id .'.pdf'));
       
         $result= $mailer->send($message);
         $data['result'] = $result;
         $data['msg'] = 'Envoi effectué avec succés';
-*/
+
 
 
 
