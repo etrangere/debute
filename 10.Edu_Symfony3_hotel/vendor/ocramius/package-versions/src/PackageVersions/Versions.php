@@ -17,7 +17,7 @@ final class Versions
   'doctrine/cache' => 'v1.8.0@d768d58baee9a4862ca783840eca1b9add7a7f57',
   'doctrine/collections' => 'v1.5.0@a01ee38fcd999f34d9bfbcee59dbda5105449cbf',
   'doctrine/common' => 'v2.10.0@30e33f60f64deec87df728c02b107f82cdafad9d',
-  'doctrine/dbal' => 'v2.9.1@ec74d6e300d78fbc896669c3ca57ef9719adc9c6',
+  'doctrine/dbal' => 'v2.9.2@22800bd651c1d8d2a9719e2a3dc46d5108ebfcc9',
   'doctrine/doctrine-bundle' => '1.10.0@82d2c63cd09acbde2332f55d9aa7b28aefe4983d',
   'doctrine/doctrine-cache-bundle' => '1.3.5@5514c90d9fb595e1095e6d66ebb98ce9ef049927',
   'doctrine/doctrine-migrations-bundle' => 'v1.3.2@49fa399181db4bf4f9f725126bd1cb65c4398dce',
@@ -64,7 +64,7 @@ final class Versions
   'zendframework/zend-eventmanager' => '3.2.1@a5e2583a211f73604691586b8406ff7296a946dd',
   'sensio/generator-bundle' => 'v3.1.7@28cbaa244bd0816fd8908b93f90380bcd7b67a65',
   'symfony/phpunit-bridge' => 'v3.4.20@2155067dfc73e0e77dbc26f236af17e4df552de5',
-  'bernardopineda/landon_app' => 'dev-master@7b04474b6c1138e436c0d70830cafa85bf3f2e12',
+  'bernardopineda/landon_app' => 'dev-master@9f431ccee397c278bdd470911a34f5cc262f5782',
 );
 
     private function __construct()

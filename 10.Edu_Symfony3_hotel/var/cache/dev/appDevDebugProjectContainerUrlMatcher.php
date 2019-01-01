@@ -195,9 +195,24 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\HomeController::available_room_list',  '_route' => 'available_room_list',);
         }
 
+        // user_register
+        if ('/register' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserController::registerAction',  '_route' => 'user_register',);
+        }
+
         // booking
         if (0 === strpos($pathinfo, '/booking') && preg_match('#^/booking/(?P<id_room>[^/]++)$#sD', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'booking')), array (  '_controller' => 'AppBundle\\Controller\\HomeController::booking',));
+        }
+
+        // security_login
+        if ('/login' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::loginAction',  '_route' => 'security_login',);
+        }
+
+        // security_logout
+        if ('/logout' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::logoutAction',  '_route' => 'security_logout',);
         }
 
         // valid_payment

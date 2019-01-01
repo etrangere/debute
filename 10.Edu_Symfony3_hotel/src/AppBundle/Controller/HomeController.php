@@ -332,8 +332,8 @@ class HomeController extends Controller
             $baby = $client->getBaby('baby');
             $address = $client->getAddress('address');
             $zip_code = $client->getZipCode('zip_code');
-            $date_in = $reservation_id->getDateIn('from')->format('Y-m-d H:i:s');
-            $date_out = $reservation_id->getDateOut('to')->format('Y-m-d H:i:s');
+            $date_in = $reservation_id->getDateIn('from')->format('d-m-Y H:i:s');
+            $date_out = $reservation_id->getDateOut('to')->format('d-m-Y H:i:s');
 
 
         //var_dump( $id);
