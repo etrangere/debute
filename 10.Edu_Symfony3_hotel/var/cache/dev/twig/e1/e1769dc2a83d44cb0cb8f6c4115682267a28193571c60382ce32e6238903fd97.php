@@ -74,7 +74,7 @@ class __TwigTemplate_9f5668c61d6876652272895f80d7c2f3892296d8b525241377cf3f5a81f
         // line 16
         echo "
 
-                <button type=\"submit\" class=\"btn btn-primary\" formnovalidate>Register</button>
+                <button type=\"submit\" class=\"button\" formnovalidate>Register</button>
                 ";
         // line 19
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 19, $this->source); })()), 'form_end');
@@ -125,7 +125,7 @@ class __TwigTemplate_9f5668c61d6876652272895f80d7c2f3892296d8b525241377cf3f5a81f
                     'label': 'Repeat Password'
                 }) }}
 
-                <button type=\"submit\" class=\"btn btn-primary\" formnovalidate>Register</button>
+                <button type=\"submit\" class=\"button\" formnovalidate>Register</button>
                 {{ form_end(form) }}
             </div>
         </div>

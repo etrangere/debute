@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerJ7yma2k;
+namespace ContainerYdnl3co;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -37,7 +37,6 @@ class appDevDebugProjectContainer extends Container
         $this->normalizedIds = array(
             'symfony\\bundle\\frameworkbundle\\controller\\redirectcontroller' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController',
             'symfony\\bundle\\frameworkbundle\\controller\\templatecontroller' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController',
-            'whiteoctober\\tcpdfbundle\\controller\\tcpdfcontroller' => 'WhiteOctober\\TCPDFBundle\\Controller\\TCPDFController',
         );
         $this->syntheticIds = array(
             'kernel' => true,
@@ -130,6 +129,8 @@ class appDevDebugProjectContainer extends Container
             'Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController' => 'getTemplateControllerService.php',
             'annotations.cache' => 'getAnnotations_CacheService.php',
             'annotations.cache_warmer' => 'getAnnotations_CacheWarmerService.php',
+            'app.doctrine.hash_password_listener' => 'getApp_Doctrine_HashPasswordListenerService.php',
+            'app.security.login_form_authenticator' => 'getApp_Security_LoginFormAuthenticatorService.php',
             'argument_resolver.default' => 'getArgumentResolver_DefaultService.php',
             'argument_resolver.request' => 'getArgumentResolver_RequestService.php',
             'argument_resolver.request_attribute' => 'getArgumentResolver_RequestAttributeService.php',
@@ -276,13 +277,16 @@ class appDevDebugProjectContainer extends Container
             'security.access_map' => 'getSecurity_AccessMapService.php',
             'security.authentication.guard_handler' => 'getSecurity_Authentication_GuardHandlerService.php',
             'security.authentication.listener.anonymous.main' => 'getSecurity_Authentication_Listener_Anonymous_MainService.php',
+            'security.authentication.listener.guard.main' => 'getSecurity_Authentication_Listener_Guard_MainService.php',
             'security.authentication.provider.anonymous.main' => 'getSecurity_Authentication_Provider_Anonymous_MainService.php',
+            'security.authentication.provider.guard.main' => 'getSecurity_Authentication_Provider_Guard_MainService.php',
             'security.authentication.session_strategy.main' => 'getSecurity_Authentication_SessionStrategy_MainService.php',
             'security.authentication_utils' => 'getSecurity_AuthenticationUtilsService.php',
             'security.channel_listener' => 'getSecurity_ChannelListenerService.php',
             'security.command.user_password_encoder' => 'getSecurity_Command_UserPasswordEncoderService.php',
             'security.context_listener.0' => 'getSecurity_ContextListener_0Service.php',
             'security.csrf.token_manager' => 'getSecurity_Csrf_TokenManagerService.php',
+            'security.csrf.token_storage' => 'getSecurity_Csrf_TokenStorageService.php',
             'security.encoder_factory' => 'getSecurity_EncoderFactoryService.php',
             'security.firewall.map.context.dev' => 'getSecurity_Firewall_Map_Context_DevService.php',
             'security.firewall.map.context.main' => 'getSecurity_Firewall_Map_Context_MainService.php',
@@ -333,7 +337,6 @@ class appDevDebugProjectContainer extends Container
             'white_october.tcpdf' => 'getWhiteOctober_TcpdfService.php',
         );
         $this->privates = array(
-            'WhiteOctober\\TCPDFBundle\\Controller\\TCPDFController' => true,
             'session.storage' => true,
             'swiftmailer.mailer' => true,
             'swiftmailer.plugin.messagelogger' => true,
@@ -342,6 +345,8 @@ class appDevDebugProjectContainer extends Container
             'annotations.cache' => true,
             'annotations.cache_warmer' => true,
             'annotations.reader' => true,
+            'app.doctrine.hash_password_listener' => true,
+            'app.security.login_form_authenticator' => true,
             'argument_resolver.default' => true,
             'argument_resolver.request' => true,
             'argument_resolver.request_attribute' => true,
@@ -483,13 +488,16 @@ class appDevDebugProjectContainer extends Container
             'security.access_map' => true,
             'security.authentication.guard_handler' => true,
             'security.authentication.listener.anonymous.main' => true,
+            'security.authentication.listener.guard.main' => true,
             'security.authentication.manager' => true,
             'security.authentication.provider.anonymous.main' => true,
+            'security.authentication.provider.guard.main' => true,
             'security.authentication.session_strategy.main' => true,
             'security.authentication.trust_resolver' => true,
             'security.channel_listener' => true,
             'security.command.user_password_encoder' => true,
             'security.context_listener.0' => true,
+            'security.csrf.token_storage' => true,
             'security.encoder_factory' => true,
             'security.firewall' => true,
             'security.firewall.map' => true,
@@ -551,7 +559,6 @@ class appDevDebugProjectContainer extends Container
             'white_october.tcpdf' => true,
         );
         $this->aliases = array(
-            'WhiteOctober\\TCPDFBundle\\Controller\\TCPDFController' => 'white_october.tcpdf',
             'cache.app_clearer' => 'cache.default_clearer',
             'console.command.doctrine_bundle_doctrinecachebundle_command_containscommand' => 'doctrine_cache.contains_command',
             'console.command.doctrine_bundle_doctrinecachebundle_command_deletecommand' => 'doctrine_cache.delete_command',
@@ -1091,6 +1098,9 @@ class appDevDebugProjectContainer extends Container
         $instance->addListener('kernel.request', array(0 => function () {
             return ${($_ = isset($this->services['debug.debug_handlers_listener']) ? $this->services['debug.debug_handlers_listener'] : $this->getDebug_DebugHandlersListenerService()) && false ?: '_'};
         }, 1 => 'configure'), 2048);
+        $instance->addListener('console.command', array(0 => function () {
+            return ${($_ = isset($this->services['debug.debug_handlers_listener']) ? $this->services['debug.debug_handlers_listener'] : $this->getDebug_DebugHandlersListenerService()) && false ?: '_'};
+        }, 1 => 'configure'), 2048);
         $instance->addListener('kernel.request', array(0 => function () {
             return ${($_ = isset($this->services['router_listener']) ? $this->services['router_listener'] : $this->getRouterListenerService()) && false ?: '_'};
         }, 1 => 'onKernelRequest'), 32);
@@ -1442,8 +1452,9 @@ class appDevDebugProjectContainer extends Container
     protected function getSecurity_Authentication_ManagerService()
     {
         $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(new RewindableGenerator(function () {
-            yield 0 => ${($_ = isset($this->services['security.authentication.provider.anonymous.main']) ? $this->services['security.authentication.provider.anonymous.main'] : ($this->services['security.authentication.provider.anonymous.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider($this->getParameter('container.build_hash')))) && false ?: '_'};
-        }, 1), true);
+            yield 0 => ${($_ = isset($this->services['security.authentication.provider.guard.main']) ? $this->services['security.authentication.provider.guard.main'] : $this->load('getSecurity_Authentication_Provider_Guard_MainService.php')) && false ?: '_'};
+            yield 1 => ${($_ = isset($this->services['security.authentication.provider.anonymous.main']) ? $this->services['security.authentication.provider.anonymous.main'] : ($this->services['security.authentication.provider.anonymous.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider($this->getParameter('container.build_hash')))) && false ?: '_'};
+        }, 2), true);
 
         $instance->setEventDispatcher(${($_ = isset($this->services['debug.event_dispatcher']) ? $this->services['debug.event_dispatcher'] : $this->getDebug_EventDispatcherService()) && false ?: '_'});
 
@@ -1494,7 +1505,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_LogoutUrlGeneratorService()
     {
-        return $this->services['security.logout_url_generator'] = new \Symfony\Component\Security\Http\Logout\LogoutUrlGenerator(${($_ = isset($this->services['request_stack']) ? $this->services['request_stack'] : ($this->services['request_stack'] = new \Symfony\Component\HttpFoundation\RequestStack())) && false ?: '_'}, ${($_ = isset($this->services['router']) ? $this->services['router'] : $this->getRouterService()) && false ?: '_'}, ${($_ = isset($this->services['security.token_storage']) ? $this->services['security.token_storage'] : ($this->services['security.token_storage'] = new \Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage())) && false ?: '_'});
+        $this->services['security.logout_url_generator'] = $instance = new \Symfony\Component\Security\Http\Logout\LogoutUrlGenerator(${($_ = isset($this->services['request_stack']) ? $this->services['request_stack'] : ($this->services['request_stack'] = new \Symfony\Component\HttpFoundation\RequestStack())) && false ?: '_'}, ${($_ = isset($this->services['router']) ? $this->services['router'] : $this->getRouterService()) && false ?: '_'}, ${($_ = isset($this->services['security.token_storage']) ? $this->services['security.token_storage'] : ($this->services['security.token_storage'] = new \Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage())) && false ?: '_'});
+
+        $instance->registerListener('main', '/logout', 'logout', '_csrf_token', NULL, NULL);
+
+        return $instance;
     }
 
     /**

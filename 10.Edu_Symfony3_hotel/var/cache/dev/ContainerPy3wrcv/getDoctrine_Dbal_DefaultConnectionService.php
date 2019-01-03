@@ -13,6 +13,7 @@ $b->addLogger(${($_ = isset($this->services['doctrine.dbal.logger.profiling.defa
 
 $a->setSQLLogger($b);
 $c = new \Symfony\Bridge\Doctrine\ContainerAwareEventManager($this);
+$c->addEventSubscriber(${($_ = isset($this->services['app.doctrine.hash_password_listener']) ? $this->services['app.doctrine.hash_password_listener'] : $this->load('getApp_Doctrine_HashPasswordListenerService.php')) && false ?: '_'});
 $c->addEventListener(array(0 => 'loadClassMetadata'), ${($_ = isset($this->services['doctrine.orm.default_listeners.attach_entity_listeners']) ? $this->services['doctrine.orm.default_listeners.attach_entity_listeners'] : ($this->services['doctrine.orm.default_listeners.attach_entity_listeners'] = new \Doctrine\ORM\Tools\AttachEntityListenersListener())) && false ?: '_'});
 
 return $this->services['doctrine.dbal.default_connection'] = ${($_ = isset($this->services['doctrine.dbal.connection_factory']) ? $this->services['doctrine.dbal.connection_factory'] : ($this->services['doctrine.dbal.connection_factory'] = new \Doctrine\Bundle\DoctrineBundle\ConnectionFactory(array()))) && false ?: '_'}->createConnection(array('driver' => 'pdo_mysql', 'host' => 'localhost', 'port' => NULL, 'dbname' => '10.Edu_Symfony3_hotel', 'user' => 'root', 'password' => 'Smdilia2012@', 'charset' => 'UTF8', 'driverOptions' => array(), 'defaultTableOptions' => array()), $a, $c, array());

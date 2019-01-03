@@ -53,24 +53,10 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
 
         // line 7
         echo "
-<body>
-<div class=\"top-bar\">
-    <div class=\"row\">
-        <div class=\"top-bar-left\">
-            <ul class=\"dropdown menu\" data-dropdown-menu>
-                <li><a href=\"";
-        // line 13
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index_clients");
-        echo "\">Clients</a></li>
-                <li><a href=\"";
-        // line 14
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservations");
-        echo "\">Reservations</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-</body>
+
+
+
+
 
  ";
         
@@ -81,7 +67,7 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
 
     }
 
-    // line 23
+    // line 15
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -90,15 +76,29 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 24
-        echo "<h1><div style=\"text-align:center; width:100%\" >
+        // line 16
+        echo "
+    <div  style=\"text-align:center; width:100%\" ><h1>
         ";
-        // line 25
+        // line 18
         $this->displayBlock('title', $context, $blocks);
-        // line 26
-        echo "    </div>
-</h1>
+        echo "</h1>
 
+    </div>
+
+<body>
+<hr>
+    <div class=\"sidenav\">
+        <a href=\"";
+        // line 25
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index_clients");
+        echo "\">Clients</a>
+        <a href=\"";
+        // line 26
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservations");
+        echo "\">Reservations</a>
+    </div>
+</body>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -108,7 +108,7 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
 
     }
 
-    // line 25
+    // line 18
     public function block_title($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -138,7 +138,7 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
 
     public function getDebugInfo()
     {
-        return array (  112 => 25,  99 => 26,  97 => 25,  94 => 24,  85 => 23,  67 => 14,  63 => 13,  55 => 7,  46 => 6,  15 => 1,);
+        return array (  112 => 18,  98 => 26,  94 => 25,  84 => 18,  80 => 16,  71 => 15,  55 => 7,  46 => 6,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -150,27 +150,27 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
 
 {% block top_bar %}
 
-<body>
-<div class=\"top-bar\">
-    <div class=\"row\">
-        <div class=\"top-bar-left\">
-            <ul class=\"dropdown menu\" data-dropdown-menu>
-                <li><a href=\"{{ path(\"index_clients\")}}\">Clients</a></li>
-                <li><a href=\"{{ path(\"reservations\")}}\">Reservations</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-</body>
+
+
+
+
 
  {% endblock %}
 
 {% block body %}
-<h1><div style=\"text-align:center; width:100%\" >
-        {% block title %}Administration Panel for authorised staff use only{% endblock %}
-    </div>
-</h1>
 
+    <div  style=\"text-align:center; width:100%\" ><h1>
+        {% block title %}Administration Panel for authorised staff use only{% endblock %}</h1>
+
+    </div>
+
+<body>
+<hr>
+    <div class=\"sidenav\">
+        <a href=\"{{ path(\"index_clients\")}}\">Clients</a>
+        <a href=\"{{ path(\"reservations\")}}\">Reservations</a>
+    </div>
+</body>
 {% endblock %}
 ", ":admin:index.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/admin/index.html.twig");
     }

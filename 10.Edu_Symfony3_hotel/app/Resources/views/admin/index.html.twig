@@ -5,25 +5,25 @@
 
 {% block top_bar %}
 
-<body>
-<div class="top-bar">
-    <div class="row">
-        <div class="top-bar-left">
-            <ul class="dropdown menu" data-dropdown-menu>
-                <li><a href="{{ path("index_clients")}}">Clients</a></li>
-                <li><a href="{{ path("reservations")}}">Reservations</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-</body>
+
+
+
+
 
  {% endblock %}
 
 {% block body %}
-<h1><div style="text-align:center; width:100%" >
-        {% block title %}Administration Panel for authorised staff use only{% endblock %}
-    </div>
-</h1>
 
+    <div  style="text-align:center; width:100%" ><h1>
+        {% block title %}Administration Panel for authorised staff use only{% endblock %}</h1>
+
+    </div>
+
+<body>
+<hr>
+    <div class="sidenav">
+        <a href="{{ path("index_clients")}}">Clients</a>
+        <a href="{{ path("reservations")}}">Reservations</a>
+    </div>
+</body>
 {% endblock %}

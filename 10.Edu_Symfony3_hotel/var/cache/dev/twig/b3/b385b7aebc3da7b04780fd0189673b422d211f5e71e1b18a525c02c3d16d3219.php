@@ -59,10 +59,14 @@ class __TwigTemplate_01fa69f38ff3cedc396966eff7a39bf0fe749468bc7db70dd45c9daabdd
         <ul class=\"dropdown menu\" data-dropdown-menu>
           <li><a href=\"";
         // line 10
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
+        echo "\">Admin</a></li>
+          <li><a href=\"";
+        // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index_clients");
         echo "\">Clients</a></li>
           <li><a href=\"";
-        // line 11
+        // line 12
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservations");
         echo "\">Reservations</a></li>
         </ul>
@@ -80,7 +84,7 @@ class __TwigTemplate_01fa69f38ff3cedc396966eff7a39bf0fe749468bc7db70dd45c9daabdd
 
     }
 
-    // line 22
+    // line 23
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -89,7 +93,7 @@ class __TwigTemplate_01fa69f38ff3cedc396966eff7a39bf0fe749468bc7db70dd45c9daabdd
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 23
+        // line 24
         echo "  <div class=\"row\">
       <div class=\"medium-12 large-12 columns\">
         <h4>Reservations</h4>
@@ -109,26 +113,26 @@ class __TwigTemplate_01fa69f38ff3cedc396966eff7a39bf0fe749468bc7db70dd45c9daabdd
           </thead>
             <tbody>
               ";
-        // line 41
+        // line 42
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["reservations"]) || array_key_exists("reservations", $context) ? $context["reservations"] : (function () { throw new Twig_Error_Runtime('Variable "reservations" does not exist.', 41, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["reservations"]) || array_key_exists("reservations", $context) ? $context["reservations"] : (function () { throw new Twig_Error_Runtime('Variable "reservations" does not exist.', 42, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["reservation"]) {
-            // line 42
+            // line 43
             echo "              <tr>
                 <td>";
-            // line 43
+            // line 44
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "id", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 44
+            // line 45
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "room", array()), "name", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 45
+            // line 46
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "roomtype", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 46
+            // line 47
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "title", array()), "html", null, true);
             echo ". ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "name", array()), "html", null, true);
@@ -136,21 +140,21 @@ class __TwigTemplate_01fa69f38ff3cedc396966eff7a39bf0fe749468bc7db70dd45c9daabdd
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "lastName", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 47
+            // line 48
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "dateIn", array()), "d-m-Y"), "html", null, true);
             echo " to ";
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "dateOut", array()), "d-m-Y"), "html", null, true);
             echo "</td>
                 <td>";
-            // line 48
+            // line 49
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "adult", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 49
+            // line 50
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "child", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 50
+            // line 51
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "client", array()), "baby", array()), "html", null, true);
             echo "</td>
               </tr>
@@ -159,7 +163,7 @@ class __TwigTemplate_01fa69f38ff3cedc396966eff7a39bf0fe749468bc7db70dd45c9daabdd
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 53
+        // line 54
         echo "            </tbody>
         </table>
       </div>
@@ -186,7 +190,7 @@ class __TwigTemplate_01fa69f38ff3cedc396966eff7a39bf0fe749468bc7db70dd45c9daabdd
 
     public function getDebugInfo()
     {
-        return array (  163 => 53,  154 => 50,  150 => 49,  146 => 48,  140 => 47,  132 => 46,  128 => 45,  124 => 44,  120 => 43,  117 => 42,  113 => 41,  93 => 23,  84 => 22,  66 => 11,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
+        return array (  167 => 54,  158 => 51,  154 => 50,  150 => 49,  144 => 48,  136 => 47,  132 => 46,  128 => 45,  124 => 44,  121 => 43,  117 => 42,  97 => 24,  88 => 23,  70 => 12,  66 => 11,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -200,6 +204,7 @@ class __TwigTemplate_01fa69f38ff3cedc396966eff7a39bf0fe749468bc7db70dd45c9daabdd
     <div class=\"row\">
       <div class=\"top-bar-left\">
         <ul class=\"dropdown menu\" data-dropdown-menu>
+          <li><a href=\"{{ path(\"admin\")}}\">Admin</a></li>
           <li><a href=\"{{ path(\"index_clients\")}}\">Clients</a></li>
           <li><a href=\"{{ path(\"reservations\")}}\">Reservations</a></li>
         </ul>
