@@ -14,6 +14,7 @@ class __TwigTemplate_9f5668c61d6876652272895f80d7c2f3892296d8b525241377cf3f5a81f
         // line 1
         $this->parent = $this->loadTemplate("base.html.twig", ":user:register.html.twig", 1);
         $this->blocks = array(
+            'top_bar' => array($this, 'block_top_bar'),
             'body' => array($this, 'block_body'),
         );
     }
@@ -41,6 +42,23 @@ class __TwigTemplate_9f5668c61d6876652272895f80d7c2f3892296d8b525241377cf3f5a81f
     }
 
     // line 3
+    public function block_top_bar($context, array $blocks = array())
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "top_bar"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "top_bar"));
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 5
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -49,42 +67,42 @@ class __TwigTemplate_9f5668c61d6876652272895f80d7c2f3892296d8b525241377cf3f5a81f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
+        // line 6
         echo "    <div class=\"container\">
         <div class=\"row\">
             <div class=\"col-xs-12\" aria-required=\"true\">
                 <h1>Register!</h1>
 
                 ";
-        // line 9
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 9, $this->source); })()), 'form_start');
-        echo "
-                ";
-        // line 10
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 10, $this->source); })()), "email", array()), 'row');
-        echo "
-                ";
         // line 11
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 11, $this->source); })()), "plainPassword", array()), "first", array()), 'row', array("label" => "Password"));
-        // line 13
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 11, $this->source); })()), 'form_start');
         echo "
                 ";
-        // line 14
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 14, $this->source); })()), "plainPassword", array()), "second", array()), 'row', array("label" => "Repeat Password"));
+        // line 12
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 12, $this->source); })()), "email", array()), 'row');
+        echo "
+                ";
+        // line 13
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 13, $this->source); })()), "plainPassword", array()), "first", array()), 'row', array("label" => "Password"));
+        // line 15
+        echo "
+                ";
         // line 16
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 16, $this->source); })()), "plainPassword", array()), "second", array()), 'row', array("label" => "Repeat Password"));
+        // line 18
         echo "
 
                 <button type=\"submit\" class=\"button\" formnovalidate>Register</button>
 
                 ";
-        // line 20
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 20, $this->source); })()), 'form_end');
+        // line 22
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 22, $this->source); })()), 'form_end');
         echo "
 
                 <a href=\"";
-        // line 22
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login");
-        echo "\"><button type=\"submit\" class=\"button\" >Go to login</button></a>
+        // line 24
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
+        echo "\"><button type=\"submit\" class=\"button\" >Go back to admin</button></a>
 
             </div>
         </div>
@@ -110,12 +128,14 @@ class __TwigTemplate_9f5668c61d6876652272895f80d7c2f3892296d8b525241377cf3f5a81f
 
     public function getDebugInfo()
     {
-        return array (  86 => 22,  81 => 20,  75 => 16,  73 => 14,  70 => 13,  68 => 11,  64 => 10,  60 => 9,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  104 => 24,  99 => 22,  93 => 18,  91 => 16,  88 => 15,  86 => 13,  82 => 12,  78 => 11,  71 => 6,  62 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
+
+{% block top_bar %}{% endblock %}
 
 {% block body %}
     <div class=\"container\">
@@ -136,7 +156,7 @@ class __TwigTemplate_9f5668c61d6876652272895f80d7c2f3892296d8b525241377cf3f5a81f
 
                 {{ form_end(form) }}
 
-                <a href=\"{{ path ('security_login') }}\"><button type=\"submit\" class=\"button\" >Go to login</button></a>
+                <a href=\"{{ path ('admin') }}\"><button type=\"submit\" class=\"button\" >Go back to admin</button></a>
 
             </div>
         </div>

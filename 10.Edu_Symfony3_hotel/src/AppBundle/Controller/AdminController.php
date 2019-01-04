@@ -20,7 +20,11 @@ class AdminController extends Controller
     public function showIndex()
     {
 
-        return $this->render("admin/index.html.twig");
+        $session_user= $this->container->get('security.token_storage')->getToken()->getUser();
+
+        $data ['session_user']= $session_user;
+
+        return $this->render("admin/index.html.twig",$data);
 
     }
 }

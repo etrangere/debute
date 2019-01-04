@@ -99,11 +99,6 @@ class __TwigTemplate_1552828b43aac58e64682f34844ffde7f872191fd6ac09302c4bde2de56
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 28, $this->source); })()), 'form_end');
         echo "
 
-               <a href=\"";
-        // line 30
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_register");
-        echo "\"><button type=\"submit\" class=\"button\">Go to register</button></a>
-
            </div>
 
         </div>
@@ -132,7 +127,7 @@ class __TwigTemplate_1552828b43aac58e64682f34844ffde7f872191fd6ac09302c4bde2de56
 
     public function getDebugInfo()
     {
-        return array (  104 => 30,  99 => 28,  88 => 20,  84 => 19,  79 => 17,  76 => 16,  70 => 13,  67 => 12,  65 => 11,  60 => 9,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  99 => 28,  88 => 20,  84 => 19,  79 => 17,  76 => 16,  70 => 13,  67 => 12,  65 => 11,  60 => 9,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -165,8 +160,6 @@ class __TwigTemplate_1552828b43aac58e64682f34844ffde7f872191fd6ac09302c4bde2de56
 
 
                {{ form_end(form) }}
-
-               <a href=\"{{ path ('user_register') }}\"><button type=\"submit\" class=\"button\">Go to register</button></a>
 
            </div>
 

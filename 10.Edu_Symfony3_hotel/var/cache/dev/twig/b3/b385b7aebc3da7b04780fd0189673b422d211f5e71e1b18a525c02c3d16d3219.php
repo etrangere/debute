@@ -60,7 +60,7 @@ class __TwigTemplate_01fa69f38ff3cedc396966eff7a39bf0fe749468bc7db70dd45c9daabdd
           <li><a href=\"";
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
-        echo "\">Admin</a></li>
+        echo "\">Admin Panel</a></li>
           <li><a href=\"";
         // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index_clients");
@@ -69,10 +69,7 @@ class __TwigTemplate_01fa69f38ff3cedc396966eff7a39bf0fe749468bc7db70dd45c9daabdd
         // line 12
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservations");
         echo "\">Reservations</a></li>
-          <li><a href=\"";
-        // line 13
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
-        echo "\" style=\"color: blue\">Logout</a></li>
+
         </ul>
       </div>
     </div>
@@ -194,7 +191,7 @@ class __TwigTemplate_01fa69f38ff3cedc396966eff7a39bf0fe749468bc7db70dd45c9daabdd
 
     public function getDebugInfo()
     {
-        return array (  171 => 55,  162 => 52,  158 => 51,  154 => 50,  148 => 49,  140 => 48,  136 => 47,  132 => 46,  128 => 45,  125 => 44,  121 => 43,  101 => 25,  92 => 24,  74 => 13,  70 => 12,  66 => 11,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
+        return array (  168 => 55,  159 => 52,  155 => 51,  151 => 50,  145 => 49,  137 => 48,  133 => 47,  129 => 46,  125 => 45,  122 => 44,  118 => 43,  98 => 25,  89 => 24,  70 => 12,  66 => 11,  62 => 10,  54 => 4,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -208,10 +205,10 @@ class __TwigTemplate_01fa69f38ff3cedc396966eff7a39bf0fe749468bc7db70dd45c9daabdd
     <div class=\"row\">
       <div class=\"top-bar-left\">
         <ul class=\"dropdown menu\" data-dropdown-menu>
-          <li><a href=\"{{ path(\"admin\")}}\">Admin</a></li>
+          <li><a href=\"{{ path(\"admin\")}}\">Admin Panel</a></li>
           <li><a href=\"{{ path(\"index_clients\")}}\">Clients</a></li>
           <li><a href=\"{{ path(\"reservations\")}}\">Reservations</a></li>
-          <li><a href=\"{{  path ('security_logout') }}\" style=\"color: blue\">Logout</a></li>
+
         </ul>
       </div>
     </div>

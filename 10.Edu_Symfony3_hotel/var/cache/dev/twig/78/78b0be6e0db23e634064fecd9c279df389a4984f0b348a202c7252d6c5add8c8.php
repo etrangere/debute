@@ -52,7 +52,12 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "top_bar"));
 
         // line 5
-        echo "
+        echo "    <div>
+        <h3>Welcome : ";
+        // line 6
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["session_user"]) || array_key_exists("session_user", $context) ? $context["session_user"] : (function () { throw new Twig_Error_Runtime('Variable "session_user" does not exist.', 6, $this->source); })()), "email", array()), "html", null, true);
+        echo "</h3>
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -62,7 +67,7 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
 
     }
 
-    // line 10
+    // line 12
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -71,11 +76,12 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 11
+        // line 13
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context);
         echo "
     <div  style=\"text-align:center; width:100%\" ><h1>
         ";
-        // line 13
+        // line 15
         $this->displayBlock('title', $context, $blocks);
         echo "</h1>
 
@@ -83,17 +89,22 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
 
 <body>
 <hr>
+
     <div class=\"sidenav\">
         <a href=\"";
-        // line 20
+        // line 23
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index_clients");
         echo "\">Clients</a>
         <a href=\"";
-        // line 21
+        // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservations");
         echo "\">Reservations</a>
         <a href=\"";
-        // line 22
+        // line 25
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_register");
+        echo "\">Register</a>
+        <a href=\"";
+        // line 26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
         echo "\">Logout</a>
     </div>
@@ -108,7 +119,7 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
 
     }
 
-    // line 13
+    // line 15
     public function block_title($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -138,7 +149,7 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
 
     public function getDebugInfo()
     {
-        return array (  112 => 13,  97 => 22,  93 => 21,  89 => 20,  79 => 13,  75 => 11,  66 => 10,  55 => 5,  46 => 4,  15 => 1,);
+        return array (  123 => 15,  108 => 26,  104 => 25,  100 => 24,  96 => 23,  85 => 15,  80 => 13,  71 => 12,  58 => 6,  55 => 5,  46 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -147,13 +158,15 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
 
 
 {% block top_bar %}
-
+    <div>
+        <h3>Welcome : {{ session_user.email }}</h3>
+    </div>
 {% endblock %}
 
 
 
 {% block body %}
-
+{{ dump() }}
     <div  style=\"text-align:center; width:100%\" ><h1>
         {% block title %}Administration Panel for authorised staff use only{% endblock %}</h1>
 
@@ -161,9 +174,11 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
 
 <body>
 <hr>
+
     <div class=\"sidenav\">
         <a href=\"{{ path(\"index_clients\")}}\">Clients</a>
         <a href=\"{{ path(\"reservations\")}}\">Reservations</a>
+        <a href=\"{{  path ('user_register') }}\">Register</a>
         <a href=\"{{  path ('security_logout') }}\">Logout</a>
     </div>
 

@@ -57,22 +57,21 @@ class __TwigTemplate_f9f277de92b256c250f0f22392f9259eb7b4d18886163fb4f94e8218203
         <div class=\"row\">
             <div class=\"top-bar-left\">
                 <ul class=\"dropdown menu\" data-dropdown-menu>
-                    <li><a href=\"";
-        // line 11
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
-        echo "\">Admin</a></li>
+
                     <li><a href=\"";
         // line 12
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
+        echo "\">Admin Panel</a></li>
+                    <li><a href=\"";
+        // line 13
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index_clients");
         echo "\">Clients</a></li>
                     <li><a href=\"";
-        // line 13
+        // line 14
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservations");
         echo "\">Reservations</a></li>
-                    <li><a href=\"";
-        // line 14
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
-        echo "\" style=\"color: blue\">Logout</a></li>
+
+
                 </ul>
             </div>
         </div>
@@ -88,7 +87,7 @@ class __TwigTemplate_f9f277de92b256c250f0f22392f9259eb7b4d18886163fb4f94e8218203
 
     }
 
-    // line 23
+    // line 25
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -97,10 +96,10 @@ class __TwigTemplate_f9f277de92b256c250f0f22392f9259eb7b4d18886163fb4f94e8218203
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 24
+        // line 26
         echo "
     ";
-        // line 25
+        // line 27
         echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context);
         echo "
 
@@ -120,14 +119,14 @@ class __TwigTemplate_f9f277de92b256c250f0f22392f9259eb7b4d18886163fb4f94e8218203
             </tr>
           </thead>
             ";
-        // line 42
+        // line 44
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["clients"]) || array_key_exists("clients", $context) ? $context["clients"] : (function () { throw new Twig_Error_Runtime('Variable "clients" does not exist.', 42, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["clients"]) || array_key_exists("clients", $context) ? $context["clients"] : (function () { throw new Twig_Error_Runtime('Variable "clients" does not exist.', 44, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["client"]) {
-            // line 43
+            // line 45
             echo "              <tr>
                 <td>";
-            // line 44
+            // line 46
             echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "title", array())), "html", null, true);
             echo ". ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "name", array()), "html", null, true);
@@ -135,16 +134,16 @@ class __TwigTemplate_f9f277de92b256c250f0f22392f9259eb7b4d18886163fb4f94e8218203
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "lastName", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 45
+            // line 47
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "client_email", array()), "html", null, true);
             echo "</td>
                     <td>
                     <a class=\"hollow button\" href=\"";
-            // line 47
+            // line 49
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modify_client", array("id_client" => twig_get_attribute($this->env, $this->source, $context["client"], "id", array()))), "html", null, true);
             echo "\">EDIT</a>
                     <a class=\"hollow button warning\" href=\"";
-            // line 48
+            // line 50
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("delete", array("id_client" => twig_get_attribute($this->env, $this->source, $context["client"], "id", array()))), "html", null, true);
             echo "\">DELETE</a>
                 </td>
@@ -154,7 +153,7 @@ class __TwigTemplate_f9f277de92b256c250f0f22392f9259eb7b4d18886163fb4f94e8218203
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['client'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 52
+        // line 54
         echo "          </tbody>
         </table>
       </div>
@@ -183,7 +182,7 @@ class __TwigTemplate_f9f277de92b256c250f0f22392f9259eb7b4d18886163fb4f94e8218203
 
     public function getDebugInfo()
     {
-        return array (  158 => 52,  148 => 48,  144 => 47,  139 => 45,  131 => 44,  128 => 43,  124 => 42,  104 => 25,  101 => 24,  92 => 23,  74 => 14,  70 => 13,  66 => 12,  62 => 11,  54 => 5,  45 => 4,  15 => 1,);
+        return array (  157 => 54,  147 => 50,  143 => 49,  138 => 47,  130 => 46,  127 => 45,  123 => 44,  103 => 27,  100 => 26,  91 => 25,  71 => 14,  67 => 13,  63 => 12,  54 => 5,  45 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -198,10 +197,12 @@ class __TwigTemplate_f9f277de92b256c250f0f22392f9259eb7b4d18886163fb4f94e8218203
         <div class=\"row\">
             <div class=\"top-bar-left\">
                 <ul class=\"dropdown menu\" data-dropdown-menu>
-                    <li><a href=\"{{ path(\"admin\")}}\">Admin</a></li>
+
+                    <li><a href=\"{{ path(\"admin\")}}\">Admin Panel</a></li>
                     <li><a href=\"{{ path(\"index_clients\")}}\">Clients</a></li>
                     <li><a href=\"{{ path(\"reservations\")}}\">Reservations</a></li>
-                    <li><a href=\"{{  path ('security_logout') }}\" style=\"color: blue\">Logout</a></li>
+
+
                 </ul>
             </div>
         </div>
