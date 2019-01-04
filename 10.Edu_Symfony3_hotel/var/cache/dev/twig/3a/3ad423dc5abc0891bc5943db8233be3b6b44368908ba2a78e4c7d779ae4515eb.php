@@ -14,6 +14,7 @@ class __TwigTemplate_8c41a5c2ea9b77f0bd7fe2d723f7bb6ebf6dc0e1e01cb22eeb3682378ff
         $this->parent = false;
 
         $this->blocks = array(
+            'head' => array($this, 'block_head'),
             'title' => array($this, 'block_title'),
             'stylesheets' => array($this, 'block_stylesheets'),
             'top_bar' => array($this, 'block_top_bar'),
@@ -33,56 +34,24 @@ class __TwigTemplate_8c41a5c2ea9b77f0bd7fe2d723f7bb6ebf6dc0e1e01cb22eeb3682378ff
         // line 1
         echo "<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset=\"UTF-8\" />
-        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-        <title>";
-        // line 6
-        $this->displayBlock('title', $context, $blocks);
-        echo "</title>
-        ";
-        // line 7
-        $this->displayBlock('stylesheets', $context, $blocks);
-        // line 8
-        echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("favicon.ico"), "html", null, true);
-        echo "\" />
-        <link rel=\"stylesheet\" href=\"";
-        // line 9
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/foundation.css"), "html", null, true);
-        echo "\">
-        <link rel=\"stylesheet\" href=\"";
-        // line 10
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/app.css"), "html", null, true);
-        echo "\">
-        <link rel=\"stylesheet\" href=\"";
-        // line 11
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/sidenav.css"), "html", null, true);
-        echo "\">
-        <link rel=\"stylesheet\" href=\"";
-        // line 12
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/themes/default.css"), "html", null, true);
-        echo "\">
-        <link rel=\"stylesheet\" href=\"";
-        // line 13
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/themes/default.date.css"), "html", null, true);
-        echo "\">
-
-    </head>
-    <body>
+";
+        // line 3
+        $this->displayBlock('head', $context, $blocks);
+        // line 27
+        echo "    <body>
     ";
-        // line 17
+        // line 28
         $this->displayBlock('top_bar', $context, $blocks);
-        // line 35
+        // line 46
         echo "    <noscript><h4 align=\"center\">For full functionality of this page it is necessary to enable JavaScript.
             Here are the <a href=\"http://www.enable-javascript.com\" target=\"_blank\">
                 instructions how to enable JavaScript in your web browser</a></h4></noscript>
     <br>
 
         ";
-        // line 40
+        // line 51
         $this->displayBlock('body', $context, $blocks);
-        // line 41
+        // line 52
         echo "    
 
     <div class=\"row column\">
@@ -97,30 +66,30 @@ class __TwigTemplate_8c41a5c2ea9b77f0bd7fe2d723f7bb6ebf6dc0e1e01cb22eeb3682378ff
     </script>
 
         ";
-        // line 54
+        // line 65
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 55
+        // line 66
         echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/jquery.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 56
+        // line 67
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/what-input.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 57
+        // line 68
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/foundation.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 58
+        // line 69
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/app.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 59
+        // line 70
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 60
+        // line 71
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.date.js"), "html", null, true);
         echo "\"></script>
         <script src='https://www.google.com/recaptcha/api.js'></script>
@@ -148,7 +117,71 @@ class __TwigTemplate_8c41a5c2ea9b77f0bd7fe2d723f7bb6ebf6dc0e1e01cb22eeb3682378ff
 
     }
 
-    // line 6
+    // line 3
+    public function block_head($context, array $blocks = array())
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "head"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "head"));
+
+        // line 4
+        echo "    <head>
+        <meta charset=\"UTF-8\" />
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+        <title>";
+        // line 7
+        $this->displayBlock('title', $context, $blocks);
+        echo "</title>
+        ";
+        // line 8
+        $this->displayBlock('stylesheets', $context, $blocks);
+        // line 9
+        echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("favicon.ico"), "html", null, true);
+        echo "\" />
+        <link rel=\"stylesheet\" href=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/foundation.css"), "html", null, true);
+        echo "\">
+        <link rel=\"stylesheet\" href=\"";
+        // line 11
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/app.css"), "html", null, true);
+        echo "\">
+        <link rel=\"stylesheet\" href=\"";
+        // line 12
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/sidenav.css"), "html", null, true);
+        echo "\">
+        <link rel=\"stylesheet\" href=\"";
+        // line 13
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/themes/default.css"), "html", null, true);
+        echo "\">
+        <link rel=\"stylesheet\" href=\"";
+        // line 14
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/themes/default.date.css"), "html", null, true);
+        echo "\">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-131743009-1\"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-131743009-1');
+        </script>
+
+    </head>
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 7
     public function block_title($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -166,7 +199,7 @@ class __TwigTemplate_8c41a5c2ea9b77f0bd7fe2d723f7bb6ebf6dc0e1e01cb22eeb3682378ff
 
     }
 
-    // line 7
+    // line 8
     public function block_stylesheets($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -183,7 +216,7 @@ class __TwigTemplate_8c41a5c2ea9b77f0bd7fe2d723f7bb6ebf6dc0e1e01cb22eeb3682378ff
 
     }
 
-    // line 17
+    // line 28
     public function block_top_bar($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -192,26 +225,26 @@ class __TwigTemplate_8c41a5c2ea9b77f0bd7fe2d723f7bb6ebf6dc0e1e01cb22eeb3682378ff
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "top_bar"));
 
-        // line 18
+        // line 29
         echo "        <!-- Start Top Bar -->
     <div class=\"top-bar\">
       <div class=\"row\">
         <div class=\"top-bar-left\">
           <ul class=\"dropdown menu\" data-dropdown-menu>
             <li><a href=\"";
-        // line 23
+        // line 34
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Home</a></li>
               <li><a href=\"";
-        // line 24
+        // line 35
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("about_us");
         echo "\">About us</a></li>
               <li><a href=\"";
-        // line 25
+        // line 36
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("location");
         echo "\">How to locate</a></li>
               <li><a href=\"";
-        // line 26
+        // line 37
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
         echo "\">Contact</a></li>
           </ul>
@@ -230,7 +263,7 @@ class __TwigTemplate_8c41a5c2ea9b77f0bd7fe2d723f7bb6ebf6dc0e1e01cb22eeb3682378ff
 
     }
 
-    // line 40
+    // line 51
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -248,7 +281,7 @@ class __TwigTemplate_8c41a5c2ea9b77f0bd7fe2d723f7bb6ebf6dc0e1e01cb22eeb3682378ff
 
     }
 
-    // line 54
+    // line 65
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -277,13 +310,14 @@ class __TwigTemplate_8c41a5c2ea9b77f0bd7fe2d723f7bb6ebf6dc0e1e01cb22eeb3682378ff
 
     public function getDebugInfo()
     {
-        return array (  252 => 54,  234 => 40,  215 => 26,  211 => 25,  207 => 24,  203 => 23,  196 => 18,  187 => 17,  170 => 7,  152 => 6,  124 => 60,  120 => 59,  116 => 58,  112 => 57,  108 => 56,  103 => 55,  101 => 54,  86 => 41,  84 => 40,  77 => 35,  75 => 17,  68 => 13,  64 => 12,  60 => 11,  56 => 10,  52 => 9,  47 => 8,  45 => 7,  41 => 6,  34 => 1,);
+        return array (  285 => 65,  267 => 51,  248 => 37,  244 => 36,  240 => 35,  236 => 34,  229 => 29,  220 => 28,  203 => 8,  185 => 7,  162 => 14,  158 => 13,  154 => 12,  150 => 11,  146 => 10,  141 => 9,  139 => 8,  135 => 7,  130 => 4,  121 => 3,  93 => 71,  89 => 70,  85 => 69,  81 => 68,  77 => 67,  72 => 66,  70 => 65,  55 => 52,  53 => 51,  46 => 46,  44 => 28,  41 => 27,  39 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("<!DOCTYPE html>
 <html>
+{% block head %}
     <head>
         <meta charset=\"UTF-8\" />
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
@@ -295,8 +329,18 @@ class __TwigTemplate_8c41a5c2ea9b77f0bd7fe2d723f7bb6ebf6dc0e1e01cb22eeb3682378ff
         <link rel=\"stylesheet\" href=\"{{ asset('css/sidenav.css') }}\">
         <link rel=\"stylesheet\" href=\"{{ asset('pickadate/lib/themes/default.css') }}\">
         <link rel=\"stylesheet\" href=\"{{ asset('pickadate/lib/themes/default.date.css') }}\">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-131743009-1\"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-131743009-1');
+        </script>
 
     </head>
+{% endblock %}
     <body>
     {% block top_bar %}
         <!-- Start Top Bar -->
