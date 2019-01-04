@@ -86,9 +86,9 @@ class HomeController extends Controller
         $data['form'] = [];
 
         $form = $this->createFormBuilder()
-            ->add('contact_email')
-            ->add('contact_subject')
-            ->add('contact_message')
+            ->add('contact_form_email')
+            ->add('contact_form_subject')
+            ->add('contact_form_message')
             ->getForm();
         $form->handleRequest($request);
 
@@ -99,9 +99,9 @@ class HomeController extends Controller
             $form_data = $form->getData();
             $data['form'] = [];
             $data ['form'] = $form_data;
-            $contact_email = $form_data['contact_email'];
-            $contact_subject = $form_data['contact_subject'];
-            $contact_message = $form_data['contact_message'];
+            $contact_form_email = $form_data['contact_form_email'];
+            $contact_form_subject = $form_data['contact_form_subject'];
+            $contact_form_message = $form_data['contact_form_message'];
 
             $secure_key = "6LcFNIUUAAAAAFYY4RjIMo9a9OAR3QokdNJQOWcG";
             $response_key = $request->get('g-recaptcha-response');
@@ -120,12 +120,12 @@ class HomeController extends Controller
                 $mailer = new Swift_Mailer($transport);
 
                 $message = \Swift_Message::newInstance()
-                    ->setSubject($contact_subject)
+                    ->setSubject($contact_form_subject)
                     ->setFrom('g.khachatrian2016@free.fr')
-                    ->setReplyTo($contact_email)
+                    ->setReplyTo($contact_form_email)
                     ->setTo('g.khachatrian@free.fr')
                     ->setContentType('text/html')
-                    ->setBody($contact_message);
+                    ->setBody($contact_form_message);
 
                 // var_dump($mailer);
 
@@ -234,7 +234,7 @@ class HomeController extends Controller
             ->add('zip_code')
             ->add('city')
             ->add('state')
-            ->add('email')
+            ->add('client_email')
             ->getForm();
 
         $form->handleRequest($request);
@@ -265,7 +265,7 @@ class HomeController extends Controller
             $client->setZipCode($form_data['zip_code']);
             $client->setCity($form_data['city']);
             $client->setState($form_data['state']);
-            $client->setEmail($form_data['email']);
+            $client->setClient_email($form_data['client_email']);
             $client->setIdRoom($id_room);
             $client->setRoomType($data['room_type']);
             $client->setAdult($data['adult']);
@@ -281,7 +281,7 @@ class HomeController extends Controller
             $date_out = $data['to'];
 
             $cache = new FilesystemCache();
-            $cache->set('email', $form_data['email']);
+            $cache->set('client_email', $form_data['client_email']);
 
             $cache->deleteMultiple(array('room_type','adult','child', 'baby',));
 
@@ -307,11 +307,11 @@ class HomeController extends Controller
 
       //get from cache all info for client and actual reservation
         $cache = new FilesystemCache();
-        $email = $cache->get('email');
+        $client_email = $cache->get('client_email');
 
         $client = $this->getDoctrine()
             ->getRepository('AppBundle:Client')
-            ->findOneBy(array('email' => $email));
+            ->findOneBy(array('client_email' => $client_email));
 
         $reservation_id = $this->getDoctrine()
             ->getRepository('AppBundle:Reservation')
@@ -360,7 +360,7 @@ class HomeController extends Controller
             <h4>ZipCode'. $zip_code .'</h4>
             <h4>Check-In -' . $date_in .'</h4>
             <h4>Check-Out -' . $date_out .'</h4>
-            <h4>Email -'.$email .'</h4>';
+            <h4>Email -'.$client_email .'</h4>';
 
             $pdf->writeHTML($html, true, false, true, false, '');
             $pdf->Output('/var/www/10.Edu_Symfony3_hotel/reservations/'.$client_id .'.pdf', 'F');
@@ -379,7 +379,7 @@ class HomeController extends Controller
             ->setSubject($contact_subject)
             ->setFrom('g.khachatrian2016@free.fr')
            // ->setReplyTo($contact_email)
-            ->setTo($email)
+            ->setTo($client_email)
             ->setContentType('text/html')
             ->setBody($contact_message)
             ->attach(Swift_Attachment::fromPath('/var/www/10.Edu_Symfony3_hotel/reservations/'.$client_id .'.pdf'));

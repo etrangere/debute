@@ -54,7 +54,7 @@ class Client
     /**
      * @var string
      */
-    private $email;
+    private $client_email;
 
     /**
      * @var integer
@@ -344,27 +344,27 @@ class Client
     }
 
     /**
-     * Set email
+     * Set client_email
      *
-     * @param string $email
+     * @param string $client_email
      *
      * @return Client
      */
-    public function setEmail($email)
+    public function setClient_email($client_email)
     {
-        $this->email = $email;
+        $this->client_email = $client_email;
 
         return $this;
     }
 
     /**
-     * Get email
+     * Get client_email
      *
      * @return string
      */
-    public function getEmail()
+    public function getClient_email()
     {
-        return $this->email;
+        return $this->client_email;
     }
     /**
      * @var \Doctrine\Common\Collections\Collection

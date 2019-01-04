@@ -133,6 +133,5 @@
   ':admin:index.html.twig' => __DIR__.'/../../../app/Resources/views/admin/index.html.twig',
   ':user:register.html.twig' => __DIR__.'/../../../app/Resources/views/user/register.html.twig',
   ':clients:index.html.twig' => __DIR__.'/../../../app/Resources/views/clients/index.html.twig',
-  ':clients:ajax_search.html.twig' => __DIR__.'/../../../app/Resources/views/clients/ajax_search.html.twig',
   ':clients:form.html.twig' => __DIR__.'/../../../app/Resources/views/clients/form.html.twig',
 );

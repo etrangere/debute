@@ -11,6 +11,7 @@
                     <li><a href="{{ path("admin")}}">Admin</a></li>
                     <li><a href="{{ path("index_clients")}}">Clients</a></li>
                     <li><a href="{{ path("reservations")}}">Reservations</a></li>
+                    <li><a href="{{  path ('security_logout') }}" style="color: blue">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -41,7 +42,7 @@
             {%  for client in clients %}
               <tr>
                 <td>{{ client.title | upper }}. {{ client.name }} {{ client.lastName }}</td>
-                <td>{{ client.Email }}</td>
+                <td>{{ client.client_email }}</td>
                     <td>
                     <a class="hollow button" href="{{ path("modify_client", { 'id_client': client.id }) }}">EDIT</a>
                     <a class="hollow button warning" href="{{ path("delete", { 'id_client': client.id }) }}">DELETE</a>

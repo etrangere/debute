@@ -161,13 +161,13 @@ class __TwigTemplate_957976ad4cd7945cbbf33f8ef38541fa688beb658876a12d09a3a381e0f
                 </div>
                 <div class=\"medium-12  columns\">
                     <label>Email</label>
-                    <input name=\"form[email]\" style=\"border-color: #00ace6\" value=\"";
+                    <input name=\"form[client_email]\" style=\"border-color: #00ace6\" value=\"";
         // line 60
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "email", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 60, $this->source); })()), "email", array())) : ("")), "html", null, true);
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "client_email", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 60, $this->source); })()), "client_email", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" required/>
                 </div>
                 <div class=\"medium-12  columns\">
-                    <input type=\"submit\" class=\"button\" value=\"BOOKING INFORMATION\" class=\"button success hollow\" />
+                    <input type=\"submit\" class=\"button\" value=\"BOOKING INFORMATION\"  />
                 </div>
             </form>
         </div>
@@ -258,10 +258,10 @@ class __TwigTemplate_957976ad4cd7945cbbf33f8ef38541fa688beb658876a12d09a3a381e0f
                 </div>
                 <div class=\"medium-12  columns\">
                     <label>Email</label>
-                    <input name=\"form[email]\" style=\"border-color: #00ace6\" value=\"{{ form.email is defined ? form.email : '' }}\" type=\"text\" required/>
+                    <input name=\"form[client_email]\" style=\"border-color: #00ace6\" value=\"{{ form.client_email is defined ? form.client_email : '' }}\" type=\"text\" required/>
                 </div>
                 <div class=\"medium-12  columns\">
-                    <input type=\"submit\" class=\"button\" value=\"BOOKING INFORMATION\" class=\"button success hollow\" />
+                    <input type=\"submit\" class=\"button\" value=\"BOOKING INFORMATION\"  />
                 </div>
             </form>
         </div>

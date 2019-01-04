@@ -170,9 +170,9 @@ class __TwigTemplate_7351824e1cc953e3c705e37ae88f8729a2cbdfbc4ba14671ec503ec4f41
         </div>
         <div class=\"medium-12  columns\">
           <label>Email</label>
-          <input name=\"form[email]\" value=\"";
+          <input name=\"form[client_email]\" value=\"";
         // line 66
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "email", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 66, $this->source); })()), "email", array())) : ("")), "html", null, true);
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "client_email", array(), "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 66, $this->source); })()), "client_email", array())) : ("")), "html", null, true);
         echo "\" type=\"text\" disabled/>
         </div>
 
@@ -385,7 +385,7 @@ class __TwigTemplate_7351824e1cc953e3c705e37ae88f8729a2cbdfbc4ba14671ec503ec4f41
         </div>
         <div class=\"medium-12  columns\">
           <label>Email</label>
-          <input name=\"form[email]\" value=\"{{ form.email is defined ? form.email : '' }}\" type=\"text\" disabled/>
+          <input name=\"form[client_email]\" value=\"{{ form.client_email is defined ? form.client_email : '' }}\" type=\"text\" disabled/>
         </div>
 
         <div class=\"medium-3  columns\">

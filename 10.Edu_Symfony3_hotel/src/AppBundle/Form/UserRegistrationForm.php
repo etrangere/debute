@@ -22,7 +22,7 @@ class UserRegistrationForm extends AbstractType
             ->add('plainPassword',RepeatedType::class,[
 
                 'type'=> PasswordType::class
-                ]);
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

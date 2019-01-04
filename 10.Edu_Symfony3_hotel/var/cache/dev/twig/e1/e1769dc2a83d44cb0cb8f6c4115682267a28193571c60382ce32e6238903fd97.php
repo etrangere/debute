@@ -52,7 +52,7 @@ class __TwigTemplate_9f5668c61d6876652272895f80d7c2f3892296d8b525241377cf3f5a81f
         // line 4
         echo "    <div class=\"container\">
         <div class=\"row\">
-            <div class=\"col-xs-12\">
+            <div class=\"col-xs-12\" aria-required=\"true\">
                 <h1>Register!</h1>
 
                 ";
@@ -75,10 +75,17 @@ class __TwigTemplate_9f5668c61d6876652272895f80d7c2f3892296d8b525241377cf3f5a81f
         echo "
 
                 <button type=\"submit\" class=\"button\" formnovalidate>Register</button>
+
                 ";
-        // line 19
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 19, $this->source); })()), 'form_end');
+        // line 20
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 20, $this->source); })()), 'form_end');
         echo "
+
+                <a href=\"";
+        // line 22
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login");
+        echo "\"><button type=\"submit\" class=\"button\" >Go to login</button></a>
+
             </div>
         </div>
     </div>
@@ -103,7 +110,7 @@ class __TwigTemplate_9f5668c61d6876652272895f80d7c2f3892296d8b525241377cf3f5a81f
 
     public function getDebugInfo()
     {
-        return array (  80 => 19,  75 => 16,  73 => 14,  70 => 13,  68 => 11,  64 => 10,  60 => 9,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  86 => 22,  81 => 20,  75 => 16,  73 => 14,  70 => 13,  68 => 11,  64 => 10,  60 => 9,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -113,7 +120,7 @@ class __TwigTemplate_9f5668c61d6876652272895f80d7c2f3892296d8b525241377cf3f5a81f
 {% block body %}
     <div class=\"container\">
         <div class=\"row\">
-            <div class=\"col-xs-12\">
+            <div class=\"col-xs-12\" aria-required=\"true\">
                 <h1>Register!</h1>
 
                 {{ form_start(form) }}
@@ -126,7 +133,11 @@ class __TwigTemplate_9f5668c61d6876652272895f80d7c2f3892296d8b525241377cf3f5a81f
                 }) }}
 
                 <button type=\"submit\" class=\"button\" formnovalidate>Register</button>
+
                 {{ form_end(form) }}
+
+                <a href=\"{{ path ('security_login') }}\"><button type=\"submit\" class=\"button\" >Go to login</button></a>
+
             </div>
         </div>
     </div>

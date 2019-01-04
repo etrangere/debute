@@ -173,14 +173,14 @@ class __TwigTemplate_1f6082ddbaea4b576d17c80509c698f8cfa2b51868ce6bb929c95026f68
             <th scope=\"row\">Email</th>
             <td>";
         // line 84
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 84, $this->source); })()), "email", array()), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 84, $this->source); })()), "client_email", array()), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th scope=\"row\">Tel:</th>
             <td>";
         // line 88
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 88, $this->source); })()), "email", array()), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 88, $this->source); })()), "client_email", array()), "html", null, true);
         echo "</td>
         </tr>
         <tr>
@@ -317,11 +317,11 @@ class __TwigTemplate_1f6082ddbaea4b576d17c80509c698f8cfa2b51868ce6bb929c95026f68
         </tr>
         <tr>
             <th scope=\"row\">Email</th>
-            <td>{{ client.email}}</td>
+            <td>{{ client.client_email}}</td>
         </tr>
         <tr>
             <th scope=\"row\">Tel:</th>
-            <td>{{ client.email}}</td>
+            <td>{{ client.client_email}}</td>
         </tr>
         <tr>
             <th scope=\"row\">TOTAL</th>

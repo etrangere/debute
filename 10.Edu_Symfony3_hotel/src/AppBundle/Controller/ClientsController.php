@@ -116,7 +116,7 @@ class ClientsController extends Controller
             $client_data ['zip_code'] = $client->getZipCode();
             $client_data ['city'] = $client->getCity();
             $client_data ['state'] = $client->getState();
-            $client_data ['email'] = $client->getEmail();
+            $client_data ['client_email'] = $client->getClient_email();
             $client_data ['room_type'] = $client->getRoomType();
             $client_data ['adult'] = $client->getAdult();
             $client_data ['child'] = $client->getChild();

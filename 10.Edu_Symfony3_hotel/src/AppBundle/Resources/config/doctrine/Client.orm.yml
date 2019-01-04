@@ -32,7 +32,7 @@ AppBundle\Entity\Client:
         state:
             type: string
             length: '20'
-        email:
+        client_email:
             type: string
             length: '100'
             unique: true
