@@ -99,12 +99,15 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
         // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservations");
         echo "\">Reservations</a>
-        <a href=\"";
+        ";
         // line 25
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_register");
-        echo "\">Register</a>
-        <a href=\"";
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            echo "<a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_register");
+            echo "\">Register</a>";
+        }
         // line 26
+        echo "        <a href=\"";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
         echo "\">Logout</a>
     </div>
@@ -149,7 +152,7 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
 
     public function getDebugInfo()
     {
-        return array (  123 => 15,  108 => 26,  104 => 25,  100 => 24,  96 => 23,  85 => 15,  80 => 13,  71 => 12,  58 => 6,  55 => 5,  46 => 4,  15 => 1,);
+        return array (  126 => 15,  110 => 26,  104 => 25,  100 => 24,  96 => 23,  85 => 15,  80 => 13,  71 => 12,  58 => 6,  55 => 5,  46 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -178,7 +181,7 @@ class __TwigTemplate_81dc79c66e77fb7fc73e22d274d2361557076626942bfcbdbed581743a1
     <div class=\"sidenav\">
         <a href=\"{{ path(\"index_clients\")}}\">Clients</a>
         <a href=\"{{ path(\"reservations\")}}\">Reservations</a>
-        <a href=\"{{  path ('user_register') }}\">Register</a>
+        {% if is_granted('ROLE_ADMIN') %}<a href=\"{{  path ('user_register') }}\">Register</a>{%endif%}
         <a href=\"{{  path ('security_logout') }}\">Logout</a>
     </div>
 

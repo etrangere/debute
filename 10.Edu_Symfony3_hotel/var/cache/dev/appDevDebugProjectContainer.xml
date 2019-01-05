@@ -2257,7 +2257,7 @@
       <call method="add">
         <argument type="service" id="security.request_matcher.it2k2lk"/>
         <argument type="collection">
-          <argument>ROLE_USER</argument>
+          <argument>ROLE_ADMIN</argument>
         </argument>
         <argument>null</argument>
       </call>
