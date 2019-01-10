@@ -170,8 +170,8 @@ class __TwigTemplate_8c41a5c2ea9b77f0bd7fe2d723f7bb6ebf6dc0e1e01cb22eeb3682378ff
 
             gtag('config', 'UA-131743009-1');
         </script>
-
     </head>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -338,8 +338,8 @@ class __TwigTemplate_8c41a5c2ea9b77f0bd7fe2d723f7bb6ebf6dc0e1e01cb22eeb3682378ff
 
             gtag('config', 'UA-131743009-1');
         </script>
-
     </head>
+
 {% endblock %}
     <body>
     {% block top_bar %}
