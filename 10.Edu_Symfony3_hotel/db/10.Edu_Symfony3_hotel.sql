@@ -2,10 +2,10 @@
 -- version 4.5.4.1deb2ubuntu2.1
 -- http://www.phpmyadmin.net
 --
--- Client :  localhost
--- Généré le :  Ven 04 Janvier 2019 à 18:01
--- Version du serveur :  5.7.24-0ubuntu0.16.04.1
--- Version de PHP :  7.1.24-1+ubuntu16.04.1+deb.sury.org+1
+-- Host: localhost
+-- Generation Time: Jan 10, 2019 at 04:29 AM
+-- Server version: 5.7.24-0ubuntu0.16.04.1
+-- PHP Version: 7.2.13-1+ubuntu16.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `10.Edu_Symfony3_hotel`
+-- Database: `10.Edu_Symfony3_hotel`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `client`
+-- Table structure for table `client`
 --
 
 CREATE TABLE `client` (
@@ -44,16 +44,17 @@ CREATE TABLE `client` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `client`
+-- Dumping data for table `client`
 --
 
 INSERT INTO `client` (`id`, `title`, `name`, `last_name`, `address`, `zip_code`, `city`, `state`, `client_email`, `room_type`, `adult`, `child`, `baby`, `id_room`) VALUES
-(64, 'mr', 'test', 'test hhhh', 'mlkjmljk', '333', 'sdfqsdfqs', 'ghjkhjk', 'g.khachatrian@free.fr', 1, 2, 1, 1, '1');
+(64, 'mr', 'test', 'test hhhh', 'mlkjmljk', '333', 'sdfqsdfqs', 'ghjkhjk', 'g.khachatrian@free.fr', 1, 2, 1, 1, '1'),
+(65, 'mr', 'Gugo Khach23', 'Khach23', '44 address23', '1923', 'LilleDERE23', 'DERE23', 'gugo_gg@yahoo.com', 1, 1, 1, 1, '2');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `reservation`
+-- Table structure for table `reservation`
 --
 
 CREATE TABLE `reservation` (
@@ -65,16 +66,17 @@ CREATE TABLE `reservation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `reservation`
+-- Dumping data for table `reservation`
 --
 
 INSERT INTO `reservation` (`id`, `client_id`, `room_id`, `date_in`, `date_out`) VALUES
-(46, 64, 1, '2019-01-04 20:19:00', '2019-01-05 20:19:00');
+(46, 64, 1, '2019-01-04 20:19:00', '2019-01-05 20:19:00'),
+(47, 65, 2, '2019-01-07 20:19:00', '2019-01-08 20:19:00');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `room`
+-- Table structure for table `room`
 --
 
 CREATE TABLE `room` (
@@ -87,7 +89,7 @@ CREATE TABLE `room` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `room`
+-- Dumping data for table `room`
 --
 
 INSERT INTO `room` (`id`, `name`, `floor`, `description`, `room_type`, `price`) VALUES
@@ -98,38 +100,39 @@ INSERT INTO `room` (`id`, `name`, `floor`, `description`, `room_type`, `price`) 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `roles` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+  `roles` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `email`, `password`, `roles`) VALUES
-(2, 'gggg@mail.ru', '$2y$13$oLrFOqYN1zCL0UsXxNosHO9EUH8eEHxUXDeQB9k4jAggcngXvgwyi', 'a:0:{}'),
-(3, 'ggggg@mail.ru', '$2y$13$k7Dqu1lgTx7Jr.bfdDGQleNXQya7Go3LPRpGHnhgwyy39SVOiwzbS', 'a:0:{}'),
-(4, 'gg@mail.ru', '$2y$13$NIwICN.ZhJMD4288EJ4bbO8YY.FyIgzBEmw1N8gqH3KPgLmhEUvHS', 'ROLE_ADMIN');
+(2, 'gggg@mail.ru', '$2y$13$oLrFOqYN1zCL0UsXxNosHO9EUH8eEHxUXDeQB9k4jAggcngXvgwyi', 'a:2:{i:0;s:9:"ROLE_USER";i:1;s:10:"ROLE_ADMIN";}'),
+(3, 'ggggg@mail.ru', '$2y$13$k7Dqu1lgTx7Jr.bfdDGQleNXQya7Go3LPRpGHnhgwyy39SVOiwzbS', 'a:1:{i:0;s:9:"ROLE_USER";}'),
+(4, 'gg@mail.ru', '$2y$13$NIwICN.ZhJMD4288EJ4bbO8YY.FyIgzBEmw1N8gqH3KPgLmhEUvHS', 'a:2:{i:0;s:9:"ROLE_USER";i:1;s:10:"ROLE_ADMIN";}'),
+(5, 'g@mail.ru', '$2y$13$ngzxn.yzqG7Kt025HSzI3uRTCweL2DRchovY9tRkYH1fDX.dlfDte', 'a:0:{}');
 
 --
--- Index pour les tables exportées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `client`
+-- Indexes for table `client`
 --
 ALTER TABLE `client`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `UNIQ_C744045544FFE0C3` (`client_email`);
 
 --
--- Index pour la table `reservation`
+-- Indexes for table `reservation`
 --
 ALTER TABLE `reservation`
   ADD PRIMARY KEY (`id`),
@@ -137,47 +140,47 @@ ALTER TABLE `reservation`
   ADD KEY `IDX_42C8495554177093` (`room_id`);
 
 --
--- Index pour la table `room`
+-- Indexes for table `room`
 --
 ALTER TABLE `room`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `client`
+-- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 --
--- AUTO_INCREMENT pour la table `reservation`
+-- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
--- AUTO_INCREMENT pour la table `room`
+-- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT pour la table `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- Contraintes pour les tables exportées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `reservation`
+-- Constraints for table `reservation`
 --
 ALTER TABLE `reservation`
   ADD CONSTRAINT `FK_42C8495519EB6921` FOREIGN KEY (`client_id`) REFERENCES `client` (`id`),
