@@ -41,7 +41,7 @@ class __TwigTemplate_4a35301b60e8f6fb4fb70b9f948c0bb86befda442a4f166d09f91be5109
 
     }
 
-    // line 5
+    // line 4
     public function block_top_bar($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -58,7 +58,7 @@ class __TwigTemplate_4a35301b60e8f6fb4fb70b9f948c0bb86befda442a4f166d09f91be5109
 
     }
 
-    // line 8
+    // line 7
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -67,18 +67,19 @@ class __TwigTemplate_4a35301b60e8f6fb4fb70b9f948c0bb86befda442a4f166d09f91be5109
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 9
+        // line 8
         echo "
     ";
-        // line 10
+        // line 9
         echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context);
         echo "
 
     <div class=\"container-fluid\">
         <link rel=\"stylesheet\" href=\"";
-        // line 13
+        // line 12
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/progresbar.css"), "html", null, true);
         echo "\">
+
         <br /><br />
         <ul class=\"list-unstyled multi-steps\">
             <li class=\"is-active\">Your choice</li>
@@ -341,13 +342,12 @@ class __TwigTemplate_4a35301b60e8f6fb4fb70b9f948c0bb86befda442a4f166d09f91be5109
 
     public function getDebugInfo()
     {
-        return array (  247 => 121,  238 => 118,  234 => 117,  230 => 116,  226 => 115,  223 => 114,  219 => 113,  193 => 90,  189 => 89,  185 => 88,  171 => 77,  167 => 76,  163 => 75,  149 => 64,  145 => 63,  141 => 62,  127 => 51,  123 => 50,  119 => 49,  80 => 13,  74 => 10,  71 => 9,  62 => 8,  45 => 5,  15 => 1,);
+        return array (  248 => 121,  239 => 118,  235 => 117,  231 => 116,  227 => 115,  224 => 114,  220 => 113,  194 => 90,  190 => 89,  186 => 88,  172 => 77,  168 => 76,  164 => 75,  150 => 64,  146 => 63,  142 => 62,  128 => 51,  124 => 50,  120 => 49,  80 => 12,  74 => 9,  71 => 8,  62 => 7,  45 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
-
 
 
 {% block top_bar %}{% endblock %}
@@ -359,6 +359,7 @@ class __TwigTemplate_4a35301b60e8f6fb4fb70b9f948c0bb86befda442a4f166d09f91be5109
 
     <div class=\"container-fluid\">
         <link rel=\"stylesheet\" href=\"{{ asset('css/progresbar.css') }}\">
+
         <br /><br />
         <ul class=\"list-unstyled multi-steps\">
             <li class=\"is-active\">Your choice</li>
