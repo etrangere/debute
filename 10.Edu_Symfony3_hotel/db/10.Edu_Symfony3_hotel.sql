@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 10, 2019 at 04:29 AM
+-- Generation Time: Jan 15, 2019 at 12:30 AM
 -- Server version: 5.7.24-0ubuntu0.16.04.1
 -- PHP Version: 7.2.13-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -48,8 +48,8 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`id`, `title`, `name`, `last_name`, `address`, `zip_code`, `city`, `state`, `client_email`, `room_type`, `adult`, `child`, `baby`, `id_room`) VALUES
-(64, 'mr', 'test', 'test hhhh', 'mlkjmljk', '333', 'sdfqsdfqs', 'ghjkhjk', 'g.khachatrian@free.fr', 1, 2, 1, 1, '1'),
-(65, 'mr', 'Gugo Khach23', 'Khach23', '44 address23', '1923', 'LilleDERE23', 'DERE23', 'gugo_gg@yahoo.com', 1, 1, 1, 1, '2');
+(64, 'mr selected', 'test', 'test hhhh', 'mlkjmljk', '333', 'sdfqsdfqs', 'ghjkhjk', 'g.khachatrian@free.fr', 1, 2, 1, 1, '1'),
+(68, 'ms', 'Maragarita Stepani', 'Stepani', '33 Rue Barkel', '453', 'Bent', 'Chil', 'gugo_gg@yahoo.com', 1, 1, 1, 0, '1');
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,7 @@ CREATE TABLE `reservation` (
 
 INSERT INTO `reservation` (`id`, `client_id`, `room_id`, `date_in`, `date_out`) VALUES
 (46, 64, 1, '2019-01-04 20:19:00', '2019-01-05 20:19:00'),
-(47, 65, 2, '2019-01-07 20:19:00', '2019-01-08 20:19:00');
+(48, 68, 1, '2019-01-28 20:19:00', '2019-01-25 20:19:00');
 
 -- --------------------------------------------------------
 
@@ -117,8 +117,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `email`, `password`, `roles`) VALUES
 (2, 'gggg@mail.ru', '$2y$13$oLrFOqYN1zCL0UsXxNosHO9EUH8eEHxUXDeQB9k4jAggcngXvgwyi', 'a:2:{i:0;s:9:"ROLE_USER";i:1;s:10:"ROLE_ADMIN";}'),
 (3, 'ggggg@mail.ru', '$2y$13$k7Dqu1lgTx7Jr.bfdDGQleNXQya7Go3LPRpGHnhgwyy39SVOiwzbS', 'a:1:{i:0;s:9:"ROLE_USER";}'),
-(4, 'gg@mail.ru', '$2y$13$NIwICN.ZhJMD4288EJ4bbO8YY.FyIgzBEmw1N8gqH3KPgLmhEUvHS', 'a:2:{i:0;s:9:"ROLE_USER";i:1;s:10:"ROLE_ADMIN";}'),
-(5, 'g@mail.ru', '$2y$13$ngzxn.yzqG7Kt025HSzI3uRTCweL2DRchovY9tRkYH1fDX.dlfDte', 'a:0:{}');
+(4, 'gg@mail.ru', '$2y$13$NIwICN.ZhJMD4288EJ4bbO8YY.FyIgzBEmw1N8gqH3KPgLmhEUvHS', 'a:2:{i:0;s:9:"ROLE_USER";i:1;s:10:"ROLE_ADMIN";}');
 
 --
 -- Indexes for dumped tables
@@ -159,12 +158,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT for table `room`
 --
@@ -174,7 +173,7 @@ ALTER TABLE `room`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --
