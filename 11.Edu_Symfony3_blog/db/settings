@@ -3,8 +3,8 @@ virtualhost config file like below
 **
 <VirtualHost *:80>
 
-        ServerName portfolio.gourgen-khachatrian.fr
-        ServerAlias  http://portfolio.gourgen-khachatrian.fr/11.Edu_Symfony3_blog/web/app.php
+        ServerName blog.portfolio.gourgen-khachatrian.fr
+        ServerAlias  www.blog.portfolio.gourgen-khachatrian.fr
         DocumentRoot /var/www/11.Edu_Symfony3_blog/web
 
         # The ServerName directive sets the request scheme, hostname and port that
