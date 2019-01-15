@@ -348,19 +348,54 @@ class HomeController extends Controller
             $pdf->SetSubject('Your client');
 // set default header data
             $pdf->AddPage();
-            $html = '<h1>HTML Example</h1> 
-            <h4>client id '.$client_id .'</h4>
-            <h4>name '.$name .'</h4>
-            <h4>last name '.$last_name .'</h4>
-            
-            <h4>adult '.$adult .'</h4>
-            <h4>child '.$child .'</h4>
-            <h4>baby'.$baby .'</h4>
-            <h4>Address'. $address .'</h4>
-            <h4>ZipCode'. $zip_code .'</h4>
-            <h4>Check-In -' . $date_in .'</h4>
-            <h4>Check-Out -' . $date_out .'</h4>
-            <h4>Email -'.$client_email .'</h4>';
+        $html = '<h1>Hotel de France</h1> 
+            <table cellspacing="0" cellpadding="1" border="0">
+            <tr>
+            <th scope="row">Client Referance</th>
+            <td><h4>'  .$client_id .'</h4></td>
+            </tr> 
+            <tr>
+            <th scope="row">Name</th>
+            <td><h4>'.$name .'</h4></td>
+            </tr>
+             <tr>
+            <th scope="row">Last name</th>
+            <td><h4>'.$last_name .'</h4></td>
+            </tr>
+            <tr>
+            <th scope="row">Adult</th>
+            <td><h4>'.$adult .'</h4></td>
+            </tr>
+            <tr>
+            <th scope="row">Child</th>
+            <td><h4>'.$child .'</h4></td>
+            </tr>
+            <tr>
+            <th scope="row">Baby</th>
+            <td><h4>'.$baby .'</h4></td>
+            </tr>
+            <tr>
+            <th scope="row">Address</th>
+            <td><h4>'. $address .'</h4></td>
+            </tr>
+            <tr>
+            <th scope="row">ZipCode</th>
+            <td><h4>'. $zip_code .'</h4></td>
+            </tr>
+            <tr>
+            <th scope="row">Check-In -</th>
+            <td><h4>' . $date_in .'</h4></td>
+            </tr>
+            <tr>
+            <th scope="row">Check-Out -</th>
+            <td><h4>' . $date_out .'</h4></td>
+            </tr>
+            <tr>
+            <th scope="row">Email -</th>
+            <td><h4>'.$client_email .'</h4></td>
+            </tr>
+            </table>
+            ';
 
             $pdf->writeHTML($html, true, false, true, false, '');
             $pdf->Output('/var/www/10.Edu_Symfony3_hotel/reservations/'.$client_id .'.pdf', 'F');
