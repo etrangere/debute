@@ -2255,7 +2255,7 @@
         <argument>null</argument>
       </call>
       <call method="add">
-        <argument type="service" id="security.request_matcher.it2k2lk"/>
+        <argument type="service" id="security.request_matcher.xqdhvfm"/>
         <argument type="collection">
           <argument>ROLE_ADMIN</argument>
         </argument>
@@ -2720,8 +2720,8 @@
     <service id="security.request_matcher.yk6k2aj" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/admin</argument>
     </service>
-    <service id="security.request_matcher.it2k2lk" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-      <argument>^/register</argument>
+    <service id="security.request_matcher.xqdhvfm" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/admin/register</argument>
     </service>
     <service id="security.request_matcher.pvhzenn" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/admin/guests</argument>

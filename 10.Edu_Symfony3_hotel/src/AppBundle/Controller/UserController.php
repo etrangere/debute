@@ -23,7 +23,7 @@ class UserController extends Controller
 {
     /**
      *
-     * @Route("/register",name="user_register")
+     * @Route("/admin/register",name="user_register")
      */
     public function registerAction(Request $request)
     {

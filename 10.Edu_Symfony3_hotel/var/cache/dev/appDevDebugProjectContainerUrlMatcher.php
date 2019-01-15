@@ -128,6 +128,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::showReservations',  '_route' => 'reservations',);
             }
 
+            // user_register
+            if ('/admin/register' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserController::registerAction',  '_route' => 'user_register',);
+            }
+
             // book_room
             if (0 === strpos($pathinfo, '/admin/book_room') && preg_match('#^/admin/book_room/(?P<id_client>[^/]++)/(?P<id_room>[^/]++)/(?P<date_in>[^/]++)/(?P<date_out>[^/]++)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'book_room')), array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::book_room',));
@@ -193,11 +198,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         // available_room_list
         if ('/rooms' === $pathinfo) {
             return array (  '_controller' => 'AppBundle\\Controller\\HomeController::available_room_list',  '_route' => 'available_room_list',);
-        }
-
-        // user_register
-        if ('/register' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\UserController::registerAction',  '_route' => 'user_register',);
         }
 
         // booking

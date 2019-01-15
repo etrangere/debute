@@ -408,7 +408,10 @@ class HomeController extends Controller
         $mailer = new Swift_Mailer($transport);
 
         $contact_subject = 'Confirmation email';
-        $contact_message = 'We have successfully received your reservation';
+        $contact_message = 'Hotel de France confirmed that we have
+                            successfully received your reservation,
+                            here attached you can download your booking
+                            information in pdf ';
 
         $message = \Swift_Message::newInstance()
             ->setSubject($contact_subject)
