@@ -24,7 +24,7 @@
 
         <header style="background-color: #5eb5e0">
 
-           <center><img style="zoom: 10%" src="{{ asset('images/caduceus-medical-symbol.png') }}"></center>
+          <div align="center"> <img  style="zoom: 6%;padding: 1%" src="{{ asset('images/caduceus-medical-symbol.png') }}"></div>
            <h3 align="center">- Bioinformatics -</h3>
            <h2 align="center">Biological classification of living and fossil organisms database</h2>
            <br/>
@@ -34,20 +34,20 @@
         <a href="{{ path('homepage')}}" class="logo-icon"><i class="fa fa-home"></i> Home</a>&nbsp;&nbsp;
         <a  class="logo-icon"><i class="fa fa-info-circle"></i> About</a>&nbsp;&nbsp;
         <a  class="logo-icon"><i class="fa fa-location-arrow"></i> Locate</a>&nbsp;&nbsp;
-        <a  class="logo-icon"><i class="fa fa-connectdevelop"></i> Contact</a>&nbsp;&nbsp;
+        <a  class="logo-icon"><i class="fa fa-at"></i> Contact</a>&nbsp;&nbsp;
         <a href="#" class="js-header-search-toggle"><i class="fa fa-search">Search</i></a>&nbsp;&nbsp;
 
 
 
                 {% if is_granted('ROLE_USER') %}
 
-                    <a href="{{  path ('security_logout') }}">Logout</a>
+                    <a class="fa fa-sign-out" href="{{  path ('security_logout') }}">Logout</a>
 
                 {% else %}
 
 
-                    <a href="{{  path ('user_register') }}">Register</a>&nbsp;&nbsp;
-                    <a href="{{  path ('security_login') }}">Login</a>
+                    <a class="fa fa-user" href="{{  path ('user_register') }}">Register</a>&nbsp;&nbsp;
+                    <a class="fa fa-sign-in" href="{{  path ('security_login') }}">Login</a>
 
                 {% endif %}
       </div>
@@ -69,7 +69,7 @@
         </div>
 
         <div class="footer" >
-            <p class="footer-text" style="padding-left: 80%">Copyright 2018</p>
+            <p class="fa fa-copyright"  style="padding-left: 80%">2018</p>
         </div>
 
         {% block javascripts %}
