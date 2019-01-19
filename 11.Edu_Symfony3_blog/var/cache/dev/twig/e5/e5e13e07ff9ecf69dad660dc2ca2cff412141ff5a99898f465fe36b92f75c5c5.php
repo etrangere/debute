@@ -54,10 +54,7 @@ class __TwigTemplate_4dcdb4e1991648f10e701d430887392ce9206f23dd64e6a523c56bd6a2b
         // line 8
         echo "   
 
-    <a href=\"";
-        // line 10
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("genus_all");
-        echo " \">Back to genuslist</a>
+    
 
     <h2 class=\"genus-name\">";
         // line 12
@@ -145,7 +142,7 @@ class __TwigTemplate_4dcdb4e1991648f10e701d430887392ce9206f23dd64e6a523c56bd6a2b
 
     public function getDebugInfo()
     {
-        return array (  122 => 40,  117 => 38,  108 => 33,  102 => 32,  89 => 25,  84 => 23,  79 => 21,  74 => 19,  64 => 12,  59 => 10,  55 => 8,  49 => 7,  36 => 5,  11 => 1,);
+        return array (  119 => 40,  114 => 38,  105 => 33,  99 => 32,  86 => 25,  81 => 23,  76 => 21,  71 => 19,  61 => 12,  55 => 8,  49 => 7,  36 => 5,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -167,7 +164,7 @@ class __TwigTemplate_4dcdb4e1991648f10e701d430887392ce9206f23dd64e6a523c56bd6a2b
 {% block body %}
    
 
-    <a href=\"{{ path('genus_all')}} \">Back to genuslist</a>
+    
 
     <h2 class=\"genus-name\">{{ genus.name }}</h2>
 

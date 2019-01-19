@@ -37,44 +37,89 @@ class __TwigTemplate_a231ceb35eb68eb75c1903e219fbf5b3aa5a65dc3e2bf2130db20d14ec0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1 class=\"page-header text-center\">
+        echo "    <!DOCTYPE html>
 
-        biological classification of living and fossil organisms, as well as viruses
-
-        ";
-        // line 10
-        echo twig_escape_filter($this->env, (($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array())) ? ($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array()), "email", array())) : ("")), "html", null, true);
-        echo "!</h1>
-
-
-
-<center></center><h2><a href=\"";
-        // line 14
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("genus_all");
-        echo " \">List of all Aquanauts</a></h2></center>
-
-    <!DOCTYPE html>
 
 
     <body>
+<h1 class=\"page-header text-center\">
+
+    ";
+        // line 13
+        echo twig_escape_filter($this->env, (($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array())) ? ($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array()), "email", array())) : ("")), "html", null, true);
+        echo "</h1>
+
+<h1 align=\"center\"><a href=\"";
+        // line 15
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("genus_all");
+        echo " \">Species Database</a></h1><br/>
+
+
 
     <div class=\"container-fluid\">
 
 
         <div class=\"row\">
 
-            <div class=\"col-sm-3\" style=\"background-color:lavender\">
-                <h4 style=\"padding: 5%\">Eight major taxonomic ranks</h4>
+            <div class=\"col-sm-3\" style=\"background-color:lavender;\">
+
+                <h2 style=\"padding: 5%\">Eight major taxonomic ranks</h2>
                 <img style=\"padding: 15%\" src=\"/11.Edu_Symfony3_blog/web/images/Biological_classification.png\">
+
             </div>
 
-            <div class=\"col-sm-6\" style=\"background-color:lavenderblush;\">
-                .col-sm-6</div>
-            <div class=\"col-sm-3\" style=\"background-color:lavender;\">.col-sm-3</div>
+
+            <div class=\" col-sm-6\" style=\"background-color:lavenderblush;\">
+                <div style=\"width: 103%\">
+                <button type=\"button\" class=\"btn btn-primary\">Domain</button>
+                <button type=\"button\" class=\"btn btn-primary\">Kingdom</button>
+                <button type=\"button\" class=\"btn btn-primary\">Phylum</button>
+                <button type=\"button\" class=\"btn btn-primary\">Class</button>
+                <button type=\"button\" class=\"btn btn-primary\">Order</button>
+                <button type=\"button\" class=\"btn btn-primary\">Family</button>
+                <button type=\"button\" class=\"btn btn-primary\">Genus</button>
+                <button type=\"button\" class=\"btn btn-primary\">Species</button>
+                </div>
+            </div>
+
+
+            <div class=\"col-sm-3\" style=\"background-color:lavender;\">
+
+            <h4 style=\"padding: 5%\">Worldwide Identification codes</h4>
+
+              <ul>
+
+                  <li><a href=\"https://en.wikipedia.org/wiki/Taxonomic_rank\">Taxonomic rank</a> </li>
+                  <li><a href=\"https://en.wikipedia.org/wiki/Global_Species_Database\">Global Species Database</a> </li>
+                  <li><a href=\"https://en.wikipedia.org/wiki/National_Center_for_Biotechnology_Information\">National Center for Biotechnology Information (NCBI)</a></li>
+                  <li><a href=\"https://en.wikipedia.org/wiki/KEGG\">Kyoto Encyclopedia of Genes and Genomes (KEGG)</a></li>
+                  <li><a href=\"https://en.wikipedia.org/wiki/UniProt\">UniProt</a> </li>
+                  <li><a href=\"https://en.wikipedia.org/wiki/Integrated_Taxonomic_Information_System\">Integrated Taxonomic Information System (ITIS)</a> </li>
+              </ul>
+
+                <h4>Worldwide Identification codes</h4>
+
+                <ul>
+                    <li><a href=\"https://en.m.wikipedia.org/wiki/Fossil\">Fossil</a> </li>
+                    <li><a href=\"https://en.wikipedia.org/wiki/National_Center_for_Biotechnology_Information\">National Center for Biotechnology Information (NCBI)</a></li>
+                    <li><a href=\"https://en.wikipedia.org/wiki/KEGG\">Kyoto Encyclopedia of Genes and Genomes (KEGG)</a></li>
+                    <li><a href=\"https://en.wikipedia.org/wiki/Integrated_Taxonomic_Information_System\">Integrated Taxonomic Information System (ITIS)</a> </li>
+                </ul>
+                <h4>Worldwide Identification codes</h4>
+
+                <ul>
+
+                    <li><a href=\"https://en.wikipedia.org/wiki/National_Center_for_Biotechnology_Information\">National Center for Biotechnology Information (NCBI)</a></li>
+                    <li><a href=\"https://en.wikipedia.org/wiki/KEGG\">Kyoto Encyclopedia of Genes and Genomes (KEGG)</a></li>
+
+                </ul>
+            </div>
+
         </div>
+
     </div>
 
-    </body>
+</body>
 
 
 
@@ -97,7 +142,7 @@ class __TwigTemplate_a231ceb35eb68eb75c1903e219fbf5b3aa5a65dc3e2bf2130db20d14ec0
 
     public function getDebugInfo()
     {
-        return array (  53 => 14,  46 => 10,  40 => 6,  34 => 5,  11 => 1,);
+        return array (  54 => 15,  49 => 13,  40 => 6,  34 => 5,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -115,38 +160,83 @@ class __TwigTemplate_a231ceb35eb68eb75c1903e219fbf5b3aa5a65dc3e2bf2130db20d14ec0
 
 
 {% block body %}
-    <h1 class=\"page-header text-center\">
-
-        biological classification of living and fossil organisms, as well as viruses
-
-        {{ app.user ? app.user.email }}!</h1>
-
-
-
-<center></center><h2><a href=\"{{ path('genus_all')}} \">List of all Aquanauts</a></h2></center>
-
     <!DOCTYPE html>
 
 
+
     <body>
+<h1 class=\"page-header text-center\">
+
+    {{ app.user ? app.user.email }}</h1>
+
+<h1 align=\"center\"><a href=\"{{ path('genus_all')}} \">Species Database</a></h1><br/>
+
+
 
     <div class=\"container-fluid\">
 
 
         <div class=\"row\">
 
-            <div class=\"col-sm-3\" style=\"background-color:lavender\">
-                <h4 style=\"padding: 5%\">Eight major taxonomic ranks</h4>
+            <div class=\"col-sm-3\" style=\"background-color:lavender;\">
+
+                <h2 style=\"padding: 5%\">Eight major taxonomic ranks</h2>
                 <img style=\"padding: 15%\" src=\"/11.Edu_Symfony3_blog/web/images/Biological_classification.png\">
+
             </div>
 
-            <div class=\"col-sm-6\" style=\"background-color:lavenderblush;\">
-                .col-sm-6</div>
-            <div class=\"col-sm-3\" style=\"background-color:lavender;\">.col-sm-3</div>
+
+            <div class=\" col-sm-6\" style=\"background-color:lavenderblush;\">
+                <div style=\"width: 103%\">
+                <button type=\"button\" class=\"btn btn-primary\">Domain</button>
+                <button type=\"button\" class=\"btn btn-primary\">Kingdom</button>
+                <button type=\"button\" class=\"btn btn-primary\">Phylum</button>
+                <button type=\"button\" class=\"btn btn-primary\">Class</button>
+                <button type=\"button\" class=\"btn btn-primary\">Order</button>
+                <button type=\"button\" class=\"btn btn-primary\">Family</button>
+                <button type=\"button\" class=\"btn btn-primary\">Genus</button>
+                <button type=\"button\" class=\"btn btn-primary\">Species</button>
+                </div>
+            </div>
+
+
+            <div class=\"col-sm-3\" style=\"background-color:lavender;\">
+
+            <h4 style=\"padding: 5%\">Worldwide Identification codes</h4>
+
+              <ul>
+
+                  <li><a href=\"https://en.wikipedia.org/wiki/Taxonomic_rank\">Taxonomic rank</a> </li>
+                  <li><a href=\"https://en.wikipedia.org/wiki/Global_Species_Database\">Global Species Database</a> </li>
+                  <li><a href=\"https://en.wikipedia.org/wiki/National_Center_for_Biotechnology_Information\">National Center for Biotechnology Information (NCBI)</a></li>
+                  <li><a href=\"https://en.wikipedia.org/wiki/KEGG\">Kyoto Encyclopedia of Genes and Genomes (KEGG)</a></li>
+                  <li><a href=\"https://en.wikipedia.org/wiki/UniProt\">UniProt</a> </li>
+                  <li><a href=\"https://en.wikipedia.org/wiki/Integrated_Taxonomic_Information_System\">Integrated Taxonomic Information System (ITIS)</a> </li>
+              </ul>
+
+                <h4>Worldwide Identification codes</h4>
+
+                <ul>
+                    <li><a href=\"https://en.m.wikipedia.org/wiki/Fossil\">Fossil</a> </li>
+                    <li><a href=\"https://en.wikipedia.org/wiki/National_Center_for_Biotechnology_Information\">National Center for Biotechnology Information (NCBI)</a></li>
+                    <li><a href=\"https://en.wikipedia.org/wiki/KEGG\">Kyoto Encyclopedia of Genes and Genomes (KEGG)</a></li>
+                    <li><a href=\"https://en.wikipedia.org/wiki/Integrated_Taxonomic_Information_System\">Integrated Taxonomic Information System (ITIS)</a> </li>
+                </ul>
+                <h4>Worldwide Identification codes</h4>
+
+                <ul>
+
+                    <li><a href=\"https://en.wikipedia.org/wiki/National_Center_for_Biotechnology_Information\">National Center for Biotechnology Information (NCBI)</a></li>
+                    <li><a href=\"https://en.wikipedia.org/wiki/KEGG\">Kyoto Encyclopedia of Genes and Genomes (KEGG)</a></li>
+
+                </ul>
+            </div>
+
         </div>
+
     </div>
 
-    </body>
+</body>
 
 
 

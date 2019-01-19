@@ -36,68 +36,80 @@ class __TwigTemplate_55501c010f48918e7572b744b12dcb0e120c79a2613d8a1b5c69a0cf9bf
         // line 7
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 16
-        echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("favicon.ico"), "html", null, true);
-        echo "\" />
+        echo "
     </head>
     <body>
         <div class=\"search-bar\">
             <form method=\"GET\" action=\"\" class=\"js-sea-search sea-search\">
-                <input type=\"search\" name=\"q\" placeholder=\"Search Sea Creatures\" autocomplete=\"off\" class=\"search-input\">
+                <input type=\"search\" name=\"q\" placeholder=\"Search Species\" autocomplete=\"off\" class=\"search-input\">
             </form>
         </div>
-        <header class=\"header\">
-            <img class=\"logo-icon\" src=\"";
-        // line 25
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/aquanote-logo.png"), "html", null, true);
-        echo "\">
-            <h1 class=\"logo\">AquaNote</h1>
-            <ul class=\"navi\">
-                <li class=\"search\"><a href=\"#\" class=\"js-header-search-toggle\"><i class=\"fa fa-search\"></i></a></li>
 
-               ";
-        // line 30
+        <header style=\"background-color: #5eb5e0\">
+
+           <center><img style=\"zoom: 10%\" src=\"";
+        // line 27
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/caduceus-medical-symbol.png"), "html", null, true);
+        echo "\"></center>
+           <h3 align=\"center\">- Bioinformatics -</h3>
+           <h2 align=\"center\">Biological classification of living and fossil organisms database</h2>
+           <br/>
+        </header>
+
+      <div class=\"row\" align=\"center\">
+        <a href=\"";
+        // line 34
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("homepage");
+        echo "\" class=\"logo-icon\"><i class=\"fa fa-home\"></i> Home</a>&nbsp;&nbsp;
+        <a  class=\"logo-icon\"><i class=\"fa fa-info-circle\"></i> About</a>&nbsp;&nbsp;
+        <a  class=\"logo-icon\"><i class=\"fa fa-location-arrow\"></i> Locate</a>&nbsp;&nbsp;
+        <a  class=\"logo-icon\"><i class=\"fa fa-connectdevelop\"></i> Contact</a>&nbsp;&nbsp;
+        <a href=\"#\" class=\"js-header-search-toggle\"><i class=\"fa fa-search\">Search</i></a>&nbsp;&nbsp;
+
+
+
+                ";
+        // line 42
         if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_USER")) {
-            // line 31
+            // line 43
             echo "
-                <li><a href=\"";
-            // line 32
+                    <a href=\"";
+            // line 44
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("security_logout");
-            echo "\">Logout</a></li>
+            echo "\">Logout</a>
 
                 ";
         } else {
-            // line 35
+            // line 47
             echo "
 
-                <li><a href=\"";
-            // line 37
+                    <a href=\"";
+            // line 49
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_register");
-            echo "\">Register</a></li>
-                    <li><a href=\"";
-            // line 38
+            echo "\">Register</a>&nbsp;&nbsp;
+                    <a href=\"";
+            // line 50
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("security_login");
-            echo "\">Login</a></li>
+            echo "\">Login</a>
 
                 ";
         }
-        // line 41
-        echo "            </ul>
-        </header>
+        // line 53
+        echo "      </div>
 
         <div class=\"main-content\">
 
             ";
-        // line 46
+        // line 57
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "session", array()), "flashBag", array()), "get", array(0 => "success"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["msg"]) {
-            // line 47
+            // line 58
             echo "
                 <div class=\"alert alert-success\">
 
                     ";
-            // line 50
+            // line 61
             echo twig_escape_filter($this->env, $context["msg"], "html", null, true);
             echo "
 
@@ -108,23 +120,23 @@ class __TwigTemplate_55501c010f48918e7572b744b12dcb0e120c79a2613d8a1b5c69a0cf9bf
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['msg'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 55
+        // line 66
         echo "
             ";
-        // line 56
+        // line 67
         $this->displayBlock('body', $context, $blocks);
-        // line 57
+        // line 68
         echo "
         </div>
 
-        <div class=\"footer\">
-            <p class=\"footer-text\">Made with <span class=\"heart\"></span> <a href=\"https://knpuniversity.com\">KnpUniversity</a></p>
+        <div class=\"footer\" >
+            <p class=\"footer-text\" style=\"padding-left: 80%\">Copyright 2018</p>
         </div>
 
         ";
-        // line 64
+        // line 75
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 68
+        // line 79
         echo "    </body>
 </html>
 ";
@@ -173,7 +185,7 @@ class __TwigTemplate_55501c010f48918e7572b744b12dcb0e120c79a2613d8a1b5c69a0cf9bf
 
     }
 
-    // line 56
+    // line 67
     public function block_body($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
@@ -184,16 +196,16 @@ class __TwigTemplate_55501c010f48918e7572b744b12dcb0e120c79a2613d8a1b5c69a0cf9bf
 
     }
 
-    // line 64
+    // line 75
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 65
+        // line 76
         echo "            <script src=\"http://code.jquery.com/jquery-2.1.4.min.js\"></script>
             <script src=\"";
-        // line 66
+        // line 77
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
         echo "\"></script>
         ";
@@ -214,7 +226,7 @@ class __TwigTemplate_55501c010f48918e7572b744b12dcb0e120c79a2613d8a1b5c69a0cf9bf
 
     public function getDebugInfo()
     {
-        return array (  197 => 66,  194 => 65,  188 => 64,  177 => 56,  164 => 10,  160 => 9,  155 => 8,  149 => 7,  137 => 5,  128 => 68,  126 => 64,  117 => 57,  115 => 56,  112 => 55,  101 => 50,  96 => 47,  92 => 46,  85 => 41,  79 => 38,  75 => 37,  71 => 35,  65 => 32,  62 => 31,  60 => 30,  52 => 25,  39 => 16,  37 => 7,  32 => 5,  26 => 1,);
+        return array (  209 => 77,  206 => 76,  200 => 75,  189 => 67,  176 => 10,  172 => 9,  167 => 8,  161 => 7,  149 => 5,  140 => 79,  138 => 75,  129 => 68,  127 => 67,  124 => 66,  113 => 61,  108 => 58,  104 => 57,  98 => 53,  92 => 50,  88 => 49,  84 => 47,  78 => 44,  75 => 43,  73 => 42,  62 => 34,  52 => 27,  39 => 16,  37 => 7,  32 => 5,  26 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -242,33 +254,44 @@ class __TwigTemplate_55501c010f48918e7572b744b12dcb0e120c79a2613d8a1b5c69a0cf9bf
           <!--  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
             <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>-->
         {% endblock %}
-        <link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('favicon.ico') }}\" />
+
     </head>
     <body>
         <div class=\"search-bar\">
             <form method=\"GET\" action=\"\" class=\"js-sea-search sea-search\">
-                <input type=\"search\" name=\"q\" placeholder=\"Search Sea Creatures\" autocomplete=\"off\" class=\"search-input\">
+                <input type=\"search\" name=\"q\" placeholder=\"Search Species\" autocomplete=\"off\" class=\"search-input\">
             </form>
         </div>
-        <header class=\"header\">
-            <img class=\"logo-icon\" src=\"{{ asset('images/aquanote-logo.png') }}\">
-            <h1 class=\"logo\">AquaNote</h1>
-            <ul class=\"navi\">
-                <li class=\"search\"><a href=\"#\" class=\"js-header-search-toggle\"><i class=\"fa fa-search\"></i></a></li>
 
-               {% if is_granted('ROLE_USER') %}
+        <header style=\"background-color: #5eb5e0\">
 
-                <li><a href=\"{{  path ('security_logout') }}\">Logout</a></li>
+           <center><img style=\"zoom: 10%\" src=\"{{ asset('images/caduceus-medical-symbol.png') }}\"></center>
+           <h3 align=\"center\">- Bioinformatics -</h3>
+           <h2 align=\"center\">Biological classification of living and fossil organisms database</h2>
+           <br/>
+        </header>
+
+      <div class=\"row\" align=\"center\">
+        <a href=\"{{ path('homepage')}}\" class=\"logo-icon\"><i class=\"fa fa-home\"></i> Home</a>&nbsp;&nbsp;
+        <a  class=\"logo-icon\"><i class=\"fa fa-info-circle\"></i> About</a>&nbsp;&nbsp;
+        <a  class=\"logo-icon\"><i class=\"fa fa-location-arrow\"></i> Locate</a>&nbsp;&nbsp;
+        <a  class=\"logo-icon\"><i class=\"fa fa-connectdevelop\"></i> Contact</a>&nbsp;&nbsp;
+        <a href=\"#\" class=\"js-header-search-toggle\"><i class=\"fa fa-search\">Search</i></a>&nbsp;&nbsp;
+
+
+
+                {% if is_granted('ROLE_USER') %}
+
+                    <a href=\"{{  path ('security_logout') }}\">Logout</a>
 
                 {% else %}
 
 
-                <li><a href=\"{{  path ('user_register') }}\">Register</a></li>
-                    <li><a href=\"{{  path ('security_login') }}\">Login</a></li>
+                    <a href=\"{{  path ('user_register') }}\">Register</a>&nbsp;&nbsp;
+                    <a href=\"{{  path ('security_login') }}\">Login</a>
 
                 {% endif %}
-            </ul>
-        </header>
+      </div>
 
         <div class=\"main-content\">
 
@@ -286,8 +309,8 @@ class __TwigTemplate_55501c010f48918e7572b744b12dcb0e120c79a2613d8a1b5c69a0cf9bf
 
         </div>
 
-        <div class=\"footer\">
-            <p class=\"footer-text\">Made with <span class=\"heart\"></span> <a href=\"https://knpuniversity.com\">KnpUniversity</a></p>
+        <div class=\"footer\" >
+            <p class=\"footer-text\" style=\"padding-left: 80%\">Copyright 2018</p>
         </div>
 
         {% block javascripts %}
