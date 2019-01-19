@@ -22,4 +22,3 @@ monolog:
 
 swiftmailer:
 
-    spool:     %mailer_spool_type%

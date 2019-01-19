@@ -35,7 +35,7 @@ class __TwigTemplate_55501c010f48918e7572b744b12dcb0e120c79a2613d8a1b5c69a0cf9bf
         ";
         // line 7
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 12
+        // line 16
         echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
@@ -48,7 +48,7 @@ class __TwigTemplate_55501c010f48918e7572b744b12dcb0e120c79a2613d8a1b5c69a0cf9bf
         </div>
         <header class=\"header\">
             <img class=\"logo-icon\" src=\"";
-        // line 21
+        // line 25
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/aquanote-logo.png"), "html", null, true);
         echo "\">
             <h1 class=\"logo\">AquaNote</h1>
@@ -56,48 +56,48 @@ class __TwigTemplate_55501c010f48918e7572b744b12dcb0e120c79a2613d8a1b5c69a0cf9bf
                 <li class=\"search\"><a href=\"#\" class=\"js-header-search-toggle\"><i class=\"fa fa-search\"></i></a></li>
 
                ";
-        // line 26
+        // line 30
         if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_USER")) {
-            // line 27
+            // line 31
             echo "
                 <li><a href=\"";
-            // line 28
+            // line 32
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("security_logout");
             echo "\">Logout</a></li>
 
                 ";
         } else {
-            // line 31
+            // line 35
             echo "
 
                 <li><a href=\"";
-            // line 33
+            // line 37
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_register");
             echo "\">Register</a></li>
                     <li><a href=\"";
-            // line 34
+            // line 38
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("security_login");
             echo "\">Login</a></li>
 
                 ";
         }
-        // line 37
+        // line 41
         echo "            </ul>
         </header>
 
         <div class=\"main-content\">
 
             ";
-        // line 42
+        // line 46
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "session", array()), "flashBag", array()), "get", array(0 => "success"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["msg"]) {
-            // line 43
+            // line 47
             echo "
                 <div class=\"alert alert-success\">
 
                     ";
-            // line 46
+            // line 50
             echo twig_escape_filter($this->env, $context["msg"], "html", null, true);
             echo "
 
@@ -108,12 +108,12 @@ class __TwigTemplate_55501c010f48918e7572b744b12dcb0e120c79a2613d8a1b5c69a0cf9bf
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['msg'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 51
+        // line 55
         echo "
             ";
-        // line 52
+        // line 56
         $this->displayBlock('body', $context, $blocks);
-        // line 53
+        // line 57
         echo "
         </div>
 
@@ -122,9 +122,9 @@ class __TwigTemplate_55501c010f48918e7572b744b12dcb0e120c79a2613d8a1b5c69a0cf9bf
         </div>
 
         ";
-        // line 60
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 64
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 68
         echo "    </body>
 </html>
 ";
@@ -163,13 +163,17 @@ class __TwigTemplate_55501c010f48918e7572b744b12dcb0e120c79a2613d8a1b5c69a0cf9bf
         // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("vendor/fontawesome/css/font-awesome.min.css"), "html", null, true);
         echo "\">
+            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+            <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">
+          <!--  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
+            <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>-->
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
     }
 
-    // line 52
+    // line 56
     public function block_body($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
@@ -180,16 +184,16 @@ class __TwigTemplate_55501c010f48918e7572b744b12dcb0e120c79a2613d8a1b5c69a0cf9bf
 
     }
 
-    // line 60
+    // line 64
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 61
+        // line 65
         echo "            <script src=\"http://code.jquery.com/jquery-2.1.4.min.js\"></script>
             <script src=\"";
-        // line 62
+        // line 66
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
         echo "\"></script>
         ";
@@ -210,7 +214,7 @@ class __TwigTemplate_55501c010f48918e7572b744b12dcb0e120c79a2613d8a1b5c69a0cf9bf
 
     public function getDebugInfo()
     {
-        return array (  193 => 62,  190 => 61,  184 => 60,  173 => 52,  164 => 10,  160 => 9,  155 => 8,  149 => 7,  137 => 5,  128 => 64,  126 => 60,  117 => 53,  115 => 52,  112 => 51,  101 => 46,  96 => 43,  92 => 42,  85 => 37,  79 => 34,  75 => 33,  71 => 31,  65 => 28,  62 => 27,  60 => 26,  52 => 21,  39 => 12,  37 => 7,  32 => 5,  26 => 1,);
+        return array (  197 => 66,  194 => 65,  188 => 64,  177 => 56,  164 => 10,  160 => 9,  155 => 8,  149 => 7,  137 => 5,  128 => 68,  126 => 64,  117 => 57,  115 => 56,  112 => 55,  101 => 50,  96 => 47,  92 => 46,  85 => 41,  79 => 38,  75 => 37,  71 => 35,  65 => 32,  62 => 31,  60 => 30,  52 => 25,  39 => 16,  37 => 7,  32 => 5,  26 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -233,6 +237,10 @@ class __TwigTemplate_55501c010f48918e7572b744b12dcb0e120c79a2613d8a1b5c69a0cf9bf
             <link rel=\"stylesheet\" href=\"{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}\">
             <link rel=\"stylesheet\" href=\"{{ asset('css/styles.css') }}\">
             <link rel=\"stylesheet\" href=\"{{ asset('vendor/fontawesome/css/font-awesome.min.css') }}\">
+            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+            <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">
+          <!--  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
+            <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>-->
         {% endblock %}
         <link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('favicon.ico') }}\" />
     </head>
