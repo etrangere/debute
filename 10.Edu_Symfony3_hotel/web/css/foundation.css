@@ -1721,7 +1721,7 @@ kbd {
 textarea {
   display: block;
   box-sizing: border-box;
-  width: 30%;
+  width: 100%;
   height: 2.4375rem;
   margin: 0 0 1rem;
   padding: 0.5rem;
