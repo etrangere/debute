@@ -1,17 +1,29 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 {% block head %}
     <head>
-        <meta charset="UTF-8" />
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>{% block title %}Hotel App{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/sidenav.css') }}">
-        <link rel="stylesheet" href="{{ asset('pickadate/lib/themes/default.css') }}">
-        <link rel="stylesheet" href="{{ asset('pickadate/lib/themes/default.date.css') }}">
+        {% block stylesheets %} {% endblock %}
+            <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/sidenav.css') }}">
+
+            <link rel="stylesheet" href="{{ asset('pickadate/lib/themes/default.css') }}">
+            <link rel="stylesheet" href="{{ asset('pickadate/lib/themes/default.date.css') }}">
+
+
+
+
+      <!--  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />-->
+
+
+
+
+
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131743009-1"></script>
         <script>
@@ -63,19 +75,23 @@
     </script>
 
         {% block javascripts %}{% endblock %}
+
         <script src="{{ asset('js/vendor/jquery.js') }}"></script>
         <script src="{{ asset('js/vendor/what-input.js') }}"></script>
         <script src="{{ asset('js/vendor/foundation.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('pickadate/lib/picker.js') }}"></script>
         <script src="{{ asset('pickadate/lib/picker.date.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+
         <script src='https://www.google.com/recaptcha/api.js'></script>
     <script>
         $('.datepicker').pickadate(
             {
                 //format: 'yyyy-mm-dd',
                 //formatSubmit: 'yyyy-mm-dd',
-                format: 'd mmmm, yyyy',
+                format: 'dd-mm-yyyy',
                 min: new Date('today'),
                 max: new Date(2019,12,31),
                 today: 'Today'
