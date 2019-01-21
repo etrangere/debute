@@ -63,7 +63,7 @@ class __TwigTemplate_f2c516404dc11d51a84c906ebf5a04dfb74c7b0d161ee0898fb2e88463f
 
     <div class=\"container\">
         <div class=\"row align-items-center\">
-            <div align=\"center\" class=\"col-md-10\">
+            <div align=\"center\" class=\"col-md-12\">
 
                 <h4 class=\"heading\">Get In Touch</h4>
             </div>
@@ -79,8 +79,8 @@ class __TwigTemplate_f2c516404dc11d51a84c906ebf5a04dfb74c7b0d161ee0898fb2e88463f
    </div>
     <div class=\"site-section\" align=\"center\">
         <div class=\"container\">
-            <div class=\"row block-9\">
-                <div class=\"col-md-6 pr-md-5\">
+            <div class=\"row block-12\">
+                <div class=\"col-md-12 pr-md-5\">
                     <form  method=\"post\"  action=\"\" id=\"contact-form\">
 
                         <div class=\"form-group\">
@@ -171,7 +171,7 @@ class __TwigTemplate_f2c516404dc11d51a84c906ebf5a04dfb74c7b0d161ee0898fb2e88463f
 
     <div class=\"container\">
         <div class=\"row align-items-center\">
-            <div align=\"center\" class=\"col-md-10\">
+            <div align=\"center\" class=\"col-md-12\">
 
                 <h4 class=\"heading\">Get In Touch</h4>
             </div>
@@ -183,8 +183,8 @@ class __TwigTemplate_f2c516404dc11d51a84c906ebf5a04dfb74c7b0d161ee0898fb2e88463f
    </div>
     <div class=\"site-section\" align=\"center\">
         <div class=\"container\">
-            <div class=\"row block-9\">
-                <div class=\"col-md-6 pr-md-5\">
+            <div class=\"row block-12\">
+                <div class=\"col-md-12 pr-md-5\">
                     <form  method=\"post\"  action=\"\" id=\"contact-form\">
 
                         <div class=\"form-group\">

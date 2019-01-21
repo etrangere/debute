@@ -8,6 +8,8 @@
 
         <title>{% block title %}Hotel App{% endblock %}</title>
         {% block stylesheets %} {% endblock %}
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+
             <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
             <link rel="stylesheet" href="{{ asset('css/app.css') }}">
             <link rel="stylesheet" href="{{ asset('css/sidenav.css') }}">
@@ -15,8 +17,7 @@
             <link rel="stylesheet" href="{{ asset('pickadate/lib/themes/default.css') }}">
             <link rel="stylesheet" href="{{ asset('pickadate/lib/themes/default.date.css') }}">
 
-
-
+        
 
       <!--  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />-->
 
@@ -82,7 +83,7 @@
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('pickadate/lib/picker.js') }}"></script>
         <script src="{{ asset('pickadate/lib/picker.date.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
 
         <script src='https://www.google.com/recaptcha/api.js'></script>

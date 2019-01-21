@@ -52,20 +52,10 @@ class __TwigTemplate_e61dfe045af23fffc0d771632610ca7b44525409f68d2662c080e1f55e0
         // line 7
         echo "
 
-    <link rel=\"stylesheet\" href=\"";
-        // line 9
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/bootstrap.min.css"), "html", null, true);
-        echo "\">
 
-    <style>
-        .carousel-inner > .item > img,
-        .carousel-inner > .item > a > img {
-            width: 70%;
-            margin: auto;
-        }
-    </style>
 
- <h2 align=\"center\" >Our hotel</h2>
+
+ <h2 align=\"center\" >Our hotel rooms</h2>
 
  <p style=\"object-fit: contain; padding: 20px;\">Far far away, behind the word mountains, far from the countries
   Vokalia and Consonantia, there live the blind texts. Separated they live in
@@ -88,78 +78,78 @@ class __TwigTemplate_e61dfe045af23fffc0d771632610ca7b44525409f68d2662c080e1f55e0
   Italy Instagram Cozy Far far away, behind the word mountains, far from the
   countries Vokalia and Consonantia, there live the blind texts.</p>
 
- <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">
-  <!-- Indicators -->
-  <ol class=\"carousel-indicators\">
-   <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>
-   <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>
-   <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>
-  </ol>
+    <div id=\"carouselExampleIndicators\" class=\"carousel slide\" data-ride=\"carousel\">
+        <ol class=\"carousel-indicators\">
+            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>
+            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"1\"></li>
+            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"2\"></li>
+        </ol>
+        <div class=\"carousel-inner\">
+            <div class=\"carousel-item active\">
+                <img class=\"d-block w-100\" src=\"";
+        // line 43
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
+        echo "\" alt=\"First slide\">
+                <div class=\"carousel-caption d-none d-md-block\">
+                    <h3>Single</h3>
+                    <p>Service</p>
+                </div>
+            </div>
+            <div class=\"carousel-item\">
+                <img class=\"d-block w-100\" src=\"";
+        // line 50
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
+        echo "\" alt=\"Second slide\">
+                <div class=\"carousel-caption d-none d-md-block\">
+                    <h3>Suite</h3>
+                    <p>Service</p>
+                </div>
+            </div>
+            <div class=\"carousel-item\">
+                <img class=\"d-block w-100\" src=\"";
+        // line 57
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/4.jpg"), "html", null, true);
+        echo "\" alt=\"Third slide\">
+                <div class=\"carousel-caption d-none d-md-block\">
+                    <h3>Triple</h3>
+                    <p>Service</p>
+                </div>
+            </div>
+        </div>
+        <a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\">
+            <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
+            <span class=\"sr-only\">Previous</span>
+        </a>
+        <a class=\"carousel-control-next\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"next\">
+            <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
+            <span class=\"sr-only\">Next</span>
+        </a>
+    </div>
+
+
 
   <!-- Wrapper for slides -->
-  <div class=\"carousel-inner\">
-   <div class=\"item active\">
-    <img  style=\"max-height: 60%; max-width:120%;\" src=\"";
-        // line 53
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
-        echo "\" alt=\"Los Angeles\">
-    <div class=\"carousel-caption\">
-     <h3 style=\"padding: 10%\">Los Angeles</h3>
-     <p>LA is always so much fun!</p>
-    </div>
-   </div>
 
-   <div class=\"item\">
-    <img  style=\"max-height: 60%; max-width:120%;\" src=\"";
-        // line 61
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
-        echo "\" alt=\"Chicago\">
-    <div class=\"carousel-caption\" >
-     <h3 style=\"padding: 10%\">Los Angeles</h3>
-     <p>LA is always so much fun!</p>
-    </div>
-   </div>
-
-   <div class=\"item\">
-    <img  style=\"max-height: 60%; max-width:120%;\" src=\"";
-        // line 69
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
-        echo "\" alt=\"New York\">
-    <div class=\"carousel-caption\">
-     <h3 style=\"padding: 10%\">Los Angeles</h3>
-     <p>LA is always so much fun!</p>
-    </div>
-   </div>
-  </div>
 
   <!-- Left and right controls -->
-  <a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\">
-   <span class=\"glyphicon glyphicon-chevron-left\"></span>
-   <span class=\"sr-only\">Previous</span>
-  </a>
-  <a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\">
-   <span class=\"glyphicon glyphicon-chevron-right\"></span>
-   <span class=\"sr-only\">Next</span>
-  </a>
- </div>
 
 <!--
  <h4 align=\"center\" >Our single rooms</h4>
  <div class=\"medium-12  columns\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
-        // line 91
+        // line 84
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
-        // line 92
+        // line 85
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
-        // line 93
+        // line 86
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
-        // line 94
+        // line 87
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/2.jpg"), "html", null, true);
         echo "\">
  </div>
@@ -168,19 +158,19 @@ class __TwigTemplate_e61dfe045af23fffc0d771632610ca7b44525409f68d2662c080e1f55e0
 
  <div class=\"medium-12  columns\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
-        // line 100
+        // line 93
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
-        // line 101
+        // line 94
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
-        // line 102
+        // line 95
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
-        // line 103
+        // line 96
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/3.jpg"), "html", null, true);
         echo "\">
  </div>
@@ -190,52 +180,31 @@ class __TwigTemplate_e61dfe045af23fffc0d771632610ca7b44525409f68d2662c080e1f55e0
 
  <div class=\"medium-12  columns\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
-        // line 110
+        // line 103
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/4.jpg"), "html", null, true);
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
-        // line 111
+        // line 104
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/4.jpg"), "html", null, true);
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
-        // line 112
+        // line 105
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/4.jpg"), "html", null, true);
         echo "\">
   <img class=\"thumbnail\" object-fit: contain; style=\"max-height: 24%; max-width:24%;\" src=\"";
-        // line 113
+        // line 106
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/4.jpg"), "html", null, true);
         echo "\">
  </div>
 -->
 
- <script>
-     \$(document).ready(function(){
-         // Activate Carousel
-         \$(\"#myCarousel\").carousel();
+<script>
+    \$('.carousel').carousel({
+        cycle:2000,
+        direction:right
 
-         // Enable Carousel Indicators
-         \$(\".item1\").click(function(){
-             \$(\"#myCarousel\").carousel(0);
-         });
-         \$(\".item2\").click(function(){
-             \$(\"#myCarousel\").carousel(1);
-         });
-         \$(\".item3\").click(function(){
-             \$(\"#myCarousel\").carousel(2);
-         });
-         \$(\".item4\").click(function(){
-             \$(\"#myCarousel\").carousel(3);
-         });
-
-         // Enable Carousel Controls
-         \$(\".left\").click(function(){
-             \$(\"#myCarousel\").carousel(\"prev\");
-         });
-         \$(\".right\").click(function(){
-             \$(\"#myCarousel\").carousel(\"next\");
-         });
-     });
- </script>
+    })
+</script>
 
 ";
         
@@ -258,7 +227,7 @@ class __TwigTemplate_e61dfe045af23fffc0d771632610ca7b44525409f68d2662c080e1f55e0
 
     public function getDebugInfo()
     {
-        return array (  206 => 113,  202 => 112,  198 => 111,  194 => 110,  184 => 103,  180 => 102,  176 => 101,  172 => 100,  163 => 94,  159 => 93,  155 => 92,  151 => 91,  126 => 69,  115 => 61,  104 => 53,  57 => 9,  53 => 7,  44 => 6,  15 => 1,);
+        return array (  196 => 106,  192 => 105,  188 => 104,  184 => 103,  174 => 96,  170 => 95,  166 => 94,  162 => 93,  153 => 87,  149 => 86,  145 => 85,  141 => 84,  111 => 57,  101 => 50,  91 => 43,  53 => 7,  44 => 6,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -271,17 +240,10 @@ class __TwigTemplate_e61dfe045af23fffc0d771632610ca7b44525409f68d2662c080e1f55e0
 {% block body %}
 
 
-    <link rel=\"stylesheet\" href=\"{{ asset('css/bootstrap.min.css') }}\">
 
-    <style>
-        .carousel-inner > .item > img,
-        .carousel-inner > .item > a > img {
-            width: 70%;
-            margin: auto;
-        }
-    </style>
 
- <h2 align=\"center\" >Our hotel</h2>
+
+ <h2 align=\"center\" >Our hotel rooms</h2>
 
  <p style=\"object-fit: contain; padding: 20px;\">Far far away, behind the word mountains, far from the countries
   Vokalia and Consonantia, there live the blind texts. Separated they live in
@@ -304,51 +266,51 @@ class __TwigTemplate_e61dfe045af23fffc0d771632610ca7b44525409f68d2662c080e1f55e0
   Italy Instagram Cozy Far far away, behind the word mountains, far from the
   countries Vokalia and Consonantia, there live the blind texts.</p>
 
- <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">
-  <!-- Indicators -->
-  <ol class=\"carousel-indicators\">
-   <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>
-   <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>
-   <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>
-  </ol>
+    <div id=\"carouselExampleIndicators\" class=\"carousel slide\" data-ride=\"carousel\">
+        <ol class=\"carousel-indicators\">
+            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>
+            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"1\"></li>
+            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"2\"></li>
+        </ol>
+        <div class=\"carousel-inner\">
+            <div class=\"carousel-item active\">
+                <img class=\"d-block w-100\" src=\"{{ asset('images/2.jpg') }}\" alt=\"First slide\">
+                <div class=\"carousel-caption d-none d-md-block\">
+                    <h3>Single</h3>
+                    <p>Service</p>
+                </div>
+            </div>
+            <div class=\"carousel-item\">
+                <img class=\"d-block w-100\" src=\"{{ asset('images/3.jpg') }}\" alt=\"Second slide\">
+                <div class=\"carousel-caption d-none d-md-block\">
+                    <h3>Suite</h3>
+                    <p>Service</p>
+                </div>
+            </div>
+            <div class=\"carousel-item\">
+                <img class=\"d-block w-100\" src=\"{{ asset('images/4.jpg') }}\" alt=\"Third slide\">
+                <div class=\"carousel-caption d-none d-md-block\">
+                    <h3>Triple</h3>
+                    <p>Service</p>
+                </div>
+            </div>
+        </div>
+        <a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\">
+            <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
+            <span class=\"sr-only\">Previous</span>
+        </a>
+        <a class=\"carousel-control-next\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"next\">
+            <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
+            <span class=\"sr-only\">Next</span>
+        </a>
+    </div>
+
+
 
   <!-- Wrapper for slides -->
-  <div class=\"carousel-inner\">
-   <div class=\"item active\">
-    <img  style=\"max-height: 60%; max-width:120%;\" src=\"{{ asset('images/3.jpg') }}\" alt=\"Los Angeles\">
-    <div class=\"carousel-caption\">
-     <h3 style=\"padding: 10%\">Los Angeles</h3>
-     <p>LA is always so much fun!</p>
-    </div>
-   </div>
 
-   <div class=\"item\">
-    <img  style=\"max-height: 60%; max-width:120%;\" src=\"{{ asset('images/2.jpg') }}\" alt=\"Chicago\">
-    <div class=\"carousel-caption\" >
-     <h3 style=\"padding: 10%\">Los Angeles</h3>
-     <p>LA is always so much fun!</p>
-    </div>
-   </div>
-
-   <div class=\"item\">
-    <img  style=\"max-height: 60%; max-width:120%;\" src=\"{{ asset('images/3.jpg') }}\" alt=\"New York\">
-    <div class=\"carousel-caption\">
-     <h3 style=\"padding: 10%\">Los Angeles</h3>
-     <p>LA is always so much fun!</p>
-    </div>
-   </div>
-  </div>
 
   <!-- Left and right controls -->
-  <a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\">
-   <span class=\"glyphicon glyphicon-chevron-left\"></span>
-   <span class=\"sr-only\">Previous</span>
-  </a>
-  <a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\">
-   <span class=\"glyphicon glyphicon-chevron-right\"></span>
-   <span class=\"sr-only\">Next</span>
-  </a>
- </div>
 
 <!--
  <h4 align=\"center\" >Our single rooms</h4>
@@ -379,34 +341,13 @@ class __TwigTemplate_e61dfe045af23fffc0d771632610ca7b44525409f68d2662c080e1f55e0
  </div>
 -->
 
- <script>
-     \$(document).ready(function(){
-         // Activate Carousel
-         \$(\"#myCarousel\").carousel();
+<script>
+    \$('.carousel').carousel({
+        cycle:2000,
+        direction:right
 
-         // Enable Carousel Indicators
-         \$(\".item1\").click(function(){
-             \$(\"#myCarousel\").carousel(0);
-         });
-         \$(\".item2\").click(function(){
-             \$(\"#myCarousel\").carousel(1);
-         });
-         \$(\".item3\").click(function(){
-             \$(\"#myCarousel\").carousel(2);
-         });
-         \$(\".item4\").click(function(){
-             \$(\"#myCarousel\").carousel(3);
-         });
-
-         // Enable Carousel Controls
-         \$(\".left\").click(function(){
-             \$(\"#myCarousel\").carousel(\"prev\");
-         });
-         \$(\".right\").click(function(){
-             \$(\"#myCarousel\").carousel(\"next\");
-         });
-     });
- </script>
+    })
+</script>
 
 {% endblock %}
 ", ":home:about.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/about.html.twig");

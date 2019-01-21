@@ -38,21 +38,21 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 ";
         // line 4
         $this->displayBlock('head', $context, $blocks);
-        // line 39
+        // line 40
         echo "    <body>
     ";
-        // line 40
+        // line 41
         $this->displayBlock('top_bar', $context, $blocks);
-        // line 58
+        // line 59
         echo "    <noscript><h4 align=\"center\">For full functionality of this page it is necessary to enable JavaScript.
             Here are the <a href=\"http://www.enable-javascript.com\" target=\"_blank\">
                 instructions how to enable JavaScript in your web browser</a></h4></noscript>
     <br>
 
         ";
-        // line 63
-        $this->displayBlock('body', $context, $blocks);
         // line 64
+        $this->displayBlock('body', $context, $blocks);
+        // line 65
         echo "    
 
     <div class=\"row column\">
@@ -67,36 +67,36 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
     </script>
 
         ";
-        // line 77
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 78
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 79
         echo "
         <script src=\"";
-        // line 79
+        // line 80
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/jquery.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 80
+        // line 81
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/what-input.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 81
+        // line 82
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/foundation.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 82
+        // line 83
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/app.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 83
+        // line 84
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 84
+        // line 85
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.date.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 85
+        <script src=\"";
+        // line 86
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
@@ -149,31 +149,35 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 11
         echo "            <link rel=\"stylesheet\" href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/bootstrap.min.css"), "html", null, true);
+        echo "\">
+
+            <link rel=\"stylesheet\" href=\"";
+        // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/foundation.css"), "html", null, true);
         echo "\">
             <link rel=\"stylesheet\" href=\"";
-        // line 12
+        // line 14
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/app.css"), "html", null, true);
         echo "\">
             <link rel=\"stylesheet\" href=\"";
-        // line 13
+        // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/sidenav.css"), "html", null, true);
         echo "\">
 
             <link rel=\"stylesheet\" href=\"";
-        // line 15
+        // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/themes/default.css"), "html", null, true);
         echo "\">
             <link rel=\"stylesheet\" href=\"";
-        // line 16
+        // line 18
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/themes/default.date.css"), "html", null, true);
         echo "\">
 
-
-
+        
 
       <!--  <link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        // line 21
+        // line 22
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />-->
 
@@ -237,7 +241,7 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 
     }
 
-    // line 40
+    // line 41
     public function block_top_bar($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -246,26 +250,26 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "top_bar"));
 
-        // line 41
+        // line 42
         echo "        <!-- Start Top Bar -->
     <div class=\"top-bar\">
       <div class=\"row\">
         <div class=\"top-bar-left\">
           <ul class=\"dropdown menu\" data-dropdown-menu>
             <li><a href=\"";
-        // line 46
+        // line 47
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Home</a></li>
               <li><a href=\"";
-        // line 47
+        // line 48
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("about_us");
         echo "\">About us</a></li>
               <li><a href=\"";
-        // line 48
+        // line 49
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("location");
         echo "\">How to locate</a></li>
               <li><a href=\"";
-        // line 49
+        // line 50
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
         echo "\">Contact</a></li>
           </ul>
@@ -284,7 +288,7 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 
     }
 
-    // line 63
+    // line 64
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -302,7 +306,7 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 
     }
 
-    // line 77
+    // line 78
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -331,7 +335,7 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 
     public function getDebugInfo()
     {
-        return array (  306 => 77,  288 => 63,  269 => 49,  265 => 48,  261 => 47,  257 => 46,  250 => 41,  241 => 40,  223 => 10,  205 => 9,  177 => 21,  169 => 16,  165 => 15,  160 => 13,  156 => 12,  151 => 11,  149 => 10,  145 => 9,  139 => 5,  130 => 4,  100 => 85,  96 => 84,  92 => 83,  88 => 82,  84 => 81,  80 => 80,  76 => 79,  73 => 78,  71 => 77,  56 => 64,  54 => 63,  47 => 58,  45 => 40,  42 => 39,  40 => 4,  35 => 1,);
+        return array (  310 => 78,  292 => 64,  273 => 50,  269 => 49,  265 => 48,  261 => 47,  254 => 42,  245 => 41,  227 => 10,  209 => 9,  181 => 22,  174 => 18,  170 => 17,  165 => 15,  161 => 14,  157 => 13,  151 => 11,  149 => 10,  145 => 9,  139 => 5,  130 => 4,  100 => 86,  96 => 85,  92 => 84,  88 => 83,  84 => 82,  80 => 81,  76 => 80,  73 => 79,  71 => 78,  56 => 65,  54 => 64,  47 => 59,  45 => 41,  42 => 40,  40 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -346,6 +350,8 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 
         <title>{% block title %}Hotel App{% endblock %}</title>
         {% block stylesheets %} {% endblock %}
+            <link rel=\"stylesheet\" href=\"{{ asset('css/bootstrap.min.css') }}\">
+
             <link rel=\"stylesheet\" href=\"{{ asset('css/foundation.css') }}\">
             <link rel=\"stylesheet\" href=\"{{ asset('css/app.css') }}\">
             <link rel=\"stylesheet\" href=\"{{ asset('css/sidenav.css') }}\">
@@ -353,8 +359,7 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
             <link rel=\"stylesheet\" href=\"{{ asset('pickadate/lib/themes/default.css') }}\">
             <link rel=\"stylesheet\" href=\"{{ asset('pickadate/lib/themes/default.date.css') }}\">
 
-
-
+        
 
       <!--  <link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('favicon.ico') }}\" />-->
 
@@ -420,7 +425,7 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
         <script src=\"{{ asset('js/app.js') }}\"></script>
         <script src=\"{{ asset('pickadate/lib/picker.js') }}\"></script>
         <script src=\"{{ asset('pickadate/lib/picker.date.js') }}\"></script>
-    <script src=\"{{ asset('js/bootstrap.min.js') }}\"></script>
+        <script src=\"{{ asset('js/bootstrap.min.js') }}\"></script>
 
 
         <script src='https://www.google.com/recaptcha/api.js'></script>

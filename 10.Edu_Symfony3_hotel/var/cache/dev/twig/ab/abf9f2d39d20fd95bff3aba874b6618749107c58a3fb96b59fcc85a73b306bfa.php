@@ -111,7 +111,7 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
 
 
             <div class=\"medium-3  columns\">
-                <label>ROOM TYPE</label>
+                <label>Room Type</label>
                 <div>
                     <select id=\"room_type\"  onchange=\"myFunction1('room_type')\" name=\"form[room_type]\" style=\"border-color: #00ace6\"  required>
                         <option selected=\"selected\" >Choose</option>
@@ -207,10 +207,10 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
         <table>
             <thead>
             <tr >
-                <th width=\"200\">Description</th>
-                <th width=\"200\">Type</th>
-                <th width=\"200\">Price</th>
-                <th width=\"200\">Your choice</th>
+                <th width=\"200\" style=\"text-align: center\">Description</th>
+                <th width=\"200\" style=\"text-align: center\">Type</th>
+                <th width=\"200\" style=\"text-align: center\">Price</th>
+                <th width=\"200\" style=\"text-align: center\">Your choice</th>
             </tr>
             </thead>
             <tbody >
@@ -391,7 +391,7 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
 
 
             <div class=\"medium-3  columns\">
-                <label>ROOM TYPE</label>
+                <label>Room Type</label>
                 <div>
                     <select id=\"room_type\"  onchange=\"myFunction1('room_type')\" name=\"form[room_type]\" style=\"border-color: #00ace6\"  required>
                         <option selected=\"selected\" >Choose</option>
@@ -451,10 +451,10 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
         <table>
             <thead>
             <tr >
-                <th width=\"200\">Description</th>
-                <th width=\"200\">Type</th>
-                <th width=\"200\">Price</th>
-                <th width=\"200\">Your choice</th>
+                <th width=\"200\" style=\"text-align: center\">Description</th>
+                <th width=\"200\" style=\"text-align: center\">Type</th>
+                <th width=\"200\" style=\"text-align: center\">Price</th>
+                <th width=\"200\" style=\"text-align: center\">Your choice</th>
             </tr>
             </thead>
             <tbody >
