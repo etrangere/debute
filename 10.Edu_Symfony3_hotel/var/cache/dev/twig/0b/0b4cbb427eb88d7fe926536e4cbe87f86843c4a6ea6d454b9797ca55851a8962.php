@@ -107,7 +107,8 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
             {
                 //format: 'yyyy-mm-dd',
                 //formatSubmit: 'yyyy-mm-dd',
-                format: 'dd-mm-yyyy',
+                formatSubmit: 'd mmmm, yyyy',
+                format: ' dddd, d mmmm yyyy',
                 min: new Date('today'),
                 max: new Date(2019,12,31),
                 today: 'Today'
@@ -335,7 +336,7 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 
     public function getDebugInfo()
     {
-        return array (  310 => 78,  292 => 64,  273 => 50,  269 => 49,  265 => 48,  261 => 47,  254 => 42,  245 => 41,  227 => 10,  209 => 9,  181 => 22,  174 => 18,  170 => 17,  165 => 15,  161 => 14,  157 => 13,  151 => 11,  149 => 10,  145 => 9,  139 => 5,  130 => 4,  100 => 86,  96 => 85,  92 => 84,  88 => 83,  84 => 82,  80 => 81,  76 => 80,  73 => 79,  71 => 78,  56 => 65,  54 => 64,  47 => 59,  45 => 41,  42 => 40,  40 => 4,  35 => 1,);
+        return array (  311 => 78,  293 => 64,  274 => 50,  270 => 49,  266 => 48,  262 => 47,  255 => 42,  246 => 41,  228 => 10,  210 => 9,  182 => 22,  175 => 18,  171 => 17,  166 => 15,  162 => 14,  158 => 13,  152 => 11,  150 => 10,  146 => 9,  140 => 5,  131 => 4,  100 => 86,  96 => 85,  92 => 84,  88 => 83,  84 => 82,  80 => 81,  76 => 80,  73 => 79,  71 => 78,  56 => 65,  54 => 64,  47 => 59,  45 => 41,  42 => 40,  40 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -434,7 +435,8 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
             {
                 //format: 'yyyy-mm-dd',
                 //formatSubmit: 'yyyy-mm-dd',
-                format: 'dd-mm-yyyy',
+                formatSubmit: 'd mmmm, yyyy',
+                format: ' dddd, d mmmm yyyy',
                 min: new Date('today'),
                 max: new Date(2019,12,31),
                 today: 'Today'

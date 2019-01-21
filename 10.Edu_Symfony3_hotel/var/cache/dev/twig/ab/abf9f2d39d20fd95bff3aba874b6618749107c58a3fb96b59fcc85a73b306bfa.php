@@ -1,6 +1,6 @@
 <?php
 
-/* :home:available_room_list.html.twig */
+/* home/available_room_list.html.twig */
 class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6ad4f7 extends Twig_Template
 {
     private $source;
@@ -12,7 +12,7 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", ":home:available_room_list.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "home/available_room_list.html.twig", 1);
         $this->blocks = [
             'top_bar' => [$this, 'block_top_bar'],
             'body' => [$this, 'block_body'],
@@ -27,10 +27,10 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":home:available_room_list.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "home/available_room_list.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":home:available_room_list.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "home/available_room_list.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -111,7 +111,7 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
 
 
             <div class=\"medium-3  columns\">
-                <label>Room Type</label>
+                <label style=\"text-align: center\">Room Type</label>
                 <div>
                     <select id=\"room_type\"  onchange=\"myFunction1('room_type')\" name=\"form[room_type]\" style=\"border-color: #00ace6\"  required>
                         <option selected=\"selected\" >Choose</option>
@@ -132,7 +132,7 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
             </div>
 
             <div class=\"medium-3  columns\">
-                <label>Adult</label>
+                <label style=\"text-align: center\">Adult</label>
                 <div>
 
                     <select id=\"adult\" onchange=\"myFunction1('adult')\" name=\"form[adult]\" style=\"border-color: #00ace6\"  required>
@@ -155,7 +155,7 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
 
             </div>
             <div class=\"medium-3  columns\">
-                <label>Child</label>
+                <label style=\"text-align: center\">Child</label>
                 <div>
                     <select id=\"child\" onchange=\"myFunction1('child')\" name=\"form[child]\" style=\"border-color: #00ace6\" >
                         <option selected=\"selected\" value=\"0\">Choose</option>
@@ -177,7 +177,7 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
                 </div>
             </div>
             <div class=\"medium-3 columns\">
-                <label>Baby</label>
+                <label style=\"text-align: center\">Baby</label>
                 <div>
                     <select id=\"baby\" onchange=\"myFunction1('baby')\" name=\"form[baby]\" style=\"border-color: #00ace6\">
                         <option selected=\"selected\" value=\"0\">Choose</option>
@@ -222,19 +222,19 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
         foreach ($context['_seq'] as $context["_key"] => $context["room"]) {
             // line 114
             echo "                    <tr >
-                        <td>";
+                        <td style=\"text-align: center\">";
             // line 115
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "description", []), "html", null, true);
             echo "</td>
-                        <td>";
+                        <td style=\"text-align: center\">";
             // line 116
             echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["room"], "roomtype", []) . " ROOM"), "html", null, true);
             echo "</td>
-                        <td>";
+                        <td style=\"text-align: center\">";
             // line 117
             echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["room"], "price", []) . " EUR"), "html", null, true);
             echo "</td>
-                        <td><a class=\"button\"  href=\"";
+                        <td style=\"text-align: center\"><a class=\"button\"  href=\"";
             // line 118
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("booking", ["id_room" => twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "id", []))]), "html", null, true);
             echo "\">CHOOSE</a></td>
@@ -332,7 +332,7 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
 
     public function getTemplateName()
     {
-        return ":home:available_room_list.html.twig";
+        return "home/available_room_list.html.twig";
     }
 
     public function isTraitable()
@@ -391,7 +391,7 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
 
 
             <div class=\"medium-3  columns\">
-                <label>Room Type</label>
+                <label style=\"text-align: center\">Room Type</label>
                 <div>
                     <select id=\"room_type\"  onchange=\"myFunction1('room_type')\" name=\"form[room_type]\" style=\"border-color: #00ace6\"  required>
                         <option selected=\"selected\" >Choose</option>
@@ -403,7 +403,7 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
             </div>
 
             <div class=\"medium-3  columns\">
-                <label>Adult</label>
+                <label style=\"text-align: center\">Adult</label>
                 <div>
 
                     <select id=\"adult\" onchange=\"myFunction1('adult')\" name=\"form[adult]\" style=\"border-color: #00ace6\"  required>
@@ -417,7 +417,7 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
 
             </div>
             <div class=\"medium-3  columns\">
-                <label>Child</label>
+                <label style=\"text-align: center\">Child</label>
                 <div>
                     <select id=\"child\" onchange=\"myFunction1('child')\" name=\"form[child]\" style=\"border-color: #00ace6\" >
                         <option selected=\"selected\" value=\"0\">Choose</option>
@@ -430,7 +430,7 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
                 </div>
             </div>
             <div class=\"medium-3 columns\">
-                <label>Baby</label>
+                <label style=\"text-align: center\">Baby</label>
                 <div>
                     <select id=\"baby\" onchange=\"myFunction1('baby')\" name=\"form[baby]\" style=\"border-color: #00ace6\">
                         <option selected=\"selected\" value=\"0\">Choose</option>
@@ -461,10 +461,10 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
             <div class=\"row\" id=\"offer_table\">
                 {% for room in rooms %}
                     <tr >
-                        <td>{{ room.description}}</td>
-                        <td>{{ room.roomtype ~ \" ROOM\"  }}</td>
-                        <td>{{ room.price ~ \" EUR\"}}</td>
-                        <td><a class=\"button\"  href=\"{{ path(\"booking\",{'id_room' : room.id|number_format })}}\">CHOOSE</a></td>
+                        <td style=\"text-align: center\">{{ room.description}}</td>
+                        <td style=\"text-align: center\">{{ room.roomtype ~ \" ROOM\"  }}</td>
+                        <td style=\"text-align: center\">{{ room.price ~ \" EUR\"}}</td>
+                        <td style=\"text-align: center\"><a class=\"button\"  href=\"{{ path(\"booking\",{'id_room' : room.id|number_format })}}\">CHOOSE</a></td>
                     </tr>
                 {% endfor %}
             </div>
@@ -543,6 +543,6 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
     </script>
 
 
-{% endblock %}", ":home:available_room_list.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/available_room_list.html.twig");
+{% endblock %}", "home/available_room_list.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/available_room_list.html.twig");
     }
 }

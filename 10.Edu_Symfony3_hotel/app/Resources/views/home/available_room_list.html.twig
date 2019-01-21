@@ -42,7 +42,7 @@
 
 
             <div class="medium-3  columns">
-                <label>Room Type</label>
+                <label style="text-align: center">Room Type</label>
                 <div>
                     <select id="room_type"  onchange="myFunction1('room_type')" name="form[room_type]" style="border-color: #00ace6"  required>
                         <option selected="selected" >Choose</option>
@@ -54,7 +54,7 @@
             </div>
 
             <div class="medium-3  columns">
-                <label>Adult</label>
+                <label style="text-align: center">Adult</label>
                 <div>
 
                     <select id="adult" onchange="myFunction1('adult')" name="form[adult]" style="border-color: #00ace6"  required>
@@ -68,7 +68,7 @@
 
             </div>
             <div class="medium-3  columns">
-                <label>Child</label>
+                <label style="text-align: center">Child</label>
                 <div>
                     <select id="child" onchange="myFunction1('child')" name="form[child]" style="border-color: #00ace6" >
                         <option selected="selected" value="0">Choose</option>
@@ -81,7 +81,7 @@
                 </div>
             </div>
             <div class="medium-3 columns">
-                <label>Baby</label>
+                <label style="text-align: center">Baby</label>
                 <div>
                     <select id="baby" onchange="myFunction1('baby')" name="form[baby]" style="border-color: #00ace6">
                         <option selected="selected" value="0">Choose</option>
@@ -112,10 +112,10 @@
             <div class="row" id="offer_table">
                 {% for room in rooms %}
                     <tr >
-                        <td>{{ room.description}}</td>
-                        <td>{{ room.roomtype ~ " ROOM"  }}</td>
-                        <td>{{ room.price ~ " EUR"}}</td>
-                        <td><a class="button"  href="{{ path("booking",{'id_room' : room.id|number_format })}}">CHOOSE</a></td>
+                        <td style="text-align: center">{{ room.description}}</td>
+                        <td style="text-align: center">{{ room.roomtype ~ " ROOM"  }}</td>
+                        <td style="text-align: center">{{ room.price ~ " EUR"}}</td>
+                        <td style="text-align: center"><a class="button"  href="{{ path("booking",{'id_room' : room.id|number_format })}}">CHOOSE</a></td>
                     </tr>
                 {% endfor %}
             </div>
