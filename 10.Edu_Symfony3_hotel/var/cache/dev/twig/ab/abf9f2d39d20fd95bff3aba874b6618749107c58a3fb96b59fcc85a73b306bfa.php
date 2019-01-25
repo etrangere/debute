@@ -1,6 +1,6 @@
 <?php
 
-/* home/available_room_list.html.twig */
+/* :home:available_room_list.html.twig */
 class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6ad4f7 extends Twig_Template
 {
     private $source;
@@ -12,7 +12,7 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "home/available_room_list.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":home:available_room_list.html.twig", 1);
         $this->blocks = [
             'top_bar' => [$this, 'block_top_bar'],
             'body' => [$this, 'block_body'],
@@ -27,10 +27,10 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "home/available_room_list.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":home:available_room_list.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "home/available_room_list.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":home:available_room_list.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -98,9 +98,9 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
             <div class=\"medium-12 large-12 columns\">
                 <div align=\"center\" class=\"medium-6  columns\" >
                     <label for=\"dt1\">CHECK-IN:</label>
-                    <input id=\"dt1\"  name=\"form[from]\"  type=\"date\" onchange=\"myFunction1('dt1')\" style=\"border-color: #00ace6;\"  class=\"datepicker\" required/>
+                    <input id=\"dt1\"  name=\"form[from]\"  type=\"date\" class=\"datepicker\" onchange=\"myFunction1('dt1')\" style=\"border-color: #00ace6;\"  required/>
                     <label for=\"dt2\">CHECK-OUT:</label>
-                    <input id=\"dt2\"  name=\"form[to]\" type=\"date\" onchange=\"myFunction1('dt2')\" style=\"border-color: #00ace6;\"  class=\"datepicker\"  required/>
+                    <input id=\"dt2\"  name=\"form[to]\" type=\"date\" class=\"datepicker\" onchange=\"myFunction1('dt2')\" style=\"border-color: #00ace6;\" required/>
                 </div>
                 <div align=\"center\" style=\"padding-top: 10%\">
                     <input class=\"button\" id=\"search_offer\"  onchange=\"myFunction1('search_offer')\" type=\"submit\" value=\"SEARCH OFFER\" disabled=\"disabled\"/>
@@ -262,8 +262,50 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
             // var adult2 = document.getElementById(\"adult2\");
             //var adult3 = document.getElementById(\"adult3\");
             //var offer_table = document.getElementById(\"offer_table\");
+      ////
+
+
+        //    var c = document.getElementById('dt1').value;
+         //   var b = document.getElementById('dt2').value;
+            //document.getElementById('dt2').picker.set('min',c);
+
+// When a date is selected on the \"from\" picker,
+// get the date and split into an array.
+// Then set the lower limit of the \"to\" picker.
+        //    var picker_from = \$( '#dt1' ).pickadate({
+       //         onSelect: function() {
+       //             var fromDate = createDateArray( this.getDate( 'yyyy-mm-dd' ) );
+     //               picker_to.data( 'pickadate' ).setDateLimit( fromDate )
+     //           }
+     //       });
+
+// When a date is selected on the \"to\" picker,
+// get the date and split into an array.
+// Then set the upper limit of the \"from\" picker.
+       //     var picker_to = \$( '#dt2' ).pickadate({
+       //         onSelect: function() {
+       //             var toDate = createDateArray( this.getDate( 'yyyy-mm-dd' ) );
+      //              picker_from.data( 'pickadate' ).setDateLimit( toDate, 1 )
+      //          }
+         //   });
+
+          //  alert(picker_from.value);
+
+// Create an array from the date while parsing each date unit as an integer
+   //         function createDateArray( date ) {
+     //           return date.split( '-' ).map(function( value ) { return +value })
+   //         }
+
+
+
+
+
+            ////
             var dt1 = document.getElementById(\"dt1\");
             var dt2 = document.getElementById(\"dt2\");
+
+
+
             // to trigger search_offer button just after dates , room_type and  adult selection
             if ( dt1.value !==\"\" && dt2.value !==\"\" && adult.value ===\"1\" || adult.value ===\"2\" || adult.value ===\"3\")
             {
@@ -332,7 +374,7 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
 
     public function getTemplateName()
     {
-        return "home/available_room_list.html.twig";
+        return ":home:available_room_list.html.twig";
     }
 
     public function isTraitable()
@@ -378,9 +420,9 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
             <div class=\"medium-12 large-12 columns\">
                 <div align=\"center\" class=\"medium-6  columns\" >
                     <label for=\"dt1\">CHECK-IN:</label>
-                    <input id=\"dt1\"  name=\"form[from]\"  type=\"date\" onchange=\"myFunction1('dt1')\" style=\"border-color: #00ace6;\"  class=\"datepicker\" required/>
+                    <input id=\"dt1\"  name=\"form[from]\"  type=\"date\" class=\"datepicker\" onchange=\"myFunction1('dt1')\" style=\"border-color: #00ace6;\"  required/>
                     <label for=\"dt2\">CHECK-OUT:</label>
-                    <input id=\"dt2\"  name=\"form[to]\" type=\"date\" onchange=\"myFunction1('dt2')\" style=\"border-color: #00ace6;\"  class=\"datepicker\"  required/>
+                    <input id=\"dt2\"  name=\"form[to]\" type=\"date\" class=\"datepicker\" onchange=\"myFunction1('dt2')\" style=\"border-color: #00ace6;\" required/>
                 </div>
                 <div align=\"center\" style=\"padding-top: 10%\">
                     <input class=\"button\" id=\"search_offer\"  onchange=\"myFunction1('search_offer')\" type=\"submit\" value=\"SEARCH OFFER\" disabled=\"disabled\"/>
@@ -484,8 +526,50 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
             // var adult2 = document.getElementById(\"adult2\");
             //var adult3 = document.getElementById(\"adult3\");
             //var offer_table = document.getElementById(\"offer_table\");
+      ////
+
+
+        //    var c = document.getElementById('dt1').value;
+         //   var b = document.getElementById('dt2').value;
+            //document.getElementById('dt2').picker.set('min',c);
+
+// When a date is selected on the \"from\" picker,
+// get the date and split into an array.
+// Then set the lower limit of the \"to\" picker.
+        //    var picker_from = \$( '#dt1' ).pickadate({
+       //         onSelect: function() {
+       //             var fromDate = createDateArray( this.getDate( 'yyyy-mm-dd' ) );
+     //               picker_to.data( 'pickadate' ).setDateLimit( fromDate )
+     //           }
+     //       });
+
+// When a date is selected on the \"to\" picker,
+// get the date and split into an array.
+// Then set the upper limit of the \"from\" picker.
+       //     var picker_to = \$( '#dt2' ).pickadate({
+       //         onSelect: function() {
+       //             var toDate = createDateArray( this.getDate( 'yyyy-mm-dd' ) );
+      //              picker_from.data( 'pickadate' ).setDateLimit( toDate, 1 )
+      //          }
+         //   });
+
+          //  alert(picker_from.value);
+
+// Create an array from the date while parsing each date unit as an integer
+   //         function createDateArray( date ) {
+     //           return date.split( '-' ).map(function( value ) { return +value })
+   //         }
+
+
+
+
+
+            ////
             var dt1 = document.getElementById(\"dt1\");
             var dt2 = document.getElementById(\"dt2\");
+
+
+
             // to trigger search_offer button just after dates , room_type and  adult selection
             if ( dt1.value !==\"\" && dt2.value !==\"\" && adult.value ===\"1\" || adult.value ===\"2\" || adult.value ===\"3\")
             {
@@ -543,6 +627,6 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
     </script>
 
 
-{% endblock %}", "home/available_room_list.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/available_room_list.html.twig");
+{% endblock %}", ":home:available_room_list.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/home/available_room_list.html.twig");
     }
 }
