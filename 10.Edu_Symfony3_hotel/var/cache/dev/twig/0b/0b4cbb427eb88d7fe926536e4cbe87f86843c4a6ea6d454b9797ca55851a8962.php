@@ -106,38 +106,18 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 
 
         \$(document).ready(function() {
-            console.log( \"ready!\" );
+
             \$(\"#dt1\").pickadate(
                 {
                     formatSubmit: 'yyyy-mm-dd',
                     //formatSubmit: 'yyyy-mm-dd',
                     //format: 'd mmmm, yyyy',
                     format: ' dddd, d mmmm yyyy',
-                    min: new Date('today'),
+                    min: new Date('today')
                     //max: new Date(2019,12,31),
-                    today: 'Today',
-                    onSet: function () {
-                        var \$input = \$('.datepicker').pickadate();
-                        var picker = \$input.pickadate('picker');
-                        picker.get(\"min\", document.getElementById('dt1*='));
-                        var a = picker.\$input;
-                        //var fromDate = picker.get(\"min\");
 
-                        alert(a.data);
-                        //  picker_to.data('pickadate').setDateLimit(fromDate)
+                });
 
-                    }
-
-
-                    //    var picker_from = \$( '#dt1' ).pickadate({
-                    //         onSelect: function() {
-                    //             var fromDate = createDateArray( this.getDate( 'yyyy-mm-dd' ) );
-                    //               picker_to.data( 'pickadate' ).setDateLimit( fromDate )
-                    //           }
-                    //       });
-
-                }
-            );
             \$(\"#dt2\").pickadate(
                 {
                     formatSubmit: 'yyyy-mm-dd',
@@ -145,12 +125,46 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
                     //format: 'd mmmm, yyyy',
                     format: ' dddd, d mmmm yyyy',
                     //min: new Date(this),
-                    min: new Date(),
+                   // min: new Date(),
                     max: new Date(2019, 12, 31),
-                    today: 'Today'
 
+
+
+                });
+
+
+            var from_\$input = \$('#dt1').pickadate(),
+                from_picker = from_\$input.pickadate('picker');
+
+            var to_\$input = \$('#dt2').pickadate(),
+                to_picker = to_\$input.pickadate('picker');
+
+
+            // Check if there’s a “from” or “to” date to start with.
+            if ( from_picker.get('value') ) {
+                to_picker.set('min', from_picker.get('select'))
+            }
+            if ( to_picker.get('value') ) {
+                from_picker.set('max', to_picker.get('select'))
+            }
+
+            // When something is selected, update the “from” and “to” limits.
+            from_picker.on('set', function(event) {
+                if ( event.select ) {
+                    to_picker.set('min', from_picker.get('select'))
                 }
-            );
+                else if ( 'clear' in event ) {
+                    to_picker.set('min', false)
+                }
+            });
+            to_picker.on('set', function(event) {
+                if ( event.select ) {
+                    from_picker.set('max', to_picker.get('select'))
+                }
+                else if ( 'clear' in event ) {
+                    from_picker.set('max', false)
+                }
+            })
         });
     </script>
     </body>
@@ -373,7 +387,7 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 
     public function getDebugInfo()
     {
-        return array (  348 => 78,  330 => 64,  311 => 50,  307 => 49,  303 => 48,  299 => 47,  292 => 42,  283 => 41,  265 => 10,  247 => 9,  219 => 22,  212 => 18,  208 => 17,  203 => 15,  199 => 14,  195 => 13,  189 => 11,  187 => 10,  183 => 9,  177 => 5,  168 => 4,  100 => 86,  96 => 85,  92 => 84,  88 => 83,  84 => 82,  80 => 81,  76 => 80,  73 => 79,  71 => 78,  56 => 65,  54 => 64,  47 => 59,  45 => 41,  42 => 40,  40 => 4,  35 => 1,);
+        return array (  362 => 78,  344 => 64,  325 => 50,  321 => 49,  317 => 48,  313 => 47,  306 => 42,  297 => 41,  279 => 10,  261 => 9,  233 => 22,  226 => 18,  222 => 17,  217 => 15,  213 => 14,  209 => 13,  203 => 11,  201 => 10,  197 => 9,  191 => 5,  182 => 4,  100 => 86,  96 => 85,  92 => 84,  88 => 83,  84 => 82,  80 => 81,  76 => 80,  73 => 79,  71 => 78,  56 => 65,  54 => 64,  47 => 59,  45 => 41,  42 => 40,  40 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -471,38 +485,18 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 
 
         \$(document).ready(function() {
-            console.log( \"ready!\" );
+
             \$(\"#dt1\").pickadate(
                 {
                     formatSubmit: 'yyyy-mm-dd',
                     //formatSubmit: 'yyyy-mm-dd',
                     //format: 'd mmmm, yyyy',
                     format: ' dddd, d mmmm yyyy',
-                    min: new Date('today'),
+                    min: new Date('today')
                     //max: new Date(2019,12,31),
-                    today: 'Today',
-                    onSet: function () {
-                        var \$input = \$('.datepicker').pickadate();
-                        var picker = \$input.pickadate('picker');
-                        picker.get(\"min\", document.getElementById('dt1*='));
-                        var a = picker.\$input;
-                        //var fromDate = picker.get(\"min\");
 
-                        alert(a.data);
-                        //  picker_to.data('pickadate').setDateLimit(fromDate)
+                });
 
-                    }
-
-
-                    //    var picker_from = \$( '#dt1' ).pickadate({
-                    //         onSelect: function() {
-                    //             var fromDate = createDateArray( this.getDate( 'yyyy-mm-dd' ) );
-                    //               picker_to.data( 'pickadate' ).setDateLimit( fromDate )
-                    //           }
-                    //       });
-
-                }
-            );
             \$(\"#dt2\").pickadate(
                 {
                     formatSubmit: 'yyyy-mm-dd',
@@ -510,12 +504,46 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
                     //format: 'd mmmm, yyyy',
                     format: ' dddd, d mmmm yyyy',
                     //min: new Date(this),
-                    min: new Date(),
+                   // min: new Date(),
                     max: new Date(2019, 12, 31),
-                    today: 'Today'
 
+
+
+                });
+
+
+            var from_\$input = \$('#dt1').pickadate(),
+                from_picker = from_\$input.pickadate('picker');
+
+            var to_\$input = \$('#dt2').pickadate(),
+                to_picker = to_\$input.pickadate('picker');
+
+
+            // Check if there’s a “from” or “to” date to start with.
+            if ( from_picker.get('value') ) {
+                to_picker.set('min', from_picker.get('select'))
+            }
+            if ( to_picker.get('value') ) {
+                from_picker.set('max', to_picker.get('select'))
+            }
+
+            // When something is selected, update the “from” and “to” limits.
+            from_picker.on('set', function(event) {
+                if ( event.select ) {
+                    to_picker.set('min', from_picker.get('select'))
                 }
-            );
+                else if ( 'clear' in event ) {
+                    to_picker.set('min', false)
+                }
+            });
+            to_picker.on('set', function(event) {
+                if ( event.select ) {
+                    from_picker.set('max', to_picker.get('select'))
+                }
+                else if ( 'clear' in event ) {
+                    from_picker.set('max', false)
+                }
+            })
         });
     </script>
     </body>
