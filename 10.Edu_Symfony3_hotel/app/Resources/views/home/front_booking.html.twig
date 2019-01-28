@@ -44,16 +44,31 @@
                     <input name="form[address]" style="border-color: #00ace6" value="{{ form.address is defined ? form.address : '' }}" type="text" required/>
                 </div>
                 <div class="medium-4  columns">
-                    <label>ZipCode</label>
-                    <input name="form[zip_code]" style="border-color: #00ace6" value="{{ form.zip_code is defined ? form.zip_code : '' }}" type="text" required/>
+                    <label for="zip">ZipCode</label>
+                    <input name="form[zip_code]" id="zip" list="zipr" style="border-color: #00ace6" value="{{ form.zip_code is defined ? form.zip_code : '' }}" type="text" required/>
+                    <datalist  id="zipr">
+                        {% for z_c_s in z_c_ss %}
+                        <option value="{{ z_c_s.zip }}">
+                        {% endfor %}
+                    </datalist>
                 </div>
                 <div class="medium-4  columns">
-                    <label>City</label>
-                    <input name="form[city]" style="border-color: #00ace6" value="{{ form.city is defined ? form.city : '' }}" type="text" required/>
+                    <label for="city">City</label>
+                    <input name="form[city]" id="city" list="cityr" style="border-color: #00ace6" value="{{ form.city is defined ? form.city : '' }}" type="text" required/>
+                    <datalist  id="cityr">
+                        {% for z_c_s in z_c_ss %}
+                        <option value="{{ z_c_s.city }}">
+                            {% endfor %}
+                    </datalist>
                 </div>
                 <div class="medium-4  columns">
-                    <label>State</label>
-                    <input name="form[state]" style="border-color: #00ace6" value="{{ form.state is defined ? form.state : '' }}" type="text" required/>
+                    <label for="state">State</label>
+                    <input name="form[state]" id="state" list="stater" style="border-color: #00ace6" value="{{ form.state is defined ? form.state : '' }}" type="text" required/>
+                    <datalist  id="stater">
+                        {% for z_c_s in z_c_ss %}
+                        <option value="{{ z_c_s.state }}">
+                            {% endfor %}
+                    </datalist>
                 </div>
                 <div class="medium-12  columns">
                     <label>Email</label>

@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Reservation;
 use AppBundle\Entity\Client;
+use AppBundle\Entity\ZipCityState;
 use AppBundle\Entity\Room;
 use AppBundle\Repository\RoomRepository;
 use AppBundle\Repository\ClientRepository;
@@ -50,6 +51,8 @@ class HomeController extends Controller
 
                                 
     }
+
+
 
 
     /**
@@ -217,6 +220,8 @@ class HomeController extends Controller
     /**
      * @Route("/booking/{id_room}",name="booking")
      */
+
+
     public function booking(Request $request ,$id_room)
     {
         $data = [];
@@ -224,6 +229,19 @@ class HomeController extends Controller
         $data['titles'] = $this->titles;
         $data['form'] = [];
         $data['form']['title'] = '';
+
+        //for booking form Zip,City and State fields datalist
+
+        $data['z_c_ss'] = [];
+       // $id = ;
+        $z_c_ss = $this->getDoctrine()
+            ->getRepository('AppBundle:ZipCityState')->findAll();
+        //var_dump($id);
+        $data['z_c_ss'] = $z_c_ss;
+
+
+        //
+
 
 
         $form = $this->createFormBuilder()
