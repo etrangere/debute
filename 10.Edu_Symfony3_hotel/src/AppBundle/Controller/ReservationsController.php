@@ -38,7 +38,7 @@ class ReservationsController extends Controller
 
 
     /**
-     * @Route("/admin/book_room/{id_client}/{id_room}/{date_in}/{date_out}" , name="book_room")
+     * @Route("/book_room/{id_client}/{id_room}/{date_in}/{date_out}" , name="book_room")
      */
 
     public function book_room($id_client,$id_room,$date_in,$date_out)

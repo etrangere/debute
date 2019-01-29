@@ -233,16 +233,11 @@ class HomeController extends Controller
         //for booking form Zip,City and State fields datalist
 
         $data['z_c_ss'] = [];
-       // $id = ;
         $z_c_ss = $this->getDoctrine()
             ->getRepository('AppBundle:ZipCityState')->findAll();
-        //var_dump($id);
         $data['z_c_ss'] = $z_c_ss;
-
-
         //
-
-
+      
 
         $form = $this->createFormBuilder()
             ->add('name')
