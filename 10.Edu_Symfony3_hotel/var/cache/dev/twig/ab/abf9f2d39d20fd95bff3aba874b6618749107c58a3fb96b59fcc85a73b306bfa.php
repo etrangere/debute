@@ -262,45 +262,9 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
             // var adult2 = document.getElementById(\"adult2\");
             //var adult3 = document.getElementById(\"adult3\");
             //var offer_table = document.getElementById(\"offer_table\");
-      ////
-
-
-        //    var c = document.getElementById('dt1').value;
-         //   var b = document.getElementById('dt2').value;
-            //document.getElementById('dt2').picker.set('min',c);
-
-// When a date is selected on the \"from\" picker,
-// get the date and split into an array.
-// Then set the lower limit of the \"to\" picker.
-        //    var picker_from = \$( '#dt1' ).pickadate({
-       //         onSelect: function() {
-       //             var fromDate = createDateArray( this.getDate( 'yyyy-mm-dd' ) );
-     //               picker_to.data( 'pickadate' ).setDateLimit( fromDate )
-     //           }
-     //       });
-
-// When a date is selected on the \"to\" picker,
-// get the date and split into an array.
-// Then set the upper limit of the \"from\" picker.
-       //     var picker_to = \$( '#dt2' ).pickadate({
-       //         onSelect: function() {
-       //             var toDate = createDateArray( this.getDate( 'yyyy-mm-dd' ) );
-      //              picker_from.data( 'pickadate' ).setDateLimit( toDate, 1 )
-      //          }
-         //   });
-
-          //  alert(picker_from.value);
-
-// Create an array from the date while parsing each date unit as an integer
-   //         function createDateArray( date ) {
-     //           return date.split( '-' ).map(function( value ) { return +value })
-   //         }
 
 
 
-
-
-            ////
             var dt1 = document.getElementById(\"dt1\");
             var dt2 = document.getElementById(\"dt2\");
 
@@ -526,45 +490,9 @@ class __TwigTemplate_092269ead4899e9119a758f53010467bea7596664aac4a31c9eef9913a6
             // var adult2 = document.getElementById(\"adult2\");
             //var adult3 = document.getElementById(\"adult3\");
             //var offer_table = document.getElementById(\"offer_table\");
-      ////
-
-
-        //    var c = document.getElementById('dt1').value;
-         //   var b = document.getElementById('dt2').value;
-            //document.getElementById('dt2').picker.set('min',c);
-
-// When a date is selected on the \"from\" picker,
-// get the date and split into an array.
-// Then set the lower limit of the \"to\" picker.
-        //    var picker_from = \$( '#dt1' ).pickadate({
-       //         onSelect: function() {
-       //             var fromDate = createDateArray( this.getDate( 'yyyy-mm-dd' ) );
-     //               picker_to.data( 'pickadate' ).setDateLimit( fromDate )
-     //           }
-     //       });
-
-// When a date is selected on the \"to\" picker,
-// get the date and split into an array.
-// Then set the upper limit of the \"from\" picker.
-       //     var picker_to = \$( '#dt2' ).pickadate({
-       //         onSelect: function() {
-       //             var toDate = createDateArray( this.getDate( 'yyyy-mm-dd' ) );
-      //              picker_from.data( 'pickadate' ).setDateLimit( toDate, 1 )
-      //          }
-         //   });
-
-          //  alert(picker_from.value);
-
-// Create an array from the date while parsing each date unit as an integer
-   //         function createDateArray( date ) {
-     //           return date.split( '-' ).map(function( value ) { return +value })
-   //         }
 
 
 
-
-
-            ////
             var dt1 = document.getElementById(\"dt1\");
             var dt2 = document.getElementById(\"dt2\");
 

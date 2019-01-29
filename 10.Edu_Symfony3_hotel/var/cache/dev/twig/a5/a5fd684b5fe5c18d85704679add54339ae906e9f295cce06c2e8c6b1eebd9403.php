@@ -92,9 +92,9 @@ class __TwigTemplate_4543c8cbcb3b596dd8b474529909c6670352003dbb1d05198c076ea3728
             <h4></h4>
             <form action=\"\" method=\"post\">
                 <div class=\"medium-4  columns\">
-                    <label>Title</label>
+                    <label for=\"title\">Title</label>
 
-                    <select name=\"form[title]\" style=\"border-color: #00ace6\">
+                    <select id=\"title\" name=\"form[title]\" style=\"border-color: #00ace6\">
                         ";
         // line 28
         $context['_parent'] = $context;
@@ -118,22 +118,22 @@ class __TwigTemplate_4543c8cbcb3b596dd8b474529909c6670352003dbb1d05198c076ea3728
 
                 </div>
                 <div class=\"medium-4  columns\">
-                    <label>Name</label>
-                    <input name=\"form[name]\" style=\"border-color: #00ace6\" value=\"";
+                    <label for=\"name\">Name</label>
+                    <input name=\"form[name]\" id=\"name\" style=\"border-color: #00ace6\" value=\"";
         // line 36
         echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "name", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 36, $this->source); })()), "name", [])) : ("")), "html", null, true);
         echo "\" type=\"text\" required/>
                 </div>
                 <div class=\"medium-4  columns\">
-                    <label>Last Name</label>
-                    <input name=\"form[last_name]\" style=\"border-color: #00ace6\" value=\"";
+                    <label for=\"last_name\">Last Name</label>
+                    <input name=\"form[last_name]\" id=\"last_name\" style=\"border-color: #00ace6\" value=\"";
         // line 40
         echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "last_name", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 40, $this->source); })()), "last_name", [])) : ("")), "html", null, true);
         echo "\" type=\"text\" required/>
                 </div>
                 <div class=\"medium-8  columns\">
-                    <label>Address</label>
-                    <input name=\"form[address]\" style=\"border-color: #00ace6\" value=\"";
+                    <label for=\"address\">Address</label>
+                    <input name=\"form[address]\" id=\"address\" style=\"border-color: #00ace6\" value=\"";
         // line 44
         echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "address", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 44, $this->source); })()), "address", [])) : ("")), "html", null, true);
         echo "\" type=\"text\" required/>
@@ -211,8 +211,8 @@ class __TwigTemplate_4543c8cbcb3b596dd8b474529909c6670352003dbb1d05198c076ea3728
         echo "                    </datalist>
                 </div>
                 <div class=\"medium-12  columns\">
-                    <label>Email</label>
-                    <input name=\"form[client_email]\" style=\"border-color: #00ace6\" value=\"";
+                    <label for=\"email\">Email</label>
+                    <input name=\"form[client_email]\" id=\"email\" style=\"border-color: #00ace6\" value=\"";
         // line 75
         echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "client_email", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 75, $this->source); })()), "client_email", [])) : ("")), "html", null, true);
         echo "\" type=\"text\" required/>
@@ -274,9 +274,9 @@ class __TwigTemplate_4543c8cbcb3b596dd8b474529909c6670352003dbb1d05198c076ea3728
             <h4></h4>
             <form action=\"\" method=\"post\">
                 <div class=\"medium-4  columns\">
-                    <label>Title</label>
+                    <label for=\"title\">Title</label>
 
-                    <select name=\"form[title]\" style=\"border-color: #00ace6\">
+                    <select id=\"title\" name=\"form[title]\" style=\"border-color: #00ace6\">
                         {% for title in titles %}
                             <option value=\"{{ title }} {{ title == form.title ? 'selected' : '' }} \">{{ title | capitalize }}.</option>
                         {% endfor %}
@@ -284,16 +284,16 @@ class __TwigTemplate_4543c8cbcb3b596dd8b474529909c6670352003dbb1d05198c076ea3728
 
                 </div>
                 <div class=\"medium-4  columns\">
-                    <label>Name</label>
-                    <input name=\"form[name]\" style=\"border-color: #00ace6\" value=\"{{ form.name is defined ? form.name : '' }}\" type=\"text\" required/>
+                    <label for=\"name\">Name</label>
+                    <input name=\"form[name]\" id=\"name\" style=\"border-color: #00ace6\" value=\"{{ form.name is defined ? form.name : '' }}\" type=\"text\" required/>
                 </div>
                 <div class=\"medium-4  columns\">
-                    <label>Last Name</label>
-                    <input name=\"form[last_name]\" style=\"border-color: #00ace6\" value=\"{{ form.last_name is defined ? form.last_name : '' }}\" type=\"text\" required/>
+                    <label for=\"last_name\">Last Name</label>
+                    <input name=\"form[last_name]\" id=\"last_name\" style=\"border-color: #00ace6\" value=\"{{ form.last_name is defined ? form.last_name : '' }}\" type=\"text\" required/>
                 </div>
                 <div class=\"medium-8  columns\">
-                    <label>Address</label>
-                    <input name=\"form[address]\" style=\"border-color: #00ace6\" value=\"{{ form.address is defined ? form.address : '' }}\" type=\"text\" required/>
+                    <label for=\"address\">Address</label>
+                    <input name=\"form[address]\" id=\"address\" style=\"border-color: #00ace6\" value=\"{{ form.address is defined ? form.address : '' }}\" type=\"text\" required/>
                 </div>
                 <div class=\"medium-4  columns\">
                     <label for=\"zip\">ZipCode</label>
@@ -323,8 +323,8 @@ class __TwigTemplate_4543c8cbcb3b596dd8b474529909c6670352003dbb1d05198c076ea3728
                     </datalist>
                 </div>
                 <div class=\"medium-12  columns\">
-                    <label>Email</label>
-                    <input name=\"form[client_email]\" style=\"border-color: #00ace6\" value=\"{{ form.client_email is defined ? form.client_email : '' }}\" type=\"text\" required/>
+                    <label for=\"email\">Email</label>
+                    <input name=\"form[client_email]\" id=\"email\" style=\"border-color: #00ace6\" value=\"{{ form.client_email is defined ? form.client_email : '' }}\" type=\"text\" required/>
                 </div>
                 <div class=\"medium-12  columns\">
                     <input type=\"submit\" class=\"button\" value=\"BOOKING INFORMATION\"  />
