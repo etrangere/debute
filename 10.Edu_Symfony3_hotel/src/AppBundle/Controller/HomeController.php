@@ -234,7 +234,7 @@ class HomeController extends Controller
 
         $data['z_c_ss'] = [];
         $z_c_ss = $this->getDoctrine()
-            ->getRepository('AppBundle:ZipCityState')->findAll();
+            ->getRepository('AppBundle:ZipCityState')->findby(array(), array('id' => 'DESC'),20);
         $data['z_c_ss'] = $z_c_ss;
         //
       
