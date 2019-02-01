@@ -235,14 +235,11 @@ class HomeController extends Controller
         $data['z_c_ss'] = [];
         $z_c_ss = $this->getDoctrine()
             ->getRepository('AppBundle:ZipCityState')
-            ->findBy(array(),array('id'=> 'ASC','zip' =>'ASC','city' =>'ASC','state' =>'DESC'),37080);
+            ->getzipcitystate();
+        //  ->findBy(array(),array('id'=> 'ASC','zip' =>'ASC','city' =>'ASC','state' =>'DESC'),37080);
         $data['z_c_ss'] = $z_c_ss;
         //
-        //$qb = $em->getRepository("GerlaFrontendBundle:Store")->createQueryBuilder("p");
-        //$province = $qb->select("p")
-         //   ->distinct(true)
-         //   ->getQuery()
-         //   ->getResult();
+
       
 
         $form = $this->createFormBuilder()
