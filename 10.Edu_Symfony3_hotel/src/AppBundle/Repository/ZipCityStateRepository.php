@@ -19,14 +19,15 @@ class ZipCityStateRepository extends EntityRepository
 
 
         $qb = $this->createQueryBuilder('zip_city_state')
-           // ->select('z')->from('AppBundle\Entity\ZipCityState','z')->distinct(true)
-           // ->select('s')->from('AppBundle\Entity\ZipCityState','s')->distinct(true)
-           ->select('s')->from('AppBundle\Entity\ZipCityState','s')
-            ->addOrderBy('zip_city_state.zip', 'ASC')
-            ->addOrderBy('zip_city_state.city', 'ASC')
-            ->addOrderBy('zip_city_state.state', 'ASC')
 
-            ->setMaxResults(3)
+           // ->select('z')->from('AppBundle\Entity\ZipCityState','z')->distinct(true) //not work
+           // ->select('s')->from('AppBundle\Entity\ZipCityState','s')->distinct(true)  //not work
+
+            ->addOrderBy('zip_city_state.zip', 'ASC')   //leave like option to customise
+           // ->addOrderBy('zip_city_state.city', 'ASC')   //leave like option to customise
+           //->addOrderBy('zip_city_state.state', 'ASC')   //leave like option to customise
+           //->addOrderBy('zip_city_state.id', 'ASC')   //leave like option to customise
+            ->setMaxResults(37080)
 
         ;
         $query = $qb->getQuery();
