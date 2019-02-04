@@ -2,12 +2,15 @@
 
 namespace AppBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Client
  * @ORM\Entity
+ * @ORM\Table(name="client")
+ * @UniqueEntity(fields={"email"}, message="Dear client it looks like your already have an account!")
  */
 class Client
 {
@@ -52,6 +55,52 @@ class Client
     private $state;
 
     /**
+     * @var int
+     */
+    private $tel;
+
+    /**
+     * @var int
+     */
+    private $client_price;
+
+    /**
+     * @return int
+     */
+    public function getClientPrice()
+    {
+        return $this->client_price;
+    }
+
+    /**
+     * @param int $client_price
+     */
+    public function setClientPrice($client_price)
+    {
+        $this->client_price = $client_price;
+    }
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getTel()
+    {
+        return $this->tel;
+    }
+
+    /**
+     * @param mixed $tel
+     */
+    public function setTel($tel)
+    {
+        $this->tel = $tel;
+    }
+
+    /**
+     * @Assert\NotBlank(groups={"Default"})
+     * @ORM\Column(type="string",unique=true)
      * @var string
      */
     private $client_email;

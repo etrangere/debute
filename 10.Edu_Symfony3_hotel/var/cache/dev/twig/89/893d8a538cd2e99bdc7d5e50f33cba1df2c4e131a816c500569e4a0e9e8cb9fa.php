@@ -211,11 +211,18 @@ class __TwigTemplate_394a72e866e171357957be4e76643de993584666a400e85df5836282320
         echo "                    </datalist>
                 </div>
                 <div class=\"medium-12  columns\">
+                    <label for=\"tel\">Tel:</label>
+                    <input name=\"form[tel]\" id=\"tel\" style=\"border-color: #00ace6\" value=\"";
+        // line 75
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "tel", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 75, $this->source); })()), "tel", [])) : ("")), "html", null, true);
+        echo "\" type=\"number\" required/>
+                </div>
+                <div class=\"medium-12  columns\">
                     <label for=\"email\">Email</label>
                     <input name=\"form[client_email]\" id=\"email\" style=\"border-color: #00ace6\" value=\"";
-        // line 75
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "client_email", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 75, $this->source); })()), "client_email", [])) : ("")), "html", null, true);
-        echo "\" type=\"text\" required/>
+        // line 79
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "client_email", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 79, $this->source); })()), "client_email", [])) : ("")), "html", null, true);
+        echo "\" type=\"email\" required/>
                 </div>
                 <div class=\"medium-12  columns\">
                     <input type=\"submit\" class=\"button\" value=\"BOOKING INFORMATION\"  />
@@ -245,7 +252,7 @@ class __TwigTemplate_394a72e866e171357957be4e76643de993584666a400e85df5836282320
 
     public function getDebugInfo()
     {
-        return array (  217 => 75,  211 => 71,  202 => 69,  198 => 68,  193 => 66,  187 => 62,  178 => 60,  174 => 59,  169 => 57,  163 => 53,  154 => 51,  150 => 50,  145 => 48,  138 => 44,  131 => 40,  124 => 36,  117 => 31,  104 => 29,  100 => 28,  79 => 10,  74 => 8,  71 => 7,  62 => 6,  45 => 4,  15 => 1,);
+        return array (  224 => 79,  217 => 75,  211 => 71,  202 => 69,  198 => 68,  193 => 66,  187 => 62,  178 => 60,  174 => 59,  169 => 57,  163 => 53,  154 => 51,  150 => 50,  145 => 48,  138 => 44,  131 => 40,  124 => 36,  117 => 31,  104 => 29,  100 => 28,  79 => 10,  74 => 8,  71 => 7,  62 => 6,  45 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -323,8 +330,12 @@ class __TwigTemplate_394a72e866e171357957be4e76643de993584666a400e85df5836282320
                     </datalist>
                 </div>
                 <div class=\"medium-12  columns\">
+                    <label for=\"tel\">Tel:</label>
+                    <input name=\"form[tel]\" id=\"tel\" style=\"border-color: #00ace6\" value=\"{{ form.tel is defined ? form.tel : '' }}\" type=\"number\" required/>
+                </div>
+                <div class=\"medium-12  columns\">
                     <label for=\"email\">Email</label>
-                    <input name=\"form[client_email]\" id=\"email\" style=\"border-color: #00ace6\" value=\"{{ form.client_email is defined ? form.client_email : '' }}\" type=\"text\" required/>
+                    <input name=\"form[client_email]\" id=\"email\" style=\"border-color: #00ace6\" value=\"{{ form.client_email is defined ? form.client_email : '' }}\" type=\"email\" required/>
                 </div>
                 <div class=\"medium-12  columns\">
                     <input type=\"submit\" class=\"button\" value=\"BOOKING INFORMATION\"  />

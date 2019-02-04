@@ -14,7 +14,7 @@ class ZipCityState
     private $id;
 
     /**
-     * @var int
+     * @var string
      */
     private $zip;
 
@@ -43,7 +43,7 @@ class ZipCityState
     /**
      * Get zip.
      *
-     * @return int
+     * @return string
      */
     public function getZip()
     {

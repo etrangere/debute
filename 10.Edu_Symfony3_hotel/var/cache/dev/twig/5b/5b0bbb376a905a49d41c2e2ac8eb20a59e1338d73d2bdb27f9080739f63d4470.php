@@ -180,15 +180,15 @@ class __TwigTemplate_b3fd0ba6c4b566510540754a5168767a347b17a111994b23b36ecb582d7
             <th scope=\"row\">Tel:</th>
             <td>";
         // line 88
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 88, $this->source); })()), "client_email", []), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 88, $this->source); })()), "tel", []), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th scope=\"row\">TOTAL</th>
             <td>";
         // line 92
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "name", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 92, $this->source); })()), "name", [])) : ("")), "html", null, true);
-        echo "</td>
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "client_price", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new Twig_Error_Runtime('Variable "client" does not exist.', 92, $this->source); })()), "client_price", [])) : ("")), "html", null, true);
+        echo " .\t&#8364;</td>
         </tr>
       </table>
   </div>
@@ -321,11 +321,11 @@ class __TwigTemplate_b3fd0ba6c4b566510540754a5168767a347b17a111994b23b36ecb582d7
         </tr>
         <tr>
             <th scope=\"row\">Tel:</th>
-            <td>{{ client.client_email}}</td>
+            <td>{{ client.tel}}</td>
         </tr>
         <tr>
             <th scope=\"row\">TOTAL</th>
-            <td>{{ client.name is defined ? client.name : '' }}</td>
+            <td>{{ client.client_price is defined ? client.client_price : '' }} .\t&#8364;</td>
         </tr>
       </table>
   </div>

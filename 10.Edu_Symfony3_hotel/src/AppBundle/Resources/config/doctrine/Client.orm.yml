@@ -26,6 +26,12 @@ AppBundle\Entity\Client:
             type: string
             length: '10'
             column: zip_code
+        tel:
+            type: integer
+            length: '20'
+        client_price:
+            type: integer
+            length: '20'
         city:
             type: string
             length: '50'

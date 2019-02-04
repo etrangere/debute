@@ -1,7 +1,7 @@
 <?php
 
 namespace AppBundle\Controller;
-//namespace WhiteOctober;
+
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\Cache\Simple\FilesystemCache;
@@ -32,6 +32,12 @@ use WhiteOctober;
 use WhiteOctober\TCPDFBundle\WhiteOctoberTCPDFBundle;
 use WhiteOctober\TCPDFBundle\DependencyInjection\WhiteOctoberTCPDFExtension;
 use Swift_Attachment;
+use Symfony\Component\Validator\Constraints\EmailValidator;
+use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+
+
+
 
 class HomeController extends Controller
 {
@@ -222,7 +228,7 @@ class HomeController extends Controller
      */
 
 
-    public function booking(Request $request ,$id_room)
+    public function booking(Request $request ,$id_room )
     {
         $data = [];
         $data['mode']='new_client';
@@ -238,9 +244,9 @@ class HomeController extends Controller
             ->getzipcitystate();
         //  ->findBy(array(),array('id'=> 'ASC','zip' =>'ASC','city' =>'ASC','state' =>'DESC'),37080);
         $data['z_c_ss'] = $z_c_ss;
-        //
 
-      
+
+
 
         $form = $this->createFormBuilder()
             ->add('name')
@@ -250,6 +256,7 @@ class HomeController extends Controller
             ->add('zip_code')
             ->add('city')
             ->add('state')
+            ->add('tel')
             ->add('client_email')
             ->getForm();
 
@@ -259,7 +266,7 @@ class HomeController extends Controller
             $form_data = $form->getData();
             $data ['form'] = [];
             $data ['form'] = $form_data;
-
+            $form_data['client_price']='2';
             //getting info from cache
 
             $cache = new FilesystemCache();
@@ -269,6 +276,10 @@ class HomeController extends Controller
             $data ['baby'] = $cache->get('baby');
             $data ['from'] = $cache->get('from');
             $data ['to'] = $cache->get('to');
+
+
+
+
 
             //adding new client to db
 
@@ -281,6 +292,16 @@ class HomeController extends Controller
             $client->setZipCode($form_data['zip_code']);
             $client->setCity($form_data['city']);
             $client->setState($form_data['state']);
+            $client->setTel($form_data['tel']);
+            $client->setClientPrice($form_data['client_price']);
+
+          // $emailValidator = new EmailValidator();
+
+          //  if(!$emailValidator->isValid($form_data['client_email'], new Email()))
+          //  {
+          //      $form['client_email']->addError(new FormError('Invalid email'));
+          //  }
+
             $client->setClient_email($form_data['client_email']);
             $client->setIdRoom($id_room);
             $client->setRoomType($data['room_type']);
@@ -348,6 +369,10 @@ class HomeController extends Controller
             $baby = $client->getBaby('baby');
             $address = $client->getAddress('address');
             $zip_code = $client->getZipCode('zip_code');
+            $state = $client->getState('state');
+            $tel = $client->getTel('tel');
+            $client_price = $client->getClientPrice('client_price');
+
             $date_in = $reservation_id->getDateIn('from')->format('d-m-Y H:i:s');
             $date_out = $reservation_id->getDateOut('to')->format('d-m-Y H:i:s');
 
@@ -366,50 +391,78 @@ class HomeController extends Controller
             $pdf->AddPage();
         $html = '<h1>Hotel de France</h1> 
             <table cellspacing="0" cellpadding="1" border="0">
+            
             <tr>
             <th scope="row">Client Referance</th>
             <td><h4>'  .$client_id .'</h4></td>
             </tr> 
+            
             <tr>
             <th scope="row">Name</th>
             <td><h4>'.$name .'</h4></td>
             </tr>
+            
              <tr>
             <th scope="row">Last name</th>
             <td><h4>'.$last_name .'</h4></td>
             </tr>
+            
+            
             <tr>
             <th scope="row">Adult</th>
             <td><h4>'.$adult .'</h4></td>
             </tr>
+            
             <tr>
             <th scope="row">Child</th>
             <td><h4>'.$child .'</h4></td>
             </tr>
+            
             <tr>
             <th scope="row">Baby</th>
             <td><h4>'.$baby .'</h4></td>
             </tr>
+            
             <tr>
             <th scope="row">Address</th>
             <td><h4>'. $address .'</h4></td>
             </tr>
+            
             <tr>
             <th scope="row">ZipCode</th>
             <td><h4>'. $zip_code .'</h4></td>
             </tr>
+            
             <tr>
             <th scope="row">Check-In -</th>
             <td><h4>' . $date_in .'</h4></td>
             </tr>
+            
             <tr>
             <th scope="row">Check-Out -</th>
             <td><h4>' . $date_out .'</h4></td>
             </tr>
+            
+            <tr>
+            <th scope="row">State -</th>
+            <td><h4>' . $state .'</h4></td>
+            </tr>
+            
+            <tr>
+            <th scope="row">Tel: -</th>
+            <td><h4>' . $tel .'</h4></td>
+            </tr>
+            
             <tr>
             <th scope="row">Email -</th>
-            <td><h4>'.$client_email .'</h4></td>
+            <td><h4>'. $client_email .'</h4></td>
             </tr>
+            
+            <tr>
+            <th scope="row">Total -</th>
+            <td><h4>'. $client_price .'</h4></td>
+            </tr>
+            
             </table>
             ';
 

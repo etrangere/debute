@@ -10,7 +10,7 @@ AppBundle\Entity\ZipCityState:
                 strategy: AUTO
     fields:
         zip:
-            type: integer
+            type: string
         city:
             type: string
             length: '255'

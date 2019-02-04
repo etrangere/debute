@@ -68,6 +68,7 @@ class ClientsController extends Controller
             ->add('zip_code')
             ->add('city')
             ->add('state')
+            ->add('tel')
            // ->add('email')
            // ->add('room_type')
             ->add('adult')
@@ -91,6 +92,7 @@ class ClientsController extends Controller
             $client->setZipCode($form_data['zip_code']);
             $client->setCity($form_data['city']);
             $client->setState($form_data['state']);
+            $client->setTel($form_data['tel']);
           //  $client->setEmail($form_data['email']);
           //  $client->setRoomType($form_data['room_type']);
             $client->setAdult($form_data['adult']);
@@ -116,6 +118,7 @@ class ClientsController extends Controller
             $client_data ['zip_code'] = $client->getZipCode();
             $client_data ['city'] = $client->getCity();
             $client_data ['state'] = $client->getState();
+            $client_data ['tel'] = $client->getTel();
             $client_data ['client_email'] = $client->getClient_email();
             $client_data ['room_type'] = $client->getRoomType();
             $client_data ['adult'] = $client->getAdult();
