@@ -91,20 +91,43 @@ class __TwigTemplate_394a72e866e171357957be4e76643de993584666a400e85df5836282320
         <div class=\"medium-12 large-12 columns\">
             <h4></h4>
             <form action=\"\" method=\"post\">
+                <ul>
+                    ";
+        // line 25
+        if ((isset($context["errors"]) || array_key_exists("errors", $context))) {
+            // line 26
+            echo "                        ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["errors"]) || array_key_exists("errors", $context) ? $context["errors"] : (function () { throw new Twig_Error_Runtime('Variable "errors" does not exist.', 26, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["error"]) {
+                // line 27
+                echo "                            <li>";
+                echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["error"], "message", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, $context["error"], "message", [])) : ("")), "html", null, true);
+                echo "</li>
+                        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['error'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 29
+            echo "                    ";
+        }
+        // line 30
+        echo "                </ul>
                 <div class=\"medium-4  columns\">
                     <label for=\"title\">Title</label>
 
                     <select id=\"title\" name=\"form[title]\" style=\"border-color: #00ace6\">
                         ";
-        // line 28
+        // line 35
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["titles"]) || array_key_exists("titles", $context) ? $context["titles"] : (function () { throw new Twig_Error_Runtime('Variable "titles" does not exist.', 28, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["titles"]) || array_key_exists("titles", $context) ? $context["titles"] : (function () { throw new Twig_Error_Runtime('Variable "titles" does not exist.', 35, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["title"]) {
-            // line 29
+            // line 36
             echo "                            <option value=\"";
             echo twig_escape_filter($this->env, $context["title"], "html", null, true);
             echo " ";
-            echo ((($context["title"] == twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 29, $this->source); })()), "title", []))) ? ("selected") : (""));
+            echo ((($context["title"] == twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 36, $this->source); })()), "title", []))) ? ("selected") : (""));
             echo " \">";
             echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, $context["title"]), "html", null, true);
             echo ".</option>
@@ -113,44 +136,43 @@ class __TwigTemplate_394a72e866e171357957be4e76643de993584666a400e85df5836282320
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['title'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
+        // line 38
         echo "                    </select>
-
                 </div>
                 <div class=\"medium-4  columns\">
                     <label for=\"name\">Name</label>
                     <input name=\"form[name]\" id=\"name\" style=\"border-color: #00ace6\" value=\"";
-        // line 36
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "name", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 36, $this->source); })()), "name", [])) : ("")), "html", null, true);
-        echo "\" type=\"text\" required/>
+        // line 42
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "name", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 42, $this->source); })()), "name", [])) : ("")), "html", null, true);
+        echo "\" type=\"text\" formnovalidate/>
                 </div>
                 <div class=\"medium-4  columns\">
                     <label for=\"last_name\">Last Name</label>
                     <input name=\"form[last_name]\" id=\"last_name\" style=\"border-color: #00ace6\" value=\"";
-        // line 40
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "last_name", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 40, $this->source); })()), "last_name", [])) : ("")), "html", null, true);
-        echo "\" type=\"text\" required/>
+        // line 46
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "last_name", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 46, $this->source); })()), "last_name", [])) : ("")), "html", null, true);
+        echo "\" type=\"text\" formnovalidate/>
                 </div>
                 <div class=\"medium-8  columns\">
                     <label for=\"address\">Address</label>
                     <input name=\"form[address]\" id=\"address\" style=\"border-color: #00ace6\" value=\"";
-        // line 44
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "address", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 44, $this->source); })()), "address", [])) : ("")), "html", null, true);
-        echo "\" type=\"text\" required/>
+        // line 50
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "address", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 50, $this->source); })()), "address", [])) : ("")), "html", null, true);
+        echo "\" type=\"text\" formnovalidate/>
                 </div>
                 <div class=\"medium-4  columns\">
                     <label for=\"zip\">ZipCode</label>
                     <input name=\"form[zip_code]\" id=\"zip\" list=\"zipr\" style=\"border-color: #00ace6\" value=\"";
-        // line 48
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "zip_code", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 48, $this->source); })()), "zip_code", [])) : ("")), "html", null, true);
-        echo "\" type=\"text\" required/>
+        // line 54
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "zip_code", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 54, $this->source); })()), "zip_code", [])) : ("")), "html", null, true);
+        echo "\" type=\"text\" formnovalidate/>
                     <datalist  id=\"zipr\">
                         ";
-        // line 50
+        // line 56
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["z_c_ss"]) || array_key_exists("z_c_ss", $context) ? $context["z_c_ss"] : (function () { throw new Twig_Error_Runtime('Variable "z_c_ss" does not exist.', 50, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["z_c_ss"]) || array_key_exists("z_c_ss", $context) ? $context["z_c_ss"] : (function () { throw new Twig_Error_Runtime('Variable "z_c_ss" does not exist.', 56, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["z_c_s"]) {
-            // line 51
+            // line 57
             echo "                        <option value=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["z_c_s"], "zip", []), "html", null, true);
             echo "\">
@@ -159,22 +181,22 @@ class __TwigTemplate_394a72e866e171357957be4e76643de993584666a400e85df5836282320
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['z_c_s'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 53
+        // line 59
         echo "                    </datalist>
                 </div>
                 <div class=\"medium-4  columns\">
                     <label for=\"city\">City</label>
                     <input name=\"form[city]\" id=\"city\" list=\"cityr\" style=\"border-color: #00ace6\" value=\"";
-        // line 57
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "city", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 57, $this->source); })()), "city", [])) : ("")), "html", null, true);
-        echo "\" type=\"text\" required/>
+        // line 63
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "city", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 63, $this->source); })()), "city", [])) : ("")), "html", null, true);
+        echo "\" type=\"text\" formnovalidate/>
                     <datalist  id=\"cityr\">
                         ";
-        // line 59
+        // line 65
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["z_c_ss"]) || array_key_exists("z_c_ss", $context) ? $context["z_c_ss"] : (function () { throw new Twig_Error_Runtime('Variable "z_c_ss" does not exist.', 59, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["z_c_ss"]) || array_key_exists("z_c_ss", $context) ? $context["z_c_ss"] : (function () { throw new Twig_Error_Runtime('Variable "z_c_ss" does not exist.', 65, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["z_c_s"]) {
-            // line 60
+            // line 66
             echo "                        <option value=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["z_c_s"], "city", []), "html", null, true);
             echo "\">
@@ -183,22 +205,22 @@ class __TwigTemplate_394a72e866e171357957be4e76643de993584666a400e85df5836282320
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['z_c_s'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 62
+        // line 68
         echo "                    </datalist>
                 </div>
                 <div class=\"medium-4  columns\">
                     <label for=\"state\">State</label>
                     <input name=\"form[state]\" id=\"state\" list=\"stater\" style=\"border-color: #00ace6\" value=\"";
-        // line 66
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "state", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 66, $this->source); })()), "state", [])) : ("")), "html", null, true);
-        echo "\" type=\"text\" required/>
+        // line 72
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "state", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 72, $this->source); })()), "state", [])) : ("")), "html", null, true);
+        echo "\" type=\"text\" formnovalidate/>
                     <datalist  id=\"stater\">
                         ";
-        // line 68
+        // line 74
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["z_c_ss"]) || array_key_exists("z_c_ss", $context) ? $context["z_c_ss"] : (function () { throw new Twig_Error_Runtime('Variable "z_c_ss" does not exist.', 68, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["z_c_ss"]) || array_key_exists("z_c_ss", $context) ? $context["z_c_ss"] : (function () { throw new Twig_Error_Runtime('Variable "z_c_ss" does not exist.', 74, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["z_c_s"]) {
-            // line 69
+            // line 75
             echo "                        <option value=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["z_c_s"], "state", []), "html", null, true);
             echo "\">
@@ -207,22 +229,22 @@ class __TwigTemplate_394a72e866e171357957be4e76643de993584666a400e85df5836282320
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['z_c_s'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 71
+        // line 77
         echo "                    </datalist>
                 </div>
                 <div class=\"medium-12  columns\">
                     <label for=\"tel\">Tel:</label>
                     <input name=\"form[tel]\" id=\"tel\" style=\"border-color: #00ace6\" value=\"";
-        // line 75
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "tel", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 75, $this->source); })()), "tel", [])) : ("")), "html", null, true);
-        echo "\" type=\"number\" required/>
+        // line 81
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "tel", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 81, $this->source); })()), "tel", [])) : ("")), "html", null, true);
+        echo "\" type=\"tel\" formnovalidate/>
                 </div>
                 <div class=\"medium-12  columns\">
                     <label for=\"email\">Email</label>
                     <input name=\"form[client_email]\" id=\"email\" style=\"border-color: #00ace6\" value=\"";
-        // line 79
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "client_email", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 79, $this->source); })()), "client_email", [])) : ("")), "html", null, true);
-        echo "\" type=\"email\" required/>
+        // line 85
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "client_email", [], "any", true, true)) ? (twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 85, $this->source); })()), "client_email", [])) : ("")), "html", null, true);
+        echo "\" type=\"email\" formnovalidate/>
                 </div>
                 <div class=\"medium-12  columns\">
                     <input type=\"submit\" class=\"button\" value=\"BOOKING INFORMATION\"  />
@@ -252,7 +274,7 @@ class __TwigTemplate_394a72e866e171357957be4e76643de993584666a400e85df5836282320
 
     public function getDebugInfo()
     {
-        return array (  224 => 79,  217 => 75,  211 => 71,  202 => 69,  198 => 68,  193 => 66,  187 => 62,  178 => 60,  174 => 59,  169 => 57,  163 => 53,  154 => 51,  150 => 50,  145 => 48,  138 => 44,  131 => 40,  124 => 36,  117 => 31,  104 => 29,  100 => 28,  79 => 10,  74 => 8,  71 => 7,  62 => 6,  45 => 4,  15 => 1,);
+        return array (  246 => 85,  239 => 81,  233 => 77,  224 => 75,  220 => 74,  215 => 72,  209 => 68,  200 => 66,  196 => 65,  191 => 63,  185 => 59,  176 => 57,  172 => 56,  167 => 54,  160 => 50,  153 => 46,  146 => 42,  140 => 38,  127 => 36,  123 => 35,  116 => 30,  113 => 29,  104 => 27,  99 => 26,  97 => 25,  79 => 10,  74 => 8,  71 => 7,  62 => 6,  45 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -280,6 +302,13 @@ class __TwigTemplate_394a72e866e171357957be4e76643de993584666a400e85df5836282320
         <div class=\"medium-12 large-12 columns\">
             <h4></h4>
             <form action=\"\" method=\"post\">
+                <ul>
+                    {% if errors is defined %}
+                        {% for error in errors %}
+                            <li>{{ error.message is defined ? error.message : '' }}</li>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
                 <div class=\"medium-4  columns\">
                     <label for=\"title\">Title</label>
 
@@ -288,23 +317,22 @@ class __TwigTemplate_394a72e866e171357957be4e76643de993584666a400e85df5836282320
                             <option value=\"{{ title }} {{ title == form.title ? 'selected' : '' }} \">{{ title | capitalize }}.</option>
                         {% endfor %}
                     </select>
-
                 </div>
                 <div class=\"medium-4  columns\">
                     <label for=\"name\">Name</label>
-                    <input name=\"form[name]\" id=\"name\" style=\"border-color: #00ace6\" value=\"{{ form.name is defined ? form.name : '' }}\" type=\"text\" required/>
+                    <input name=\"form[name]\" id=\"name\" style=\"border-color: #00ace6\" value=\"{{ form.name is defined ? form.name : '' }}\" type=\"text\" formnovalidate/>
                 </div>
                 <div class=\"medium-4  columns\">
                     <label for=\"last_name\">Last Name</label>
-                    <input name=\"form[last_name]\" id=\"last_name\" style=\"border-color: #00ace6\" value=\"{{ form.last_name is defined ? form.last_name : '' }}\" type=\"text\" required/>
+                    <input name=\"form[last_name]\" id=\"last_name\" style=\"border-color: #00ace6\" value=\"{{ form.last_name is defined ? form.last_name : '' }}\" type=\"text\" formnovalidate/>
                 </div>
                 <div class=\"medium-8  columns\">
                     <label for=\"address\">Address</label>
-                    <input name=\"form[address]\" id=\"address\" style=\"border-color: #00ace6\" value=\"{{ form.address is defined ? form.address : '' }}\" type=\"text\" required/>
+                    <input name=\"form[address]\" id=\"address\" style=\"border-color: #00ace6\" value=\"{{ form.address is defined ? form.address : '' }}\" type=\"text\" formnovalidate/>
                 </div>
                 <div class=\"medium-4  columns\">
                     <label for=\"zip\">ZipCode</label>
-                    <input name=\"form[zip_code]\" id=\"zip\" list=\"zipr\" style=\"border-color: #00ace6\" value=\"{{ form.zip_code is defined ? form.zip_code : '' }}\" type=\"text\" required/>
+                    <input name=\"form[zip_code]\" id=\"zip\" list=\"zipr\" style=\"border-color: #00ace6\" value=\"{{ form.zip_code is defined ? form.zip_code : '' }}\" type=\"text\" formnovalidate/>
                     <datalist  id=\"zipr\">
                         {% for z_c_s in z_c_ss %}
                         <option value=\"{{ z_c_s.zip }}\">
@@ -313,7 +341,7 @@ class __TwigTemplate_394a72e866e171357957be4e76643de993584666a400e85df5836282320
                 </div>
                 <div class=\"medium-4  columns\">
                     <label for=\"city\">City</label>
-                    <input name=\"form[city]\" id=\"city\" list=\"cityr\" style=\"border-color: #00ace6\" value=\"{{ form.city is defined ? form.city : '' }}\" type=\"text\" required/>
+                    <input name=\"form[city]\" id=\"city\" list=\"cityr\" style=\"border-color: #00ace6\" value=\"{{ form.city is defined ? form.city : '' }}\" type=\"text\" formnovalidate/>
                     <datalist  id=\"cityr\">
                         {% for z_c_s in z_c_ss %}
                         <option value=\"{{ z_c_s.city }}\">
@@ -322,7 +350,7 @@ class __TwigTemplate_394a72e866e171357957be4e76643de993584666a400e85df5836282320
                 </div>
                 <div class=\"medium-4  columns\">
                     <label for=\"state\">State</label>
-                    <input name=\"form[state]\" id=\"state\" list=\"stater\" style=\"border-color: #00ace6\" value=\"{{ form.state is defined ? form.state : '' }}\" type=\"text\" required/>
+                    <input name=\"form[state]\" id=\"state\" list=\"stater\" style=\"border-color: #00ace6\" value=\"{{ form.state is defined ? form.state : '' }}\" type=\"text\" formnovalidate/>
                     <datalist  id=\"stater\">
                         {% for z_c_s in z_c_ss %}
                         <option value=\"{{ z_c_s.state }}\">
@@ -331,11 +359,11 @@ class __TwigTemplate_394a72e866e171357957be4e76643de993584666a400e85df5836282320
                 </div>
                 <div class=\"medium-12  columns\">
                     <label for=\"tel\">Tel:</label>
-                    <input name=\"form[tel]\" id=\"tel\" style=\"border-color: #00ace6\" value=\"{{ form.tel is defined ? form.tel : '' }}\" type=\"number\" required/>
+                    <input name=\"form[tel]\" id=\"tel\" style=\"border-color: #00ace6\" value=\"{{ form.tel is defined ? form.tel : '' }}\" type=\"tel\" formnovalidate/>
                 </div>
                 <div class=\"medium-12  columns\">
                     <label for=\"email\">Email</label>
-                    <input name=\"form[client_email]\" id=\"email\" style=\"border-color: #00ace6\" value=\"{{ form.client_email is defined ? form.client_email : '' }}\" type=\"email\" required/>
+                    <input name=\"form[client_email]\" id=\"email\" style=\"border-color: #00ace6\" value=\"{{ form.client_email is defined ? form.client_email : '' }}\" type=\"email\" formnovalidate/>
                 </div>
                 <div class=\"medium-12  columns\">
                     <input type=\"submit\" class=\"button\" value=\"BOOKING INFORMATION\"  />

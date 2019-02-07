@@ -21,6 +21,13 @@
         <div class="medium-12 large-12 columns">
             <h4></h4>
             <form action="" method="post">
+                <ul>
+                    {% if errors is defined %}
+                        {% for error in errors %}
+                            <li>{{ error.message is defined ? error.message : '' }}</li>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
                 <div class="medium-4  columns">
                     <label for="title">Title</label>
 
@@ -29,23 +36,22 @@
                             <option value="{{ title }} {{ title == form.title ? 'selected' : '' }} ">{{ title | capitalize }}.</option>
                         {% endfor %}
                     </select>
-
                 </div>
                 <div class="medium-4  columns">
                     <label for="name">Name</label>
-                    <input name="form[name]" id="name" style="border-color: #00ace6" value="{{ form.name is defined ? form.name : '' }}" type="text" required/>
+                    <input name="form[name]" id="name" style="border-color: #00ace6" value="{{ form.name is defined ? form.name : '' }}" type="text" formnovalidate/>
                 </div>
                 <div class="medium-4  columns">
                     <label for="last_name">Last Name</label>
-                    <input name="form[last_name]" id="last_name" style="border-color: #00ace6" value="{{ form.last_name is defined ? form.last_name : '' }}" type="text" required/>
+                    <input name="form[last_name]" id="last_name" style="border-color: #00ace6" value="{{ form.last_name is defined ? form.last_name : '' }}" type="text" formnovalidate/>
                 </div>
                 <div class="medium-8  columns">
                     <label for="address">Address</label>
-                    <input name="form[address]" id="address" style="border-color: #00ace6" value="{{ form.address is defined ? form.address : '' }}" type="text" required/>
+                    <input name="form[address]" id="address" style="border-color: #00ace6" value="{{ form.address is defined ? form.address : '' }}" type="text" formnovalidate/>
                 </div>
                 <div class="medium-4  columns">
                     <label for="zip">ZipCode</label>
-                    <input name="form[zip_code]" id="zip" list="zipr" style="border-color: #00ace6" value="{{ form.zip_code is defined ? form.zip_code : '' }}" type="text" required/>
+                    <input name="form[zip_code]" id="zip" list="zipr" style="border-color: #00ace6" value="{{ form.zip_code is defined ? form.zip_code : '' }}" type="text" formnovalidate/>
                     <datalist  id="zipr">
                         {% for z_c_s in z_c_ss %}
                         <option value="{{ z_c_s.zip }}">
@@ -54,7 +60,7 @@
                 </div>
                 <div class="medium-4  columns">
                     <label for="city">City</label>
-                    <input name="form[city]" id="city" list="cityr" style="border-color: #00ace6" value="{{ form.city is defined ? form.city : '' }}" type="text" required/>
+                    <input name="form[city]" id="city" list="cityr" style="border-color: #00ace6" value="{{ form.city is defined ? form.city : '' }}" type="text" formnovalidate/>
                     <datalist  id="cityr">
                         {% for z_c_s in z_c_ss %}
                         <option value="{{ z_c_s.city }}">
@@ -63,7 +69,7 @@
                 </div>
                 <div class="medium-4  columns">
                     <label for="state">State</label>
-                    <input name="form[state]" id="state" list="stater" style="border-color: #00ace6" value="{{ form.state is defined ? form.state : '' }}" type="text" required/>
+                    <input name="form[state]" id="state" list="stater" style="border-color: #00ace6" value="{{ form.state is defined ? form.state : '' }}" type="text" formnovalidate/>
                     <datalist  id="stater">
                         {% for z_c_s in z_c_ss %}
                         <option value="{{ z_c_s.state }}">
@@ -72,11 +78,11 @@
                 </div>
                 <div class="medium-12  columns">
                     <label for="tel">Tel:</label>
-                    <input name="form[tel]" id="tel" style="border-color: #00ace6" value="{{ form.tel is defined ? form.tel : '' }}" type="number" required/>
+                    <input name="form[tel]" id="tel" style="border-color: #00ace6" value="{{ form.tel is defined ? form.tel : '' }}" type="tel" formnovalidate/>
                 </div>
                 <div class="medium-12  columns">
                     <label for="email">Email</label>
-                    <input name="form[client_email]" id="email" style="border-color: #00ace6" value="{{ form.client_email is defined ? form.client_email : '' }}" type="email" required/>
+                    <input name="form[client_email]" id="email" style="border-color: #00ace6" value="{{ form.client_email is defined ? form.client_email : '' }}" type="email" formnovalidate/>
                 </div>
                 <div class="medium-12  columns">
                     <input type="submit" class="button" value="BOOKING INFORMATION"  />

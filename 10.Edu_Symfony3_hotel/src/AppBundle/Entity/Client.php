@@ -10,7 +10,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * Client
  * @ORM\Entity
  * @ORM\Table(name="client")
- * @UniqueEntity(fields={"email"}, message="Dear client it looks like your already have an account!")
+ * @UniqueEntity(fields={"client_email"}, message="Dear client this email address is already in use!")
  */
 class Client
 {
@@ -25,36 +25,52 @@ class Client
     private $title;
 
     /**
+     * @Assert\NotBlank(message="Name: cannot be empty")
+     * @ORM\Column(name="name",type="string")
      * @var string
      */
     private $name;
 
     /**
+     * @Assert\NotBlank(message="Last Name: cannot be empty")
+     * @ORM\Column(name="name",type="string")
      * @var string
      */
     private $last_name;
 
     /**
+     * @Assert\NotBlank(message="Address: cannot be empty")
+     * @ORM\Column(name="name",type="string")
      * @var string
      */
     private $address;
 
     /**
+     * @Assert\NotBlank(message="Zip Code: cannot be empty")
+     * @ORM\Column(name="name",type="string")
      * @var string
      */
     private $zip_code;
 
     /**
+     * @Assert\NotBlank(message="City: cannot be empty")
+     * @ORM\Column(name="name",type="string")
      * @var string
      */
     private $city;
 
     /**
+     * @Assert\NotBlank(message="State: cannot be empty")
+     * @ORM\Column(name="name",type="string")
      * @var string
      */
     private $state;
 
     /**
+     * @Assert\Regex(pattern="/\d+/")
+     * @Assert\Type(type="digit",message="Tel: Only digits allowed here")
+     * @Assert\NotBlank(message="Telephone number cannot be empty")
+     * @ORM\Column(name="name",type="string")
      * @var int
      */
     private $tel;
@@ -99,7 +115,7 @@ class Client
     }
 
     /**
-     * @Assert\NotBlank(groups={"Default"})
+     * @Assert\NotBlank(message="Email address is required!" )
      * @ORM\Column(type="string",unique=true)
      * @var string
      */
@@ -133,6 +149,7 @@ class Client
     }
 
     /**
+     * @Assert\NotBlank(message="Page multiple refresh detected,please go back and start again from Home" )
      * @var \AppBundle\Entity\Room
      *
      */

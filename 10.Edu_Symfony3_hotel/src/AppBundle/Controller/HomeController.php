@@ -19,11 +19,6 @@ use Symfony\Component\Validator\Constraints\All;
 use Doctrine\ORM\Mapping as ORM;
 use Swift_Mailer;
 use Swift_SmtpTransport;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use ReCaptcha\ReCaptcha; // Include the recaptcha lib
 use ReflectionClass;
 use TCPDF;
@@ -35,7 +30,7 @@ use Swift_Attachment;
 use Symfony\Component\Validator\Constraints\EmailValidator;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 
 
@@ -294,14 +289,6 @@ class HomeController extends Controller
             $client->setState($form_data['state']);
             $client->setTel($form_data['tel']);
             $client->setClientPrice($form_data['client_price']);
-
-          // $emailValidator = new EmailValidator();
-
-          //  if(!$emailValidator->isValid($form_data['client_email'], new Email()))
-          //  {
-          //      $form['client_email']->addError(new FormError('Invalid email'));
-          //  }
-
             $client->setClient_email($form_data['client_email']);
             $client->setIdRoom($id_room);
             $client->setRoomType($data['room_type']);
@@ -309,6 +296,15 @@ class HomeController extends Controller
             $client->setChild($data['child']);
             $client->setBaby($data['baby']);
             $data['titles'] = $this->titles;
+
+            //validation
+            $validator = $this->get('validator');
+            $errors = $validator->validate($client);
+            if (count($errors) > 0) {
+                $data['errors']= $errors;
+                return $this->render('home/front_booking.html.twig', $data);
+            }
+
             $em->persist($client);
             $em->flush();
             //get id client after flush from db

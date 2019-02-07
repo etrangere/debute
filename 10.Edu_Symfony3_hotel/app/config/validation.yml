@@ -3,11 +3,13 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
 
+# not in use this config
 
-
-AppBundle\Entity\Author:
+AppBundle\Entity\Test:
     constraints:
         - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: email
     properties:
         email:
             - Email: ~
+
+#
