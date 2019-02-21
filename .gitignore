@@ -1,5 +1,9 @@
 xdebug/
 
+.dbus
+
+info.php 
+
 .DS_Store
 
 .idea
