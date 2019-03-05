@@ -43,16 +43,16 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
     ";
         // line 41
         $this->displayBlock('top_bar', $context, $blocks);
-        // line 59
+        // line 68
         echo "    <noscript><h4 align=\"center\">For full functionality of this page it is necessary to enable JavaScript.
             Here are the <a href=\"http://www.enable-javascript.com\" target=\"_blank\">
                 instructions how to enable JavaScript in your web browser</a></h4></noscript>
     <br>
 
         ";
-        // line 64
+        // line 73
         $this->displayBlock('body', $context, $blocks);
-        // line 65
+        // line 74
         echo "    
 
     <div class=\"row column\">
@@ -67,36 +67,36 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
     </script>
 
         ";
-        // line 78
+        // line 87
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 79
+        // line 88
         echo "
         <script src=\"";
-        // line 80
+        // line 89
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/jquery.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 81
+        // line 90
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/what-input.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 82
+        // line 91
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/foundation.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 83
+        // line 92
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/app.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 84
+        // line 93
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 85
+        // line 94
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.date.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 86
+        // line 95
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
@@ -167,6 +167,64 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
             })
         });
     </script>
+
+    <!-- for bookmark-->
+
+    <link rel=\"stylesheet\" href=\"";
+        // line 167
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/fontawesome/css/font-awesome.min.css"), "html", null, true);
+        echo "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 168
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/addtohomescreen.css"), "html", null, true);
+        echo "\">
+    <script src=\"";
+        // line 169
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/addtohomescreen.js"), "html", null, true);
+        echo "\"></script>
+    <!-- Additionally, include jQuery (necessary for bookmark script) -->
+    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>
+
+
+
+
+
+    <script>
+        jQuery(function(\$) {
+
+            \$('#bookmark-this').click(function(e) {
+                var bookmarkURL = window.location.href;
+                var bookmarkTitle = document.title;
+
+                if ('addToHomescreen' in window && addToHomescreen.isCompatible) {
+                    // Mobile browsers
+                    addToHomescreen({ autostart: false, startDelay: 0 }).show(true);
+                } else if (window.sidebar && window.sidebar.addPanel) {
+                    // Firefox <=22
+                    window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
+                } else if ((window.sidebar && /Firefox/i.test(navigator.userAgent)) || (window.opera && window.print)) {
+                    // Firefox 23+ and Opera <=14
+                    \$(this).attr({
+                        href: bookmarkURL,
+                        title: bookmarkTitle,
+                        rel: 'sidebar'
+                    }).off(e);
+                    return true;
+                } else if (window.external && ('AddFavorite' in window.external)) {
+                    // IE Favorites
+                    window.external.AddFavorite(bookmarkURL, bookmarkTitle);
+                } else {
+                    // Other browsers (mainly WebKit & Blink - Safari, Chrome, Opera 15+)
+                    alert('Press ' + (/Mac/i.test(navigator.platform) ? 'Cmd' : 'Ctrl') + '+D to bookmark this page.');
+                }
+
+                return false;
+            });
+
+        });
+
+    </script>
+
     </body>
 </html>
 ";
@@ -330,6 +388,18 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
     </div>
     <!-- End Top Bar -->
 
+        <div class=\"row\" style=\"margin-left: 80%;color: #0a0a0a\">
+            <a class=\"fa fa-sign-in\" href=\"";
+        // line 58
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
+        echo "\"  ><b>Admin</b></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class=\"fa fa-facebook-official fa-lg\" href=\"http://www.facebook.com\"  ></a>&nbsp;&nbsp;&nbsp;
+            <a class=\"fa fa-twitter fa-lg\" href=\"http://www.twitter.com\"  ></a>&nbsp;&nbsp;&nbsp;
+            <a class=\"fa fa-bookmark fa-lg\" id=\"bookmark-this\" href=\"#\"  ></a>&nbsp;&nbsp;&nbsp;
+            <a class=\"fa fa-tripadvisor fa-lg\" href=\"https://www.tripadvisor.fr\"  ></a>&nbsp;&nbsp;&nbsp;
+        </div>
+
+
 
     ";
         
@@ -340,7 +410,7 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 
     }
 
-    // line 64
+    // line 73
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -358,7 +428,7 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 
     }
 
-    // line 78
+    // line 87
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -387,7 +457,7 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 
     public function getDebugInfo()
     {
-        return array (  362 => 78,  344 => 64,  325 => 50,  321 => 49,  317 => 48,  313 => 47,  306 => 42,  297 => 41,  279 => 10,  261 => 9,  233 => 22,  226 => 18,  222 => 17,  217 => 15,  213 => 14,  209 => 13,  203 => 11,  201 => 10,  197 => 9,  191 => 5,  182 => 4,  100 => 86,  96 => 85,  92 => 84,  88 => 83,  84 => 82,  80 => 81,  76 => 80,  73 => 79,  71 => 78,  56 => 65,  54 => 64,  47 => 59,  45 => 41,  42 => 40,  40 => 4,  35 => 1,);
+        return array (  432 => 87,  414 => 73,  394 => 58,  383 => 50,  379 => 49,  375 => 48,  371 => 47,  364 => 42,  355 => 41,  337 => 10,  319 => 9,  291 => 22,  284 => 18,  280 => 17,  275 => 15,  271 => 14,  267 => 13,  261 => 11,  259 => 10,  255 => 9,  249 => 5,  240 => 4,  183 => 169,  179 => 168,  175 => 167,  100 => 95,  96 => 94,  92 => 93,  88 => 92,  84 => 91,  80 => 90,  76 => 89,  73 => 88,  71 => 87,  56 => 74,  54 => 73,  47 => 68,  45 => 41,  42 => 40,  40 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -447,6 +517,15 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
       </div>
     </div>
     <!-- End Top Bar -->
+
+        <div class=\"row\" style=\"margin-left: 80%;color: #0a0a0a\">
+            <a class=\"fa fa-sign-in\" href=\"{{ path(\"admin\")}}\"  ><b>Admin</b></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class=\"fa fa-facebook-official fa-lg\" href=\"http://www.facebook.com\"  ></a>&nbsp;&nbsp;&nbsp;
+            <a class=\"fa fa-twitter fa-lg\" href=\"http://www.twitter.com\"  ></a>&nbsp;&nbsp;&nbsp;
+            <a class=\"fa fa-bookmark fa-lg\" id=\"bookmark-this\" href=\"#\"  ></a>&nbsp;&nbsp;&nbsp;
+            <a class=\"fa fa-tripadvisor fa-lg\" href=\"https://www.tripadvisor.fr\"  ></a>&nbsp;&nbsp;&nbsp;
+        </div>
+
 
 
     {% endblock %}
@@ -546,6 +625,55 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
             })
         });
     </script>
+
+    <!-- for bookmark-->
+
+    <link rel=\"stylesheet\" href=\"{{ asset('vendor/fontawesome/css/font-awesome.min.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('css/addtohomescreen.css') }}\">
+    <script src=\"{{ asset('js/addtohomescreen.js') }}\"></script>
+    <!-- Additionally, include jQuery (necessary for bookmark script) -->
+    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>
+
+
+
+
+
+    <script>
+        jQuery(function(\$) {
+
+            \$('#bookmark-this').click(function(e) {
+                var bookmarkURL = window.location.href;
+                var bookmarkTitle = document.title;
+
+                if ('addToHomescreen' in window && addToHomescreen.isCompatible) {
+                    // Mobile browsers
+                    addToHomescreen({ autostart: false, startDelay: 0 }).show(true);
+                } else if (window.sidebar && window.sidebar.addPanel) {
+                    // Firefox <=22
+                    window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
+                } else if ((window.sidebar && /Firefox/i.test(navigator.userAgent)) || (window.opera && window.print)) {
+                    // Firefox 23+ and Opera <=14
+                    \$(this).attr({
+                        href: bookmarkURL,
+                        title: bookmarkTitle,
+                        rel: 'sidebar'
+                    }).off(e);
+                    return true;
+                } else if (window.external && ('AddFavorite' in window.external)) {
+                    // IE Favorites
+                    window.external.AddFavorite(bookmarkURL, bookmarkTitle);
+                } else {
+                    // Other browsers (mainly WebKit & Blink - Safari, Chrome, Opera 15+)
+                    alert('Press ' + (/Mac/i.test(navigator.platform) ? 'Cmd' : 'Ctrl') + '+D to bookmark this page.');
+                }
+
+                return false;
+            });
+
+        });
+
+    </script>
+
     </body>
 </html>
 ", "base.html.twig", "/var/www/10.Edu_Symfony3_hotel/app/Resources/views/base.html.twig");

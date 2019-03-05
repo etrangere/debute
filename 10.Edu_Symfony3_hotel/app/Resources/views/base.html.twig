@@ -54,6 +54,15 @@
     </div>
     <!-- End Top Bar -->
 
+        <div class="row" style="margin-left: 80%;color: #0a0a0a">
+            <a class="fa fa-sign-in" href="{{ path("admin")}}"  ><b>Admin</b></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="fa fa-facebook-official fa-lg" href="http://www.facebook.com"  ></a>&nbsp;&nbsp;&nbsp;
+            <a class="fa fa-twitter fa-lg" href="http://www.twitter.com"  ></a>&nbsp;&nbsp;&nbsp;
+            <a class="fa fa-bookmark fa-lg" id="bookmark-this" href="#"  ></a>&nbsp;&nbsp;&nbsp;
+            <a class="fa fa-tripadvisor fa-lg" href="https://www.tripadvisor.fr"  ></a>&nbsp;&nbsp;&nbsp;
+        </div>
+
+
 
     {% endblock %}
     <noscript><h4 align="center">For full functionality of this page it is necessary to enable JavaScript.
@@ -152,5 +161,54 @@
             })
         });
     </script>
+
+    <!-- for bookmark-->
+
+    <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/addtohomescreen.css') }}">
+    <script src="{{ asset('js/addtohomescreen.js') }}"></script>
+    <!-- Additionally, include jQuery (necessary for bookmark script) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+
+
+
+    <script>
+        jQuery(function($) {
+
+            $('#bookmark-this').click(function(e) {
+                var bookmarkURL = window.location.href;
+                var bookmarkTitle = document.title;
+
+                if ('addToHomescreen' in window && addToHomescreen.isCompatible) {
+                    // Mobile browsers
+                    addToHomescreen({ autostart: false, startDelay: 0 }).show(true);
+                } else if (window.sidebar && window.sidebar.addPanel) {
+                    // Firefox <=22
+                    window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
+                } else if ((window.sidebar && /Firefox/i.test(navigator.userAgent)) || (window.opera && window.print)) {
+                    // Firefox 23+ and Opera <=14
+                    $(this).attr({
+                        href: bookmarkURL,
+                        title: bookmarkTitle,
+                        rel: 'sidebar'
+                    }).off(e);
+                    return true;
+                } else if (window.external && ('AddFavorite' in window.external)) {
+                    // IE Favorites
+                    window.external.AddFavorite(bookmarkURL, bookmarkTitle);
+                } else {
+                    // Other browsers (mainly WebKit & Blink - Safari, Chrome, Opera 15+)
+                    alert('Press ' + (/Mac/i.test(navigator.platform) ? 'Cmd' : 'Ctrl') + '+D to bookmark this page.');
+                }
+
+                return false;
+            });
+
+        });
+
+    </script>
+
     </body>
 </html>
