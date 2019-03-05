@@ -84,7 +84,7 @@ class __TwigTemplate_f2c516404dc11d51a84c906ebf5a04dfb74c7b0d161ee0898fb2e88463f
                     <form  method=\"post\"  action=\"\" id=\"contact-form\">
 
                         <div class=\"form-group\">
-                            <input type=\"text\" id=\"contact_email\" name=\"form[contact_email]\" onclick=\"myFunction()\" style=\"width: 60%\" placeholder=\"Your Email\" required>
+                            <input type=\"email\" id=\"contact_email\" name=\"form[contact_email]\" onclick=\"myFunction()\" style=\"width: 60%\" placeholder=\"Your Email\" required>
                         </div>
                         <div class=\"form-group\">
                             <input type=\"text\" id=\"contact_subject\" name=\"form[contact_subject]\" onclick=\"myFunction()\" style=\"width: 40%\" placeholder=\"Subject\" required>
@@ -188,7 +188,7 @@ class __TwigTemplate_f2c516404dc11d51a84c906ebf5a04dfb74c7b0d161ee0898fb2e88463f
                     <form  method=\"post\"  action=\"\" id=\"contact-form\">
 
                         <div class=\"form-group\">
-                            <input type=\"text\" id=\"contact_email\" name=\"form[contact_email]\" onclick=\"myFunction()\" style=\"width: 60%\" placeholder=\"Your Email\" required>
+                            <input type=\"email\" id=\"contact_email\" name=\"form[contact_email]\" onclick=\"myFunction()\" style=\"width: 60%\" placeholder=\"Your Email\" required>
                         </div>
                         <div class=\"form-group\">
                             <input type=\"text\" id=\"contact_subject\" name=\"form[contact_subject]\" onclick=\"myFunction()\" style=\"width: 40%\" placeholder=\"Subject\" required>
