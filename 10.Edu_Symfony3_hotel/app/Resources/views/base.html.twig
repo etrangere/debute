@@ -22,12 +22,19 @@
       <!--  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />-->
 
 
+            <!-- for bookmark-->
+            <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/font-awesome.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/addtohomescreen.css') }}">
+            <script src="{{ asset('js/addtohomescreen.js') }}"></script>
+            <!-- Additionally, include jQuery (necessary for bookmark script) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <!-- for bookmark-->
 
 
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131743009-1"></script>
-        <script>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131743009-1"></script>
+            <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -163,18 +170,6 @@
             })
         });
     </script>
-
-    <!-- for bookmark-->
-
-    <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/addtohomescreen.css') }}">
-    <script src="{{ asset('js/addtohomescreen.js') }}"></script>
-    <!-- Additionally, include jQuery (necessary for bookmark script) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-
-
-
 
     <script>
         jQuery(function($) {

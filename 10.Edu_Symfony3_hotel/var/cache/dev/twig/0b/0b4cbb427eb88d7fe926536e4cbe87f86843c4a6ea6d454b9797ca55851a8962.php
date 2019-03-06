@@ -38,21 +38,21 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 ";
         // line 4
         $this->displayBlock('head', $context, $blocks);
-        // line 40
+        // line 47
         echo "    <body>
     ";
-        // line 41
+        // line 48
         $this->displayBlock('top_bar', $context, $blocks);
-        // line 70
+        // line 77
         echo "    <noscript><h4 align=\"center\">For full functionality of this page it is necessary to enable JavaScript.
             Here are the <a href=\"http://www.enable-javascript.com\" target=\"_blank\">
                 instructions how to enable JavaScript in your web browser</a></h4></noscript>
     <br>
 
         ";
-        // line 75
+        // line 82
         $this->displayBlock('body', $context, $blocks);
-        // line 76
+        // line 83
         echo "    
 
     <div class=\"row column\">
@@ -67,36 +67,36 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
     </script>
 
         ";
-        // line 89
+        // line 96
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 90
+        // line 97
         echo "
         <script src=\"";
-        // line 91
+        // line 98
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/jquery.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 92
+        // line 99
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/what-input.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 93
+        // line 100
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/vendor/foundation.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 94
+        // line 101
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/app.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 95
+        // line 102
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 96
+        // line 103
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pickadate/lib/picker.date.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 97
+        // line 104
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
@@ -167,27 +167,6 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
             })
         });
     </script>
-
-    <!-- for bookmark-->
-
-    <link rel=\"stylesheet\" href=\"";
-        // line 169
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/fontawesome/css/font-awesome.min.css"), "html", null, true);
-        echo "\">
-    <link rel=\"stylesheet\" href=\"";
-        // line 170
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/addtohomescreen.css"), "html", null, true);
-        echo "\">
-    <script src=\"";
-        // line 171
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/addtohomescreen.js"), "html", null, true);
-        echo "\"></script>
-    <!-- Additionally, include jQuery (necessary for bookmark script) -->
-    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>
-
-
-
-
 
     <script>
         jQuery(function(\$) {
@@ -292,12 +271,28 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
         echo "\" />-->
 
 
+            <!-- for bookmark-->
+            <link rel=\"stylesheet\" href=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/fontawesome/css/font-awesome.min.css"), "html", null, true);
+        echo "\">
+            <link rel=\"stylesheet\" href=\"";
+        // line 27
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/addtohomescreen.css"), "html", null, true);
+        echo "\">
+            <script src=\"";
+        // line 28
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/addtohomescreen.js"), "html", null, true);
+        echo "\"></script>
+            <!-- Additionally, include jQuery (necessary for bookmark script) -->
+            <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>
+            <!-- for bookmark-->
 
 
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-131743009-1\"></script>
-        <script>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-131743009-1\"></script>
+            <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -351,7 +346,7 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 
     }
 
-    // line 41
+    // line 48
     public function block_top_bar($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -360,26 +355,26 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "top_bar"));
 
-        // line 42
+        // line 49
         echo "        <!-- Start Top Bar -->
     <div class=\"top-bar\">
       <div class=\"row\">
         <div class=\"top-bar-left\">
           <ul class=\"dropdown menu\" data-dropdown-menu>
             <li><a href=\"";
-        // line 47
+        // line 54
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Home</a></li>
               <li><a href=\"";
-        // line 48
+        // line 55
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("about_us");
         echo "\">About us</a></li>
               <li><a href=\"";
-        // line 49
+        // line 56
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("location");
         echo "\">How to locate</a></li>
               <li><a href=\"";
-        // line 50
+        // line 57
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
         echo "\">Contact</a></li>
           </ul>
@@ -391,7 +386,7 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
         <div class=\"col-sm-auto\">
             <div class=\"float-right\" >
                 <a class=\"fa fa-sign-in\" href=\"";
-        // line 59
+        // line 66
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
         echo "\"  ><b>Admin</b></a>&nbsp;&nbsp;&nbsp;&nbsp;
                 <a class=\"fa fa-facebook-official fa-lg\" href=\"http://www.facebook.com\"  ></a>&nbsp;&nbsp;&nbsp;
@@ -412,7 +407,7 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 
     }
 
-    // line 75
+    // line 82
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -430,7 +425,7 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 
     }
 
-    // line 89
+    // line 96
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -459,7 +454,7 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
 
     public function getDebugInfo()
     {
-        return array (  434 => 89,  416 => 75,  395 => 59,  383 => 50,  379 => 49,  375 => 48,  371 => 47,  364 => 42,  355 => 41,  337 => 10,  319 => 9,  291 => 22,  284 => 18,  280 => 17,  275 => 15,  271 => 14,  267 => 13,  261 => 11,  259 => 10,  255 => 9,  249 => 5,  240 => 4,  183 => 171,  179 => 170,  175 => 169,  100 => 97,  96 => 96,  92 => 95,  88 => 94,  84 => 93,  80 => 92,  76 => 91,  73 => 90,  71 => 89,  56 => 76,  54 => 75,  47 => 70,  45 => 41,  42 => 40,  40 => 4,  35 => 1,);
+        return array (  429 => 96,  411 => 82,  390 => 66,  378 => 57,  374 => 56,  370 => 55,  366 => 54,  359 => 49,  350 => 48,  332 => 10,  314 => 9,  285 => 28,  281 => 27,  277 => 26,  270 => 22,  263 => 18,  259 => 17,  254 => 15,  250 => 14,  246 => 13,  240 => 11,  238 => 10,  234 => 9,  228 => 5,  219 => 4,  100 => 104,  96 => 103,  92 => 102,  88 => 101,  84 => 100,  80 => 99,  76 => 98,  73 => 97,  71 => 96,  56 => 83,  54 => 82,  47 => 77,  45 => 48,  42 => 47,  40 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -488,12 +483,19 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
       <!--  <link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('favicon.ico') }}\" />-->
 
 
+            <!-- for bookmark-->
+            <link rel=\"stylesheet\" href=\"{{ asset('vendor/fontawesome/css/font-awesome.min.css') }}\">
+            <link rel=\"stylesheet\" href=\"{{ asset('css/addtohomescreen.css') }}\">
+            <script src=\"{{ asset('js/addtohomescreen.js') }}\"></script>
+            <!-- Additionally, include jQuery (necessary for bookmark script) -->
+            <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>
+            <!-- for bookmark-->
 
 
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-131743009-1\"></script>
-        <script>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-131743009-1\"></script>
+            <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -629,18 +631,6 @@ class __TwigTemplate_a386b04c5476f11348d9b2e576834a94b6e1f2f78ef17c2ada7473b6649
             })
         });
     </script>
-
-    <!-- for bookmark-->
-
-    <link rel=\"stylesheet\" href=\"{{ asset('vendor/fontawesome/css/font-awesome.min.css') }}\">
-    <link rel=\"stylesheet\" href=\"{{ asset('css/addtohomescreen.css') }}\">
-    <script src=\"{{ asset('js/addtohomescreen.js') }}\"></script>
-    <!-- Additionally, include jQuery (necessary for bookmark script) -->
-    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>
-
-
-
-
 
     <script>
         jQuery(function(\$) {

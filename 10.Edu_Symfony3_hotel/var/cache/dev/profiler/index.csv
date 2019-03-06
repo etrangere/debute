@@ -1,0 +1,14 @@
+7ab258,::1,GET,http://localhost/10.Edu_Symfony3_hotel/web/app_dev.php/,1551821918,,200
+38aaf0,::1,GET,http://localhost/10.Edu_Symfony3_hotel/web/app_dev.php/contact,1551821920,,200
+c33b12,::1,POST,http://localhost/10.Edu_Symfony3_hotel/web/app_dev.php/contact,1551821929,,200
+057467,::1,POST,http://localhost/10.Edu_Symfony3_hotel/web/app_dev.php/contact,1551821959,,200
+3c2f2f,::1,GET,http://localhost/10.Edu_Symfony3_hotel/web/app_dev.php/,1551830366,,200
+aff44f,::1,GET,http://localhost/10.Edu_Symfony3_hotel/web/app_dev.php/rooms,1551830382,,200
+5c6829,::1,GET,http://localhost/10.Edu_Symfony3_hotel/web/app_dev.php/rooms,1551830514,,200
+d49eba,::1,GET,http://localhost/10.Edu_Symfony3_hotel/web/app_dev.php/rooms,1551830533,,200
+fdf50c,::1,GET,http://localhost/10.Edu_Symfony3_hotel/web/app_dev.php/rooms,1551830572,,200
+c5f16f,127.0.0.1,GET,http://localhost/10.Edu_Symfony3_hotel/web/app_dev.php/,1551830612,,200
+d8fa95,127.0.0.1,GET,http://localhost/10.Edu_Symfony3_hotel/web/app_dev.php/rooms,1551830638,,200
+efdb32,::1,GET,http://localhost/10.Edu_Symfony3_hotel/web/app_dev.php/,1551830737,,200
+3596fb,::1,GET,http://localhost/10.Edu_Symfony3_hotel/web/app_dev.php/rooms,1551830739,,200
+8864a6,::1,GET,http://localhost/10.Edu_Symfony3_hotel/web/app_dev.php/contact,1551830750,,200
