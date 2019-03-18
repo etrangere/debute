@@ -1,0 +1,209 @@
+Your Controller should output the ready rendered table. Move or copy only the table into a new twig file. Let the Controller create the table and give it back to jQuery:
+
+ /**
+ * Lists searched entities.
+ *
+ * @Route("/search", name="test_search")
+ * @Method("GET")
+ */
+public function searchAction(Request $request)
+{
+    $query = $em->createQuery(
+        'SELECT t
+        FROM AppBundle:Test t'
+    );
+    $categorias = $query->getArrayResult();
+
+    return $this->render('AppBundle:table.html.twig', ['categorias' => $categorias]);
+}
+
+
+
+
+Then in your AJAX request you can replace the table with the new table from controller:
+
+$.ajax({
+    url: "{{ path('demande_search') }}",
+    type: "GET", 
+    data: 'filter='+$("#f").val(),
+    success: function(data){
+        $("#table_id").replaceWith(data);
+    }
+});
+
+
+
+
+
+<table id="table_id">
+    <tbody>
+    {% for demande in demandes %}
+        <tr>
+            <td>{{ demande.id }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+*************************symfony 2 working
+
+
+
+I am working on a Symfony2 project where I have a user entity and I need an ajax 
+search bar to search for my users. The problem is that in my AJAX response the controller, 
+for some reason, returns all users from the database.
+
+js
+
+$('#search').keyup(function() {
+
+     searchText = $(this).val();
+
+     $.ajax({
+        type: "GET",//POST instad
+        url: "/Apana/web/app_dev.php/search",
+        dataType: "json",
+        data: {searchText : searchText},
+        success : function(response) 
+          {
+                console.log(response);
+          }
+    });
+});
+The controller
+
+    use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Encoder\XmlEncoder;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
+
+use Apana\Bundle\MainBundle\Entity\User;
+
+class SearchController extends Controller
+{
+
+    public function liveSearchAction(Request $request)
+    {
+
+        $string = $this->getRequest()->request->get('searchText');
+        //$string = "alfa";
+        $users = $this->getDoctrine()
+                     ->getRepository('ApanaMainBundle:User')
+                     ->findByLetters($string);
+
+        //return users on json format
+
+        $encoders = array(new XmlEncoder(), new JsonEncoder());
+        $normalizers = array(new GetSetMethodNormalizer());
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $jsonContent = $serializer->serialize($users, 'json');
+
+        $response = new Response($jsonContent);
+        return $response;
+    }
+}
+User Repository
+
+    class UserRepository extends EntityRepository
+{
+
+    public function findByLetters($string){
+        return $this->getEntityManager()->createQuery('SELECT u FROM ApanaMainBundle:User u  
+                WHERE u.firstname LIKE :string OR u.lastname LIKE :string')
+                ->setParameter('string','%'.$string.'%')
+                ->getResult();
+    }
+}
+
+*****************************************************************
+
+function
+
+function testAction(Request $request)
+{
+    $voiture = new Marque();
+    $em = $this->getDoctrine()->getManager();
+    $voitures=$em->getRepository('MyAppParcBundle:Marque')->findAll();
+    $Form = $this->createForm(RechercheForm::class, $voiture);
+    $Form->handleRequest($request);
+    if($request->isXmlHttpRequest()){
+        $serializer = new Serializer(array(new ObjectNormalizer()));
+        $voitures=$em->getRepository('MyAppParcBundle:Marque')
+            ->findBy(array('libelle'=>$request->get('libelle')));
+        $data = $serializer->normalize($voitures);
+        return new JsonResponse($data);
+    }
+    return $this->render(
+        'MyAppParcBundle:Marque:Recherche2.html.twig',
+        array("voitures" => $voitures,
+            "form" => $Form->createView()));
+
+}
+
+
+
+view
+
+
+
+
+<div id="div">
+</div>
+
+<div id="affichage">
+    <table border="1">
+        <tr>
+            <td>Id</td><td>Libelle</td><td>pays</td>
+        </tr>
+        {% for i in voitures %}
+
+            <tr>
+                <td>{{ i.id}}</td>
+                <td>{{ i.libelle}}</td>
+                <td>{{ i.pays}}</td>
+
+            </tr>
+
+        {% endfor %}
+    </table>
+</div>
+{{ form_start(form) }}
+{{ form(form) }}
+    {{ form_errors(form) }}
+{{ form_end(form) }}
+
+<script src="{{ asset('js/jquery.js') }}"></script>
+<script>
+
+    $("#myapp_parcbundle_marque_libelle").keyup(
+            function(){
+                var serie=$('#myapp_parcbundle_marque_libelle').val();
+                var DATA =  {'libelle' : serie};
+                $.ajax({
+                    type: "POST",
+                    url: "{{ path('demo_create')}}",
+                    data:DATA,
+                    success: function (data) {
+                        $.each(data,function(k,el) {
+                            $("#affichage").hide();
+                            $( "#div" ).html("<ul></ul>");
+                            $('ul').append(
+                                    "<li>"+el.libelle+"</li>"+
+                                    "<li>"+el.pays+"</li>"
+                            );
+                        });
+                    },
+                    error:function ()
+                    {
+                        console.log("error "+DATA);
+                    }
+                });
+            });
+
+</script>
+
